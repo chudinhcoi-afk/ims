@@ -1,9 +1,10 @@
 /* IMs — Infinity Maths: app ôn luyện cho học sinh. Câu hỏi sinh mới mỗi lần từ bộ sinh của MathBank (đã được giáo viên duyệt, danh sách trong pack.json).
    Giai đoạn 1: luyện từng dạng, làm đề theo chủ đề, ôn lỗi sai, tiến độ.
    0.2: đăng nhập (email/mật khẩu hoặc Google) và lưu tiến độ lên tài khoản qua cloud.js; chưa cấu hình Firebase thì chỉ lưu trên máy.
-   0.3: gói học — chưa có gói thì mỗi ngày làm miễn phí FREE câu; quản trị cấp / gia hạn gói ngay trong app (mục Quản trị). */
+   0.3: gói học — chưa có gói thì mỗi ngày làm miễn phí FREE câu; quản trị cấp / gia hạn gói ngay trong app (mục Quản trị).
+   0.3.1: trang cài app lên màn hình (#/caidat) — link gửi học sinh: https://chudinhcoi-afk.github.io/ims/#/caidat */
 const IMS = (()=>{
-const VER = '0.3';
+const VER = '0.3.1';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
@@ -26,6 +27,18 @@ const baiName = (gr, ci, bi)=> (((PPCT[gr] || [])[ci] || {}).bai || [])[bi] || '
 const grades = ()=> [...new Set(KEYS.map(k=> G[k].grade))].sort((a, b)=> a - b);
 function math(el){ try{ renderMathInElement(el, {delimiters:[{left:'$$', right:'$$', display:true}, {left:'$', right:'$', display:false}], throwOnError:false}); }catch(e){} }
 const noDot = s=> String(s || '').trim().replace(/\.+$/, '');
+
+/* ---------- cài app lên màn hình (0.3.1) ----------
+   Android/Chrome: giữ sự kiện beforeinstallprompt để nút "Cài IMs" mở hộp cài của máy. iPhone: Apple không cho web tự cài → hướng dẫn Chia sẻ → Thêm vào MH chính.
+   Trình duyệt trong Zalo/Facebook/Messenger không cài được → nhắc mở bằng Chrome/Safari. */
+let INST = null, INSTALLED = false;
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); INST = e; if(location.hash === '#/caidat') vCai(); });
+window.addEventListener('appinstalled', ()=>{ INST = null; INSTALLED = true; if(location.hash === '#/caidat') vCai(); });
+const UA = navigator.userAgent || '';
+const standalone = ()=> (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+const isIOS = ()=> /iPhone|iPad|iPod/.test(UA) || (/Macintosh/.test(UA) && navigator.maxTouchPoints > 1);
+const inApp = ()=> /Zalo|FBAN|FBAV|FB_IAB|Messenger|Instagram|Line\/|TikTok/i.test(UA);
+const APP_URL = 'https://chudinhcoi-afk.github.io/ims/';
 
 /* ---------- gói học (0.3) ----------
    Chưa có gói: mỗi ngày làm miễn phí FREE câu (đếm theo DB.days). Có gói còn hạn, hoặc tài khoản quản trị: không giới hạn.
@@ -97,7 +110,7 @@ function vTienDo(){
   gs.forEach(g=>{ const ks = KEYS.filter(k=> G[k].grade === g), cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b);
     h += `<h2>Lớp ${g}</h2>` + cis.map(ci=>{ const a = ks.filter(k=> G[k].ci === ci), done = a.filter(k=> (pct(k) || 0) >= 80).length;
       return `<div class="card" style="padding:10px 14px"><div class="row" style="justify-content:space-between"><span>${esc(chName(g, ci))}</span><span class="muted">${done}/${a.length} dạng thành thạo</span></div><div class="bar"><i style="width:${a.length ? Math.round(100*done/a.length) : 0}%"></i></div></div>`; }).join(''); });
-  h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. ${C && C.state === 'in' && C.user ? `Tiến độ được lưu vào tài khoản ${esc(C.user.email || '')}.` : C && C.state !== 'off' ? `Dữ liệu đang lưu trên máy này. <a href="#/taikhoan">Đăng nhập</a> để không mất tiến độ khi đổi máy.` : 'Dữ liệu lưu trên máy này.'}</p><p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
+  h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. ${C && C.state === 'in' && C.user ? `Tiến độ được lưu vào tài khoản ${esc(C.user.email || '')}.` : C && C.state !== 'off' ? `Dữ liệu đang lưu trên máy này. <a href="#/taikhoan">Đăng nhập</a> để không mất tiến độ khi đổi máy.` : 'Dữ liệu lưu trên máy này.'}</p>${standalone() ? '' : `<a class="btn sec" href="#/caidat" style="display:block;text-align:center;margin:8px 0">📲 Cài IMs lên màn hình</a>`}<p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
   $('view').innerHTML = h; }
 /* ---------- phiên làm bài ---------- */
 const goLam = ()=>{ if(location.hash === '#/lam') vLam(); else location.hash = '#/lam'; };
@@ -130,6 +143,29 @@ function vKetQua(){
 function vXem(){ if(!S || !S.res){ location.hash = '#/de'; return; } const i = S.rv || 0, c = S.items[i];
   $('view').innerHTML = `<div class="qhead"><a class="back" href="#/ketqua">‹</a><span>Câu ${i + 1}/${S.items.length}</span></div>${qHtml(c, i)}<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Đúng' : '✗ Sai'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px"><button class="btn sec" ${i ? '' : 'disabled'} onclick="IMS.review(${i - 1})">‹ Câu trước</button><button class="btn sec" ${i < S.items.length - 1 ? '' : 'disabled'} onclick="IMS.review(${i + 1})">Câu sau ›</button></div>`;
   math($('view')); window.scrollTo(0, 0); }
+/* ---------- trang cài đặt (0.3.1) ---------- */
+function vCai(){
+  setTab(''); let h = `<div class="qhead"><a class="back" href="#/luyen">‹</a><span>Cài IMs lên màn hình</span></div>`;
+  const step = (n, t)=> `<div class="step"><b>${n}</b><span>${t}</span></div>`;
+  if(standalone() || INSTALLED) h += `<div class="fb ok">✓ IMs đã được cài trên máy này. Từ nay em mở IMs bằng biểu tượng <b>∞ IMs</b> trên màn hình.</div><a class="btn" style="display:block;text-align:center" href="#/luyen">Vào luyện tập ›</a>`;
+  else if(inApp()) h += `<div class="card"><b>Em đang mở IMs trong ${/Zalo/i.test(UA) ? 'Zalo' : 'ứng dụng nhắn tin'}</b><p class="muted" style="margin:6px 0 0">Trình duyệt trong Zalo/Facebook không cài được ứng dụng. Hãy mở IMs bằng ${isIOS() ? 'Safari' : 'Chrome'}:</p></div>`
+      + step(1, `Bấm nút <b>⋯</b> (hoặc <b>⋮</b>) ở góc trên bên phải, chọn <b>Mở bằng trình duyệt</b> / <b>Mở trong ${isIOS() ? 'Safari' : 'Chrome'}</b>.`)
+      + step(2, `Hoặc bấm nút dưới đây để chép link, rồi dán vào ${isIOS() ? 'Safari' : 'Chrome'}.`)
+      + `<button class="btn gold" style="width:100%" onclick="IMS.copyLink()">Chép link cài đặt</button><div class="copy" id="cpMsg">${APP_URL}#/caidat</div>`;
+  else if(isIOS()) h += `<div class="card"><b>Cài trên iPhone / iPad (2 bước)</b><p class="muted" style="margin:6px 0 0">Mở trang này bằng <b>Safari</b> rồi làm như sau:</p></div>`
+      + step(1, `Bấm nút <b>Chia sẻ</b> <span class="ic">⬆︎</span> ở thanh dưới cùng của Safari (iPad: góc trên bên phải).`)
+      + step(2, `Kéo xuống, chọn <b>Thêm vào MH chính</b> (Add to Home Screen) → bấm <b>Thêm</b>.`)
+      + `<p class="muted">Xong rồi, trên màn hình có biểu tượng <b>∞ IMs</b>. Mở IMs từ biểu tượng đó để dùng như một ứng dụng, luyện được cả khi mất mạng.</p>`;
+  else if(INST) h += `<div class="card"><b>Cài IMs như một ứng dụng</b><p class="muted" style="margin:6px 0 0">Có biểu tượng trên màn hình, mở nhanh, toàn màn hình, luyện được cả khi mất mạng. Không cần vào CH Play.</p></div>`
+      + `<button class="btn gold big" style="width:100%" onclick="IMS.install()">📲 Cài IMs lên màn hình</button><p class="muted" style="text-align:center">Máy sẽ hỏi lại một lần — bấm <b>Cài đặt</b>.</p>`;
+  else h += `<div class="card"><b>Cài IMs lên màn hình</b><p class="muted" style="margin:6px 0 0">Nếu không thấy nút cài, em làm thủ công:</p></div>`
+      + step(1, `Mở trang này bằng <b>Chrome</b> (Android) hoặc Chrome/Edge (máy tính).`)
+      + step(2, `Bấm nút <b>⋮</b> ở góc trên bên phải → chọn <b>Thêm vào màn hình chính</b> / <b>Cài đặt ứng dụng</b>. Trên máy tính: bấm biểu tượng cài đặt ở cuối thanh địa chỉ.`)
+      + `<p class="muted">Nếu máy đã cài IMs rồi thì nút cài sẽ không hiện — em tìm biểu tượng <b>∞ IMs</b> trên màn hình.</p>`;
+  $('view').innerHTML = h; }
+async function install(){ if(!INST){ vCai(); return; } INST.prompt(); try{ const r = await INST.userChoice; if(r && r.outcome === 'accepted') INSTALLED = true; }catch(e){} INST = null; vCai(); }
+async function copyLink(){ const u = APP_URL + '#/caidat'; try{ await navigator.clipboard.writeText(u); $('cpMsg').innerHTML = '✓ Đã chép link. Mở ' + (isIOS() ? 'Safari' : 'Chrome') + ', dán vào thanh địa chỉ.'; }catch(e){ $('cpMsg').textContent = u; } }
+
 /* ---------- gói học, quản trị (0.3) ---------- */
 function vGoi(){
   setTab(''); const pl = C && C.plan, u = pl && toDate(pl.until), signed = C && C.state === 'in' && C.user;
@@ -209,6 +245,7 @@ function vTK(){
         + `<a class="card" href="#/goi" style="display:block;color:inherit;text-decoration:none"><div class="row" style="justify-content:space-between"><b>Gói học</b><span>${C.admin ? 'Quản trị · không giới hạn' : paid() ? esc(planLabel(pl)) + (until ? ' · đến ' + until.toLocaleDateString('vi-VN') : '') : `Miễn phí ${FREE} câu/ngày ›`}</span></div></a>`
         + (C.admin ? `<a class="btn gold" href="#/quantri" style="display:block;text-align:center;margin-bottom:12px">Quản trị gói học ›</a>` : '')
         + `<div class="card"><div class="row" style="justify-content:space-between"><b>Lưu tiến độ</b><span class="muted">${C.syncErr ? '' : C.pending ? 'Đang lưu…' : C.lastSync ? 'Đã lưu lúc ' + new Date(C.lastSync).toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'}) : 'Tự động'}</span></div>${C.syncErr ? `<div class="fb no" style="margin-top:8px">${esc(C.syncErr)} Tiến độ vẫn được giữ trên máy và sẽ lưu lại khi có mạng.</div>` : `<p class="muted" style="margin:4px 0 0">Mỗi câu em làm được lưu vào tài khoản. Đăng nhập trên máy khác sẽ thấy cùng tiến độ.</p>`}</div>`
+        + (standalone() ? '' : `<a class="btn sec" href="#/caidat" style="display:block;text-align:center;margin-bottom:12px">📲 Cài IMs lên màn hình</a>`)
         + msgs + `<button class="btn sec" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('out')">Đăng xuất</button>`; }
   }
   $('view').innerHTML = h; }
@@ -242,10 +279,10 @@ function onCloud(st){
   if(st !== 'in' && curUid){ curUid = null; LSK = LS; DB = load(LS); S = null; }
   if(st === 'out' && CF.requireLogin && location.hash !== '#/taikhoan'){ location.hash = '#/taikhoan'; return; }
   const r = location.hash || '';
-  if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem)$/.test(r)) route(); else topRight(); }
+  if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri' || r === '#/caidat'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem)$/.test(r)) route(); else topRight(); }
 function route(){ topRight(); const r = (location.hash || '#/luyen').slice(2);
-  if(C && CF.requireLogin && r !== 'taikhoan' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
-  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT}[r] || vLuyen)(); }
+  if(C && CF.requireLogin && r !== 'taikhoan' && r !== 'caidat' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
+  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai}[r] || vLuyen)(); }
 
 /* ---------- khởi động ---------- */
 async function boot(){
@@ -274,6 +311,7 @@ return {
     S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length}; location.hash = '#/ketqua'; },
   am(m){ AM = m; AERR = AOK = ''; vTK(); }, acct, edit(v){ EDIT = v; AERR = ''; vTK(); },
   review(i){ S.rv = i; location.hash === '#/xem' ? vXem() : (location.hash = '#/xem'); },
+  install, copyLink,
   async refreshPlan(){ if(C) await C.refreshPlan(); vGoi(); topRight(); }, qtFind, qtGrant, qtRevoke, qtList,
 };
 })();
