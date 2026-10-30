@@ -28,7 +28,13 @@ service cloud.firestore {
     }
     match /plans/{uid} {
       allow read: if isMe(uid) || isAdmin();
-      allow write: if isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly(['plan', 'label', 'until', 'note', 'by', 'at'])
+        && request.resource.data.plan in ['3m', '1y', 'thpt', 'free']
+        && request.resource.data.until is timestamp
+        && request.resource.data.by == request.auth.uid
+        && (!('note' in request.resource.data) || (request.resource.data.note is string && request.resource.data.note.size() <= 200));
+      allow delete: if isAdmin();
     }
     match /admins/{uid} {
       allow read: if isMe(uid);

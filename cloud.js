@@ -3,7 +3,7 @@
    Dữ liệu trên Firestore:
      users/{uid}     hồ sơ học sinh: name, grade, school, email, createdAt, lastSeen  (học sinh tự sửa được)
      progress/{uid}  tiến độ: {v, json, dev, updatedAt}                               (học sinh tự sửa được)
-     plans/{uid}     gói đã mua: {plan, until, note}                                  (chỉ giáo viên/quản trị ghi)
+     plans/{uid}     gói đã mua: {plan, label, until, note, by, at}                  (chỉ giáo viên/quản trị ghi)
      admins/{uid}    tài khoản quản trị                                               (tạo tay trong Firebase console) */
 const CLOUD = (()=>{
 const CFG = window.IMS_FIREBASE || null, SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
@@ -73,15 +73,31 @@ function watch(onRemote){ if(!user) return; if(unsub) unsub();   // máy khác c
 document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState === 'hidden') flush(); });
 window.addEventListener('pagehide', ()=> flush());
 
+/* Gói học (0.3) */
+async function refreshPlan(){ if(!user) return plan; const pl = await readDoc('plans'); if(pl !== undefined){ plan = pl; emit(); } return plan; }
+/* Quản trị: tìm học sinh, cấp / thu hồi gói, danh sách gói */
+async function findUsers(q){ q = String(q || '').trim(); if(!q) return [];
+  if(!q.includes('@')){ const s = await fs.collection('users').doc(q).get(); return s.exists ? [{uid:s.id, ...s.data()}] : []; }
+  const s = await fs.collection('users').where('email', '==', q.toLowerCase()).limit(5).get(); let r = s.docs.map(d=> ({uid:d.id, ...d.data()}));
+  if(!r.length && q !== q.toLowerCase()){ const s2 = await fs.collection('users').where('email', '==', q).limit(5).get(); r = s2.docs.map(d=> ({uid:d.id, ...d.data()})); }
+  return r; }
+async function planOf(uid){ const s = await fs.collection('plans').doc(uid).get(); return s.exists ? s.data() : null; }
+async function setPlan(uid, code, label, until, note){
+  await fs.collection('plans').doc(uid).set({plan:code, label, until:firebase.firestore.Timestamp.fromDate(until), note:String(note || '').slice(0, 200), by:user.uid, at:firebase.firestore.FieldValue.serverTimestamp()});
+  if(uid === user.uid) await refreshPlan(); }
+async function listPlans(){ const s = await fs.collection('plans').orderBy('until', 'desc').limit(100).get(); const out = s.docs.map(d=> ({uid:d.id, ...d.data()}));
+  await Promise.all(out.map(async o=>{ try{ const u = await fs.collection('users').doc(o.uid).get(); o.user = u.exists ? u.data() : null; }catch(e){ o.user = null; } }));
+  return out; }
+
 /* Tài khoản */
-async function saveProfile(p){ const o = {name:String(p.name || '').trim().slice(0, 60), grade:+p.grade || 12, school:String(p.school || '').trim().slice(0, 80), email:user.email || ''};
+async function saveProfile(p){ const o = {name:String(p.name || '').trim().slice(0, 60), grade:+p.grade || 12, school:String(p.school || '').trim().slice(0, 80), email:String(user.email || '').toLowerCase()};
   if(!profile) o.createdAt = firebase.firestore.FieldValue.serverTimestamp();
   o.lastSeen = firebase.firestore.FieldValue.serverTimestamp();
   await ref('users').set(o, {merge:true}); profile = Object.assign({}, profile, o); if(o.name && user.displayName !== o.name) user.updateProfile({displayName:o.name}).catch(()=>{}); emit(); }
 const api = {
   get state(){ return state; }, get user(){ return user; }, get profile(){ return profile; }, get plan(){ return plan; }, get admin(){ return admin; }, get loaded(){ return loaded; },
   get lastSync(){ return lastSync; }, get syncErr(){ return syncErr; }, get pending(){ return !!pending; }, get config(){ return CFG; },
-  on(f){ subs.push(f); }, init, merge, msg, pull, push, flush, watch, saveProfile,
+  on(f){ subs.push(f); }, init, merge, msg, pull, push, flush, watch, saveProfile, refreshPlan, findUsers, planOf, setPlan, listPlans,
   ready(){ ready = true; },
   async signUp(email, pass, p){ const r = await auth.createUserWithEmailAndPassword(email.trim(), pass); if(user !== r.user){ user = r.user; } await saveProfile(p); return r.user; },
   signIn: (email, pass)=> auth.signInWithEmailAndPassword(email.trim(), pass),

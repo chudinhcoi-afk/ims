@@ -98,3 +98,8 @@ body.ims{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .ims .card .fb{margin:4px 0 12px}
 .ims main a{color:var(--acc)}
 @media (max-width:400px){.ims .brand small{display:none}}
+
+/* 0.3: gói học */
+#topRight .free{font-size:12px;padding:4px 10px;border-radius:999px;background:#fff3cd;color:#7a5a00;text-decoration:none;white-space:nowrap}
+.card.plan{display:flex;flex-direction:column;gap:4px}
+.copy{margin-top:10px;padding:8px 10px;border-radius:8px;background:#f2f4f8;word-break:break-all}
