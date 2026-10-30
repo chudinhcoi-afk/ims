@@ -1,14 +1,18 @@
 /* IMs — Infinity Maths: app ôn luyện cho học sinh. Câu hỏi sinh mới mỗi lần từ bộ sinh của MathBank (đã được giáo viên duyệt, danh sách trong pack.json).
-   Giai đoạn 1: luyện từng dạng, làm đề theo chủ đề, ôn lỗi sai, tiến độ — lưu trên máy (chưa đăng nhập). */
+   Giai đoạn 1: luyện từng dạng, làm đề theo chủ đề, ôn lỗi sai, tiến độ.
+   0.2: đăng nhập (email/mật khẩu hoặc Google) và lưu tiến độ lên tài khoản qua cloud.js; chưa cấu hình Firebase thì chỉ lưu trên máy. */
 const IMS = (()=>{
-const VER = '0.1';
+const VER = '0.2';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
 const KN = {TN:'Trắc nghiệm', DS:'Đúng – sai', TLN:'Trả lời ngắn', TL:'Tự luận'}, KS = {TN:'TN', DS:'Đ–S', TLN:'TLN', TL:'TL'};
-let PACK = null, KEYS = [], DB = load(), S = null;   // S: phiên làm bài đang mở
-function load(){ try{ return Object.assign({by:{}, wrong:{}, days:{}, grade:12}, JSON.parse(localStorage.getItem(LS) || '{}')); }catch(e){ return {by:{}, wrong:{}, days:{}, grade:12}; } }
-function save(){ try{ localStorage.setItem(LS, JSON.stringify(DB)); }catch(e){} }
+const C = typeof CLOUD !== 'undefined' ? CLOUD : null, CF = (C && C.config) || {};
+const norm = o=> Object.assign({by:{}, wrong:{}, days:{}, grade:12}, o || {});
+let LSK = LS, PACK = null, KEYS = [], DB = load(LS), S = null;   // LSK: khoá lưu trên máy (khách: ims_v1; đã đăng nhập: ims_v1_u_<uid>). S: phiên làm bài đang mở
+function load(k){ try{ return norm(JSON.parse(localStorage.getItem(k) || '{}')); }catch(e){ return norm(); } }
+function saveLocal(){ try{ localStorage.setItem(LSK, JSON.stringify(DB)); }catch(e){} }
+function save(){ saveLocal(); if(C && LSK !== LS) C.push(DB); }
 const today = ()=> new Date().toISOString().slice(0, 10);
 function record(key, ok){
   const r = DB.by[key] || (DB.by[key] = {n:0, ok:0, st:0}); r.n++; if(ok){ r.ok++; r.st++; } else r.st = 0; r.at = Date.now();
@@ -45,7 +49,10 @@ const answered = c=> c.kind === 'TN' ? !!c.ans : c.kind === 'DS' ? (c.ans || [])
 
 /* ---------- màn hình ---------- */
 function setTab(t){ document.querySelectorAll('#tabs a').forEach(a=> a.classList.toggle('on', a.dataset.t === t)); }
-function topRight(){ const n = DB.days[today()] || 0; $('topRight').textContent = n ? `Hôm nay: ${n} câu` : ''; }
+function topRight(){ const n = DB.days[today()] || 0, t = n ? `<span>Hôm nay: ${n} câu</span>` : '';
+  let a = ''; if(C && C.state !== 'off'){ const u = C.state === 'in' && C.user, nm = u && ((C.profile && C.profile.name) || u.displayName || u.email || '?');
+    a = u ? `<a class="acct in" href="#/taikhoan" title="${esc(nm)}">${esc(String(nm).trim().split(/\s+/).pop().charAt(0).toLocaleUpperCase('vi'))}</a>` : `<a class="acct" href="#/taikhoan">Đăng nhập</a>`; }
+  $('topRight').innerHTML = t + a; }
 function vLuyen(){
   setTab('luyen'); const gs = grades(); if(!gs.includes(DB.grade)) DB.grade = gs.at(-1);
   const ks = KEYS.filter(k=> G[k].grade === DB.grade), cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b);
@@ -73,7 +80,7 @@ function vTienDo(){
   gs.forEach(g=>{ const ks = KEYS.filter(k=> G[k].grade === g), cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b);
     h += `<h2>Lớp ${g}</h2>` + cis.map(ci=>{ const a = ks.filter(k=> G[k].ci === ci), done = a.filter(k=> (pct(k) || 0) >= 80).length;
       return `<div class="card" style="padding:10px 14px"><div class="row" style="justify-content:space-between"><span>${esc(chName(g, ci))}</span><span class="muted">${done}/${a.length} dạng thành thạo</span></div><div class="bar"><i style="width:${a.length ? Math.round(100*done/a.length) : 0}%"></i></div></div>`; }).join(''); });
-  h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. Dữ liệu lưu trên máy này.</p><p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
+  h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. ${C && C.state === 'in' && C.user ? `Tiến độ được lưu vào tài khoản ${esc(C.user.email || '')}.` : C && C.state !== 'off' ? `Dữ liệu đang lưu trên máy này. <a href="#/taikhoan">Đăng nhập</a> để không mất tiến độ khi đổi máy.` : 'Dữ liệu lưu trên máy này.'}</p><p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
   $('view').innerHTML = h; }
 /* ---------- phiên làm bài ---------- */
 const goLam = ()=>{ if(location.hash === '#/lam') vLam(); else location.hash = '#/lam'; };
@@ -105,8 +112,79 @@ function vKetQua(){
 function vXem(){ if(!S || !S.res){ location.hash = '#/de'; return; } const i = S.rv || 0, c = S.items[i];
   $('view').innerHTML = `<div class="qhead"><a class="back" href="#/ketqua">‹</a><span>Câu ${i + 1}/${S.items.length}</span></div>${qHtml(c, i)}<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Đúng' : '✗ Sai'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px"><button class="btn sec" ${i ? '' : 'disabled'} onclick="IMS.review(${i - 1})">‹ Câu trước</button><button class="btn sec" ${i < S.items.length - 1 ? '' : 'disabled'} onclick="IMS.review(${i + 1})">Câu sau ›</button></div>`;
   math($('view')); window.scrollTo(0, 0); }
+/* ---------- tài khoản ---------- */
+let AM = 'login', BUSY = false, AERR = '', AOK = '', EDIT = false, curUid = null, FORM = {};   // FORM: giữ chữ đã gõ khi vẽ lại màn hình
+const gradeSel = (id, v)=> `<select id="${id}" class="inp">${[10, 11, 12].map(g=> `<option value="${g}" ${+(id in FORM ? FORM[id] : v) === g ? 'selected' : ''}>Lớp ${g}</option>`).join('')}</select>`;
+const fld = (lab, html)=> `<label class="fl"><span>${lab}</span>${html}</label>`;
+const inp = (id, type, ph, v)=> `<input id="${id}" class="inp" type="${type}" placeholder="${ph}" value="${esc(id in FORM ? FORM[id] : v || '')}" ${type === 'email' ? 'autocomplete="email" autocapitalize="off"' : type === 'password' ? 'autocomplete="current-password"' : ''}>`;
+const val = id=> ($(id) && $(id).value || '').trim();
+function vTK(){
+  document.querySelectorAll('#view .inp').forEach(x=>{ FORM[x.id] = x.value; });
+  setTab(''); let h = `<div class="qhead"><a class="back" href="#/luyen">‹</a><span>Tài khoản</span></div>`;
+  const st = C ? C.state : 'off', msgs = (AERR ? `<div class="fb no">${esc(AERR)}</div>` : '') + (AOK ? `<div class="fb ok">${esc(AOK)}</div>` : '');
+  if(st === 'off') h += `<div class="empty">Bản này chưa bật đăng nhập. Tiến độ lưu trên máy.</div>`;
+  else if(st === 'loading') h += `<div class="loading">Đang kết nối…</div>`;
+  else if(st === 'offline') h += `<div class="card"><b>Chưa kết nối được máy chủ</b><p class="muted">Có thể máy đang mất mạng. Em vẫn luyện tập được, tiến độ lưu tạm trên máy này và sẽ được gộp vào tài khoản khi đăng nhập.</p><button class="btn" style="width:100%" onclick="location.reload()">Thử lại</button></div>`;
+  else if(st === 'out'){
+    if(CF.requireLogin) h += `<div class="notice">Đăng nhập để bắt đầu luyện tập. Tiến độ của em được lưu vào tài khoản, đổi máy vẫn còn.</div>`;
+    h += `<div class="chips">${[['login', 'Đăng nhập'], ['signup', 'Tạo tài khoản']].map(([m, t])=> `<button class="chip ${AM === m || (m === 'login' && AM === 'reset') ? 'on' : ''}" onclick="IMS.am('${m}')">${t}</button>`).join('')}</div><div class="card">`;
+    if(AM === 'signup') h += fld('Họ và tên', inp('fName', 'text', 'Nguyễn Văn An')) + fld('Lớp', gradeSel('fGrade', DB.grade)) + fld('Trường <span class="muted">(không bắt buộc)</span>', inp('fSchool', 'text', 'THPT …'))
+      + fld('Email', inp('fEmail', 'email', 'em@gmail.com')) + fld('Mật khẩu <span class="muted">(ít nhất 6 ký tự)</span>', inp('fPass', 'password', '')) + msgs
+      + `<button class="btn gold" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('signup')">Tạo tài khoản</button>`;
+    else if(AM === 'reset') h += `<p class="muted" style="margin-top:0">Nhập email đã đăng ký. Máy chủ sẽ gửi thư có đường dẫn đặt mật khẩu mới.</p>` + fld('Email', inp('fEmail', 'email', 'em@gmail.com')) + msgs
+      + `<button class="btn" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('reset')">Gửi thư đặt lại mật khẩu</button><p style="text-align:center;margin:10px 0 0"><a href="javascript:IMS.am('login')">‹ Quay lại đăng nhập</a></p>`;
+    else h += fld('Email', inp('fEmail', 'email', 'em@gmail.com')) + fld('Mật khẩu', inp('fPass', 'password', '')) + msgs
+      + `<button class="btn" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('login')">Đăng nhập</button><p style="text-align:center;margin:10px 0 0"><a href="javascript:IMS.am('reset')">Quên mật khẩu?</a></p>`;
+    h += `</div>`;
+    if(AM !== 'reset' && CF.google !== false) h += `<div class="or"><span>hoặc</span></div><button class="btn sec gg" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('google')"><b>G</b> Tiếp tục với Google</button>`;
+    if(Object.keys(DB.by).length) h += `<p class="muted">Tiến độ em đã làm trên máy này (${Object.values(DB.by).reduce((s, r)=> s + r.n, 0)} câu) sẽ được gộp vào tài khoản sau khi đăng nhập.</p>`;
+  } else {
+    const u = C.user, p = C.profile;
+    if(!C.loaded) h += `<div class="loading">Đang tải hồ sơ…</div>`;
+    else if(!p || EDIT){ h += `<div class="card"><b>${p ? 'Sửa hồ sơ' : 'Hoàn tất hồ sơ'}</b>${p ? '' : '<p class="muted" style="margin:4px 0 0">Cho thầy cô biết em là ai và học lớp mấy.</p>'}`
+        + fld('Họ và tên', inp('fName', 'text', 'Nguyễn Văn An', (p && p.name) || u.displayName)) + fld('Lớp', gradeSel('fGrade', (p && p.grade) || DB.grade)) + fld('Trường <span class="muted">(không bắt buộc)</span>', inp('fSchool', 'text', 'THPT …', p && p.school)) + msgs
+        + `<div class="row"><button class="btn gold" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('profile')">Lưu</button>${p ? `<button class="btn sec" onclick="IMS.edit(false)">Huỷ</button>` : ''}</div></div>`; }
+    else { const pl = C.plan, until = pl && pl.until && (pl.until.toDate ? pl.until.toDate() : new Date(pl.until));
+      h += `<div class="card prof"><div class="av">${esc(String(p.name || '?').trim().split(/\s+/).pop().charAt(0).toLocaleUpperCase('vi'))}</div><div style="flex:1;min-width:0"><b>${esc(p.name || '')}</b>${C.admin ? ' <span class="kind TL">Quản trị</span>' : ''}<div class="muted">${esc(u.email || '')}</div><div class="muted">Lớp ${esc(p.grade)}${p.school ? ' · ' + esc(p.school) : ''}</div></div><button class="btn sec sm" onclick="IMS.edit(true)">Sửa</button></div>`
+        + `<div class="card"><div class="row" style="justify-content:space-between"><b>Gói học</b><span>${pl && pl.plan && pl.plan !== 'free' ? esc(pl.plan) + (until ? ' · đến ' + until.toLocaleDateString('vi-VN') : '') : 'Miễn phí (giai đoạn thử)'}</span></div></div>`
+        + `<div class="card"><div class="row" style="justify-content:space-between"><b>Lưu tiến độ</b><span class="muted">${C.syncErr ? '' : C.pending ? 'Đang lưu…' : C.lastSync ? 'Đã lưu lúc ' + new Date(C.lastSync).toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'}) : 'Tự động'}</span></div>${C.syncErr ? `<div class="fb no" style="margin-top:8px">${esc(C.syncErr)} Tiến độ vẫn được giữ trên máy và sẽ lưu lại khi có mạng.</div>` : `<p class="muted" style="margin:4px 0 0">Mỗi câu em làm được lưu vào tài khoản. Đăng nhập trên máy khác sẽ thấy cùng tiến độ.</p>`}</div>`
+        + msgs + `<button class="btn sec" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('out')">Đăng xuất</button>`; }
+  }
+  $('view').innerHTML = h; }
+async function acct(what){
+  if(BUSY) return; AERR = AOK = ''; const g = +val('fGrade') || DB.grade;
+  if(what === 'signup' && !val('fName')){ AERR = 'Hãy nhập họ và tên.'; return vTK(); }
+  if(what === 'profile' && !val('fName')){ AERR = 'Hãy nhập họ và tên.'; return vTK(); }
+  const f = {name:val('fName'), grade:g, school:val('fSchool')}, em = val('fEmail'), pw = $('fPass') ? $('fPass').value : '';
+  BUSY = true; vTK();
+  try{
+    if(what === 'login') await C.signIn(em, pw);
+    else if(what === 'signup'){ await C.signUp(em, pw, f); DB.grade = g; save(); }
+    else if(what === 'google') await C.google();
+    else if(what === 'reset'){ await C.reset(em); AOK = 'Đã gửi thư. Mở hộp thư (cả mục Thư rác) để đặt mật khẩu mới.'; }
+    else if(what === 'profile'){ await C.saveProfile(f); EDIT = false; if(DB.grade !== g){ DB.grade = g; save(); } }
+    else if(what === 'out') await C.signOut();
+    if(what !== 'reset' && what !== 'google'){ FORM = {}; document.querySelectorAll('#view .inp').forEach(x=> x.removeAttribute('id')); }
+  }catch(e){ AERR = C.msg(e); console.warn(e); }
+  BUSY = false; if(location.hash === '#/taikhoan') vTK(); topRight(); }
+async function syncAccount(uid){   // vừa đăng nhập: gộp tiến độ trên máy (của tài khoản + của khách) với bản trên máy chủ
+  const key = LS + '_u_' + uid, mine = load(key), guest = load(LS), remote = await C.pull();
+  if(curUid !== uid) return;
+  let db = remote ? C.merge(mine, remote) : mine;
+  if(Object.keys(guest.by).length){ db = C.merge(guest, db); try{ localStorage.setItem(LS, JSON.stringify({grade:guest.grade})); }catch(e){} }
+  LSK = key; DB = norm(db); saveLocal();
+  if(remote === undefined){ setTimeout(()=>{ if(curUid === uid) syncAccount(uid); }, 20000); }   // chưa đọc được máy chủ: chưa ghi đè, thử lại sau
+  else { C.ready(); C.push(DB); C.watch(r=>{ DB = norm(C.merge(DB, r)); saveLocal(); if(/^#\/(luyen|sai|tiendo)?$/.test(location.hash || '')) route(); else topRight(); }); }
+  route(); }
+function onCloud(st){
+  if(st === 'in' && C.user && curUid !== C.user.uid){ curUid = C.user.uid; AERR = ''; syncAccount(curUid); }
+  if(st !== 'in' && curUid){ curUid = null; LSK = LS; DB = load(LS); S = null; }
+  if(st === 'out' && CF.requireLogin && location.hash !== '#/taikhoan'){ location.hash = '#/taikhoan'; return; }
+  const r = location.hash || '';
+  if(r === '#/taikhoan'){ vTK(); topRight(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem)$/.test(r)) route(); else topRight(); }
 function route(){ topRight(); const r = (location.hash || '#/luyen').slice(2);
-  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem}[r] || vLuyen)(); }
+  if(C && CF.requireLogin && r !== 'taikhoan' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
+  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK}[r] || vLuyen)(); }
 
 /* ---------- khởi động ---------- */
 async function boot(){
@@ -114,7 +192,8 @@ async function boot(){
   if(PACK && Array.isArray(PACK.keys) && PACK.keys.length) KEYS = PACK.keys.filter(k=> G[k]);
   else { PACK = {dev:true}; KEYS = Object.keys(G).filter(k=> G[k].grade >= 10); }
   KEYS = KEYS.filter(k=> PPCT[G[k].grade] && PPCT[G[k].grade][G[k].ci]);
-  window.addEventListener('hashchange', route); route();
+  window.addEventListener('hashchange', ()=>{ if(location.hash === '#/taikhoan'){ AERR = AOK = ''; EDIT = false; FORM = {}; } route(); }); route();
+  if(C){ C.on(onCloud); C.init(); }
   if('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 boot();
@@ -132,6 +211,7 @@ return {
   go(d){ S.i = Math.max(0, Math.min(S.items.length - 1, S.i + d)); vLam(); },
   submit(){ const left = S.items.filter(c=> !answered(c)).length; if(left && !confirm(`Còn ${left} câu chưa làm. Vẫn nộp bài?`)) return;
     S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length}; location.hash = '#/ketqua'; },
+  am(m){ AM = m; AERR = AOK = ''; vTK(); }, acct, edit(v){ EDIT = v; AERR = ''; vTK(); },
   review(i){ S.rv = i; location.hash === '#/xem' ? vXem() : (location.hash = '#/xem'); },
 };
 })();
