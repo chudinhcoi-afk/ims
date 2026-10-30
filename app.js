@@ -1,8 +1,9 @@
 /* IMs — Infinity Maths: app ôn luyện cho học sinh. Câu hỏi sinh mới mỗi lần từ bộ sinh của MathBank (đã được giáo viên duyệt, danh sách trong pack.json).
    Giai đoạn 1: luyện từng dạng, làm đề theo chủ đề, ôn lỗi sai, tiến độ.
-   0.2: đăng nhập (email/mật khẩu hoặc Google) và lưu tiến độ lên tài khoản qua cloud.js; chưa cấu hình Firebase thì chỉ lưu trên máy. */
+   0.2: đăng nhập (email/mật khẩu hoặc Google) và lưu tiến độ lên tài khoản qua cloud.js; chưa cấu hình Firebase thì chỉ lưu trên máy.
+   0.3: gói học — chưa có gói thì mỗi ngày làm miễn phí FREE câu; quản trị cấp / gia hạn gói ngay trong app (mục Quản trị). */
 const IMS = (()=>{
-const VER = '0.2';
+const VER = '0.3';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
@@ -25,6 +26,22 @@ const baiName = (gr, ci, bi)=> (((PPCT[gr] || [])[ci] || {}).bai || [])[bi] || '
 const grades = ()=> [...new Set(KEYS.map(k=> G[k].grade))].sort((a, b)=> a - b);
 function math(el){ try{ renderMathInElement(el, {delimiters:[{left:'$$', right:'$$', display:true}, {left:'$', right:'$', display:false}], throwOnError:false}); }catch(e){} }
 const noDot = s=> String(s || '').trim().replace(/\.+$/, '');
+
+/* ---------- gói học (0.3) ----------
+   Chưa có gói: mỗi ngày làm miễn phí FREE câu (đếm theo DB.days). Có gói còn hạn, hoặc tài khoản quản trị: không giới hạn.
+   Lưu ý: khoá ở phía app (đủ cho học sinh phổ thông); muốn chặn tuyệt đối phải sinh câu trên máy chủ. */
+const FREE = 10;
+const PLANS = {'3m':{label:'Gói 3 tháng', months:3}, '1y':{label:'Gói 1 năm', months:12}, 'thpt':{label:'Gói đến hết kỳ thi THPT', thpt:true}};
+const toDate = t=> t ? (t.toDate ? t.toDate() : new Date(t)) : null;
+function planUntil(code, from){      // hạn mới của gói, cộng tiếp từ hạn cũ nếu còn
+  const P = PLANS[code], d = new Date(from); if(P.months){ d.setMonth(d.getMonth() + P.months); d.setHours(23, 59, 59, 0); return d; }
+  const y = d.getMonth() >= 6 ? d.getFullYear() + 1 : d.getFullYear(); return new Date(y, 5, 30, 23, 59, 59);   // 30/6 năm thi
+}
+const planLabel = pl=> pl ? (pl.label || (PLANS[pl.plan] || {}).label || pl.plan) : '';
+function paid(){ if(!C || C.state === 'off' || C.state === 'offline' || C.state === 'loading' || (C.state === 'in' && !C.loaded)) return true; if(C.admin) return true;   // đang tải tài khoản: chưa khoá vội
+  const pl = C.plan, u = pl && toDate(pl.until); return !!(pl && pl.plan && pl.plan !== 'free' && u && u > new Date()); }
+const freeLeft = ()=> Math.max(0, FREE - (DB.days[today()] || 0));
+function canDo(n){ if(paid() || freeLeft() >= n) return true; location.hash = '#/goi'; return false; }
 
 /* ---------- câu hỏi ---------- */
 function newItem(key){ const it = practiceGenItem(key); if(!it) return null; const q = it.data;
@@ -49,7 +66,7 @@ const answered = c=> c.kind === 'TN' ? !!c.ans : c.kind === 'DS' ? (c.ans || [])
 
 /* ---------- màn hình ---------- */
 function setTab(t){ document.querySelectorAll('#tabs a').forEach(a=> a.classList.toggle('on', a.dataset.t === t)); }
-function topRight(){ const n = DB.days[today()] || 0, t = n ? `<span>Hôm nay: ${n} câu</span>` : '';
+function topRight(){ const n = DB.days[today()] || 0, t = !paid() ? `<a class="free" href="#/goi" title="Mỗi ngày làm miễn phí ${FREE} câu">Miễn phí: còn ${freeLeft()}/${FREE}</a>` : n ? `<span>Hôm nay: ${n} câu</span>` : '';
   let a = ''; if(C && C.state !== 'off'){ const u = C.state === 'in' && C.user, nm = u && ((C.profile && C.profile.name) || u.displayName || u.email || '?');
     a = u ? `<a class="acct in" href="#/taikhoan" title="${esc(nm)}">${esc(String(nm).trim().split(/\s+/).pop().charAt(0).toLocaleUpperCase('vi'))}</a>` : `<a class="acct" href="#/taikhoan">Đăng nhập</a>`; }
   $('topRight').innerHTML = t + a; }
@@ -85,11 +102,12 @@ function vTienDo(){
 /* ---------- phiên làm bài ---------- */
 const goLam = ()=>{ if(location.hash === '#/lam') vLam(); else location.hash = '#/lam'; };
 const backOf = d=> (location.hash && !/^#\/(lam|ketqua|xem)/.test(location.hash)) ? location.hash : d;
-function startDang(key){ S = {mode:'dang', keys:[key], items:[newItem(key)], i:0, back:backOf('#/luyen')}; goLam(); }
-function startSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length) return; S = {mode:'sai', keys:ks, items:[newItem(ks[0])], i:0, back:'#/sai', qi:0}; goLam(); }
+function startDang(key){ if(!canDo(1)) return; S = {mode:'dang', keys:[key], items:[newItem(key)], i:0, back:backOf('#/luyen')}; goLam(); }
+function startSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length || !canDo(1)) return; S = {mode:'sai', keys:ks, items:[newItem(ks[0])], i:0, back:'#/sai', qi:0}; goLam(); }
 function startDe(){
   const cis = [...document.querySelectorAll('.deci:checked')].map(x=> +x.value), kinds = DB.deK || ['TN','DS','TLN'], n = DB.deN || 10;
   if(!cis.length){ alert('Hãy chọn ít nhất một chương.'); return; } DB.deSel = {g:DB.grade, cis}; save();
+  if(!paid() && freeLeft() < n){ if(freeLeft() > 0) alert(`Hôm nay em còn ${freeLeft()} câu miễn phí, chưa đủ cho đề ${n} câu. Hãy chọn đề ngắn hơn hoặc mua gói học.`); else location.hash = '#/goi'; return; }
   let ks = KEYS.filter(k=> G[k].grade === DB.grade && cis.includes(G[k].ci) && kinds.includes(G[k].kind || 'TN')); if(!ks.length){ alert('Các chương đã chọn chưa có dạng thuộc hình thức này.'); return; }
   ks = ks.sort(()=> Math.random() - 0.5); const pick = []; for(let i = 0; i < n; i++) pick.push(ks[i % ks.length]);
   const R = {TN:0, DS:1, TLN:2}; pick.sort((a, b)=> R[G[a].kind || 'TN'] - R[G[b].kind || 'TN']);
@@ -112,6 +130,48 @@ function vKetQua(){
 function vXem(){ if(!S || !S.res){ location.hash = '#/de'; return; } const i = S.rv || 0, c = S.items[i];
   $('view').innerHTML = `<div class="qhead"><a class="back" href="#/ketqua">‹</a><span>Câu ${i + 1}/${S.items.length}</span></div>${qHtml(c, i)}<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Đúng' : '✗ Sai'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px"><button class="btn sec" ${i ? '' : 'disabled'} onclick="IMS.review(${i - 1})">‹ Câu trước</button><button class="btn sec" ${i < S.items.length - 1 ? '' : 'disabled'} onclick="IMS.review(${i + 1})">Câu sau ›</button></div>`;
   math($('view')); window.scrollTo(0, 0); }
+/* ---------- gói học, quản trị (0.3) ---------- */
+function vGoi(){
+  setTab(''); const pl = C && C.plan, u = pl && toDate(pl.until), signed = C && C.state === 'in' && C.user;
+  let h = `<div class="qhead"><a class="back" href="#/luyen">‹</a><span>Gói học</span></div>`;
+  if(paid()) h += `<div class="fb ok">${C && C.admin ? 'Tài khoản quản trị: không giới hạn số câu.' : `Em đang dùng ${esc(planLabel(pl))}${u ? ' đến hết ngày ' + u.toLocaleDateString('vi-VN') : ''}. Luyện không giới hạn!`}</div>`;
+  else h += `<div class="card"><b>${freeLeft() ? `Hôm nay em còn ${freeLeft()}/${FREE} câu miễn phí` : `Em đã dùng hết ${FREE} câu miễn phí hôm nay`}</b><p class="muted" style="margin:6px 0 0">Mỗi ngày IMs tặng ${FREE} câu để luyện thử mọi dạng. Mua gói học để luyện không giới hạn, làm đề đủ ${30} câu, ôn hết lỗi sai.</p>${u && u <= new Date() ? `<p class="muted">${esc(planLabel(pl))} của em đã hết hạn ngày ${u.toLocaleDateString('vi-VN')}.</p>` : ''}</div>`;
+  const now = new Date();
+  h += `<h2>Các gói học</h2>` + Object.entries(PLANS).map(([k, P])=> `<div class="card plan"><b>${P.label}</b><span class="muted">${P.months ? 'Luyện không giới hạn trong ' + (P.months === 12 ? '1 năm' : P.months + ' tháng') : 'Luyện không giới hạn đến hết ngày ' + planUntil(k, now).toLocaleDateString('vi-VN') + ' (sau kỳ thi tốt nghiệp THPT)'}</span></div>`).join('');
+  h += `<div class="card"><b>Cách mua</b><p class="muted" style="margin:6px 0 0">Liên hệ thầy/cô phụ trách IMs, báo <b>email tài khoản</b> của em và gói muốn mua. Sau khi thanh toán, gói được kích hoạt ngay trên tài khoản — mở lại mục này là thấy.</p>${signed ? `<div class="copy">Email tài khoản: <b>${esc(C.user.email || '')}</b></div>` : `<a class="btn gold" style="display:block;text-align:center;margin-top:10px" href="#/taikhoan">Đăng nhập / tạo tài khoản để mua gói</a>`}</div>`;
+  if(signed) h += `<button class="btn sec" style="width:100%" onclick="IMS.refreshPlan()">Kiểm tra lại gói của em</button>`;
+  $('view').innerHTML = h; }
+let QT = {q:'', found:null, list:null, msg:'', busy:false};
+function vQT(){
+  setTab(''); if(!C || !C.admin){ location.hash = '#/taikhoan'; return; }
+  let h = `<div class="qhead"><a class="back" href="#/taikhoan">‹</a><span>Quản trị gói học</span></div>`;
+  h += `<div class="card"><b>Tìm học sinh</b><p class="muted" style="margin:4px 0 8px">Nhập email tài khoản (hoặc mã UID). Học sinh phải đăng nhập và lưu hồ sơ ít nhất một lần.</p><div class="row"><input id="qtQ" class="inp" type="email" placeholder="email@gmail.com" value="${esc(QT.q)}" autocapitalize="off" style="flex:1"><button class="btn" ${QT.busy ? 'disabled' : ''} onclick="IMS.qtFind()">Tìm</button></div>${QT.msg ? `<div class="fb ${/^✓/.test(QT.msg) ? 'ok' : 'no'}" style="margin-top:8px">${esc(QT.msg)}</div>` : ''}</div>`;
+  (QT.found || []).forEach((f, i)=>{ const u = f.plan && toDate(f.plan.until), on = u && u > new Date() && f.plan.plan !== 'free';
+    h += `<div class="card"><b>${esc(f.name || '(chưa có tên)')}</b> <span class="muted">· Lớp ${esc(f.grade || '?')}${f.school ? ' · ' + esc(f.school) : ''}</span><div class="muted">${esc(f.email || '')}</div>
+      <div style="margin:8px 0">Gói hiện tại: ${f.plan ? `<b>${esc(planLabel(f.plan))}</b> · ${on ? 'còn hạn đến ' : 'đã hết hạn '}${u ? u.toLocaleDateString('vi-VN') : ''}` : '<b>chưa có</b>'}</div>
+      <input id="qtNote${i}" class="inp" type="text" placeholder="Ghi chú (ví dụ: đã chuyển khoản 31/10)" style="margin-bottom:8px">
+      <div class="chips">${Object.entries(PLANS).map(([k, P])=> `<button class="chip" ${QT.busy ? 'disabled' : ''} onclick="IMS.qtGrant(${i},'${k}')">${on ? 'Gia hạn' : 'Cấp'} ${P.label.replace('Gói ', '')}</button>`).join('')}${f.plan && on ? `<button class="chip" ${QT.busy ? 'disabled' : ''} onclick="IMS.qtRevoke(${i})">Thu hồi</button>` : ''}</div></div>`; });
+  h += `<h2>Danh sách gói đã cấp</h2>` + (QT.list == null ? `<button class="btn sec" style="width:100%" onclick="IMS.qtList()">Tải danh sách</button>` : QT.list.length ? `<div class="card" style="padding:4px 14px">${QT.list.map(o=>{ const u = toDate(o.until), on = u && u > new Date() && o.plan !== 'free', soon = on && (u - new Date()) < 14*864e5;
+      return `<div class="rv"><span class="mk ${on ? 'ok' : 'no'}">${on ? '✓' : '✗'}</span><span style="flex:1">${esc((o.user && o.user.name) || o.uid)}<br><span class="muted">${esc((o.user && o.user.email) || '')} · ${esc(planLabel(o))}</span></span><span class="muted" style="text-align:right">${u ? u.toLocaleDateString('vi-VN') : ''}${soon ? '<br><b style="color:#b3261e">sắp hết hạn</b>' : ''}</span></div>`; }).join('')}</div>` : '<div class="empty">Chưa cấp gói nào.</div>');
+  $('view').innerHTML = h; }
+async function qtFind(){ QT.q = val('qtQ'); QT.msg = ''; QT.found = null; if(!QT.q){ QT.msg = 'Hãy nhập email.'; return vQT(); }
+  QT.busy = true; vQT();
+  try{ const r = await C.findUsers(QT.q); QT.found = await Promise.all(r.map(async u=> ({...u, plan: await C.planOf(u.uid)}))); if(!QT.found.length) QT.msg = 'Không tìm thấy tài khoản có email này. Nhắc học sinh đăng nhập IMs và bấm Lưu hồ sơ trước.'; }
+  catch(e){ QT.msg = C.msg(e); }
+  QT.busy = false; vQT(); }
+async function qtGrant(i, code){ const f = QT.found[i], P = PLANS[code], cur = f.plan && toDate(f.plan.until), base = cur && cur > new Date() && f.plan.plan !== 'free' ? cur : new Date(), until = planUntil(code, base), note = val('qtNote' + i);
+  if(!confirm(`${f.name || f.email}\n${P.label} — hạn đến hết ngày ${until.toLocaleDateString('vi-VN')}${note ? '\nGhi chú: ' + note : ''}\n\nXác nhận cấp gói?`)) return;
+  QT.busy = true; vQT();
+  try{ await C.setPlan(f.uid, code, P.label, until, note); f.plan = await C.planOf(f.uid); QT.msg = `✓ Đã cấp ${P.label} cho ${f.name || f.email} đến ${until.toLocaleDateString('vi-VN')}.`; QT.list = null; }
+  catch(e){ QT.msg = C.msg(e); }
+  QT.busy = false; vQT(); }
+async function qtRevoke(i){ const f = QT.found[i]; if(!confirm(`Thu hồi gói của ${f.name || f.email}? Học sinh quay về ${FREE} câu miễn phí mỗi ngày.`)) return;
+  QT.busy = true; vQT();
+  try{ await C.setPlan(f.uid, 'free', 'Đã thu hồi', new Date(), val('qtNote' + i) || 'thu hồi'); f.plan = await C.planOf(f.uid); QT.msg = `✓ Đã thu hồi gói của ${f.name || f.email}.`; QT.list = null; }
+  catch(e){ QT.msg = C.msg(e); }
+  QT.busy = false; vQT(); }
+async function qtList(){ QT.busy = true; try{ QT.list = await C.listPlans(); }catch(e){ QT.msg = C.msg(e); QT.list = null; } QT.busy = false; vQT(); }
+
 /* ---------- tài khoản ---------- */
 let AM = 'login', BUSY = false, AERR = '', AOK = '', EDIT = false, curUid = null, FORM = {};   // FORM: giữ chữ đã gõ khi vẽ lại màn hình
 const gradeSel = (id, v)=> `<select id="${id}" class="inp">${[10, 11, 12].map(g=> `<option value="${g}" ${+(id in FORM ? FORM[id] : v) === g ? 'selected' : ''}>Lớp ${g}</option>`).join('')}</select>`;
@@ -146,7 +206,8 @@ function vTK(){
         + `<div class="row"><button class="btn gold" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('profile')">Lưu</button>${p ? `<button class="btn sec" onclick="IMS.edit(false)">Huỷ</button>` : ''}</div></div>`; }
     else { const pl = C.plan, until = pl && pl.until && (pl.until.toDate ? pl.until.toDate() : new Date(pl.until));
       h += `<div class="card prof"><div class="av">${esc(String(p.name || '?').trim().split(/\s+/).pop().charAt(0).toLocaleUpperCase('vi'))}</div><div style="flex:1;min-width:0"><b>${esc(p.name || '')}</b>${C.admin ? ' <span class="kind TL">Quản trị</span>' : ''}<div class="muted">${esc(u.email || '')}</div><div class="muted">Lớp ${esc(p.grade)}${p.school ? ' · ' + esc(p.school) : ''}</div></div><button class="btn sec sm" onclick="IMS.edit(true)">Sửa</button></div>`
-        + `<div class="card"><div class="row" style="justify-content:space-between"><b>Gói học</b><span>${pl && pl.plan && pl.plan !== 'free' ? esc(pl.plan) + (until ? ' · đến ' + until.toLocaleDateString('vi-VN') : '') : 'Miễn phí (giai đoạn thử)'}</span></div></div>`
+        + `<a class="card" href="#/goi" style="display:block;color:inherit;text-decoration:none"><div class="row" style="justify-content:space-between"><b>Gói học</b><span>${C.admin ? 'Quản trị · không giới hạn' : paid() ? esc(planLabel(pl)) + (until ? ' · đến ' + until.toLocaleDateString('vi-VN') : '') : `Miễn phí ${FREE} câu/ngày ›`}</span></div></a>`
+        + (C.admin ? `<a class="btn gold" href="#/quantri" style="display:block;text-align:center;margin-bottom:12px">Quản trị gói học ›</a>` : '')
         + `<div class="card"><div class="row" style="justify-content:space-between"><b>Lưu tiến độ</b><span class="muted">${C.syncErr ? '' : C.pending ? 'Đang lưu…' : C.lastSync ? 'Đã lưu lúc ' + new Date(C.lastSync).toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit'}) : 'Tự động'}</span></div>${C.syncErr ? `<div class="fb no" style="margin-top:8px">${esc(C.syncErr)} Tiến độ vẫn được giữ trên máy và sẽ lưu lại khi có mạng.</div>` : `<p class="muted" style="margin:4px 0 0">Mỗi câu em làm được lưu vào tài khoản. Đăng nhập trên máy khác sẽ thấy cùng tiến độ.</p>`}</div>`
         + msgs + `<button class="btn sec" style="width:100%" ${BUSY ? 'disabled' : ''} onclick="IMS.acct('out')">Đăng xuất</button>`; }
   }
@@ -181,10 +242,10 @@ function onCloud(st){
   if(st !== 'in' && curUid){ curUid = null; LSK = LS; DB = load(LS); S = null; }
   if(st === 'out' && CF.requireLogin && location.hash !== '#/taikhoan'){ location.hash = '#/taikhoan'; return; }
   const r = location.hash || '';
-  if(r === '#/taikhoan'){ vTK(); topRight(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem)$/.test(r)) route(); else topRight(); }
+  if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem)$/.test(r)) route(); else topRight(); }
 function route(){ topRight(); const r = (location.hash || '#/luyen').slice(2);
   if(C && CF.requireLogin && r !== 'taikhoan' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
-  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK}[r] || vLuyen)(); }
+  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT}[r] || vLuyen)(); }
 
 /* ---------- khởi động ---------- */
 async function boot(){
@@ -206,12 +267,13 @@ return {
   typed(i, v){ const c = S.items[i]; c.ans = v; const b = $('chk'); if(b) b.disabled = !String(v).trim(); },
   check(){ const c = S.items[S.i]; c.done = true; if(c.kind !== 'TL'){ c.ok = grade(c); record(c.key, c.ok); } vLam(); topRight(); },
   self(ok){ const c = S.items[S.i]; c.ok = ok; record(c.key, ok); vLam(); topRight(); },
-  again(){ const k = S.items[S.i].key, it = newItem(k); if(it){ S.items.push(it); S.i = S.items.length - 1; } vLam(); },
-  nextSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length){ alert('Hết lỗi sai rồi. Giỏi lắm!'); location.hash = '#/sai'; return; } S.qi = ((S.qi || 0) + 1) % ks.length; const it = newItem(ks[S.qi]); S.items.push(it); S.i = S.items.length - 1; vLam(); },
+  again(){ if(!canDo(1)) return; const k = S.items[S.i].key, it = newItem(k); if(it){ S.items.push(it); S.i = S.items.length - 1; } vLam(); },
+  nextSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length){ alert('Hết lỗi sai rồi. Giỏi lắm!'); location.hash = '#/sai'; return; } if(!canDo(1)) return; S.qi = ((S.qi || 0) + 1) % ks.length; const it = newItem(ks[S.qi]); S.items.push(it); S.i = S.items.length - 1; vLam(); },
   go(d){ S.i = Math.max(0, Math.min(S.items.length - 1, S.i + d)); vLam(); },
   submit(){ const left = S.items.filter(c=> !answered(c)).length; if(left && !confirm(`Còn ${left} câu chưa làm. Vẫn nộp bài?`)) return;
     S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length}; location.hash = '#/ketqua'; },
   am(m){ AM = m; AERR = AOK = ''; vTK(); }, acct, edit(v){ EDIT = v; AERR = ''; vTK(); },
   review(i){ S.rv = i; location.hash === '#/xem' ? vXem() : (location.hash = '#/xem'); },
+  async refreshPlan(){ if(C) await C.refreshPlan(); vGoi(); topRight(); }, qtFind, qtGrant, qtRevoke, qtList,
 };
 })();

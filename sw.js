@@ -1,8 +1,8 @@
 // IMs service worker (0.2): lưu app + bộ câu hỏi vào máy để luyện khi mất mạng; có bản mới thì tự cập nhật ở lần mở sau
-const CACHE = 'ims-v0-2b';
+const CACHE = 'ims-v0-3';
 const CORE = ['./', 'index.html', 'app.css', 'app.js', 'engine.js', 'engine.css', 'pack.json', 'cloud.js', 'firebase-config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png',
   'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js'];
-self.addEventListener('install', e=> e.waitUntil(caches.open(CACHE).then(c=> c.addAll(CORE)).then(()=> self.skipWaiting())));
+self.addEventListener('install', e=> e.waitUntil(caches.open(CACHE).then(c=> c.addAll(CORE.map(u=> new Request(u, {cache:'reload'})))).then(()=> self.skipWaiting())));
 self.addEventListener('activate', e=> e.waitUntil(caches.keys().then(ks=> Promise.all(ks.filter(k=> k !== CACHE).map(k=> caches.delete(k)))).then(()=> self.clients.claim())));
 self.addEventListener('fetch', e=>{
   const u = new URL(e.request.url); if(e.request.method !== 'GET') return;
