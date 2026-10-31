@@ -695,6 +695,7 @@ body[data-step="8"] header.app h1{font-size:20px}
 .pdf-omr .omr-bk span:first-child{flex:1} .pdf-omr .omr-bk i{display:inline-block; min-width:16mm; flex:1; border-bottom:.3mm dotted #444; height:5mm}
 .pdf-omr-in{margin:1mm 0 3mm; break-inside:avoid}
 .pdf-omr-in svg{width:100%; height:auto; display:block}
+.pdf-pad .pdf-padn{color:#999;font-style:italic;text-align:center;margin-top:40mm} @media print{ .pdf-pad .pdf-padn{display:none} }
 @media print{ .pdf-omr{break-inside:avoid} .pdf-omr .omr-ln{height:7.6mm} .pdf-sheet{padding-top:1.5mm !important} }   /* dấu thanh dòng đầu trang sau không in lọt xuống đáy trang trước */
 
 
