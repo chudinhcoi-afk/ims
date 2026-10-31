@@ -413,6 +413,7 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 .wak s{position:absolute;text-decoration:none;font-size:2.7mm;white-space:nowrap}
 .wak em{position:absolute;display:block;font-style:normal;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .wsg-card{display:inline-block;vertical-align:top;width:300px;margin:0 10px 12px 0;border:1px solid #e3e6ee;border-radius:10px;padding:8px;background:#fff}
+.wsg-cmt{margin-top:6px;padding:6px 8px;border-left:3px solid #b3261e;background:#fdf3f2;font-size:12.5px;line-height:1.4}
 .wsg-card img{width:100%;border-radius:6px;cursor:zoom-in;display:block}
 .ws-pt{font-weight:400}
 .ws-part{margin-left:1.2em;break-inside:avoid}
