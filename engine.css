@@ -484,6 +484,17 @@ table.matrix td.mx-lack{background:#fbdede}
   .ws-sopt-g{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap;border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:3px 10px}
   .ws-sopt-g b{color:#f3d27a}
 
+/* V1.60: ô chọn nhiều chuyên đề ở Ôn luyện */
+.pr-filter > div > select{display:block}      /* ô chọn dạng khối: không còn khe dòng chữ bên dưới, các ô thẳng hàng đáy */
+.pr-topics{position:relative;display:block;min-width:260px;max-width:460px;margin:0!important;padding:0!important;border:0!important;background:none!important}   /* bỏ lề của kiểu details chung */
+.pr-topics>summary{cursor:pointer;list-style:none;box-sizing:border-box;margin:0!important;height:29px;line-height:17px;font-size:13.5px;border:1px solid var(--line);border-radius:6px;padding:5px 26px 5px 8px;background:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.pr-topics>summary::after{content:'▾';position:absolute;right:10px;top:50%;transform:translateY(-50%);opacity:.6}
+.pr-topics>summary::-webkit-details-marker{display:none}
+.pr-topics-panel{position:absolute;z-index:50;left:0;top:calc(100% + 4px);width:min(640px,92vw);max-height:420px;overflow:auto;background:#fff;border:1px solid #d9c48a;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.15);padding:8px 10px}
+.pr-topics-panel label{display:flex;gap:8px;align-items:flex-start;padding:5px 4px;border-radius:6px;cursor:pointer;line-height:1.35}
+.pr-topics-panel label:hover{background:var(--gold-soft,#f6ecd2)}
+.pr-topic-all{border-bottom:1px solid var(--line);margin-bottom:4px;padding-bottom:7px!important}
+
 
 /* V1.1: banner mới */
 header.app{
