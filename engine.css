@@ -416,6 +416,7 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 .wsg-cmt{margin-top:6px;padding:6px 8px;border-left:3px solid #b3261e;background:#fdf3f2;font-size:12.5px;line-height:1.4}
 .wsg-card img{width:100%;border-radius:6px;cursor:zoom-in;display:block}
 .ws-pt{font-weight:400}
+.bai-ma{display:inline-block;font:700 10.5px/1.5 ui-monospace,Menlo,Consolas,monospace;color:#7a5a12;background:#f6ecd2;border:1px solid #d9c48a;border-radius:4px;padding:0 4px;margin-right:5px;vertical-align:1px;white-space:nowrap}
 .ws-part{margin-left:1.2em;break-inside:avoid}
 .ws-parts.two{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
 .ws-q{break-inside:auto}
@@ -424,6 +425,14 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 .ws .pq{position:relative}
 .ws-ladj{position:absolute;right:-13mm;top:0;display:flex;flex-direction:column;align-items:center;gap:1px;font:600 11px/1 Arial,sans-serif;color:#555;opacity:.35;transition:opacity .15s}
 .ws .pq:hover .ws-ladj{opacity:1}
+.ws-ladj > :not(:first-child){display:none!important}   /* V2.09: bình thường chỉ hiện nút ✕ (câu một dòng không bị chồng nút); rê chuột vào câu mới hiện nút chỉnh dòng */
+.ws .pq:hover .ws-ladj{z-index:6;background:#fff;border-radius:6px;box-shadow:0 1px 6px rgba(0,0,0,.25);padding:3px 2px}
+.ws .pq:hover .ws-ladj > :not(:first-child){display:flex!important}
+.pdf-sheet.ws{position:relative}
+.ws-main .ws-sec{break-after:avoid}
+.ws-pbrk{position:absolute;left:6mm;right:6mm;height:0;border-top:1.6px dashed #c0392b;pointer-events:none;z-index:4}
+.ws-pbrk span{position:absolute;left:0;top:-9px;background:#fff;color:#c0392b;font:600 10.5px/16px Arial,sans-serif;padding:0 6px;border:1px solid #e3a59d;border-radius:8px}
+@media print{.ws-pbrk{display:none!important}}
 .ws-ladj small{font-size:9px;font-weight:700;color:#8a6d1f}
 .ws-ladj button{width:20px;height:18px;padding:0;border:1px solid #bbb;border-radius:4px;background:#fff;color:#333;cursor:pointer;font:700 13px/1 Arial,sans-serif}
 .ws-ladj button:hover{background:#f3e3b5}
@@ -622,14 +631,14 @@ body[data-step="8"] header.app h1{font-size:20px}
 .ws-side .ws-sopt-g label:last-child{grid-column:1/-1}
 .ws-btns{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px}
 .ws-note{margin:0 6px 4px; font-size:11.5px; color:#b9c1d9}
-.ws-foot{position:sticky; bottom:0; margin-top:auto; display:flex; gap:8px; align-items:center; padding:10px 14px; background:#121a33; border-top:1px solid rgba(255,255,255,.15)}
-.ws-foot .btn.gold{flex:1; font-size:14px; padding:9px 12px}
+.ws-sfoot{position:sticky; bottom:0; margin-top:auto; display:flex; gap:8px; align-items:center; padding:10px 14px; background:#121a33; border-top:1px solid rgba(255,255,255,.15)}
+.ws-sfoot .btn.gold{flex:1; font-size:14px; padding:9px 12px}
 .ws-main{flex:1 1 auto; min-width:0; padding-bottom:20px}
 .ws-tip{max-width:210mm; margin:10px auto 0; text-align:left; background:rgba(0,0,0,.18); border-radius:8px; padding:6px 12px}
 .ws-tip, .ws-tip summary{color:#e8ecf4 !important}
 .ws-tip summary{cursor:pointer; font-weight:600}
 .ws-tip > div{margin-top:6px}
-@media (max-width:900px){ .ws-wrap{display:block} .ws-side.pdf-bar{position:static; width:auto; height:auto; overflow:visible} .ws-foot{position:sticky; bottom:0} }
+@media (max-width:900px){ .ws-wrap{display:block} .ws-side.pdf-bar{position:static; width:auto; height:auto; overflow:visible} .ws-sfoot{position:sticky; bottom:0} }
 @media print{ .ws-side, .ws-tip{display:none !important} .ws-wrap{display:block} .ws-main{padding:0} }
 
 
