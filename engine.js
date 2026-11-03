@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.19 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.20 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -211,7 +211,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.19';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.20';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -29202,6 +29202,1059 @@ GT(11,3,0,'VD','Thực tế: kim tự tháp kính hình chóp tứ giác đều 
 
 }
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.19'; GEN[k].l1 = 'V2.19'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 1 (5 dạng). Claude viết.
+// Chuỗi: định nghĩa (kiểm tra F' = f) → các nguyên hàm sai khác hằng số, chọn hằng số theo điều kiện → hai nguyên hàm của hàm "không tính được" → ∫ f'(x)dx = f(x) + C (nhận ra đạo hàm) → tìm hệ số để (ax² + bx + c)e^{±x} là nguyên hàm.
+// Hạng tử: {p, q, k, n} = (p/q)·cơ sở; k ∈ x (xⁿ) | sin | cos | exp | ln | inv (1/xⁿ).
+const nhBase = (k, n, pos)=> k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv') return `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhInt = m=> m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+/* 1. TN NB — định nghĩa: chọn hàm số là MỘT nguyên hàm (kiểm tra F' = f) */
+G(12,3,0,'NB','Định nghĩa nguyên hàm: chọn hàm số là một nguyên hàm của f(x) (bẫy: nhầm với đạo hàm, sai dấu sin/cos, quên chia số mũ)', R=>{
+  const k1 = nhKind(R), k2 = nhKind(R); if(k1.k === k2.k) return null;
+  const f = [Object.assign({p:R.nz(-5, 5), q:1}, k1), Object.assign({p:R.nz(-5, 5), q:1}, k2)], pos = f.some(m=> m.k === 'inv');
+  const c0 = R.pick([0, 0, R.nz(-6, 6)]), K = {p:c0, q:1, k:'x', n:0};
+  const F = f.map(nhInt), opt = ts=>{ const all = [...ts, K], fn = nhFn(all, pos); return {t:`$F(x) = ${nhTx(all, pos)}$`, v:nhKeyV(fn), fn}; };
+  const ans = opt(F), cand = [opt([nhBad(f[0])[0], F[1]]), opt([F[0], nhBad(f[1])[0]]), opt([nhBad(f[0])[0], nhBad(f[1])[0]]), opt(f.map(nhDer))];
+  const seen = new Set([ans.v]), wrong = []; R.shuffle(cand).forEach(c=>{ if(!seen.has(c.v) && wrong.length < 3){ seen.add(c.v); wrong.push(c); } }); if(wrong.length < 3) return null;
+  const fT = nhTx(f, pos), fn = nhFn(f, pos), dom = pos ? 'trên khoảng $(0; +\\infty)$' : 'trên $\\mathbb{R}$';
+  const o = {stem:`Hàm số nào sau đây là một nguyên hàm của hàm số $f(x) = ${fT}$ ${dom}?`, ans, wrong,
+    lg:`$F(x)$ là một nguyên hàm của $f(x)$ khi $F'(x) = f(x)$. Dùng $${nhRule(f[0])}$, $${nhRule(f[1])}$ ta có $\\int f(x)\\,dx = ${nhTx(F, pos)} + C$; chọn $C = ${c0}$ được $${ans.t.slice(1, -1)}$.<br>`
+      + `Kiểm tra: $F'(x) = ${fT} = f(x)$. Các phương án còn lại mắc lỗi lấy đạo hàm thay cho nguyên hàm, sai dấu khi lấy nguyên hàm của $\\sin x$, $\\cos x$ hoặc quên chia cho số mũ mới.`,
+    verify:()=> nhIsPrim(o.ans.fn, fn)};
+  return o;
+});
+
+/* 2. Đ–S TH — F là nguyên hàm; F + k, kF; chọn hằng số theo F(0); hai nguyên hàm sai khác hằng số */
+GD(12,3,0,'TH','Các nguyên hàm của một hàm số sai khác nhau một hằng số: kiểm tra F, F + k, kF và tìm nguyên hàm thoả F(0) cho trước (bẫy: lấy C bằng giá trị cho trước)', R=>{
+  const pool = [{k:'x', n:1}, {k:'x', n:2}, {k:'x', n:3}, {k:'sin'}, {k:'cos'}, {k:'exp'}], i1 = R.int(0, 5); let i2 = R.int(0, 5); if(i1 === i2) return null;
+  const f = [Object.assign({p:R.nz(-6, 6), q:1}, pool[i1]), Object.assign({p:R.nz(-6, 6), q:1}, pool[i2])];
+  const F = f.map(nhInt); if(F.some(m=> m.q > 1 && m.p % m.q)) { if(R.rnd() < 0.7) return null; }
+  const fn = nhFn(f), Fn = nhFn(F), F0 = Fn(0); if(!F0) return null;
+  const m = R.nz(-8, 8), n = R.nz(-8, 8), kk = R.pick([2, 3, -1]), sh = R.nz(-5, 5); if(m === n) return null;
+  const C1 = m - F0, bad = R.rnd() < 0.5 ? [nhBad(f[0])[0], F[1]] : [F[0], nhBad(f[1])[0]];
+  const H = x=> Fn(x) + C1, Kf = x=> Fn(x) + n - F0;
+  const add = c=> c ? (c < 0 ? ` - ${-c}` : ` + ${c}`) : '';
+  const items = [
+    claim(R, `Hàm số $G(x) = ${nhTx(F)}$ là một nguyên hàm của $f(x)$ trên $\\mathbb{R}$`, `Hàm số $G(x) = ${nhTx(bad)}$ là một nguyên hàm của $f(x)$ trên $\\mathbb{R}$`, ()=> nhIsPrim(Fn, fn), ()=> nhIsPrim(nhFn(bad), fn)),
+    claim(R, `Nếu $G(x)$ là một nguyên hàm của $f(x)$ thì $G(x)${add(sh)}$ cũng là một nguyên hàm của $f(x)$`, `Nếu $G(x)$ là một nguyên hàm của $f(x)$ thì $${kk === -1 ? '-' : kk}G(x)$ cũng là một nguyên hàm của $f(x)$`,
+      ()=> nhIsPrim(x=> Fn(x) + sh, fn), ()=> nhIsPrim(x=> kk*Fn(x), fn)),
+    claim(R, `Nguyên hàm $H(x)$ của $f(x)$ thoả mãn $H(0) = ${m}$ là $H(x) = ${nhTx(F)}${add(C1)}$`, `Nguyên hàm $H(x)$ của $f(x)$ thoả mãn $H(0) = ${m}$ là $H(x) = ${nhTx(F)}${add(m)}$`,
+      ()=> nhIsPrim(H, fn) && near(H(0), m, 1e-9), ()=> near(Fn(0) + m, m, 1e-9)),
+    claim(R, `Nếu $K(x)$ là nguyên hàm của $f(x)$ thoả mãn $K(0) = ${n}$ thì $K(x) - H(x) = ${n - m}$ với mọi $x$`, `Nếu $K(x)$ là nguyên hàm của $f(x)$ thoả mãn $K(0) = ${n}$ thì $K(x) - H(x) = ${m - n}$ với mọi $x$`,
+      ()=> [0, 1.3, -2.1].every(x=> near(Kf(x) - H(x), n - m, 1e-9)), ()=> [0, 1.3, -2.1].every(x=> near(Kf(x) - H(x), m - n, 1e-9)))];
+  return {stem:`Cho hàm số $f(x) = ${nhTx(f)}$.`, items,
+    lg:`a) $\\int f(x)\\,dx = ${nhTx(F)} + C$ (vì $${nhRule(f[0])}$, $${nhRule(f[1])}$). Kiểm tra: $\\left(${nhTx(F)}\\right)' = ${nhTx(f)}$.<br>`
+      + `b) $\\left(G(x) + C\\right)' = G'(x) = f(x)$ nên mọi hàm $G(x) + C$ đều là nguyên hàm; còn $\\left(kG(x)\\right)' = kf(x) \\ne f(x)$ khi $k \\ne 1$.<br>`
+      + `c) $H(x) = ${nhTx(F)} + C$ và $H(0) = ${nt(F0)} + C = ${m}$ nên $C = ${C1}$ (không phải $C = ${m}$ vì $G(0) = ${nt(F0)} \\ne 0$).<br>`
+      + `d) $K$ và $H$ cùng là nguyên hàm của $f$ nên $K(x) - H(x)$ là hằng số, bằng $K(0) - H(0) = ${n} - ${nhP(m)} = ${n - m}$.`};
+});
+
+/* 3. TN TH — hai nguyên hàm của cùng một hàm (không cần tìm công thức nguyên hàm) */
+G(12,3,0,'TH','Hai nguyên hàm F, G của cùng một hàm số: biết F(x₀), G(x₀), F(x₁) — tính G(x₁) hoặc F(x₁) − G(x₁) mà không cần tìm F', R=>{
+  const L = [['e^{x^{2}}', x=> Math.exp(x*x)], ['\\sin\\left(x^{2}\\right)', x=> Math.sin(x*x)], ['\\sqrt{x^{4} + 1}', x=> Math.sqrt(x**4 + 1)], ['\\cos\\left(x^{3}\\right)', x=> Math.cos(x**3)], ['\\dfrac{e^{x}}{x^{2} + 1}', x=> Math.exp(x)/(x*x + 1)], ['\\sqrt{x^{2} + x + 3}', x=> Math.sqrt(x*x + x + 3)]];
+  const [fT, fn] = R.pick(L), x0 = R.pick([0, 1, -1]), x1 = R.pick([2, 3, -2].filter(x=> x !== x0)), a = R.int(-9, 9), b = R.int(-9, 9), c = R.int(-9, 12); if(a === b) return null;
+  const ask = R.pick(['G', 'G', 'diff']), val = ask === 'G' ? c - a + b : a - b;   // hỏi G(x₁): không cho công thức f (F(x₁) − F(x₀) phải bằng tích phân của f, cho f cụ thể sẽ mâu thuẫn)
+  const cand = ask === 'G' ? [c + a - b, a + b - c, c, b - c - a, c - a - b] : [b - a, a + b, -a - b, 2*a - b];
+  const ws = [...new Set(cand)].filter(v=> v !== val).slice(0, 3); if(ws.length < 3) return null;
+  const stem = ask === 'G'
+    ? `Cho hàm số $f(x)$ liên tục trên $\\mathbb{R}$ và $F(x)$, $G(x)$ là hai nguyên hàm của $f(x)$ trên $\\mathbb{R}$. Biết $F(${x0}) = ${a}$, $G(${x0}) = ${b}$ và $F(${x1}) = ${c}$. Giá trị của $G(${x1})$ bằng`
+    : `Cho $F(x)$ và $G(x)$ là hai nguyên hàm của hàm số $f(x) = ${fT}$ trên $\\mathbb{R}$. Biết $F(${x0}) = ${a}$ và $G(${x0}) = ${b}$. Giá trị của $F(${x1}) - G(${x1})$ bằng`;
+  const o = {stem, ans:{t:`$${val}$`, v:val}, wrong:ws.map(v=> ({t:`$${v}$`, v})),
+    lg:`Hai nguyên hàm của cùng một hàm số trên $\\mathbb{R}$ sai khác nhau một hằng số: $F(x) - G(x) = k$ với mọi $x$ (không cần tìm công thức của $F$, $G$).<br>`
+      + `Tại $x = ${x0}$: $k = F(${x0}) - G(${x0}) = ${a} - ${nhP(b)} = ${a - b}$.<br>`
+      + (ask === 'G' ? `Vậy $G(${x1}) = F(${x1}) - k = ${c} - ${nhP(a - b)} = ${val}$.` : `Vậy $F(${x1}) - G(${x1}) = k = ${val}$.`),
+    verify:()=>{ const n = 4000, I = (lo, hi)=>{ const h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+      if(ask === 'diff'){ const Fx = x=> a + I(x0, x), Gx = x=> b + I(x0, x); return near(o.ans.v, Fx(x1) - Gx(x1), 1e-9); }
+      const g = x=> 1 + x*x, J = (lo, hi)=> (hi**3 - lo**3)/3 + hi - lo, Fx = x=> a + (c - a)*J(x0, x)/J(x0, x1), Gx = x=> b + (c - a)*J(x0, x)/J(x0, x1);   // một f cụ thể thoả dữ kiện
+      return near(Fx(x1), c, 1e-9) && near(o.ans.v, Gx(x1), 1e-9) && g(0) > 0; }};
+  return o;
+});
+
+/* 4. TN TH — nhận ra đạo hàm: ∫ u'(x)dx = u(x) + C */
+G(12,3,0,'TH','Họ nguyên hàm của hàm số có dạng đạo hàm của một hàm quen thuộc (kiểm tra bằng đạo hàm, dùng ∫ f\'(x)dx = f(x) + C)', R=>{
+  const k = R.int(1, 9), m = R.nz(-4, 4);
+  const T = [
+    {G:`\\sqrt{x^{2} + ${k}}`, g:x=> Math.sqrt(x*x + k), f:`\\dfrac{${Math.abs(m) === 1 ? '' : Math.abs(m)}x}{\\sqrt{x^{2} + ${k}}}`, s:m < 0, d:`\\left(\\sqrt{x^{2} + ${k}}\\right)' = \\dfrac{2x}{2\\sqrt{x^{2} + ${k}}} = \\dfrac{x}{\\sqrt{x^{2} + ${k}}}`},
+    {G:'e^{x^{2}}', g:x=> Math.exp(x*x), f:`${Math.abs(2*m)}xe^{x^{2}}`, s:m < 0, d:`\\left(e^{x^{2}}\\right)' = 2xe^{x^{2}}`},
+    {G:'\\sin\\left(x^{2}\\right)', g:x=> Math.sin(x*x), f:`${Math.abs(2*m)}x\\cos\\left(x^{2}\\right)`, s:m < 0, d:`\\left(\\sin\\left(x^{2}\\right)\\right)' = 2x\\cos\\left(x^{2}\\right)`},
+    {G:`\\ln\\left(x^{2} + ${k}\\right)`, g:x=> Math.log(x*x + k), f:`\\dfrac{${Math.abs(2*m)}x}{x^{2} + ${k}}`, s:m < 0, d:`\\left(\\ln\\left(x^{2} + ${k}\\right)\\right)' = \\dfrac{2x}{x^{2} + ${k}}`},
+    {G:'\\cos\\left(x^{2}\\right)', g:x=> Math.cos(x*x), f:`${Math.abs(2*m)}x\\sin\\left(x^{2}\\right)`, s:m > 0, d:`\\left(\\cos\\left(x^{2}\\right)\\right)' = -2x\\sin\\left(x^{2}\\right)`},
+    {G:`\\sqrt{x^{3} + ${k}}`, g:x=> Math.sqrt(x**3 + k), f:`\\dfrac{${Math.abs(3*m) % 2 ? Math.abs(3*m) : Math.abs(3*m)/2 === 1 ? '' : Math.abs(3*m)/2}x^{2}}{${Math.abs(3*m) % 2 ? 2 : ''}\\sqrt{x^{3} + ${k}}}`, s:m < 0, d:`\\left(\\sqrt{x^{3} + ${k}}\\right)' = \\dfrac{3x^{2}}{2\\sqrt{x^{3} + ${k}}}`, pos:true}];
+  const t = R.pick(T), fn = x=> m*nhDf(t.g, x), coef = c=>{ const [p, q] = [c[0], c[1]], g = gcdI(p, q), P = p/g, Q = q/g; return (P < 0 ? '-' : '') + (Math.abs(P) === 1 && Q === 1 ? '' : frT(Math.abs(P), Q)); };
+  const opt = c=> ({t:`$${coef(c)}${t.G} + C$`, v:nhKey(x=> c[0]/c[1]*t.g(x)), fn:x=> c[0]/c[1]*t.g(x)});
+  const ans = opt([m, 1]), base = m;
+  const cand = [opt([2*base, 1]), opt([base, 2]), opt([-base, 1]), opt([3*base, 2]), opt([base, 3])];
+  const seen = new Set([ans.v]), wrong = []; cand.forEach(c=>{ if(!seen.has(c.v) && wrong.length < 3){ seen.add(c.v); wrong.push(c); } });
+  const dom = t.pos ? 'trên khoảng $(0; +\\infty)$' : 'trên $\\mathbb{R}$';
+  const o = {stem:`Họ tất cả các nguyên hàm của hàm số $f(x) = ${t.s ? '-' : ''}${t.f}$ ${dom} là`, ans, wrong,
+    lg:`Ta có $${t.d}$. Do đó $f(x) = ${base === 1 ? '' : base === -1 ? '-' : base}\\left(${t.G}\\right)'$ và theo tính chất $\\int u'(x)\\,dx = u(x) + C$:<br>$\\int f(x)\\,dx = ${coef([base, 1])}${t.G} + C$.<br>`
+      + `(Có thể kiểm tra từng phương án bằng cách lấy đạo hàm; các phương án sai nhầm hệ số $2$ khi đạo hàm hàm hợp hoặc sai dấu.)`,
+    verify:()=> nhIsPrim(o.ans.fn, fn, [0.4, 0.9, 1.3, 1.7])};
+  return o;
+});
+
+/* 5. TLN VD — tìm hệ số để (ax² + bx + c)e^{±x} là một nguyên hàm */
+GT(12,3,0,'VD','Tìm hệ số a, b, c để F(x) = (ax² + bx + c)eˣ (hoặc e⁻ˣ) là một nguyên hàm của f(x) = (px² + qx + r)eˣ — đồng nhất hệ số sau khi đạo hàm', R=>{
+  const s = R.pick([1, -1]), p = R.nz(-4, 4), q = R.int(-6, 6), r = R.int(-6, 6);
+  let a, b, c; if(s === 1){ a = p; b = q - 2*a; c = r - b; } else { a = -p; b = 2*a - q; c = b - r; }
+  const ask = R.pick(['a + b + c', 'a - b + c', 'abc', 'F(0)']), ans = ask === 'a + b + c' ? a + b + c : ask === 'a - b + c' ? a - b + c : ask === 'abc' ? a*b*c : c;
+  if(String(ans).length > 4 || (ask === 'abc' && !ans)) return null;
+  const E = s === 1 ? 'e^{x}' : 'e^{-x}', fn = x=> (p*x*x + q*x + r)*Math.exp(s*x);
+  const qT = ask === 'abc' ? 'Tính $abc$.' : ask === 'F(0)' ? 'Tính $F(0)$.' : `Tính $${ask}$.`;
+  const o = {stem:`Biết hàm số $F(x) = \\left(ax^{2} + bx + c\\right)${E}$ (với $a, b, c$ là các hằng số) là một nguyên hàm của hàm số $f(x) = \\left(${polyT([p, q, r])}\\right)${E}$ trên $\\mathbb{R}$. ${qT}`, ans,
+    lg: s === 1
+      ? `$F'(x) = (2ax + b)e^{x} + \\left(ax^{2} + bx + c\\right)e^{x} = \\left[ax^{2} + (2a + b)x + (b + c)\\right]e^{x}$.<br>$F'(x) = f(x)$ với mọi $x$ khi $a = ${p}$, $2a + b = ${q}$, $b + c = ${r}$, suy ra $a = ${a}$, $b = ${b}$, $c = ${c}$.`
+      : `$F'(x) = (2ax + b)e^{-x} - \\left(ax^{2} + bx + c\\right)e^{-x} = \\left[-ax^{2} + (2a - b)x + (b - c)\\right]e^{-x}$ (chú ý $\\left(e^{-x}\\right)' = -e^{-x}$).<br>$F'(x) = f(x)$ với mọi $x$ khi $-a = ${p}$, $2a - b = ${q}$, $b - c = ${r}$, suy ra $a = ${a}$, $b = ${b}$, $c = ${c}$.`,
+    verify:()=>{ const F = x=> (a*x*x + b*x + c)*Math.exp(s*x); if(!nhIsPrim(F, fn, [-0.8, 0.3, 1.1])) return false;
+      return o.ans === (ask === 'a + b + c' ? a + b + c : ask === 'a - b + c' ? a - b + c : ask === 'abc' ? a*b*c : F(0)); }};
+  o.lg += `<br>Vậy ${ask === 'F(0)' ? `$F(0) = c = ${ans}$` : ask === 'abc' ? `$abc = ${ans}$` : `$${ask} = ${ans}$`}.`;
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 2 (5 dạng). Claude viết.
+// Chuỗi: căn thức → luỹ thừa hữu tỉ → biến đổi phân thức → F(1) cho trước với hàm chứa căn → tính chất (tích, thương, hàm hợp bậc nhất là bẫy) → tự luận tổng hợp biến đổi.
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhPick3 = (ans, cand, R)=>{ const seen = new Set([ans.v]), w = []; (R ? R.shuffle(cand) : cand).forEach(c=>{ if(!seen.has(c.v) && w.length < 3){ seen.add(c.v); w.push(c); } }); return w.length < 3 ? null : w; };
+const nhFam = (ts, pos)=>{ const fn = nhFn(ts, pos); return {t:`$${nhTx(ts, pos)} + C$`, v:nhKey(fn), fn}; };
+const nhPw = k=> k === 1 ? 'x' : `x^{${k}}`;
+
+/* 6. TN TH — căn thức → luỹ thừa số mũ hữu tỉ */
+G(12,3,0,'TH','Nguyên hàm của hàm số chứa căn thức: viết √x, x√x, 1/√x, ∛x², … dưới dạng luỹ thừa số mũ hữu tỉ rồi dùng công thức xᵅ (bẫy: nhân thay vì chia cho α + 1)', R=>{
+  const E = [[1, 2], [3, 2], [-1, 2], [1, 3], [2, 3], [-1, 3], [4, 3], [-2, 3], [5, 2]], [e1, e2] = R.shuffle(E.slice()).slice(0, 2);
+  const f = [{p:R.nz(-4, 4), q:1, k:'r', n:e1}, {p:R.nz(-4, 4), q:1, k:'r', n:e2}], F = f.map(nhInt), fn = nhFn(f);
+  const ans = nhFam(F), cand = [nhFam([nhBad(f[0])[0], F[1]]), nhFam([F[0], nhBad(f[1])[0]]), nhFam(f.map(m=> nhBad(m)[0])), nhFam(f.map(nhDer)), nhFam(f.map(m=> nhN({p:m.p, q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}).p ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:m.n}) : m))];
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const xfr = (a, b)=> (a < 0 ? '-' : '') + `\\frac{${Math.abs(a)/gcdI(a, b)}}{${b/gcdI(a, b)}}`, pw = e=> `x^{${xfr(e[0], e[1])}}`, cf = p=> p === 1 ? '' : p === -1 ? '-' : p, step = m=> `${nhTx([m])} = ${cf(m.p)}${pw(m.n)}`;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${nhTx(f)}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Viết dưới dạng luỹ thừa: $${step(f[0])}$, $${step(f[1])}$.<br>Dùng $\\int x^{\\alpha}\\,dx = \\dfrac{x^{\\alpha + 1}}{\\alpha + 1} + C$ $(\\alpha \\ne -1)$:<br>`
+      + f.map((m, i)=> `$\\int ${cf(m.p)}${pw(m.n)}\\,dx = ${m.p === 1 ? '' : m.p === -1 ? '-' : m.p + '\\cdot'}\\dfrac{x^{${xfr(m.n[0] + m.n[1], m.n[1])}}}{${frT(m.n[0] + m.n[1], m.n[1])}} + C = ${nhTx([F[i]])} + C$`).join('<br>')
+      + `<br>Vậy $\\int f(x)\\,dx = ${nhTx(F)} + C$.`,
+    verify:()=> nhIsPrim(o.ans.fn, fn)};
+  return o;
+});
+
+/* 7. TN TH — biến đổi phân thức trước khi lấy nguyên hàm */
+G(12,3,0,'TH','Nguyên hàm của phân thức: chia tử cho mẫu (khai triển bình phương) thành tổng các luỹ thừa của x rồi lấy nguyên hàm (bẫy: ∫1/x, ∫1/x², quên chia)', R=>{
+  const fam = R.pick(['A', 'B', 'C']); let fT, f;
+  if(fam === 'A'){ const p = R.int(-6, 6), q = R.nz(-6, 6); fT = `\\dfrac{${polyT([1, p, q])}}{x}`; f = [{p:1, q:1, k:'x', n:1}, {p, q:1, k:'x', n:0}, {p:q, q:1, k:'inv', n:1}]; }
+  else if(fam === 'B'){ const a = R.nz(-5, 5); fT = `\\dfrac{(${polyT([1, a])})^{2}}{x^{2}}`; f = [{p:1, q:1, k:'x', n:0}, {p:2*a, q:1, k:'inv', n:1}, {p:a*a, q:1, k:'inv', n:2}]; }
+  else { const p = R.nz(-6, 6), q = R.nz(-6, 6), c = R.pick([1, 2, 3]); fT = `\\dfrac{${polyT([c, 0, p, q])}}{x^{2}}`; f = [{p:c, q:1, k:'x', n:1}, {p, q:1, k:'inv', n:1}, {p:q, q:1, k:'inv', n:2}]; }
+  f = f.filter(m=> m.p); const F = f.map(nhInt), fn = nhFn(f, true), fam2 = ts=> nhFam(ts, true);
+  const ans = fam2(F), cand = [fam2(f.map((m, i)=> m.k === 'inv' && m.n === 2 ? nhBad(m)[0] : F[i])), fam2(f.map((m, i)=> m.k === 'inv' && m.n === 1 ? {p:-m.p, q:m.q, k:'inv', n:2} : F[i])),
+    fam2(f.map((m, i)=> m.k === 'x' && m.n === 1 ? nhBad(m)[0] : F[i])), fam2(f.map(m=> m.k === 'inv' && m.n === 1 ? {p:-m.p, q:m.q, k:'inv', n:2} : m.k === 'inv' ? nhBad(m)[0] : nhInt(m))), fam2(f.map(nhDer))];
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${fT}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`${fam === 'B' ? 'Khai triển rồi chia' : 'Chia'} từng hạng tử của tử cho mẫu: $f(x) = ${nhTx(f, true)}$.<br>`
+      + `Dùng $\\int x^{n}\\,dx = \\dfrac{x^{n + 1}}{n + 1} + C$, $\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C$ (trên $(0; +\\infty)$ là $\\ln x$), $\\int \\dfrac{1}{x^{2}}\\,dx = -\\dfrac{1}{x} + C$:<br>`
+      + `$\\int f(x)\\,dx = ${nhTx(F, true)} + C$.`,
+    verify:()=> nhIsPrim(o.ans.fn, fn)};
+  return o;
+});
+
+/* 8. TLN TH — F(1) cho trước, tính F tại điểm khác (f chứa căn) */
+GT(12,3,0,'TH','Nguyên hàm F của hàm số chứa căn (a√x + b/√x, a∛x + b) thoả F(1) cho trước: tính F(4), F(9) hoặc F(8)', R=>{
+  const fam = R.pick(['sq', 'sq', 'cb']), d = R.int(-9, 9); let f, x1;
+  if(fam === 'sq'){ f = [{p:3*R.nz(-2, 2), q:1, k:'r', n:[1, 2]}, {p:R.nz(-5, 5), q:1, k:'r', n:[-1, 2]}]; x1 = R.pick([4, 9]); }
+  else { f = [{p:4*R.nz(-2, 2), q:1, k:'r', n:[1, 3]}, {p:R.nz(-6, 6), q:1, k:'x', n:0}]; x1 = 8; }
+  const F = f.map(nhInt), Fn = nhFn(F), C = d - Fn(1), ans = Math.round(Fn(x1) + C);
+  if(String(ans).length > 4) return null;
+  const o = {stem:`Biết $F(x)$ là một nguyên hàm của hàm số $f(x) = ${nhTx(f)}$ trên khoảng $(0; +\\infty)$ và $F(1) = ${d}$. Tính $F(${x1})$.`, ans,
+    lg:`$f(x) = ${fam === 'sq' ? `${f[0].p}x^{\\frac{1}{2}} ${f[1].p < 0 ? '-' : '+'} ${Math.abs(f[1].p)}x^{-\\frac{1}{2}}` : `${f[0].p}x^{\\frac{1}{3}} ${f[1].p < 0 ? '-' : '+'} ${Math.abs(f[1].p)}`}$ nên $F(x) = ${nhTx(F)} + C$.<br>`
+      + `$F(1) = ${nt(Fn(1))} + C = ${d}$ $\\Rightarrow C = ${nt(C)}$.<br>`
+      + `$F(${x1}) = ${F.map(m=> nhFn([m])(x1)).map((v, i)=> i ? (v < 0 ? ` - ${-Math.round(v)}` : ` + ${Math.round(v)}`) : `${Math.round(v)}`).join('')} ${C < 0 ? '-' : '+'} ${nt(Math.abs(C))} = ${ans}$.`,
+    verify:()=>{ const fn = nhFn(f), n = 4000, h = (x1 - 1)/n; let s = fn(1) + fn(x1); for(let i = 1; i < n; i++) s += fn(1 + i*h)*(i % 2 ? 4 : 2); return Math.abs(d + s*h/3 - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 9. Đ–S TH — tính chất: tuyến tính đúng; tích/thương, hàm hợp bậc nhất là bẫy */
+GD(12,3,0,'TH','Tính chất của nguyên hàm: ∫ kf, ∫ (f ± g) đúng; nguyên hàm của tích, thương KHÔNG bằng tích, thương các nguyên hàm; ∫ (ax + b)² dx (bẫy hệ số a)', R=>{
+  const m = R.int(1, 4), n = R.int(1, 3), a = R.pick([2, 3, 4, 5]), b = R.nz(-5, 5), mm = m + n;
+  const M = Math.max(m, n) + 1, N = Math.min(m, n); if(M - N === 1 && R.rnd() < 0.5) return null;
+  const k1 = R.nz(-5, 5), k2 = R.nz(-5, 5), K1 = k1 === 1 ? '' : k1 === -1 ? '-' : k1, K2 = Math.abs(k2) === 1 ? '' : Math.abs(k2), lin = `${polyT([a, b])}`;
+  const items = [
+    claim(R, `$\\int ${nhPw(m)}\\cdot ${nhPw(n)}\\,dx = \\dfrac{x^{${mm + 1}}}{${mm + 1}} + C$`, `$\\int ${nhPw(m)}\\cdot ${nhPw(n)}\\,dx = \\dfrac{x^{${m + 1}}}{${m + 1}}\\cdot\\dfrac{x^{${n + 1}}}{${n + 1}} + C$`,
+      ()=> nhIsPrim(x=> x**(mm + 1)/(mm + 1), x=> x**mm), ()=> nhIsPrim(x=> x**(m + n + 2)/((m + 1)*(n + 1)), x=> x**mm)),
+    claim(R, `$\\int \\dfrac{x^{${M}}}{${nhPw(N)}}\\,dx = ${M - N + 1 === 1 ? 'x' : `\\dfrac{${nhPw(M - N + 1)}}{${M - N + 1}}`} + C$ (với $x \\ne 0$)`, `$\\int \\dfrac{x^{${M}}}{${nhPw(N)}}\\,dx = \\dfrac{x^{${M + 1}}}{${M + 1}} : \\dfrac{x^{${N + 1}}}{${N + 1}} + C$ (với $x \\ne 0$)`,
+      ()=> nhIsPrim(x=> x**(M - N + 1)/(M - N + 1), x=> x**(M - N)), ()=> nhIsPrim(x=> (N + 1)*x**(M - N)/(M + 1), x=> x**(M - N))),
+    claim(R, `$\\int (${lin})^{2}\\,dx = \\dfrac{(${lin})^{3}}{${3*a}} + C$`, `$\\int (${lin})^{2}\\,dx = \\dfrac{(${lin})^{3}}{3} + C$`,
+      ()=> nhIsPrim(x=> (a*x + b)**3/(3*a), x=> (a*x + b)**2), ()=> nhIsPrim(x=> (a*x + b)**3/3, x=> (a*x + b)**2)),
+    claim(R, `Nếu $F(x)$, $G(x)$ lần lượt là một nguyên hàm của $f(x)$, $g(x)$ trên $\\mathbb{R}$ thì $${K1}F(x) ${k2 < 0 ? '-' : '+'} ${K2}G(x)$ là một nguyên hàm của $${K1}f(x) ${k2 < 0 ? '-' : '+'} ${K2}g(x)$`,
+      `Nếu $F(x)$, $G(x)$ lần lượt là một nguyên hàm của $f(x)$, $g(x)$ trên $\\mathbb{R}$ thì $F(x)\\cdot G(x)$ là một nguyên hàm của $f(x)\\cdot g(x)$`,
+      ()=> nhIsPrim(x=> k1*x**3/3 + k2*Math.sin(x), x=> k1*x*x + k2*Math.cos(x)), ()=> nhIsPrim(x=> x**3/3*Math.sin(x), x=> x*x*Math.cos(x)))];
+  return {stem:'Xét tính đúng, sai của các khẳng định sau:', items,
+    lg:`a) $${nhPw(m)}\\cdot ${nhPw(n)} = x^{${mm}}$ nên $\\int x^{${mm}}\\,dx = \\dfrac{x^{${mm + 1}}}{${mm + 1}} + C$; nguyên hàm của một tích không bằng tích các nguyên hàm (đạo hàm của $\\dfrac{x^{${m + 1}}}{${m + 1}}\\cdot\\dfrac{x^{${n + 1}}}{${n + 1}}$ là $${frT(m + n + 2, (m + 1)*(n + 1))}x^{${mm + 1}}$, khác $x^{${mm}}$).<br>`
+      + `b) $\\dfrac{x^{${M}}}{${nhPw(N)}} = ${nhPw(M - N)}$ nên nguyên hàm là $${M - N + 1 === 1 ? 'x' : `\\dfrac{${nhPw(M - N + 1)}}{${M - N + 1}}`} + C$; thương các nguyên hàm $${frT(N + 1, M + 1)}${nhPw(M - N)}$ không phải là nguyên hàm.<br>`
+      + `c) $\\left[\\dfrac{(${lin})^{3}}{${3*a}}\\right]' = \\dfrac{3(${lin})^{2}\\cdot ${a < 0 ? `(${a})` : a}}{${3*a}} = (${lin})^{2}$, còn $\\left[\\dfrac{(${lin})^{3}}{3}\\right]' = ${a}(${lin})^{2}$ (quên hệ số $${a}$ của đạo hàm hàm hợp).<br>`
+      + `d) $\\left[${K1}F(x) ${k2 < 0 ? '-' : '+'} ${K2}G(x)\\right]' = ${K1}f(x) ${k2 < 0 ? '-' : '+'} ${K2}g(x)$ (tính chất tuyến tính), còn $\\left[F(x)G(x)\\right]' = f(x)G(x) + F(x)g(x)$ nói chung khác $f(x)g(x)$ (vd $f(x) = x^{2}$, $g(x) = \\cos x$).`};
+});
+
+/* 10. TL TH — tìm họ nguyên hàm sau khi biến đổi */
+GE(12,3,0,'TH','Tìm họ nguyên hàm sau khi biến đổi: khai triển tích (x − a)(x + b), chia tử cho x², khai triển (√x + k)²', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-5, 5), p = R.nz(-4, 4), q = R.nz(-6, 6), k = R.nz(-4, 4); if(a === b || a === -b) return null;
+  const f1 = [{p:1, q:1, k:'x', n:2}, {p:b - a, q:1, k:'x', n:1}, {p:-a*b, q:1, k:'x', n:0}].filter(m=> m.p), F1 = f1.map(nhInt);
+  const f2 = [{p, q:1, k:'x', n:1}, {p:q, q:1, k:'inv', n:2}], F2 = f2.map(nhInt);
+  const f3 = [{p:1, q:1, k:'x', n:1}, {p:2*k, q:1, k:'r', n:[1, 2]}, {p:k*k, q:1, k:'x', n:0}], F3 = f3.map(nhInt);
+  const items = [
+    {q:`$\\int (${polyT([1, -a])})(${polyT([1, b])})\\,dx$`, a:`$(${polyT([1, -a])})(${polyT([1, b])}) = ${nhTx(f1)}$ nên $\\int (${polyT([1, -a])})(${polyT([1, b])})\\,dx = ${nhTx(F1)} + C$.`,
+     chk:()=> nhIsPrim(nhFn(F1), x=> (x - a)*(x + b))},
+    {q:`$\\int \\dfrac{${polyT([p, 0, 0, q])}}{x^{2}}\\,dx$ trên khoảng $(0; +\\infty)$`, a:`$\\dfrac{${polyT([p, 0, 0, q])}}{x^{2}} = ${nhTx(f2)}$ nên $\\int \\dfrac{${polyT([p, 0, 0, q])}}{x^{2}}\\,dx = ${nhTx(F2)} + C$ (vì $\\int \\dfrac{1}{x^{2}}\\,dx = -\\dfrac{1}{x} + C$).`,
+     chk:()=> nhIsPrim(nhFn(F2), x=> (p*x**3 + q)/(x*x))},
+    {q:`$\\int \\left(\\sqrt{x} ${k < 0 ? '-' : '+'} ${Math.abs(k)}\\right)^{2}dx$ trên khoảng $(0; +\\infty)$`, a:`$\\left(\\sqrt{x} ${k < 0 ? '-' : '+'} ${Math.abs(k)}\\right)^{2} = ${nhTx(f3)} = x ${2*k < 0 ? '-' : '+'} ${Math.abs(2*k)}x^{\\frac{1}{2}} + ${k*k}$ nên nguyên hàm là $${nhTx(F3)} + C$ (vì $\\int x^{\\frac{1}{2}}dx = \\dfrac{2}{3}x^{\\frac{3}{2}} + C = \\dfrac{2}{3}x\\sqrt{x} + C$).`,
+     chk:()=> nhIsPrim(nhFn(F3), x=> (Math.sqrt(x) + k)**2)}];
+  return s6Parts('Tìm các họ nguyên hàm sau:', items);
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 3 (5 dạng, lượng giác). Claude viết.
+// Chuỗi: sin, cos cơ bản (bẫy dấu) → hạ bậc sin²(x/2), (sin ± cos)² → tan², cot², 1/(sin²cos²) → F tại bội π/2 → Đ–S tan²x nối với tính đơn điệu.
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhPick3 = (ans, cand, R)=>{ const seen = new Set([ans.v]), w = []; (R ? R.shuffle(cand) : cand).forEach(c=>{ if(!seen.has(c.v) && w.length < 3){ seen.add(c.v); w.push(c); } }); return w.length < 3 ? null : w; };
+const nhFam = (ts, pos)=>{ const fn = nhFn(ts, pos); return {t:`$${nhTx(ts, pos)} + C$`, v:nhKey(fn), fn}; };
+const nhKeyT = F=> [0.3, 0.5, 0.9, 1.3].map(x=> (F(x) - F(0.7)).toFixed(6)).join('|');   // điểm trong (0; π/2)
+const nhCf = (c, body)=> c === 1 ? body : c === -1 ? `-${body}` : `${c}${body}`;
+const nhSum = list=>{ let s = ''; list.filter(([c])=> c).forEach(([c, b])=>{ const t = Math.abs(c) === 1 && b ? b : (Number.isInteger(c) ? Math.abs(c) : frT(Math.abs(Math.round(c*6)), 6)) + b; s += s ? (c < 0 ? ' - ' : ' + ') + t : (c < 0 ? '-' : '') + t; }); return s || '0'; };
+const nhFrac = (c, den)=> (c < 0 ? '-' : '') + `\\dfrac{${Math.abs(c)}}{${den}}`;
+const nhPiF = (n, d)=>{ const g = gcdI(n, d), a = Math.abs(n)/g, b = d/g, body = (a === 1 ? '' : a) + '\\pi'; return b === 1 ? body : `\\dfrac{${body}}{${b}}`; };
+const nhFa = k=> k % 2 ? `F\\left(${nhPiT(k)}\\right)` : `F(${nhPiT(k)})`;
+const nhPiT = k=> k === 0 ? '0' : k === 2 ? '\\pi' : k === -2 ? '-\\pi' : k === 4 ? '2\\pi' : k === 1 ? '\\dfrac{\\pi}{2}' : k === -1 ? '-\\dfrac{\\pi}{2}' : k === 3 ? '\\dfrac{3\\pi}{2}' : '-\\dfrac{3\\pi}{2}';   // k·π/2
+
+/* 11. TN NB — nguyên hàm lượng giác cơ bản */
+G(12,3,0,'NB','Nguyên hàm của hàm số a·sin x + b·cos x + c·xⁿ (bẫy: ∫ sin x dx = cos x, ∫ cos x dx = −sin x)', R=>{
+  const n = R.int(0, 2), f = [{p:R.nz(-5, 5), q:1, k:'sin'}, {p:R.nz(-5, 5), q:1, k:'cos'}, {p:R.pick([0, R.nz(-6, 6)]), q:1, k:'x', n}].filter(m=> m.p);
+  const F = f.map(nhInt), fn = nhFn(f), sw = (ts, kind)=> ts.map((m, i)=> f[i].k === kind ? nhBad(f[i])[0] : m);
+  const ans = nhFam(F), cand = [nhFam(sw(F, 'sin')), nhFam(sw(F, 'cos')), nhFam(sw(sw(F, 'sin'), 'cos')), nhFam(f.map(nhDer).filter(m=> m.p))];
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${nhTx(f)}$ là`, ans, wrong,
+    lg:`Dùng $\\int \\sin x\\,dx = -\\cos x + C$, $\\int \\cos x\\,dx = \\sin x + C$${f[2] ? `, $${nhRule(f[2])}$` : ''}:<br>$\\int f(x)\\,dx = ${nhTx(F)} + C$.<br>(Kiểm tra: $(-\\cos x)' = \\sin x$, $(\\sin x)' = \\cos x$.)`,
+    verify:()=> nhIsPrim(o.ans.fn, fn)};
+  return o;
+});
+
+/* 12. TN TH — hạ bậc sin²(x/2), cos²(x/2), (sin(x/2) ± cos(x/2))² */
+G(12,3,0,'TH','Nguyên hàm của k·sin²(x/2), k·cos²(x/2), k(sin(x/2) ± cos(x/2))²: hạ bậc / khai triển về a + b·cos x (b·sin x) rồi lấy nguyên hàm', R=>{
+  const ty = R.pick(['S', 'C', 'P', 'M', 'D', 'H']), k = ty === 'S' || ty === 'C' || ty === 'H' ? R.pick([2, 4, 6, 8, -2, -4, -6]) : R.pick([1, 2, 3, 4, -1, -2, -3]), m = R.pick([0, R.nz(-5, 5)]);
+  const h = ty === 'S' || ty === 'C' || ty === 'H' ? k/2 : k;
+  const sgn = ty === 'C' || ty === 'P' || ty === 'D' || ty === 'H' ? 1 : -1, trig = ty === 'S' || ty === 'C' || ty === 'D' ? 'cos' : 'sin', c0 = ty === 'D' || ty === 'H' ? 0 : h;
+  const g0 = ty === 'S' ? x=> k*Math.sin(x/2)**2 : ty === 'C' ? x=> k*Math.cos(x/2)**2 : ty === 'P' ? x=> k*(Math.sin(x/2) + Math.cos(x/2))**2 : ty === 'M' ? x=> k*(Math.sin(x/2) - Math.cos(x/2))**2
+    : ty === 'D' ? x=> k*(Math.cos(x/2)**2 - Math.sin(x/2)**2) : x=> k*Math.sin(x/2)*Math.cos(x/2), g = x=> g0(x) + m;
+  const fT = (ty === 'S' ? nhCf(k, '\\sin^{2}\\dfrac{x}{2}') : ty === 'C' ? nhCf(k, '\\cos^{2}\\dfrac{x}{2}') : ty === 'H' ? nhCf(k, '\\sin\\dfrac{x}{2}\\cos\\dfrac{x}{2}')
+    : ty === 'D' ? nhCf(k, '\\left(\\cos^{2}\\dfrac{x}{2} - \\sin^{2}\\dfrac{x}{2}\\right)') : nhCf(k, `\\left(\\sin\\dfrac{x}{2} ${ty === 'P' ? '+' : '-'} \\cos\\dfrac{x}{2}\\right)^{2}`)) + (m ? (m < 0 ? ` - ${-m}` : ` + ${m}`) : '');
+  const simp = [{p:c0 + m, q:1, k:'x', n:0}, {p:sgn*h, q:1, k:trig}].filter(t=> t.p), F = simp.map(nhInt);
+  const opt = (ts)=>{ const fn = nhFn(ts); return {t:`$${nhTx(ts)} + C$`, v:nhKey(fn), fn}; };
+  const iT = simp.length - 1, ans = opt(F), cand = [opt(F.map((t, i)=> i === iT ? nhBad(simp[iT])[0] : t)), opt(F.map((t, i)=> i === iT ? Object.assign({}, t, {p:t.p*2}) : t)), opt(F.map(m=> Object.assign({}, m, {p:m.p*2}))), opt(F.map(m=> Object.assign({}, m, {p:m.p, q:m.q*2}))), opt(F.map((t, i)=> i === iT ? {p:-t.p, q:t.q, k:t.k} : t))];
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const how = ty === 'S' ? `$\\sin^{2}\\dfrac{x}{2} = \\dfrac{1 - \\cos x}{2}$` : ty === 'C' ? `$\\cos^{2}\\dfrac{x}{2} = \\dfrac{1 + \\cos x}{2}$` : ty === 'D' ? `$\\cos^{2}\\dfrac{x}{2} - \\sin^{2}\\dfrac{x}{2} = \\cos x$` : ty === 'H' ? `$\\sin\\dfrac{x}{2}\\cos\\dfrac{x}{2} = \\dfrac{1}{2}\\sin x$`
+    : `$\\left(\\sin\\dfrac{x}{2} ${ty === 'P' ? '+' : '-'} \\cos\\dfrac{x}{2}\\right)^{2} = \\sin^{2}\\dfrac{x}{2} + \\cos^{2}\\dfrac{x}{2} ${ty === 'P' ? '+' : '-'} 2\\sin\\dfrac{x}{2}\\cos\\dfrac{x}{2} = 1 ${ty === 'P' ? '+' : '-'} \\sin x$`;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${fT}$ là`, ans, wrong,
+    lg:`Ta có ${how}, nên $f(x) = ${nhTx(simp)}$.<br>Do đó $\\int f(x)\\,dx = ${nhTx(F)} + C$.`,
+    verify:()=> nhIsPrim(o.ans.fn, g) && nhIsPrim(nhFn(F), nhFn(simp))};
+  return o;
+});
+
+/* 13. TN TH — tan²x, cot²x, 1/(sin²x cos²x) */
+G(12,3,0,'TH','Nguyên hàm của a·tan²x + b, a·cot²x + b, a/(sin²x·cos²x): biến đổi về 1/cos²x, 1/sin²x (bẫy: tan²x = 1/cos²x + 1, ∫ tan²x = tan³x/3)', R=>{
+  const ty = R.pick(['T', 'T', 'Ct', 'SC']), a = R.nz(-4, 4), b = ty === 'SC' ? 0 : R.int(-5, 5);
+  const tan = Math.tan, cot = x=> 1/Math.tan(x), O = (t, fn)=> ({t:`$${t} + C$`, v:nhKeyT(fn), fn});
+  let fT, fn, ans, cand, how, dom;
+  if(ty === 'T'){ fT = nhSum([[a, '\\tan^{2}x'], [b, '']]); fn = x=> a*tan(x)**2 + b; dom = '\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)';
+    ans = O(nhSum([[a, '\\tan x'], [b - a, 'x']]), x=> a*tan(x) + (b - a)*x);
+    cand = [O(nhSum([[a, '\\tan x'], [b + a, 'x']]), x=> a*tan(x) + (b + a)*x), O(nhSum([[a/3, '\\tan^{3}x'], [b, 'x']]), x=> a/3*tan(x)**3 + b*x), O(nhSum([[a, '\\tan x'], [b, 'x']]), x=> a*tan(x) + b*x), O(nhSum([[-a, '\\cot x'], [b - a, 'x']]), x=> -a*cot(x) + (b - a)*x)];
+    how = `$\\tan^{2}x = \\dfrac{1}{\\cos^{2}x} - 1$ nên $f(x) = ${nhFrac(a, '\\cos^{2}x') + (b - a ? (b - a < 0 ? ` - ${a - b}` : ` + ${b - a}`) : '')}$`; }
+  else if(ty === 'Ct'){ fT = nhSum([[a, '\\cot^{2}x'], [b, '']]); fn = x=> a*cot(x)**2 + b; dom = '(0; \\pi)';
+    ans = O(nhSum([[-a, '\\cot x'], [b - a, 'x']]), x=> -a*cot(x) + (b - a)*x);
+    cand = [O(nhSum([[a, '\\cot x'], [b - a, 'x']]), x=> a*cot(x) + (b - a)*x), O(nhSum([[-a, '\\cot x'], [b + a, 'x']]), x=> -a*cot(x) + (b + a)*x), O(nhSum([[a/3, '\\cot^{3}x'], [b, 'x']]), x=> a/3*cot(x)**3 + b*x), O(nhSum([[-a, '\\cot x'], [b, 'x']]), x=> -a*cot(x) + b*x)];
+    how = `$\\cot^{2}x = \\dfrac{1}{\\sin^{2}x} - 1$ nên $f(x) = ${nhFrac(a, '\\sin^{2}x') + (b - a ? (b - a < 0 ? ` - ${a - b}` : ` + ${b - a}`) : '')}$`; }
+  else { fT = `\\dfrac{${a}}{\\sin^{2}x\\cos^{2}x}`; fn = x=> a/(Math.sin(x)**2*Math.cos(x)**2); dom = '\\left(0; \\dfrac{\\pi}{2}\\right)';
+    ans = O(nhSum([[a, '\\tan x'], [-a, '\\cot x']]), x=> a*tan(x) - a*cot(x));
+    cand = [O(nhSum([[a, '\\tan x'], [a, '\\cot x']]), x=> a*tan(x) + a*cot(x)), O(nhSum([[-a, '\\tan x'], [a, '\\cot x']]), x=> -a*tan(x) + a*cot(x)), O(nhSum([[-a, '\\tan x'], [-a, '\\cot x']]), x=> -a*tan(x) - a*cot(x))];
+    how = `$\\dfrac{1}{\\sin^{2}x\\cos^{2}x} = \\dfrac{\\sin^{2}x + \\cos^{2}x}{\\sin^{2}x\\cos^{2}x} = \\dfrac{1}{\\cos^{2}x} + \\dfrac{1}{\\sin^{2}x}$ nên $f(x) = ${nhFrac(a, '\\cos^{2}x') + (a < 0 ? ' - ' : ' + ') + `\\dfrac{${Math.abs(a)}}{\\sin^{2}x}`}$`;
+    fT = a < 0 ? `-\\dfrac{${-a}}{\\sin^{2}x\\cos^{2}x}` : fT; }
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${fT}$ trên khoảng $${dom}$ là`, ans, wrong,
+    lg:`${how}.<br>Dùng $\\int \\dfrac{1}{\\cos^{2}x}\\,dx = \\tan x + C$, $\\int \\dfrac{1}{\\sin^{2}x}\\,dx = -\\cot x + C$: $\\int f(x)\\,dx = ${ans.t.slice(1, -1)}$.`,
+    verify:()=> nhIsPrim(o.ans.fn, fn, [0.3, 0.6, 0.9, 1.2])};
+  return o;
+});
+
+/* 14. TLN TH — F(x₀) tại bội của π/2 */
+GT(12,3,0,'TH','Nguyên hàm F của a·cos x + b·sin x thoả F(x₀) cho trước (x₀ là bội của π/2): tính F(x₁) (bẫy dấu của −cos x)', R=>{
+  const a = R.nz(-6, 6), b = R.nz(-6, 6), d = R.int(-9, 9), k0 = R.pick([0, 0, 1, 2]), k1 = R.pick([1, 2, 3, -1, -2].filter(k=> k !== k0)), X = k=> k*Math.PI/2;
+  const sn = k=> [0, 1, 0, -1][((k % 4) + 4) % 4], cs = k=> [1, 0, -1, 0][((k % 4) + 4) % 4];
+  const G0 = k=> a*sn(k) - b*cs(k), Cst = d - G0(k0), ans = G0(k1) + Cst; if(String(ans).length > 4) return null;
+  const f = [{p:a, q:1, k:'cos'}, {p:b, q:1, k:'sin'}], F = f.map(nhInt), P = v=> v < 0 ? `(${v})` : `${v}`;
+  const line = k=> `${a}\\cdot ${P(sn(k))} ${b < 0 ? '+' : '-'} ${Math.abs(b)}\\cdot ${P(cs(k))}`;
+  const o = {stem:`Biết $F(x)$ là một nguyên hàm của hàm số $f(x) = ${nhTx(f)}$ trên $\\mathbb{R}$ và $${nhFa(k0)} = ${d}$. Tính $${nhFa(k1)}$.`, ans,
+    lg:`$F(x) = ${nhTx(F)} + C$ (chú ý $\\int \\sin x\\,dx = -\\cos x + C$).<br>$${nhFa(k0)} = ${line(k0)} + C = ${G0(k0)} + C = ${d}$ $\\Rightarrow C = ${Cst}$.<br>`
+      + `$${nhFa(k1)} = ${line(k1)} ${Cst < 0 ? '-' : '+'} ${Math.abs(Cst)} = ${ans}$.`,
+    verify:()=>{ const fn = nhFn(f), lo = X(k0), hi = X(k1), n = 4000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return Math.abs(d + s*h/3 - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 15. Đ–S TH — f(x) = k·tan²x: biến đổi, họ nguyên hàm, F(π/4), tính đơn điệu của F */
+GD(12,3,0,'TH','Nguyên hàm của k·tan²x trên (−π/2; π/2): biến đổi về 1/cos²x − 1, họ nguyên hàm, giá trị F(π/4) và tính đơn điệu của F (F\' = f)', R=>{
+  const k = R.nz(-4, 4), c = R.int(-6, 6), K = nhCf(k, ''), tan = Math.tan;
+  const F = x=> k*(tan(x) - x) + c, f = x=> k*tan(x)**2;
+  const v = `${k + c === 0 ? '' : k + c} ${k < 0 ? '+' : '-'} ${nhPiF(k, 4)}`.trim(), vW = `${k + c === 0 ? '' : k + c} ${k < 0 ? '-' : '+'} ${nhPiF(k, 4)}`.trim(), T3 = `${k % 3 ? (k < 0 ? '-' : '') + frT(Math.abs(k), 3) : nhCf(k/3, '')}\\tan^{3}x`;
+  const fix = s=> s.startsWith('+ ') ? s.slice(2) : s.startsWith('- ') ? '-' + s.slice(2) : s;
+  const inc = k > 0;
+  const items = [
+    claim(R, `$f(x) = ${K}\\left(\\dfrac{1}{\\cos^{2}x} - 1\\right)$`, `$f(x) = ${K}\\left(\\dfrac{1}{\\cos^{2}x} + 1\\right)$`, ()=> near(f(0.7), k*(1/Math.cos(0.7)**2 - 1), 1e-9), ()=> near(f(0.7), k*(1/Math.cos(0.7)**2 + 1), 1e-9)),
+    claim(R, `$\\int f(x)\\,dx = ${K}(\\tan x - x) + C$`, `$\\int f(x)\\,dx = ${T3} + C$`, ()=> nhIsPrim(x=> k*(tan(x) - x), f, [0.2, 0.6, -0.5]), ()=> nhIsPrim(x=> k/3*tan(x)**3, f, [0.2, 0.6, -0.5])),
+    claim(R, `Nếu $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$ thì $F\\left(\\dfrac{\\pi}{4}\\right) = ${fix(v)}$`, `Nếu $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$ thì $F\\left(\\dfrac{\\pi}{4}\\right) = ${fix(vW)}$`,
+      ()=> near(F(Math.PI/4), k + c - k*Math.PI/4, 1e-9), ()=> near(F(Math.PI/4), k + c + k*Math.PI/4, 1e-9)),
+    claim(R, `Mọi nguyên hàm của $f(x)$ đều ${inc ? 'đồng' : 'nghịch'} biến trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$`, `Mọi nguyên hàm của $f(x)$ đều ${inc ? 'nghịch' : 'đồng'} biến trên khoảng $\\left(-\\dfrac{\\pi}{2}; 0\\right)$`,
+      ()=> [-1.4, -0.7, -0.1, 0.1, 0.8, 1.4].every(x=> (inc ? 1 : -1)*f(x) >= 0), ()=> [-1.4, -0.7, -0.1].every(x=> (inc ? -1 : 1)*f(x) > 0))];
+  return {stem:`Cho hàm số $f(x) = ${nhCf(k, '\\tan^{2}x')}$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$.`, items,
+    lg:`a) $\\tan^{2}x = \\dfrac{\\sin^{2}x}{\\cos^{2}x} = \\dfrac{1 - \\cos^{2}x}{\\cos^{2}x} = \\dfrac{1}{\\cos^{2}x} - 1$.<br>`
+      + `b) $\\int f(x)\\,dx = ${K}\\int\\left(\\dfrac{1}{\\cos^{2}x} - 1\\right)dx = ${K}(\\tan x - x) + C$. Hàm $${T3}$ có đạo hàm $${nhCf(k, '\\tan^{2}x')}\\cdot\\dfrac{1}{\\cos^{2}x} \\ne f(x)$.<br>`
+      + `c) $F(x) = ${K}(\\tan x - x) + C$, $F(0) = C = ${c}$, nên $F\\left(\\dfrac{\\pi}{4}\\right) = ${K}\\left(1 - \\dfrac{\\pi}{4}\\right) ${c < 0 ? '-' : '+'} ${Math.abs(c)} = ${fix(v)}$.<br>`
+      + `d) Mọi nguyên hàm $F$ có $F'(x) = f(x) = ${nhCf(k, '\\tan^{2}x')}$ ${inc ? '$\\ge 0$' : '$\\le 0$'}, chỉ bằng $0$ tại $x = 0$, nên $F$ ${inc ? 'đồng' : 'nghịch'} biến trên $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$.`};
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 4 (5 dạng, hàm mũ và 1/x). Claude viết.
+// Chuỗi: ∫aˣ = aˣ/ln a → đưa về aˣ (tích, a²ˣ, eᵐˣ, aˣ⁺¹) → 1/x trên hai khoảng (hai hằng số) → F(1) cho trước, F(x₁) chứa ln → Đ–S tổng hợp (bẫy dấu e⁻ˣ).
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhPick3 = (ans, cand, R)=>{ const seen = new Set([ans.v]), w = []; (R ? R.shuffle(cand) : cand).forEach(c=>{ if(!seen.has(c.v) && w.length < 3){ seen.add(c.v); w.push(c); } }); return w.length < 3 ? null : w; };
+const nhO = (t, fn)=> ({t:`$${t} + C$`, v:nhKey(fn), fn});
+const nhCf = (c, body)=> c === 1 ? body : c === -1 ? `-${body}` : /^\d/.test(body) ? `${c}\\cdot ${body}` : `${c}${body}`;   // cơ số là số: 3·2^x
+const nhDv = (num, den)=> num.startsWith('-') ? `-\\dfrac{${num.slice(1)}}{${den}}` : `\\dfrac{${num}}{${den}}`;   // phân số có tử là biểu thức
+const nhAdd = (s, t)=> !s ? t : t.startsWith('-') ? `${s} - ${t.slice(1)}` : `${s} + ${t}`;
+
+/* 16. TN NB — ∫ aˣ dx = aˣ/ln a */
+G(12,3,0,'NB','Nguyên hàm của hàm số mũ p·aˣ + q·eˣ (hoặc + q·xⁿ): ∫ aˣ dx = aˣ/ln a (bẫy: nhân ln a, dùng nhầm công thức luỹ thừa)', R=>{
+  const a = R.pick([2, 3, 5, 7, 10]), p = R.nz(-5, 5), sec = R.pick(['e', 'x']), q = R.nz(-5, 5), n = R.int(1, 3);
+  const g2 = sec === 'e' ? {f:nhCf(q, 'e^{x}'), F:nhCf(q, 'e^{x}'), fn:x=> q*Math.exp(x), Fn:x=> q*Math.exp(x), W:nhCf(q, 'e^{x}'), Wn:x=> q*Math.exp(x)}
+    : {f:nhTx([{p:q, q:1, k:'x', n}]), F:nhTx([nhInt({p:q, q:1, k:'x', n})]), fn:x=> q*x**n, Fn:nhFn([nhInt({p:q, q:1, k:'x', n})]), W:nhTx([{p:q, q:1, k:'x', n:n + 1}]), Wn:x=> q*x**(n + 1)};
+  const L = Math.log(a), A = `${a}^{x}`, Ap = nhCf(p, A);
+  const ans = nhO(nhAdd(nhDv(Ap, `\\ln ${a}`), g2.F), x=> p*a**x/L + g2.Fn(x));
+  const cand = [nhO(nhAdd(`${Ap}\\ln ${a}`, g2.F), x=> p*a**x*L + g2.Fn(x)), nhO(nhAdd(nhCf(p, `x\\cdot ${a}^{x - 1}`), g2.F), x=> p*x*a**(x - 1) + g2.Fn(x)),
+    nhO(nhAdd(nhDv(nhCf(p, `${a}^{x + 1}`), 'x + 1'), g2.F), x=> p*a**(x + 1)/(x + 1) + g2.Fn(x)), nhO(nhAdd(nhDv(Ap, `\\ln ${a}`), g2.W), x=> p*a**x/L + g2.Wn(x))];
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const fn = x=> p*a**x + g2.fn(x);
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${nhAdd(Ap, g2.f)}$ là`, ans, wrong,
+    lg:`Dùng $\\int a^{x}\\,dx = \\dfrac{a^{x}}{\\ln a} + C$ $(0 < a \\ne 1)$${sec === 'e' ? ', $\\int e^{x}\\,dx = e^{x} + C$' : `, $${nhRule({k:'x', n})}$`}:<br>$\\int f(x)\\,dx = ${ans.t.slice(1, -1)}$.<br>`
+      + `(Chú ý: $\\left(${a}^{x}\\right)' = ${a}^{x}\\ln ${a}$ nên nguyên hàm phải CHIA cho $\\ln ${a}$; công thức $\\int x^{\\alpha}dx$ chỉ dùng khi biến ở cơ số.)`,
+    verify:()=> nhIsPrim(o.ans.fn, fn)};
+  return o;
+});
+
+/* 17. TN TH — đưa về aˣ: aˣbˣ, a²ˣ, eᵐˣ, aˣ⁺¹ */
+G(12,3,0,'TH','Nguyên hàm sau khi đưa về dạng aˣ: aˣ·bˣ = (ab)ˣ, a²ˣ = (a²)ˣ, eᵐˣ = (eᵐ)ˣ, aˣ⁺¹ = a·aˣ (bẫy: quên hệ số khi lấy ln, nhầm với luỹ thừa)', R=>{
+  const ty = R.pick(['AB', 'A2', 'EM', 'A1']), k = R.nz(-4, 4); let fT, fn, ans, cand, how;
+  if(ty === 'AB'){ const [a, b] = R.pick([[2, 3], [2, 5], [3, 5], [2, 7], [3, 4]]), c = a*b; fT = nhCf(k, `${a}^{x}\\cdot ${b}^{x}`); fn = x=> k*c**x;
+    ans = nhO(nhDv(nhCf(k, `${c}^{x}`), `\\ln ${c}`), x=> k*c**x/Math.log(c));
+    cand = [nhO(nhDv(nhCf(k, `${a}^{x}\\cdot ${b}^{x}`), `\\ln ${a}\\cdot\\ln ${b}`), x=> k*c**x/(Math.log(a)*Math.log(b))), nhO(nhCf(k, `${c}^{x}\\ln ${c}`), x=> k*c**x*Math.log(c)), nhO(nhDv(nhCf(k, `${c}^{x}`), `\\ln ${a} \\cdot \\ln ${b}`).replace(' \\cdot ', '\\cdot '), x=> k*c**x/(Math.log(a)*Math.log(b))), nhO(nhDv(nhCf(k, `${c}^{x + 1}`), 'x + 1'), x=> k*c**(x + 1)/(x + 1))];
+    how = `$${a}^{x}\\cdot ${b}^{x} = (${a}\\cdot ${b})^{x} = ${c}^{x}$`; }
+  else if(ty === 'A2'){ const a = R.pick([2, 3, 5]); fT = nhCf(k, `${a}^{2x}`); fn = x=> k*a**(2*x);
+    ans = nhO(k % 2 ? nhDv(nhCf(k, `${a}^{2x}`), `2\\ln ${a}`) : nhDv(nhCf(k/2, `${a}^{2x}`), `\\ln ${a}`), x=> k*a**(2*x)/(2*Math.log(a)));
+    cand = [nhO(nhDv(nhCf(k, `${a}^{2x}`), `\\ln ${a}`), x=> k*a**(2*x)/Math.log(a)), nhO(nhCf(2*k, `${a}^{2x}`) + `\\ln ${a}`, x=> k*a**(2*x)*2*Math.log(a)), nhO(nhDv(nhCf(k, `${a}^{2x + 1}`), '2x + 1'), x=> k*a**(2*x + 1)/(2*x + 1)), nhO(nhDv(nhCf(2*k, `${a}^{2x}`), `\\ln ${a}`), x=> 2*k*a**(2*x)/Math.log(a))];
+    how = `$${a}^{2x} = \\left(${a}^{2}\\right)^{x} = ${a*a}^{x}$ và $\\ln ${a*a} = 2\\ln ${a}$, nên $\\int ${a}^{2x}dx = \\dfrac{${a*a}^{x}}{\\ln ${a*a}} + C = \\dfrac{${a}^{2x}}{2\\ln ${a}} + C$`; }
+  else if(ty === 'EM'){ const m = R.pick([2, 3, -1, -2, 4]), E = m === -1 ? 'e^{-x}' : `e^{${m}x}`; fT = nhCf(k, E); fn = x=> k*Math.exp(m*x);
+    const cf = c=> Number.isInteger(c) ? nhCf(c, E) : (c < 0 ? '-' : '') + frT(Math.abs(k), Math.abs(m)) + E;
+    ans = nhO(cf(k/m), x=> k/m*Math.exp(m*x));
+    cand = [nhO(nhCf(k*m, E), x=> k*m*Math.exp(m*x)), nhO(nhCf(k, E), x=> k*Math.exp(m*x)), nhO(cf(-k/m), x=> -k/m*Math.exp(m*x)), nhO(nhDv(nhCf(k, `e^{${m}x + 1}`), `${m}x + 1`), x=> k*Math.exp(m*x + 1)/(m*x + 1))];
+    how = `$${E} = \\left(e^{${m}}\\right)^{x}$ và $\\ln e^{${m}} = ${m}$, nên $\\int ${E}\\,dx = \\dfrac{${E}}{${m}} + C$ (kiểm tra: $\\left(${E}\\right)' = ${m}${E}$)`.replace('\\dfrac{e^{-x}}{-1}', '-e^{-x}'); }
+  else { const a = R.pick([2, 3, 5]), s = R.pick([1, 2, -1]), E = `${a}^{x ${s < 0 ? '-' : '+'} ${Math.abs(s)}}`; fT = nhCf(k, E); fn = x=> k*a**(x + s);
+    ans = nhO(nhDv(nhCf(k, E), `\\ln ${a}`), x=> k*a**(x + s)/Math.log(a));
+    cand = [nhO(nhDv(nhCf(k, `${a}^{x ${s + 1 < 0 ? '-' : '+'} ${Math.abs(s + 1)}}`), `x ${s + 1 < 0 ? '-' : '+'} ${Math.abs(s + 1)}`).replace(/x \+ 0|x - 0/g, 'x'), x=> k*a**(x + s + 1)/(x + s + 1)), nhO(nhCf(k, `${E}\\ln ${a}`), x=> k*a**(x + s)*Math.log(a)), nhO(nhDv(nhCf(k, `${a}^{x}`), `\\ln ${a}`), x=> k*a**x/Math.log(a))];
+    how = `$${E} = ${s > 0 ? `${a**s}\\cdot ${a}^{x}` : `\\dfrac{1}{${a**-s}}\\cdot ${a}^{x}`}$, nên $\\int ${E}\\,dx = ${s > 0 ? a**s : `\\dfrac{1}{${a**-s}}`}\\cdot\\dfrac{${a}^{x}}{\\ln ${a}} + C = \\dfrac{${E}}{\\ln ${a}} + C$`; }
+  const wrong = nhPick3(ans, cand, R); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${fT}$ là`, ans, wrong,
+    lg:`${how}.<br>Vậy $\\int f(x)\\,dx = ${ans.t.slice(1, -1)}$.`,
+    verify:()=> nhIsPrim(o.ans.fn, fn)};
+  return o;
+});
+
+/* 18. TN VD — 1/x trên hai khoảng: hai hằng số khác nhau */
+G(12,3,0,'VD','Nguyên hàm của a/x trên ℝ \\ {0}: biết F(1), F(−1) — tính F(eᵐ) + F(−eⁿ) (mỗi khoảng một hằng số; bẫy dùng chung hằng số, quên |x|)', R=>{
+  const a = R.nz(-4, 4), p = R.int(-6, 6), q = R.int(-6, 6), m = R.int(1, 3), n = R.int(1, 3); if(p === q) return null;
+  const ask = R.pick(['sum', 'diff']), val = ask === 'sum' ? p + q + a*(m + n) : p - q + a*(m - n);
+  const cand = ask === 'sum' ? [2*p + a*(m + n), p + q + a*m, p + q - a*(m + n), p + q, 2*q + a*(m + n)] : [a*(m - n), p - q + a*(m + n), p - q - a*(m - n), p - q];
+  const ws = [...new Set(cand)].filter(v=> v !== val).slice(0, 3); if(ws.length < 3) return null;
+  const E = k=> k === 1 ? 'e' : `e^{${k}}`, aT = nhCf(a, '');
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = \\dfrac{${a}}{x}$ trên $\\mathbb{R} \\setminus \\{0\\}$ thoả mãn $F(1) = ${p}$ và $F(-1) = ${q}$. Giá trị của $${ask === 'sum' ? `F\\left(${E(m)}\\right) + F\\left(-${E(n)}\\right)` : `F\\left(${E(m)}\\right) - F\\left(-${E(n)}\\right)`}$ bằng`.replace('\\dfrac{-', '-\\dfrac{'),
+    ans:{t:`$${val}$`, v:val}, wrong:ws.map(v=> ({t:`$${v}$`, v})),
+    lg:`$\\int ${a < 0 ? `-\\dfrac{${-a}}{x}` : `\\dfrac{${a}}{x}`}\\,dx = ${aT}\\ln|x| + C$, nhưng $\\mathbb{R} \\setminus \\{0\\}$ gồm hai khoảng rời nhau nên hằng số trên mỗi khoảng có thể khác nhau:<br>`
+      + `$F(x) = ${aT}\\ln x + C_{1}$ khi $x > 0$; $F(x) = ${aT}\\ln(-x) + C_{2}$ khi $x < 0$.<br>`
+      + `$F(1) = C_{1} = ${p}$, $F(-1) = C_{2} = ${q}$.<br>`
+      + `$F\\left(${E(m)}\\right) = ${a}\\cdot ${m} ${p < 0 ? '-' : '+'} ${Math.abs(p)} = ${a*m + p}$, $F\\left(-${E(n)}\\right) = ${a}\\cdot ${n} ${q < 0 ? '-' : '+'} ${Math.abs(q)} = ${a*n + q}$.<br>`
+      + `Vậy giá trị cần tìm là $${val}$.`,
+    verify:()=>{ const F = x=> x > 0 ? a*Math.log(x) + p : a*Math.log(-x) + q, ok = nhIsPrim(F, x=> a/x, [0.5, 1.7, -0.6, -2.2]);
+      return ok && near(o.ans.v, ask === 'sum' ? F(Math.exp(m)) + F(-Math.exp(n)) : F(Math.exp(m)) - F(-Math.exp(n)), 1e-9); }};
+  return o;
+});
+
+/* 19. TLN TH — F(1) cho trước, F(x₁) có ln: làm tròn */
+GT(12,3,0,'TH','Nguyên hàm F của a/x + b·xⁿ trên (0; +∞) thoả F(1) cho trước: tính F(x₁) (chứa ln, làm tròn đến hàng phần mười)', R=>{
+  const a = R.nz(-6, 6), b = R.nz(-4, 4), n = R.int(0, 2), c = R.int(-6, 6), x1 = R.pick([2, 3, 4, 5]);
+  const f = [{p:a, q:1, k:'inv', n:1}, {p:b, q:1, k:'x', n}], F = f.map(nhInt), Fn = nhFn(F, true), C = c - Fn(1), exact = Fn(x1) + C;
+  const ans = Math.round(exact*10)/10; if(Math.abs(exact*10 - Math.round(exact*10)) > 0.45 || nt(ans).replace('{,}', ',').length > 4) return null;
+  const Cf = Number.isInteger(C) ? String(C) : frT(Math.round(C*6), 6), poly = nhFn([F[1]])(x1), polyT1 = Number.isInteger(poly) ? String(poly) : frT(Math.round(poly*6), 6);
+  const o = {stem:`Biết $F(x)$ là một nguyên hàm của hàm số $f(x) = ${nhTx(f, true)}$ trên khoảng $(0; +\\infty)$ và $F(1) = ${c}$. Tính $F(${x1})$ (làm tròn kết quả đến hàng phần mười).`, ans,
+    lg:`$F(x) = ${nhTx(F, true)} + C$ (trên $(0; +\\infty)$, $\\ln|x| = \\ln x$).<br>$F(1) = ${frT(Math.round(Fn(1)*6), 6)} + C$ (vì $\\ln 1 = 0$), mà $F(1) = ${c}$ nên $C = ${Cf}$.<br>`
+      + `$F(${x1}) = ${nhCf(a, `\\ln ${x1}`)} ${poly < 0 ? '-' : '+'} ${polyT1.replace('-', '')} ${C < 0 ? '-' : '+'} ${Cf.replace('-', '')} \\approx ${nt(ans)}$.`,
+    verify:()=>{ const fn = nhFn(f, true), N = 4000, h = (x1 - 1)/N; let s = fn(1) + fn(x1); for(let i = 1; i < N; i++) s += fn(1 + i*h)*(i % 2 ? 4 : 2); return Math.abs(c + s*h/3 - o.ans) < 0.051; }};
+  return o;
+});
+
+/* 20. Đ–S TH — công thức mũ, ln: e^{−x}, aˣ, a/x, F(eᵏ) */
+GD(12,3,0,'TH','Nguyên hàm của hàm số mũ và hàm số 1/x: ∫ (eˣ + a/x), ∫ bˣ, ∫ e⁻ˣ (bẫy dấu) và nguyên hàm của 1/x thoả F(1) = c tại x = eᵏ', R=>{
+  const a = R.nz(-5, 5), b = R.pick([2, 3, 5, 10]), k = R.int(2, 4), c = R.int(-5, 6), s = R.pick([1, -1]), m = R.nz(-4, 4);
+  const items = [
+    claim(R, `$\\int \\left(e^{x} ${a < 0 ? '-' : '+'} \\dfrac{${Math.abs(a)}}{x}\\right)dx = e^{x} ${a < 0 ? '-' : '+'} ${Math.abs(a) === 1 ? '' : Math.abs(a)}\\ln|x| + C$`, `$\\int \\left(e^{x} ${a < 0 ? '-' : '+'} \\dfrac{${Math.abs(a)}}{x}\\right)dx = e^{x} ${a < 0 ? '+' : '-'} \\dfrac{${Math.abs(a)}}{x^{2}} + C$`,
+      ()=> nhIsPrim(x=> Math.exp(x) + a*Math.log(Math.abs(x)), x=> Math.exp(x) + a/x, [0.6, 1.4, -0.8]), ()=> nhIsPrim(x=> Math.exp(x) - a/(x*x), x=> Math.exp(x) + a/x, [0.6, 1.4])),
+    claim(R, `$\\int ${b}^{x}\\,dx = \\dfrac{${b}^{x}}{\\ln ${b}} + C$`, `$\\int ${b}^{x}\\,dx = ${b}^{x}\\ln ${b} + C$`, ()=> nhIsPrim(x=> b**x/Math.log(b), x=> b**x), ()=> nhIsPrim(x=> b**x*Math.log(b), x=> b**x)),
+    claim(R, `$\\int ${nhCf(m, 'e^{-x}')}\\,dx = ${nhCf(-m, 'e^{-x}')} + C$`, `$\\int ${nhCf(m, 'e^{-x}')}\\,dx = ${nhCf(m, 'e^{-x}')} + C$`, ()=> nhIsPrim(x=> -m*Math.exp(-x), x=> m*Math.exp(-x)), ()=> nhIsPrim(x=> m*Math.exp(-x), x=> m*Math.exp(-x))),
+    claim(R, `Nếu $F(x)$ là một nguyên hàm của $\\dfrac{1}{x}$ trên $(0; +\\infty)$ và $F(1) = ${c}$ thì $F\\left(e^{${k}}\\right) = ${c + k}$`, `Nếu $F(x)$ là một nguyên hàm của $\\dfrac{1}{x}$ trên $(0; +\\infty)$ và $F(1) = ${c}$ thì $F\\left(e^{${k}}\\right) = ${c ? `${c} + ` : ''}e^{${k}}$`,
+      ()=> near(Math.log(Math.exp(k)) + c, c + k, 1e-9), ()=> near(Math.log(Math.exp(k)) + c, c + Math.exp(k), 1e-9))];
+  return {stem:'Xét tính đúng, sai của các khẳng định sau:', items,
+    lg:`a) $\\int e^{x}dx = e^{x} + C$, $\\int \\dfrac{1}{x}dx = \\ln|x| + C$ (hàm $-\\dfrac{1}{x^{2}}$ là ĐẠO HÀM của $\\dfrac{1}{x}$, không phải nguyên hàm).<br>`
+      + `b) $\\left(\\dfrac{${b}^{x}}{\\ln ${b}}\\right)' = \\dfrac{${b}^{x}\\ln ${b}}{\\ln ${b}} = ${b}^{x}$; còn $\\left(${b}^{x}\\ln ${b}\\right)' = ${b}^{x}\\ln^{2}${b}$.<br>`
+      + `c) $\\left(${nhCf(-m, 'e^{-x}')}\\right)' = ${nhCf(-m, 'e^{-x}')}\\cdot(-1) = ${nhCf(m, 'e^{-x}')}$ nên $\\int ${nhCf(m, 'e^{-x}')}\\,dx = ${nhCf(-m, 'e^{-x}')} + C$ (chú ý dấu trừ).<br>`
+      + `d) $F(x) = \\ln x + C$, $F(1) = C = ${c}$, nên $F\\left(e^{${k}}\\right) = \\ln e^{${k}} ${c < 0 ? '-' : '+'} ${Math.abs(c)} = ${c + k}$.`.replace(' + 0 =', ' =')};
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 5 (5 dạng, điều kiện cho trước). Claude viết.
+// Chuỗi: đọc f từ đồ thị → tiếp tuyến của đồ thị F → hàm từng khúc (dán hằng số) → f'' → f' → f → Đ–S nối nguyên hàm với cực trị, đơn điệu (F' = f).
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhPlain = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };
+const nhPv = (co, x)=> co.reduce((s, c)=> s*x + c, 0);
+const nhSimp = (fn, lo, hi)=>{ const n = 4000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+
+/* 21. TN TH — đọc f từ đồ thị (đường thẳng / parabol), F(0) cho trước */
+G(12,3,0,'TH','Đọc công thức f(x) từ đồ thị (đường thẳng hoặc parabol trên lưới ô vuông) rồi tìm nguyên hàm F thoả F(0) cho trước, tính F(x₁)', R=>{
+  const ty = R.pick(['L', 'P', 'P']), c = R.int(-5, 5), x1 = R.pick([1, 2, 3, -1, -2]); let co, desc, mk;
+  if(ty === 'L'){ const m = R.nz(-3, 3), n = R.nz(-3, 3); co = [m, n]; mk = [0, 1]; desc = `đường thẳng đi qua hai điểm $(0; ${n})$ và $(1; ${m + n})$`; }
+  else { const a = R.pick([1, -1]), h = R.int(-1, 2), k = R.int(-3, 3); co = [a, -2*a*h, a*h*h + k]; mk = [h, h + 1]; desc = `parabol có đỉnh $(${h}; ${k})$ và đi qua điểm $(${h + 1}; ${a + k})$`; }
+  const P = ty === 'L' ? [co[0]*3, co[1]*6, 0] : [co[0]*2, co[1]*3, co[2]*6, 0];   // 6·(F − c)
+  const F6 = x=> nhPv(P, x) + 6*c, val = F6(x1), f = x=> nhPv(co, x);
+  const cand = [F6(x1) - 6*c, 6*f(x1), -nhPv(P, x1) + 6*c, F6(-x1), F6(x1) + 6*c].filter(v=> !near(v, val, 1e-9));
+  const ws = []; cand.forEach(v=>{ if(ws.length < 3 && !ws.some(w=> near(w, v, 1e-9))) ws.push(v); }); if(ws.length < 3) return null;
+  const xs = [-2.5, -1.5, -0.5, 0.5, 1.5, 2.5, 3.5].map(f), ymin = Math.max(-7, Math.floor(Math.min(...xs, 0)) - 1), ymax = Math.min(7, Math.ceil(Math.max(...xs, 0)) + 1);
+  const Fco = ty === 'L' ? [{p:co[0], q:2, k:'x', n:2}, {p:co[1], q:1, k:'x', n:1}] : [{p:co[0], q:3, k:'x', n:3}, {p:co[1], q:2, k:'x', n:2}, {p:co[2], q:1, k:'x', n:1}];
+  const o = {stem:`Cho hàm số $y = f(x)$ là hàm số ${ty === 'L' ? 'bậc nhất' : 'bậc hai'} có đồ thị như hình vẽ. Biết $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Giá trị của $F(${x1})$ bằng`,
+    ans:{t:`$${frT(val, 6)}$`, v:val/6}, wrong:ws.map(v=> ({t:`$${frT(v, 6)}$`, v:v/6})),
+    lg:`Đồ thị là ${desc}, nên $f(x) = ${ty === 'L' ? polyT(co) : `${co[0] < 0 ? '-' : ''}${mk[0] ? `(x ${mk[0] < 0 ? '+' : '-'} ${Math.abs(mk[0])})^{2}` : 'x^{2}'} ${co[0]*0 + (nhPv(co, mk[0]) < 0 ? '-' : '+')} ${Math.abs(nhPv(co, mk[0]))} = ${polyT(co)}`}$.<br>`
+      + `$F(x) = \\int f(x)\\,dx = ${nhTx(Fco.filter(m=> m.p))} + C$; $F(0) = C = ${c}$.<br>`
+      + `$F(${x1}) = ${frT(nhPv(P, x1), 6)} ${c < 0 ? '-' : '+'} ${Math.abs(c)} = ${frT(val, 6)}$.`,
+    hv:{loai:'dothi', hamSo:nhPlain(co), ten:'y = f(x)', luoi:true, ghiCucTri:false, diem:mk, khung:{xmin:-3.5, xmax:4.5, ymin:ymin - 0.5, ymax:ymax + 0.5}},
+    verify:()=> near(o.ans.v, c + nhSimp(f, 0, x1), 1e-9)};
+  o.lg = o.lg.replace(' + 0 = ', ' = ').replace(' - 0 = ', ' = ');
+  return o;
+});
+
+/* 22. TLN VD — tiếp tuyến của đồ thị nguyên hàm */
+GT(12,3,0,'VD','Đường thẳng y = kx + m tiếp xúc với đồ thị y = F(x) tại điểm có hoành độ x₀ (F là nguyên hàm của f): tìm hằng số C rồi tính F(x₁)', R=>{
+  const al = R.nz(-2, 2), be = R.int(-3, 3), ga = R.int(-5, 5), x0 = R.pick([-1, 0, 1, 2]), x1 = R.pick([-2, -1, 0, 1, 2, 3].filter(x=> x !== x0)), m = R.int(-6, 6);
+  const fco = [3*al, 2*be, ga], k = nhPv(fco, x0), Pco = [al, be, ga, 0], C = k*x0 + m - nhPv(Pco, x0), ans = nhPv(Pco, x1) + C;
+  if(String(ans).length > 4) return null;
+  const line = `y = ${polyT([k, m])}`;
+  const o = {stem:`Biết $F(x)$ là một nguyên hàm của hàm số $f(x) = ${polyT(fco)}$ trên $\\mathbb{R}$ và đường thẳng $${line}$ là tiếp tuyến của đồ thị hàm số $y = F(x)$ tại điểm có hoành độ $x = ${x0}$. Tính $F(${x1})$.`, ans,
+    lg:`$F(x) = ${polyT(Pco)} + C$. Tiếp tuyến tại điểm có hoành độ $${x0}$ có hệ số góc $F'(${x0}) = f(${x0}) = ${k}$ (khớp với hệ số góc của đường thẳng) và tiếp điểm thuộc đường thẳng, nên $F(${x0}) = ${k}\\cdot ${nhP(x0)} ${m < 0 ? '-' : '+'} ${Math.abs(m)} = ${k*x0 + m}$.<br>`
+      + `$F(${x0}) = ${nhPv(Pco, x0)} + C = ${k*x0 + m}$ $\\Rightarrow C = ${C}$.<br>$F(${x1}) = ${nhPv(Pco, x1)} ${C < 0 ? '-' : '+'} ${Math.abs(C)} = ${ans}$.`,
+    verify:()=>{ const F = x=> nhPv(Pco, x) + C, d = (F(x0 + 1e-5) - F(x0 - 1e-5))/2e-5; return near(d, k, 1e-6) && near(F(x0), k*x0 + m, 1e-9) && near(o.ans, F(x0) + nhSimp(x=> nhPv(fco, x), x0, x1), 1e-9); }};
+  o.lg = o.lg.replace('+ 0 =', '=').replace('- 0 =', '=');
+  return o;
+});
+
+/* 23. TLN VD — hàm từng khúc liên tục: dán hằng số tại điểm nối */
+GT(12,3,0,'VD','Nguyên hàm của hàm số cho bởi hai công thức (liên tục trên ℝ): F liên tục tại điểm nối nên hai hằng số liên hệ với nhau — biết F tại một điểm bên trái, tính F tại một điểm bên phải', R=>{
+  const t = R.pick([0, 1, 1, -1]), p = R.nz(-2, 2), q = R.int(-4, 4), r = R.nz(-3, 3), s = 3*p*t*t + q - 2*r*t;
+  const xL = t - R.pick([1, 2]), xR = t + R.pick([1, 2]), d = R.int(-6, 6);
+  const FL = x=> p*x**3 + q*x, FR = x=> r*x*x + s*x, C1 = d - FL(xL), C2 = FL(t) + C1 - FR(t), ans = FR(xR) + C2;
+  if(String(ans).length > 4) return null;
+  const fL = polyT([3*p, 0, q]), fR = polyT([2*r, s]);
+  const o = {stem:`Cho hàm số $f(x) = \\begin{cases} ${fR} & \\text{khi } x \\ge ${t} \\\\ ${fL} & \\text{khi } x < ${t} \\end{cases}$. Biết $F(x)$ là một nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(${xL}) = ${d}$. Tính $F(${xR})$.`, ans,
+    lg:`Tại $x = ${t}$: hai công thức cùng cho giá trị $${2*r*t + s}$ nên $f$ liên tục trên $\\mathbb{R}$, do đó có nguyên hàm trên $\\mathbb{R}$; $F$ có đạo hàm nên liên tục tại $x = ${t}$.<br>`
+      + `Khi $x < ${t}$: $F(x) = ${polyT([p, 0, q, 0])} + C_{1}$; $F(${xL}) = ${FL(xL)} + C_{1} = ${d}$ $\\Rightarrow C_{1} = ${C1}$.<br>`
+      + `Khi $x \\ge ${t}$: $F(x) = ${polyT([r, s, 0])} + C_{2}$. Liên tục tại $${t}$: $${FR(t)} + C_{2} = ${FL(t)} ${C1 < 0 ? '-' : '+'} ${Math.abs(C1)}$ $\\Rightarrow C_{2} = ${C2}$.<br>`
+      + `$F(${xR}) = ${FR(xR)} ${C2 < 0 ? '-' : '+'} ${Math.abs(C2)} = ${ans}$.`,
+    verify:()=>{ const f = x=> x >= t ? 2*r*x + s : 3*p*x*x + q; if(!near(2*r*t + s, 3*p*t*t + q, 1e-12)) return false;
+      return near(o.ans, d + nhSimp(f, xL, t) + nhSimp(f, t, xR), 1e-9); }};
+  o.lg = o.lg.replace(/ \+ 0 =/g, ' =').replace(/ - 0 =/g, ' =');
+  return o;
+});
+
+/* 24. TN TH — lấy nguyên hàm hai lần: f'' → f' → f */
+G(12,3,0,'TH','Biết f″(x), f′(x₀) và f(x₁): lấy nguyên hàm hai lần (hai hằng số) để tìm f(x₂) (bẫy: bỏ quên một hằng số)', R=>{
+  const a = R.nz(-2, 2), b = R.int(-3, 3), x0 = R.pick([0, 1]), x1 = R.pick([0, 1, -1]), x2 = R.pick([2, -2, 3].filter(x=> x !== x1)), p = R.int(-6, 6), q = R.int(-6, 6);
+  const C1 = p - (3*a*x0*x0 + 2*b*x0), g = x=> a*x**3 + b*x*x + C1*x, C2 = q - g(x1), val = g(x2) + C2;
+  const cand = [a*x2**3 + b*x2*x2 + q - (a*x1**3 + b*x1*x1), g(x2), g(x2) + q, val + C1*(x1 - x2) + p*(x2 - x1), a*x2**3 + b*x2*x2 + p*x2 + q].filter(v=> v !== val);
+  const ws = [...new Set(cand)].slice(0, 3); if(ws.length < 3) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có đạo hàm cấp hai $f''(x) = ${polyT([6*a, 2*b])}$ với mọi $x \\in \\mathbb{R}$, $f'(${x0}) = ${p}$ và $f(${x1}) = ${q}$. Giá trị của $f(${x2})$ bằng`,
+    ans:{t:`$${val}$`, v:val}, wrong:ws.map(v=> ({t:`$${v}$`, v})),
+    lg:`$f'(x)$ là một nguyên hàm của $f''(x)$: $f'(x) = ${polyT([3*a, 2*b, 0])} + C_{1}$; $f'(${x0}) = ${3*a*x0*x0 + 2*b*x0} + C_{1} = ${p}$ $\\Rightarrow C_{1} = ${C1}$.<br>`
+      + `$f(x)$ là một nguyên hàm của $f'(x) = ${polyT([3*a, 2*b, C1])}$: $f(x) = ${polyT([a, b, C1, 0])} + C_{2}$; $f(${x1}) = ${g(x1)} + C_{2} = ${q}$ $\\Rightarrow C_{2} = ${C2}$.<br>`
+      + `Vậy $f(${x2}) = ${g(x2)} ${C2 < 0 ? '-' : '+'} ${Math.abs(C2)} = ${val}$.`,
+    verify:()=>{ const f1 = x=> p + nhSimp(t=> 6*a*t + 2*b, x0, x); return near(o.ans.v, q + nhSimp(f1, x1, x2), 1e-6); }};
+  o.lg = o.lg.replace(/ \+ 0 =/g, ' =').replace(/ - 0 =/g, ' =');
+  return o;
+});
+
+/* 25. Đ–S VD — nguyên hàm của f = 6s(x − α)(x − β): cực trị, đơn điệu của F */
+GD(12,3,0,'VD','Nguyên hàm F của f(x) = k(x − α)(x − β) thoả F(0) cho trước: công thức F, điểm cực đại, giá trị cực tiểu và khoảng đơn điệu của F (dùng F\' = f)', R=>{
+  const [al, be] = R.distinct(2, -3, 3).sort((x, y)=> x - y), sg = R.pick([1, -1]), c = R.int(-5, 5);
+  const co = [2*sg, -3*sg*(al + be), 6*sg*al*be, c], F = x=> nhPv(co, x), f = x=> 6*sg*(x - al)*(x - be);
+  const xCD = sg > 0 ? al : be, xCT = sg > 0 ? be : al;
+  const fT = `${sg < 0 ? '-' : ''}6${al ? `(x ${al < 0 ? '+' : '-'} ${Math.abs(al)})` : 'x'}${be ? `(x ${be < 0 ? '+' : '-'} ${Math.abs(be)})` : 'x'}`;
+  const bad = [6*sg, -6*sg*(al + be), 6*sg*al*be, c];
+  const items = [
+    claim(R, `$F(x) = ${polyT(co)}$`, `$F(x) = ${polyT(bad)}$`, ()=> nhIsPrim(F, f, [-1.3, 0.4, 2.2]) && F(0) === c, ()=> nhIsPrim(x=> nhPv(bad, x), f, [-1.3, 0.4, 2.2])),
+    claim(R, `Hàm số $F(x)$ đạt cực đại tại $x = ${xCD}$`, `Hàm số $F(x)$ đạt cực đại tại $x = ${xCT}$`, ()=> f(xCD - 0.01) > 0 && f(xCD + 0.01) < 0, ()=> f(xCT - 0.01) > 0 && f(xCT + 0.01) < 0),
+    claimN(R, v=> `Giá trị cực tiểu của hàm số $F(x)$ bằng $${v}$`, F(xCT), String(F(xCT)), F(xCD), String(F(xCD)), ()=> F(xCT)),
+    claim(R, `Hàm số $F(x)$ ${sg > 0 ? 'nghịch' : 'đồng'} biến trên khoảng $(${al}; ${be})$`, `Hàm số $F(x)$ ${sg > 0 ? 'đồng' : 'nghịch'} biến trên khoảng $(${al}; ${be})$`,
+      ()=> [0.1, 0.5, 0.9].every(u=> sg*f(al + u*(be - al)) < 0), ()=> [0.1, 0.5, 0.9].every(u=> sg*f(al + u*(be - al)) > 0))];
+  return {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = ${fT}$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$.`, items,
+    lg:`a) $f(x) = ${polyT([6*sg, -6*sg*(al + be), 6*sg*al*be])}$ nên $F(x) = ${polyT(co.slice(0, 3).concat(0))} + C$, $F(0) = C = ${c}$: $F(x) = ${polyT(co)}$.<br>`
+      + `b), d) $F'(x) = f(x)$ có hai nghiệm $${al}$, $${be}$; ${sg > 0 ? `$f(x) < 0$ trên $(${al}; ${be})$, $f(x) > 0$ ngoài đoạn $[${al}; ${be}]$` : `$f(x) > 0$ trên $(${al}; ${be})$, $f(x) < 0$ ngoài đoạn $[${al}; ${be}]$`}. Vậy $F$ ${sg > 0 ? 'nghịch' : 'đồng'} biến trên $(${al}; ${be})$, đạt cực đại tại $x = ${xCD}$ và cực tiểu tại $x = ${xCT}$.<br>`
+      + `c) Giá trị cực tiểu $F(${xCT}) = ${F(xCT)}$ (giá trị cực đại $F(${xCD}) = ${F(xCD)}$).`};
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 6 (5 dạng, thực tế: chuyển động, bơm nước). Claude viết.
+// Chuỗi: v → s (một lần nguyên hàm) → a → v → s (hai lần) → phanh xe (Đ–S, ra quyết định) → ném bóng (độ cao lớn nhất) → bơm nước tốc độ a√t.
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhSimp = (fn, lo, hi)=>{ const n = 4000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const nhWs = (val, cand)=>{ const w = []; cand.forEach(v=>{ if(w.length < 3 && !near(v, val, 1e-9) && !w.some(x=> near(x, v, 1e-9)) && v > 0) w.push(v); }); return w.length < 3 ? null : w; };
+
+/* 26. TN TH — vận tốc bậc nhất → quãng đường */
+G(12,3,0,'TH','Bài toán thực tế: vận tốc v(t) = at + b (m/s) — quãng đường đi được trong T giây đầu là s(T) với s là nguyên hàm của v, s(0) = 0 (bẫy: lấy v(T), quên chia 2)', R=>{
+  const ctx = R.pick([['Một ô tô đang chạy thì tăng tốc', [1, 2, 3], [8, 15], [4, 8]], ['Một xe máy đang chạy thì tăng tốc', [1, 2], [6, 12], [4, 8]], ['Một đoàn tàu rời ga, sau khi qua đường tránh thì bắt đầu tăng tốc', [1, 2], [4, 10], [6, 12]], ['Một vận động viên đua xe đạp tăng tốc khi về đích', [1, 2], [8, 12], [3, 6]]]);
+  const a = R.pick(ctx[1]), b = R.int(ctx[2][0], ctx[2][1]), T = R.int(ctx[3][0], ctx[3][1]);
+  const val = a*T*T/2 + b*T, ws = nhWs(val, [a*T + b, a*T*T + b*T, a*T*T/2, a*T*T/2 + b, b*T + a*T]); if(!ws) return null;
+  const o = {stem:`${ctx[0]} với vận tốc $v(t) = ${polyT([a, b], 't')}$ (m/s), trong đó $t$ (giây) là thời gian tính từ lúc bắt đầu tăng tốc. Quãng đường đi được trong $${T}$ giây đầu kể từ lúc bắt đầu tăng tốc là`,
+    ans:{t:`$${nt(val)}$ m`, v:val}, wrong:ws.map(v=> ({t:`$${nt(v)}$ m`, v})),
+    lg:`Gọi $s(t)$ là quãng đường đi được sau $t$ giây ($s(0) = 0$). Vì $v(t) > 0$ nên $s'(t) = v(t)$, tức $s(t)$ là một nguyên hàm của $v(t)$:<br>$s(t) = ${nhTx([{p:a, q:2, k:'x', n:2}, {p:b, q:1, k:'x', n:1}]).replace(/x/g, 't')} + C$, $s(0) = 0 \\Rightarrow C = 0$.<br>`
+      + `$s(${T}) = ${nhTx([{p:a, q:2, k:'x', n:2}]).replace('x^{2}', `\\cdot ${T}^{2}`).replace(/^\\cdot /, '')} + ${b}\\cdot ${T} = ${nt(val)}$ (m).`,
+    verify:()=> near(o.ans.v, nhSimp(t=> a*t + b, 0, T), 1e-9)};
+  return o;
+});
+
+/* 27. TLN VD — gia tốc → vận tốc → quãng đường */
+GT(12,3,0,'VD','Bài toán thực tế: biết gia tốc a(t) và vận tốc ban đầu — tìm vận tốc v(t) (nguyên hàm của a) rồi quãng đường s(t) (nguyên hàm của v): lấy nguyên hàm hai lần', R=>{
+  const p = R.pick([2, 3, 4, 5, 6, 8]), q = R.pick([1, 2]), T = R.pick([1, 2, 3, 4, 5, 6].filter(t=> t <= p/q)), v0 = R.int(0, 15), ask = R.pick(['s', 's', 'v']);
+  if(!T) return null;
+  const v = t=> v0 + p*t - q*t*t/2, s = t=> v0*t + p*t*t/2 - q*t**3/6, ans = ask === 's' ? s(T) : v(T);
+  if(!Number.isInteger(ans) || String(ans).length > 4 || [0, 0.5, 1].some(u=> v(u*T) <= 0)) return null;
+  const aT = `${p} - ${q === 1 ? '' : q}t`;
+  const o = {stem:`Một ô tô đang chuyển động với vận tốc $${v0}$ m/s thì tăng tốc với gia tốc $a(t) = ${aT}$ (m/s$^{2}$), trong đó $t$ (giây) là thời gian tính từ lúc tăng tốc, $0 \\le t \\le ${nt(p/q)}$ (gia tốc giảm dần về $0$). ${ask === 's' ? `Tính quãng đường (mét) ô tô đi được trong $${T}$ giây đầu kể từ lúc tăng tốc.` : `Tính vận tốc (m/s) của ô tô tại thời điểm $t = ${T}$.`}`, ans,
+    lg:`Vận tốc $v(t)$ là một nguyên hàm của $a(t)$: $v(t) = ${p}t - ${frT(q, 2) === '1' ? '' : frT(q, 2)}t^{2} + C$; $v(0) = ${v0}$ nên $v(t) = ${v0 ? `${v0} + ` : ''}${p}t - ${frT(q, 2) === '1' ? '' : frT(q, 2)}t^{2}$.`
+      + (ask === 'v' ? `<br>$v(${T}) = ${nt(v(T))}$ (m/s).` : `<br>Trên $[0; ${T}]$ có $v(t) > 0$ nên quãng đường $s(t)$ (với $s(0) = 0$) là một nguyên hàm của $v(t)$: $s(t) = ${v0 ? `${v0 === 1 ? '' : v0}t + ` : ''}${frT(p, 2) === '1' ? '' : frT(p, 2)}t^{2} - ${frT(q, 6) === '1' ? '' : frT(q, 6)}t^{3}$.<br>$s(${T}) = ${nt(s(T))}$ (m).`),
+    verify:()=>{ const vv = t=> v0 + nhSimp(u=> p - q*u, 0, t); return near(o.ans, ask === 's' ? nhSimp(vv, 0, T) : vv(T), 1e-6); }};
+  return o;
+});
+
+/* 28. Đ–S VD — phanh ô tô */
+GD(12,3,0,'VD','Bài toán thực tế: ô tô phanh gấp với v(t) = v₀ − kt — thời điểm dừng, công thức quãng đường (nguyên hàm của v), quãng đường phanh và có kịp dừng trước vật cản không', R=>{
+  const [kmh, v0] = R.pick([[36, 10], [54, 15], [72, 20], [90, 25]]), k = R.pick([5, 6, 8]), tS = v0/k, D = v0*v0/(2*k);
+  if(!Number.isInteger(D*2)) return null;
+  const obs = R.pick([Math.round(D) + R.int(2, 6), Math.max(3, Math.floor(D) - R.int(2, 6))]), stop = D < obs;
+  const tT = Number.isInteger(tS) ? String(tS) : frT(v0, k), dT = nt(D), dW = nt(2*D);
+  const items = [
+    claimN(R, val=> `Ô tô dừng hẳn sau $${val}$ giây kể từ lúc phanh`, tS, tT, 2*tS, Number.isInteger(2*tS) ? String(2*tS) : frT(2*v0, k), ()=> v0/k),
+    claim(R, `Quãng đường ô tô đi được sau $t$ giây kể từ lúc phanh là $s(t) = ${v0}t - ${frT(k, 2)}t^{2}$ (m)`, `Quãng đường ô tô đi được sau $t$ giây kể từ lúc phanh là $s(t) = ${v0}t - ${k}t^{2}$ (m)`,
+      ()=> near(nhSimp(t=> v0 - k*t, 0, 1), v0 - k/2, 1e-9), ()=> near(nhSimp(t=> v0 - k*t, 0, 1), v0 - k, 1e-9)),
+    claimN(R, val=> `Quãng đường từ lúc phanh đến khi ô tô dừng hẳn là $${val}$ m`, D, dT, 2*D, dW, ()=> nhSimp(t=> v0 - k*t, 0, tS)),
+    claim(R, `Nếu lúc bắt đầu phanh ô tô cách vật cản phía trước $${obs}$ m thì ô tô ${stop ? 'dừng lại trước khi chạm' : 'không dừng kịp trước'} vật cản`, `Nếu lúc bắt đầu phanh ô tô cách vật cản phía trước $${obs}$ m thì ô tô ${stop ? 'không dừng kịp trước' : 'dừng lại trước khi chạm'} vật cản`,
+      ()=> (nhSimp(t=> v0 - k*t, 0, tS) < obs) === stop, ()=> (nhSimp(t=> v0 - k*t, 0, tS) < obs) !== stop)];
+  return {stem:`Một ô tô đang chạy với vận tốc $${kmh}$ km/h thì người lái phanh gấp. Từ thời điểm đó, ô tô chuyển động chậm dần đều với vận tốc $v(t) = ${v0} - ${k}t$ (m/s), trong đó $t$ (giây) là thời gian tính từ lúc phanh.`, items,
+    lg:`a) $${kmh}$ km/h $= ${v0}$ m/s. Ô tô dừng khi $v(t) = 0 \\Leftrightarrow ${v0} - ${k}t = 0 \\Leftrightarrow t = ${tT}$ (giây).<br>`
+      + `b) $s(t)$ là nguyên hàm của $v(t)$ với $s(0) = 0$: $s(t) = ${v0}t - ${frT(k, 2)}t^{2}$ (bẫy: quên chia $2$ khi lấy nguyên hàm của $${k}t$).<br>`
+      + `c) Quãng đường phanh: ${Number.isInteger(tS) ? `$s(${tT}) = ${v0}\\cdot ${tT} - ${frT(k, 2)}\\cdot ${tT}^{2}` : `$s\\left(${tT}\\right) = ${v0}\\cdot ${tT} - ${frT(k, 2)}\\cdot\\left(${tT}\\right)^{2}`} = ${dT}$ (m).<br>`
+      + `d) Quãng đường phanh $${dT}$ m ${stop ? '<' : '>'} $${obs}$ m nên ô tô ${stop ? 'dừng lại trước vật cản' : 'không dừng kịp, sẽ chạm vật cản'}.`};
+});
+
+/* 29. TLN TH — ném bóng thẳng đứng: độ cao lớn nhất */
+GT(12,3,0,'TH','Bài toán thực tế: ném vật thẳng đứng lên với v(t) = v₀ − 9,8t — độ cao h(t) là nguyên hàm của v với h(0) = h₀; độ cao lớn nhất hoặc độ cao tại thời điểm t₁', R=>{
+  const v0 = R.int(6, 25), h0 = R.pick([0, 1, 1.5, 2, 10, 12, 15, 20, 25]), ask = R.pick(['max', 'max', 't']), tm = v0/9.8;
+  const t1 = R.pick([0.5, 1, 1.5, 2, 2.5].filter(t=> t < 1.6*tm)), h = t=> h0 + v0*t - 4.9*t*t, val = ask === 'max' ? h(tm) : h(t1);
+  const ans = Math.round(val*10)/10; if(Math.abs(Math.abs(val*10 - Math.trunc(val*10)) - 0.5) < 0.02 || nt(ans).replace('{,}', ',').length > 4 || val <= 0) return null;
+  const exact = Math.abs(val*10 - Math.round(val*10)) < 1e-9;
+  const where = h0 ? (h0 >= 10 ? `từ sân thượng một toà nhà cao $${nt(h0)}$ m` : `từ độ cao $${nt(h0)}$ m so với mặt đất`) : 'từ mặt đất';
+  const o = {stem:`Một quả bóng được ném thẳng đứng lên trên ${where} với vận tốc $v(t) = ${v0} - 9{,}8t$ (m/s), trong đó $t$ (giây) là thời gian tính từ lúc ném. ${ask === 'max' ? 'Hỏi quả bóng đạt độ cao lớn nhất (so với mặt đất) bằng bao nhiêu mét' : `Hỏi tại thời điểm $t = ${nt(t1)}$ giây, quả bóng ở độ cao bao nhiêu mét so với mặt đất`}${exact ? '?' : ' (làm tròn kết quả đến hàng phần mười)?'}`, ans,
+    lg:`Độ cao $h(t)$ có $h'(t) = v(t)$ nên $h(t) = ${v0}t - 4{,}9t^{2} + C$; $h(0) = ${nt(h0)}$ nên $h(t) = ${h0 ? `${nt(h0)} + ` : ''}${v0}t - 4{,}9t^{2}$.<br>`
+      + (ask === 'max' ? `Bóng lên cao nhất khi $v(t) = 0 \\Leftrightarrow t = \\dfrac{${v0}}{9{,}8}$ (giây) ($v > 0$ trước đó, $v < 0$ sau đó). Độ cao lớn nhất: $h\\left(\\dfrac{${v0}}{9{,}8}\\right) = ${h0 ? `${nt(h0)} + ` : ''}\\dfrac{${v0}^{2}}{19{,}6} ${exact ? '=' : '\\approx'} ${nt(ans)}$ (m).`
+        : `$h(${nt(t1)}) = ${h0 ? `${nt(h0)} + ` : ''}${v0}\\cdot ${nt(t1)} - 4{,}9\\cdot ${nt(t1)}^{2} ${exact ? '=' : '\\approx'} ${nt(ans)}$ (m).`),
+    verify:()=>{ const H = t=> h0 + nhSimp(u=> v0 - 9.8*u, 0, t); if(ask === 't') return Math.abs(o.ans - H(t1)) <= 0.05 + 1e-9; let m = -1e9; for(let i = 0; i <= 4000; i++) m = Math.max(m, H(i*2*tm/4000)); return Math.abs(o.ans - m) <= 0.05 + 1e-6; }};
+  return o;
+});
+
+/* 30. TN TH — bơm nước vào bể với tốc độ a√t */
+G(12,3,0,'TH','Bài toán thực tế: nước chảy vào bể với tốc độ r(t) = a√t (lít/phút) — lượng nước trong bể sau T phút (nguyên hàm của a√t, cộng lượng nước ban đầu)', R=>{
+  const a = R.pick([3, 6, 9, 12, 15, 18]), V0 = R.pick([0, 50, 100, 150, 200, 300]), T = R.pick([4, 9, 16, 25]), rt = Math.sqrt(T);
+  const V = t=> V0 + 2*a/3*t**1.5, val = V(T), ws = nhWs(val, [V0 + a*T*rt, V0 + 3*a/2*T*rt, V0 + 2*a/3*T, 2*a/3*T*rt, V0 + a*rt*T/2]); if(!ws) return null;
+  const tank = R.pick(['một bể chứa nước', 'một bồn nước inox', 'một bể cá']);
+  const o = {stem:`Người ta bơm nước vào ${tank}. Gọi $V(t)$ (lít) là lượng nước trong bể sau $t$ phút kể từ lúc bắt đầu bơm, biết tốc độ nước chảy vào bể là $V'(t) = ${a}\\sqrt{t}$ (lít/phút) và ${V0 ? `lúc bắt đầu bơm trong bể đã có $${V0}$ lít nước` : 'lúc bắt đầu bơm bể chưa có nước'}. Sau $${T}$ phút, lượng nước trong bể là`,
+    ans:{t:`$${nt(val)}$ lít`, v:val}, wrong:ws.map(v=> ({t:`$${nt(v)}$ lít`, v})),
+    lg:`$V(t)$ là một nguyên hàm của $${a}\\sqrt{t} = ${a}t^{\\frac{1}{2}}$: $V(t) = ${a}\\cdot\\dfrac{t^{\\frac{3}{2}}}{\\frac{3}{2}} + C = ${2*a/3}t\\sqrt{t} + C$.<br>$V(0) = ${V0}$ nên $C = ${V0}$. Vậy $V(${T}) = ${2*a/3}\\cdot ${T}\\cdot ${rt} ${V0 ? `+ ${V0} ` : ''}= ${nt(val)}$ (lít).`,
+    verify:()=> near(o.ans.v, V0 + nhSimp(t=> a*Math.sqrt(t), 0, T), 1e-6)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 7 (5 dạng, thực tế: kinh tế, sinh học, vật lí). Claude viết.
+// Chuỗi: chi phí cận biên → tổng chi phí → doanh thu cận biên → doanh thu lớn nhất → lợi nhuận cận biên → hoà vốn; tăng trưởng vi khuẩn (Đ–S), cốc nước nguội dần (eᵐᵗ).
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhSimp = (fn, lo, hi)=>{ const n = 4000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const nhWs = (val, cand)=>{ const w = []; cand.forEach(v=>{ if(w.length < 3 && !near(v, val, 1e-9) && !w.some(x=> near(x, v, 1e-9)) && v > 0) w.push(v); }); return w.length < 3 ? null : w; };
+const nhOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && nt(v).replace('{,}', ',').length <= 4;
+
+/* 31. TLN TH — chi phí cận biên → tổng chi phí */
+GT(12,3,0,'TH','Bài toán thực tế: chi phí cận biên C\'(x) = a − bx (nghìn đồng/sản phẩm) và chi phí cố định — tổng chi phí sản xuất x sản phẩm, hoặc chi phí sản xuất thêm từ x₁ đến x₂ sản phẩm (triệu đồng)', R=>{
+  const item = R.pick([['áo sơ mi', [80, 120], 1, [0.02, 0.04, 0.05, 0.1], [2, 3, 4, 5]], ['giày thể thao', [150, 250], 1, [0.04, 0.05, 0.1, 0.2], [4, 5, 6, 8]], ['bánh trung thu', [20, 40], 10, [0.001, 0.002, 0.004], [5, 8, 10, 12]], ['sữa chua', [6, 12], 10, [0.0004, 0.0006, 0.001], [3, 4, 5, 6]], ['ghế gỗ', [300, 500], 0.1, [0.5, 1, 2, 4], [2, 3, 4, 5]]]);
+  const a = R.int(item[1][0], item[1][1]), sc = item[2], b = R.pick(item[3]);
+  const x2 = R.pick([2, 3, 4, 5, 6])*100*sc, F0 = R.pick(item[4])*1000, ask = R.pick(['tot', 'tot', 'more']), x1 = Math.round(x2/2);
+  if(a - b*x2 <= 0.3*a) return null;
+  const C = x=> F0 + a*x - b*x*x/2, val = (ask === 'tot' ? C(x2) : C(x2) - C(x1))/1000;
+  if(!nhOk1(val)) return null;
+  const xT = x=> nt(x).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1\\,');
+  const o = {stem:`Một xưởng sản xuất ${item[0]} có chi phí cố định mỗi ngày là $${xT(F0)}$ nghìn đồng và chi phí cận biên khi sản xuất $x$ sản phẩm là $C'(x) = ${a} - ${nt(b)}x$ (nghìn đồng/sản phẩm), trong đó $C(x)$ là tổng chi phí (nghìn đồng) để sản xuất $x$ sản phẩm trong ngày. ${ask === 'tot' ? `Tính tổng chi phí để sản xuất $${xT(x2)}$ sản phẩm trong một ngày (đơn vị: triệu đồng).` : `Nếu đang sản xuất $${xT(x1)}$ sản phẩm mỗi ngày, xưởng cần thêm bao nhiêu triệu đồng để nâng lên $${xT(x2)}$ sản phẩm mỗi ngày?`}`, ans:val,
+    lg:`$C(x)$ là một nguyên hàm của $C'(x)$: $C(x) = ${a}x - ${nt(b/2)}x^{2} + K$. Khi chưa sản xuất ($x = 0$) chỉ có chi phí cố định nên $C(0) = K = ${xT(F0)}$.<br>`
+      + (ask === 'tot' ? `$C(${xT(x2)}) = ${a}\\cdot ${xT(x2)} - ${nt(b/2)}\\cdot ${xT(x2)}^{2} + ${xT(F0)} = ${xT(C(x2))}$ (nghìn đồng) $= ${nt(val)}$ triệu đồng.`
+        : `Chi phí tăng thêm: $C(${xT(x2)}) - C(${xT(x1)}) = ${xT(C(x2))} - ${xT(C(x1))} = ${xT(C(x2) - C(x1))}$ (nghìn đồng) $= ${nt(val)}$ triệu đồng (chi phí cố định triệt tiêu).`),
+    verify:()=> near(o.ans*1000, (ask === 'tot' ? F0 : 0) + nhSimp(x=> a - b*x, ask === 'tot' ? 0 : x1, x2), 1e-6)};
+  return o;
+});
+
+/* 32. TN TH — doanh thu cận biên → doanh thu lớn nhất */
+G(12,3,0,'TH','Bài toán thực tế: doanh thu cận biên R\'(x) = a − 2bx, R(0) = 0 — tìm hàm doanh thu R(x) (nguyên hàm) rồi doanh thu lớn nhất (nối với GTLN của hàm bậc hai)', R=>{
+  const m = R.pick([60, 80, 100, 120, 150, 160, 200, 240, 250, 300, 400, 500]), b = R.pick([0.1, 0.2, 0.25, 0.4, 0.5, 1, 1.5, 2]), a = 2*b*m, Rm = b*m*m;
+  if(!Number.isInteger(a) || !Number.isInteger(Rm)) return null;
+  const val = Rm/1000, ws = nhWs(val, [2*Rm/1000, 4*Rm/1000, a*m/1000*0 + (a*m)/1000, Rm/2000, b*m*m*3/1000]); if(!ws) return null;
+  const xT = x=> nt(x).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1\\,');
+  const o = {stem:`Một cửa hàng bán một loại sản phẩm thủ công. Doanh thu cận biên khi bán $x$ sản phẩm là $R'(x) = ${a} - ${nt(2*b)}x$ (nghìn đồng/sản phẩm) với $0 \\le x \\le ${xT(2*m)}$, và $R(0) = 0$, trong đó $R(x)$ là doanh thu (nghìn đồng) khi bán $x$ sản phẩm. Doanh thu lớn nhất cửa hàng có thể đạt được là`,
+    ans:{t:`$${nt(val)}$ triệu đồng`, v:val}, wrong:ws.map(v=> ({t:`$${nt(v)}$ triệu đồng`, v})),
+    lg:`$R(x)$ là một nguyên hàm của $R'(x)$: $R(x) = ${a}x - ${b === 1 ? '' : nt(b)}x^{2} + C$, $R(0) = 0 \\Rightarrow C = 0$.<br>`
+      + `$R'(x) = 0 \\Leftrightarrow x = ${m}$; $R'(x) > 0$ khi $x < ${m}$ và $R'(x) < 0$ khi $x > ${m}$ nên $R$ lớn nhất tại $x = ${m}$:<br>`
+      + `$R(${m}) = ${a}\\cdot ${m} - ${b === 1 ? '' : nt(b) + '\\cdot '}${m}^{2} = ${xT(Rm)}$ (nghìn đồng) $= ${nt(val)}$ triệu đồng.`,
+    verify:()=>{ let best = 0; for(let x = 0; x <= 2*m; x += 1) best = Math.max(best, nhSimp(u=> a - 2*b*u, 0, x)); return near(o.ans.v*1000, best, 1e-6); }};
+  return o;
+});
+
+/* 33. Đ–S VD — tăng trưởng vi khuẩn N'(t) = a·e^{rt} */
+GD(12,3,0,'VD','Bài toán thực tế: tốc độ tăng của số vi khuẩn N\'(t) = a·eʳᵗ — công thức N(t) (nguyên hàm, kiểm tra bằng đạo hàm), hằng số theo N(0), số vi khuẩn sau T giờ và thời điểm vượt ngưỡng', R=>{
+  const r = R.pick([0.1, 0.2, 0.25, 0.5]), m = R.pick([10, 20, 30, 40, 50]), a = r*m, N0 = R.pick([60, 80, 100, 120, 150]), C = N0 - m, T = R.pick([4, 5, 6, 8, 10]);
+  const N = t=> m*Math.exp(r*t) + C, NT = Math.round(N(T)), M = R.pick([2, 3, 4, 5])*N0, tM = Math.log((M - C)/m)/r, tAsk = Math.ceil(tM) + R.pick([0, 1, -1]);
+  if(tM <= 0.5 || Math.abs(tM - Math.round(tM)) < 0.05 || tAsk <= 0) return null;
+  const rT = nt(r), E = `e^{${rT}t}`, over = N(tAsk) > M;
+  const items = [
+    claim(R, `$N(t) = ${m}${E} + C$ với $C$ là hằng số`, `$N(t) = ${nt(a*r)}${E} + C$ với $C$ là hằng số`, ()=> near(nhSimp(t=> a*Math.exp(r*t), 0, 1), m*Math.exp(r) - m, 1e-9), ()=> near(nhSimp(t=> a*Math.exp(r*t), 0, 1), a*r*Math.exp(r) - a*r, 1e-9)),
+    claimN(R, v=> `Hằng số $C = ${v}$`, C, String(C), N0, String(N0), ()=> N0 - m),
+    claimN(R, v=> `Sau $${T}$ giờ, số vi khuẩn (làm tròn đến hàng đơn vị) là $${v}$ nghìn con`, NT, String(NT), Math.round(m*Math.exp(r*T) + N0), String(Math.round(m*Math.exp(r*T) + N0)), ()=> Math.round(N0 + nhSimp(t=> a*Math.exp(r*t), 0, T))),
+    claim(R, `Sau $${tAsk}$ giờ, số vi khuẩn ${over ? 'đã' : 'vẫn chưa'} vượt $${M}$ nghìn con`, `Sau $${tAsk}$ giờ, số vi khuẩn ${over ? 'vẫn chưa' : 'đã'} vượt $${M}$ nghìn con`, ()=> (N(tAsk) > M) === over, ()=> (N(tAsk) > M) !== over)];
+  return {stem:`Trong phòng thí nghiệm, một quần thể vi khuẩn có số lượng $N(t)$ (nghìn con) sau $t$ giờ, với tốc độ tăng $N'(t) = ${nt(a)}${E}$ (nghìn con/giờ). Ban đầu ($t = 0$) có $${N0}$ nghìn con.`, items,
+    lg:`a) $${E} = \\left(e^{${rT}}\\right)^{t}$ nên $\\int ${nt(a)}${E}\\,dt = ${nt(a)}\\cdot\\dfrac{${E}}{${rT}} + C = ${m}${E} + C$ (kiểm tra: $\\left(${m}${E}\\right)' = ${m}\\cdot ${rT}${E} = ${nt(a)}${E}$).<br>`
+      + `b) $N(0) = ${m} + C = ${N0}$ $\\Rightarrow C = ${C}$ (không phải $${N0}$ vì $e^{0} = 1$).<br>`
+      + `c) $N(${T}) = ${m}e^{${nt(r*T)}} + ${C} \\approx ${nt(Math.round(N(T)*100)/100)}$, làm tròn được $${NT}$ nghìn con.<br>`
+      + `d) $N(t) > ${M} \\Leftrightarrow e^{${rT}t} > \\dfrac{${M - C}}{${m}} \\Leftrightarrow t > \\dfrac{1}{${rT}}\\ln\\dfrac{${M - C}}{${m}} \\approx ${nt(Math.round(tM*100)/100)}$. Tại $t = ${tAsk}$: $N(${tAsk}) \\approx ${nt(Math.round(N(tAsk)*10)/10)}$ ${N(tAsk) > M ? '>' : '<'} $${M}$.`.replace('\\dfrac{1}{0{,}5}', '2').replace('\\dfrac{1}{0{,}1}', '10').replace('\\dfrac{1}{0{,}2}', '5').replace('\\dfrac{1}{0{,}25}', '4')};
+});
+
+/* 34. TN TH — cốc cà phê nguội dần: T'(t) = −k·e^{−rt} */
+G(12,3,0,'TH','Bài toán thực tế: cốc nước nóng nguội dần với tốc độ T\'(t) = −k·e^{−rt} (°C/phút) — nhiệt độ T(t) (nguyên hàm, hằng số theo T(0)), nhiệt độ sau t₁ phút hoặc nhiệt độ phòng (giá trị T(t) dần tới)', R=>{
+  const r = R.pick([0.05, 0.1, 0.2]), A = R.pick([50, 55, 60, 65, 70]), k = A*r, room = R.pick([20, 25, 28, 30]), T0 = A + room, ask = R.pick(['t', 't', 'room']);
+  if(T0 > 100) return null;
+  const t1 = R.pick([5, 10, 15, 20]), Tf = t=> A*Math.exp(-r*t) + room, val = ask === 'room' ? room : Math.round(Tf(t1)*10)/10;
+  const cand = ask === 'room' ? [T0, A, room + k, T0 - room*0 - k*10] : [Math.round((-A*Math.exp(-r*t1) + T0 + A)*10)/10, Math.round(A*Math.exp(-r*t1)*10)/10, Math.round((T0 - k*t1)*10)/10, Math.round((T0 - k*Math.exp(-r*t1))*10)/10];
+  const ws = nhWs(val, cand); if(!ws) return null;
+  const drink = R.pick(['cốc cà phê', 'cốc trà gừng', 'cốc sữa nóng']), E = `e^{-${nt(r)}t}`;
+  const o = {stem:`Một ${drink} vừa pha có nhiệt độ $${T0}^{\\circ}$C được để trong phòng. Nhiệt độ $T(t)$ (°C) của nó sau $t$ phút thay đổi với tốc độ $T'(t) = -${nt(k)}${E}$ (°C/phút). ${ask === 'room' ? 'Khi $t$ rất lớn, nhiệt độ của nó dần tới nhiệt độ phòng. Nhiệt độ phòng là' : `Nhiệt độ của nó sau $${t1}$ phút (làm tròn đến hàng phần mười) là`}`,
+    ans:{t:`$${nt(val)}^{\\circ}$C`, v:val}, wrong:ws.map(v=> ({t:`$${nt(v)}^{\\circ}$C`, v})),
+    lg:`$T(t)$ là một nguyên hàm của $T'(t)$: $T(t) = -${nt(k)}\\cdot\\dfrac{${E}}{-${nt(r)}} + C = ${A}${E} + C$ (kiểm tra: $\\left(${A}${E}\\right)' = -${nt(k)}${E}$).<br>`
+      + `$T(0) = ${A} + C = ${T0}$ $\\Rightarrow C = ${room}$, nên $T(t) = ${A}${E} + ${room}$.<br>`
+      + (ask === 'room' ? `Khi $t \\to +\\infty$ thì $${E} \\to 0$ nên $T(t) \\to ${room}$: nhiệt độ phòng là $${room}^{\\circ}$C.` : `$T(${t1}) = ${A}e^{-${nt(r*t1)}} + ${room} \\approx ${nt(val)}^{\\circ}$C.`),
+    verify:()=>{ const T = t=> T0 + nhSimp(u=> -k*Math.exp(-r*u), 0, t); return ask === 'room' ? Math.abs(T(400) - o.ans.v) < 0.01 : Math.abs(T(t1) - o.ans.v) <= 0.05 + 1e-9; }};
+  return o;
+});
+
+/* 35. TLN VD — lợi nhuận cận biên → số sản phẩm hoà vốn */
+GT(12,3,0,'VD','Bài toán thực tế: lợi nhuận cận biên P\'(x) = a − 2bx và chi phí cố định (P(0) âm) — tìm P(x) rồi số sản phẩm tối thiểu cần bán để không bị lỗ (hoà vốn) hoặc lợi nhuận lớn nhất', R=>{
+  const b = R.pick([1, 2, 0.5]), r1 = R.int(1, 5), r2 = r1 + R.pick([4, 6, 8, 10, 12]), a = b*(r1 + r2), F0 = b*r1*r2, ask = R.pick(['he', 'he', 'max']);
+  if(!Number.isInteger(a) || !Number.isInteger(F0)) return null;
+  const P = x=> a*x - b*x*x - F0, m = (r1 + r2)/2, ans = ask === 'he' ? r1*100 : P(m);
+  if(!Number.isInteger(ans) || String(ans).length > 4) return null;
+  const o = {stem:`Một cơ sở sản xuất đồ gỗ mĩ nghệ có chi phí cố định $${F0}$ triệu đồng. Gọi $P(x)$ (triệu đồng) là lợi nhuận khi sản xuất và bán hết $x$ trăm sản phẩm, biết lợi nhuận cận biên $P'(x) = ${a} - ${nt(2*b) === '1' ? '' : nt(2*b)}x$ (triệu đồng/trăm sản phẩm) và khi chưa bán được sản phẩm nào thì cơ sở lỗ đúng bằng chi phí cố định. ${ask === 'he' ? 'Cơ sở cần sản xuất và bán ít nhất bao nhiêu sản phẩm để không bị lỗ?' : 'Lợi nhuận lớn nhất cơ sở có thể đạt được là bao nhiêu triệu đồng?'}`, ans,
+    lg:`$P(x)$ là một nguyên hàm của $P'(x)$: $P(x) = ${a}x - ${nt(b) === '1' ? '' : nt(b)}x^{2} + C$; $P(0) = -${F0}$ nên $P(x) = ${a}x - ${nt(b) === '1' ? '' : nt(b)}x^{2} - ${F0}$.<br>`
+      + (ask === 'he' ? `$P(x) \\ge 0 \\Leftrightarrow ${nt(b) === '1' ? '' : nt(b)}x^{2} - ${a}x + ${F0} \\le 0 \\Leftrightarrow ${r1} \\le x \\le ${r2}$. Vậy cần bán ít nhất $${r1}$ trăm, tức $${ans}$ sản phẩm.`
+        : `$P'(x) = 0 \\Leftrightarrow x = ${nt(m)}$; $P'$ đổi dấu từ dương sang âm nên lợi nhuận lớn nhất là $P(${nt(m)}) = ${ans}$ (triệu đồng).`),
+    verify:()=>{ const PP = x=> -F0 + nhSimp(u=> a - 2*b*u, 0, x); if(ask === 'max'){ let best = -1e9; for(let i = 0; i <= 4000; i++) best = Math.max(best, PP(i*(r2 + 4)/4000)); return near(o.ans, best, 1e-6); }
+      let x = 0; while(PP(x/100) < -1e-9 && x < 10000) x++; return o.ans === x; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
+})();
+
+// ---------- V2.20: dạng thay số bổ sung (12-11 Nguyên hàm, đợt 1–8: 40 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 12 — 12-11 Nguyên hàm, đợt 8 (5 dạng cuối). Claude viết.
+// Chuỗi: tự luận chứng minh F' = f → nguyên hàm qua điểm; hồ thuỷ điện mùa lũ (tự luận thực tế); đọc đồ thị F → f = F' (tư duy ngược); đồ thị f → đơn điệu, cực trị của F (Đ–S); tham số m (bẫy hai nghiệm).
+const nhRoot = (a, b)=>{ const k = Math.floor(a/b), r = a - k*b; return (k === 0 ? '' : k === 1 ? 'x' : `x^{${k}}`) + (r === 0 ? '' : b === 2 ? '\\sqrt{x}' : r === 1 ? '\\sqrt[3]{x}' : '\\sqrt[3]{x^{2}}'); };
+const nhN = m=>{ let p = m.p, q = m.q; if(q < 0){ p = -p; q = -q; } const g = gcdI(p, q) || 1; return Object.assign({}, m, {p:p/g, q:q/g}); };
+const nhBase = (k, n, pos)=> k === 'r' ? {t:nhRoot(Math.abs(n[0]), n[1]), f:x=> x**(n[0]/n[1]), neg:n[0] < 0} : k === 'x' ? {t: n === 0 ? '' : n === 1 ? 'x' : `x^{${n}}`, f:x=> x**n} : k === 'sin' ? {t:'\\sin x', f:Math.sin} : k === 'cos' ? {t:'\\cos x', f:Math.cos}
+  : k === 'exp' ? {t:'e^{x}', f:Math.exp} : k === 'pexp' ? {t:'xe^{x - 1}', f:x=> x*Math.exp(x - 1)} : k === 'ln' ? {t: pos ? '\\ln x' : '\\ln|x|', f:x=> Math.log(Math.abs(x))} : {t: n === 1 ? 'x' : `x^{${n}}`, f:x=> x**(-n)};
+const nhTerm = (m, pos)=>{ const g = gcdI(m.p, m.q), p = Math.abs(m.p)/g, q = m.q/g, b = nhBase(m.k, m.n, pos);
+  if(m.k === 'inv' || b.neg) return b.neg ? `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}` : `\\dfrac{${p}}{${q === 1 ? '' : q}${b.t}}`;
+  if(!b.t) return frT(p, q);
+  return (p === 1 && q === 1 ? '' : frT(p, q)) + b.t; };
+const nhTx = (ts, pos)=>{ let s = ''; ts.filter(m=> m.p).forEach(m=>{ const body = nhTerm(m, pos); s += s ? (m.p < 0 ? ' - ' : ' + ') + body : (m.p < 0 ? '-' : '') + body; }); return s || '0'; };
+const nhFn = (ts, pos)=> x=> ts.reduce((s, m)=> s + m.p/m.q*nhBase(m.k, m.n, pos).f(x), 0);
+const nhTerms = (ts, pos)=> ts.map(nhN);
+const nhInt = m=> m.k === 'r' ? nhN({p:m.p*m.n[1], q:m.q*(m.n[0] + m.n[1]), k:'r', n:[m.n[0] + m.n[1], m.n[1]]}) : m.k === 'x' ? {p:m.p, q:m.q*(m.n + 1), k:'x', n:m.n + 1} : m.k === 'sin' ? {p:-m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : m.n === 1 ? {p:m.p, q:m.q, k:'ln'} : {p:-m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1};
+const nhDer = m=> m.k === 'r' ? nhN({p:m.p*m.n[0], q:m.q*m.n[1], k:'r', n:[m.n[0] - m.n[1], m.n[1]]}) : m.k === 'x' ? (m.n ? {p:m.p*m.n, q:m.q, k:'x', n:m.n - 1} : {p:0, q:1, k:'x', n:0}) : m.k === 'sin' ? {p:m.p, q:m.q, k:'cos'} : m.k === 'cos' ? {p:-m.p, q:m.q, k:'sin'}
+  : m.k === 'exp' ? {p:m.p, q:m.q, k:'exp'} : {p:-m.p*m.n, q:m.q, k:'inv', n:m.n + 1};
+const nhBad = m=> m.k === 'r' ? [nhN({p:m.p*(m.n[0] + m.n[1]), q:m.q*m.n[1], k:'r', n:[m.n[0] + m.n[1], m.n[1]]})] : m.k === 'x' ? [{p:m.p, q:m.q, k:'x', n:m.n + 1}] : m.k === 'sin' ? [{p:m.p, q:m.q, k:'cos'}] : m.k === 'cos' ? [{p:-m.p, q:m.q, k:'sin'}]
+  : m.k === 'exp' ? [{p:m.p, q:m.q, k:'pexp'}] : m.n === 1 ? [{p:-m.p, q:m.q, k:'inv', n:2}] : [{p:m.p, q:m.q*(m.n - 1), k:'inv', n:m.n - 1}];
+const nhDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const nhIsPrim = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(nhDf(F, x) - f(x)) < 1e-5*Math.max(1, Math.abs(f(x))));
+const nhKey = F=> [0.7, 1.6, 2.3].map(x=> (F(x) - F(1.2)).toFixed(6)).join('|');   // so sánh "sai khác hằng số"
+const nhKeyV = F=> [0.7, 1.6, 2.3].map(x=> F(x).toFixed(6)).join('|');
+const nhKind = R=>{ const k = R.pick(['x', 'x', 'sin', 'cos', 'exp', 'inv']); return k === 'x' ? {k, n:R.int(1, 3)} : k === 'inv' ? {k, n:R.pick([1, 1, 2])} : {k}; };
+const nhP = v=> v < 0 ? `(${v})` : `${v}`;
+const nhRule = m=> m.k === 'x' && m.n === 0 ? '\\int dx = x + C' : m.k === 'x' ? `\\int ${m.n === 1 ? 'x' : `x^{${m.n}}`}\\,dx = \\dfrac{x^{${m.n + 1}}}{${m.n + 1}} + C` : m.k === 'sin' ? '\\int \\sin x\\,dx = -\\cos x + C' : m.k === 'cos' ? '\\int \\cos x\\,dx = \\sin x + C'
+  : m.k === 'exp' ? '\\int e^{x}\\,dx = e^{x} + C' : m.n === 1 ? '\\int \\dfrac{1}{x}\\,dx = \\ln|x| + C' : `\\int \\dfrac{1}{x^{${m.n}}}\\,dx = -\\dfrac{1}{${m.n - 1 === 1 ? '' : m.n - 1}x^{${m.n - 1}}} + C`.replace('x^{1}', 'x');
+
+const nhPlain = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };
+const nhPv = (co, x)=> co.reduce((s, c)=> s*x + c, 0);
+const nhSimp = (fn, lo, hi)=>{ const n = 4000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const nhLin = (a, b)=> `(${polyT([a, b])})`;
+
+/* 36. TL TH — chứng minh F = (ax + b)eˣ là nguyên hàm, tìm nguyên hàm qua điểm */
+GE(12,3,0,'TH','Chứng minh F(x) = (ax + b)eˣ là một nguyên hàm của f(x) = (ax + a + b)eˣ (bằng đạo hàm), tìm nguyên hàm G thoả G(0) cho trước và tính G(1)', R=>{
+  const a = R.nz(-4, 4), b = R.int(-5, 5), m = R.int(-6, 6); if(a + b === 0 && b === 0) return null;
+  const F = x=> (a*x + b)*Math.exp(x), f = x=> (a*x + a + b)*Math.exp(x), C = m - b, G = x=> F(x) + C;
+  const g1 = a + b, eT = g1 === 0 ? '' : g1 === 1 ? 'e' : g1 === -1 ? '-e' : `${g1}e`, G1 = [eT, C ? (C < 0 ? `${eT ? ' - ' : '-'}${-C}` : `${eT ? ' + ' : ''}${C}`) : ''].join('') || '0';
+  const items = [
+    {q:'Chứng minh $F(x)$ là một nguyên hàm của $f(x)$ trên $\\mathbb{R}$.',
+     a:`$F'(x) = ${a}e^{x} + ${nhLin(a, b)}e^{x} = ${nhLin(a, a + b)}e^{x} = f(x)$ với mọi $x \\in \\mathbb{R}$, nên $F(x)$ là một nguyên hàm của $f(x)$ trên $\\mathbb{R}$.`.replace('$F\'(x) = 1e^{x}', '$F\'(x) = e^{x}').replace('$F\'(x) = -1e^{x}', '$F\'(x) = -e^{x}'),
+     chk:()=> nhIsPrim(F, f, [-1, 0.3, 1.2])},
+    {q:`Tìm nguyên hàm $G(x)$ của $f(x)$ thoả mãn $G(0) = ${m}$.`,
+     a:`Mọi nguyên hàm của $f$ có dạng $G(x) = ${nhLin(a, b)}e^{x} + C$. $G(0) = ${b} + C = ${m}$ $\\Rightarrow C = ${C}$. Vậy $G(x) = ${nhLin(a, b)}e^{x}${C ? (C < 0 ? ` - ${-C}` : ` + ${C}`) : ''}$.`,
+     chk:()=> near(G(0), m, 1e-12) && nhIsPrim(G, f)},
+    {q:'Tính $G(1)$.', a:`$G(1) = (${a} ${b < 0 ? '-' : '+'} ${Math.abs(b)})e${C ? (C < 0 ? ` - ${-C}` : ` + ${C}`) : ''} = ${G1}$.`.replace('(-', '(-').replace(' + 0)', ')').replace(' - 0)', ')'),
+     chk:()=> near(G(1), g1*Math.E + C, 1e-12) && near(m + nhSimp(f, 0, 1), G(1), 1e-9)}];
+  return s6Parts(`Cho hai hàm số $f(x) = ${nhLin(a, a + b)}e^{x}$ và $F(x) = ${nhLin(a, b)}e^{x}$.`.replace('(0)e^{x}', '0'), items);
+});
+
+/* 37. TL VD — hồ chứa nước mùa lũ */
+GE(12,3,0,'VD','Bài toán thực tế (tự luận): tốc độ thay đổi lượng nước của hồ chứa mùa lũ V\'(t) = a − bt — tìm V(t), thời điểm lượng nước lớn nhất và kiểm tra có vượt dung tích thiết kế không', R=>{
+  const b = R.pick([1, 2, 0.5]), tm = R.pick([8, 10, 12, 15, 16, 20]), a = b*tm, V0 = R.pick([1200, 1350, 1500, 1650, 1800]), Vm = V0 + a*tm/2, cap = Vm + R.pick([-40, -25, -15, 15, 30, 50]);
+  if(!Number.isInteger(a) || !Number.isInteger(Vm)) return null;
+  const over = Vm > cap, bT = b === 1 ? '' : nt(b), b2 = b/2 === 1 ? '' : nt(b/2);
+  const items = [
+    {q:'Tìm hàm số $V(t)$.', a:`$V(t)$ là một nguyên hàm của $V'(t)$: $V(t) = ${a}t - ${b2}t^{2} + C$; $V(0) = ${V0}$ nên $V(t) = ${b2 ? `-${b2}` : '-'}t^{2} + ${a}t + ${V0}$ (triệu m$^{3}$).`,
+     chk:()=> near(V0 + nhSimp(t=> a - b*t, 0, 3), -b/2*9 + a*3 + V0, 1e-9)},
+    {q:'Sau bao nhiêu ngày thì lượng nước trong hồ lớn nhất? Tính lượng nước lớn nhất đó.', a:`$V'(t) = 0 \\Leftrightarrow t = ${tm}$; $V'(t) > 0$ khi $0 \\le t < ${tm}$, $V'(t) < 0$ khi $t > ${tm}$ nên $V$ lớn nhất tại $t = ${tm}$ (ngày): $V(${tm}) = ${Vm}$ (triệu m$^{3}$).`,
+     chk:()=>{ let best = -1e9, at = 0; for(let i = 0; i <= 2*tm*10; i++){ const t = i/10, v = V0 + nhSimp(u=> a - b*u, 0, t); if(v > best + 1e-9){ best = v; at = t; } } return near(at, tm, 1e-9) && near(best, Vm, 1e-6); }},
+    {q:`Biết dung tích thiết kế (mức nước an toàn tối đa) của hồ là $${cap}$ triệu m$^{3}$. Nếu không xả lũ, lượng nước trong hồ có vượt mức an toàn không?`, a:`Lượng nước lớn nhất là $${Vm}$ triệu m$^{3}$ ${over ? '>' : '<'} $${cap}$ triệu m$^{3}$ nên ${over ? `lượng nước sẽ vượt mức an toàn (cần xả lũ ít nhất $${Vm - cap}$ triệu m$^{3}$)` : 'lượng nước không vượt mức an toàn'}.`,
+     chk:()=> (Vm > cap) === over}];
+  return s6Parts(`Vào mùa lũ, lượng nước $V(t)$ (triệu m$^{3}$) trong một hồ chứa thuỷ điện sau $t$ ngày kể từ khi bắt đầu theo dõi thay đổi với tốc độ $V'(t) = ${a} - ${bT}t$ (triệu m$^{3}$/ngày), $0 \\le t \\le ${2*tm}$. Lúc bắt đầu theo dõi, hồ có $${V0}$ triệu m$^{3}$ nước.`, items);
+});
+
+/* 38. TN TH — đọc đồ thị F (parabol), tìm f */
+G(12,3,0,'TH','Cho đồ thị của nguyên hàm F(x) là parabol (đỉnh và một điểm trên lưới): F(x) là một nguyên hàm của hàm số nào? (tư duy ngược: f = F\')', R=>{
+  const a = R.pick([1, -1, 2, -2]), h = R.int(-2, 2), k = R.int(-3, 3), co = [a, -2*a*h, a*h*h + k];
+  if(Math.abs(a) === 2 && Math.abs(a + k) > 6) return null;
+  const opt = (p, q)=> ({t:`$f(x) = ${polyT([p, q])}$`, v:`${p},${q}`});
+  const ans = opt(2*a, -2*a*h), cand = [opt(a, -a*h), opt(2*a, 2*a*h), opt(-2*a, 2*a*h), opt(2*a, -2*a*h + a*h*h + k), opt(a, -2*a*h)];
+  const seen = new Set([ans.v]), wrong = []; R.shuffle(cand).forEach(c=>{ if(!seen.has(c.v) && wrong.length < 3){ seen.add(c.v); wrong.push(c); } }); if(wrong.length < 3) return null;
+  const xs = [-3.5, -2.5, -1, 0, 1, 2.5, 3.5].map(x=> nhPv(co, x)), ymin = Math.max(-7, Math.floor(Math.min(...xs, 0)) - 1), ymax = Math.min(7, Math.ceil(Math.max(...xs, 0)) + 1);
+  const o = {stem:`Cho hàm số $y = F(x)$ là hàm số bậc hai có đồ thị là parabol như hình vẽ (đỉnh của parabol và một điểm khác trên parabol đã được đánh dấu). Biết $F(x)$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$. Hàm số $f(x)$ là`,
+    ans, wrong,
+    lg:`Parabol có đỉnh $(${h}; ${k})$ và đi qua điểm $(${h + 1}; ${a + k})$ nên $F(x) = a(x ${h < 0 ? '+' : '-'} ${Math.abs(h)})^{2} ${k < 0 ? '-' : '+'} ${Math.abs(k)}$ với $a = ${a + k} ${k < 0 ? '+' : '-'} ${Math.abs(k)} = ${a}$, tức $F(x) = ${polyT(co)}$.`.replace(/\(x [+-] 0\)/, 'x').replace(/ [+-] 0\$/, '$')
+      + `<br>$F$ là nguyên hàm của $f$ nên $f(x) = F'(x)$, tức là ${ans.t}.`,
+    hv:{loai:'dothi', hamSo:nhPlain(co), ten:'y = F(x)', luoi:true, ghiCucTri:false, diem:[h, h + 1], khung:{xmin:-4.5, xmax:4.5, ymin:ymin - 0.5, ymax:ymax + 0.5}},
+    verify:()=>{ const [p, q] = o.ans.v.split(',').map(Number), F = x=> nhPv(co, x); return nhIsPrim(F, x=> p*x + q, [-1.2, 0.4, 1.9]) && near(F(h), k, 1e-12) && near(F(h + 1), a + k, 1e-12); }};
+  return o;
+});
+
+/* 39. Đ–S VD — đồ thị f là đường thẳng: đơn điệu, cực trị của F, hiệu F(x₂) − F(x₁) */
+GD(12,3,0,'VD','Cho đồ thị y = f(x) là đường thẳng; F là một nguyên hàm của f: công thức f, khoảng đồng biến và điểm cực trị của F (F\' = f), hiệu F(x₂) − F(x₁) không phụ thuộc hằng số C', R=>{
+  const m = R.pick([1, 2, -1, -2]), r = R.int(-2, 2), n = -m*r, x1 = R.int(-2, 1), x2 = x1 + R.pick([2, 3]);
+  const f = x=> m*x + n, D = m*(x2*x2 - x1*x1)/2 + n*(x2 - x1), up = m > 0;
+  const fr2 = v=> Number.isInteger(v) ? String(v) : frT(Math.round(v*2), 2);
+  const items = [
+    claim(R, `$f(x) = ${polyT([m, n])}$`, `$f(x) = ${polyT([m, -n]) === polyT([m, n]) ? polyT([-m, n]) : polyT([m, -n])}$`, ()=> near(f(r), 0, 1e-12) && near(f(r + 1), m, 1e-12),
+      ()=>{ const [p, q] = polyT([m, -n]) === polyT([m, n]) ? [-m, n] : [m, -n]; return near(p*r + q, 0, 1e-12) && near(p*(r + 1) + q, m, 1e-12); }),
+    claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $${up ? `(${r}; +\\infty)` : `(-\\infty; ${r})`}$`, `Hàm số $F(x)$ đồng biến trên khoảng $${up ? `(-\\infty; ${r})` : `(${r}; +\\infty)`}$`,
+      ()=> [1, 2, 5].every(d=> f(up ? r + d : r - d) > 0), ()=> [1, 2, 5].every(d=> f(up ? r - d : r + d) > 0)),
+    claim(R, `Hàm số $F(x)$ đạt ${up ? 'cực tiểu' : 'cực đại'} tại $x = ${r}$`, `Hàm số $F(x)$ đạt ${up ? 'cực đại' : 'cực tiểu'} tại $x = ${r}$`,
+      ()=> up ? f(r - 0.1) < 0 && f(r + 0.1) > 0 : f(r - 0.1) > 0 && f(r + 0.1) < 0, ()=> up ? f(r - 0.1) > 0 && f(r + 0.1) < 0 : f(r - 0.1) < 0 && f(r + 0.1) > 0),
+    claimN(R, v=> `$F(${x2}) - F(${x1}) = ${v}$`, D, fr2(D), D + n*0 + (f(x2) - f(x1)) === D ? D + 1 : f(x2) - f(x1), fr2(D + n*0 + (f(x2) - f(x1)) === D ? D + 1 : f(x2) - f(x1)), ()=> nhSimp(f, x1, x2))];
+  return {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$ trên $\\mathbb{R}$.`, items,
+    hv:{loai:'dothi', hamSo:nhPlain([m, n]), ten:'y = f(x)', luoi:true, ghiCucTri:false, diem:[r, r + 1], khung:{xmin:-4.5, xmax:4.5, ymin:-4.5, ymax:4.5}},
+    lg:`a) Đường thẳng đi qua $(${r}; 0)$ và $(${r + 1}; ${m})$ nên hệ số góc bằng $${m}$ và $f(x) = ${m === 1 ? `x ${r < 0 ? '+' : '-'} ${Math.abs(r)}` : `${m === -1 ? '-' : m}(x ${r < 0 ? '+' : '-'} ${Math.abs(r)})`} = ${polyT([m, n])}$.`.replace(/\(x [+-] 0\)/, 'x').replace(/= x [+-] 0 =/, '= x =')
+      + `<br>b), c) $F'(x) = f(x)$; ${up ? `$f(x) < 0$ khi $x < ${r}$, $f(x) > 0$ khi $x > ${r}$` : `$f(x) > 0$ khi $x < ${r}$, $f(x) < 0$ khi $x > ${r}$`} nên $F$ đồng biến trên $${up ? `(${r}; +\\infty)` : `(-\\infty; ${r})`}$ và đạt ${up ? 'cực tiểu' : 'cực đại'} tại $x = ${r}$.`
+      + `<br>d) $F(x) = ${nhTx([{p:m, q:2, k:'x', n:2}, {p:n, q:1, k:'x', n:1}].filter(t=> t.p))} + C$ nên $F(${x2}) - F(${x1}) = ${fr2(D)}$ (hằng số $C$ triệt tiêu).`};
+});
+
+/* 40. TLN VD — tìm m để F là nguyên hàm (bẫy: chỉ giải một phương trình) */
+GT(12,3,0,'VD','Tìm m để F(x) = m²x³ + (km + c)x² + px + q là một nguyên hàm của f(x) cho trước: đồng nhất hệ số — điều kiện m² = … cho hai giá trị, phải kiểm tra thêm hệ số x² (bẫy: lấy cả hai nghiệm)', R=>{
+  const m0 = R.nz(-3, 3), k = R.pick([1, 2, 3, -1, -2]), c = R.int(-3, 3), p = R.int(-6, 6), q = R.int(-5, 5);
+  const A = 3*m0*m0, B = 2*(k*m0 + c); if(k*(-m0) + c === k*m0 + c) return null;
+  const ask = R.pick(['m', 'F1']), F = x=> m0*m0*x**3 + (k*m0 + c)*x*x + p*x + q, ans = ask === 'm' ? m0 : F(1);
+  if(String(ans).length > 4) return null;
+  const mid = `(${k === 1 ? '' : k === -1 ? '-' : k}m${c ? (c < 0 ? ` - ${-c}` : ` + ${c}`) : ''})`;
+  const o = {stem:`Biết hàm số $F(x) = m^{2}x^{3} + ${mid}x^{2} ${p < 0 ? '-' : '+'} ${Math.abs(p)}x ${q < 0 ? '-' : '+'} ${Math.abs(q)}$ (với $m$ là tham số thực) là một nguyên hàm của hàm số $f(x) = ${polyT([A, B, p])}$ trên $\\mathbb{R}$. ${ask === 'm' ? 'Tìm $m$.' : 'Tính $F(1)$.'}`.replace(' + 0x', '').replace(' - 0x', '').replace(' + 0$', '$').replace(' - 0$', '$'),
+    ans,
+    lg:`$F'(x) = 3m^{2}x^{2} + 2${mid}x ${p < 0 ? '-' : '+'} ${Math.abs(p)}$. $F'(x) = f(x)$ với mọi $x$ khi $\\begin{cases} 3m^{2} = ${A} \\\\ 2${mid} = ${B} \\end{cases}$ $\\Leftrightarrow \\begin{cases} m = \\pm ${Math.abs(m0)} \\\\ m = ${m0} \\end{cases}$ $\\Leftrightarrow m = ${m0}$.`.replace(` ${p < 0 ? '-' : '+'} 0$`, '$')
+      + `<br>(Giá trị $m = ${-m0}$ thoả phương trình đầu nhưng làm hệ số của $x^{2}$ bằng $${2*(k*(-m0) + c)} \\ne ${B}$.)`
+      + (ask === 'F1' ? `<br>Khi đó $F(x) = ${polyT([m0*m0, k*m0 + c, p, q])}$ và $F(1) = ${ans}$.` : ''),
+    verify:()=>{ const sols = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6].filter(mm=> mm*mm*3 === A && 2*(k*mm + c) === B); if(sols.length !== 1) return false;
+      const mm = sols[0], FF = x=> mm*mm*x**3 + (k*mm + c)*x*x + p*x + q; return nhIsPrim(FF, x=> A*x*x + B*x + p, [-1, 0.5, 1.5]) && o.ans === (ask === 'm' ? mm : FF(1)); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.20'; GEN[k].l1 = 'V2.20'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
