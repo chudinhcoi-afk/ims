@@ -80,12 +80,12 @@ const CHUYEN_DE = {
             ['Điểm thoả đẳng thức vectơ; tập hợp điểm', '16-20,27,60-73'],
             ['Phân tích vectơ theo hai vectơ không cùng phương', '3,5,8,15,26,74-88'],
             ['Hai vectơ cùng phương; ba điểm thẳng hàng', '9-12,21-24,89-100']],
-  '10-10': [['Toạ độ của điểm, vectơ; độ dài, khoảng cách', '1,10,11,15,16,26'],
-            ['Biểu thức toạ độ của tổng, hiệu, tích với số; phân tích vectơ', '4,9,14,17'],
-            ['Toạ độ trung điểm, trọng tâm; hình bình hành', '2,3,5,13,27'],
-            ['Hai vectơ cùng phương; ba điểm thẳng hàng', '6,18,19'],
-            ['Tam giác trong mặt phẳng toạ độ: chu vi, điểm cách đều, phân giác', '7,8,12,21,25'],
-            ['Giá trị nhỏ nhất; bài toán thực tế', '20,22-24,28']],
+  '10-10': [['Toạ độ của điểm, vectơ; độ dài, khoảng cách', '1,10,11,15,16,26,29-42'],
+            ['Biểu thức toạ độ của tổng, hiệu, tích với số; phân tích vectơ', '4,9,14,17,43-58'],
+            ['Toạ độ trung điểm, trọng tâm; hình bình hành', '2,3,5,13,27,59-73'],
+            ['Hai vectơ cùng phương; ba điểm thẳng hàng', '6,18,19,74-90'],
+            ['Tam giác trong mặt phẳng toạ độ: chu vi, điểm cách đều, phân giác', '7,8,12,21,25,91-105'],
+            ['Giá trị nhỏ nhất; bài toán thực tế', '20,22-24,28,106-120']],
   '10-11': [['Góc giữa hai vectơ; định nghĩa tích vô hướng', '4,9,14,15,27'],
             ['Tích vô hướng trong hình: tách vectơ, hình chiếu, trung tuyến', '7,29,31,34,38,39'],
             ['Bình phương vô hướng: độ dài vectơ tổng, hiệu; tìm góc', '8,10,16,28,32,33'],
@@ -415,7 +415,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.45';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, 10-08 và 10-09 thêm 146 dạng trả lời ngắn. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.45';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, 10-08, 10-09, 10-10 thêm 238 dạng trả lời ngắn. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -35676,6 +35676,1066 @@ GT(10,3,2,'VD','Hình thang: hai cạnh bên kéo dài cắt nhau tại S, S n�
     ans:hoi ? SM : SN,
     lg:`Vì $CD \\parallel AB$: $${vkV('SA')} = ${frT(a, c)}${vkV('SD')}$, $${vkV('SB')} = ${frT(a, c)}${vkV('SC')}$.<br>Suy ra $${vkV('SM')} = \\dfrac{1}{2}(${vkV('SA')} + ${vkV('SB')}) = ${frT(a, c)}${vkV('SN')}$, nên $S$, $N$, $M$ thẳng hàng và $N$ nằm giữa $S$, $M$.<br>Từ $SM - SN = ${h}$ và $SM = ${frT(a, c)} SN$ suy ra $SN = ${SN}$, $SM = ${SM}$.`,
     verify:()=> near(Math.hypot(P.S[0] - (hoi ? P.M[0] : P.N[0]), P.S[1] - (hoi ? P.M[1] : P.N[1])), o.ans*Math.hypot(P.M[0] - P.N[0], P.M[1] - P.N[1])/h, 1e-9)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.45'; GEN[k].l1 = 'V2.45'; });
+})();
+
+// ---------- V2.45: dạng thay số bổ sung (10-10 Vectơ trong mặt phẳng tọa độ: 92 dạng TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-10.1 Toạ độ của điểm, vectơ; độ dài, khoảng cách (10|3|3), 14 dạng TLN. Claude viết.
+// Chuỗi: vectơ theo i, j (TH) → hình chiếu (TH) → đối xứng (TH) → tìm đầu mút (TH) → tìm tham số theo độ dài (TH) → hai vectơ bằng nhau (TH) → đọc hình (TH) → điểm theo tham số (TH) → k·u (TH) → chu vi (VD) → khoảng cách thực tế (VD) → so sánh (VD) → hình vuông (VD).
+const vlR = x=> Math.round(x*10)/10, vlOk = x=> Math.abs(x) > 0 && String(x).length <= 4, vlNg = x=> near(x, Math.round(x), 1e-9), vlGan = (v, ans)=> near(ans, v, 0.051/Math.max(1, Math.abs(ans))), vlGon = x=> near(x*10, Math.round(x*10), 1e-9) && vlOk(vlR(x));
+const vlC = p=> `(${nt(p[0])}; ${nt(p[1])})`, vlP = (n, p)=> `$${n}${vlC(p)}$`, vlU = (n, u)=> `$\\vec{${n}} = ${vlC(u)}$`, vlB = x=> x < 0 ? `(${nt(x)})` : nt(x), vlD = (A, B)=> Math.hypot(A[0] - B[0], A[1] - B[1]), vlV = n=> vtV(n);
+const vlS = (A, B)=> `\\sqrt{${nt(Math.abs(A[0] - B[0]))}^2 + ${nt(Math.abs(A[1] - B[1]))}^2}`, vlL = len=>{ const ng = vlNg(len), ans = vlR(len); return {ans, ng, lam:ng ? '' : ' (làm tròn đến hàng phần mười)', dv:ng ? '' : ', làm tròn đến hàng phần mười', eq:ng ? '=' : '\\approx'}; };
+const vlTong = (R, a, b)=>{ const k = R.int(0, 4), T = [['a + b', a + b],['a - b', a - b],['2a + b', 2*a + b],['a + 2b', a + 2*b],['ab', a*b]][k]; return vlGon(T[1]) ? {ten:T[0], gt:T[1], f:(x, y)=> [x + y, x - y, 2*x + y, x + 2*y, x*y][k]} : null; };
+
+/* 29. TLN TH */
+GT(10,3,3,'TH','Vectơ viết theo hai vectơ đơn vị u = xi + yj, có phép cộng trừ: đọc toạ độ rồi tính biểu thức', R=>{
+  const p = R.nz(-6, 6), q = R.nz(-6, 6), r = R.nz(-6, 6), s = R.nz(-6, 6), k = R.nz(-3, 3), a = p + k*r, b = q + k*s, T = vlTong(R, a, b); if(!T || !a || !b) return null;
+  const i = '\\vec{i}', j = '\\vec{j}';
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{v} = ${termsT([[p, i], [q, j]])}$, $\\vec{w} = ${termsT([[r, i], [s, j]])}$. Vectơ $\\vec{u} = \\vec{v} ${k > 0 ? '+' : '-'} ${Math.abs(k) === 1 ? '' : Math.abs(k)}\\vec{w}$ có toạ độ $(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Toạ độ: $\\vec{v} = ${vlC([p, q])}$, $\\vec{w} = ${vlC([r, s])}$.<br>Do đó $a = ${p} ${k > 0 ? '+' : '-'} ${Math.abs(k)} \\cdot ${vlB(r)} = ${a}$, $b = ${q} ${k > 0 ? '+' : '-'} ${Math.abs(k)} \\cdot ${vlB(s)} = ${b}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f(p + k*r, q + k*s), o.ans, 1e-9)};
+  return o;
+});
+
+/* 30. TLN TH */
+GT(10,3,3,'TH','Hình chiếu của điểm M lên hai trục: H, K và tứ giác OHMK là hình chữ nhật — HK bằng OM (làm tròn)', R=>{
+  const M = [R.nz(-12, 12), R.nz(-12, 12)], hoiS = R.int(0, 1), S = Math.abs(M[0]*M[1]), L = vlL(Math.hypot(...M)); if(!vlOk(L.ans) || !vlOk(S)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho điểm ${vlP('M', M)}. Gọi $H$, $K$ lần lượt là hình chiếu của $M$ lên trục $Ox$, $Oy$. ${hoiS ? 'Tính diện tích tứ giác $OHMK$.' : `Tính độ dài đoạn $HK$${L.lam}.`}`,
+    ans:hoiS ? S : L.ans,
+    lg:`Ta có $H(${M[0]}; 0)$, $K(0; ${M[1]})$, tứ giác $OHMK$ là hình chữ nhật có hai cạnh $${Math.abs(M[0])}$, $${Math.abs(M[1])}$.<br>` + (hoiS ? `Diện tích bằng $${Math.abs(M[0])} \\cdot ${Math.abs(M[1])} = ${S}$.` : `Hai đường chéo bằng nhau nên $HK = OM = \\sqrt{${Math.abs(M[0])}^2 + ${Math.abs(M[1])}^2} ${L.eq} ${nt(L.ans)}$.`),
+    verify:()=> hoiS ? o.ans === Math.abs(M[0]*M[1]) : vlGan(vlD([M[0],0], [0,M[1]]), o.ans)};
+  return o;
+});
+
+/* 31. TLN TH */
+GT(10,3,3,'TH','Điểm đối xứng qua trục Ox, Oy, gốc O: tính khoảng cách giữa điểm và ảnh của nó (làm tròn)', R=>{
+  const A = [R.nz(-15, 15), R.nz(-15, 15)], k = R.int(0, 2), B = k === 0 ? [A[0], -A[1]] : k === 1 ? [-A[0], A[1]] : [-A[0], -A[1]], L = vlL(vlD(A, B)), ten = ['trục $Ox$', 'trục $Oy$', 'gốc toạ độ $O$'][k]; if(!vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho điểm ${vlP('A', A)}. Gọi $B$ là điểm đối xứng với $A$ qua ${ten}. Tính độ dài đoạn $AB$${L.lam}.`,
+    ans:L.ans,
+    lg:`Điểm đối xứng là ${vlP('B', B)}.<br>Do đó $AB = ${vlS(A, B)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(vlD(A, B), o.ans)};
+  return o;
+});
+
+/* 32. TLN TH */
+GT(10,3,3,'TH','Biết một đầu mút và toạ độ vectơ AB: tìm đầu mút còn lại, tính biểu thức toạ độ (bẫy cộng nhầm khi biết điểm cuối)', R=>{
+  const A = [R.int(-9, 9), R.int(-9, 9)], u = [R.nz(-9, 9), R.nz(-9, 9)], B = [A[0] + u[0], A[1] + u[1]], hoi = R.int(0, 1), K = hoi ? B : A, T = vlTong(R, K[0], K[1]); if(!T || !K[0] || !K[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${hoi ? vlP('A', A) : vlP('B', B)} và $${vlV('AB')} = ${vlC(u)}$. Gọi $(a; b)$ là toạ độ của điểm $${hoi ? 'B' : 'A'}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:hoi ? `$${vlV('AB')} = (x_B - x_A; y_B - y_A)$ nên $x_B = ${A[0]} + ${vlB(u[0])} = ${B[0]}$, $y_B = ${A[1]} + ${vlB(u[1])} = ${B[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.` : `$${vlV('AB')} = (x_B - x_A; y_B - y_A)$ nên $x_A = ${B[0]} - ${vlB(u[0])} = ${A[0]}$, $y_A = ${B[1]} - ${vlB(u[1])} = ${A[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f(...(hoi ? [A[0] + u[0], A[1] + u[1]] : [B[0] - u[0], B[1] - u[1]])), o.ans, 1e-9)};
+  return o;
+});
+
+/* 33. TLN TH */
+GT(10,3,3,'TH','Tìm tham số m để độ dài đoạn AB bằng số cho trước, chọn nghiệm theo điều kiện', R=>{
+  const [x, y] = R.pick([[3,4],[4,3],[6,8],[8,6],[5,12],[12,5],[9,12],[12,9],[8,15],[15,8]]), d = Math.round(Math.hypot(x, y)), a = R.int(-9, 9), b = R.int(-9, 9), lon = R.int(0, 1), m = lon ? a + x : a - x, s = R.pick([1, -1]), yB = b + s*y;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', [a, b])}, $B(m; ${yB})$ với $m ${lon ? '>' : '<'} ${a}$. Biết $AB = ${d}$. Tìm $m$.`,
+    ans:m,
+    lg:`$AB^2 = (${termsT([[1,'m'],[-a,'']])})^2 + ${y}^2 = ${d*d}$, nên $(${termsT([[1,'m'],[-a,'']])})^2 = ${d*d - y*y}$, tức là $${termsT([[1,'m'],[-a,'']])} = \\pm ${x}$.<br>Vì $m ${lon ? '>' : '<'} ${a}$ nên $m = ${m}$.`,
+    verify:()=> near(vlD([a, b], [o.ans, yB]), d, 1e-9) && (lon ? o.ans > a : o.ans < a)};
+  if(!m) return null;
+  return o;
+});
+
+/* 34. TLN TH */
+GT(10,3,3,'TH','Vectơ có độ dài cho trước, m có hai giá trị: tính tích các giá trị của m', R=>{
+  const [x, y] = R.pick([[3,4],[4,3],[6,8],[8,6],[5,12],[12,5],[9,12],[12,9],[8,15],[15,8]]), d = Math.round(Math.hypot(x, y)), a = R.nz(-9, 9), ans = (a + x)*(a - x), s = R.pick([1, -1]); if(!ans || !vlOk(ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (${termsT([[1,'m'],[-a,'']])}; ${s*y})$. Biết $\\left|\\vec{u}\\right| = ${d}$. Tính tích các giá trị của $m$.`,
+    ans,
+    lg:`$(${termsT([[1,'m'],[-a,'']])})^2 + ${y}^2 = ${d*d}$, nên $${termsT([[1,'m'],[-a,'']])} = \\pm ${x}$, tức là $m = ${a + x}$ hoặc $m = ${a - x}$.<br>Tích các giá trị bằng $${vlB(a + x)} \\cdot ${vlB(a - x)} = ${ans}$.`,
+    verify:()=> near(Math.hypot(x, y), d, 1e-9) && o.ans === a*a - x*x};
+  return o;
+});
+
+/* 35. TLN TH */
+GT(10,3,3,'TH','Hai vectơ bằng nhau khi hoành độ bằng hoành độ, tung độ bằng tung độ: tìm hai tham số', R=>{
+  const m = R.nz(-8, 8), n = R.nz(-8, 8), p = R.pick([2, 3]), q = R.nz(-5, 5), r = R.nz(-5, 5), u = [p*m + q, n - r], T = vlTong(R, m, n); if(!T) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (${termsT([[p,'a'],[q,'']])}; ${u[1]})$ và $\\vec{v} = (${u[0]}; ${termsT([[1,'b'],[-r,'']])})$. Biết $\\vec{u} = \\vec{v}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Hai vectơ bằng nhau nên $${termsT([[p,'a'],[q,'']])} = ${u[0]}$ và $${termsT([[1,'b'],[-r,'']])} = ${u[1]}$.<br>Suy ra $a = ${m}$, $b = ${n}$, nên $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f((u[0] - q)/p, u[1] + r), o.ans, 1e-9)};
+  return o;
+});
+
+/* 36. TLN TH */
+GT(10,3,3,'TH','Đọc toạ độ hai điểm cùng một góc phần tư trên hệ trục (hình vẽ), đoạn AB không cắt trục, rồi tính độ dài thực (làm tròn)', R=>{
+  const sx = R.pick([1, -1]), sy = R.pick([1, -1]), A = [sx*R.int(1, 6), sy*R.int(1, 6)], B = [sx*R.int(1, 6), sy*R.int(1, 6)], c = R.pick([1, 2, 3]), L = vlL(c*vlD(A, B)); if(A[0] === B[0] || A[1] === B[1] || vlD(A, B) < 3 || !vlOk(L.ans)) return null;
+  const hv = {loai:'hinh', dang:'oxy', pts:{A, B}, seg:['AB']};
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$ ở hình bên, mỗi đơn vị trên hai trục ứng với $${c}$ cm. Tính độ dài đoạn $AB$ (đơn vị: cm${L.dv}).`,
+    ans:L.ans,
+    lg:`Đọc trên hình: ${vlP('A', A)}, ${vlP('B', B)}.<br>Theo đơn vị của hệ trục, $AB = ${vlS(A, B)}$. Độ dài thực bằng $${c === 1 ? '' : c + ' \\cdot '}${vlS(A, B)} ${L.eq} ${nt(L.ans)}$ (cm).`,
+    hv,
+    verify:()=> vlGan(c*vlD(A, B), o.ans)};
+  return o;
+});
+
+/* 37. TLN TH */
+GT(10,3,3,'TH','Điểm M(pt; qt) với t dương, biết OM: tìm t, tìm hoành độ của M', R=>{
+  const [p, q] = R.pick([[3,4],[4,3],[-3,4],[3,-4],[5,12],[-5,12],[12,5],[12,-5],[8,15],[8,-15],[-8,15]]), t = R.pick([1, 2, 3, 4, 5, 6, 0.5, 1.5, 2.5]), d = Math.round(Math.hypot(p, q)), OM = d*t, hoi = R.int(0, 1), ans = hoi ? t : p*t; if(!vlGon(ans) || !vlGon(OM)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho điểm $M(${termsT([[p,'t']])}; ${termsT([[q,'t']])})$ với $t > 0$. Biết $OM = ${nt(OM)}$. ${hoi ? 'Tìm $t$.' : 'Tìm hoành độ của $M$.'}`,
+    ans,
+    lg:`$OM = \\sqrt{${p*p}t^2 + ${q*q}t^2} = ${d}t$ (vì $t > 0$). Từ $${d}t = ${nt(OM)}$ suy ra $t = ${nt(t)}$.` + (hoi ? `` : `<br>Hoành độ của $M$ bằng $${p} \\cdot ${nt(t)} = ${nt(p*t)}$.`),
+    verify:()=> near(Math.hypot(p*t, q*t), OM, 1e-9) && near(hoi ? t : p*t, o.ans, 1e-9)};
+  return o;
+});
+
+/* 38. TLN TH */
+GT(10,3,3,'TH','Độ dài của k·u theo toạ độ: tìm k dương để |k·u| bằng số cho trước', R=>{
+  const [p, q] = R.pick([[3,4],[-3,4],[4,-3],[6,8],[5,12],[-5,12],[8,15],[-8,6],[12,-5],[1,2],[2,1],[1,3]]), k = R.pick([1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 0.5, 7, 7.5, 8, 9, 10, 12]), n = p*p + q*q, kq = Math.sqrt(n), ng = vlNg(kq), d = k*kq;
+  const dT = ng ? nt(d) : `${nt(k)}\\sqrt{${n}}`;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', [p, q])}. Tìm số thực dương $k$ sao cho $\\left|k\\vec{u}\\right| = ${dT}$.`,
+    ans:k,
+    lg:`$\\left|\\vec{u}\\right| = \\sqrt{${p*p} + ${q*q}} = ${ng ? kq : `\\sqrt{${n}}`}$ và $\\left|k\\vec{u}\\right| = k\\left|\\vec{u}\\right|$ với $k > 0$.<br>Do đó $k = ${nt(k)}$.`,
+    verify:()=> near(o.ans*Math.hypot(p, q), d, 1e-9)};
+  return o;
+});
+
+/* 39. TLN VD */
+GT(10,3,3,'VD','Tam giác có một đỉnh là gốc toạ độ: tính chu vi bằng ba khoảng cách (làm tròn)', R=>{
+  const A = [R.nz(-9, 9), R.nz(-9, 9)], B = [R.nz(-9, 9), R.nz(-9, 9)], Q = [0, 0], c = vlD(Q, A) + vlD(Q, B) + vlD(A, B), L = vlL(c); if(vtPar(A, B) || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Tính chu vi tam giác $OAB$${L.lam}.`,
+    ans:L.ans,
+    lg:`$OA = \\sqrt{${A[0]*A[0]} + ${A[1]*A[1]}}$, $OB = \\sqrt{${B[0]*B[0]} + ${B[1]*B[1]}}$, $AB = ${vlS(A, B)}$.<br>Chu vi bằng $OA + OB + AB ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(Math.hypot(...A) + Math.hypot(...B) + Math.hypot(A[0] - B[0], A[1] - B[1]), o.ans)};
+  return o;
+});
+
+/* 40. TLN VD */
+GT(10,3,3,'VD','Bản đồ gắn hệ trục: khoảng cách thật giữa hai địa điểm khi mỗi đơn vị ứng với một số km (làm tròn)', R=>{
+  const A = [R.int(-8, 8), R.int(-8, 8)], B = [R.int(-8, 8), R.int(-8, 8)], u = R.pick([2, 5, 10, 0.5]), Tn = R.pick([['trạm xăng','bến xe'],['trường học','bệnh viện'],['cảng cá','hải đăng'],['trạm bơm','kho hàng']]), L = vlL(u*vlD(A, B)); if(!vlOk(L.ans) || vlD(A, B) < 3 || A[0] === B[0] || A[1] === B[1]) return null;
+  const o = {stem:`Trên bản đồ gắn hệ trục toạ độ $Oxy$, mỗi đơn vị ứng với $${nt(u)}$ km trên thực tế. Vị trí ${Tn[0]} là ${vlP('A', A)}, vị trí ${Tn[1]} là ${vlP('B', B)}. Tính khoảng cách thực tế giữa hai địa điểm (đơn vị: km${L.dv}).`,
+    ans:L.ans,
+    lg:`Trên bản đồ, $AB = ${vlS(A, B)}$.<br>Khoảng cách thực tế bằng $${nt(u)} \\cdot AB ${L.eq} ${nt(L.ans)}$ (km).`,
+    verify:()=> vlGan(u*vlD(A, B), o.ans)};
+  return o;
+});
+
+/* 41. TLN VD */
+GT(10,3,3,'VD','So sánh khoảng cách từ một điểm tới ba điểm: chọn điểm xa nhất, tính khoảng cách đó (làm tròn)', R=>{
+  const M = [R.int(-5, 5), R.int(-5, 5)], X = ['A','B','C'].map(()=> [R.int(-9, 9), R.int(-9, 9)]), d = X.map(p=> vlD(M, p)), mx = Math.max(...d), ip = d.indexOf(mx), hoi = R.int(0, 1), mn = Math.min(...d), v = hoi ? mx : mn, id = d.indexOf(v), L = vlL(v), ten = 'ABC'[id]; if(!vlOk(L.ans) || new Set(d.map(x=> Math.round(x*100))).size < 3 || mn < 1.5 || ip < 0) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('M', M)} và ba điểm ${vlP('A', X[0])}, ${vlP('B', X[1])}, ${vlP('C', X[2])}. Tính khoảng cách từ $M$ đến điểm ${hoi ? 'xa' : 'gần'} $M$ nhất trong ba điểm $A$, $B$, $C$${L.lam}.`,
+    ans:L.ans,
+    lg:`$MA^2 = ${Math.round(d[0]*d[0])}$, $MB^2 = ${Math.round(d[1]*d[1])}$, $MC^2 = ${Math.round(d[2]*d[2])}$.<br>Điểm ${hoi ? 'xa' : 'gần'} nhất là $${ten}$, khoảng cách bằng $\\sqrt{${Math.round(v*v)}} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(hoi ? Math.max(...X.map(p=> vlD(M, p))) : Math.min(...X.map(p=> vlD(M, p))), o.ans)};
+  return o;
+});
+
+/* 42. TLN VD */
+GT(10,3,3,'VD','Hình vuông OABC có cạnh OA biết toạ độ: B nhận được khi quay, tính diện tích và toạ độ đỉnh đối diện', R=>{
+  const A = [R.int(1, 9), R.int(1, 9)], C = [-A[1], A[0]], B = [A[0] + C[0], A[1] + C[1]], hoi = R.int(0, 2), S = A[0]*A[0] + A[1]*A[1], ans = hoi === 0 ? S : hoi === 1 ? B[0] + B[1] : Math.abs(B[0]) + Math.abs(B[1]); if(!ans || !vlOk(ans)) return null;
+  const ten = hoi === 0 ? 'Tính diện tích của hình vuông.' : hoi === 1 ? 'Điểm $B$ có toạ độ $(a; b)$. Tính $a + b$.' : 'Điểm $B$ có toạ độ $(a; b)$. Tính $|a| + |b|$.';
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho điểm ${vlP('A', A)} và hình vuông $OABC$ với các đỉnh theo thứ tự ngược chiều kim đồng hồ. ${ten}`,
+    ans,
+    lg:`Quay $${vlV('OA')} = ${vlC(A)}$ góc $90^\\circ$ ngược chiều kim đồng hồ được $${vlV('OC')} = ${vlC(C)}$.<br>$${vlV('OB')} = ${vlV('OA')} + ${vlV('OC')} = ${vlC(B)}$. Diện tích bằng $OA^2 = ${S}$.<br>Giá trị cần tính bằng $${ans}$.`,
+    verify:()=>{ const v = hoi === 0 ? A[0]**2 + A[1]**2 : hoi === 1 ? A[0] - A[1] + A[1] + A[0] : Math.abs(A[0] - A[1]) + A[0] + A[1]; return near(v, o.ans, 1e-9) && near(A[0]*C[0] + A[1]*C[1], 0, 1e-9); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.45'; GEN[k].l1 = 'V2.45'; });
+})();
+
+// ---------- V2.45: dạng thay số bổ sung (10-10 Vectơ trong mặt phẳng tọa độ: 92 dạng TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-10.2 Biểu thức toạ độ của tổng, hiệu, tích với số; phân tích vectơ (10|3|3), 16 dạng TLN. Claude viết.
+// Chuỗi: tổng hiệu (TH) → tổ hợp (TH) → phương trình vectơ (TH) → tìm k (TH) → độ dài (TH) → triệt tiêu một toạ độ (TH) → phân tích (TH) → đẳng thức ba điểm (TH) → cực trị theo m (VD) → điểm trên trục (VD) → hai giá trị m (VD) → cùng hướng (VD) → lực cân bằng (VD) → lộ trình (VD) → vận tốc (VD).
+const vlR = x=> Math.round(x*10)/10, vlOk = x=> Math.abs(x) > 0 && String(x).length <= 4, vlNg = x=> near(x, Math.round(x), 1e-9), vlGan = (v, ans)=> near(ans, v, 0.051/Math.max(1, Math.abs(ans))), vlGon = x=> near(x*10, Math.round(x*10), 1e-9) && vlOk(vlR(x));
+const vlC = p=> `(${nt(p[0])}; ${nt(p[1])})`, vlP = (n, p)=> `$${n}${vlC(p)}$`, vlU = (n, u)=> `$\\vec{${n}} = ${vlC(u)}$`, vlB = x=> x < 0 ? `(${nt(x)})` : nt(x), vlD = (A, B)=> Math.hypot(A[0] - B[0], A[1] - B[1]), vlV = n=> vtV(n);
+const vlS = (A, B)=> `\\sqrt{${nt(Math.abs(A[0] - B[0]))}^2 + ${nt(Math.abs(A[1] - B[1]))}^2}`, vlL = len=>{ const ng = vlNg(len), ans = vlR(len); return {ans, ng, lam:ng ? '' : ' (làm tròn đến hàng phần mười)', dv:ng ? '' : ', làm tròn đến hàng phần mười', eq:ng ? '=' : '\\approx'}; };
+const vlTong = (R, a, b)=>{ const k = R.int(0, 4), T = [['a + b', a + b],['a - b', a - b],['2a + b', 2*a + b],['a + 2b', a + 2*b],['ab', a*b]][k]; return vlGon(T[1]) ? {ten:T[0], gt:T[1], f:(x, y)=> [x + y, x - y, 2*x + y, x + 2*y, x*y][k]} : null; };
+
+/* 43. TLN TH */
+GT(10,3,3,'TH','Tổng, hiệu ba vectơ theo toạ độ: u + v − w, tính biểu thức toạ độ', R=>{
+  const u = [R.nz(-9, 9), R.nz(-9, 9)], v = [R.nz(-9, 9), R.nz(-9, 9)], w = [R.nz(-9, 9), R.nz(-9, 9)], s = R.pick([[1,-1],[-1,1],[-1,-1]]), a = u[0] + s[0]*v[0] + s[1]*w[0], b = u[1] + s[0]*v[1] + s[1]*w[1], T = vlTong(R, a, b); if(!T || !a || !b) return null;
+  const e = `\\vec{u} ${s[0] > 0 ? '+' : '-'} \\vec{v} ${s[1] > 0 ? '+' : '-'} \\vec{w}`;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}, ${vlU('w', w)}. Vectơ $${e}$ có toạ độ $(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$a = ${u[0]} ${s[0] > 0 ? '+' : '-'} ${vlB(v[0])} ${s[1] > 0 ? '+' : '-'} ${vlB(w[0])} = ${a}$, $b = ${u[1]} ${s[0] > 0 ? '+' : '-'} ${vlB(v[1])} ${s[1] > 0 ? '+' : '-'} ${vlB(w[1])} = ${b}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f(u[0] + s[0]*v[0] + s[1]*w[0], u[1] + s[0]*v[1] + s[1]*w[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 44. TLN TH */
+GT(10,3,3,'TH','Tổ hợp pu + qv theo toạ độ, hệ số âm và phân số 1/2: tính biểu thức toạ độ', R=>{
+  const u = [2*R.nz(-5, 5), 2*R.nz(-5, 5)], v = [R.nz(-9, 9), R.nz(-9, 9)], p = R.pick([0.5, -0.5, 1.5, 2, 3, -2]), q = R.nz(-4, 4), a = p*u[0] + q*v[0], b = p*u[1] + q*v[1], T = vlTong(R, a, b); if(!T || !a || !b) return null;
+  const pT = p === 0.5 ? '\\dfrac{1}{2}' : p === -0.5 ? '-\\dfrac{1}{2}' : p === 1.5 ? '\\dfrac{3}{2}' : String(p);
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. Vectơ $${pT}\\vec{u} ${q > 0 ? '+' : '-'} ${Math.abs(q) === 1 ? '' : Math.abs(q)}\\vec{v}$ có toạ độ $(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$a = ${pT} \\cdot ${vlB(u[0])} ${q > 0 ? '+' : '-'} ${Math.abs(q)} \\cdot ${vlB(v[0])} = ${nt(a)}$, $b = ${pT} \\cdot ${vlB(u[1])} ${q > 0 ? '+' : '-'} ${Math.abs(q)} \\cdot ${vlB(v[1])} = ${nt(b)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f(p*u[0] + q*v[0], p*u[1] + q*v[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 45. TLN TH */
+GT(10,3,3,'TH','Phương trình vectơ px + u = qx + v theo toạ độ: chuyển vế rồi chia theo từng toạ độ', R=>{
+  const p = R.int(2, 5), q = p - R.pick([1, 2, 3]), x = [R.nz(-8, 8), R.nz(-8, 8)], u = [R.nz(-9, 9), R.nz(-9, 9)], k = p - q, v = [k*x[0] + u[0], k*x[1] + u[1]], T = vlTong(R, x[0], x[1]); if(q < 1 || !T) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. Vectơ $\\vec{x} = (a; b)$ thoả mãn $${p}\\vec{x} + \\vec{u} = ${q === 1 ? '' : q}\\vec{x} + \\vec{v}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Chuyển vế: $${k === 1 ? '' : k}\\vec{x} = \\vec{v} - \\vec{u} = ${vlC([v[0] - u[0], v[1] - u[1]])}$.<br>Do đó $\\vec{x} = ${vlC(x)}$, nên $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f((v[0] - u[0])/k, (v[1] - u[1])/k), o.ans, 1e-9)};
+  return o;
+});
+
+/* 46. TLN TH */
+GT(10,3,3,'TH','Hai vectơ theo toạ độ: tìm số k để v = k·u, k có thể âm hoặc phân số', R=>{
+  const u = [R.nz(-8, 8), R.nz(-8, 8)], k = R.pick([2, 3, -2, -3, 1.5, -1.5, 0.5, -0.5, 2.5, -2.5, 4, -4, 5, -5, 6, -6, 3.5, -3.5]), v = [k*u[0], k*u[1]]; if(!Number.isInteger(v[0]) || !Number.isInteger(v[1])) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. Tìm số thực $k$ sao cho $\\vec{v} = k\\vec{u}$.`,
+    ans:k,
+    lg:`So sánh hoành độ: $${v[0]} = k \\cdot ${vlB(u[0])}$, nên $k = ${nt(k)}$. Tung độ cũng thoả mãn: $${vlB(k)} \\cdot ${vlB(u[1])} = ${v[1]}$.`,
+    verify:()=> near(o.ans*u[0], v[0], 1e-9) && near(o.ans*u[1], v[1], 1e-9)};
+  return o;
+});
+
+/* 47. TLN TH */
+GT(10,3,3,'TH','Độ dài của tổng hoặc hiệu hai vectơ cho theo toạ độ (không cộng hai độ dài, làm tròn)', R=>{
+  const u = [R.nz(-9, 9), R.nz(-9, 9)], v = [R.nz(-9, 9), R.nz(-9, 9)], s = R.pick([1, -1]), w = [u[0] + s*v[0], u[1] + s*v[1]], L = vlL(Math.hypot(...w)); if(!w[0] || !w[1] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. Tính $\\left|\\vec{u} ${s > 0 ? '+' : '-'} \\vec{v}\\right|$${L.lam}.`,
+    ans:L.ans,
+    lg:`$\\vec{u} ${s > 0 ? '+' : '-'} \\vec{v} = ${vlC(w)}$.<br>Độ dài bằng $\\sqrt{${w[0]*w[0]} + ${w[1]*w[1]}} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(Math.hypot(u[0] + s*v[0], u[1] + s*v[1]), o.ans)};
+  return o;
+});
+
+/* 48. TLN TH */
+GT(10,3,3,'TH','Độ dài của pu + qv theo toạ độ với p, q nguyên (làm tròn)', R=>{
+  const u = [R.nz(-6, 6), R.nz(-6, 6)], v = [R.nz(-6, 6), R.nz(-6, 6)], p = R.pick([2, 3, -2, -1]), q = R.pick([2, 3, -3, -2, 1]), w = [p*u[0] + q*v[0], p*u[1] + q*v[1]], L = vlL(Math.hypot(...w)), e = termsT([[p,'\\vec{u}'],[q,'\\vec{v}']]); if(!w[0] || !w[1] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. Tính $\\left|${e}\\right|$${L.lam}.`,
+    ans:L.ans,
+    lg:`$${e} = ${vlC(w)}$.<br>Độ dài bằng $\\sqrt{${w[0]*w[0]} + ${w[1]*w[1]}} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(Math.hypot(p*u[0] + q*v[0], p*u[1] + q*v[1]), o.ans)};
+  return o;
+});
+
+/* 49. TLN TH */
+GT(10,3,3,'TH','Tìm m để u + m·v có một toạ độ bằng 0: vectơ nằm trên một trục', R=>{
+  const v = [R.nz(-6, 6), R.nz(-6, 6)], m = R.pick([1, 2, 3, -1, -2, -3, 0.5, -0.5, 1.5, 2.5, 4, -4]), k = R.int(0, 1), u = [k ? R.nz(-9, 9) : -m*v[0], k ? -m*v[1] : R.nz(-9, 9)]; if(!Number.isInteger(u[0]) || !Number.isInteger(u[1]) || !u[0] || !u[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. Tìm $m$ để vectơ $\\vec{u} + m\\vec{v}$ có ${k ? 'tung độ' : 'hoành độ'} bằng $0$.`,
+    ans:m,
+    lg:`$\\vec{u} + m\\vec{v} = (${termsT([[v[0],'m'],[u[0],'']])}; ${termsT([[v[1],'m'],[u[1],'']])})$.<br>Điều kiện: $${k ? termsT([[v[1],'m'],[u[1],'']]) : termsT([[v[0],'m'],[u[0],'']])} = 0$, nên $m = ${nt(m)}$.`,
+    verify:()=> near((k ? u[1] + o.ans*v[1] : u[0] + o.ans*v[0]), 0, 1e-9)};
+  return o;
+});
+
+/* 50. TLN TH */
+GT(10,3,3,'TH','Phân tích c = am + bn theo toạ độ: giải hệ hai ẩn, tính biểu thức của a, b', R=>{
+  const a = [R.nz(-5, 5), R.nz(-5, 5)], b = [R.nz(-5, 5), R.nz(-5, 5)], x = R.nz(-5, 5), y = R.nz(-5, 5), c = [x*a[0] + y*b[0], x*a[1] + y*b[1]], T = vlTong(R, x, y); if(a[0]*b[1] === a[1]*b[0] || !T) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('m', a)}, ${vlU('n', b)}, ${vlU('c', c)}. Biết $\\vec{c} = a\\vec{m} + b\\vec{n}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`So sánh toạ độ, được hệ $${termsT([[a[0],'a'],[b[0],'b']])} = ${c[0]}$, $${termsT([[a[1],'a'],[b[1],'b']])} = ${c[1]}$.<br>Giải hệ: $a = ${x}$, $b = ${y}$. Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const D = a[0]*b[1] - a[1]*b[0], X = (c[0]*b[1] - c[1]*b[0])/D, Y = (a[0]*c[1] - a[1]*c[0])/D; return near(T.f(X, Y), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 51. TLN TH */
+GT(10,3,3,'TH','Điểm M thoả MA + qMB − MC = 0 theo toạ độ: đưa về qOM = OA + qOB − OC', R=>{
+  const q = R.pick([2, 3, 4]), M = [R.nz(-6, 6), R.nz(-6, 6)], B = [R.int(-6, 6), R.int(-6, 6)], C = [R.int(-6, 6), R.int(-6, 6)], A = [q*M[0] - q*B[0] + C[0], q*M[1] - q*B[1] + C[1]], T = vlTong(R, M[0], M[1]), P = {A, B, C, M}; if(!T) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Điểm $M(a; b)$ thoả mãn $${vlV('MA')} + ${q}${vlV('MB')} - ${vlV('MC')} = \\vec{0}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Với gốc $O$: đẳng thức tương đương $${q}${vlV('OM')} = ${vlV('OA')} + ${q}${vlV('OB')} - ${vlV('OC')}$.<br>Vế phải có toạ độ $${vlC([q*M[0], q*M[1]])}$, nên $M${vlC(M)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> vtEq(vtSum(P, [[1,'MA'],[q,'MB'],[-1,'MC']]), [0,0]) && near(T.f(M[0], M[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 52. TLN VD */
+GT(10,3,3,'VD','Giá trị nhỏ nhất của |u + m·v| theo m: bình phương độ dài là tam thức bậc hai của m', R=>{
+  const v = [R.nz(-4, 4), R.nz(-4, 4)], t = R.nz(-3, 3), m0 = R.nz(-4, 4), w = [-t*v[1], t*v[0]], u = [w[0] - m0*v[0], w[1] - m0*v[1]], hoi = R.int(0, 1), A = v[0]*v[0] + v[1]*v[1], B = u[0]*v[0] + u[1]*v[1], C = u[0]*u[0] + u[1]*u[1], mn = C - B*B/A, L = vlL(Math.sqrt(mn)); if(!u[0] || !u[1] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', u)}, ${vlU('v', v)}. ${hoi ? `Tìm giá trị nhỏ nhất của $\\left|\\vec{u} + m\\vec{v}\\right|$ khi $m$ thay đổi${L.lam}.` : `Tìm $m$ để $\\left|\\vec{u} + m\\vec{v}\\right|$ nhỏ nhất.`}`,
+    ans:hoi ? L.ans : m0,
+    lg:`$\\vec{u} + m\\vec{v} = (${termsT([[v[0],'m'],[u[0],'']])}; ${termsT([[v[1],'m'],[u[1],'']])})$.<br>Bình phương độ dài: $f(m) = ${termsT([[A,'m^2'],[2*B,'m'],[C,'']])}$, nhỏ nhất tại $m = ${frT(-B, A)}$.` + (hoi ? `<br>Giá trị nhỏ nhất của $f$ bằng $${nt(mn)}$, nên độ dài nhỏ nhất bằng $\\sqrt{${nt(mn)}} ${L.eq} ${nt(L.ans)}$.` : ``),
+    verify:()=>{ const f = m=> Math.hypot(u[0] + m*v[0], u[1] + m*v[1]); let b = 1e9, mb = 0; for(let i = -2000; i <= 2000; i++){ const m = i/200; if(f(m) < b){ b = f(m); mb = m; } } return hoi ? vlGan(b, o.ans) : near(mb, o.ans, 1e-6); }};
+  return o;
+});
+
+/* 53. TLN VD */
+GT(10,3,3,'VD','Điểm M trên trục Ox để pMA + qMB có hoành độ bằng 0: lập phương trình theo hoành độ của M', R=>{
+  const p = R.int(1, 4), q = R.int(1, 4), x = R.nz(-8, 8), xA = R.int(-9, 9), xB = ((p + q)*x - p*xA)/q, yA = R.nz(-6, 6), yB = R.nz(-6, 6); if(!Number.isInteger(xB) || Math.abs(xB) > 20 || xA === xB) return null;
+  const ps = (k, n)=> `${k === 1 ? '' : k}${vlV(n)}`;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', [xA, yA])}, ${vlP('B', [xB, yB])}. Điểm $M$ thuộc trục $Ox$ sao cho vectơ $${ps(p,'MA')} + ${ps(q,'MB')}$ có hoành độ bằng $0$. Tìm hoành độ của $M$.`,
+    ans:x,
+    lg:`Gọi $M(x; 0)$. Hoành độ của vectơ đã cho là $${p === 1 ? '' : p}(${nt(xA)} - x) + ${q === 1 ? '' : q}(${nt(xB)} - x)$.<br>Cho bằng $0$: $${p + q}x = ${p*xA + q*xB}$, nên $x = ${x}$.`,
+    verify:()=> near(p*(xA - o.ans) + q*(xB - o.ans), 0, 1e-9)};
+  return o;
+});
+
+/* 54. TLN VD */
+GT(10,3,3,'VD','Hai vectơ chứa m ở cả hai vị trí: độ dài của tổng cho phương trình bậc hai, tính tích các giá trị m', R=>{
+  const b = R.nz(-6, 6), c = R.nz(-6, 6), m0 = R.nz(-6, 6), m1 = c - b - m0, D = (m0 + b)**2 + (c - m0)**2, n = Math.sqrt(D), ng = vlNg(n), ans = m0*m1; if(m0 === m1 || !ans || !vlOk(ans)) return null;
+  const dT = ng ? Math.round(n) : sqT(D);
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (m; ${c})$, $\\vec{v} = (${b}; -m)$. Biết $\\left|\\vec{u} + \\vec{v}\\right| = ${dT}$. Tính tích các giá trị của $m$.`,
+    ans,
+    lg:`$\\vec{u} + \\vec{v} = (${termsT([[1,'m'],[b,'']])}; ${termsT([[-1,'m'],[c,'']])})$. Bình phương độ dài: $(${termsT([[1,'m'],[b,'']])})^2 + (${termsT([[-1,'m'],[c,'']])})^2 = ${D}$.<br>Rút gọn: $${termsT([[2,'m^2'],[2*(b - c),'m'],[b*b + c*c - D,'']])} = 0$. Phương trình có hai nghiệm $m = ${m0}$, $m = ${m1}$, tích bằng $${ans}$.`,
+    verify:()=>{ const f = m=> (m + b)**2 + (c - m)**2 - D; return near(f(m0), 0, 1e-9) && near(f(m1), 0, 1e-9) && near((b*b + c*c - D)/2, o.ans, 1e-9); }};
+  return o;
+});
+
+/* 55. TLN VD */
+GT(10,3,3,'VD','Vectơ cùng hướng (ngược hướng) với u và có độ dài cho trước: v = ±(d/|u|)·u, tính biểu thức toạ độ', R=>{
+  const [p, q] = R.pick([[3,4],[-3,4],[3,-4],[4,3],[-4,3],[5,12],[-5,12],[12,5],[8,15],[-8,15],[6,8],[-6,8]]), n = Math.round(Math.hypot(p, q)), k = R.pick([1, 2, 3, 4, 0.5, 1.5, 2.5, 5]), s = R.pick([1, -1]), v = [s*k*p, s*k*q], d = k*n, T = vlTong(R, v[0], v[1]); if(!T) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlU('u', [p, q])}. Vectơ $\\vec{v} = (a; b)$ ${s > 0 ? 'cùng hướng' : 'ngược hướng'} với $\\vec{u}$ và $\\left|\\vec{v}\\right| = ${nt(d)}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$\\left|\\vec{u}\\right| = ${n}$. Vì $\\vec{v} = t\\vec{u}$ với $t ${s > 0 ? '>' : '<'} 0$ và $|t| = \\dfrac{${nt(d)}}{${n}} = ${nt(k)}$ nên $t = ${nt(s*k)}$.<br>Do đó $\\vec{v} = ${vlC(v)}$, nên $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(Math.hypot(...v), d, 1e-9) && (v[0]*p + v[1]*q)*s > 0 && near(T.f(s*d/n*p, s*d/n*q), o.ans, 1e-9)};
+  return o;
+});
+
+/* 56. TLN VD */
+GT(10,3,3,'VD','Ba lực cân bằng cho theo toạ độ: F₃ = −(F₁ + F₂), tính độ lớn (làm tròn)', R=>{
+  const a = [R.nz(-30, 30), R.nz(-30, 30)], b = [R.nz(-30, 30), R.nz(-30, 30)], w = [a[0] + b[0], a[1] + b[1]], L = vlL(Math.hypot(...w)); if(!w[0] || !w[1] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$ (đơn vị: N), một vật đứng yên dưới tác dụng của ba lực $\\vec{F_1} = ${vlC(a)}$, $\\vec{F_2} = ${vlC(b)}$ và $\\vec{F_3}$. Tính độ lớn của $\\vec{F_3}$ (đơn vị: N${L.dv}).`,
+    ans:L.ans,
+    lg:`Vật đứng yên nên $\\vec{F_3} = -(\\vec{F_1} + \\vec{F_2}) = ${vlC([-w[0], -w[1]])}$.<br>Độ lớn bằng $\\sqrt{${w[0]*w[0]} + ${w[1]*w[1]}} ${L.eq} ${nt(L.ans)}$ (N).`,
+    verify:()=> vlGan(Math.hypot(a[0] + b[0], a[1] + b[1]), o.ans)};
+  return o;
+});
+
+/* 57. TLN VD */
+GT(10,3,3,'VD','Lộ trình ba chặng cho theo vectơ dịch chuyển: tổng dịch chuyển, khoảng cách từ điểm xuất phát (làm tròn)', R=>{
+  const s = [0, 1, 2].map(()=> [R.nz(-9, 9), R.nz(-9, 9)]), w = [s[0][0] + s[1][0] + s[2][0], s[0][1] + s[1][1] + s[2][1]], hoi = R.int(0, 1), dd = s.reduce((t, v)=> t + Math.hypot(...v), 0), L = vlL(hoi ? dd - Math.hypot(...w) : Math.hypot(...w)); if(!w[0] || !w[1] || !vlOk(L.ans)) return null;
+  const o = {stem:`Một thiết bị bay xuất phát từ gốc $O$ của hệ trục $Oxy$ (đơn vị: km), lần lượt thực hiện ba chặng thẳng với các vectơ dịch chuyển $${vlC(s[0])}$, $${vlC(s[1])}$, $${vlC(s[2])}$. ${hoi ? `Tổng quãng đường đã bay dài hơn khoảng cách từ $O$ đến điểm cuối bao nhiêu km${L.lam}?` : `Tính khoảng cách từ $O$ đến điểm cuối (đơn vị: km${L.dv}).`}`,
+    ans:L.ans,
+    lg:`Tổng ba vectơ dịch chuyển bằng $${vlC(w)}$, nên khoảng cách từ $O$ đến điểm cuối bằng $\\sqrt{${w[0]*w[0]} + ${w[1]*w[1]}}$.` + (hoi ? `<br>Tổng quãng đường bằng tổng ba độ dài: $${s.map(v=> `\\sqrt{${v[0]*v[0] + v[1]*v[1]}}`).join(' + ')}$.<br>Hiệu hai số $${L.eq} ${nt(L.ans)}$ (km).` : ` Giá trị này $${L.eq} ${nt(L.ans)}$ (km).`),
+    verify:()=> vlGan(hoi ? dd - Math.hypot(...w) : Math.hypot(...w), o.ans)};
+  return o;
+});
+
+/* 58. TLN VD */
+GT(10,3,3,'VD','Vận tốc riêng cộng vận tốc dòng nước theo toạ độ: tốc độ thực và quãng đường sau t giờ (làm tròn)', R=>{
+  const v = [R.nz(-20, 20), R.nz(-20, 20)], w = [R.nz(-5, 5), R.nz(-5, 5)], t = R.pick([1, 2, 3, 0.5, 1.5]), hoi = R.int(0, 1), r = [v[0] + w[0], v[1] + w[1]], tc = Math.hypot(...r), L = vlL(hoi ? tc*t : tc); if(Math.hypot(...v) < 8 || !r[0] || !r[1] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$ (đơn vị trên mỗi trục ứng với 1 km/h), một ca nô có vận tốc riêng $\\vec{v} = ${vlC(v)}$, dòng nước có vận tốc $\\vec{w} = ${vlC(w)}$. ${hoi ? `Tính quãng đường ca nô đi được so với bờ sau $${nt(t)}$ giờ (đơn vị: km${L.dv}).` : `Tính tốc độ của ca nô so với bờ (đơn vị: km/h${L.dv}).`}`,
+    ans:L.ans,
+    lg:`Vận tốc so với bờ: $\\vec{v} + \\vec{w} = ${vlC(r)}$, tốc độ bằng $\\sqrt{${r[0]*r[0]} + ${r[1]*r[1]}}$ (km/h).` + (hoi ? `<br>Quãng đường bằng $${t === 1 ? "" : nt(t)}\\sqrt{${r[0]*r[0] + r[1]*r[1]}} ${L.eq} ${nt(L.ans)}$ (km).` : `<br>Giá trị này $${L.eq} ${nt(L.ans)}$ (km/h).`),
+    verify:()=> vlGan(Math.hypot(v[0] + w[0], v[1] + w[1])*(hoi ? t : 1), o.ans)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.45'; GEN[k].l1 = 'V2.45'; });
+})();
+
+// ---------- V2.45: dạng thay số bổ sung (10-10 Vectơ trong mặt phẳng tọa độ: 92 dạng TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-10.3 Toạ độ trung điểm, trọng tâm; hình bình hành (10|3|3), 15 dạng TLN. Claude viết.
+// Chuỗi: tìm đầu mút (TH) → tìm đỉnh theo trọng tâm (TH) → ba trung điểm (TH) → tâm hình bình hành (TH) → chu vi (TH) → trung tuyến (TH) → AG (TH) → điểm trên trục (VD) → diện tích (TH) → tứ giác trung điểm (VD) → trọng tâm tứ giác (VD) → thực tế (VD).
+const vlR = x=> Math.round(x*10)/10, vlOk = x=> Math.abs(x) > 0 && String(x).length <= 4, vlNg = x=> near(x, Math.round(x), 1e-9), vlGan = (v, ans)=> near(ans, v, 0.051/Math.max(1, Math.abs(ans))), vlGon = x=> near(x*10, Math.round(x*10), 1e-9) && vlOk(vlR(x));
+const vlC = p=> `(${nt(p[0])}; ${nt(p[1])})`, vlP = (n, p)=> `$${n}${vlC(p)}$`, vlU = (n, u)=> `$\\vec{${n}} = ${vlC(u)}$`, vlB = x=> x < 0 ? `(${nt(x)})` : nt(x), vlD = (A, B)=> Math.hypot(A[0] - B[0], A[1] - B[1]), vlV = n=> vtV(n);
+const vlS = (A, B)=> `\\sqrt{${nt(Math.abs(A[0] - B[0]))}^2 + ${nt(Math.abs(A[1] - B[1]))}^2}`, vlL = len=>{ const ng = vlNg(len), ans = vlR(len); return {ans, ng, lam:ng ? '' : ' (làm tròn đến hàng phần mười)', dv:ng ? '' : ', làm tròn đến hàng phần mười', eq:ng ? '=' : '\\approx'}; };
+const vlTong = (R, a, b)=>{ const k = R.int(0, 4), T = [['a + b', a + b],['a - b', a - b],['2a + b', 2*a + b],['a + 2b', a + 2*b],['ab', a*b]][k]; return vlGon(T[1]) ? {ten:T[0], gt:T[1], f:(x, y)=> [x + y, x - y, 2*x + y, x + 2*y, x*y][k]} : null; };
+const vlI = n=> Number.isInteger(n), vlTr = (A, B)=> [(A[0] + B[0])/2, (A[1] + B[1])/2], vlG = (A, B, C)=> [(A[0] + B[0] + C[0])/3, (A[1] + B[1] + C[1])/3];
+
+/* 59. TLN TH */
+GT(10,3,3,'TH','Biết một đầu mút và trung điểm, tìm đầu mút còn lại: x_B = 2x_M − x_A', R=>{
+  const A = [R.int(-9, 9), R.int(-9, 9)], M = [R.nz(-9, 9), R.nz(-9, 9)], B = [2*M[0] - A[0], 2*M[1] - A[1]], T = vlTong(R, B[0], B[1]); if(!T || !B[0] || !B[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)} và ${vlP('M', M)} là trung điểm của đoạn $AB$. Gọi $(a; b)$ là toạ độ của $B$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$M$ là trung điểm nên $x_B = 2x_M - x_A = ${2*M[0]} - ${vlB(A[0])} = ${B[0]}$, $y_B = 2y_M - y_A = ${2*M[1]} - ${vlB(A[1])} = ${B[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const Q = [2*M[0] - A[0], 2*M[1] - A[1]], I = vlTr(A, Q); return vtEq(I, M) && near(T.f(Q[0], Q[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 60. TLN TH */
+GT(10,3,3,'TH','Biết hai đỉnh và trọng tâm, tìm đỉnh thứ ba: x_C = 3x_G − x_A − x_B', R=>{
+  const A = [R.int(-9, 9), R.int(-9, 9)], B = [R.int(-9, 9), R.int(-9, 9)], G = [R.nz(-6, 6), R.nz(-6, 6)], C = [3*G[0] - A[0] - B[0], 3*G[1] - A[1] - B[1]], T = vlTong(R, C[0], C[1]); if(!T || !C[0] || !C[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, tam giác $ABC$ có ${vlP('A', A)}, ${vlP('B', B)} và trọng tâm ${vlP('G', G)}. Gọi $(a; b)$ là toạ độ của $C$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$x_C = 3x_G - x_A - x_B = ${3*G[0]} - ${vlB(A[0])} - ${vlB(B[0])} = ${C[0]}$, $y_C = 3y_G - y_A - y_B = ${3*G[1]} - ${vlB(A[1])} - ${vlB(B[1])} = ${C[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> vtEq(vlG(A, B, C), G) && near(T.f(C[0], C[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 61. TLN TH */
+GT(10,3,3,'TH','Biết ba trung điểm của ba cạnh, tìm một đỉnh: A = N + P − M (dùng hình bình hành ANMP)', R=>{
+  const M = [R.int(-8, 8), R.int(-8, 8)], Nn = [R.int(-8, 8), R.int(-8, 8)], P = [R.int(-8, 8), R.int(-8, 8)], A = [Nn[0] + P[0] - M[0], Nn[1] + P[1] - M[1]], T = vlTong(R, A[0], A[1]); if(!T || !A[0] || !A[1] || (Nn[0] - M[0])*(P[1] - M[1]) === (Nn[1] - M[1])*(P[0] - M[0])) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, tam giác $ABC$ có các trung điểm của $BC$, $CA$, $AB$ lần lượt là ${vlP('M', M)}, ${vlP('N', Nn)}, ${vlP('P', P)}. Gọi $(a; b)$ là toạ độ của $A$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Tứ giác $ANMP$ là hình bình hành (hai đường trung bình), nên $${vlV('AN')} = ${vlV('PM')}$.<br>Suy ra $A = N + P - M$ theo từng toạ độ: $a = ${Nn[0]} + ${vlB(P[0])} - ${vlB(M[0])} = ${A[0]}$, $b = ${Nn[1]} + ${vlB(P[1])} - ${vlB(M[1])} = ${A[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const B = [2*P[0] - A[0], 2*P[1] - A[1]], C = [2*Nn[0] - A[0], 2*Nn[1] - A[1]]; return vtEq(vlTr(B, C), M) && near(T.f(A[0], A[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 62. TLN TH */
+GT(10,3,3,'TH','Hình bình hành biết hai đỉnh kề và tâm I: hai đỉnh còn lại đối xứng qua I', R=>{
+  const A = [R.int(-8, 8), R.int(-8, 8)], B = [R.int(-8, 8), R.int(-8, 8)], I = [R.int(-5, 5), R.int(-5, 5)], hoi = R.int(0, 1), C = [2*I[0] - A[0], 2*I[1] - A[1]], Dd = [2*I[0] - B[0], 2*I[1] - B[1]], K = hoi ? C : Dd, T = vlTong(R, K[0], K[1]); if(!T || (B[0] - A[0])*(I[1] - A[1]) === (B[1] - A[1])*(I[0] - A[0]) || !K[0] || !K[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, hình bình hành $ABCD$ có ${vlP('A', A)}, ${vlP('B', B)} và tâm ${vlP('I', I)}. Gọi $(a; b)$ là toạ độ của $${hoi ? 'C' : 'D'}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$I$ là trung điểm của $${hoi ? 'AC' : 'BD'}$, nên $${hoi ? 'C' : 'D'}$ có toạ độ $(2x_I - ${hoi ? 'x_A' : 'x_B'}; 2y_I - ${hoi ? 'y_A' : 'y_B'}) = ${vlC(K)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> vtEq(vlTr(hoi ? A : B, K), I) && near(T.f(K[0], K[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 63. TLN TH */
+GT(10,3,3,'TH','Hình bình hành biết ba đỉnh: tìm đỉnh thứ tư rồi tính chu vi hoặc độ dài đường chéo BD (làm tròn)', R=>{
+  const A = [R.int(-7, 7), R.int(-7, 7)], B = [R.int(-7, 7), R.int(-7, 7)], C = [R.int(-7, 7), R.int(-7, 7)], Dd = [A[0] + C[0] - B[0], A[1] + C[1] - B[1]], hoi = R.int(0, 1), L = vlL(hoi ? 2*(vlD(A, B) + vlD(B, C)) : vlD(B, Dd)); if((B[0] - A[0])*(C[1] - A[1]) === (B[1] - A[1])*(C[0] - A[0]) || !vlOk(L.ans) || vlD(A, B) < 2 || vlD(B, C) < 2) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho hình bình hành $ABCD$ có ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Tính ${hoi ? 'chu vi hình bình hành' : 'độ dài đường chéo $BD$'}${L.lam}.`,
+    ans:L.ans,
+    lg:hoi ? `$AB = ${vlS(A, B)}$, $BC = ${vlS(B, C)}$.<br>Chu vi bằng $2(AB + BC) ${L.eq} ${nt(L.ans)}$.` : `$${vlV('AD')} = ${vlV('BC')}$ nên ${vlP('D', Dd)}.<br>Do đó $BD = ${vlS(B, Dd)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(hoi ? 2*(vlD(A, B) + vlD(B, C)) : vlD(B, [A[0] + C[0] - B[0], A[1] + C[1] - B[1]]), o.ans)};
+  return o;
+});
+
+/* 64. TLN TH */
+GT(10,3,3,'TH','Độ dài đường trung tuyến của tam giác cho theo toạ độ (làm tròn)', R=>{
+  const A = [R.int(-8, 8), R.int(-8, 8)], B = [2*R.int(-4, 4), 2*R.int(-4, 4)], C = [2*R.int(-4, 4), 2*R.int(-4, 4)], M = vlTr(B, C), L = vlL(vlD(A, M)); if((B[0] - A[0])*(C[1] - A[1]) === (B[1] - A[1])*(C[0] - A[0]) || !vlOk(L.ans) || vlD(A, M) < 2) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Tính độ dài đường trung tuyến $AM$${L.lam}.`,
+    ans:L.ans,
+    lg:`Trung điểm $BC$ là ${vlP('M', M)}.<br>Do đó $AM = ${vlS(A, M)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(vlD(A, vlTr(B, C)), o.ans)};
+  return o;
+});
+
+/* 65. TLN TH */
+GT(10,3,3,'TH','Khoảng cách từ một đỉnh tới trọng tâm: tính toạ độ G rồi tính AG (làm tròn)', R=>{
+  const A = [R.int(-9, 9), R.int(-9, 9)], B = [R.int(-9, 9), R.int(-9, 9)], c = [R.int(-3, 3), R.int(-3, 3)], G = c, C = [3*c[0] - A[0] - B[0], 3*c[1] - A[1] - B[1]], L = vlL(vlD(A, G)); if((B[0] - A[0])*(C[1] - A[1]) === (B[1] - A[1])*(C[0] - A[0]) || !vlOk(L.ans) || vlD(A, G) < 2) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)} và trọng tâm $G$. Tính độ dài đoạn $AG$${L.lam}.`,
+    ans:L.ans,
+    lg:`Trọng tâm: $x_G = \\dfrac{${A[0]} + ${vlB(B[0])} + ${vlB(C[0])}}{3} = ${G[0]}$, $y_G = \\dfrac{${A[1]} + ${vlB(B[1])} + ${vlB(C[1])}}{3} = ${G[1]}$.<br>Do đó $AG = ${vlS(A, G)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> vlGan(vlD(A, vlG(A, B, C)), o.ans)};
+  return o;
+});
+
+/* 66. TLN VD */
+GT(10,3,3,'VD','Tìm tham số để trọng tâm tam giác nằm trên trục toạ độ (Ox hoặc Oy)', R=>{
+  const A = [R.nz(-9, 9), R.nz(-9, 9)], B = [R.nz(-9, 9), R.nz(-9, 9)], k = R.int(0, 1), c = R.nz(-9, 9), m = k ? -(A[1] + B[1]) : -(A[0] + B[0]); if(!m) return null;
+  const C = k ? [c, 'm'] : ['m', c];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, $C(${C[0]}; ${C[1]})$. Tìm $m$ để trọng tâm tam giác $ABC$ nằm trên trục $${k ? 'Ox' : 'Oy'}$.`,
+    ans:m,
+    lg:`Trọng tâm có ${k ? 'tung độ' : 'hoành độ'} $\\dfrac{${k ? A[1] : A[0]} + ${vlB(k ? B[1] : B[0])} + m}{3}$. Trọng tâm nằm trên trục $${k ? 'Ox' : 'Oy'}$ khi ${k ? 'tung độ' : 'hoành độ'} bằng $0$, nên $m = ${m}$.`,
+    verify:()=> near((k ? A[1] + B[1] : A[0] + B[0]) + o.ans, 0, 1e-9)};
+  return o;
+});
+
+/* 67. TLN VD */
+GT(10,3,3,'VD','Tìm đỉnh C biết trung điểm AC nằm trên Oy và trọng tâm nằm trên Ox', R=>{
+  const A = [R.nz(-9, 9), R.nz(-9, 9)], B = [R.nz(-9, 9), R.nz(-9, 9)], C = [-A[0], -A[1] - B[1]], T = vlTong(R, C[0], C[1]); if(!T || !C[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $C(a; b)$ sao cho trung điểm của $AC$ nằm trên trục $Oy$ và trọng tâm tam giác $ABC$ nằm trên trục $Ox$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Trung điểm $AC$ thuộc $Oy$: hoành độ bằng $0$, nên $a = -${vlB(A[0])} = ${C[0]}$.<br>Trọng tâm thuộc $Ox$: tung độ bằng $0$, nên $b = -(${A[1]} + ${vlB(B[1])}) = ${C[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(vlTr(A, C)[0], 0, 1e-9) && near(vlG(A, B, C)[1], 0, 1e-9) && near(T.f(C[0], C[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 68. TLN VD */
+GT(10,3,3,'VD','Tìm tham số để đỉnh thứ tư của hình bình hành nằm trên trục Ox', R=>{
+  const A = [R.int(-8, 8), R.nz(-8, 8)], C = [R.int(-8, 8), R.nz(-8, 8)], x = R.nz(-8, 8), m = A[1] + C[1]; if(!m || (x - A[0])*(C[1] - A[1]) === (m - A[1])*(C[0] - A[0])) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, $B(${x}; m)$, ${vlP('C', C)}. Tìm $m$ để đỉnh $D$ của hình bình hành $ABCD$ nằm trên trục $Ox$.`,
+    ans:m,
+    lg:`$${vlV('AD')} = ${vlV('BC')}$ nên $y_D = y_A + y_C - y_B = ${A[1]} + ${vlB(C[1])} - m$.<br>$D$ thuộc $Ox$ nên $y_D = 0$, suy ra $m = ${m}$.`,
+    verify:()=> near(A[1] + C[1] - o.ans, 0, 1e-9)};
+  return o;
+});
+
+/* 69. TLN TH */
+GT(10,3,3,'TH','Hình bình hành có một cạnh nằm trên trục Ox: diện tích bằng đáy nhân chiều cao đọc từ tung độ', R=>{
+  const a = R.int(-9, 5), d = R.int(2, 12), h = R.nz(-9, 9), c = R.int(-9, 12), A = [a, 0], B = [a + d, 0], C = [c, h], Dd = [c - d, h], S = d*Math.abs(h), hoi = R.int(0, 1), ans = hoi ? S : Dd[0]; if(!ans || !vlOk(ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho hình bình hành $ABCD$ có ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. ${hoi ? 'Tính diện tích hình bình hành.' : 'Tìm hoành độ của $D$.'}`,
+    ans,
+    lg:hoi ? `Đáy $AB = ${d}$ nằm trên $Ox$, chiều cao bằng khoảng cách từ $C$ tới $Ox$, tức là $${Math.abs(h)}$.<br>Diện tích bằng $${d} \\cdot ${Math.abs(h)} = ${S}$.` : `$${vlV('DC')} = ${vlV('AB')} = (${d}; 0)$, nên $D$ có hoành độ $${c} - ${d} = ${Dd[0]}$.`,
+    verify:()=> hoi ? near(vlD(A, B)*Math.abs(C[1]), o.ans, 1e-9) : near(A[0] + C[0] - B[0], o.ans, 1e-9)};
+  return o;
+});
+
+/* 70. TLN VD */
+GT(10,3,3,'VD','Bốn trung điểm của bốn cạnh tứ giác tạo thành hình bình hành: biết ba trung điểm, tìm trung điểm thứ tư', R=>{
+  const M = [R.int(-8, 8), R.int(-8, 8)], Nn = [R.int(-8, 8), R.int(-8, 8)], P = [R.int(-8, 8), R.int(-8, 8)], Q = [M[0] + P[0] - Nn[0], M[1] + P[1] - Nn[1]], T = vlTong(R, Q[0], Q[1]); if(!T || !Q[0] || !Q[1] || (Nn[0] - M[0])*(P[1] - M[1]) === (Nn[1] - M[1])*(P[0] - M[0])) return null;
+  const A = [1, 2], B = [2*M[0] - 1, 2*M[1] - 2], C = [2*Nn[0] - B[0], 2*Nn[1] - B[1]], Dd = [2*P[0] - C[0], 2*P[1] - C[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, tứ giác $ABCD$ có trung điểm các cạnh $AB$, $BC$, $CD$ lần lượt là ${vlP('M', M)}, ${vlP('N', Nn)}, ${vlP('P', P)}. Gọi $Q(a; b)$ là trung điểm cạnh $DA$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$MN$, $QP$ đều là đường trung bình ứng với cạnh $AC$ nên $${vlV('MN')} = ${vlV('QP')}$, tức là $MNPQ$ là hình bình hành.<br>Do đó $a = ${M[0]} + ${vlB(P[0])} - ${vlB(Nn[0])} = ${Q[0]}$, $b = ${M[1]} + ${vlB(P[1])} - ${vlB(Nn[1])} = ${Q[1]}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const I = vlTr(Dd, A); return near(T.f(I[0], I[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 71. TLN VD */
+GT(10,3,3,'VD','Điểm I thoả IA + IB + IC + ID = 0 của tứ giác: toạ độ là trung bình cộng toạ độ bốn đỉnh', R=>{
+  const I = [R.pick([-3,-2,-1,0,1,2,3,0.5,1.5,-0.5,2.5]), R.pick([-3,-2,-1,1,2,3,0.5,1.5,-1.5])], A = [R.int(-8, 8), R.int(-8, 8)], B = [R.int(-8, 8), R.int(-8, 8)], C = [R.int(-8, 8), R.int(-8, 8)], Dd = [4*I[0] - A[0] - B[0] - C[0], 4*I[1] - A[1] - B[1] - C[1]], T = vlTong(R, I[0], I[1]); if(!T || Math.abs(Dd[0]) > 25 || Math.abs(Dd[1]) > 25) return null;
+  const P = {A, B, C, D:Dd, I};
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho bốn điểm ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}, ${vlP('D', Dd)}. Điểm $I(a; b)$ thoả mãn $${vlV('IA')} + ${vlV('IB')} + ${vlV('IC')} + ${vlV('ID')} = \\vec{0}$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Đẳng thức cho $4a = ${A[0]} + ${vlB(B[0])} + ${vlB(C[0])} + ${vlB(Dd[0])}$ và $4b = ${A[1]} + ${vlB(B[1])} + ${vlB(C[1])} + ${vlB(Dd[1])}$.<br>Suy ra $a = ${nt(I[0])}$, $b = ${nt(I[1])}$, nên $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> vtEq(vtSum(P, [[1,'IA'],[1,'IB'],[1,'IC'],[1,'ID']]), [0,0]) && near(T.f(I[0], I[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 72. TLN VD */
+GT(10,3,3,'VD','Bài toán thực tế: đặt kho hàng tại trọng tâm ba cửa hàng, tính quãng đường từ kho tới một cửa hàng (làm tròn)', R=>{
+  const G = [R.int(-4, 4), R.int(-4, 4)], A = [R.int(-9, 9), R.int(-9, 9)], B = [R.int(-9, 9), R.int(-9, 9)], C = [3*G[0] - A[0] - B[0], 3*G[1] - A[1] - B[1]], u = R.pick([1, 2, 5]), L = vlL(u*vlD(G, A)); if((B[0] - A[0])*(C[1] - A[1]) === (B[1] - A[1])*(C[0] - A[0]) || !vlOk(L.ans) || vlD(G, A) < 2) return null;
+  const o = {stem:`Trên bản đồ gắn hệ trục $Oxy$, mỗi đơn vị ứng với $${u}$ km, ba cửa hàng đặt tại ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Công ty đặt kho tại trọng tâm $G$ của tam giác $ABC$. Tính khoảng cách thực tế từ kho tới cửa hàng $A$ (đơn vị: km${L.dv}).`,
+    ans:L.ans,
+    lg:`Trọng tâm ${vlP('G', G)}. Trên bản đồ, $GA = ${vlS(G, A)}$.<br>Khoảng cách thực tế bằng $${u === 1 ? '' : u + ' \\cdot '}GA ${L.eq} ${nt(L.ans)}$ (km).`,
+    verify:()=> vlGan(u*vlD(vlG(A, B, C), A), o.ans)};
+  return o;
+});
+
+/* 73. TLN VD */
+GT(10,3,3,'VD','Hình bình hành biết A và trung điểm hai cạnh AB, AD: C = 2M + 2N − 3A', R=>{
+  const A = [R.int(-6, 6), R.int(-6, 6)], M = [R.int(-6, 6), R.int(-6, 6)], Nn = [R.int(-6, 6), R.int(-6, 6)], C = [2*M[0] + 2*Nn[0] - 3*A[0], 2*M[1] + 2*Nn[1] - 3*A[1]], T = vlTong(R, C[0], C[1]); if(!T || !C[0] || !C[1] || (M[0] - A[0])*(Nn[1] - A[1]) === (M[1] - A[1])*(Nn[0] - A[0])) return null;
+  const B = [2*M[0] - A[0], 2*M[1] - A[1]], Dd = [2*Nn[0] - A[0], 2*Nn[1] - A[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, hình bình hành $ABCD$ có ${vlP('A', A)}, trung điểm cạnh $AB$ là ${vlP('M', M)}, trung điểm cạnh $AD$ là ${vlP('N', Nn)}. Gọi $C(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Từ các trung điểm: ${vlP('B', B)}, ${vlP('D', Dd)}.<br>$${vlV('AC')} = ${vlV('AB')} + ${vlV('AD')}$ nên $C$ có toạ độ $(x_B + x_D - x_A; y_B + y_D - y_A) = ${vlC(C)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f(B[0] + Dd[0] - A[0], B[1] + Dd[1] - A[1]), o.ans, 1e-9)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.45'; GEN[k].l1 = 'V2.45'; });
+})();
+
+// ---------- V2.45: dạng thay số bổ sung (10-10 Vectơ trong mặt phẳng tọa độ: 92 dạng TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-10.4 Hai vectơ cùng phương; ba điểm thẳng hàng (10|3|3), 17 dạng TLN. Claude viết.
+// Chuỗi: tìm m (TH) → cùng hướng, ngược hướng (TH) → hệ số chứa m (TH) → điểm trên đường thẳng (TH) → đường thẳng theo vectơ (TH) → tỉ số (TH) → mệnh đề (TH) → giao hai đường thẳng (VD) → giao hai đường chéo (VD) → hình thang (VD) → đếm m (VD) → song song cắt trục (VD) → thực tế (VD) → phương trình bậc hai (VD).
+const vlR = x=> Math.round(x*10)/10, vlOk = x=> Math.abs(x) > 0 && String(x).length <= 4, vlNg = x=> near(x, Math.round(x), 1e-9), vlGan = (v, ans)=> near(ans, v, 0.051/Math.max(1, Math.abs(ans))), vlGon = x=> near(x*10, Math.round(x*10), 1e-9) && vlOk(vlR(x));
+const vlC = p=> `(${nt(p[0])}; ${nt(p[1])})`, vlP = (n, p)=> `$${n}${vlC(p)}$`, vlU = (n, u)=> `$\\vec{${n}} = ${vlC(u)}$`, vlB = x=> x < 0 ? `(${nt(x)})` : nt(x), vlD = (A, B)=> Math.hypot(A[0] - B[0], A[1] - B[1]), vlV = n=> vtV(n);
+const vlS = (A, B)=> `\\sqrt{${nt(Math.abs(A[0] - B[0]))}^2 + ${nt(Math.abs(A[1] - B[1]))}^2}`, vlL = len=>{ const ng = vlNg(len), ans = vlR(len); return {ans, ng, lam:ng ? '' : ' (làm tròn đến hàng phần mười)', dv:ng ? '' : ', làm tròn đến hàng phần mười', eq:ng ? '=' : '\\approx'}; };
+const vlTong = (R, a, b)=>{ const k = R.int(0, 4), T = [['a + b', a + b],['a - b', a - b],['2a + b', 2*a + b],['a + 2b', a + 2*b],['ab', a*b]][k]; return vlGon(T[1]) ? {ten:T[0], gt:T[1], f:(x, y)=> [x + y, x - y, 2*x + y, x + 2*y, x*y][k]} : null; };
+const vlH = k=> k === 1 ? '' : k === -1 ? '-' : vlB(k), vlN = a=> a ? `(${termsT([[1,'m'],[-a,'']])})` : 'm', vlCat = (P, Q, S, T)=>{ const a = [Q[0] - P[0], Q[1] - P[1]], b = [T[0] - S[0], T[1] - S[1]], D = a[0]*b[1] - a[1]*b[0], t = ((S[0] - P[0])*b[1] - (S[1] - P[1])*b[0])/D; return [P[0] + t*a[0], P[1] + t*a[1]]; }, vlTH = (A, B, C)=> near((B[0] - A[0])*(C[1] - A[1]), (B[1] - A[1])*(C[0] - A[0]), 1e-9);
+
+/* 74. TLN TH */
+GT(10,3,3,'TH','Hai vectơ u = (m; a), v = (b; c) cùng phương: lập tỉ lệ hai toạ độ để tìm m', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), c = R.nz(-9, 9), m = a*b/c; if(!vlGon(m)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (m; ${a})$, ${vlU('v', [b, c])}. Tìm $m$ để hai vectơ cùng phương.`,
+    ans:m,
+    lg:`Hai vectơ cùng phương khi $\\vec{u} = k\\vec{v}$. So sánh tung độ: $${a} = k \\cdot ${vlB(c)}$, nên $k = ${frT(a, c)}$. Hoành độ: $m = k \\cdot ${vlB(b)} = ${nt(m)}$.`,
+    verify:()=> near(o.ans*c, a*b, 1e-9)};
+  return o;
+});
+
+/* 75. TLN TH */
+GT(10,3,3,'TH','u = (m; c²), v = (1; m) cùng hướng hoặc ngược hướng: m có hai giá trị, chọn theo dấu của k', R=>{
+  const c = R.int(2, 12), cung = R.int(0, 1), m = cung ? c : -c;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (m; ${c*c})$, $\\vec{v} = (1; m)$. Tìm $m$ để hai vectơ ${cung ? 'cùng hướng' : 'ngược hướng'}.`,
+    ans:m,
+    lg:`$\\vec{u} = k\\vec{v}$ nên $m = k$ và $${c*c} = km = m^2$, suy ra $m = ${c}$ hoặc $m = -${c}$.<br>Vì $k = m$, hai vectơ ${cung ? 'cùng hướng khi $m > 0$' : 'ngược hướng khi $m < 0$'}. Vậy $m = ${m}$.`,
+    verify:()=> o.ans*o.ans === c*c && (cung ? o.ans > 0 : o.ans < 0)};
+  return o;
+});
+
+/* 76. TLN TH */
+GT(10,3,3,'TH','Hai vectơ có toạ độ chứa m: u = (pm + q; r), v = (m + s; t) cùng phương, giải phương trình bậc nhất', R=>{
+  const p = R.nz(-4, 4), q = R.nz(-8, 8), r = R.nz(-6, 6), s = R.nz(-8, 8), t = R.nz(-6, 6), d = t*p - r, m = (r*s - t*q)/d; if(!d || !vlGon(m) || !m) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (${termsT([[p,'m'],[q,'']])}; ${r})$, $\\vec{v} = (${termsT([[1,'m'],[s,'']])}; ${t})$. Tìm $m$ để hai vectơ cùng phương.`,
+    ans:m,
+    lg:`Hai vectơ cùng phương khi $${vlH(t)}(${termsT([[p,'m'],[q,'']])}) = ${vlH(r)}(${termsT([[1,'m'],[s,'']])})$.<br>Rút gọn: $${termsT([[d,'m']])} = ${r*s - t*q}$, nên $m = ${nt(m)}$.`,
+    verify:()=> near(t*(p*o.ans + q), r*(o.ans + s), 1e-9)};
+  return o;
+});
+
+/* 77. TLN TH */
+GT(10,3,3,'TH','Điểm M thuộc đường thẳng AB có hoành độ cho trước: tìm tung độ nhờ AM cùng phương AB', R=>{
+  const A = [R.int(-8, 8), R.int(-8, 8)], u = [R.nz(-5, 5), R.nz(-5, 5)], k = R.pick([2, 3, -1, -2, 0.5, 1.5, 2.5]), B = [A[0] + u[0], A[1] + u[1]], M = [A[0] + k*u[0], A[1] + k*u[1]]; if(!Number.isInteger(M[0]) || !vlGon(M[1])) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ thuộc đường thẳng $AB$ có hoành độ bằng $${M[0]}$. Tìm tung độ của $M$.`,
+    ans:M[1],
+    lg:`$${vlV('AB')} = ${vlC(u)}$. Đặt $${vlV('AM')} = k${vlV('AB')}$: hoành độ cho $${M[0]} - ${vlB(A[0])} = k \\cdot ${vlB(u[0])}$, nên $k = ${nt(k)}$.<br>Tung độ của $M$ bằng $${A[1]} + ${vlB(k)} \\cdot ${vlB(u[1])} = ${nt(M[1])}$.`,
+    verify:()=> vlTH(A, B, [M[0], o.ans])};
+  return o;
+});
+
+/* 78. TLN TH */
+GT(10,3,3,'TH','Tìm tham số để AB cùng phương với vectơ v cho trước', R=>{
+  const a = R.int(-8, 8), c = a + R.nz(-6, 6), d = R.int(-9, 9), v = [R.nz(-5, 5), R.nz(-5, 5)], m = d - (c - a)*v[1]/v[0]; if(!vlGon(m)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $A(${a}; m)$, $B(${c}; ${d})$ và ${vlU('v', v)}. Tìm $m$ để $${vlV('AB')}$ cùng phương với $\\vec{v}$.`,
+    ans:m,
+    lg:`$${vlV('AB')} = (${c - a}; ${termsT([[-1,'m'],[d,'']])})$. Cùng phương với $\\vec{v}$ khi $${vlB(c - a)} \\cdot ${vlB(v[1])} = (${termsT([[-1,'m'],[d,'']])}) \\cdot ${vlB(v[0])}$.<br>Suy ra $m = ${nt(m)}$.`,
+    verify:()=> near((c - a)*v[1], (d - o.ans)*v[0], 1e-9)};
+  return o;
+});
+
+/* 79. TLN TH */
+GT(10,3,3,'TH','Ba điểm thẳng hàng theo toạ độ: tìm số k trong AC = k·AB, đọc vị trí của C', R=>{
+  const A = [R.int(-8, 8), R.int(-8, 8)], u = [R.nz(-4, 4), R.nz(-4, 4)].map(x=> 2*x), k = R.pick([2, 3, -1, -2, 0.5, 1.5, 2.5, -0.5, -1.5, 4, -3, 3.5, -2.5, 5, -4, 4.5]), B = [A[0] + u[0], A[1] + u[1]], C = [A[0] + k*u[0], A[1] + k*u[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Tìm số $k$ sao cho $${vlV('AC')} = k${vlV('AB')}$.`,
+    ans:k,
+    lg:`$${vlV('AB')} = ${vlC(u)}$, $${vlV('AC')} = ${vlC([k*u[0], k*u[1]])}$. So sánh hoành độ: $k = ${nt(k)}$. Tung độ cũng thoả mãn.`,
+    verify:()=> near(o.ans*(B[0] - A[0]), C[0] - A[0], 1e-9) && near(o.ans*(B[1] - A[1]), C[1] - A[1], 1e-9)};
+  return o;
+});
+
+/* 80. TLN TH */
+GT(10,3,3,'TH','Nhận ra bộ ba điểm thẳng hàng theo toạ độ: mỗi bộ gắn một số, tính tổng các số của những bộ thẳng hàng', R=>{
+  const lab = [1, 2, 4, 8, 16], t = R.int(1, 4), ok = R.shuffle([0, 1, 2, 3, 4].map(i=> i < t)), Ds = ok.map(th=>{ const A = [R.int(-6, 6), R.int(-6, 6)], u = [R.nz(-3, 3), R.nz(-3, 3)], k = R.pick([2, 3, -1, -2]), B = [A[0] + u[0], A[1] + u[1]], C = th ? [A[0] + k*u[0], A[1] + k*u[1]] : [A[0] + k*u[0] + R.pick([1, -1]), A[1] + k*u[1]]; return {A, B, C, th, u, w:[C[0] - A[0], C[1] - A[1]]}; });
+  if(Ds.some(d=> vlTH(d.A, d.B, d.C) !== d.th)) return null;
+  const ans = Ds.reduce((s, d, i)=> s + (d.th ? lab[i] : 0), 0), dd = lab.filter((_, i)=> Ds[i].th);
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, mỗi bộ ba điểm dưới đây được gắn một số ghi trong ngoặc. Tính tổng các số gắn với những bộ ba điểm thẳng hàng.<br>` + Ds.map((d, i)=> `(${lab[i]}) $${vlC(d.A)}$, $${vlC(d.B)}$, $${vlC(d.C)}$`).join('<br>'),
+    ans,
+    lg:Ds.map((d, i)=> `(${lab[i]}) Vectơ nối điểm đầu với hai điểm sau là $${vlC(d.u)}$, $${vlC(d.w)}$: ${d.th ? 'cùng phương, thẳng hàng' : 'không cùng phương'}.`).join('<br>') + `<br>Tổng các số bằng $${dd.length > 1 ? dd.join(' + ') + ' = ' : ''}${ans}$.`,
+    verify:()=>{ let s = 0; Ds.forEach((d, i)=>{ if(vlTH(d.A, d.B, d.C)) s += lab[i]; }); return s === o.ans; }};
+  return o;
+});
+
+/* 81. TLN VD */
+GT(10,3,3,'VD','Giao điểm của hai đường thẳng AB, CD: đặt I theo tham số trên AB rồi dùng điều kiện cùng phương', R=>{
+  const I = [R.int(-6, 6), R.int(-6, 6)], u = [R.nz(-3, 3), R.nz(-3, 3)], v = [R.nz(-3, 3), R.nz(-3, 3)], a = R.nz(-3, 3), b = a + R.nz(1, 3), c = R.nz(-3, 3), d = c + R.nz(1, 3), T = vlTong(R, I[0], I[1]); if(!T || u[0]*v[1] === u[1]*v[0]) return null;
+  const A = [I[0] + a*u[0], I[1] + a*u[1]], B = [I[0] + b*u[0], I[1] + b*u[1]], C = [I[0] + c*v[0], I[1] + c*v[1]], Dd = [I[0] + d*v[0], I[1] + d*v[1]], ab = [B[0] - A[0], B[1] - A[1]], cd = [Dd[0] - C[0], Dd[1] - C[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}, ${vlP('D', Dd)}. Hai đường thẳng $AB$, $CD$ cắt nhau tại $I(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$${vlV('AB')} = ${vlC(ab)}$, $${vlV('CD')} = ${vlC(cd)}$. Đặt $${vlV('AI')} = t${vlV('AB')}$ thì $I$ có toạ độ $(${termsT([[ab[0],'t'],[A[0],'']])}; ${termsT([[ab[1],'t'],[A[1],'']])})$.<br>$${vlV('CI')}$ cùng phương $${vlV('CD')}$ cho phương trình bậc nhất theo $t$, giải ra $t = ${frT(-a, b - a)}$, nên $I${vlC(I)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const J = vlCat(A, B, C, Dd); return near(T.f(J[0], J[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 82. TLN VD */
+GT(10,3,3,'VD','Giao điểm hai đường chéo của tứ giác lồi: tính tỉ số IA/IC', R=>{
+  const I = [R.int(-3, 3), R.int(-3, 3)], u = [R.nz(-2, 2), R.nz(-2, 2)], v = [R.nz(-2, 2), R.nz(-2, 2)], p = R.pick([1, 2, 3, 4, 5, 6, 7, 8]), q = R.pick([1, 2, 4, 5, 10]), r = R.int(1, 3), s = R.int(1, 3), ans = p/q; if(u[0]*v[1] === u[1]*v[0] || !vlGon(ans)) return null;
+  const A = [I[0] - p*u[0], I[1] - p*u[1]], C = [I[0] + q*u[0], I[1] + q*u[1]], B = [I[0] - r*v[0], I[1] - r*v[1]], Dd = [I[0] + s*v[0], I[1] + s*v[1]];
+  const ac = [C[0] - A[0], C[1] - A[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, tứ giác lồi $ABCD$ có ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}, ${vlP('D', Dd)}. Hai đường chéo cắt nhau tại $I$. Tính tỉ số $\\dfrac{IA}{IC}$.`,
+    ans,
+    lg:`$${vlV('AC')} = ${vlC(ac)}$. Đặt $${vlV('AI')} = t${vlV('AC')}$ rồi dùng điều kiện $${vlV('BI')}$ cùng phương $${vlV('BD')}$ để tìm được $t = ${frT(p, p + q)}$, tức là $I${vlC(I)}$.<br>Vì $I$ nằm giữa $A$, $C$ nên $\\dfrac{IA}{IC} = \\dfrac{t}{1 - t} = ${nt(ans)}$.`,
+    verify:()=>{ const J = vlCat(A, C, B, Dd); return near(vlD(J, A)/vlD(J, C), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 83. TLN VD */
+GT(10,3,3,'VD','Hình thang có AB song song CD: tìm tham số trong toạ độ của D để hai vectơ cùng phương', R=>{
+  const A = [R.int(-6, 6), R.int(-6, 6)], u = [R.nz(-4, 4), R.nz(-4, 4)], B = [A[0] + u[0], A[1] + u[1]], C = [R.int(-8, 8), R.int(-8, 8)], k = R.pick([1, 2, 3, 0.5, 1.5, 2.5]), Dd = [C[0] - k*u[0], C[1] - k*u[1]], hoi = R.int(0, 1), m = hoi ? Dd[1] : Dd[0]; if(vlTH(A, B, C) || !vlGon(m) || !Number.isInteger(Dd[0]) || !Number.isInteger(Dd[1]) || k === 1) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)} và $D(${hoi ? `${Dd[0]}; m` : `m; ${Dd[1]}`})$. Tìm $m$ để $ABCD$ là hình thang có hai đáy $AB$, $CD$.`,
+    ans:m,
+    lg:`$${vlV('AB')} = ${vlC(u)}$, $${vlV('DC')} = (${hoi ? C[0] - Dd[0] : termsT([[-1,'m'],[C[0],'']])}; ${hoi ? termsT([[-1,'m'],[C[1],'']]) : C[1] - Dd[1]})$.<br>Hai đáy song song nên hai vectơ này cùng phương. Lập tỉ lệ hai toạ độ, được $m = ${nt(m)}$.`,
+    verify:()=> vlTH([0,0], u, hoi ? [C[0] - Dd[0], C[1] - o.ans] : [C[0] - o.ans, C[1] - Dd[1]])};
+  return o;
+});
+
+/* 84. TLN VD */
+GT(10,3,3,'VD','Hình thang có DC = k·AB: tìm đỉnh D từ đẳng thức vectơ', R=>{
+  const A = [R.int(-6, 6), R.int(-6, 6)], u = [2*R.nz(-3, 3), 2*R.nz(-3, 3)], B = [A[0] + u[0], A[1] + u[1]], C = [R.int(-8, 8), R.int(-8, 8)], k = R.pick([2, 3, 0.5, 1.5, 2.5]), Dd = [C[0] - k*u[0], C[1] - k*u[1]], T = vlTong(R, Dd[0], Dd[1]); if(!T || vlTH(A, B, C)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, hình thang $ABCD$ có ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)} và $${vlV('DC')} = ${nt(k)}${vlV('AB')}$. Gọi $D(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$${vlV('AB')} = ${vlC(u)}$ nên $${vlV('DC')} = ${vlC([k*u[0], k*u[1]])}$.<br>Do đó $a = ${C[0]} - ${vlB(k*u[0])} = ${nt(Dd[0])}$, $b = ${C[1]} - ${vlB(k*u[1])} = ${nt(Dd[1])}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=> near(T.f(C[0] - k*(B[0] - A[0]), C[1] - k*(B[1] - A[1])), o.ans, 1e-9)};
+  return o;
+});
+
+/* 85. TLN VD */
+GT(10,3,3,'VD','Đếm số nguyên m trên một đoạn để ba điểm A, B, C tạo thành tam giác: loại đúng giá trị làm ba điểm thẳng hàng', R=>{
+  const A = [R.int(-5, 5), R.int(-5, 5)], u = [R.nz(-4, 4), R.nz(-4, 4)], B = [A[0] + u[0], A[1] + u[1]], x = A[0] + R.nz(-5, 5), N = R.int(6, 30), m0 = A[1] + (x - A[0])*u[1]/u[0], nguyen = Number.isInteger(m0), trong = nguyen && Math.abs(m0) <= N, ans = 2*N + 1 - (trong ? 1 : 0);
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, $C(${x}; m)$. Có bao nhiêu số nguyên $m$ thuộc đoạn $[-${N}; ${N}]$ để ba điểm $A$, $B$, $C$ là ba đỉnh của một tam giác?`,
+    ans,
+    lg:`Ba điểm thẳng hàng khi $${vlV('AC')}$ cùng phương $${vlV('AB')} = ${vlC(u)}$, tức là $m = ${frT(A[1]*u[0] + (x - A[0])*u[1], u[0])}$.<br>Đoạn đã cho có $${2*N + 1}$ số nguyên; ${trong ? `giá trị trên là số nguyên thuộc đoạn nên phải loại` : `giá trị trên không phải số nguyên thuộc đoạn nên không phải loại`}.<br>Vậy có $${ans}$ giá trị.`,
+    verify:()=>{ let c = 0; for(let m = -N; m <= N; m++) if(!vlTH(A, B, [x, m])) c++; return c === o.ans; }};
+  return o;
+});
+
+/* 86. TLN VD */
+GT(10,3,3,'VD','Đường thẳng qua A song song với BC cắt trục Ox tại D: AD cùng phương BC, tìm hoành độ của D', R=>{
+  const D0 = R.nz(-8, 8), t = R.pick([1, 2, 3, -1, -2]), v = [R.nz(-4, 4), R.nz(-4, 4)], A = [D0 + t*v[0], t*v[1]], B = [R.int(-8, 8), R.int(-8, 8)], C = [B[0] + 2*v[0], B[1] + 2*v[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Đường thẳng đi qua $A$ và song song với $BC$ cắt trục $Ox$ tại $D$. Tìm hoành độ của $D$.`,
+    ans:D0,
+    lg:`$${vlV('BC')} = ${vlC([2*v[0], 2*v[1]])}$. Gọi $D(x; 0)$, $${vlV('DA')} = (${termsT([[-1,'x'],[A[0],'']])}; ${A[1]})$ cùng phương $${vlV('BC')}$.<br>Tỉ lệ: $(${termsT([[-1,'x'],[A[0],'']])}) \\cdot ${vlB(2*v[1])} = ${vlB(A[1])} \\cdot ${vlB(2*v[0])}$, suy ra $x = ${D0}$.`,
+    verify:()=> near((A[0] - o.ans)*v[1], A[1]*v[0], 1e-9) && !vlTH(A, B, C)};
+  if(vlTH(A, B, C)) return null;
+  return o;
+});
+
+/* 87. TLN VD */
+GT(10,3,3,'VD','Đường thẳng OA cắt đường thẳng BC tại M: đặt OM = t·OA rồi dùng điều kiện cùng phương', R=>{
+  const v = [R.nz(-4, 4), R.nz(-4, 4)], t = R.pick([2, 3, 0.5, 1.5, 2.5, -1, -2]), Mm = [t*v[0]*2, t*v[1]*2], A = [2*v[0], 2*v[1]], w = [R.nz(-3, 3), R.nz(-3, 3)], a = R.nz(-3, 3), b = a + R.nz(1, 3), B = [Mm[0] + a*w[0], Mm[1] + a*w[1]], C = [Mm[0] + b*w[0], Mm[1] + b*w[1]], T = vlTong(R, Mm[0], Mm[1]); if(!T || v[0]*w[1] === v[1]*w[0]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Đường thẳng $OA$ cắt đường thẳng $BC$ tại $M(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Đặt $${vlV('OM')} = t${vlV('OA')}$ thì $M(${termsT([[A[0],'t']])}; ${termsT([[A[1],'t']])})$.<br>$${vlV('BM')}$ cùng phương $${vlV('BC')} = ${vlC([C[0] - B[0], C[1] - B[1]])}$ cho phương trình bậc nhất theo $t$, giải ra $t = ${nt(t)}$, nên $M${vlC(Mm)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const J = vlCat([0,0], A, B, C); return near(T.f(J[0], J[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 88. TLN VD */
+GT(10,3,3,'VD','Bài toán thực tế: tàu đi thẳng đều qua hai vị trí đã biết, tìm lúc tàu tới đường kinh độ, vị trí khi đó', R=>{
+  const A = [R.int(-40, 0)*5, R.int(-30, 30)*5], v = [R.int(2, 10)*5, R.nz(-8, 8)*5], t0 = R.int(2, 6), xc = A[0] + t0*v[0], B = [A[0] + v[0], A[1] + v[1]], hoi = R.int(0, 1), ans = hoi ? t0 : A[1] + t0*v[1]; if(!vlOk(ans)) return null;
+  const o = {stem:`Trên hệ trục $Oxy$ (đơn vị: km), một tàu đi thẳng đều, lúc $8$ giờ ở vị trí ${vlP('A', A)}, lúc $9$ giờ ở vị trí ${vlP('B', B)}. Sau $8$ giờ bao lâu tàu tới vị trí có hoành độ bằng $${xc}$? ${hoi ? 'Tính thời gian đó (đơn vị: giờ).' : 'Tính tung độ của tàu khi đó (đơn vị: km).'}`,
+    ans,
+    lg:`Vectơ vận tốc mỗi giờ là $${vlV('AB')} = ${vlC(v)}$. Sau $t$ giờ, tàu ở $(${termsT([[v[0],'t'],[A[0],'']])}; ${termsT([[v[1],'t'],[A[1],'']])})$.<br>Hoành độ bằng $${xc}$ khi $t = ${t0}$.` + (hoi ? `` : ` Khi đó tung độ bằng $${A[1]} + ${t0} \\cdot ${vlB(v[1])} = ${ans}$.`),
+    verify:()=>{ const t = (xc - A[0])/(B[0] - A[0]); return near(hoi ? t : A[1] + t*(B[1] - A[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 89. TLN VD */
+GT(10,3,3,'VD','u = (m − a; c), v = (d; m − b) cùng phương dẫn tới phương trình bậc hai: tính tích các giá trị của m', R=>{
+  const m1 = R.int(-8, 8), m2 = R.int(-8, 8), a = R.int(-6, 6), b = m1 + m2 - a, cd = a*b - m1*m2, c = R.pick([1, 2, 3, -1, -2]), d = cd/c, ans = m1*m2; if(m1 === m2 || !Number.isInteger(d) || !cd || !ans || !d) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (${termsT([[1,'m'],[-a,'']])}; ${c})$, $\\vec{v} = (${d}; ${termsT([[1,'m'],[-b,'']])})$. Tính tích các giá trị của $m$ để hai vectơ cùng phương.`,
+    ans,
+    lg:`Hai vectơ cùng phương khi $${vlN(a)}${vlN(b)} = ${vlB(c)} \\cdot ${vlB(d)}$.<br>Rút gọn: $${termsT([[1,'m^2'],[-(a + b),'m'],[a*b - cd,'']])} = 0$, có hai nghiệm $m = ${Math.min(m1, m2)}$, $m = ${Math.max(m1, m2)}$. Tích bằng $${ans}$.`,
+    verify:()=> near((m1 - a)*(m1 - b), c*d, 1e-9) && near((m2 - a)*(m2 - b), c*d, 1e-9) && o.ans === a*b - c*d};
+  return o;
+});
+
+/* 90. TLN VD */
+GT(10,3,3,'VD','u = (m − a; c), v = (d; m − b) cùng hướng: giải phương trình bậc hai rồi loại nghiệm làm hai vectơ ngược hướng', R=>{
+  const m1 = R.int(-9, 9), m2 = R.int(-9, 9), a = R.int(-6, 6), b = m1 + m2 - a, cd = a*b - m1*m2, c = R.pick([1, 2, 3, -1, -2]), d = cd/c, huong = R.int(0, 1); if(m1 === m2 || !Number.isInteger(d) || !cd || !d || m1 === a || m2 === a) return null;
+  const s1 = Math.sign((m1 - a)*d), s2 = Math.sign((m2 - a)*d), mu = huong ? 1 : -1; if(s1 === s2) return null;
+  const m = s1 === mu ? m1 : m2, kh = m === m1 ? m2 : m1; if(!m) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho $\\vec{u} = (${termsT([[1,'m'],[-a,'']])}; ${c})$, $\\vec{v} = (${d}; ${termsT([[1,'m'],[-b,'']])})$. Tìm $m$ để hai vectơ ${huong ? 'cùng hướng' : 'ngược hướng'}.`,
+    ans:m,
+    lg:`Cùng phương khi $${vlN(a)}${vlN(b)} = ${vlB(c)} \\cdot ${vlB(d)}$, được $m = ${m1}$ hoặc $m = ${m2}$.<br>Với $m = ${m}$: $\\vec{u} = ${vlC([m - a, c])}$, $\\vec{v} = ${vlC([d, m - b])}$, hai hoành độ ${huong ? 'cùng dấu' : 'trái dấu'}, thoả mãn.<br>Với $m = ${kh}$: hai hoành độ ${huong ? 'trái dấu' : 'cùng dấu'}, loại.<br>Vậy $m = ${m}$.`,
+    verify:()=>{ const u = [o.ans - a, c], v = [d, o.ans - b]; return near(u[0]*v[1], u[1]*v[0], 1e-9) && (u[0]*v[0] + u[1]*v[1])*mu > 0; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.45'; GEN[k].l1 = 'V2.45'; });
+})();
+
+// ---------- V2.45: dạng thay số bổ sung (10-10 Vectơ trong mặt phẳng tọa độ: 92 dạng TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-10.5 Tam giác trong mặt phẳng toạ độ: chu vi, điểm cách đều, phân giác (10|3|3), 15 dạng TLN. Claude viết.
+// Chuỗi: nhận dạng tam giác cân, vuông (TH) → tam giác đều (TH) → đáy song song trục (TH) → cách đều (TH) → tâm ngoại tiếp (TH) → trên đường thẳng (VD) → cân tại A (VD) → vuông tại A (VD) → phân giác ngoài (VD) → nội tiếp (VD) → R (VD) → diện tích (VD).
+const vlR = x=> Math.round(x*10)/10, vlOk = x=> Math.abs(x) > 0 && String(x).length <= 4, vlNg = x=> near(x, Math.round(x), 1e-9), vlGan = (v, ans)=> near(ans, v, 0.051/Math.max(1, Math.abs(ans))), vlGon = x=> near(x*10, Math.round(x*10), 1e-9) && vlOk(vlR(x));
+const vlC = p=> `(${nt(p[0])}; ${nt(p[1])})`, vlP = (n, p)=> `$${n}${vlC(p)}$`, vlU = (n, u)=> `$\\vec{${n}} = ${vlC(u)}$`, vlB = x=> x < 0 ? `(${nt(x)})` : nt(x), vlD = (A, B)=> Math.hypot(A[0] - B[0], A[1] - B[1]), vlV = n=> vtV(n);
+const vlS = (A, B)=> `\\sqrt{${nt(Math.abs(A[0] - B[0]))}^2 + ${nt(Math.abs(A[1] - B[1]))}^2}`, vlL = len=>{ const ng = vlNg(len), ans = vlR(len); return {ans, ng, lam:ng ? '' : ' (làm tròn đến hàng phần mười)', dv:ng ? '' : ', làm tròn đến hàng phần mười', eq:ng ? '=' : '\\approx'}; };
+const vlTong = (R, a, b)=>{ const k = R.int(0, 4), T = [['a + b', a + b],['a - b', a - b],['2a + b', 2*a + b],['a + 2b', a + 2*b],['ab', a*b]][k]; return vlGon(T[1]) ? {ten:T[0], gt:T[1], f:(x, y)=> [x + y, x - y, 2*x + y, x + 2*y, x*y][k]} : null; };
+const vlY = (b, c = 'y')=> b ? `(${termsT([[1,c],[-b,'']])})` : c, vlYm = b=> `(${termsT([[-1,'x'],[-b,'']])})`;
+const vlSo = [[3,4],[4,3],[5,0],[0,5],[-3,4],[-4,3],[3,-4],[4,-3],[-5,0],[0,-5],[-3,-4],[-4,-3]];
+
+/* 91. TLN TH */
+GT(10,3,3,'TH','Nhận ra tam giác cân từ ba độ dài: tính đường cao kẻ từ đỉnh cân (làm tròn)', R=>{
+  const M = [2*R.int(-3, 3), 2*R.int(-3, 3)], w = [R.nz(-6, 6), R.nz(-6, 6)], t = R.pick([2, 3, -2, -3]), n = [-w[1]*t, w[0]*t], B0 = [M[0] - w[0], M[1] - w[1]], C0 = [M[0] + w[0], M[1] + w[1]], A0 = [M[0] + n[0], M[1] + n[1]], X = R.shuffle([A0, B0, C0]), Te = ['A','B','C'], kn = X.indexOf(A0), L = vlL(vlD(A0, M)); if(!vlOk(L.ans) || Math.abs(M[0] + n[0]) > 20 || Math.abs(M[1] + n[1]) > 20) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', X[0])}, ${vlP('B', X[1])}, ${vlP('C', X[2])}. Tam giác này là tam giác cân. Tính độ dài đường cao kẻ từ đỉnh cân${L.lam}.`,
+    ans:L.ans,
+    lg:`Tính ba cạnh: hai cạnh xuất phát từ $${Te[kn]}$ bằng nhau, nên đỉnh cân là $${Te[kn]}$.<br>Đường cao cũng là trung tuyến, chân đường cao là trung điểm cạnh đáy ${vlP('M', M)}.<br>Độ dài bằng $${vlS(A0, M)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> near(vlD(A0, B0), vlD(A0, C0), 1e-9) && vlGan(vlD(A0, M), o.ans)};
+  return o;
+});
+
+/* 92. TLN TH */
+GT(10,3,3,'TH','Nhận ra tam giác vuông bằng định lí Py-ta-go đảo: tính diện tích', R=>{
+  const A0 = [R.int(-5, 5), R.int(-5, 5)], u = [R.nz(-4, 4), R.nz(-4, 4)], t = R.pick([1, 2, 3, -1, -2]), v = [-u[1]*t, u[0]*t], B0 = [A0[0] + u[0], A0[1] + u[1]], C0 = [A0[0] + v[0], A0[1] + v[1]], X = R.shuffle([A0, B0, C0]), Te = ['A','B','C'], kn = X.indexOf(A0), n = u[0]*u[0] + u[1]*u[1], S = Math.abs(t)*n/2; if(!vlGon(S)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', X[0])}, ${vlP('B', X[1])}, ${vlP('C', X[2])}. Tính diện tích tam giác $ABC$.`,
+    ans:S,
+    lg:`Bình phương ba cạnh là $${n}$, $${n*t*t}$, $${n + n*t*t}$, mà $${n} + ${n*t*t} = ${n + n*t*t}$. Theo định lí Py-ta-go đảo, tam giác vuông tại $${Te[kn]}$.<br>Diện tích bằng nửa tích hai cạnh góc vuông: $\\dfrac{1}{2}\\sqrt{${n}} \\cdot \\sqrt{${n*t*t}} = ${nt(S)}$.`,
+    verify:()=> near(vlD(B0, C0)**2, vlD(A0, B0)**2 + vlD(A0, C0)**2, 1e-9) && near(vlD(A0, B0)*vlD(A0, C0)/2, o.ans, 1e-9)};
+  return o;
+});
+
+/* 93. TLN TH */
+GT(10,3,3,'TH','Tam giác đều có hai đỉnh trên trục Ox đối xứng qua gốc: tìm tung độ dương của đỉnh thứ ba (làm tròn)', R=>{
+  const a = R.int(1, 25), L = vlL(a*Math.sqrt(3)), hoi = R.int(0, 1), P = 6*a; if(!vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', [-a, 0])}, ${vlP('B', [a, 0])} và điểm $C$ có tung độ dương sao cho tam giác $ABC$ đều. ${hoi ? 'Tính chu vi tam giác $ABC$.' : `Tìm tung độ của $C$${L.lam}.`}`,
+    ans:hoi ? P : L.ans,
+    lg:`$AB = ${2*a}$. ` + (hoi ? `Chu vi bằng $3 \\cdot ${2*a} = ${P}$.` : `Điểm $C$ nằm trên trung trực của $AB$, tức là trục $Oy$, và $OC$ là đường cao của tam giác đều cạnh $${2*a}$.<br>Do đó $OC = ${2*a} \\cdot \\dfrac{\\sqrt{3}}{2} = ${a === 1 ? '' : a}\\sqrt{3} \\approx ${nt(L.ans)}$.`),
+    verify:()=> hoi ? o.ans === 3*vlD([-a,0],[a,0]) : vlGan(Math.sqrt((2*a)**2 - a*a), o.ans)};
+  return o;
+});
+
+/* 94. TLN TH */
+GT(10,3,3,'TH','Tam giác có một cạnh song song với trục toạ độ: đáy đọc từ một toạ độ, chiều cao đọc từ toạ độ kia', R=>{
+  const k = R.int(0, 1), p = R.int(-8, 8), a = R.int(-8, 4), d = R.int(2, 14), q = R.int(-8, 8), e = p + R.nz(-9, 9), T = k ? [[a, p], [a + d, p], [q, e]] : [[p, a], [p, a + d], [e, q]], h = Math.abs(e - p), S = d*h/2; if(!vlGon(S)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', T[0])}, ${vlP('B', T[1])}, ${vlP('C', T[2])}. Tính diện tích tam giác $ABC$.`,
+    ans:S,
+    lg:`Cạnh $AB$ song song với trục $${k ? 'Ox' : 'Oy'}$, $AB = ${d}$.<br>Chiều cao từ $C$ bằng khoảng cách giữa hai ${k ? 'tung độ' : 'hoành độ'}: $\\left|${e} - ${vlB(p)}\\right| = ${h}$.<br>Diện tích bằng $\\dfrac{1}{2} \\cdot ${d} \\cdot ${h} = ${nt(S)}$.`,
+    verify:()=>{ const [X, Y, Z] = T, ar = Math.abs((Y[0] - X[0])*(Z[1] - X[1]) - (Y[1] - X[1])*(Z[0] - X[0]))/2; return near(ar, o.ans, 1e-9); }};
+  return o;
+});
+
+/* 95. TLN TH */
+GT(10,3,3,'TH','Tìm điểm M trên trục Oy cách đều hai điểm A, B: MA² = MB² làm mất y²', R=>{
+  const A = [R.nz(-9, 9), R.nz(-9, 9)], B = [R.nz(-9, 9), R.nz(-9, 9)], d = 2*(A[1] - B[1]), n = A[0]*A[0] + A[1]*A[1] - B[0]*B[0] - B[1]*B[1], y = n/d; if(!d || !vlGon(y)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ thuộc trục $Oy$ và cách đều $A$, $B$. Tìm tung độ của $M$.`,
+    ans:y,
+    lg:`Gọi $M(0; y)$. Từ $MA^2 = MB^2$: $${A[0]*A[0]} + ${vlY(A[1])}^2 = ${B[0]*B[0]} + ${vlY(B[1])}^2$.<br>Rút gọn được $${termsT([[d,'y']])} = ${n}$, nên $y = ${nt(y)}$.`,
+    verify:()=> near(vlD([0, o.ans], A), vlD([0, o.ans], B), 1e-9)};
+  return o;
+});
+
+/* 96. TLN TH */
+GT(10,3,3,'TH','Tâm đường tròn ngoại tiếp tam giác: giải hệ IA = IB, IA = IC, tính biểu thức toạ độ tâm hoặc bán kính', R=>{
+  const I = [R.int(-6, 6), R.int(-6, 6)], k = R.pick([1, 2]), X = R.shuffle(vlSo).slice(0, 3).map(([x, y])=> [I[0] + k*x, I[1] + k*y]), hoi = R.int(0, 1), T = vlTong(R, I[0], I[1]), Rr = 5*k, ar = Math.abs((X[1][0] - X[0][0])*(X[2][1] - X[0][1]) - (X[1][1] - X[0][1])*(X[2][0] - X[0][0])); if(!T || ar < 8 || !I[0] || !I[1]) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác có ba đỉnh ${vlP('A', X[0])}, ${vlP('B', X[1])}, ${vlP('C', X[2])}. ${hoi ? 'Tính bán kính đường tròn ngoại tiếp tam giác.' : `Gọi $I(a; b)$ là tâm đường tròn ngoại tiếp tam giác. Tính $${T.ten}$.`}`,
+    ans:hoi ? Rr : T.gt,
+    lg:`Gọi $I(a; b)$. Từ $IA^2 = IB^2$, $IA^2 = IC^2$ được hệ hai phương trình bậc nhất theo $a$, $b$.<br>Giải hệ: $a = ${I[0]}$, $b = ${I[1]}$.<br>` + (hoi ? `Bán kính bằng $IA = \\sqrt{${(X[0][0] - I[0])**2} + ${(X[0][1] - I[1])**2}} = ${Rr}$.` : `Vậy $${T.ten} = ${nt(T.gt)}$.`),
+    verify:()=> near(vlD(I, X[0]), Rr, 1e-9) && near(vlD(I, X[1]), Rr, 1e-9) && near(vlD(I, X[2]), Rr, 1e-9) && near(hoi ? Rr : T.f(I[0], I[1]), o.ans, 1e-9)};
+  return o;
+});
+
+/* 97. TLN TH */
+GT(10,3,3,'TH','Tam giác vuông: tâm đường tròn ngoại tiếp là trung điểm cạnh huyền, tính bán kính (làm tròn)', R=>{
+  const A0 = [R.int(-6, 6), R.int(-6, 6)], u = [R.nz(-4, 4), R.nz(-4, 4)], t = R.pick([2, 3, -2, 1, -1]), v = [-u[1]*t, u[0]*t], B0 = [A0[0] + u[0], A0[1] + u[1]], C0 = [A0[0] + v[0], A0[1] + v[1]], X = R.shuffle([A0, B0, C0]), L = vlL(vlD(B0, C0)/2), Te = ['A','B','C'], kn = X.indexOf(A0), hu = Te.filter((_, i)=> i !== kn).join(''); if(!vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', X[0])}, ${vlP('B', X[1])}, ${vlP('C', X[2])}. Tính bán kính đường tròn ngoại tiếp tam giác $ABC$${L.lam}.`,
+    ans:L.ans,
+    lg:`Bình phương ba cạnh cho thấy tam giác vuông tại $${Te[kn]}$ (định lí Py-ta-go đảo), cạnh huyền là $${hu}$.<br>Bán kính bằng nửa cạnh huyền: $\\dfrac{1}{2}${vlS(B0, C0)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> near(vlD(B0, C0)**2, vlD(A0, B0)**2 + vlD(A0, C0)**2, 1e-9) && vlGan(vlD(B0, C0)/2, o.ans)};
+  return o;
+});
+
+/* 98. TLN VD */
+GT(10,3,3,'VD','Điểm M nằm trên đường thẳng y = x (hoặc y = −x) và cách đều hai điểm A, B', R=>{
+  const s = R.pick([1, -1]), A = [R.nz(-9, 9), R.nz(-9, 9)], B = [R.nz(-9, 9), R.nz(-9, 9)], d = 2*((A[0] - B[0]) + s*(A[1] - B[1])), n = A[0]*A[0] + A[1]*A[1] - B[0]*B[0] - B[1]*B[1], x = n/d; if(!d || !vlGon(x)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M(x; ${s > 0 ? 'x' : '-x'})$ cách đều $A$, $B$. Tìm $x$.`,
+    ans:x,
+    lg:`Từ $MA^2 = MB^2$: $${vlY(A[0], 'x')}^2 + ${s > 0 ? vlY(A[1], 'x') : vlYm(A[1])}^2 = ${vlY(B[0], 'x')}^2 + ${s > 0 ? vlY(B[1], 'x') : vlYm(B[1])}^2$.<br>Các hạng tử $x^2$ triệt tiêu, còn $${termsT([[d,'x']])} = ${n}$, nên $x = ${nt(x)}$.`,
+    verify:()=> near(vlD([o.ans, s*o.ans], A), vlD([o.ans, s*o.ans], B), 1e-9)};
+  return o;
+});
+
+/* 99. TLN VD */
+GT(10,3,3,'VD','Điểm M trên trục Ox sao cho tam giác MAB cân tại A: MA = AB cho hai vị trí, chọn theo điều kiện', R=>{
+  const [p, q] = R.pick([[3,4],[4,3],[5,12],[12,5],[8,6],[6,8],[8,15],[15,8]]), d = Math.round(Math.hypot(p, q)), s = R.pick([1, -1]), b = s*q, a = R.int(-8, 8), lon = R.int(0, 1), A = [a, b], Bt = [a, b + s*d], x = lon ? a + p : a - p, nX = termsT([[1,'x'],[-a,'']]); if(!x) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', Bt)}. Điểm $M$ thuộc trục $Ox$ sao cho tam giác $MAB$ cân tại $A$, với hoành độ của $M$ ${lon ? 'lớn hơn' : 'nhỏ hơn'} $${a}$. Tìm hoành độ của $M$.`,
+    ans:x,
+    lg:`$AB = ${d}$. Gọi $M(x; 0)$, từ $MA = AB$: $${a ? `(${nX})` : 'x'}^2 + ${q}^2 = ${d*d}$, nên $${a ? `(${nX})` : 'x'}^2 = ${d*d - q*q}$, tức là $${nX} = \\pm ${p}$.<br>Theo điều kiện, $x = ${x}$.`,
+    verify:()=> near(vlD([o.ans, 0], A), vlD(A, Bt), 1e-9) && (lon ? o.ans > a : o.ans < a)};
+  return o;
+});
+
+/* 100. TLN VD */
+GT(10,3,3,'VD','Điểm M trên trục Ox sao cho tam giác OAM vuông tại A: dùng định lí Py-ta-go OM² = OA² + AM²', R=>{
+  const A = [R.nz(-6, 6), R.nz(-8, 8)], n = A[0]*A[0] + A[1]*A[1], x = n/A[0]; if(!vlGon(x)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}. Điểm $M$ khác $O$ thuộc trục $Ox$ sao cho tam giác $OAM$ vuông tại $A$. Tìm hoành độ của $M$.`,
+    ans:x,
+    lg:`Gọi $M(x; 0)$. Định lí Py-ta-go: $OM^2 = OA^2 + AM^2$, tức là $x^2 = ${n} + ${vlY(A[0], 'x')}^2 + ${A[1]*A[1]}$.<br>Rút gọn: $${termsT([[2*A[0],'x']])} = ${2*n}$, nên $x = ${nt(x)}$.`,
+    verify:()=> near(o.ans*o.ans, n + vlD([o.ans, 0], A)**2, 1e-6)};
+  return o;
+});
+
+/* 101. TLN VD */
+GT(10,3,3,'VD','Chân đường phân giác ngoài E của góc A: EB/EC = AB/AC, E nằm ngoài đoạn BC', R=>{
+  const A = [R.int(-5, 5), R.int(-5, 5)], [p, q] = R.pick([[3,4],[4,3],[-3,4],[3,-4],[-4,3],[4,-3]]), [r, s] = R.pick([[5,12],[12,5],[-5,12],[5,-12],[-12,5],[12,-5],[6,8],[8,6],[8,-6],[-6,8]]), k = R.pick([1, 2, 3]), B = [A[0] + p*k, A[1] + q*k], C = [A[0] + r, A[1] + s], c = 5*k, b = Math.round(Math.hypot(r, s)), E = [(b*B[0] - c*C[0])/(b - c), (b*B[1] - c*C[1])/(b - c)]; if(b === c || p*s === q*r || Math.abs(E[0]) > 40 || Math.abs(E[1]) > 40) return null;
+  const T = vlTong(R, E[0], E[1]); if(!T || !vlGon(E[0]) || !vlGon(E[1])) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, tam giác $ABC$ có ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Đường phân giác ngoài của góc $A$ cắt đường thẳng $BC$ tại $E(a; b)$. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`$AB = ${c}$, $AC = ${b}$. Tính chất phân giác ngoài: $\\dfrac{EB}{EC} = \\dfrac{AB}{AC} = ${frT(c, b)}$ và $E$ nằm ngoài đoạn $BC$, nên $${vlV('EB')} = ${frT(c, b)}${vlV('EC')}$.<br>Theo từng toạ độ: $${b}(x_B - a) = ${c}(x_C - a)$ và tương tự với tung độ, được $E${vlC(E)}$.<br>Vậy $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const u = [B[0] - E[0], B[1] - E[1]], v = [C[0] - E[0], C[1] - E[1]]; return near(u[0]*b, v[0]*c, 1e-9) && near(u[1]*b, v[1]*c, 1e-9) && near(T.f(E[0], E[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 102. TLN VD */
+GT(10,3,3,'VD','Tam giác vuông tại gốc O, hai đỉnh trên hai trục: tâm đường tròn nội tiếp I(r; r) với r = (a + b − c)/2', R=>{
+  const [p0, q0] = R.pick([[3,4],[4,3],[6,8],[8,6],[5,12],[12,5],[8,15],[15,8],[7,24],[24,7],[9,12],[12,9],[20,21],[21,20],[9,40],[40,9],[12,16],[16,12],[15,20],[10,24]]), k0 = R.pick([1, 2, 3]), p = p0*k0, q = q0*k0, c = Math.round(Math.hypot(p, q)), r = (p + q - c)/2, S = p*q/2, hoi = R.int(0, 1), ans = hoi ? 2*r : r; if(!vlGon(ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', [p, 0])}, ${vlP('B', [0, q])}. Gọi $I(a; b)$ là tâm đường tròn nội tiếp tam giác $OAB$. Tính $${hoi ? 'a + b' : 'a'}$.`,
+    ans,
+    lg:`$AB = ${c}$. Bán kính nội tiếp: $r = \\dfrac{S}{p} = \\dfrac{${nt(S)}}{${nt((p + q + c)/2)}} = ${nt(r)}$.<br>Đường tròn tiếp xúc hai trục và $I$ nằm trong góc phần tư thứ nhất, nên $I(${nt(r)}; ${nt(r)})$.<br>Vậy giá trị cần tính bằng $${nt(ans)}$.`,
+    verify:()=> near(S/((p + q + c)/2), r, 1e-9) && near(hoi ? 2*S/((p + q + c)/2) : S/((p + q + c)/2), o.ans, 1e-9)};
+  return o;
+});
+
+/* 103. TLN VD */
+GT(10,3,3,'VD','Bán kính đường tròn ngoại tiếp R = abc/(4S) với tam giác có cạnh nằm trên trục Ox (làm tròn)', R=>{
+  const a = R.int(-6, 2), d = R.int(3, 12), x = R.int(-6, 10), h = R.int(2, 9), A = [a, 0], B = [a + d, 0], C = [x, h], ca = vlD(A, C), cb = vlD(B, C), S = d*h/2, L = vlL(ca*cb*d/(4*S)); if(!vlOk(L.ans)) return null;
+  const a2 = Math.round(ca*ca), b2 = Math.round(cb*cb);
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho tam giác $ABC$ với ${vlP('A', A)}, ${vlP('B', B)}, ${vlP('C', C)}. Tính bán kính đường tròn ngoại tiếp tam giác $ABC$${L.lam}.`,
+    ans:L.ans,
+    lg:`$AB = ${d}$, $AC = \\sqrt{${a2}}$, $BC = \\sqrt{${b2}}$. Đáy $AB$ nằm trên $Ox$, chiều cao $${h}$, nên $S = ${nt(S)}$.<br>Áp dụng $R = \\dfrac{AB \\cdot AC \\cdot BC}{4S} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=>{ const D = (x - a)*(x - a) + h*h, i = (a + a + d)/2, j = (D - d*(x - a))/(2*h), rr = Math.hypot(i - a, j); return vlGan(rr, o.ans); }};
+  return o;
+});
+
+/* 104. TLN VD */
+GT(10,3,3,'VD','Điểm M trên trục Oy sao cho tam giác MAB có diện tích cho trước, AB nằm trên Ox: tìm tung độ dương của M', R=>{
+  const a = R.int(-9, 4), d = R.pick([2, 4, 5, 6, 8, 10, 12]), S = R.int(3, 60), y = 2*S/d, A = [a, 0], B = [a + d, 0]; if(!vlGon(y)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ có tung độ dương, thuộc trục $Oy$ sao cho tam giác $MAB$ có diện tích bằng $${S}$. Tìm tung độ của $M$.`,
+    ans:y,
+    lg:`Đáy $AB = ${d}$ nằm trên $Ox$, chiều cao từ $M$ bằng tung độ của $M$. Từ $\\dfrac{1}{2} \\cdot ${d} \\cdot y = ${S}$ suy ra $y = ${nt(y)}$.`,
+    verify:()=> near(d*o.ans/2, S, 1e-9)};
+  return o;
+});
+
+/* 105. TLN VD */
+GT(10,3,3,'VD','Điểm C trên trục Oy sao cho tam giác ABC cân tại C: tìm C rồi tính diện tích theo đường trung tuyến (làm tròn)', R=>{
+  const A = [R.nz(-8, 8), R.nz(-8, 8)], B = [R.nz(-8, 8), R.nz(-8, 8)], d = 2*(A[1] - B[1]), n = A[0]*A[0] + A[1]*A[1] - B[0]*B[0] - B[1]*B[1], y = n/d; if(!d || !vlGon(y)) return null;
+  const C = [0, y], M = [(A[0] + B[0])/2, (A[1] + B[1])/2], S = vlD(A, B)*vlD(C, M)/2, L = vlL(S); if(!vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $C$ thuộc trục $Oy$ sao cho tam giác $ABC$ cân tại $C$. Tính diện tích tam giác $ABC$${L.lam}.`,
+    ans:L.ans,
+    lg:`Từ $CA = CB$ tìm được ${vlP('C', C)}. Gọi $M$ là trung điểm $AB$: ${vlP('M', M)}, $CM$ là đường cao.<br>Diện tích bằng $\\dfrac{1}{2} AB \\cdot CM = \\dfrac{1}{2}${vlS(A, B)} \\cdot ${vlS(C, M)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=> near(vlD(C, A), vlD(C, B), 1e-9) && vlGan(Math.abs((B[0] - A[0])*(C[1] - A[1]) - (B[1] - A[1])*(C[0] - A[0]))/2, o.ans)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.45'; GEN[k].l1 = 'V2.45'; });
+})();
+
+// ---------- V2.45: dạng thay số bổ sung (10-10 Vectơ trong mặt phẳng tọa độ: 92 dạng TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-10.6 Giá trị nhỏ nhất; bài toán thực tế (10|3|3), 15 dạng TLN. Claude viết.
+// Chuỗi: tổng bình phương (VD) → hiệu lớn nhất (VD) → chu vi nhỏ nhất (VD) → hai tàu, hải đăng (VD) → hai xe gặp nhau (VD) → bản đồ (VD) → đường ống (VD) → vận tốc trung bình (VD) → va chạm mềm (VD) → hai chặng (VD) → điểm trên đường thẳng (VD) → hình chữ nhật lớn nhất (VD).
+const vlR = x=> Math.round(x*10)/10, vlOk = x=> Math.abs(x) > 0 && String(x).length <= 4, vlNg = x=> near(x, Math.round(x), 1e-9), vlGan = (v, ans)=> near(ans, v, 0.051/Math.max(1, Math.abs(ans))), vlGon = x=> near(x*10, Math.round(x*10), 1e-9) && vlOk(vlR(x));
+const vlC = p=> `(${nt(p[0])}; ${nt(p[1])})`, vlP = (n, p)=> `$${n}${vlC(p)}$`, vlU = (n, u)=> `$\\vec{${n}} = ${vlC(u)}$`, vlB = x=> x < 0 ? `(${nt(x)})` : nt(x), vlD = (A, B)=> Math.hypot(A[0] - B[0], A[1] - B[1]), vlV = n=> vtV(n);
+const vlS = (A, B)=> `\\sqrt{${nt(Math.abs(A[0] - B[0]))}^2 + ${nt(Math.abs(A[1] - B[1]))}^2}`, vlL = len=>{ const ng = vlNg(len), ans = vlR(len); return {ans, ng, lam:ng ? '' : ' (làm tròn đến hàng phần mười)', dv:ng ? '' : ', làm tròn đến hàng phần mười', eq:ng ? '=' : '\\approx'}; };
+const vlTong = (R, a, b)=>{ const k = R.int(0, 4), T = [['a + b', a + b],['a - b', a - b],['2a + b', 2*a + b],['a + 2b', a + 2*b],['ab', a*b]][k]; return vlGon(T[1]) ? {ten:T[0], gt:T[1], f:(x, y)=> [x + y, x - y, 2*x + y, x + 2*y, x*y][k]} : null; };
+
+/* 106. TLN VD */
+GT(10,3,3,'VD','M chạy trên trục Ox: giá trị nhỏ nhất của MA² + MB² là một tam thức bậc hai', R=>{
+  const A = [R.int(-9, 9), R.nz(-9, 9)], B = [R.int(-9, 9), R.nz(-9, 9)], s = A[0] + B[0], hoi = R.int(0, 1), x = s/2, mn = (x - A[0])**2 + (x - B[0])**2 + A[1]*A[1] + B[1]*B[1], ans = hoi ? x : mn; if(!vlGon(ans)) return null;
+  const f = [2, -2*s, A[0]*A[0] + B[0]*B[0] + A[1]*A[1] + B[1]*B[1]];
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ thay đổi trên trục $Ox$. ${hoi ? 'Tìm hoành độ của $M$ để $MA^2 + MB^2$ nhỏ nhất.' : 'Tìm giá trị nhỏ nhất của $MA^2 + MB^2$.'}`,
+    ans,
+    lg:`Gọi $M(x; 0)$: $MA^2 + MB^2 = ${termsT([[f[0],'x^2'],[f[1],'x'],[f[2],'']])}$.<br>Tam thức nhỏ nhất tại $x = ${nt(x)}$` + (hoi ? `.` : `, giá trị nhỏ nhất bằng $${nt(mn)}$.`),
+    verify:()=>{ let b = 1e12, xb = 0; for(let i = -4000; i <= 4000; i++){ const t = i/100, v = (t - A[0])**2 + A[1]**2 + (t - B[0])**2 + B[1]**2; if(v < b){ b = v; xb = t; } } return near(hoi ? xb : b, o.ans, 1e-6); }};
+  return o;
+});
+
+/* 107. TLN VD */
+GT(10,3,3,'VD','M chạy trên trục Oy: giá trị nhỏ nhất của MA² + MB² + MC², đạt tại tung độ trung bình', R=>{
+  const X = [0, 1, 2].map(()=> [R.nz(-8, 8), R.int(-8, 8)]), s = X[0][1] + X[1][1] + X[2][1], y = s/3, c = X.reduce((t, p)=> t + p[0]*p[0] + p[1]*p[1], 0), mn = c - s*s/3; if(!Number.isInteger(y) || !vlOk(mn)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', X[0])}, ${vlP('B', X[1])}, ${vlP('C', X[2])}. Điểm $M$ thay đổi trên trục $Oy$. Tìm giá trị nhỏ nhất của $MA^2 + MB^2 + MC^2$.`,
+    ans:mn,
+    lg:`Gọi $M(0; y)$: tổng bằng $${termsT([[3,'y^2'],[-2*s,'y'],[c,'']])}$.<br>Tam thức nhỏ nhất tại $y = ${y}$, giá trị nhỏ nhất bằng $${mn}$.`,
+    verify:()=>{ let b = 1e12; for(let i = -3000; i <= 3000; i++){ const t = i/100; b = Math.min(b, X.reduce((u, p)=> u + p[0]*p[0] + (t - p[1])**2, 0)); } return near(b, o.ans, 1e-6); }};
+  return o;
+});
+
+/* 108. TLN VD */
+GT(10,3,3,'VD','M trên trục Ox: giá trị lớn nhất của |MA − MB| khi A, B cùng phía hoặc khác phía (lấy đối xứng khi khác phía, làm tròn)', R=>{
+  const A = [R.int(-9, 9), R.int(1, 9)], sb = R.pick([1, -1]), B = [R.int(-9, 9), sb*R.int(1, 9)], Bp = [B[0], Math.abs(B[1])], L = vlL(vlD(A, Bp)); if(A[1] === Bp[1] || vlD(A, Bp) < 2 || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ thay đổi trên trục $Ox$. Tìm giá trị lớn nhất của $\\left|MA - MB\\right|$${L.lam}.`,
+    ans:L.ans,
+    lg:(sb < 0 ? `$A$, $B$ nằm khác phía so với $Ox$. Lấy $B'$ đối xứng với $B$ qua $Ox$: ${vlP("B'", Bp)} và $MB = MB'$.<br>` : `$A$, $B$ nằm cùng phía so với $Ox$.<br>`) + `Theo bất đẳng thức tam giác, $\\left|MA - MB\\right| \\le ${sb < 0 ? "AB'" : 'AB'}$, dấu bằng khi $M$ là giao của đường thẳng $${sb < 0 ? "AB'" : 'AB'}$ với $Ox$.<br>Giá trị lớn nhất bằng $${vlS(A, Bp)} ${L.eq} ${nt(L.ans)}$.`,
+    verify:()=>{ let b = 0; for(let i = -30000; i <= 30000; i++){ const t = i/20; b = Math.max(b, Math.abs(vlD([t, 0], A) - vlD([t, 0], B))); } return Math.abs(b - vlD(A, Bp)) < 0.05 && vlGan(vlD(A, Bp), o.ans); }};
+  return o;
+});
+
+/* 109. TLN VD */
+GT(10,3,3,'VD','M trên trục Ox: chu vi nhỏ nhất của tam giác MAB với A, B cùng phía — lấy đối xứng rồi cộng thêm AB (làm tròn)', R=>{
+  const A = [R.int(-8, 8), R.int(1, 9)], B = [R.int(-8, 8), R.int(1, 9)], Bp = [B[0], -B[1]], L = vlL(vlD(A, B) + vlD(A, Bp)); if(A[0] === B[0] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ thay đổi trên trục $Ox$. Tìm giá trị nhỏ nhất của chu vi tam giác $MAB$${L.lam}.`,
+    ans:L.ans,
+    lg:`Chu vi bằng $AB + MA + MB$, với $AB = ${vlS(A, B)}$ không đổi.<br>Lấy $B'$ đối xứng với $B$ qua $Ox$: ${vlP("B'", Bp)}. Khi đó $MA + MB = MA + MB' \\ge AB' = ${vlS(A, Bp)}$.<br>Chu vi nhỏ nhất $${L.eq} ${nt(L.ans)}$.`,
+    verify:()=>{ let b = 1e9; for(let i = -8000; i <= 8000; i++){ const t = i/100; b = Math.min(b, vlD([t,0], A) + vlD([t,0], B)); } return Math.abs(b + vlD(A, B) - o.ans) < 0.06; }};
+  return o;
+});
+
+/* 110. TLN VD */
+GT(10,3,3,'VD','Hai tàu chuyển động thẳng đều theo vectơ vận tốc: khoảng cách là hàm của t, tìm lúc gần nhau nhất và khoảng cách nhỏ nhất (làm tròn)', R=>{
+  const w = [R.nz(-6, 6)*5, R.nz(-6, 6)*5], t0 = R.pick([1, 2, 3, 1.5, 2.5, 0.5]), s = R.nz(-3, 3), p = [-w[1]*s/5, w[0]*s/5], v2 = [R.nz(-4, 4)*5, R.nz(-4, 4)*5], v1 = [v2[0] + w[0], v2[1] + w[1]], B0 = [R.int(-6, 6)*10, R.int(-6, 6)*10], A0 = [B0[0] + p[0] - t0*w[0], B0[1] + p[1] - t0*w[1]], hoi = R.int(0, 1), L = vlL(Math.hypot(...p)); if(!vlOk(L.ans)) return null;
+  const r0 = [A0[0] - B0[0], A0[1] - B0[1]], f = [w[0]*w[0] + w[1]*w[1], 2*(r0[0]*w[0] + r0[1]*w[1]), r0[0]*r0[0] + r0[1]*r0[1]];
+  const o = {stem:`Trên hệ trục $Oxy$ (đơn vị: km), lúc $t = 0$ tàu $A$ ở ${vlP('A_0', A0)}, tàu $B$ ở ${vlP('B_0', B0)}. Hai tàu đi thẳng đều với vectơ vận tốc $${vlC(v1)}$ và $${vlC(v2)}$ (km/h). ${hoi ? `Tìm khoảng cách nhỏ nhất giữa hai tàu (đơn vị: km${L.dv}).` : 'Sau bao nhiêu giờ hai tàu gần nhau nhất?'}`,
+    ans:hoi ? L.ans : t0,
+    lg:`Vectơ từ $B$ tới $A$ sau $t$ giờ bằng $${vlC(r0)} + t${vlC(w)}$.<br>Bình phương khoảng cách: $f(t) = ${termsT([[f[0],'t^2'],[f[1],'t'],[f[2],'']])}$, nhỏ nhất tại $t = ${nt(t0)}$.` + (hoi ? `<br>Giá trị nhỏ nhất của $f$ bằng $${nt(p[0]*p[0] + p[1]*p[1])}$, nên khoảng cách nhỏ nhất $${L.eq} ${nt(L.ans)}$ (km).` : ``),
+    verify:()=>{ const g = t=> Math.hypot(r0[0] + t*w[0], r0[1] + t*w[1]); let b = 1e9, tb = 0; for(let i = 0; i <= 6000; i++){ const t = i/1000; if(g(t) < b){ b = g(t); tb = t; } } return hoi ? vlGan(b, o.ans) : near(tb, o.ans, 1e-3); }};
+  return o;
+});
+
+/* 111. TLN VD */
+GT(10,3,3,'VD','Tàu đi thẳng đều, hải đăng cố định: thời điểm tàu gần hải đăng nhất, vị trí tàu khi đó', R=>{
+  const v = [R.nz(-6, 6)*5, R.nz(-6, 6)*5], t0 = R.pick([1, 2, 3, 4]), M = [R.int(-8, 8)*5, R.int(-8, 8)*5], s = R.pick([1, 2, -1, -2]), Hd = [M[0] - v[1]*s/5, M[1] + v[0]*s/5], A0 = [M[0] - t0*v[0], M[1] - t0*v[1]], T = vlTong(R, M[0], M[1]), r0 = [A0[0] - Hd[0], A0[1] - Hd[1]], f = [v[0]*v[0] + v[1]*v[1], 2*(r0[0]*v[0] + r0[1]*v[1]), r0[0]*r0[0] + r0[1]*r0[1]]; if(!T) return null;
+  const o = {stem:`Trên hệ trục $Oxy$ (đơn vị: km), hải đăng đặt tại ${vlP('H', Hd)}. Lúc $t = 0$ tàu ở ${vlP('A', A0)} và đi thẳng đều với vectơ vận tốc $${vlC(v)}$ (km/h). Gọi $(a; b)$ là vị trí của tàu khi gần hải đăng nhất. Tính $${T.ten}$.`,
+    ans:T.gt,
+    lg:`Sau $t$ giờ tàu ở $(${termsT([[v[0],'t'],[A0[0],'']])}; ${termsT([[v[1],'t'],[A0[1],'']])})$.<br>Bình phương khoảng cách tới $H$: $f(t) = ${termsT([[f[0],'t^2'],[f[1],'t'],[f[2],'']])}$, nhỏ nhất tại $t = ${t0}$.<br>Vị trí khi đó là $${vlC(M)}$, nên $${T.ten} = ${nt(T.gt)}$.`,
+    verify:()=>{ const g = t=> Math.hypot(A0[0] + t*v[0] - Hd[0], A0[1] + t*v[1] - Hd[1]); let b = 1e9, tb = 0; for(let i = 0; i <= 8000; i++){ const t = i/1000; if(g(t) < b){ b = g(t); tb = t; } } return near(T.f(A0[0] + tb*v[0], A0[1] + tb*v[1]), o.ans, 1e-3); }};
+  return o;
+});
+
+/* 112. TLN VD */
+GT(10,3,3,'VD','Hai vật chuyển động thẳng đều gặp nhau: giải A₀ + t·u = B₀ + t·v, tìm thời điểm và vị trí gặp nhau', R=>{
+  const M = [R.int(-8, 8)*5, R.int(-8, 8)*5], t = R.pick([1, 2, 3, 4, 5]), u = [R.nz(-8, 8)*5, R.nz(-8, 8)*5], v = [R.nz(-8, 8)*5, R.nz(-8, 8)*5], A0 = [M[0] - t*u[0], M[1] - t*u[1]], B0 = [M[0] - t*v[0], M[1] - t*v[1]], hoi = R.int(0, 1), T = vlTong(R, M[0], M[1]), w = [A0[0] - B0[0], A0[1] - B0[1]], dv = [v[0] - u[0], v[1] - u[1]]; if(!T || !dv[0] || !dv[1] || u[0]*v[1] === u[1]*v[0]) return null;
+  const o = {stem:`Trên hệ trục $Oxy$ (đơn vị: km), lúc $t = 0$ xe $A$ ở ${vlP('A', A0)}, xe $B$ ở ${vlP('B', B0)}. Hai xe đi thẳng đều với vectơ vận tốc $${vlC(u)}$ và $${vlC(v)}$ (km/h) và gặp nhau tại $(a; b)$. ${hoi ? 'Sau bao nhiêu giờ hai xe gặp nhau?' : `Tính $${T.ten}$.`}`,
+    ans:hoi ? t : T.gt,
+    lg:`Gặp nhau khi hai toạ độ bằng nhau: $${A0[0]} + ${vlB(u[0])}t = ${B0[0]} + ${vlB(v[0])}t$, suy ra $${termsT([[dv[0],'t']])} = ${w[0]}$, nên $t = ${t}$ (kiểm tra tung độ cũng thoả mãn).` + (hoi ? `` : `<br>Vị trí gặp nhau $${vlC(M)}$, nên $${T.ten} = ${nt(T.gt)}$.`),
+    verify:()=>{ const tt = (A0[0] - B0[0])/(v[0] - u[0]); return near(A0[1] + tt*u[1], B0[1] + tt*v[1], 1e-9) && near(hoi ? tt : T.f(A0[0] + tt*u[0], A0[1] + tt*u[1]), o.ans, 1e-9); }};
+  return o;
+});
+
+/* 113. TLN VD */
+GT(10,3,3,'VD','Bản đồ gắn hệ trục: quãng đường gấp khúc qua ba điểm và thời gian đi với tốc độ cho trước (làm tròn)', R=>{
+  const A = [R.int(-8, 8), R.int(-8, 8)], B = [R.int(-8, 8), R.int(-8, 8)], C = [R.int(-8, 8), R.int(-8, 8)], u = R.pick([2, 5, 10]), v = R.pick([20, 30, 40, 50, 60]), s = u*(vlD(A, B) + vlD(B, C)), L = vlL(s/v*60); if(vlD(A, B) < 3 || vlD(B, C) < 3 || !vlOk(L.ans)) return null;
+  const o = {stem:`Trên bản đồ gắn hệ trục $Oxy$, mỗi đơn vị ứng với $${u}$ km. Một xe đi thẳng từ ${vlP('A', A)} tới ${vlP('B', B)} rồi đi thẳng tới ${vlP('C', C)} với tốc độ $${v}$ km/h. Tính thời gian đi (đơn vị: phút${L.dv}).`,
+    ans:L.ans,
+    lg:`Trên bản đồ: $AB = ${vlS(A, B)}$, $BC = ${vlS(B, C)}$. Quãng đường thực bằng $${u}(AB + BC) ${vlNg(s) ? '=' : '\\approx'} ${nt(Math.round(s*100)/100)}$ (km).<br>Thời gian bằng quãng đường chia $${v}$, nhân $60$ phút, được $${L.eq === '=' ? '' : '\\approx '}${nt(L.ans)}$ (phút).`,
+    verify:()=> vlGan(u*(vlD(A, B) + vlD(B, C))/v*60, o.ans)};
+  return o;
+});
+
+/* 114. TLN VD */
+GT(10,3,3,'VD','Đặt trạm bơm trên bờ sông (trục Ox) nối hai nhà máy: tổng chiều dài ống ngắn nhất và chi phí (làm tròn)', R=>{
+  const A = [R.int(-9, 3), R.int(1, 9)], B = [R.int(0, 9), R.int(1, 9)], k = R.pick([1, 2, 3, 5]), Bp = [B[0], -B[1]], L = vlL(k*vlD(A, Bp)); if(A[0] === B[0] || !vlOk(L.ans)) return null;
+  const o = {stem:`Trên hệ trục $Oxy$ (đơn vị: km), bờ sông là trục $Ox$, hai nhà máy ở ${vlP('A', A)}, ${vlP('B', B)}. Đặt trạm bơm $M$ trên bờ sông và nối ống thẳng từ $M$ tới mỗi nhà máy, chi phí $${k}$ tỉ đồng cho mỗi km ống. Tìm chi phí nhỏ nhất (đơn vị: tỉ đồng${L.dv}).`,
+    ans:L.ans,
+    lg:`Lấy $B'$ đối xứng với $B$ qua $Ox$: ${vlP("B'", Bp)}. Tổng chiều dài $MA + MB = MA + MB' \\ge AB' = ${vlS(A, Bp)}$, dấu bằng khi $M$ là giao của $AB'$ với $Ox$.<br>Chi phí nhỏ nhất bằng $${k === 1 ? '' : k + ' \\cdot '}${vlS(A, Bp)} ${L.eq} ${nt(L.ans)}$ (tỉ đồng).`,
+    verify:()=>{ let b = 1e9; for(let i = -3000; i <= 3000; i++){ const t = i/100; b = Math.min(b, vlD([t,0], A) + vlD([t,0], B)); } return Math.abs(k*b - o.ans) < 0.06*k; }};
+  return o;
+});
+
+/* 115. TLN VD */
+GT(10,3,3,'VD','Vận tốc trung bình là độ dịch chuyển chia thời gian: tính độ lớn từ hai vị trí, phân biệt với tốc độ trung bình trên đường đi', R=>{
+  const A = [R.int(-30, 30), R.int(-30, 30)], d = [R.nz(-40, 40), R.nz(-40, 40)], B = [A[0] + d[0], A[1] + d[1]], t = R.pick([2, 4, 5, 8, 10]), L = vlL(Math.hypot(...d)/t); if(!vlOk(L.ans) || Math.hypot(...d) < 10) return null;
+  const o = {stem:`Một thiết bị bay chuyển động từ vị trí ${vlP('A', A)} tới vị trí ${vlP('B', B)} (đơn vị: m) trong $${t}$ giây. Tính độ lớn của vectơ vận tốc trung bình (đơn vị: m/s${L.dv}).`,
+    ans:L.ans,
+    lg:`Vectơ dịch chuyển $${vlV('AB')} = ${vlC(d)}$. Vectơ vận tốc trung bình bằng $\\dfrac{1}{${t}}${vlV('AB')}$.<br>Độ lớn bằng $\\dfrac{1}{${t}}\\sqrt{${d[0]*d[0]} + ${d[1]*d[1]}} ${L.eq} ${nt(L.ans)}$ (m/s).`,
+    verify:()=> vlGan(vlD(A, B)/t, o.ans)};
+  return o;
+});
+
+/* 116. TLN VD */
+GT(10,3,3,'VD','Va chạm mềm: tổng động lượng bảo toàn, vận tốc chung V = (m₁v₁ + m₂v₂)/(m₁ + m₂) theo toạ độ (làm tròn)', R=>{
+  const m1 = R.pick([1, 2, 3, 4]), m2 = R.pick([1, 2, 3, 6]), s = m1 + m2, v1 = [R.nz(-6, 6)*s, R.nz(-6, 6)*s], v2 = [R.nz(-6, 6)*s, R.nz(-6, 6)*s], V = [(m1*v1[0] + m2*v2[0])/s, (m1*v1[1] + m2*v2[1])/s], L = vlL(Math.hypot(...V)); if(!vlOk(L.ans) || !V[0] || !V[1]) return null;
+  const o = {stem:`Trên mặt phẳng ngang gắn hệ trục $Oxy$, vật $${m1}$ kg có vận tốc $${vlC(v1)}$ (m/s) va chạm với vật $${m2}$ kg có vận tốc $${vlC(v2)}$ (m/s), sau va chạm hai vật dính vào nhau. Tính tốc độ của hệ sau va chạm (đơn vị: m/s${L.dv}).`,
+    ans:L.ans,
+    lg:`Bảo toàn động lượng: $(${m1} + ${m2})\\vec{V} = ${m1 === 1 ? '' : m1}\\vec{v_1} + ${m2 === 1 ? '' : m2}\\vec{v_2}$.<br>Do đó $\\vec{V} = ${vlC(V)}$, tốc độ bằng $\\sqrt{${V[0]*V[0]} + ${V[1]*V[1]}} ${L.eq} ${nt(L.ans)}$ (m/s).`,
+    verify:()=> vlGan(Math.hypot((m1*v1[0] + m2*v2[0])/s, (m1*v1[1] + m2*v2[1])/s), o.ans)};
+  return o;
+});
+
+/* 117. TLN VD */
+GT(10,3,3,'VD','M trên trục Ox: giá trị nhỏ nhất của MA² + 2MB² (có trọng số), đạt tại x = (x_A + 2x_B)/3', R=>{
+  const A = [R.int(-9, 9), R.nz(-6, 6)], B = [R.int(-9, 9), R.nz(-6, 6)], s = A[0] + 2*B[0], x = s/3, c = A[0]*A[0] + A[1]*A[1] + 2*(B[0]*B[0] + B[1]*B[1]), mn = c - s*s/3, hoi = R.int(0, 1), ans = hoi ? x : mn; if(!Number.isInteger(x) || !x || !vlOk(ans)) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)}, ${vlP('B', B)}. Điểm $M$ thay đổi trên trục $Ox$. ${hoi ? 'Tìm hoành độ của $M$ để $MA^2 + 2MB^2$ nhỏ nhất.' : 'Tìm giá trị nhỏ nhất của $MA^2 + 2MB^2$.'}`,
+    ans,
+    lg:`Gọi $M(x; 0)$: biểu thức bằng $${termsT([[3,'x^2'],[-2*s,'x'],[c,'']])}$.<br>Tam thức nhỏ nhất tại $x = ${x}$` + (hoi ? `.` : `, giá trị nhỏ nhất bằng $${mn}$.`),
+    verify:()=>{ let b = 1e12, xb = 0; for(let i = -3000; i <= 3000; i++){ const t = i/100, v = (t - A[0])**2 + A[1]**2 + 2*((t - B[0])**2 + B[1]**2); if(v < b){ b = v; xb = t; } } return near(hoi ? xb : b, o.ans, 1e-6); }};
+  return o;
+});
+
+/* 118. TLN VD */
+GT(10,3,3,'VD','Hai chặng thẳng: tốc độ trung bình trên đường đi khác độ lớn vận tốc trung bình — tính hiệu hai đại lượng (làm tròn)', R=>{
+  const A = [R.int(-20, 0)*5, R.int(-8, 8)*5], u = [R.nz(-6, 6)*10, R.nz(-6, 6)*10], w = [R.nz(-6, 6)*10, R.nz(-6, 6)*10], B = [A[0] + u[0], A[1] + u[1]], C = [B[0] + w[0], B[1] + w[1]], t = R.pick([2, 4, 5, 10]), s = (vlD(A, B) + vlD(B, C))/t, v = vlD(A, C)/t, hoi = R.int(0, 1), L = vlL(hoi ? s : s - v); if(u[0]*w[1] === u[1]*w[0] || !vlOk(L.ans)) return null;
+  const o = {stem:`Một xe đi thẳng từ ${vlP('A', A)} tới ${vlP('B', B)} rồi đi thẳng tới ${vlP('C', C)} (đơn vị: km) hết tổng cộng $${t}$ giờ. ${hoi ? `Tính tốc độ trung bình trên quãng đường (đơn vị: km/h${L.dv}).` : `Tốc độ trung bình trên quãng đường lớn hơn độ lớn vận tốc trung bình bao nhiêu km/h${L.lam}?`}`,
+    ans:L.ans,
+    lg:`Quãng đường bằng $AB + BC = ${vlS(A, B)} + ${vlS(B, C)}$, nên tốc độ trung bình $\\approx ${nt(Math.round(s*100)/100)}$ (km/h).` + (hoi ? ` Làm tròn được $${nt(L.ans)}$.` : `<br>Độ dịch chuyển $AC = ${vlS(A, C)}$, vận tốc trung bình có độ lớn $\\approx ${nt(Math.round(v*100)/100)}$ (km/h).<br>Hiệu hai đại lượng $${L.eq} ${nt(L.ans)}$ (km/h).`),
+    verify:()=> vlGan(hoi ? s : s - v, o.ans)};
+  return o;
+});
+
+/* 119. TLN VD */
+GT(10,3,3,'VD','Điểm B(m; m + k) chạy trên một đường thẳng: AB nhỏ nhất, bình phương độ dài là tam thức theo m (làm tròn)', R=>{
+  const A = [R.int(-9, 9), R.int(-9, 9)], k = R.nz(-6, 6), s = A[0] + A[1] - k, m = s/2, mn = (m - A[0])**2 + (m + k - A[1])**2, hoi = R.int(0, 1), L = vlL(Math.sqrt(mn)), ans = hoi ? m : L.ans; if(!vlGon(ans) || mn <= 0) return null;
+  const c = A[0]*A[0] + (k - A[1])**2;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', A)} và điểm $B(m; ${termsT([[1,'m'],[k,'']])})$. ${hoi ? 'Tìm $m$ để độ dài $AB$ nhỏ nhất.' : `Tìm độ dài nhỏ nhất của đoạn $AB$${L.lam}.`}`,
+    ans,
+    lg:`$AB^2 = ${termsT([[2,'m^2'],[-2*s,'m'],[c,'']])}$, nhỏ nhất tại $m = ${nt(m)}$.` + (hoi ? `` : `<br>Giá trị nhỏ nhất của $AB^2$ bằng $${nt(mn)}$, nên độ dài nhỏ nhất $${L.eq} ${nt(L.ans)}$.`),
+    verify:()=>{ let b = 1e9, mb = 0; for(let i = -3000; i <= 3000; i++){ const t = i/100, v = vlD(A, [t, t + k]); if(v < b){ b = v; mb = t; } } return hoi ? near(mb, o.ans, 1e-6) : vlGan(b, o.ans); }};
+  return o;
+});
+
+/* 120. TLN VD */
+GT(10,3,3,'VD','M chạy trên đoạn AB nối hai điểm trên hai trục: hình chữ nhật OHMK có diện tích lớn nhất khi M là trung điểm', R=>{
+  const a = 2*R.int(1, 12), b = 2*R.int(1, 12), S = a*b/4, hoi = R.int(0, 1), ans = hoi ? S : 2*(a/2 + b/2); if(!vlOk(ans) || a === b) return null;
+  const o = {stem:`Trong mặt phẳng toạ độ $Oxy$, cho ${vlP('A', [a, 0])}, ${vlP('B', [0, b])}. Điểm $M$ chạy trên đoạn $AB$, $H$, $K$ là hình chiếu của $M$ lên $Ox$, $Oy$. Khi diện tích hình chữ nhật $OHMK$ lớn nhất, tính ${hoi ? 'diện tích đó' : 'chu vi hình chữ nhật đó'}.`,
+    ans,
+    lg:`Gọi $M(x; y)$ với $${vlV('AM')}$ cùng phương $${vlV('AB')}$, ta có $y = ${frT(b, a)}(${a} - x)$.<br>Diện tích $S = xy = ${frT(b, a)}(${a}x - x^2)$, lớn nhất tại $x = ${a/2}$, khi đó $y = ${b/2}$ ($M$ là trung điểm $AB$).<br>` + (hoi ? `Diện tích lớn nhất bằng $${a/2} \\cdot ${b/2} = ${nt(S)}$.` : `Chu vi bằng $2(${a/2} + ${b/2}) = ${a + b}$.`),
+    verify:()=>{ let bs = 0, xb = 0; for(let i = 0; i <= 4800; i++){ const x = a*i/4800, s = x*b*(a - x)/a; if(s > bs){ bs = s; xb = x; } } const y = b*(a - xb)/a; return near(hoi ? bs : 2*(xb + y), o.ans, 1e-6); }};
   return o;
 });
 
