@@ -14070,7 +14070,7 @@ GT(10,2,0,'VD','Bài toán thực tế: độ cao của cabin đu quay', R=>{
   const Rr = 2*R.int(10,40), H = Rr + R.int(3,20), val = H - Rr*Math.cos(htRad(th)), ans = Math.round(val*10)/10; if(!t10Fit(ans)) return null;
   const al = th <= 180 ? th : 360 - th;
   const o = {stem:`Một chiếc đu quay có bán kính $${Rr}$ m, tâm của vòng quay ở độ cao $${H}$ m so với mặt đất. Đu quay quay đều, mỗi vòng hết $${T}$ phút. Một người vào cabin tại vị trí thấp nhất $A$ của vòng quay. Hỏi sau $${t}$ phút, người đó ở độ cao bao nhiêu mét so với mặt đất?`, ans, hv:hvDuQuay(Rr, H),
-    lg:`Sau $${t}$ phút, cabin quay được $\\dfrac{${t}}{${T}}$ vòng, tức là góc $${th}^\\circ$ kể từ vị trí thấp nhất${th > 180 ? ` (vị trí này đối xứng với vị trí ứng với góc $${al}^\\circ$)` : ''}. Độ cao so với tâm là $-${Rr}\\cos ${al}^\\circ = ${nt(Math.round(-Rr*Math.cos(htRad(al))*10)/10)}$ (m). Vậy độ cao cần tìm là $${H} - ${Rr}\\cos ${al}^\\circ = ${nt(ans)}$ (m).`,
+    lg:`Sau $${t}$ phút, cabin quay được $${frT(t, T)}$ vòng, tức là góc $${th}^\\circ$ kể từ vị trí thấp nhất${th > 180 ? ` (vị trí này đối xứng với vị trí ứng với góc $${al}^\\circ$)` : ''}. Độ cao so với tâm là $-${Rr}\\cos ${al}^\\circ = ${nt(Math.round(-Rr*Math.cos(htRad(al))*10)/10)}$ (m). Vậy độ cao cần tìm là $${H} - ${Rr}\\cos ${al}^\\circ = ${nt(ans)}$ (m).`,
     verify:()=>{ const ang = -Math.PI/2 + 2*Math.PI*t/T; return Math.abs(H + Rr*Math.sin(ang) - o.ans) <= 0.05 + 1e-9; }}; return o;
 });
 
@@ -22701,7 +22701,7 @@ GT(10,2,1,'VD','Đo đạc thực tế: đứng trên đài quan sát, biết kh
 });
 GD(10,2,1,'VD','Đo đạc thực tế (đúng – sai): quan sát đỉnh và chân tháp (góc nâng, góc hạ) hoặc cột trên đỉnh đồi — góc, khoảng cách, diện tích, chiều cao', R=>{
   for(let g = 0; g < 80; g++){ const mode = R.pick(['ud', 'hill']);
-    if(mode === 'ud'){ const d = R.int(8, 20), be = R.pick([30, 35, 40, 45, 50, 55]), de = R.pick([8, 10, 12, 15, 20]);
+    if(mode === 'ud'){ const d = R.int(8, 20), be = R.pick([30, 35, 40, 50, 55, 60]), de = R.pick([8, 10, 12, 15, 20]);
       const AB = d/C(de), AD = d/C(be), Sacd = 0.5*d*d*Tg(be), H = d*(Tg(be) + Tg(de)), r = x=> htRd(x, 2), vAB = r(AB), vS = r(Sacd), vH = r(H); if([vAB, vS, vH].some(x=> x == null)) continue;
       const wAB = r(d*C(de)), wS = r(0.5*d*AD), wH = r(d*(Tg(be) - Tg(de))); if([wAB, wS, wH].some(x=> x == null || Math.abs(x - 0) < 0.01)) continue;
       const items = [claimN(R, v=> `Số đo góc $\\widehat{ADC} = ${v}^\\circ$.`, 90 - be, String(90 - be), be, String(be), ()=> 90 - be),
