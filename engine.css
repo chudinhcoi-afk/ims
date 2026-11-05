@@ -456,6 +456,7 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 #pdfBody .pdf-sheet.ws.ws-ecos{padding:8mm 10mm 10mm}
 #pdfBody .ws-ecos .ws-items{width:calc((100% - 6mm)/2)}
 #pdfBody .ws-ecos .ws-items.ws-flow{width:auto;column-count:2;column-gap:6mm;column-rule:.6px solid #999;column-fill:balance}
+#pdfBody .ws-ecos .ws-items.ws-flow.ws-cottrai{column-fill:auto}
 #pdfBody .ws-ecos .ws-flow > *{break-inside:avoid}
 #pdfBody .ws-ecos .ws-flow > .ws-sec{break-after:avoid}
 #pdfBody .ws-main.ws-ecos .ws-sec{margin:4px 0 3px}
