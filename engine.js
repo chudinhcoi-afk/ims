@@ -236,11 +236,11 @@ const CHUYEN_DE = {
             ['Tính chất của tích phân: tuyến tính, cộng cận, hàm từng khúc', '7-11,103-144'],
             ['Ý nghĩa hình học của tích phân; tính tích phân từ đồ thị', '20,145-189'],
             ['Ý nghĩa thực tiễn: quãng đường, lượng thay đổi', '190-235']],
-  '12-13': [['Diện tích hình phẳng giới hạn bởi một đồ thị và trục hoành', '2-5,12-14'],
-            ['Diện tích hình phẳng giới hạn bởi hai đồ thị', '1,6'],
-            ['Thể tích vật thể theo diện tích thiết diện', ''],
-            ['Thể tích khối tròn xoay', '7,8,15'],
-            ['Bài toán thực tế: đồ thị vận tốc, diện tích và thể tích', '9-11']],
+  '12-13': [['Diện tích hình phẳng giới hạn bởi một đồ thị và trục hoành', '2-5,12-14,16-56'],
+            ['Diện tích hình phẳng giới hạn bởi hai đồ thị', '1,6,57-101'],
+            ['Thể tích vật thể theo diện tích thiết diện', '102-147'],
+            ['Thể tích khối tròn xoay', '7,8,15,148-191'],
+            ['Bài toán thực tế: đồ thị vận tốc, diện tích và thể tích', '9-11,192-235']],
   '12-14': [['Vectơ pháp tuyến; phương trình mặt phẳng qua một điểm, biết vectơ pháp tuyến', '1,4-8,23,25-29,57'],
             ['Mặt phẳng qua ba điểm; phương trình theo đoạn chắn', '13-18,30-32,44-46,52'],
             ['Mặt phẳng song song, vuông góc, chứa đường thẳng; vị trí tương đối hai mặt phẳng', '9-12,21,22,33-43,53'],
@@ -446,7 +446,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.49';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 539 dạng cho 12-11, 12-12, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.49';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -4587,7 +4587,7 @@ const g3 = v=> String(Math.round(v*1000)/1000);
 function graphFn(expr){ try{ const f = mathCompile(mathParse(String(expr))); return x=>{ const v = f(x); return typeof v==='number' && isFinite(v) ? v : NaN; }; }catch(e){ return ()=> NaN; } }
 function graphToPoly(t, n){ const f = graphFn(t.tren), g = graphFn(t.duoi), N = n || 80, up = [], dn = []; for(let i = 0; i <= N; i++){ const x = t.a + (t.b - t.a)*i/N; up.push([x, f(x)]); dn.push([x, g(x)]); } return up.concat(dn.reverse()).filter(p=> isFinite(p[1])); }
 function graphToMid(t){ const f = graphFn(t.tren), g = graphFn(t.duoi), x = t.nhanX == null ? (t.a + t.b)/2 : t.nhanX; return [x, (f(x) + g(x))/2]; }
-function graphCongPts(c, M){ const f = graphFn(c.hamSo), N = 240, out = [[]]; for(let i = 0; i <= N; i++){ const x = M.xmin + (M.xmax - M.xmin)*i/N, y = f(x); if(isFinite(y) && Math.abs(y) < 1e4) out[out.length - 1].push([x, y]); else if(out[out.length - 1].length) out.push([]); } return out.filter(s=> s.length > 1); }
+function graphCongPts(c, M){ const f = graphFn(c.hamSo), N = 240, out = [[]], ok = v=> isFinite(v) && Math.abs(v) < 1e4, edge = (a, b)=>{ for(let k = 0; k < 40; k++){ const m = (a + b)/2; if(ok(f(m))) a = m; else b = m; } return [a, f(a)]; }; let px = null; for(let i = 0; i <= N; i++){ const x = M.xmin + (M.xmax - M.xmin)*i/N, y = f(x), cur = out[out.length - 1]; if(ok(y)){ if(px != null && !cur.length) cur.push(edge(x, px)); cur.push([x, y]); } else if(cur.length){ cur.push(edge(px, x)); out.push([]); } px = x; } return out.filter(s=> s.length > 1); }
 function graphCongLab(c, M){ const seg = graphCongPts(c, M).flat().filter(p=> p[1] > M.ymin + 0.1*(M.ymax - M.ymin) && p[1] < M.ymax - 0.1*(M.ymax - M.ymin)); return seg.length ? seg[Math.floor(seg.length*0.12)] : null; }
 function graphTenPt(hv, M, sg){ const t = hv.tenViTri || 0.85, d = t < 0.5 ? 1 : -1, lo = M.ymin + 0.1*(M.ymax - M.ymin), hi = M.ymax - 0.1*(M.ymax - M.ymin); let i = Math.floor(sg.length*t); if(hv.tenX) while(i > 0 && i < sg.length - 1 && (sg[i][1] < lo || sg[i][1] > hi)) i += d; return sg[i]; }   // điểm đặt nhãn tên đồ thị: có tenX thì lùi vào trong khung
 function graphToTikz(hv){
@@ -42822,7 +42822,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -42831,6 +42831,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.1 Khái niệm nguyên hàm; họ nguyên hàm; tính chất — số 51–89 (17 TN, 8 Đ–S, 14 TLN).
    Chuỗi tư duy: F' = f → họ nguyên hàm sai khác hằng số → tính chất tuyến tính → nhận ra đạo hàm của tích, hợp → đồng nhất hệ số. Chỉ dùng đạo hàm và định nghĩa, chưa dùng bảng nguyên hàm. */
 
@@ -43307,7 +43310,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -43316,6 +43319,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.2 Nguyên hàm của hàm luỹ thừa, đa thức; biến đổi về luỹ thừa — số 90–130 (16 TN, 10 Đ–S, 15 TLN).
    Chuỗi tư duy: công thức xᵅ với α nguyên âm, hữu tỉ → biến đổi tích, bình phương, hằng đẳng thức, căn về tổng luỹ thừa → đọc hệ số của nguyên hàm → tính đối xứng. */
 
@@ -43800,7 +43806,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -43809,6 +43815,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.3 Nguyên hàm của hàm số lượng giác — số 131–171 (17 TN, 9 Đ–S, 15 TLN).
    Chỉ dùng ∫sin x, ∫cos x, ∫1/cos²x, ∫1/sin²x; biểu thức phức tạp phải biến đổi về các dạng đó (hằng đẳng thức, công thức nhân đôi, hạ bậc đúng x/2) hoặc kiểm tra bằng đạo hàm. Chuỗi: công thức → biến đổi → rút gọn trên khoảng → giá trị tại góc đặc biệt. */
 const lgS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
@@ -44283,7 +44292,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -44292,6 +44301,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.4 Nguyên hàm của hàm số mũ, hàm 1/x — số 172–212 (17 TN, 9 Đ–S, 15 TLN).
    Chuỗi tư duy: ∫aˣ, ∫eˣ, ∫1/x → chia tử cho x → rút gọn bằng hằng đẳng thức và luỹ thừa cùng cơ số → ln|x| trên từng khoảng → đọc ngược đạo hàm, đồng nhất hệ số. */
 const mhS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
@@ -44764,7 +44776,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -44773,6 +44785,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.5 Tìm nguyên hàm thoả điều kiện; nguyên hàm hai lần; hàm hai công thức — số 213–252 (18 TN, 10 Đ–S, 12 TLN).
    Chuỗi tư duy: biết f' tìm f → điều kiện đồ thị đi qua điểm, hệ số góc tiếp tuyến → f'' hai hằng số → |x|, hàm từng khúc, F liên tục → nhận ra đạo hàm của tích, của f². */
 const dkS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
@@ -45236,7 +45251,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -45245,6 +45260,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.6 Nguyên hàm và đồ thị: đọc đồ thị, đơn điệu, cực trị của F — số 253–294 (18 TN, 8 Đ–S, 16 TLN).
    Chuỗi tư duy: F' = f nên dấu của f quyết định đơn điệu của F → đọc đồ thị f tìm cực trị F → đọc đồ thị F tìm f → hệ số góc tiếp tuyến → giá trị cực trị, số nghiệm. */
 const dtS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
@@ -45751,7 +45769,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -45760,6 +45778,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.7 Bài toán thực tế: chuyển động — số 295–336 (19 TN, 9 Đ–S, 14 TLN).
    Mô hình chung: v = s', a = v'. Chuỗi tư duy: biết v tìm s → biết a tìm v rồi s → điểm dừng, đổi chiều, độ cao lớn nhất → hai giai đoạn → gặp nhau, tìm tham số. Chỉ dùng nguyên hàm kèm điều kiện đầu, chưa dùng tích phân. */
 const cdS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
@@ -46235,7 +46256,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -46244,6 +46265,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-11.8 Bài toán thực tế: tốc độ thay đổi, kinh tế — số 337–374 (16 TN, 9 Đ–S, 13 TLN).
    Mô hình chung: biết tốc độ thay đổi Q'(t) và giá trị ban đầu thì tìm được Q(t). Chuỗi: lượng tích luỹ → thời điểm đạt ngưỡng → cực trị khi Q' đổi dấu → chi phí, doanh thu, lợi nhuận biên. Chỉ dùng nguyên hàm, chưa dùng tích phân. */
 const ktS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
@@ -46680,7 +46704,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -46689,6 +46713,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-12.1 Định nghĩa tích phân; công thức Newton – Leibniz; hàm đa thức, luỹ thừa — số 21–60 (18 TN, 9 Đ–S, 13 TLN).
    Chuỗi tư duy: F(b) − F(a) → đọc ngược tìm F(a), F(b) → đa thức, luỹ thừa, căn → biến đổi rồi tính → cận và tham số chưa biết. */
 const c1F = (co)=> ngTx(tpF(co));
@@ -47031,7 +47058,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -47040,6 +47067,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-12.2 Tích phân của hàm lượng giác, hàm mũ, hàm 1/x — số 61–102 (18 TN, 10 Đ–S, 14 TLN).
    Chỉ dùng bảng nguyên hàm cơ bản, biến đổi bằng công thức lượng giác, luỹ thừa. Chuỗi: tính trực tiếp → biến đổi hạ bậc, tan² → hàm mũ, ln → tìm cận, tìm hệ số. */
 const c2T = (R, stem, A, V, Ws, lg, chk)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; return o; };
@@ -47402,7 +47432,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -47411,6 +47441,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-12.3 Tính chất của tích phân: tuyến tính, cộng cận, hàm từng khúc — số 103–144 (18 TN, 10 Đ–S, 14 TLN).
    Chuỗi tư duy: tuyến tính → cộng cận, đảo cận → hệ hai ẩn → chia đoạn với hàm từng khúc, |...| → đối xứng. */
 const c3A = (a, b)=> tpI('f(x)', a, b);
@@ -47767,7 +47800,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -47776,6 +47809,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-12.4 Ý nghĩa hình học của tích phân; tính tích phân từ đồ thị — số 145–189 (20 TN, 10 Đ–S, 15 TLN).
    Chuỗi tư duy: tam giác, hình thang → gấp khúc → đổi dấu (S₁ − S₂) → đường tròn → miền cho sẵn diện tích
    → nguyên hàm, đạo hàm từ đồ thị → tìm cận → hình thang cong của parabol, sin, mũ, 1/x.
@@ -48181,7 +48217,7 @@ const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).len
 /* ———— Ứng dụng hình học (12-13) ———— */
 const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
 const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
-const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); return hv; };
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
 const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
 const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
 const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
@@ -48190,6 +48226,9 @@ const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm 
 const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
 const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
 const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
 /* 12-12.5 Ý nghĩa thực tiễn: quãng đường, lượng thay đổi — số 190–235 (20 TN, 10 Đ–S, 16 TLN).
    Khác 12-11 (tìm hàm có hằng số C): ở đây dùng tích phân xác định Q(b) − Q(a) = ∫ₐᵇ Q'(t)dt, không cần giá trị ban đầu.
    Chuỗi tư duy: quãng đường trên đoạn bất kì → độ dịch chuyển khác quãng đường → hai xe, từng khúc → công, điện lượng
@@ -48484,6 +48523,1928 @@ GT(12,3,1,'TH','Vi khuẩn tăng với tốc độ k eᵗ', R=>{
 GT(12,3,1,'VD','Hai bể: sau bao nhiêu phút lượng nước bằng nhau', R=>{
   const T = R.int(2, 16), p1 = R.int(1, 3), d = 2*R.int(1, 2), p2 = p1 + d, q2 = R.int(1, 5), q1 = q2 + d*T/2;
   return tpN(`Hai bể rỗng được cấp nước cùng lúc, tốc độ cấp vào bể thứ nhất là $${tpP([p1, q1], 't')}$ (lít/phút), vào bể thứ hai là $${tpP([p2, q2], 't')}$ (lít/phút), $t$ tính bằng phút. Sau bao nhiêu phút (kể từ lúc bắt đầu) lượng nước trong hai bể bằng nhau?`, T, t=> `Sau $T$ phút: $${qT(qr(p1, 2))}T^{2} + ${q1}T = ${qT(qr(p2, 2))}T^{2} + ${q2}T$.<br>Với $T > 0$, rút gọn được ${d === 2 ? `$T = ${t}$` : `$${d/2}T = ${q1 - q2}$, suy ra $T = ${t}$`}.`.replace(/\b1T/g, 'T'), ()=> (q1 - q2)*2/(p2 - p1));
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (Chương IV lớp 12: nguyên hàm, tích phân, mỗi chuyên đề đủ 20 TN, 10 Đ–S, 16 TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* ——— tiện ích tích phân ——— */
+const tpS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const tpP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v);
+const tpV = (co, x)=> co.reduce((s, c)=> s*x + qv(c), 0);
+const tpG = (co)=> co.map((c, i)=> { const p = co.length - 1 - i; return qd(c, p + 1); }).concat([0]);   /* hệ số nguyên hàm (không hằng số) */
+const tpQ = (co, a, b)=>{ const d = co.length - 1; let s = [0, 1]; co.forEach((k, i)=>{ const p = d - i; s = qa(s, qm(qd(k, p + 1), b**(p + 1) - a**(p + 1))); }); return s; };   /* tích phân đa thức từ a đến b, chính xác */
+const tpI = (s, a, b, v)=> `\\int_{${a}}^{${b}} ${s}\\,d${v || 'x'}`;
+const tpF = (co)=> co.map((c, i)=> [qd(c, co.length - i), ngX(co.length - i)]);   /* các hạng tử nguyên hàm của đa thức */
+const tpB = (s, a, b)=> `\\left.\\left(${s}\\right)\\right|_{${a}}^{${b}}`;
+const tpPa = q=>{ q = qq(q); return q[0] < 0 ? `\\left(${qT(q)}\\right)` : qT(q); };
+const tpT = (R, stem, q, ws, lg, chk, hv, unit)=>{ const ans = ngNum(q, unit), wrong = ngW(R, ans, ws.map(x=> ngNum(x, unit))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(qT(q)), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpN = (stem, v0, lg, chk, hv)=>{ v0 = qv(v0); const v = ngRou(v0, 1); if(!near(v, v0, 1e-9) || String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, ngRou(chk(), 1), 1e-9)}; if(hv) o.hv = hv; return o; };   /* đáp số làm tròn một chữ số */
+
+/* ———— Ứng dụng hình học (12-13) ———— */
+const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
+const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
+const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
+const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
+const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
+const sSt = (y, a, b)=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$`;
+const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$ và trục hoành`;
+const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
+const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
+/* 12-13.1 Diện tích hình phẳng giới hạn bởi một đồ thị và trục hoành — số 16–56 (17 TN, 10 Đ–S, 14 TLN).
+   Chuỗi tư duy: công thức với |f| → f không đổi dấu → phải tìm nghiệm chia đoạn (S khác ∫f) → hàm mũ, căn, 1/x
+   → hàm từng khúc → tìm ngược cận, tham số → tỉ số hai phần. Chưa sang hai đồ thị (12-13.2). */
+const e1Par = R=>{ const u = R.int(1, 2), w = R.int(1, 2), c = R.int(-1, 2), e = R.pick([1, -1]), a = c - u, b = c + w, r = c + w + 1, co = [e, -e*(c + r), e*c*r]; return {u, w, c, e, a, b, r, co, f:gF(co), pl:gPl(co)}; };
+const e1Pw = R=>{ const k = R.int(1, 3), m = R.int(1, 2), w = R.int(1, 3), top = k*m*m, L = m + w, s = qr(top, w); const g = x=> top*(L - x)/w, f = x=> x <= m ? k*x*x : g(x), line = `${top}/${w}*(${L}-x)`; return {k, m, w, top, L, s, f, g, line, A:qr(k*m*m*m, 3), B:qr(top*w, 2), S:qa(qr(k*m*m*m, 3), qr(top*w, 2)), Sy:`\\begin{cases} ${tpS(k)}x^{2} & \\text{khi } 0 \\le x \\le ${m} \\\\ ${gDx(top, w, L)} & \\text{khi } ${m} < x \\le ${L} \\end{cases}`, hv:{loai:'dothi', hamSo:`${k}*x^2+0*sqrt(${m + 0.002}-x)+0*sqrt(x+0.002)`, luoi:true, ghiCucTri:false, khung:{xmin:-1.2, xmax:L + 1.2, ymin:-0.8, ymax:top + 1.2}, cong:[{hamSo:`${line}+0*sqrt(x-${m - 0.002})+0*sqrt(${L + 0.002}-x)`}], to:[{a:0, b:m, tren:`${k}*x^2`, duoi:'0'}, {a:m, b:L, tren:line, duoi:'0'}]}}; };
+
+G(12,3,2,'TH','Hình tô có f đổi dấu tại c: chọn công thức diện tích (bẫy: lấy ∫ₐᵇ f)', R=>{
+  const P = e1Par(R), {a, b, c, e, f} = P, A = tpI('f(x)', a, c), B = tpI('f(x)', c, b), S = tpI('f(x)', a, b), ok = e > 0 ? 1 : 2, tx = [``, `${A} - ${B}`, `-${A} + ${B}`, `${A} + ${B}`, `${S}`], Wr = [1, 2, 3, 4].filter(i=> i !== ok);
+  const ans = {t:`$${tx[ok]}$`, v:ok}, wrong = R.shuffle(Wr).map(i=> ({t:`$${tx[i]}$`, v:i})).slice(0, 3);
+  const o = {stem:`Hình bên là đồ thị của hàm số $y = f(x)$. Diện tích $S$ của hình phẳng tô màu, giới hạn bởi đồ thị, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$, được tính theo công thức nào sau đây?`, ans, wrong, hv:gHv(P.pl, f, [[a, c], [c, b]]), lg:`$S = ${tpI('|f(x)|', a, b)}$.<br>Trên $[${a}; ${c}]$ có $f(x) ${e > 0 ? '\\ge' : '\\le'} 0$, trên $[${c}; ${b}]$ có $f(x) ${e > 0 ? '\\le' : '\\ge'} 0$.<br>Vậy $S = ${tx[ok]}$.`, verify:()=> o.ans.v === (f((a + c)/2) > 0 ? 1 : 2)};
+  return o;
+});
+
+G(12,3,2,'TH','y = px² + q dương trên đoạn: diện tích bằng tích phân', R=>{
+  const p = R.int(1, 3), q = R.int(1, 6), a = R.int(-2, 1), b = a + R.int(1, 3), co = [p, 0, q], v = tpQ(co, a, b), f = gF(co);
+  return tpT(R, `${sSt(tpP(co), a, b)} bằng`, v, [qs(v, 2*q), f(b) - f(a), qm(2, v), tpQ(co, 0, b)], t=> `Hàm số dương trên $[${a}; ${b}]$ nên $S = ${tpI(`\\left(${tpP(co)}\\right)`, a, b)} = ${t}$.`, ()=> nAb(f, [a, b]), gHv(gPl(co), f, [[a, b]]));
+});
+
+G(12,3,2,'TH','Parabol y = kx(m − x) và trục hoành: tìm hai giao điểm rồi tính', R=>{
+  const k = R.int(1, 4), m = R.int(2, 6), co = [-k, k*m, 0], v = tpQ(co, 0, m), f = gF(co);
+  return tpT(R, `${sPa(tpP(co))} bằng`, v, [qm(2, v), qm(-1, v), qr(k*m*m, 2), qr(k*m*m*m, 3)], t=> `Giao với trục hoành: $x = 0$, $x = ${m}$. Trên đoạn đó hàm số không âm.<br>$S = ${tpI(`\\left(${tpP(co)}\\right)`, 0, m)} = ${t}$.`, ()=> nAb(f, [0, m]), gHv(gPl(co), f, [[0, m]]));
+});
+
+G(12,3,2,'TH','Parabol y = k(x² − m²) nằm dưới trục hoành: S = −∫f (bẫy: kết quả âm)', R=>{
+  const k = R.int(1, 4), m = R.int(1, 4), co = [k, 0, -k*m*m], I = tpQ(co, -m, m), v = qm(-1, I), f = gF(co);
+  return tpT(R, `${sPa(tpP(co))} bằng`, v, [I, qm(2, v), qr(k*m*m*m, 3), qm(k, 2*m*m)], t=> `Giao với trục hoành: $x = ${-m}$, $x = ${m}$. Trên đoạn đó hàm số không dương.<br>$S = -${tpI(`\\left(${tpP(co)}\\right)`, -m, m)} = ${t}$.`, ()=> nAb(f, [-m, m]), gHv(gPl(co), f, [[-m, m]]));
+});
+
+G(12,3,2,'VD','y = k(x³ − a²x) trên [−a; a]: ∫ = 0 nhưng S ≠ 0, chia đoạn tại 0', R=>{
+  const k = R.int(1, 4), a = R.int(1, 3), co = [k, 0, -k*a*a, 0], v = sAb(co, [-a, 0, a]), f = gF(co);
+  return tpT(R, `${sPa(tpP(co))} bằng`, v, [0, qr(v[0], 2*v[1]), qm(2, v), qr(k*a*a*a*a, 3)], t=> `Giao với trục hoành: $x = ${-a}$, $x = 0$, $x = ${a}$.<br>Hai phần đối xứng qua $O$, mỗi phần có diện tích $${qT(qAb(tpQ(co, 0, a)))}$.<br>Vậy $S = ${t}$.`, ()=> nAb(f, [-a, 0, a]), gHv(gPl(co), f, [[-a, 0], [0, a]]));
+});
+
+G(12,3,2,'VD','Bậc ba có ba nghiệm 0, p, q: diện tích hai phần', R=>{
+  const k = R.int(1, 3), p = R.int(1, 3), q = p + R.int(1, 2), co = [k, -k*(p + q), k*p*q, 0], v = sAb(co, [0, p, q]), I = tpQ(co, 0, q), f = gF(co), top = Math.max(...[...Array(41).keys()].map(i=> Math.abs(f(q*i/40))));
+  return tpT(R, `${sPa(tpP(co))} bằng`, v, [I, qAb(tpQ(co, 0, p)), qAb(tpQ(co, p, q)), qm(2, v)], t=> `Giao với trục hoành: $x = 0$, $x = ${p}$, $x = ${q}$.<br>Hai phần có diện tích $${qT(qAb(tpQ(co, 0, p)))}$ và $${qT(qAb(tpQ(co, p, q)))}$.<br>Vậy $S = ${t}$.`, ()=> nAb(f, [0, p, q]), top <= 12 ? gHv(gPl(co), f, [[0, p], [p, q]]) : undefined);
+});
+
+G(12,3,2,'TH','y = k sin x hoặc k cos x: chia đoạn tại điểm đổi dấu', R=>{
+  const k = R.int(1, 15), w = R.pick([0, 1]), f = x=> k*(w ? Math.sin(x) : Math.cos(x)), v = w ? 4*k : 2*k, y = `${tpS(k)}${w ? '\\sin x' : '\\cos x'}`, b = w ? '2\\pi' : '\\pi', P = Math.PI;
+  return tpT(R, `${sSt(y, 0, b)} bằng`, v, [0, w ? 2*k : k, w ? 8*k : 4*k, v + 1], t=> w ? `Chia đoạn tại $x = \\pi$: mỗi đoạn cho diện tích $${2*k}$. Vậy $S = ${t}$.` : `Chia đoạn tại $x = \\dfrac{\\pi}{2}$: mỗi đoạn cho diện tích $${k}$. Vậy $S = ${t}$.`, ()=> w ? nAb(f, [0, P, 2*P]) : nAb(f, [0, P/2, P]));
+});
+
+G(12,3,2,'VD','y = eˣ − a trên [0; 2 ln a]: đổi dấu tại ln a, S = (a − 1)²', R=>{
+  const a = R.int(2, 8), k = R.int(1, 3), f = x=> k*(Math.exp(x) - a), La = Math.log(a), v = k*(a - 1)**2, y = k === 1 ? `e^{x} - ${a}` : `${k}e^{x} - ${k*a}`;
+  return tpT(R, `${sSt(y, 0, `2\\ln ${a}`)} bằng`, v, [k*(a*a - 1), k*(a*a - 1 - 2*a), k*(a - 1), k*a*a], t=> `Đổi dấu tại $x = \\ln ${a}$.<br>Trên $[0; \\ln ${a}]$ hàm số âm, trên $[\\ln ${a}; 2\\ln ${a}]$ hàm số dương.<br>Tính hai phần rồi cộng, số hạng chứa $\\ln ${a}$ triệt tiêu: $S = ${k === 1 ? '' : k}(${a} - 1)^{2} = ${t}$.`, ()=> nAb(f, [0, La, 2*La]));
+});
+
+G(12,3,2,'TH','y = k/x trên [a; b]: S = k ln(b/a)', R=>{
+  const k = R.int(1, 6), a = R.int(1, 3), m = R.int(2, 5), b = a*m, A = `${tpS(k)}\\ln ${m}`, V = k*Math.log(m), f = x=> k/x, y = k === 1 ? '\\dfrac{1}{x}' : `\\dfrac{${k}}{x}`;
+  return gT(R, `${sSt(y, a, b)} bằng`, A, V, [[`${tpS(k)}\\ln ${b + a}`, k*Math.log(b + a)], [`${tpS(k)}\\ln ${b - a + 1}`, k*Math.log(b - a + 1)], [`${qT(qs(qr(k, a), qr(k, b)))}`, k/a - k/b], [`${tpS(2*k)}\\ln ${m}`, 2*k*Math.log(m)], [`${tpS(k + 1)}\\ln ${m}`, (k + 1)*Math.log(m)]], t=> `Hàm số dương trên $[${a}; ${b}]$ nên $S = ${tpS(k)}\\left(\\ln ${b} - \\ln ${a}\\right) = ${t}$.`, ()=> nAb(f, [a, b]));
+});
+
+G(12,3,2,'TH','y = k/x² trên [1; b]', R=>{
+  const k = R.int(1, 12), b = R.int(2, 8), v = qr(k*(b - 1), b), f = x=> k/(x*x), y = k === 1 ? '\\dfrac{1}{x^{2}}' : `\\dfrac{${k}}{x^{2}}`;
+  return tpT(R, `${sSt(y, 1, b)} bằng`, v, [qr(k, b), qa(k, qr(k, b)), k*(b - 1), qr(k*(b*b - 1), b*b)], t=> `Hàm số dương, một nguyên hàm là $-${k === 1 ? '\\dfrac{1}{x}' : `\\dfrac{${k}}{x}`}$.<br>$S = ${qT(qr(-k, b))} + ${k} = ${t}$.`, ()=> nAb(f, [1, b]));
+});
+
+G(12,3,2,'TH','y = k√x trên [0; b²]', R=>{
+  const k = R.int(1, 6), b = R.int(1, 3), c = b*b, v = qr(2*k*b**3, 3), f = x=> k*Math.sqrt(x), pl = `${k}*sqrt(x)`;
+  return tpT(R, `${sSt(`${tpS(k)}\\sqrt{x}`, 0, c)} bằng`, v, [qr(k*b**3, 3), qr(k*b**3, 2), k*b**3, qr(4*k*b**3, 3)], t=> `$\\sqrt{x} = x^{\\frac{1}{2}}$ nên một nguyên hàm của hàm số là $${qT(qr(2*k, 3))}x^{\\frac{3}{2}}$.<br>$S = ${t}$.`, ()=> nSq(f, c), gHv(pl, f, [[0, c]]));
+});
+
+G(12,3,2,'VD','Tìm m > 0: diện tích dưới y = 2x + c trên [0; m] bằng S (giải phương trình bậc hai)', R=>{
+  const m = R.int(2, 15), c = R.int(1, 5), S = m*m + c*m, co = [2, c], f = gF(co);
+  return tpT(R, `Cho $m > 0$. Biết diện tích hình phẳng giới hạn bởi đường thẳng $y = ${tpP(co)}$, trục hoành và hai đường thẳng $x = 0$, $x = m$ bằng $${S}$. Giá trị của $m$ bằng`, m, [m + c, m + 1, m - 1, qr(S, c + 2)], t=> `$S = ${tpI(`(${tpP(co)})`, 0, 'm')} = m^{2} + ${c === 1 ? '' : c}m$.<br>Giải $m^{2} + ${c === 1 ? '' : c}m = ${S}$ với $m > 0$ được $m = ${t}$.`, ()=> (-c + Math.sqrt(c*c + 4*S))/2);
+});
+
+G(12,3,2,'VD','Tìm hệ số a > 0: y = ax(m − x) tạo với trục hoành hình có diện tích S', R=>{
+  const m = R.pick([2, 3, 4, 6]), a = R.int(1, 16), S = qr(a*m**3, 6);
+  return tpT(R, `Cho $a > 0$. Biết diện tích hình phẳng giới hạn bởi parabol $y = ax(${m} - x)$ và trục hoành bằng $${qT(S)}$. Giá trị của $a$ bằng`, a, [qm(a, 2), qr(a, 2), a + 1, qm(S, qr(1, m))], t=> `$S = ${tpI(`ax(${m} - x)`, 0, m)} = a\\cdot ${qT(qr(m**3, 6))}$.<br>Từ $a\\cdot ${qT(qr(m**3, 6))} = ${qT(S)}$ được $a = ${t}$.`, ()=> qv(S)/ngSi(x=> x*(m - x), 0, m));
+});
+
+G(12,3,2,'VD','Đường thẳng x = c chia hình dưới y = 3kx²: tỉ số diện tích hai phần', R=>{
+  const k = R.int(1, 3), c = R.int(1, 5), b = c + R.int(1, 4), co = [3*k, 0, 0], f = gF(co), A = k*c**3, B = k*(b**3 - c**3), v = qr(A, B);
+  return tpT(R, `Hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$, trục hoành và hai đường thẳng $x = 0$, $x = ${b}$ bị đường thẳng $x = ${c}$ chia thành hai phần: phần bên trái có diện tích $S_{1}$, phần bên phải có diện tích $S_{2}$. Tỉ số $\\dfrac{S_{1}}{S_{2}}$ bằng`, v, [qr(c, b - c), qr(c*c, (b - c)**2), qr(c**3, b**3), qr(c, b)], t=> `$S_{1} = ${tpI(tpP(co), 0, c)} = ${A}$, $S_{2} = ${tpI(tpP(co), c, b)} = ${B}$.<br>Tỉ số bằng $${t}$.`, ()=> nAb(f, [0, c])/nAb(f, [c, b]), gHv(gPl(co), f, [[0, c, 'S_1'], [c, b, 'S_2']]));
+});
+
+G(12,3,2,'VD','Hàm hai công thức liên tục: diện tích dưới parabol rồi đoạn thẳng', R=>{
+  const E = e1Pw(R), {k, m, L, top, f, A, B, S, Sy} = E;
+  return tpT(R, `Cho hàm số $f(x) = ${Sy}$. Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = f(x)$ và trục hoành bằng`, S, [qr(top*L, 2), qa(A, qm(2, B)), A, B], t=> `Chia tại $x = ${m}$: phần dưới parabol có diện tích $${qT(A)}$, phần còn lại là tam giác có diện tích $${qT(B)}$.<br>Tổng bằng $${t}$.`, ()=> ngSi(f, 0, m) + ngSi(E.g, m, L), E.hv);
+});
+
+G(12,3,2,'VD','Biết hai tích phân trái dấu trên đồ thị: S = cộng trị tuyệt đối (bẫy: cộng đại số)', R=>{
+  const u = R.int(1, 3), v0 = R.int(1, 3), e = R.pick([1, -1])*R.int(1, 3), co = [e, e*(u - v0), -e*u*v0], f = gF(co), a = -u, m = v0, b = v0 + 1, A = tpQ(co, a, m), B = tpQ(co, m, b), S = qa(qAb(A), qAb(B));
+  return tpT(R, `Hình bên là đồ thị của hàm số $y = f(x)$. Biết $${tpI('f(x)', a, m)} = ${qT(A)}$ và $${tpI('f(x)', m, b)} = ${qT(B)}$. Diện tích hình phẳng tô màu bằng`, S, [qa(A, B), qs(A, B), qm(-1, S), qm(-1, qa(A, B))], t=> `Đồ thị nằm hai phía trục hoành, hai tích phân trái dấu.<br>Diện tích bằng tổng các trị tuyệt đối: $${qT(qAb(A))} + ${qT(qAb(B))} = ${t}$.`, ()=> nAb(f, [a, m, b]), gHv(gPl(co), f, [[a, m], [m, b]]));
+});
+
+G(12,3,2,'TH','y = k·2ˣ trên [0; n]: S = k(2ⁿ − 1)/ln 2', R=>{
+  const k = R.int(1, 6), n = R.int(1, 4), N = k*(2**n - 1), A = `\\dfrac{${N}}{\\ln 2}`, V = N/Math.LN2, f = x=> k*2**x;
+  return gT(R, `${sSt(`${tpS(k)}\\cdot 2^{x}`.replace(/^\\cdot /, ''), 0, n)} bằng`, A, V, [[`${N}`, N], [`${k*2**n}`, k*2**n], [`\\dfrac{${k*2**n}}{\\ln 2}`, k*2**n/Math.LN2], [`${N}\\ln 2`, N*Math.LN2], [`\\dfrac{${N + k}}{\\ln 2}`, (N + k)/Math.LN2]], t=> `Hàm số dương, một nguyên hàm là $\\dfrac{${k === 1 ? '' : k + '\\cdot '}2^{x}}{\\ln 2}$.<br>$S = ${t}$.`, ()=> nAb(f, [0, n]));
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,2,'TH','Parabol y = x² − mx: dấu, tích phân, diện tích', R=>{
+  const m = R.int(2, 6), k = R.int(1, 3), co = [k, -k*m, 0], f = gF(co), I = tpQ(co, 0, m), S = qAb(I);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$ và trục hoành.`, hv:gHv(gPl(co), f, [[0, m]]),
+    items:[claim(R, `Hàm số nhận giá trị không dương trên đoạn $[0; ${m}]$`, `Hàm số nhận giá trị không âm trên đoạn $[0; ${m}]$`, ()=> f(m/2) < 0, ()=> f(m/2) > 0),
+      gE(R, `${tpI(`\\left(${tpP(co)}\\right)`, 0, m)}`, I, S, ()=> ngSi(f, 0, m)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, I, ()=> nAb(f, [0, m])),
+      claim(R, `Diện tích của $(H)$ bằng số đối của tích phân của hàm số trên đoạn $[0; ${m}]$`, `Diện tích của $(H)$ bằng tích phân của hàm số trên đoạn $[0; ${m}]$`, ()=> near(nAb(f, [0, m]), -ngSi(f, 0, m), 1e-9), ()=> near(nAb(f, [0, m]), ngSi(f, 0, m), 1e-9))],
+    lg:`a) $${tpP(co)} = ${k === 1 ? '' : k}x(x - ${m})$ không dương giữa hai nghiệm.<br>b) Tính được $${qT(I)}$.<br>c), d) $S = ${tpI(`\\left|${tpP(co)}\\right|`, 0, m)} = ${qT(S)}$.`};
+});
+
+GD(12,3,2,'VD','y = x³ − a²x: đối xứng qua O, ∫ cả đoạn bằng 0, diện tích khác 0', R=>{
+  const a = R.int(1, 3), k = R.int(1, 3), co = [k, 0, -k*a*a, 0], f = gF(co), H = tpQ(co, 0, a), S = sAb(co, [-a, 0, a]);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$ và trục hoành.`, hv:gHv(gPl(co), f, [[-a, 0], [0, a]]),
+    items:[claim(R, `Đồ thị cắt trục hoành tại ba điểm có hoành độ $${-a}$, $0$, $${a}$`, `Đồ thị cắt trục hoành tại đúng hai điểm có hoành độ $${-a}$, $${a}$`, ()=> near(f(0), 0, 1e-12) && near(f(a), 0, 1e-9), ()=> !near(f(0), 0, 1e-12)),
+      gE(R, `${tpI(`\\left(${tpP(co)}\\right)`, 0, a)}`, H, qm(-1, H), ()=> ngSi(f, 0, a)),
+      gE(R, `${tpI(`\\left(${tpP(co)}\\right)`, -a, a)}`, 0, S, ()=> ngRd(ngSi(f, -a, a))),
+      gC(R, `Diện tích của $(H)$ bằng `, S, 0, ()=> nAb(f, [-a, 0, a]))],
+    lg:`a) Giải $${k === 1 ? '' : k}x(x^{2} - ${a*a}) = 0$.<br>b) Tính được $${qT(H)}$.<br>c) Hàm số lẻ nên tích phân trên đoạn đối xứng bằng $0$.<br>d) Hai phần bằng nhau, mỗi phần có diện tích $${qT(qAb(H))}$, tổng bằng $${qT(S)}$.`};
+});
+
+GD(12,3,2,'VD','y = eˣ − a trên [0; 2 ln a]: nghiệm, diện tích từng phần, tổng', R=>{
+  const a = R.int(2, 6), f = x=> Math.exp(x) - a, La = Math.log(a), S = (a - 1)**2, A = a*La - a + 1, B = a*a - a - a*La;
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = e^{x} - ${a}$, trục hoành và hai đường thẳng $x = 0$, $x = 2\\ln ${a}$.`,
+    items:[claim(R, `Đồ thị cắt trục hoành tại điểm có hoành độ $x = \\ln ${a}$`, `Đồ thị cắt trục hoành tại điểm có hoành độ $x = ${a}$`, ()=> near(f(La), 0, 1e-9), ()=> near(f(a), 0, 1e-9)),
+      claim(R, `Phần của $(H)$ trên đoạn $[0; \\ln ${a}]$ có diện tích $${a}\\ln ${a} - ${a - 1}$`, `Phần của $(H)$ trên đoạn $[0; \\ln ${a}]$ có diện tích $${a}\\ln ${a} + ${a - 1}$`, ()=> near(nAb(f, [0, La]), A, 1e-7), ()=> near(nAb(f, [0, La]), a*La + a - 1, 1e-7)),
+      claim(R, `Phần của $(H)$ trên đoạn $[\\ln ${a}; 2\\ln ${a}]$ có diện tích $${a*a - a} - ${a}\\ln ${a}$`, `Phần của $(H)$ trên đoạn $[\\ln ${a}; 2\\ln ${a}]$ có diện tích $${a*a - a} + ${a}\\ln ${a}$`, ()=> near(nAb(f, [La, 2*La]), B, 1e-7), ()=> near(nAb(f, [La, 2*La]), a*a - a + a*La, 1e-7)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, a*a - 1, ()=> nAb(f, [0, La, 2*La]))],
+    lg:`a) Giải $e^{x} = ${a}$.<br>b) $${tpI(`(${a} - e^{x})`, 0, `\\ln ${a}`)} = ${a}\\ln ${a} - ${a} + 1$.<br>c) $${tpI(`(e^{x} - ${a})`, `\\ln ${a}`, `2\\ln ${a}`)} = ${a*a} - ${a} - ${a}\\ln ${a}$.<br>d) Cộng hai phần được $${S}$.`};
+});
+
+GD(12,3,2,'TH','y = k sin x trên [0; 2π]: mỗi cung, tổng, so với tích phân', R=>{
+  const k = R.int(1, 9), f = x=> k*Math.sin(x), P = Math.PI, K = tpS(k);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${K}\\sin x$, trục hoành và hai đường thẳng $x = 0$, $x = 2\\pi$.`,
+    items:[gC(R, `Phần của $(H)$ trên đoạn $[0; \\pi]$ có diện tích `, 2*k, k, ()=> nAb(f, [0, P])),
+      gC(R, `Phần của $(H)$ trên đoạn $[\\pi; 2\\pi]$ có diện tích `, 2*k, -2*k, ()=> nAb(f, [P, 2*P])),
+      gC(R, `Diện tích của $(H)$ bằng `, 4*k, 0, ()=> nAb(f, [0, P, 2*P])),
+      gE(R, `${tpI(`${K}\\sin x`, 0, '2\\pi')}`, 0, 4*k, ()=> ngRd(ngSi(f, 0, 2*P)))],
+    lg:`a) $${tpI(`${K}\\sin x`, 0, '\\pi')} = ${2*k}$.<br>b) Trên $[\\pi; 2\\pi]$ hàm số âm, diện tích bằng $-${tpI(`${K}\\sin x`, '\\pi', '2\\pi')} = ${2*k}$.<br>c) Cộng hai phần được $${4*k}$.<br>d) Hai tích phân trái dấu nên tổng bằng $0$.`};
+});
+
+GD(12,3,2,'VD','Parabol (x + u)(x − v) trên [−u; v + 1]: hai phần hai phía trục hoành', R=>{
+  const u = R.int(1, 3), v = R.int(1, 3), co = [1, u - v, -u*v], f = gF(co), a = -u, b = v + 1, A = qAb(tpQ(co, a, v)), B = qAb(tpQ(co, v, b)), S = qa(A, B), I = tpQ(co, a, b);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$. Miền $A$ là phần của $(H)$ trên đoạn $[${a}; ${v}]$, miền $B$ là phần của $(H)$ trên đoạn $[${v}; ${b}]$.`, hv:gHv(gPl(co), f, [[a, v, 'A', (a + v)/2 >= 0 ? Math.max((a + v)/2, 0.5) : Math.min((a + v)/2, -0.9)], [v, b, 'B']]),
+    items:[claim(R, `Hàm số đổi dấu tại $x = ${v}$ trên đoạn $[${a}; ${b}]$`, `Hàm số không đổi dấu trên đoạn $[${a}; ${b}]$`, ()=> f(v - 0.5)*f(v + 0.5) < 0, ()=> f(v - 0.5)*f(v + 0.5) > 0),
+      gC(R, `Miền $A$ có diện tích `, A, qm(-1, A), ()=> nAb(f, [a, v])),
+      gC(R, `Miền $B$ có diện tích `, B, qm(2, B), ()=> nAb(f, [v, b])),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qAb(I), ()=> nAb(f, [a, v, b]))],
+    lg:`a) Nghiệm của hàm số là $${a}$ và $${v}$.<br>b) $A$ nằm dưới trục hoành: $S_{A} = -${tpI(`\\left(${tpP(co)}\\right)`, a, v)} = ${qT(A)}$.<br>c) $S_{B} = ${tpI(`\\left(${tpP(co)}\\right)`, v, b)} = ${qT(B)}$.<br>d) Cộng hai phần được $${qT(S)}$.`};
+});
+
+GD(12,3,2,'VD','Đường thẳng x = c chia hình dưới y = 3x²: hai phần, tìm c để bằng nhau', R=>{
+  const k = R.int(1, 3), c = R.int(1, 3), b = c + R.int(1, 2), co = [3*k, 0, 0], f = gF(co), A = k*c**3, B = k*(b**3 - c**3), T = k*b**3;
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$, trục hoành và hai đường thẳng $x = 0$, $x = ${b}$. Đường thẳng $x = ${c}$ chia $(H)$ thành phần trái $(H_{1})$ và phần phải $(H_{2})$.`, hv:gHv(gPl(co), f, [[0, c, 'H_1'], [c, b, 'H_2']]),
+    items:[gC(R, `Diện tích của $(H)$ bằng `, T, 3*T, ()=> nAb(f, [0, b])),
+      gC(R, `Diện tích của $(H_{1})$ bằng `, A, 3*A, ()=> nAb(f, [0, c])),
+      gC(R, `Diện tích của $(H_{2})$ bằng `, B, T, ()=> nAb(f, [c, b])),
+      claim(R, `$(H_{2})$ có diện tích lớn hơn $(H_{1})$`, `$(H_{2})$ có diện tích không lớn hơn $(H_{1})$`, ()=> B > A, ()=> B <= A)],
+    lg:`a) $${tpI(tpP(co), 0, b)} = ${T}$.<br>b) $${tpI(tpP(co), 0, c)} = ${A}$.<br>c) Hiệu hai kết quả bằng $${B}$.<br>d) So sánh $${B}$ với $${A}$.`};
+});
+
+GD(12,3,2,'VD','Hàm hai công thức: liên tục, diện tích từng phần, tổng', R=>{
+  const E = e1Pw(R), {k, m, L, top, f, A, B, S, Sy} = E;
+  return {stem:`Cho hàm số $f(x) = ${Sy}$. Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = f(x)$ và trục hoành.`, hv:E.hv,
+    items:[claim(R, `Hàm số $f(x)$ liên tục tại $x = ${m}$`, `Hàm số $f(x)$ gián đoạn tại $x = ${m}$`, ()=> near(k*m*m, top*(L - m)/(L - m), 1e-9), ()=> !near(k*m*m, top*(L - m)/(L - m), 1e-9)),
+      gC(R, `Phần của $(H)$ trên đoạn $[0; ${m}]$ có diện tích `, A, qm(3, A), ()=> ngSi(f, 0, m)),
+      gC(R, `Phần của $(H)$ trên đoạn $[${m}; ${L}]$ có diện tích `, B, qm(2, B), ()=> ngSi(E.g, m, L)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qr(top*L, 2), ()=> ngSi(f, 0, m) + ngSi(E.g, m, L))],
+    lg:`a) Tại $x = ${m}$ hai công thức cùng cho giá trị $${top}$.<br>b) $${tpI(`${tpS(k)}x^{2}`, 0, m)} = ${qT(A)}$.<br>c) Tam giác đáy $${L - m}$, cao $${top}$: diện tích $${qT(B)}$.<br>d) Cộng hai phần được $${qT(S)}$.`};
+});
+
+GD(12,3,2,'TH','y = k/x trên [a; b]: dấu, diện tích, tăng đoạn thêm', R=>{
+  const k = R.int(1, 6), m = R.int(2, 4), a = 1, b = m, c = m*m, f = x=> k/x, K = tpS(k), y = k === 1 ? '\\dfrac{1}{x}' : `\\dfrac{${k}}{x}`;
+  return {stem:`Xét hàm số $y = ${y}$ với $x > 0$. Gọi $S_{1}$ là diện tích hình phẳng giới hạn bởi đồ thị, trục hoành và hai đường thẳng $x = 1$, $x = ${m}$; $S_{2}$ là diện tích hình phẳng giới hạn bởi đồ thị, trục hoành và hai đường thẳng $x = ${m}$, $x = ${c}$.`,
+    items:[claim(R, `$S_{1} = ${K}\\ln ${m}$`, `$S_{1} = ${K}\\ln ${m + 1}$`, ()=> near(nAb(f, [1, m]), k*Math.log(m), 1e-8), ()=> near(nAb(f, [1, m]), k*Math.log(m + 1), 1e-8)),
+      claim(R, `$S_{2} = ${K}\\ln ${m}$`, `$S_{2} = ${K}\\ln ${c}$`, ()=> near(nAb(f, [m, c]), k*Math.log(m), 1e-8), ()=> near(nAb(f, [m, c]), k*Math.log(c), 1e-8)),
+      claim(R, `$S_{1} = S_{2}$`, `$S_{2} = 2S_{1}$`, ()=> near(nAb(f, [1, m]), nAb(f, [m, c]), 1e-7), ()=> near(nAb(f, [m, c]), 2*nAb(f, [1, m]), 1e-7)),
+      claim(R, `Tổng $S_{1} + S_{2} = ${tpS(2*k)}\\ln ${m}$`, `Tổng $S_{1} + S_{2} = ${K}\\ln ${m}$`, ()=> near(nAb(f, [1, m, c]), 2*k*Math.log(m), 1e-7), ()=> near(nAb(f, [1, m, c]), k*Math.log(m), 1e-7))],
+    lg:`a) $${K}(\\ln ${m} - \\ln 1) = ${K}\\ln ${m}$.<br>b) $${K}(\\ln ${c} - \\ln ${m}) = ${K}\\ln ${m}$ vì $\\ln ${c} = 2\\ln ${m}$.<br>c) Hai kết quả bằng nhau.<br>d) Tổng bằng $${tpS(2*k)}\\ln ${m}$.`};
+});
+
+GD(12,3,2,'TH','y = k√x: nguyên hàm, diện tích, so với hình chữ nhật bao ngoài', R=>{
+  const k = R.int(1, 4), b = R.int(1, 3), c = b*b, S = qr(2*k*b**3, 3), Rc = k*b**3, f = x=> k*Math.sqrt(x);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{x}$, trục hoành và đường thẳng $x = ${c}$.`, hv:gHv(`${k}*sqrt(x)`, f, [[0, c]]),
+    items:[claim(R, `Hàm số $F(x) = ${qT(qr(2*k, 3))}x\\sqrt{x}$ là một nguyên hàm của $y = ${tpS(k)}\\sqrt{x}$`, `Hàm số $F(x) = ${qT(qr(k, 2))}x\\sqrt{x}$ là một nguyên hàm của $y = ${tpS(k)}\\sqrt{x}$`, ()=> near((2*k/3)*1.5, k, 1e-9), ()=> near((k/2)*1.5, k, 1e-9)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qr(k*b**3, 3), ()=> nSq(f, c)),
+      gC(R, `Hình chữ nhật có một cạnh là đoạn $[0; ${c}]$ trên trục hoành, cạnh còn lại bằng tung độ của đồ thị tại $x = ${c}$, có diện tích `, Rc, 2*Rc, ()=> c*f(c)),
+      claim(R, `Diện tích của $(H)$ bằng $\\dfrac{2}{3}$ diện tích hình chữ nhật đó`, `Diện tích của $(H)$ bằng $\\dfrac{1}{2}$ diện tích hình chữ nhật đó`, ()=> near(nSq(f, c), 2*Rc/3, 1e-7), ()=> near(nSq(f, c), Rc/2, 1e-7))],
+    lg:`a) $(x\\sqrt{x})' = \\dfrac{3}{2}\\sqrt{x}$.<br>b) $S = F(${c}) - F(0) = ${qT(S)}$.<br>c) Hai cạnh là $${c}$ và $${k*b}$.<br>d) Tỉ số hai diện tích bằng $\\dfrac{2}{3}$.`};
+});
+
+GD(12,3,2,'VD','Tìm m: diện tích dưới y = 2x + c trên [0; m] bằng S', R=>{
+  const m = R.int(2, 9), c = R.int(1, 5), S = m*m + c*m, co = [2, c], f = gF(co);
+  return {stem:`Cho $m > 0$ thoả mãn diện tích hình phẳng giới hạn bởi đường thẳng $y = ${tpP(co)}$, trục hoành và hai đường thẳng $x = 0$, $x = m$ bằng $${S}$.`,
+    items:[claim(R, `Hình phẳng đó là một hình thang vuông`, `Hình phẳng đó là một hình chữ nhật`, ()=> f(0) !== f(m), ()=> f(0) === f(m)),
+      claim(R, `Diện tích hình phẳng đó bằng $m^{2} + ${c === 1 ? '' : c}m$ theo $m$`, `Diện tích hình phẳng đó bằng $2m^{2} + ${c === 1 ? '' : c}m$ theo $m$`, ()=> near(nAb(f, [0, 3]), 9 + 3*c, 1e-9), ()=> near(nAb(f, [0, 3]), 18 + 3*c, 1e-9)),
+      gC(R, `Giá trị của $m$ bằng `, m, m + 1, ()=> (-c + Math.sqrt(c*c + 4*S))/2),
+      gC(R, `Đáy lớn của hình thang có độ dài `, 2*m + c, m + c, ()=> f(m))],
+    lg:`a) Đường thẳng không nằm ngang, hai đáy là $${c}$ và $2m + ${c}$.<br>b) $${tpI(`(${tpP(co)})`, 0, 'm')} = m^{2} + ${c === 1 ? '' : c}m$.<br>c) Giải phương trình bậc hai với $m > 0$ được $m = ${m}$.<br>d) $f(${m}) = ${2*m + c}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,2,'TH','y = 3px² + q trên đoạn', R=>{
+  const p = R.int(1, 3), q = R.int(1, 8), a = R.int(-2, 1), b = a + R.int(1, 4), co = [3*p, 0, q], v = tpQ(co, a, b), f = gF(co);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$.`, v, t=> `Hàm số dương nên $S = ${tpI(`\\left(${tpP(co)}\\right)`, a, b)} = ${t}$.`, ()=> nAb(f, [a, b]), gHv(gPl(co), f, [[a, b]], {khung:{}}));
+});
+
+GT(12,3,2,'TH','Parabol y = kx(m − x) và trục hoành', R=>{
+  const k = 6*R.int(1, 3), m = R.int(2, 6), co = [-k, k*m, 0], v = tpQ(co, 0, m), f = gF(co);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$ và trục hoành.`, v, t=> `Giao với trục hoành: $x = 0$, $x = ${m}$.<br>$S = ${tpI(`\\left(${tpP(co)}\\right)`, 0, m)} = ${t}$.`, ()=> nAb(f, [0, m]));
+});
+
+GT(12,3,2,'TH','Parabol y = k(x² − m²) nằm dưới trục hoành', R=>{
+  const k = 3*R.int(1, 3), m = R.int(1, 5), co = [k, 0, -k*m*m], v = qAb(tpQ(co, -m, m)), f = gF(co);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$ và trục hoành.`, v, t=> `Trên $[${-m}; ${m}]$ hàm số không dương nên $S = -${tpI(`\\left(${tpP(co)}\\right)`, -m, m)} = ${t}$.`, ()=> nAb(f, [-m, m]));
+});
+
+GT(12,3,2,'VD','y = k(x³ − a²x): chia đoạn tại 0', R=>{
+  const k = R.int(1, 8), a = R.int(1, 4), co = [k, 0, -k*a*a, 0], v = sAb(co, [-a, 0, a]), f = gF(co);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$ và trục hoành.`, v, t=> `Giao với trục hoành tại $x = ${-a}$, $0$, $${a}$. Hai phần đối xứng, mỗi phần có diện tích $${qT(qAb(tpQ(co, 0, a)))}$.<br>$S = ${t}$.`, ()=> nAb(f, [-a, 0, a]));
+});
+
+GT(12,3,2,'VD','Bậc ba nghiệm 0, p, q: diện tích', R=>{
+  const k = 12*R.int(1, 3), p = R.int(1, 3), q = p + R.int(1, 3), co = [k, -k*(p + q), k*p*q, 0], v = sAb(co, [0, p, q]), f = gF(co);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(co)}$ và trục hoành.`, v, t=> `Giao với trục hoành tại $x = 0$, $${p}$, $${q}$. Hai phần có diện tích $${qT(qAb(tpQ(co, 0, p)))}$ và $${qT(qAb(tpQ(co, p, q)))}$. Tổng bằng $${t}$.`, ()=> nAb(f, [0, p, q]));
+});
+
+GT(12,3,2,'TH','Tính diện tích với y = k sin x trên [0; 2π]', R=>{
+  const k = R.int(1, 40), f = x=> k*Math.sin(x), P = Math.PI;
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sin x$, trục hoành và hai đường thẳng $x = 0$, $x = 2\\pi$.`, 4*k, t=> `Chia đoạn tại $x = \\pi$, mỗi phần có diện tích $${2*k}$. Tổng bằng $${t}$.`, ()=> nAb(f, [0, P, 2*P]));
+});
+
+GT(12,3,2,'VD','Tính diện tích với y = eˣ − a trên [0; 2 ln a], đáp số gọn', R=>{
+  const a = R.int(2, 9), k = R.int(1, 4), f = x=> k*(Math.exp(x) - a), La = Math.log(a), v = k*(a - 1)**2, y = k === 1 ? `e^{x} - ${a}` : `${k}e^{x} - ${k*a}`;
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = 0$, $x = 2\\ln ${a}$.`, v, t=> `Đổi dấu tại $x = \\ln ${a}$. Cộng hai phần, số hạng chứa $\\ln ${a}$ triệt tiêu: $S = ${k === 1 ? '' : k}(${a} - 1)^{2} = ${t}$.`, ()=> nAb(f, [0, La, 2*La]));
+});
+
+GT(12,3,2,'TH','Tính diện tích dưới y = k/x² trên [1; b], đáp số gọn', R=>{
+  const b = R.pick([2, 4, 5, 10]), k = b*R.int(1, 9), v = k*(b - 1)/b, f = x=> k/(x*x);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = \\dfrac{${k}}{x^{2}}$, trục hoành và hai đường thẳng $x = 1$, $x = ${b}$.`, v, t=> `Hàm số dương, $S = ${k} - \\dfrac{${k}}{${b}} = ${t}$.`, ()=> nAb(f, [1, b]));
+});
+
+GT(12,3,2,'TH','Tính diện tích dưới y = k√x trên [0; b²], đáp số gọn', R=>{
+  const b = R.int(1, 4), k = 3*R.int(1, 3), v = 2*k*b**3/3, f = x=> k*Math.sqrt(x);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${k}\\sqrt{x}$, trục hoành và đường thẳng $x = ${b*b}$.`, v, t=> `Một nguyên hàm của hàm số là $${2*k/3}x\\sqrt{x}$.<br>$S = ${t}$.`.replace('$1x', '$x'), ()=> nSq(f, b*b));
+});
+
+GT(12,3,2,'VD','Tìm m > 0 từ diện tích dưới đường thẳng', R=>{
+  const m = R.int(2, 15), c = R.int(1, 6), S = m*m + c*m;
+  return tpN(`Cho $m > 0$. Biết diện tích hình phẳng giới hạn bởi đường thẳng $y = 2x + ${c}$, trục hoành và hai đường thẳng $x = 0$, $x = m$ bằng $${S}$. Tìm $m$.`, m, t=> `$m^{2} + ${c === 1 ? '' : c}m = ${S}$, với $m > 0$ được $m = ${t}$.`, ()=> (-c + Math.sqrt(c*c + 4*S))/2);
+});
+
+GT(12,3,2,'VD','Tìm a > 0 từ diện tích parabol y = ax(m − x)', R=>{
+  const m = R.pick([2, 3, 4, 6]), a = R.int(1, 16), S = qr(a*m**3, 6);
+  return tpN(`Cho $a > 0$. Biết diện tích hình phẳng giới hạn bởi parabol $y = ax(${m} - x)$ và trục hoành bằng $${qT(S)}$. Tìm $a$.`, a, t=> `$S = a\\cdot ${qT(qr(m**3, 6))}$, suy ra $a = ${t}$.`, ()=> qv(S)/ngSi(x=> x*(m - x), 0, m));
+});
+
+GT(12,3,2,'VD','Đường thẳng x = c chia hình dưới y = 3kx²: diện tích phần phải', R=>{
+  const k = R.int(1, 4), c = R.int(1, 3), b = c + R.int(1, 4), B = k*(b**3 - c**3), f = gF([3*k, 0, 0]);
+  return tpN(`Hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP([3*k, 0, 0])}$, trục hoành và hai đường thẳng $x = 0$, $x = ${b}$ bị đường thẳng $x = ${c}$ chia thành hai phần. Tính diện tích phần bên phải.`, B, t=> `Phần bên phải có diện tích $${tpI(tpP([3*k, 0, 0]), c, b)} = ${t}$.`, ()=> nAb(f, [c, b]));
+});
+
+GT(12,3,2,'VD','Hàm hai công thức: diện tích dưới parabol và tam giác', R=>{
+  const E = e1Pw(R), S = qm(6, E.S);
+  return tpN(`Cho hàm số $f(x) = ${E.Sy}$. Gọi $S$ là diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = f(x)$ và trục hoành. Tính $6S$.`, S, t=> `Hai phần có diện tích $${qT(E.A)}$ và $${qT(E.B)}$, nên $S = ${qT(E.S)}$.<br>Vậy $6S = ${t}$.`, ()=> 6*(ngSi(E.f, 0, E.m) + ngSi(E.g, E.m, E.L)), E.hv);
+});
+
+GT(12,3,2,'VD','Biết hai tích phân trái dấu trên đồ thị: tính diện tích', R=>{
+  const u = R.int(1, 3), v0 = R.int(1, 3), e = R.pick([1, -1])*R.int(1, 3), co = [e, e*(u - v0), -e*u*v0], f = gF(co), a = -u, m = v0, b = v0 + 1, A = tpQ(co, a, m), B = tpQ(co, m, b), S = qa(qAb(A), qAb(B)), T = qm(6, S);
+  return tpN(`Hình bên là đồ thị của hàm số $y = f(x)$. Biết $${tpI('f(x)', a, m)} = ${qT(A)}$ và $${tpI('f(x)', m, b)} = ${qT(B)}$. Gọi $S$ là diện tích hình phẳng tô màu. Tính $6S$.`, T, t=> `$S = ${qT(qAb(A))} + ${qT(qAb(B))} = ${qT(S)}$.<br>Vậy $6S = ${t}$.`, ()=> 6*nAb(f, [a, m, b]), gHv(gPl(co), f, [[a, m], [m, b]]));
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (Chương IV lớp 12: nguyên hàm, tích phân, mỗi chuyên đề đủ 20 TN, 10 Đ–S, 16 TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* ——— tiện ích tích phân ——— */
+const tpS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const tpP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v);
+const tpV = (co, x)=> co.reduce((s, c)=> s*x + qv(c), 0);
+const tpG = (co)=> co.map((c, i)=> { const p = co.length - 1 - i; return qd(c, p + 1); }).concat([0]);   /* hệ số nguyên hàm (không hằng số) */
+const tpQ = (co, a, b)=>{ const d = co.length - 1; let s = [0, 1]; co.forEach((k, i)=>{ const p = d - i; s = qa(s, qm(qd(k, p + 1), b**(p + 1) - a**(p + 1))); }); return s; };   /* tích phân đa thức từ a đến b, chính xác */
+const tpI = (s, a, b, v)=> `\\int_{${a}}^{${b}} ${s}\\,d${v || 'x'}`;
+const tpF = (co)=> co.map((c, i)=> [qd(c, co.length - i), ngX(co.length - i)]);   /* các hạng tử nguyên hàm của đa thức */
+const tpB = (s, a, b)=> `\\left.\\left(${s}\\right)\\right|_{${a}}^{${b}}`;
+const tpPa = q=>{ q = qq(q); return q[0] < 0 ? `\\left(${qT(q)}\\right)` : qT(q); };
+const tpT = (R, stem, q, ws, lg, chk, hv, unit)=>{ const ans = ngNum(q, unit), wrong = ngW(R, ans, ws.map(x=> ngNum(x, unit))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(qT(q)), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpN = (stem, v0, lg, chk, hv)=>{ v0 = qv(v0); const v = ngRou(v0, 1); if(!near(v, v0, 1e-9) || String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, ngRou(chk(), 1), 1e-9)}; if(hv) o.hv = hv; return o; };   /* đáp số làm tròn một chữ số */
+
+/* ———— Ứng dụng hình học (12-13) ———— */
+const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
+const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
+const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
+const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
+const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
+const sSt = (y, a, b)=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$`;
+const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$ và trục hoành`;
+const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
+const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
+/* 12-13.2 Diện tích hình phẳng giới hạn bởi hai đồ thị — số 57–101 (19 TN, 10 Đ–S, 16 TLN).
+   Chuỗi tư duy: công thức ∫|f − g| → tìm hoành độ giao điểm → parabol với đường thẳng, hai parabol → ba đường, tiếp tuyến
+   → hai đồ thị đổi vị trí → căn, mũ, 1/x, lượng giác → tìm ngược tham số. */
+const h2Hv = (plF, F, plG, G, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++){ const x = lo + (hi - lo)*i/80; ys.push(F(x), G(x)); } const hv = {loai:'dothi', hamSo:plF, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, cong:[{hamSo:plG}], to:tos.map(([a, b, nhan, nhanX])=>{ const m = (a + b)/2, up = F(m) >= G(m), t = {a, b, tren:up ? plF : plG, duoi:up ? plG : plF}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };
+const h2Q = k=> k === 1 ? '\\sqrt{2} - 1' : `${k}(\\sqrt{2} - 1)`;
+const h2Pl = (k, r, s)=>{ /* y = kx² và đường thẳng cắt tại r < s */ const lin = [k*(r + s), -k*r*s], par = [k, 0, 0], d = [k, -k*(r + s), k*r*s], F = gF(par), G = gF(lin); return {k, r, s, lin, par, d, F, G, S:qAb(tpQ(d, r, s))}; };
+const h2Rg = R=>h2Pl(R.int(1, 2), R.int(-3, -1), R.int(1, 3));
+const h2Nx = (r, s)=>{ const m = (r + s)/2; return m >= 0 ? Math.max(m, 0.5) : Math.min(m, -0.9); };
+const h2Gen = R=>{ const k = R.int(1, 4), r = R.int(-3, 2), s = r + R.int(1, 4); return h2Pl(k, r, s); };
+
+G(12,3,2,'TH','Hình tô giữa hai đồ thị, f ≥ g: chọn công thức (bẫy: đảo thứ tự, cộng hai tích phân)', R=>{
+  const E = h2Gen(R), {r, s, F, G: Gx, par, lin} = E, fPar = R.pick([true, false]), m = (r + s)/2, f = tpI('\\left[f(x) - g(x)\\right]', r, s), g = tpI('\\left[g(x) - f(x)\\right]', r, s), p = tpI('\\left[f(x) + g(x)\\right]', r, s), q = `${tpI('f(x)', r, s)}\\cdot ${tpI('g(x)', r, s)}`, ok = fPar ? 2 : 1, tx = ['', f, g, p, q], ans = {t:`$${tx[ok]}$`, v:ok}, wrong = [1, 2, 3, 4].filter(i=> i !== ok).map(i=> ({t:`$${tx[i]}$`, v:i}));
+  const hv = h2Hv(gPl(par), F, gPl(lin), Gx, [[r, s]]);
+  const o = {stem:`Hình bên là đồ thị của hai hàm số $y = f(x)$ (đường ${fPar ? 'parabol' : 'thẳng'}) và $y = g(x)$ (đường ${fPar ? 'thẳng' : 'parabol'}), cắt nhau tại các điểm có hoành độ $${r}$ và $${s}$. Diện tích $S$ của hình tô màu được tính theo công thức nào?`, ans, wrong, hv, lg:`Trên $[${r}; ${s}]$ đường thẳng nằm phía trên, tức $${fPar ? 'g(x) \\ge f(x)' : 'f(x) \\ge g(x)'}$.<br>Vậy $S = ${tx[ok]}$.`, verify:()=> { const top = (Gx(m) > F(m)) ? 'line' : 'par'; return o.ans.v === (top === 'line' ? (fPar ? 2 : 1) : (fPar ? 1 : 2)); }};
+  return o;
+});
+
+G(12,3,2,'VD','Hai đồ thị đổi vị trí tại c: công thức gồm hai tích phân', R=>{
+  const c = R.int(-1, 2), u = R.int(1, 2), w = R.int(1, 2), a = c - u, b = c + w, e = R.pick([1, -1]), d = [e, -e*(c + b + 1), e*c*(b + 1)], F = gF(d), plF = gPl([e, -e*(c + b + 1) + 1, e*c*(b + 1)]), plG = 'x', Fp = x=> F(x) + x, Gp = x=> x, ok = e > 0 ? 1 : 2, X = tpI('\\left[f(x) - g(x)\\right]', a, c), Y = tpI('\\left[g(x) - f(x)\\right]', c, b), Z = tpI('\\left[g(x) - f(x)\\right]', a, c), T = tpI('\\left[f(x) - g(x)\\right]', c, b), tx = ['', `${X} + ${Y}`, `${Z} + ${T}`, tpI('\\left[f(x) - g(x)\\right]', a, b), `${X} + ${T}`], ans = {t:`$${tx[ok]}$`, v:ok}, wrong = [1, 2, 3, 4].filter(i=> i !== ok).map(i=> ({t:`$${tx[i]}$`, v:i}));
+  const hv = h2Hv(plF, Fp, plG, Gp, [[a, c], [c, b]]);
+  const o = {stem:`Hình bên là đồ thị của hai hàm số $y = f(x)$ (đường parabol) và $y = g(x)$ (đường thẳng), cắt nhau tại điểm có hoành độ $x = ${c}$. Diện tích $S$ của hình tô màu trên đoạn $[${a}; ${b}]$ được tính theo công thức nào?`, ans, wrong, hv, lg:`Trên $[${a}; ${c}]$ đường ${e > 0 ? 'parabol' : 'thẳng'} nằm trên, trên $[${c}; ${b}]$ đường ${e > 0 ? 'thẳng' : 'parabol'} nằm trên.<br>Vậy $S = ${tx[ok]}$.`, verify:()=> o.ans.v === (Fp((a + c)/2) > Gp((a + c)/2) ? 1 : 2)};
+  return o;
+});
+
+G(12,3,2,'TH','y = kx² và y = kmx (m > 0): cắt tại 0 và m', R=>{
+  const k = R.int(1, 3), m = R.int(1, 6), par = [k, 0, 0], lin = [k*m, 0], S = qr(k*m**3, 6), F = gF(par), G0 = gF(lin);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi parabol $y = ${tpP(par)}$ và đường thẳng $y = ${tpP(lin)}$ bằng`, S, [qr(k*m**3, 3), qr(k*m**3, 2), qr(k*m*m, 2), qm(2, S)], t=> `Hoành độ giao điểm: $x = 0$, $x = ${m}$. Trên đoạn đó đường thẳng nằm trên.<br>$S = ${tpI(`\\left(${tpP([-k, k*m, 0])}\\right)`, 0, m)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, m]), h2Hv(gPl(par), F, gPl(lin), G0, [[0, m]]));
+});
+
+G(12,3,2,'TH','y = x² và đường ngang y = n²', R=>{
+  const n = R.int(1, 4), k = R.int(1, 3), par = [k, 0, 0], c = k*n*n, S = qr(4*k*n**3, 3), F = gF(par), G0 = x=> c;
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi parabol $y = ${tpP(par)}$ và đường thẳng $y = ${c}$ bằng`, S, [qr(2*k*n**3, 3), qr(8*k*n**3, 3), 2*c*n, qr(k*n**3, 3)], t=> `Hoành độ giao điểm: $x = ${-n}$, $x = ${n}$.<br>$S = ${tpI(`\\left(${tpP([-k, 0, c])}\\right)`, -n, n)} = ${t}$.`, ()=> nAb(x=> F(x) - c, [-n, n]), h2Hv(gPl(par), F, String(c), G0, [[-n, n]]));
+});
+
+G(12,3,2,'TH','Parabol và đường thẳng bất kì: giải phương trình hoành độ, S = k(s − r)³/6', R=>{
+  const E = h2Gen(R), {k, r, s, par, lin, d, F, G: G0, S} = E, I = tpQ(d, r, s);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi parabol $y = ${tpP(par)}$ và đường thẳng $y = ${tpP(lin)}$ bằng`, S, [qr(k*(s - r)**3, 3), qr(k*(s - r)**2, 2), qm(2, S), qa(S, k)], t=> `Phương trình hoành độ giao điểm: $${tpP(d)} = 0$, có nghiệm $x = ${r}$, $x = ${s}$.<br>$S = \\left|${tpI(`\\left(${tpP(d)}\\right)`, r, s)}\\right| = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [r, s]), h2Hv(gPl(par), F, gPl(lin), G0, [[r, s]]));
+});
+
+G(12,3,2,'TH','Hai parabol y = kx² và y = 2kn² − kx²', R=>{
+  const n = R.int(1, 4), k = R.int(1, 3), p1 = [k, 0, 0], p2 = [-k, 0, 2*k*n*n], S = qr(8*k*n**3, 3), F = gF(p1), G0 = gF(p2);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$ bằng`, S, [qr(4*k*n**3, 3), qr(16*k*n**3, 3), 4*k*n**3, qr(2*k*n**3, 3)], t=> `Hoành độ giao điểm: $x = ${-n}$, $x = ${n}$.<br>$S = ${tpI(`\\left(${tpP([-2*k, 0, 2*k*n*n])}\\right)`, -n, n)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [-n, n]), 2*k*n*n <= 14 ? h2Hv(gPl(p1), F, gPl(p2), G0, [[-n, n]]) : undefined);
+});
+
+G(12,3,2,'VD','y = kx³ và y = km²x: ba giao điểm, hai phần đối xứng (bẫy: ∫ = 0)', R=>{
+  const m = R.int(1, 3), k = R.int(1, 4), p = [k, 0, 0, 0], l = [k*m*m, 0], d = [k, 0, -k*m*m, 0], S = sAb(d, [-m, 0, m]), F = gF(p), G0 = gF(l);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(p)}$ và đường thẳng $y = ${tpP(l)}$ bằng`, S, [0, qr(S[0], 2*S[1]), qm(2, S), qr(k*m**4, 3)], t=> `Hoành độ giao điểm: $x = ${-m}$, $x = 0$, $x = ${m}$.<br>Hai phần đối xứng qua $O$, mỗi phần có diện tích $${qT(qAb(tpQ(d, 0, m)))}$.<br>Vậy $S = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [-m, 0, m]), h2Hv(gPl(p), F, gPl(l), G0, [[-m, 0], [0, m]]));
+});
+
+G(12,3,2,'VD','y = x³ và y = cx²: cắt tại 0 và c', R=>{
+  const c = R.int(1, 4), k = R.int(1, 3), p = [k, 0, 0, 0], q = [k*c, 0, 0], d = [k, -k*c, 0, 0], S = qAb(tpQ(d, 0, c)), F = gF(p), G0 = gF(q);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi hai đồ thị $y = ${tpP(p)}$ và $y = ${tpP(q)}$ bằng`, S, [qr(k*c**4, 4), qr(k*c**4, 3), qm(2, S), qr(k*c**3, 12)], t=> `Hoành độ giao điểm: $x = 0$, $x = ${c}$. Trên đoạn đó $${tpP(q)} \\ge ${tpP(p)}$.<br>$S = ${tpI(`\\left(${tpP([-k, k*c, 0, 0])}\\right)`, 0, c)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, c]), h2Hv(gPl(p), F, gPl(q), G0, [[0, c]]));
+});
+
+G(12,3,2,'VD','y = k√x và y = kx/m: cắt tại 0 và m²', R=>{
+  const m = R.int(1, 3), k = R.int(1, 6), S = qr(k*m**3, 6), c = m*m, F = x=> k*Math.sqrt(x), G0 = x=> k*x/m;
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{x}$ và đường thẳng $y = ${qT(qr(k, m))}x$ bằng`.replace('= 1x', '= x'), S, [qr(2*k*m**3, 3), qr(k*m**3, 2), qr(k*m**3, 3), qm(2, S)], t=> `Hoành độ giao điểm: $x = 0$, $x = ${c}$. Trên đoạn đó căn nằm trên.<br>$S = ${qT(qr(2*k*m**3, 3))} - ${qT(qr(k*m**3, 2))} = ${t}$.`, ()=> nSq(x=> F(x) - G0(x), c), h2Hv(`${k}*sqrt(x)`, F, `${k}/${m}*x`, G0, [[0, c]]));
+});
+
+G(12,3,2,'VD','y = k sin x và y = k cos x trên [0; π/2]: đổi vị trí tại π/4', R=>{
+  const k = R.int(1, 12), A = `${h2Q(2*k)}`, V = 2*k*(Math.SQRT2 - 1), f = x=> k*(Math.sin(x) - Math.cos(x)), P = Math.PI;
+  return gT(R, `Diện tích hình phẳng giới hạn bởi đồ thị hai hàm số $y = ${tpS(k)}\\sin x$, $y = ${tpS(k)}\\cos x$ và hai đường thẳng $x = 0$, $x = \\dfrac{\\pi}{2}$ bằng`, A, V, [['0', 0], [`${h2Q(k)}`, k*(Math.SQRT2 - 1)], [`${tpS(2*k)}\\sqrt{2}`, 2*k*Math.SQRT2], [`${tpS(2*k)}(\\sqrt{2} + 1)`, 2*k*(Math.SQRT2 + 1)]], t=> `Hai đồ thị cắt nhau tại $x = \\dfrac{\\pi}{4}$ và đổi vị trí tại đó.<br>Hai phần bằng nhau, mỗi phần có diện tích $${h2Q(k)}$.<br>Vậy $S = ${t}$.`, ()=> nAb(f, [0, P/4, P/2]));
+});
+
+G(12,3,2,'VD','y = eˣ, trục tung và đường ngang y = a: S = a ln a − a + 1', R=>{
+  const a = R.int(2, 9), k = R.int(1, 3), A = `${k*a}\\ln ${a}${ngSg(-k*(a - 1))}`, V = k*(a*Math.log(a) - a + 1), f = x=> k*(a - Math.exp(x)), y = k === 1 ? 'e^{x}' : `${k}e^{x}`;
+  return gT(R, `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, đường thẳng $y = ${k*a}$ và trục tung bằng`, A, V, [[`${k*a}\\ln ${a}${ngSg(k*(a - 1))}`, k*(a*Math.log(a) + a - 1)], [`${k*(a - 1)}`, k*(a - 1)], [`${k*a}\\ln ${a}`, k*a*Math.log(a)], [`${k*(a - 1)}\\ln ${a}`, k*(a - 1)*Math.log(a)]], t=> `Hoành độ giao điểm: $x = \\ln ${a}$. Trên $[0; \\ln ${a}]$ đường thẳng nằm trên.<br>$S = ${tpI(`\\left(${k*a} - ${y}\\right)`, 0, `\\ln ${a}`)} = ${t}$.`, ()=> nAb(f, [0, Math.log(a)]));
+});
+
+G(12,3,2,'VD','y = pk/x và đường thẳng y = p(k + 1 − x): cắt tại 1 và k', R=>{
+  const k = R.int(2, 7), p = R.int(1, 3), q = qr(p*(k*k - 1), 2), n = p*k, A = `${qT(q)} - ${n}\\ln ${k}`, V = qv(q) - n*Math.log(k), f = x=> p*(k + 1 - x) - n/x, Y = tpP([-p, p*(k + 1)]);
+  return gT(R, `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = \\dfrac{${n}}{x}$ và đường thẳng $y = ${Y}$ bằng`, A, V, [[`${qT(q)} + ${n}\\ln ${k}`, qv(q) + n*Math.log(k)], [`${p*(k*k - 1)} - ${n}\\ln ${k}`, p*(k*k - 1) - n*Math.log(k)], [`${qT(q)}`, qv(q)], [`${n}\\ln ${k}`, n*Math.log(k)]], t=> `Hoành độ giao điểm: $x = 1$, $x = ${k}$. Trên đoạn đó đường thẳng nằm trên.<br>$S = ${tpI(`\\left(${Y} - \\dfrac{${n}}{x}\\right)`, 1, k)} = ${t}$.`, ()=> nAb(f, [1, k]));
+});
+
+G(12,3,2,'VD','Ba đường y = kx², đường thẳng đi xuống, trục hoành: chia đoạn tại giao điểm', R=>{
+  const k = R.int(1, 3), m = R.int(1, 2), w = R.int(1, 3), h = k*m*m, L = m + w, A = qr(k*m**3, 3), B = qr(h*w, 2), S = qa(A, B), g = x=> h*(L - x)/w, f = x=> x <= m ? k*x*x : g(x), line = `${h}/${w}*(${L}-x)`, tl = gDx(h, w, L);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ (với $x \\ge 0$), đường thẳng $y = ${tl}$ và trục hoành bằng`, S, [A, B, qr(h*L, 2), qs(B, A)], t=> `Parabol và đường thẳng cắt nhau tại $(${m}; ${h})$.<br>Trên $[0; ${m}]$ dưới parabol: $${qT(A)}$. Trên $[${m}; ${L}]$ dưới đường thẳng là tam giác: $${qT(B)}$.<br>Tổng bằng $${t}$.`, ()=> ngSi(f, 0, m) + ngSi(g, m, L), {loai:'dothi', hamSo:`${k}*x^2`, luoi:true, ghiCucTri:false, khung:{xmin:-1.2, xmax:L + 1.2, ymin:-0.8, ymax:h + 1.2}, cong:[{hamSo:line}], to:[{a:0, b:m, tren:`${k}*x^2`, duoi:'0'}, {a:m, b:L, tren:line, duoi:'0'}]});
+});
+
+G(12,3,2,'VD','Parabol, đường ngang y = kn², trục tung (x ≥ 0)', R=>{
+  const n = R.int(1, 4), k = R.int(1, 3), c = k*n*n, S = qr(2*k*n**3, 3), F = gF([k, 0, 0]), G0 = x=> c;
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ (với $x \\ge 0$), đường thẳng $y = ${c}$ và trục tung bằng`, S, [qr(4*k*n**3, 3), qr(k*n**3, 3), c*n, qr(2*k*n**3, 5)], t=> `Giao điểm tại $x = ${n}$.<br>$S = ${tpI(`\\left(${tpP([-k, 0, c])}\\right)`, 0, n)} = ${t}$.`, ()=> nAb(x=> F(x) - c, [0, n]), h2Hv(gPl([k, 0, 0]), F, String(c), G0, [[0, n]]));
+});
+
+G(12,3,2,'VD','Parabol, tiếp tuyến tại x = a và trục tung: S = ka³/3', R=>{
+  const k = R.int(1, 5), a = R.int(1, 3), par = [k, 0, 0], t0 = [2*k*a, -k*a*a], S = qr(k*a**3, 3), F = gF(par), G0 = gF(t0);
+  return tpT(R, `Cho parabol $y = ${tpP(par)}$ và tiếp tuyến của nó tại điểm có hoành độ $x = ${a}$. Diện tích hình phẳng giới hạn bởi parabol, tiếp tuyến đó và trục tung bằng`, S, [qr(k*a**3, 2), qr(2*k*a**3, 3), qr(k*a**3, 6), k*a**3], t=> `Tiếp tuyến: $y = ${tpP(t0)}$.<br>Hiệu hai hàm số bằng $${k === 1 ? '' : k}(x - ${a})^{2} \\ge 0$.<br>$S = ${tpI(`${k === 1 ? '' : k}(x - ${a})^{2}`, 0, a)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, a]), k*a*a <= 14 ? h2Hv(gPl(par), F, gPl(t0), G0, [[0, a]]) : undefined);
+});
+
+G(12,3,2,'VD','Tìm m > 0: parabol y = x² và đường thẳng y = mx tạo hình có diện tích S', R=>{
+  const m = R.int(1, 15), S = qr(m**3, 6);
+  return tpT(R, `Cho $m > 0$. Biết diện tích hình phẳng giới hạn bởi parabol $y = x^{2}$ và đường thẳng $y = mx$ bằng $${qT(S)}$. Giá trị của $m$ bằng`, m, [m + 1, 2*m, m + 2, qm(S, 6)], t=> `Hoành độ giao điểm: $x = 0$, $x = m$.<br>$S = ${tpI('(mx - x^{2})', 0, 'm')} = \\dfrac{m^{3}}{6}$.<br>Từ đó $m^{3} = ${m**3}$, tức $m = ${t}$.`, ()=> Math.cbrt(6*qv(S)));
+});
+
+G(12,3,2,'VD','Biết diện tích hai miền giữa hai đồ thị: tính ∫(f − g) có dấu', R=>{
+  const E = h2Rg(R), {r, s, d, F, G: G0, par, lin} = E, b = s + R.int(1, 2), A = tpQ(d, r, s), B = tpQ(d, s, b), I = qa(A, B), SA = qAb(A), SB = qAb(B), S = qa(SA, SB);
+  return tpT(R, `Hình bên là đồ thị của hai hàm số $y = f(x)$ (đường parabol) và $y = g(x)$ (đường thẳng), cắt nhau tại các điểm có hoành độ $${r}$ và $${s}$. Hai miền tô $A$, $B$ có diện tích lần lượt bằng $${qT(SA)}$ và $${qT(SB)}$. Giá trị của $${tpI('\\left[f(x) - g(x)\\right]', r, b)}$ bằng`, I, [S, qm(-1, I), qm(-1, S), A], t=> `Trên miền $A$ đường thẳng nằm trên nên $${tpI('\\left[f(x) - g(x)\\right]', r, s)} = ${qT(A)}$.<br>Trên miền $B$ parabol nằm trên nên $${tpI('\\left[f(x) - g(x)\\right]', s, b)} = ${qT(B)}$.<br>Cộng lại được $${t}$.`, ()=> ngSi(x=> F(x) - G0(x), r, b), h2Hv(gPl(par), F, gPl(lin), G0, [[r, s, 'A', h2Nx(r, s)], [s, b, 'B']]));
+});
+
+G(12,3,2,'VD','Hai parabol y = ax(m − x) và y = bx(m − x): S = (a − b)m³/6', R=>{
+  const m = R.int(2, 5), b = R.int(1, 2), a = b + R.int(1, 4), p1 = [-a, a*m, 0], p2 = [-b, b*m, 0], S = qr((a - b)*m**3, 6), F = gF(p1), G0 = gF(p2), top = a*m*m/4;
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$ bằng`, S, [qr((a + b)*m**3, 6), qr(a*m**3, 6), qr(b*m**3, 6), qm(2, S)], t=> `Hai parabol cùng đi qua $(0; 0)$, $(${m}; 0)$.<br>$S = ${tpI(`\\left(${tpP([-(a - b), (a - b)*m, 0])}\\right)`, 0, m)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, m]), top <= 14 ? h2Hv(gPl(p1), F, gPl(p2), G0, [[0, m]]) : undefined);
+});
+
+G(12,3,2,'VD','y = |x| và parabol y = n² + n − x²: đối xứng qua trục tung, chia đôi', R=>{
+  const n = R.int(1, 4), k = R.int(1, 3), S = qm(k, qa(qr(4*n**3, 3), n*n)), c = k*(n*n + n), F = x=> c - k*x*x, G0 = x=> k*Math.abs(x);
+  return tpT(R, `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}|x|$ và parabol $y = ${tpP([-k, 0, c])}$ bằng`, S, [qr(S[0], 2*S[1]), qm(k, qs(qr(4*n**3, 3), n*n)), qm(2, S), qm(k, qr(4*n**3, 3))], t=> `Hai đồ thị đối xứng qua trục tung, cắt nhau tại $x = ${-n}$, $x = ${n}$.<br>$S = 2${tpI(`\\left(${tpP([-k, -k, c])}\\right)`, 0, n)} = ${t}$.`, ()=> 2*ngSi(x=> F(x) - G0(x), 0, n), c <= 14 ? h2Hv(`${c}-${k}*x^2`, F, `${k}*abs(x)`, G0, [[-n, n]]) : undefined);
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,2,'TH','Parabol và đường thẳng: hoành độ giao điểm, đường nào trên, diện tích', R=>{
+  const E = h2Gen(R), {k, r, s, par, lin, d, F, G: G0, S} = E, M = (r + s)/2;
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi parabol $y = ${tpP(par)}$ và đường thẳng $y = ${tpP(lin)}$.`, hv:h2Hv(gPl(par), F, gPl(lin), G0, [[r, s]]),
+    items:[claim(R, `Hai đồ thị cắt nhau tại hai điểm có hoành độ $${r}$ và $${s}$`, `Hai đồ thị cắt nhau tại hai điểm có hoành độ $${r}$ và $${s + 1}$`, ()=> near(F(s), G0(s), 1e-9), ()=> near(F(s + 1), G0(s + 1), 1e-9)),
+      claim(R, `Trên đoạn $[${r}; ${s}]$ đường thẳng nằm phía trên parabol`, `Trên đoạn $[${r}; ${s}]$ parabol nằm phía trên đường thẳng`, ()=> G0(M) > F(M), ()=> F(M) > G0(M)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qm(2, S), ()=> nAb(x=> F(x) - G0(x), [r, s])),
+      gE(R, `${tpI(`\\left(${tpP(d)}\\right)`, r, s)}`, qm(-1, S), S, ()=> ngSi(x=> F(x) - G0(x), r, s))],
+    lg:`a) Giải $${tpP(d)} = 0$.<br>b) Tại $x = ${M}$ so sánh hai giá trị.<br>c) $S = ${tpI(`\\left(${tpP(d.map(x=> -x))}\\right)`, r, s)} = ${qT(S)}$.<br>d) Tích phân này là số đối của diện tích.`};
+});
+
+GD(12,3,2,'TH','Hai parabol đối xứng qua y = kn²: giao điểm, hiệu, diện tích', R=>{
+  const n = R.int(1, 3), k = R.int(1, 3), p1 = [k, 0, 0], p2 = [-k, 0, 2*k*n*n], S = qr(8*k*n**3, 3), F = gF(p1), G0 = gF(p2), d = [-2*k, 0, 2*k*n*n];
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$.`, hv:h2Hv(gPl(p1), F, gPl(p2), G0, [[-n, n]]),
+    items:[claim(R, `Hai parabol cắt nhau tại hai điểm có hoành độ $${-n}$ và $${n}$`, `Hai parabol cắt nhau tại hai điểm có hoành độ $0$ và $${n}$`, ()=> near(F(n), G0(n), 1e-9), ()=> near(F(0), G0(0), 1e-9)),
+      claim(R, `Hiệu tung độ giữa parabol trên và parabol dưới bằng $${tpP(d)}$`, `Hiệu tung độ giữa parabol trên và parabol dưới bằng $${tpP([-k, 0, 2*k*n*n])}$`, ()=> near(G0(1) - F(1), gF(d)(1), 1e-9), ()=> near(G0(1) - F(1), gF([-k, 0, 2*k*n*n])(1), 1e-9)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qm(2, S), ()=> nAb(x=> F(x) - G0(x), [-n, n])),
+      gC(R, `Phần của $(H)$ bên phải trục tung có diện tích `, qr(S[0], 2*S[1]), S, ()=> nAb(x=> F(x) - G0(x), [0, n]))],
+    lg:`a) Giải $${tpP(p1)} = ${tpP(p2)}$.<br>b) Lấy parabol thứ hai trừ parabol thứ nhất.<br>c) $S = ${tpI(`\\left(${tpP(d)}\\right)`, -n, n)} = ${qT(S)}$.<br>d) Hình đối xứng qua trục tung nên hai phần bằng nhau.`};
+});
+
+GD(12,3,2,'VD','y = kx³ và y = km²x: ba giao điểm, tích phân có dấu, diện tích', R=>{
+  const m = R.int(1, 3), k = R.int(1, 3), p = [k, 0, 0, 0], l = [k*m*m, 0], d = [k, 0, -k*m*m, 0], H = qAb(tpQ(d, 0, m)), S = qm(2, H), F = gF(p), G0 = gF(l);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpP(p)}$ và đường thẳng $y = ${tpP(l)}$.`, hv:h2Hv(gPl(p), F, gPl(l), G0, [[-m, 0], [0, m]]),
+    items:[claim(R, `Hai đồ thị có đúng ba điểm chung`, `Hai đồ thị có đúng hai điểm chung`, ()=> [-m, 0, m].every(x=> near(F(x), G0(x), 1e-9)), ()=> ![-m, 0, m].every(x=> near(F(x), G0(x), 1e-9))),
+      claim(R, `Trên đoạn $[0; ${m}]$ đường thẳng nằm phía trên đồ thị bậc ba`, `Trên đoạn $[0; ${m}]$ đồ thị bậc ba nằm phía trên đường thẳng`, ()=> G0(m/2) > F(m/2), ()=> F(m/2) > G0(m/2)),
+      gE(R, `${tpI(`\\left(${tpP(d)}\\right)`, -m, m)}`, 0, S, ()=> ngRd(ngSi(x=> F(x) - G0(x), -m, m))),
+      gC(R, `Diện tích của $(H)$ bằng `, S, H, ()=> nAb(x=> F(x) - G0(x), [-m, 0, m]))],
+    lg:`a) Giao tại $x = ${-m}$, $0$, $${m}$.<br>b) So sánh tại $x = ${nt(m/2)}$.<br>c) Hàm dưới dấu tích phân lẻ nên kết quả bằng $0$.<br>d) Hai phần đối xứng, mỗi phần có diện tích $${qT(H)}$, tổng bằng $${qT(S)}$.`};
+});
+
+GD(12,3,2,'VD','Parabol, tiếp tuyến, trục tung: phương trình tiếp tuyến, hiệu bình phương, diện tích', R=>{
+  const k = R.int(1, 3), a = R.int(1, 3), par = [k, 0, 0], t0 = [2*k*a, -k*a*a], S = qr(k*a**3, 3), F = gF(par), G0 = gF(t0);
+  return {stem:`Cho parabol $(P)$: $y = ${tpP(par)}$ và tiếp tuyến $d$ của $(P)$ tại điểm có hoành độ $x = ${a}$. Xét hình phẳng $(H)$ giới hạn bởi $(P)$, $d$ và trục tung.`, hv:h2Hv(gPl(par), F, gPl(t0), G0, [[0, a]]),
+    items:[claim(R, `$d$ có phương trình $y = ${tpP(t0)}$`, `$d$ có phương trình $y = ${tpP([2*k*a, k*a*a])}$`, ()=> near(G0(a), F(a), 1e-9), ()=> near(gF([2*k*a, k*a*a])(a), F(a), 1e-9)),
+      claim(R, `Trên đoạn $[0; ${a}]$ parabol nằm phía trên tiếp tuyến`, `Trên đoạn $[0; ${a}]$ tiếp tuyến nằm phía trên parabol`, ()=> F(a/2) > G0(a/2), ()=> G0(a/2) > F(a/2)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qm(2, S), ()=> nAb(x=> F(x) - G0(x), [0, a])),
+      gC(R, `Giao điểm của $d$ với trục tung có tung độ `, -k*a*a, k*a*a, ()=> G0(0))],
+    lg:`a) Hệ số góc $${2*k*a}$, đi qua $(${a}; ${k*a*a})$.<br>b) Hiệu hai hàm số bằng $${k === 1 ? '' : k}(x - ${a})^{2} \\ge 0$.<br>c) $${tpI(`${k === 1 ? '' : k}(x - ${a})^{2}`, 0, a)} = ${qT(S)}$.<br>d) Thay $x = 0$ vào phương trình tiếp tuyến.`};
+});
+
+GD(12,3,2,'VD','y = k√x và đường thẳng qua gốc: giao điểm, đường nào trên, diện tích, tỉ lệ', R=>{
+  const m = R.int(1, 3), k = R.int(1, 6), c = m*m, S = qr(k*m**3, 6), Tr = qr(k*m**3, 2), F = x=> k*Math.sqrt(x), G0 = x=> k*x/m, Sl = `${qT(qr(k, m))}x`.replace(/^1x/, 'x');
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{x}$ và đường thẳng $y = ${Sl}$.`, hv:h2Hv(`${k}*sqrt(x)`, F, `${k}/${m}*x`, G0, [[0, c]]),
+    items:[claim(R, `Hai đồ thị cắt nhau tại điểm có hoành độ $x = ${c}$ (khác gốc toạ độ)`, `Hai đồ thị cắt nhau tại điểm có hoành độ $x = ${2*c}$ (khác gốc toạ độ)`, ()=> near(F(c), G0(c), 1e-9), ()=> near(F(2*c), G0(2*c), 1e-9)),
+      claim(R, `Trên đoạn $[0; ${c}]$ đồ thị căn nằm phía trên đường thẳng`, `Trên đoạn $[0; ${c}]$ đường thẳng nằm phía trên đồ thị căn`, ()=> F(c/2) > G0(c/2), ()=> G0(c/2) > F(c/2)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, Tr, ()=> nSq(x=> F(x) - G0(x), c)),
+      gC(R, `Tam giác tạo bởi đường thẳng, trục hoành và đường thẳng $x = ${c}$ có diện tích `, Tr, S, ()=> ngSi(G0, 0, c))],
+    lg:`a) Giải $${tpS(k)}\\sqrt{x} = ${Sl}$.<br>b) So sánh tại một điểm giữa đoạn.<br>c) $S = ${qT(qr(2*k*m**3, 3))} - ${qT(Tr)} = ${qT(S)}$.<br>d) Tam giác đáy $${c}$, cao $${k*m}$ có diện tích $${qT(Tr)}$.`};
+});
+
+GD(12,3,2,'VD','sin x và cos x trên [0; π/2]: giao điểm, vị trí, diện tích từng phần', R=>{
+  const k = R.int(1, 8), K = tpS(k), f = x=> k*(Math.sin(x) - Math.cos(x)), P = Math.PI, o = k*(Math.SQRT2 - 1);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi đồ thị hai hàm số $y = ${K}\\sin x$, $y = ${K}\\cos x$ và hai đường thẳng $x = 0$, $x = \\dfrac{\\pi}{2}$.`,
+    items:[claim(R, `Hai đồ thị cắt nhau tại điểm có hoành độ $x = \\dfrac{\\pi}{4}$`, `Hai đồ thị cắt nhau tại điểm có hoành độ $x = \\dfrac{\\pi}{3}$`, ()=> near(f(P/4), 0, 1e-9), ()=> near(f(P/3), 0, 1e-9)),
+      claim(R, `Trên đoạn $\\left[0; \\dfrac{\\pi}{4}\\right]$ đồ thị của $${K}\\cos x$ nằm phía trên`, `Trên đoạn $\\left[0; \\dfrac{\\pi}{4}\\right]$ đồ thị của $${K}\\sin x$ nằm phía trên`, ()=> f(P/8) < 0, ()=> f(P/8) > 0),
+      claim(R, `Phần của $(H)$ trên đoạn $\\left[0; \\dfrac{\\pi}{4}\\right]$ có diện tích $${h2Q(k)}$`, `Phần của $(H)$ trên đoạn $\\left[0; \\dfrac{\\pi}{4}\\right]$ có diện tích $${K}\\sqrt{2}$`, ()=> near(nAb(f, [0, P/4]), o, 1e-7), ()=> near(nAb(f, [0, P/4]), k*Math.SQRT2, 1e-7)),
+      claim(R, `Diện tích của $(H)$ bằng $${h2Q(2*k)}$`, `Diện tích của $(H)$ bằng $0$`, ()=> near(nAb(f, [0, P/4, P/2]), 2*o, 1e-7), ()=> near(nAb(f, [0, P/4, P/2]), 0, 1e-7))],
+    lg:`a) $\\tan x = 1$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$.<br>b) Tại $x = 0$: $\\cos 0 > \\sin 0$.<br>c) $${tpI(`${K}(\\cos x - \\sin x)`, 0, '\\dfrac{\\pi}{4}')} = ${h2Q(k)}$.<br>d) Hai phần bằng nhau nên $S = ${h2Q(2*k)}$.`};
+});
+
+GD(12,3,2,'VD','Ba đường: parabol, đường thẳng đi xuống, trục hoành', R=>{
+  const k = R.int(1, 3), m = R.int(1, 2), w = R.int(1, 3), h = k*m*m, L = m + w, A = qr(k*m**3, 3), B = qr(h*w, 2), S = qa(A, B), g = x=> h*(L - x)/w, f = x=> x <= m ? k*x*x : g(x), line = `${h}/${w}*(${L}-x)`, tl = gDx(h, w, L);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ (với $x \\ge 0$), đường thẳng $y = ${tl}$ và trục hoành.`, hv:{loai:'dothi', hamSo:`${k}*x^2`, luoi:true, ghiCucTri:false, khung:{xmin:-1.2, xmax:L + 1.2, ymin:-0.8, ymax:h + 1.2}, cong:[{hamSo:line}], to:[{a:0, b:m, tren:`${k}*x^2`, duoi:'0'}, {a:m, b:L, tren:line, duoi:'0'}]},
+    items:[claim(R, `Parabol và đường thẳng cắt nhau tại điểm có hoành độ $x = ${m}$`, `Parabol và đường thẳng cắt nhau tại điểm có hoành độ $x = ${L}$`, ()=> near(k*m*m, h*(L - m)/w, 1e-9), ()=> near(k*L*L, 0, 1e-9)),
+      gC(R, `Đường thẳng cắt trục hoành tại điểm có hoành độ `, L, m, ()=> L),
+      gC(R, `Phần của $(H)$ trên đoạn $[0; ${m}]$ có diện tích `, A, qm(3, A), ()=> ngSi(f, 0, m)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qr(h*L, 2), ()=> ngSi(f, 0, m) + ngSi(g, m, L))],
+    lg:`a) Tại $x = ${m}$ hai hàm số cùng bằng $${h}$.<br>b) Giải tung độ bằng $0$.<br>c) $${tpI(tpP([k, 0, 0]), 0, m)} = ${qT(A)}$.<br>d) Cộng tam giác có diện tích $${qT(B)}$ được $${qT(S)}$.`};
+});
+
+GD(12,3,2,'TH','Đường ngang cắt parabol: giao điểm, diện tích hai phía trục tung', R=>{
+  const n = R.int(1, 4), k = R.int(1, 3), c = k*n*n, F = gF([k, 0, 0]), S = qr(4*k*n**3, 3), H = qr(2*k*n**3, 3), Rc = 2*n*c;
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ và đường thẳng $y = ${c}$.`, hv:h2Hv(gPl([k, 0, 0]), F, String(c), x=> c, [[-n, n]]),
+    items:[claim(R, `Hai đồ thị cắt nhau tại hai điểm có hoành độ $${-n}$ và $${n}$`, `Hai đồ thị cắt nhau tại hai điểm có hoành độ $${-c}$ và $${c}$`, ()=> near(F(n), c, 1e-9), ()=> near(F(c), c, 1e-9) && c !== n),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qm(2, S), ()=> nAb(x=> F(x) - c, [-n, n])),
+      gC(R, `Phần của $(H)$ bên phải trục tung có diện tích `, H, S, ()=> nAb(x=> F(x) - c, [0, n])),
+      gC(R, `Hình chữ nhật bao ngoài $(H)$, một cạnh nằm trên trục hoành, có diện tích `, Rc, 2*Rc, ()=> 2*n*c)],
+    lg:`a) Giải $${tpP([k, 0, 0])} = ${c}$.<br>b) $S = ${tpI(`\\left(${tpP([-k, 0, c])}\\right)`, -n, n)} = ${qT(S)}$.<br>c) Đối xứng qua trục tung nên bằng nửa kết quả trên.<br>d) Hai cạnh là $${2*n}$ và $${c}$; $(H)$ chiếm $\\dfrac{2}{3}$ hình chữ nhật.`};
+});
+
+GD(12,3,2,'VD','Hai parabol cùng nghiệm: hiệu là parabol, diện tích, tỉ lệ với hình dưới parabol thấp', R=>{
+  const m = R.int(2, 4), b = R.int(1, 2), a = b + R.int(1, 3), p1 = [-a, a*m, 0], p2 = [-b, b*m, 0], S = qr((a - b)*m**3, 6), L = qr(b*m**3, 6), F = gF(p1), G0 = gF(p2);
+  return {stem:`Xét hình phẳng $(H)$ giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$.`, hv:h2Hv(gPl(p1), F, gPl(p2), G0, [[0, m]]),
+    items:[claim(R, `Hai parabol cắt nhau tại hai điểm có hoành độ $0$ và $${m}$`, `Hai parabol cắt nhau tại đúng một điểm`, ()=> near(F(m), G0(m), 1e-9), ()=> !near(F(m), G0(m), 1e-9)),
+      claim(R, `Trên đoạn $[0; ${m}]$ parabol $y = ${tpP(p1)}$ nằm phía trên`, `Trên đoạn $[0; ${m}]$ parabol $y = ${tpP(p2)}$ nằm phía trên`, ()=> F(m/2) > G0(m/2), ()=> G0(m/2) > F(m/2)),
+      gC(R, `Diện tích của $(H)$ bằng `, S, qr((a + b)*m**3, 6), ()=> nAb(x=> F(x) - G0(x), [0, m])),
+      gC(R, `Hình phẳng giới hạn bởi parabol $y = ${tpP(p2)}$ và trục hoành có diện tích `, L, qa(L, S), ()=> nAb(G0, [0, m]))],
+    lg:`a) Cả hai đều có nghiệm $0$ và $${m}$.<br>b) Hệ số $${a}$ lớn hơn $${b}$ và $x(${m} - x) \\ge 0$ trên đoạn.<br>c) $S = ${tpI(`\\left(${tpP([-(a - b), (a - b)*m, 0])}\\right)`, 0, m)} = ${qT(S)}$.<br>d) $${tpI(`\\left(${tpP(p2)}\\right)`, 0, m)} = ${qT(L)}$.`};
+});
+
+GD(12,3,2,'VD','Biết hai miền, lấy dấu ∫(f − g): vị trí, tích phân, tổng diện tích', R=>{
+  const E = h2Rg(R), {r, s, d, F, G: G0, par, lin} = E, b = s + 1, A = tpQ(d, r, s), B = tpQ(d, s, b), SA = qAb(A), SB = qAb(B), S = qa(SA, SB), I = qa(A, B); if(qv(I) === qv(S) || qv(I) === -qv(S)) return null;
+  return {stem:`Hình bên là đồ thị của hai hàm số $y = f(x)$ (đường parabol) và $y = g(x)$ (đường thẳng), cắt nhau tại các điểm có hoành độ $${r}$ và $${s}$. Hai miền tô $A$, $B$ có diện tích lần lượt bằng $${qT(SA)}$ và $${qT(SB)}$.`, hv:h2Hv(gPl(par), F, gPl(lin), G0, [[r, s, 'A', h2Nx(r, s)], [s, b, 'B']]),
+    items:[claim(R, `Trên miền $A$ có $g(x) \\ge f(x)$`, `Trên miền $A$ có $f(x) \\ge g(x)$`, ()=> G0((r + s)/2) > F((r + s)/2), ()=> F((r + s)/2) > G0((r + s)/2)),
+      gE(R, `${tpI('\\left[f(x) - g(x)\\right]', r, s)}`, A, SA, ()=> ngSi(x=> F(x) - G0(x), r, s)),
+      gE(R, `${tpI('\\left[f(x) - g(x)\\right]', s, b)}`, B, qm(-1, B), ()=> ngSi(x=> F(x) - G0(x), s, b)),
+      gE(R, `${tpI('|f(x) - g(x)|', r, b)}`, S, I, ()=> nAb(x=> F(x) - G0(x), [r, s, b]))],
+    lg:`a) Đọc trên hình: đường thẳng nằm trên parabol.<br>b) Tích phân bằng số đối của diện tích $A$.<br>c) Parabol nằm trên đường thẳng nên bằng diện tích $B$.<br>d) Cộng hai diện tích được $${qT(S)}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,2,'TH','y = kx² và y = kmx', R=>{
+  const k = 6*R.int(1, 3), m = R.int(1, 6), par = [k, 0, 0], lin = [k*m, 0], S = qr(k*m**3, 6), F = gF(par), G0 = gF(lin);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi parabol $y = ${tpP(par)}$ và đường thẳng $y = ${tpP(lin)}$.`, S, t=> `Giao điểm tại $x = 0$, $x = ${m}$. $S = ${tpI(`\\left(${tpP([-k, k*m, 0])}\\right)`, 0, m)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, m]));
+});
+
+GT(12,3,2,'TH','y = 3kx² và đường ngang', R=>{
+  const n = R.int(1, 5), k = 3*R.int(1, 3), c = k*n*n, S = qr(4*k*n**3, 3), F = gF([k, 0, 0]);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ và đường thẳng $y = ${c}$.`, S, t=> `Giao điểm tại $x = ${-n}$, $x = ${n}$. $S = ${tpI(`\\left(${tpP([-k, 0, c])}\\right)`, -n, n)} = ${t}$.`, ()=> nAb(x=> F(x) - c, [-n, n]));
+});
+
+GT(12,3,2,'TH','Parabol và đường thẳng bất kì: nhân hệ số để đáp số gọn', R=>{
+  const k = 6*R.int(1, 5), r = R.int(-3, 2), s = r + R.int(1, 4), E = h2Pl(k, r, s);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi parabol $y = ${tpP(E.par)}$ và đường thẳng $y = ${tpP(E.lin)}$.`, E.S, t=> `Hoành độ giao điểm: $x = ${r}$, $x = ${s}$.<br>$S = \\left|${tpI(`\\left(${tpP(E.d)}\\right)`, r, s)}\\right| = ${t}$.`, ()=> nAb(x=> E.F(x) - E.G(x), [r, s]));
+});
+
+GT(12,3,2,'TH','Hai parabol đối xứng', R=>{
+  const n = R.int(1, 4), k = 3*R.int(1, 3), p1 = [k, 0, 0], p2 = [-k, 0, 2*k*n*n], S = qr(8*k*n**3, 3), F = gF(p1), G0 = gF(p2);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$.`, S, t=> `Giao điểm tại $x = ${-n}$, $x = ${n}$. $S = ${tpI(`\\left(${tpP([-2*k, 0, 2*k*n*n])}\\right)`, -n, n)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [-n, n]));
+});
+
+GT(12,3,2,'VD','y = kx³ và y = km²x', R=>{
+  const m = R.int(1, 4), k = R.int(1, 8), p = [k, 0, 0, 0], l = [k*m*m, 0], d = [k, 0, -k*m*m, 0], S = sAb(d, [-m, 0, m]), F = gF(p), G0 = gF(l);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpP(p)}$ và đường thẳng $y = ${tpP(l)}$.`, S, t=> `Giao điểm tại $x = ${-m}$, $0$, $${m}$. Hai phần bằng nhau, tổng bằng $${t}$.`, ()=> nAb(x=> F(x) - G0(x), [-m, 0, m]));
+});
+
+GT(12,3,2,'VD','y = kx³ và y = kcx²', R=>{
+  const c = R.int(1, 4), k = 12*R.int(1, 4), p = [k, 0, 0, 0], q = [k*c, 0, 0], d = [k, -k*c, 0, 0], S = qAb(tpQ(d, 0, c)), F = gF(p), G0 = gF(q);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi hai đồ thị $y = ${tpP(p)}$ và $y = ${tpP(q)}$.`, S, t=> `Giao điểm tại $x = 0$, $x = ${c}$. $S = ${tpI(`\\left(${tpP([-k, k*c, 0, 0])}\\right)`, 0, c)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, c]));
+});
+
+GT(12,3,2,'VD','y = k√x và đường thẳng qua gốc', R=>{
+  const m = R.int(1, 4), k = 6*R.int(1, 4), S = qr(k*m**3, 6), c = m*m, F = x=> k*Math.sqrt(x), G0 = x=> k*x/m;
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${k}\\sqrt{x}$ và đường thẳng $y = ${qT(qr(k, m))}x$.`, S, t=> `Giao điểm tại $x = 0$, $x = ${c}$.<br>$S = ${qT(qr(2*k*m**3, 3))} - ${qT(qr(k*m**3, 2))} = ${t}$.`, ()=> nSq(x=> F(x) - G0(x), c));
+});
+
+GT(12,3,2,'VD','y = eˣ, đường ngang, trục tung, làm tròn', R=>{
+  const a = R.int(2, 9), k = R.int(1, 6), v0 = k*(a*Math.log(a) - a + 1), f = x=> k*(a - Math.exp(x)), y = k === 1 ? 'e^{x}' : `${k}e^{x}`;
+  return tpRn(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, đường thẳng $y = ${k*a}$ và trục tung (làm tròn kết quả đến hàng phần mười).`, v0, t=> `Giao điểm tại $x = \\ln ${a}$. $S = ${tpI(`\\left(${k*a} - ${y}\\right)`, 0, `\\ln ${a}`)} \\approx ${t}$.`, ()=> nAb(f, [0, Math.log(a)]));
+});
+
+GT(12,3,2,'VD','sin x và cos x trên [0; π/2], làm tròn', R=>{
+  const k = R.int(1, 30), v0 = 2*k*(Math.SQRT2 - 1), f = x=> k*(Math.sin(x) - Math.cos(x)), P = Math.PI;
+  return tpRn(`Tính diện tích hình phẳng giới hạn bởi đồ thị hai hàm số $y = ${tpS(k)}\\sin x$, $y = ${tpS(k)}\\cos x$ và hai đường thẳng $x = 0$, $x = \\dfrac{\\pi}{2}$ (làm tròn kết quả đến hàng phần mười).`, v0, t=> `Hai phần bằng nhau, mỗi phần có diện tích $${h2Q(k)}$. Tổng xấp xỉ $${t}$.`, ()=> nAb(f, [0, P/4, P/2]));
+});
+
+GT(12,3,2,'VD','y = k/x và đường thẳng, làm tròn', R=>{
+  const k = R.int(2, 9), p = R.int(1, 3), v0 = p*((k*k - 1)/2 - k*Math.log(k)), f = x=> p*(k + 1 - x - k/x), Y = tpP([-p, p*(k + 1)]);
+  return tpRn(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = \\dfrac{${p*k}}{x}$ và đường thẳng $y = ${Y}$ (làm tròn kết quả đến hàng phần mười).`, v0, t=> `Giao điểm tại $x = 1$, $x = ${k}$. $S = ${tpI(`\\left(${Y} - \\dfrac{${p*k}}{x}\\right)`, 1, k)} \\approx ${t}$.`, ()=> nAb(f, [1, k]));
+});
+
+GT(12,3,2,'VD','Parabol, đường thẳng đi xuống, trục hoành: tính 6S', R=>{
+  const k = R.int(1, 4), m = R.int(1, 2), w = R.int(1, 4), h = k*m*m, L = m + w, A = qr(k*m**3, 3), B = qr(h*w, 2), S = qa(A, B), g = x=> h*(L - x)/w, f = x=> x <= m ? k*x*x : g(x), tl = gDx(h, w, L);
+  return tpN(`Gọi $S$ là diện tích hình phẳng giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ (với $x \\ge 0$), đường thẳng $y = ${tl}$ và trục hoành. Tính $6S$.`, qm(6, S), t=> `Hai phần có diện tích $${qT(A)}$ và $${qT(B)}$, $S = ${qT(S)}$.<br>$6S = ${t}$.`, ()=> 6*(ngSi(f, 0, m) + ngSi(g, m, L)));
+});
+
+GT(12,3,2,'VD','Parabol, tiếp tuyến, trục tung', R=>{
+  const k = 3*R.int(1, 3), a = R.int(1, 4), par = [k, 0, 0], t0 = [2*k*a, -k*a*a], S = qr(k*a**3, 3), F = gF(par), G0 = gF(t0);
+  return tpN(`Cho parabol $y = ${tpP(par)}$ và tiếp tuyến của nó tại điểm có hoành độ $x = ${a}$. Tính diện tích hình phẳng giới hạn bởi parabol, tiếp tuyến đó và trục tung.`, S, t=> `Tiếp tuyến: $y = ${tpP(t0)}$. Hiệu hai hàm số bằng $${k}(x - ${a})^{2}$.<br>$S = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, a]));
+});
+
+GT(12,3,2,'VD','Tìm m > 0: parabol y = x² và đường thẳng y = mx', R=>{
+  const m = R.int(1, 14), S = qr(m**3, 6);
+  return tpN(`Cho $m > 0$. Biết diện tích hình phẳng giới hạn bởi parabol $y = x^{2}$ và đường thẳng $y = mx$ bằng $${qT(S)}$. Tìm $m$.`, m, t=> `$S = \\dfrac{m^{3}}{6}$, suy ra $m^{3} = ${m**3}$, $m = ${t}$.`, ()=> Math.cbrt(6*qv(S)));
+});
+
+GT(12,3,2,'VD','Hai parabol cùng nghiệm', R=>{
+  const m = R.int(2, 6), b = 3*R.int(1, 2), a = b + 3*R.int(1, 4), p1 = [-a, a*m, 0], p2 = [-b, b*m, 0], S = qr((a - b)*m**3, 6), F = gF(p1), G0 = gF(p2);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$.`, S, t=> `Hai parabol cùng đi qua $(0; 0)$, $(${m}; 0)$.<br>$S = ${tpI(`\\left(${tpP([-(a - b), (a - b)*m, 0])}\\right)`, 0, m)} = ${t}$.`, ()=> nAb(x=> F(x) - G0(x), [0, m]));
+});
+
+GT(12,3,2,'VD','y = k|x| và parabol: đối xứng qua trục tung', R=>{
+  const n = R.int(1, 3), k = 3*R.int(1, 5), S = qm(k, qa(qr(4*n**3, 3), n*n)), c = k*(n*n + n), F = x=> c - k*x*x, G0 = x=> k*Math.abs(x);
+  return tpN(`Tính diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${k}|x|$ và parabol $y = ${tpP([-k, 0, c])}$.`, S, t=> `Hai đồ thị đối xứng qua trục tung, cắt nhau tại $x = ${-n}$, $x = ${n}$.<br>$S = 2${tpI(`\\left(${tpP([-k, -k, c])}\\right)`, 0, n)} = ${t}$.`, ()=> 2*ngSi(x=> F(x) - G0(x), 0, n));
+});
+
+GT(12,3,2,'VD','Biết hai miền: tính ∫|f − g| nhân 6', R=>{
+  const k = R.int(1, 4), r = R.int(-3, 2), s = r + R.int(1, 4), E = h2Pl(k, r, s), b = s + R.int(1, 2), A = tpQ(E.d, r, s), B = tpQ(E.d, s, b), S = qa(qAb(A), qAb(B)), T = qm(6, S);
+  return tpN(`Gọi $S$ là tổng diện tích hình phẳng giới hạn bởi parabol $y = ${tpP(E.par)}$, đường thẳng $y = ${tpP(E.lin)}$ và hai đường thẳng $x = ${r}$, $x = ${b}$. Tính $6S$.`, T, t=> `Hai đồ thị cắt nhau tại $x = ${r}$, $x = ${s}$, chia đoạn tại $x = ${s}$: hai phần bằng $${qT(qAb(A))}$ và $${qT(qAb(B))}$.<br>$6S = ${t}$.`, ()=> 6*nAb(x=> E.F(x) - E.G(x), [r, s, b]));
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (Chương IV lớp 12: nguyên hàm, tích phân, mỗi chuyên đề đủ 20 TN, 10 Đ–S, 16 TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* ——— tiện ích tích phân ——— */
+const tpS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const tpP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v);
+const tpV = (co, x)=> co.reduce((s, c)=> s*x + qv(c), 0);
+const tpG = (co)=> co.map((c, i)=> { const p = co.length - 1 - i; return qd(c, p + 1); }).concat([0]);   /* hệ số nguyên hàm (không hằng số) */
+const tpQ = (co, a, b)=>{ const d = co.length - 1; let s = [0, 1]; co.forEach((k, i)=>{ const p = d - i; s = qa(s, qm(qd(k, p + 1), b**(p + 1) - a**(p + 1))); }); return s; };   /* tích phân đa thức từ a đến b, chính xác */
+const tpI = (s, a, b, v)=> `\\int_{${a}}^{${b}} ${s}\\,d${v || 'x'}`;
+const tpF = (co)=> co.map((c, i)=> [qd(c, co.length - i), ngX(co.length - i)]);   /* các hạng tử nguyên hàm của đa thức */
+const tpB = (s, a, b)=> `\\left.\\left(${s}\\right)\\right|_{${a}}^{${b}}`;
+const tpPa = q=>{ q = qq(q); return q[0] < 0 ? `\\left(${qT(q)}\\right)` : qT(q); };
+const tpT = (R, stem, q, ws, lg, chk, hv, unit)=>{ const ans = ngNum(q, unit), wrong = ngW(R, ans, ws.map(x=> ngNum(x, unit))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(qT(q)), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpN = (stem, v0, lg, chk, hv)=>{ v0 = qv(v0); const v = ngRou(v0, 1); if(!near(v, v0, 1e-9) || String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, ngRou(chk(), 1), 1e-9)}; if(hv) o.hv = hv; return o; };   /* đáp số làm tròn một chữ số */
+
+/* ———— Ứng dụng hình học (12-13) ———— */
+const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
+const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
+const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
+const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
+const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
+const sSt = (y, a, b)=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$`;
+const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$ và trục hoành`;
+const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
+const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
+/* 12-13.3 Thể tích vật thể theo diện tích thiết diện — số 102–147 (20 TN, 10 Đ–S, 16 TLN).
+   Chuỗi tư duy: V = ∫S(x)dx với S cho sẵn → tự lập S(x) từ hình vuông, chữ nhật, tam giác đều, hình tròn
+   → chứng minh lại công thức hình chóp, nón, cầu → đáy tròn, đáy parabol → tìm cận, tỉ số → bài thực tế.
+   Không vẽ hình: vật thể mô tả bằng lời, thiết diện luôn vuông góc với trục Ox. */
+const v3St = (a, b, S)=> `Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = ${a}$ và $x = ${b}$. Thiết diện vuông góc với trục $Ox$ tại điểm có hoành độ $x$ ($${a} \\le x \\le ${b}$) ${S}`;
+const v3Pi = (q, b)=>{ q = qq(q); const n = Math.abs(q[0]), s = q[0] < 0 ? '-' : '', u = n === 1 ? (b || '\\pi') : `${n}${b || '\\pi'}`; return q[1] === 1 ? s + u : `${s}\\dfrac{${u}}{${q[1]}}`; };
+const v3Fx = (a, h, e)=>{ const q = qr(a, h); return q[1] === 1 ? `${q[0] === 1 ? '' : q[0]}${e || 'x'}` : `\\dfrac{${q[0] === 1 ? '' : q[0]}${e || 'x'}}{${q[1]}}`; };
+const v3K = (R, stem, q, ws, lg, chk, unit)=> gT(R, stem, v3Pi(q), qv(q)*Math.PI, ws.map(w=> [v3Pi(w), qv(w)*Math.PI]), lg, chk);
+
+G(12,3,2,'TH','S(x) cho sẵn dạng đa thức: V = ∫S(x)dx', R=>{
+  const p = R.int(1, 4), q = R.int(1, 6), a = R.int(0, 2), b = a + R.int(1, 4), co = [3*p, 0, q], v = tpQ(co, a, b), f = gF(co);
+  return tpT(R, `${v3St(a, b, `có diện tích $S(x) = ${tpP(co)}$.`)} Thể tích của vật thể bằng`, v, [f(b) - f(a), f(b)*(b - a), qm(2, v), qa(tpQ(co, 0, b), q)], t=> `$V = ${tpI(`\\left(${tpP(co)}\\right)`, a, b)} = ${t}$.`, ()=> ngSi(f, a, b));
+});
+
+G(12,3,2,'TH','Thiết diện là hình vuông cạnh kx: S(x) = k²x² (bẫy: quên bình phương)', R=>{
+  const k = R.int(1, 4), b = R.int(1, 6), v = qr(k*k*b**3, 3), f = x=> (k*x)**2;
+  return tpT(R, `${v3St(0, b, `là hình vuông có cạnh bằng $${tpS(k)}x$.`)} Thể tích của vật thể bằng`, v, [qr(k*b*b, 2), qr(k*k*b*b, 2), k*k*b**3, qr(k*k*b**3, 2)], t=> `$S(x) = ${k*k === 1 ? '' : k*k}x^{2}$.<br>$V = ${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, 0, b)} = ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+G(12,3,2,'TH','Thiết diện là hình chữ nhật hai cạnh x và kx + c', R=>{
+  const k = R.int(1, 3), c = R.int(1, 5), b = R.int(1, 6), co = [k, c, 0], v = tpQ(co, 0, b), f = gF(co);
+  return tpT(R, `${v3St(0, b, `là hình chữ nhật có hai cạnh là $x$ và $${tpP([k, c])}$.`)} Thể tích của vật thể bằng`, v, [qs(tpQ(co, 0, b), c*b), f(b), qm(2, v), qa(v, c)], t=> `$S(x) = x(${tpP([k, c])}) = ${tpP(co)}$.<br>$V = ${tpI(`\\left(${tpP(co)}\\right)`, 0, b)} = ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+G(12,3,2,'TH','Thiết diện là hình chữ nhật cạnh a và √x', R=>{
+  const a = R.int(1, 6), n = R.int(1, 3), b = n*n, v = qr(2*a*n**3, 3), f = x=> a*Math.sqrt(x);
+  return tpT(R, `${v3St(0, b, `là hình chữ nhật có hai cạnh là $${a}$ và $\\sqrt{x}$.`)} Thể tích của vật thể bằng`, v, [a*n**3, qr(a*n**3, 2), qr(a*n**3, 3), qr(4*a*n**3, 3)], t=> `$S(x) = ${tpS(a)}\\sqrt{x}$.<br>$V = ${qT(qr(2*a, 3))}x\\sqrt{x}$ lấy từ $0$ đến $${b}$, bằng $${t}$.`, ()=> nSq(f, b));
+});
+
+G(12,3,2,'VD','Thiết diện là tam giác đều cạnh kx: S(x) = √3k²x²/4', R=>{
+  const k = R.pick([1, 2, 3, 4]), b = R.pick([1, 2, 3, 4, 6]), q = qr(k*k*b**3, 12), A = (()=>{ const n = q[0], d = q[1]; return d === 1 ? `${n === 1 ? '' : n}\\sqrt{3}` : `\\dfrac{${n === 1 ? '' : n}\\sqrt{3}}{${d}}`; })(), V = qv(q)*Math.sqrt(3), W = (c)=>{ const r = qq(c); return r[1] === 1 ? `${r[0] === 1 ? '' : r[0]}\\sqrt{3}` : `\\dfrac{${r[0] === 1 ? '' : r[0]}\\sqrt{3}}{${r[1]}}`; }, f = x=> Math.sqrt(3)/4*(k*x)**2;
+  return gT(R, `${v3St(0, b, `là tam giác đều có cạnh bằng $${tpS(k)}x$.`)} Thể tích của vật thể bằng`, A, V, [[W(qr(k*k*b**3, 4)), qv(qr(k*k*b**3, 4))*Math.sqrt(3)], [W(qr(k*k*b**3, 6)), qv(qr(k*k*b**3, 6))*Math.sqrt(3)], [W(qr(k*k*b**3, 3)), qv(qr(k*k*b**3, 3))*Math.sqrt(3)], [qT(qr(k*k*b**3, 3)), k*k*b**3/3]], t=> `Tam giác đều cạnh $a$ có diện tích $\\dfrac{a^{2}\\sqrt{3}}{4}$ nên $S(x) = ${W(qr(k*k, 4))}x^{2}$.<br>$V = ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+G(12,3,2,'TH','Thiết diện là hình tròn bán kính kx: V = πk²b³/3', R=>{
+  const k = R.int(1, 3), b = R.int(1, 6), q = qr(k*k*b**3, 3), f = x=> Math.PI*(k*x)**2;
+  return v3K(R, `${v3St(0, b, `là hình tròn có bán kính $${tpS(k)}x$.`)} Thể tích của vật thể bằng`, q, [qm(3, q), qr(k*k*b*b, 2), qm(2, q), qr(k*k*b**3, 6)], t=> `$S(x) = ${v3Pi(k*k)} x^{2}$.<br>$V = ${tpI(`${v3Pi(k*k)} x^{2}`, 0, b)} = ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+G(12,3,2,'VD','Thiết diện là nửa hình tròn đường kính kx', R=>{
+  const k = 2*R.int(1, 3), b = R.int(1, 6), q = qr(k*k*b**3, 24), f = x=> Math.PI*(k*x/2)**2/2;
+  return v3K(R, `${v3St(0, b, `là nửa hình tròn có đường kính $${k}x$.`)} Thể tích của vật thể bằng`, q, [qm(2, q), qm(4, q), qr(k*k*b**3, 3), qr(k*k*b**3, 12)], t=> `Bán kính bằng $${qT(qr(k, 2))}x$, nên $S(x) = \\dfrac{\\pi}{2}\\left(${qT(qr(k, 2))}x\\right)^{2}$.<br>$V = ${t}$.`.replace('\\left(1x\\right)', 'x'), ()=> ngSi(f, 0, b));
+});
+
+G(12,3,2,'VD','Hình chóp đáy vuông: thiết diện cách đỉnh x là hình vuông cạnh ax/h, V = a²h/3', R=>{
+  const a = R.int(1, 6), h = R.int(2, 9), v = qr(a*a*h, 3), f = x=> (a*x/h)**2;
+  return tpT(R, `Hình chóp đều có đáy là hình vuông cạnh $${a}$, chiều cao $${h}$. Đặt trục $Ox$ theo đường cao, gốc $O$ tại đỉnh. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông cạnh $${v3Fx(a, h)}$. Dùng tích phân tính được thể tích hình chóp bằng`, v, [a*a*h, qr(a*a*h, 2), qr(a*h, 3), qr(a*a*h, 6)], t=> `$S(x) = ${v3Fx(a*a, h*h, 'x^{2}')}$.<br>$V = ${tpI(v3Fx(a*a, h*h, 'x^{2}'), 0, h)} = ${t}$.`, ()=> ngSi(f, 0, h));
+});
+
+G(12,3,2,'VD','Hình nón: thiết diện cách đỉnh x là hình tròn bán kính rx/h', R=>{
+  const r = R.int(1, 6), h = R.int(2, 9), q = qr(r*r*h, 3), f = x=> Math.PI*(r*x/h)**2;
+  return v3K(R, `Hình nón có bán kính đáy $${r}$, chiều cao $${h}$. Đặt trục $Ox$ theo đường cao, gốc $O$ tại đỉnh. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình tròn bán kính $${v3Fx(r, h)}$. Dùng tích phân tính được thể tích hình nón bằng`, q, [r*r*h, qr(r*r*h, 2), qr(r*h, 3), qr(2*r*r*h, 3)], t=> `$S(x) = \\pi\\cdot ${v3Fx(r*r, h*h, 'x^{2}')}$.<br>$V = ${t}$.`, ()=> ngSi(f, 0, h));
+});
+
+G(12,3,2,'VD','Khối chóp cụt: lấy tích phân từ h₁ đến h₂ với thiết diện hình vuông', R=>{
+  const k = R.int(1, 3), h1 = R.int(1, 3), h2 = h1 + R.int(1, 4), v = qr(k*k*(h2**3 - h1**3), 3), f = x=> (k*x)**2;
+  return tpT(R, `Một khối chóp cụt nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = ${h1}$, $x = ${h2}$. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông cạnh $${tpS(k)}x$. Thể tích khối chóp cụt bằng`, v, [qr(k*k*h2**3, 3), qr(k*k*(h2 - h1)**3, 3), k*k*(h2*h2 - h1*h1), qr(k*k*(h2*h2 - h1*h1), 2)], t=> `$V = ${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, h1, h2)} = ${t}$.`, ()=> ngSi(f, h1, h2));
+});
+
+G(12,3,2,'VD','Hình cầu bán kính R: S(x) = π(R² − x²), V = 4πR³/3', R=>{
+  const r = R.int(1, 12), q = qr(4*r**3, 3), f = x=> Math.PI*(r*r - x*x);
+  return v3K(R, `Xét hình cầu tâm $O$, bán kính $${r}$. Mặt phẳng vuông góc với trục $Ox$ tại $x$ cắt hình cầu theo hình tròn. Tính bằng tích phân, thể tích hình cầu bằng`, q, [qm(2, q), qr(q[0], 2*q[1]), qm(q, 3), r**3, 2*r**3], t=> `Hình tròn có bán kính $\\sqrt{${r*r} - x^{2}}$, $S(x) = \\pi(${r*r} - x^{2})$.<br>$V = ${tpI(`\\pi(${r*r} - x^{2})`, -r, r)} = ${t}$.`, ()=> ngSi(f, -r, r));
+});
+
+G(12,3,2,'VD','Chỏm cầu: V = ∫π(R² − x²)dx từ R − h đến R', R=>{
+  const r = R.int(2, 6), h = R.int(1, r - 1), q = qs(qm(r*r, h), qr(r**3 - (r - h)**3, 3)), f = x=> Math.PI*(r*r - x*x);
+  return v3K(R, `Hình cầu bán kính $${r}$ bị một mặt phẳng cắt thành hai phần. Chỏm cầu có chiều cao $${h}$ (phần có thể tích nhỏ hơn). Thể tích chỏm cầu bằng`, q, [qm(2, q), qr(4*r**3, 3), qa(q, h), qr(h*r*r, 2)], t=> `Đặt trục $Ox$ qua tâm, chỏm cầu ứng với $${r - h} \\le x \\le ${r}$.<br>$V = ${tpI(`\\pi(${r*r} - x^{2})`, r - h, r)} = ${t}$.`, ()=> ngSi(f, r - h, r));
+});
+
+G(12,3,2,'TH','Thiết diện có diện tích không đổi: V = S·h (mọi hình lăng trụ, kể cả xiên)', R=>{
+  const s = R.int(2, 20), h = R.int(2, 15), v = s*h, f = x=> s;
+  return tpT(R, `${v3St(0, h, `có diện tích không đổi bằng $${s}$.`)} Thể tích của vật thể bằng`, v, [s + h, qr(v, 2), qr(v, 3), 2*v], t=> `$V = ${tpI(`${s}`, 0, h)} = ${t}$.`, ()=> ngSi(f, 0, h));
+});
+
+G(12,3,2,'VD','Đáy hình tròn, thiết diện tam giác vuông cân: nêm trụ', R=>{
+  const r = R.int(1, 6), k = R.int(1, 3), v = qr(8*k*r**3, 3), f = x=> 2*k*(r*r - x*x);
+  return tpT(R, `Một vật thể có đáy là hình tròn bán kính $${r}$ tâm $O$. Thiết diện vuông góc với trục $Ox$ tại $x$ ($${-r} \\le x \\le ${r}$) có diện tích $S(x) = ${tpS(2*k)}(${r*r} - x^{2})$. Thể tích của vật thể bằng`, v, [qr(4*k*r**3, 3), qr(16*k*r**3, 3), 2*k*r**3, qr(2*k*r**3, 3)], t=> `$V = ${tpI(`${tpS(2*k)}(${r*r} - x^{2})`, -r, r)} = ${t}$.`, ()=> ngSi(f, -r, r));
+});
+
+G(12,3,2,'VD','Đáy tròn, thiết diện hình vuông có cạnh là dây cung: S = 4(R² − x²)', R=>{
+  const r = R.int(1, 12), v = qr(16*r**3, 3), f = x=> 4*(r*r - x*x);
+  return tpT(R, `Một vật thể có đáy là hình tròn tâm $O$, bán kính $${r}$. Mỗi thiết diện vuông góc với đường kính nằm trên trục $Ox$ là hình vuông có một cạnh là dây cung của đường tròn đáy. Thể tích của vật thể bằng`, v, [qr(8*r**3, 3), qr(4*r**3, 3), qr(32*r**3, 3), 4*r**3], t=> `Dây cung tại $x$ dài $2\\sqrt{${r*r} - x^{2}}$ nên $S(x) = 4(${r*r} - x^{2})$.<br>$V = ${tpI(`4(${r*r} - x^{2})`, -r, r)} = ${t}$.`, ()=> ngSi(f, -r, r));
+});
+
+G(12,3,2,'VD','Đáy dưới parabol y = x(m − x), thiết diện hình vuông cạnh f(x): V = m⁵/30', R=>{
+  const m = R.int(1, 4), k = R.int(1, 3), q = qr(k*k*m**5, 30), co = [k*k, -2*k*k*m, k*k*m*m, 0, 0], f = gF(co);
+  return tpT(R, `Một vật thể có đáy là hình phẳng giới hạn bởi parabol $y = x(${m} - x)$ và trục $Ox$. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông có một cạnh nằm trên đáy, độ dài cạnh bằng ${k === 1 ? '' : `$${k}$ lần `}tung độ của parabol tại $x$. Thể tích của vật thể bằng`, q, [qr(k*m**3, 6), qr(k*k*m**5, 15), qr(k*k*m**5, 10), qr(k*k*m**4, 12)], t=> `$S(x) = ${k === 1 ? '' : k*k}x^{2}(${m} - x)^{2} = ${tpP(co)}$.<br>$V = ${tpI(`\\left(${tpP(co)}\\right)`, 0, m)} = ${t}$.`, ()=> ngSi(f, 0, m));
+});
+
+G(12,3,2,'VD','Tìm b từ thể tích: S(x) = 3kx², V = kb³', R=>{
+  const k = R.int(1, 3), b = R.int(2, 13), v = k*b**3, f = x=> 3*k*x*x;
+  return tpT(R, `Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = b$ với $b > 0$. Thiết diện tại $x$ có diện tích $S(x) = ${tpP([3*k, 0, 0])}$. Biết thể tích của vật thể bằng $${v}$. Giá trị của $b$ bằng`, b, [b + 1, 2*b, b - 1, b*b], t=> `$V = ${tpI(tpP([3*k, 0, 0]), 0, 'b')} = ${tpS(k)}b^{3} = ${v}$.<br>Suy ra $b^{3} = ${b**3}$, tức $b = ${t}$.`, ()=> Math.cbrt(v/k));
+});
+
+G(12,3,2,'VD','Mặt phẳng x = c chia vật thể S(x) = 3kx²: tỉ số thể tích hai phần', R=>{
+  const k = R.int(1, 3), c = R.int(1, 5), b = c + R.int(1, 4), A = c**3, B = b**3 - c**3, v = qr(A, B), f = x=> 3*k*x*x;
+  return tpT(R, `Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = ${b}$. Thiết diện tại $x$ có diện tích $S(x) = ${tpP([3*k, 0, 0])}$. Mặt phẳng tại $x = ${c}$ chia vật thể thành phần trái có thể tích $V_{1}$ và phần phải có thể tích $V_{2}$. Tỉ số $\\dfrac{V_{1}}{V_{2}}$ bằng`, v, [qr(c, b - c), qr(c*c, (b - c)**2), qr(c**3, b**3), qr(c, b)], t=> `$V_{1} = ${k*A}$, $V_{2} = ${k*B}$.<br>Tỉ số bằng $${t}$.`, ()=> ngSi(f, 0, c)/ngSi(f, c, b));
+});
+
+G(12,3,2,'TH','S(x) dạng k sin x, k eˣ: dùng bảng nguyên hàm', R=>{
+  const w = R.pick([0, 1]), k = R.int(1, 12), a = R.int(2, 8);
+  if(w) return tpT(R, `Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = \\pi$. Thiết diện tại $x$ có diện tích $S(x) = ${tpS(k)}\\sin x$. Thể tích của vật thể bằng`, 2*k, [k, 4*k, 0, 3*k], t=> `$V = ${tpI(`${tpS(k)}\\sin x`, 0, '\\pi')} = ${t}$.`, ()=> ngSi(x=> k*Math.sin(x), 0, Math.PI));
+  return tpT(R, `Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = \\ln ${a}$. Thiết diện tại $x$ có diện tích $S(x) = ${tpS(k)}e^{x}$. Thể tích của vật thể bằng`, k*(a - 1), [k*a, k*(a + 1), a - 1, k*(a - 2)], t=> `$V = ${tpI(`${tpS(k)}e^{x}`, 0, `\\ln ${a}`)} = ${t}$.`, ()=> ngSi(x=> k*Math.exp(x), 0, Math.log(a)));
+});
+
+G(12,3,2,'VD','Bể nước: diện tích mặt nước theo độ sâu, thể tích nước khi mực nước đạt h', R=>{
+  const a = R.int(2, 8), b = R.int(1, 4), h = R.int(1, 5), co = [b, a], v = tpQ(co, 0, h), f = gF(co);
+  return tpT(R, `Một bể chứa nước có mặt cắt ngang song song với đáy, cách đáy $x$ mét, có diện tích $S(x) = ${tpP(co)}$ (m$^{2}$). Khi mực nước cao $${h}$ m so với đáy, thể tích nước trong bể bằng`, v, [f(h), f(h)*h, a*h, qr(f(h)*h, 3)], t=> `$V = ${tpI(`\\left(${tpP(co)}\\right)`, 0, h)} = ${t}$ (m$^{3}$).`, ()=> ngSi(f, 0, h), undefined, 'm$^{3}$');
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,2,'TH','Thiết diện hình vuông cạnh kx: S(x), thể tích, nửa đầu', R=>{
+  const k = R.int(1, 3), b = 2*R.int(1, 3), f = x=> (k*x)**2, V = qr(k*k*b**3, 3), H = qr(k*k*(b/2)**3, 3);
+  return {stem:v3St(0, b, `là hình vuông có cạnh bằng $${tpS(k)}x$.`),
+    items:[claim(R, `$S(x) = ${tpP([k*k, 0, 0])}$`, `$S(x) = ${tpP([k, 0])}$`, ()=> near(f(2), k*k*4, 1e-9), ()=> near(f(2), 2*k, 1e-9) && k !== 2),
+      gC(R, `Thể tích của vật thể bằng `, V, qm(3, V), ()=> ngSi(f, 0, b)),
+      gC(R, `Phần vật thể ứng với $0 \\le x \\le ${b/2}$ có thể tích `, H, qr(V[0], 2*V[1]), ()=> ngSi(f, 0, b/2)),
+      claim(R, `Thể tích phần ứng với $${b/2} \\le x \\le ${b}$ gấp $7$ lần phần ứng với $0 \\le x \\le ${b/2}$`, `Thể tích hai phần ứng với $0 \\le x \\le ${b/2}$ và $${b/2} \\le x \\le ${b}$ bằng nhau`, ()=> near(ngSi(f, b/2, b), 7*ngSi(f, 0, b/2), 1e-7), ()=> near(ngSi(f, b/2, b), ngSi(f, 0, b/2), 1e-7))],
+    lg:`a) Diện tích hình vuông bằng bình phương cạnh.<br>b) $${tpI(tpP([k*k, 0, 0]), 0, b)} = ${qT(V)}$.<br>c) Lấy cận trên bằng $${b/2}$ được $${qT(H)}$.<br>d) Phần còn lại bằng $${qT(qs(V, H))}$, gấp $7$ lần.`};
+});
+
+GD(12,3,2,'VD','Hình chóp đáy vuông: cạnh thiết diện theo x, diện tích, thể tích, khớp công thức', R=>{
+  const a = R.int(1, 5), h = R.int(2, 6), V = qr(a*a*h, 3), f = x=> (a*x/h)**2, c = t=> v3Fx(t, h), d = R.pick([1, h - 1]), Sd = qr(a*a*d*d, h*h);
+  return {stem:`Hình chóp đều có đáy là hình vuông cạnh $${a}$, chiều cao $${h}$. Đặt trục $Ox$ theo đường cao, gốc $O$ tại đỉnh, chiều dương hướng về đáy.`,
+    items:[claim(R, `Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông cạnh $${c(a)}$`, `Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông cạnh $${c(2*a)}$`, ()=> near(a*h/h, a, 1e-9), ()=> near(2*a*h/h, a, 1e-9)),
+      gC(R, `Thiết diện tại $x = ${d}$ có diện tích `, Sd, qm(2, Sd), ()=> f(d)),
+      gC(R, `Thể tích hình chóp tính bằng tích phân bằng `, V, qm(3, V), ()=> ngSi(f, 0, h)),
+      claim(R, `Kết quả tích phân trùng với công thức $V = \\dfrac{1}{3}Bh$`, `Kết quả tích phân bằng $V = Bh$`, ()=> near(ngSi(f, 0, h), a*a*h/3, 1e-8), ()=> near(ngSi(f, 0, h), a*a*h, 1e-8))],
+    lg:`a) Tại đáy $x = ${h}$ cạnh bằng $${a}$, cạnh tỉ lệ với $x$.<br>b) Thay $x = ${d}$ rồi bình phương cạnh.<br>c) $${tpI(v3Fx(a*a, h*h, 'x^{2}'), 0, h)} = ${qT(V)}$.<br>d) Với diện tích đáy $B = ${a*a}$: $\\dfrac{1}{3}Bh = ${qT(V)}$.`};
+});
+
+GD(12,3,2,'TH','Hình cầu: bán kính thiết diện, S(x), thể tích, nửa hình cầu', R=>{
+  const r = R.int(2, 6), d = R.int(1, r - 1), rr = r*r - d*d, f = x=> Math.PI*(r*r - x*x), q = qr(4*r**3, 3), H = qr(2*r**3, 3), P = Math.PI;
+  return {stem:`Xét hình cầu tâm $O$, bán kính $${r}$. Mặt phẳng vuông góc với trục $Ox$ tại $x$ cắt hình cầu theo một hình tròn.`,
+    items:[claim(R, `Hình tròn tại $x = ${d}$ có bán kính $\\sqrt{${rr}}$`, `Hình tròn tại $x = ${d}$ có bán kính $${r - d}$`, ()=> near(rr, r*r - d*d, 1e-9), ()=> near(rr, (r - d)**2, 1e-9)),
+      claim(R, `$S(x) = \\pi(${r*r} - x^{2})$`, `$S(x) = \\pi(${r} - x)^{2}$`, ()=> near(f(d), P*rr, 1e-9), ()=> near(f(d), P*(r - d)**2, 1e-9)),
+      claim(R, `Thể tích hình cầu bằng $${v3Pi(q)}$`, `Thể tích hình cầu bằng $${v3Pi(qr(8*r**3, 3))}$`, ()=> near(ngSi(f, -r, r), qv(q)*P, 1e-7), ()=> near(ngSi(f, -r, r), 8*r**3/3*P, 1e-7)),
+      claim(R, `Phần hình cầu ứng với $0 \\le x \\le ${r}$ có thể tích $${v3Pi(H)}$`, `Phần hình cầu ứng với $0 \\le x \\le ${r}$ có thể tích $${v3Pi(q)}$`, ()=> near(ngSi(f, 0, r), qv(H)*P, 1e-7), ()=> near(ngSi(f, 0, r), qv(q)*P, 1e-7))],
+    lg:`a) Theo định lí Pythagore, bán kính bằng $\\sqrt{${r*r} - ${d*d}}$.<br>b) Diện tích hình tròn.<br>c) $${tpI(`\\pi(${r*r} - x^{2})`, -r, r)} = ${v3Pi(q)}$.<br>d) Nửa hình cầu có thể tích $${v3Pi(H)}$.`};
+});
+
+GD(12,3,2,'VD','Đáy tròn, thiết diện hình vuông: dây cung, S(x), V, so với hình cầu cùng bán kính', R=>{
+  const r = R.int(1, 5), f = x=> 4*(r*r - x*x), V = qr(16*r**3, 3), Cu = qr(4*r**3, 3), d = r - 1 >= 1 ? 1 : 0, Sd = 4*(r*r - d*d);
+  return {stem:`Một vật thể có đáy là hình tròn tâm $O$, bán kính $${r}$. Mỗi thiết diện vuông góc với đường kính nằm trên trục $Ox$ là hình vuông có một cạnh là dây cung của đường tròn đáy.`,
+    items:[claim(R, `Dây cung tại $x$ có độ dài $2\\sqrt{${r*r} - x^{2}}$`, `Dây cung tại $x$ có độ dài $\\sqrt{${r*r} - x^{2}}$`, ()=> near(2*Math.sqrt(r*r), 2*r, 1e-9), ()=> near(Math.sqrt(r*r), 2*r, 1e-9)),
+      gC(R, `Thiết diện tại $x = ${d}$ có diện tích `, Sd, Sd/4, ()=> f(d)),
+      gC(R, `Thể tích của vật thể bằng `, V, qr(8*r**3, 3), ()=> ngSi(f, -r, r)),
+      claim(R, `Thể tích của vật thể lớn hơn thể tích hình cầu cùng bán kính $${r}$`, `Thể tích của vật thể nhỏ hơn thể tích hình cầu cùng bán kính $${r}$`, ()=> ngSi(f, -r, r) > 4/3*Math.PI*r**3, ()=> ngSi(f, -r, r) < 4/3*Math.PI*r**3)],
+    lg:`a) Tại $x = 0$ dây cung là đường kính $${2*r}$.<br>b) $S(x) = 4(${r*r} - x^{2})$, thay $x = ${d}$.<br>c) $${tpI(`4(${r*r} - x^{2})`, -r, r)} = ${qT(V)}$.<br>d) Thể tích hình cầu bằng $${v3Pi(Cu)} \\approx ${nt(ngRou(qv(Cu)*Math.PI, 1))}$, nhỏ hơn $${qT(V)} \\approx ${nt(ngRou(qv(V), 1))}$.`};
+});
+
+GD(12,3,2,'TH','Thiết diện hình chữ nhật x và 2x + c: S(x), V, đạo hàm của V(t)', R=>{
+  const c = R.int(1, 5), b = R.int(1, 5), co = [2, c, 0], f = gF(co), V = tpQ(co, 0, b);
+  return {stem:v3St(0, b, `là hình chữ nhật có hai cạnh là $x$ và $${tpP([2, c])}$.`),
+    items:[claim(R, `$S(x) = ${tpP(co)}$`, `$S(x) = ${tpP([2, c + 1, 0])}$`, ()=> near(f(1), 2 + c, 1e-9), ()=> near(f(1), 3 + c, 1e-9)),
+      gC(R, `Thiết diện tại $x = ${b}$ có diện tích `, f(b), f(b) + b, ()=> f(b)),
+      gC(R, `Thể tích của vật thể bằng `, V, qm(2, V), ()=> ngSi(f, 0, b)),
+      claim(R, `Nếu kéo dài vật thể đến $x = ${b + 1}$ (giữ nguyên quy luật) thì thể tích tăng thêm $${qT(tpQ(co, b, b + 1))}$`, `Nếu kéo dài vật thể đến $x = ${b + 1}$ (giữ nguyên quy luật) thì thể tích tăng thêm $${qT(qa(tpQ(co, b, b + 1), 1))}$`, ()=> near(ngSi(f, b, b + 1), qv(tpQ(co, b, b + 1)), 1e-8), ()=> near(ngSi(f, b, b + 1), qv(tpQ(co, b, b + 1)) + 1, 1e-8))],
+    lg:`a) Nhân hai cạnh.<br>b) Thay $x = ${b}$.<br>c) $${tpI(`\\left(${tpP(co)}\\right)`, 0, b)} = ${qT(V)}$.<br>d) $${tpI(`\\left(${tpP(co)}\\right)`, b, b + 1)} = ${qT(tpQ(co, b, b + 1))}$.`};
+});
+
+GD(12,3,2,'VD','Hai vật thể cùng S(x): thể tích bằng nhau (nguyên lí Cavalieri)', R=>{
+  const k = R.int(1, 3), b = R.int(1, 4), V = k*b**3, f = x=> 3*k*x*x;
+  return {stem:`Hai vật thể $(A)$, $(B)$ cùng nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = ${b}$. Với mỗi $x$ thuộc đoạn $[0; ${b}]$, thiết diện của $(A)$ là hình vuông, thiết diện của $(B)$ là hình tròn, và cả hai có cùng diện tích $S(x) = ${tpP([3*k, 0, 0])}$.`,
+    items:[gC(R, `Thể tích của $(A)$ bằng `, V, 3*V, ()=> ngSi(f, 0, b)),
+      claim(R, `Thể tích của $(B)$ bằng thể tích của $(A)$`, `Thể tích của $(B)$ nhỏ hơn thể tích của $(A)$`, ()=> true, ()=> false),
+      claim(R, `Thiết diện của $(A)$ tại $x = ${b}$ có diện tích bằng thiết diện của $(B)$ tại $x = ${b}$`, `Thiết diện của $(A)$ tại $x = ${b}$ có diện tích lớn hơn thiết diện của $(B)$ tại $x = ${b}$`, ()=> f(b) === f(b), ()=> f(b) > f(b)),
+      claim(R, `Thiết diện của $(B)$ tại $x = ${b}$ có bán kính $\\sqrt{\\dfrac{${3*k*b*b}}{\\pi}}$`, `Thiết diện của $(B)$ tại $x = ${b}$ có bán kính $\\sqrt{${3*k*b*b}}$`, ()=> near(Math.PI*(3*k*b*b/Math.PI), 3*k*b*b, 1e-9), ()=> near(Math.PI*(3*k*b*b), 3*k*b*b, 1e-9))],
+    lg:`a) $${tpI(tpP([3*k, 0, 0]), 0, b)} = ${V}$.<br>b) Thể tích chỉ phụ thuộc $S(x)$, không phụ thuộc hình dạng thiết diện.<br>c) Hai thiết diện cùng có diện tích $S(${b}) = ${3*k*b*b}$.<br>d) Từ $\\pi r^{2} = ${3*k*b*b}$.`};
+});
+
+GD(12,3,2,'VD','Đáy parabol, thiết diện hình vuông: S(x) bậc bốn, V, so với thiết diện tam giác', R=>{
+  const m = R.int(1, 3), co = [1, -2*m, m*m, 0, 0], f = gF(co), V = qr(m**5, 30), Tr = qr(m**5, 60);
+  return {stem:`Một vật thể có đáy là hình phẳng giới hạn bởi parabol $y = x(${m} - x)$ và trục $Ox$. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông có một cạnh nằm trên đáy, độ dài cạnh bằng tung độ của parabol tại $x$.`,
+    items:[claim(R, `$S(x) = x^{2}(${m} - x)^{2}$`, `$S(x) = x(${m} - x)$`, ()=> near(f(m/2), (m/2)**4, 1e-9), ()=> near(f(m/2), (m/2)**2, 1e-9) && m !== 2),
+      gC(R, `Thể tích của vật thể bằng `, V, qr(m**3, 6), ()=> ngSi(f, 0, m)),
+      gC(R, `Thiết diện lớn nhất có diện tích `, qr(m**4, 16), qr(m**2, 4), ()=> f(m/2)),
+      gC(R, `Nếu thiết diện là tam giác vuông cân có cạnh góc vuông bằng tung độ của parabol thì thể tích bằng `, Tr, V, ()=> ngSi(x=> f(x)/2, 0, m))],
+    lg:`a) Bình phương cạnh.<br>b) $${tpI(`\\left(${tpP(co)}\\right)`, 0, m)} = ${qT(V)}$.<br>c) Tung độ lớn nhất tại $x = ${nt(m/2)}$, bình phương lên được $${qT(qr(m**4, 16))}$.<br>d) Diện tích giảm một nửa nên thể tích bằng $${qT(Tr)}$.`};
+});
+
+GD(12,3,2,'TH','Bể nước: S(x) theo độ cao, thể tích theo mực nước, tốc độ dâng', R=>{
+  const a = R.int(2, 8), b = 2*R.int(1, 3), h = R.int(2, 5), co = [b, a], f = gF(co), V = tpQ(co, 0, h), Vm = tpQ(co, 0, h - 1);
+  return {stem:`Một bể chứa nước có mặt cắt ngang song song với đáy, cách đáy $x$ mét, có diện tích $S(x) = ${tpP(co)}$ (m$^{2}$).`,
+    items:[gC(R, `Mặt nước khi mực nước cao $${h}$ m có diện tích `, f(h), f(h) + b, ()=> f(h), 'm$^{2}$'),
+      gC(R, `Khi mực nước cao $${h}$ m, thể tích nước bằng `, V, f(h)*h, ()=> ngSi(f, 0, h), 'm$^{3}$'),
+      gC(R, `Khi mực nước tăng từ $${h - 1}$ m lên $${h}$ m, thể tích nước tăng thêm `, qs(V, Vm), V, ()=> ngSi(f, h - 1, h), 'm$^{3}$'),
+      claim(R, `Càng lên cao, mỗi mét mực nước càng chứa nhiều nước hơn`, `Càng lên cao, mỗi mét mực nước càng chứa ít nước hơn`, ()=> f(h) > f(h - 1), ()=> f(h) < f(h - 1))],
+    lg:`a) Thay $x = ${h}$.<br>b) $${tpI(`\\left(${tpP(co)}\\right)`, 0, h)} = ${qT(V)}$.<br>c) $${tpI(`\\left(${tpP(co)}\\right)`, h - 1, h)} = ${qT(qs(V, Vm))}$.<br>d) $S(x)$ là hàm số đồng biến.`};
+});
+
+GD(12,3,2,'VD','Mặt phẳng x = c chia vật thể: thể tích hai phần, tìm c để tỉ số 1 : 7', R=>{
+  const k = R.int(1, 3), b = 2*R.int(1, 4), c = b/2, f = x=> 3*k*x*x, A = k*c**3, T = k*b**3;
+  return {stem:v3St(0, b, `có diện tích $S(x) = ${tpP([3*k, 0, 0])}$.`) + ` Mặt phẳng tại $x = ${c}$ chia vật thể thành hai phần.`,
+    items:[gC(R, `Thể tích của vật thể bằng `, T, 3*T, ()=> ngSi(f, 0, b)),
+      gC(R, `Phần ứng với $0 \\le x \\le ${c}$ có thể tích `, A, 2*A, ()=> ngSi(f, 0, c)),
+      gC(R, `Phần ứng với $${c} \\le x \\le ${b}$ có thể tích `, T - A, T, ()=> ngSi(f, c, b)),
+      claim(R, `Tỉ số thể tích phần trái và phần phải bằng $\\dfrac{1}{7}$`, `Tỉ số thể tích phần trái và phần phải bằng $\\dfrac{1}{2}$`, ()=> near(ngSi(f, 0, c)/ngSi(f, c, b), 1/7, 1e-9), ()=> near(ngSi(f, 0, c)/ngSi(f, c, b), 1/2, 1e-9))],
+    lg:`a) $${tpI(tpP([3*k, 0, 0]), 0, b)} = ${T}$.<br>b) Cận trên $${c}$ cho $${A}$.<br>c) Hiệu bằng $${T - A}$.<br>d) $\\dfrac{${A}}{${T - A}} = \\dfrac{1}{7}$.`};
+});
+
+GD(12,3,2,'VD','Hình nón: bán kính thiết diện, S(x), thể tích, phần gần đỉnh', R=>{
+  const r = R.int(1, 5), h = 2*R.int(1, 4), f = x=> Math.PI*(r*x/h)**2, P = Math.PI, q = qr(r*r*h, 3), H = qr(r*r*h, 24), m = h/2;
+  return {stem:`Hình nón có bán kính đáy $${r}$, chiều cao $${h}$. Đặt trục $Ox$ theo đường cao, gốc $O$ tại đỉnh, chiều dương hướng về đáy.`,
+    items:[claim(R, `Thiết diện tại $x = ${m}$ là hình tròn bán kính $${qT(qr(r, 2))}$`, `Thiết diện tại $x = ${m}$ là hình tròn bán kính $${r}$`, ()=> near(r*m/h, r/2, 1e-9), ()=> near(r*m/h, r, 1e-9)),
+      claim(R, `Thể tích hình nón bằng $${v3Pi(q)}$`, `Thể tích hình nón bằng $${v3Pi(r*r*h)}$`, ()=> near(ngSi(f, 0, h), qv(q)*P, 1e-8), ()=> near(ngSi(f, 0, h), r*r*h*P, 1e-8)),
+      claim(R, `Phần hình nón ứng với $0 \\le x \\le ${m}$ có thể tích $${v3Pi(H)}$`, `Phần hình nón ứng với $0 \\le x \\le ${m}$ có thể tích $${v3Pi(qr(r*r*h, 6))}$`, ()=> near(ngSi(f, 0, m), qv(H)*P, 1e-8), ()=> near(ngSi(f, 0, m), r*r*h/6*P, 1e-8)),
+      claim(R, `Phần hình nón gần đỉnh chiếm $\\dfrac{1}{8}$ thể tích hình nón`, `Phần hình nón gần đỉnh chiếm $\\dfrac{1}{2}$ thể tích hình nón`, ()=> near(ngSi(f, 0, m), ngSi(f, 0, h)/8, 1e-8), ()=> near(ngSi(f, 0, m), ngSi(f, 0, h)/2, 1e-8))],
+    lg:`a) Bán kính thiết diện tại $x$ bằng $${v3Fx(r, h)}$, thay $x = ${m}$.<br>b) $V = ${tpI(`\\pi\\cdot ${v3Fx(r*r, h*h, 'x^{2}')}`, 0, h)} = ${v3Pi(q)}$.<br>c) Lấy cận trên bằng $${m}$ được $${v3Pi(H)}$.<br>d) Tỉ số hai kết quả bằng $\\dfrac{1}{8}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,2,'TH','S(x) đa thức cho sẵn', R=>{
+  const p = R.int(1, 5), q = R.int(1, 8), a = R.int(0, 2), b = a + R.int(1, 5), co = [3*p, 0, q], v = tpQ(co, a, b), f = gF(co);
+  return tpN(`${v3St(a, b, `có diện tích $S(x) = ${tpP(co)}$.`)} Tính thể tích của vật thể.`, v, t=> `$V = ${tpI(`\\left(${tpP(co)}\\right)`, a, b)} = ${t}$.`, ()=> ngSi(f, a, b));
+});
+
+GT(12,3,2,'TH','Tính thể tích: thiết diện hình vuông cạnh kx', R=>{
+  const k = 3*R.int(1, 3), b = R.int(1, 6), v = k*k*b**3/3, f = x=> (k*x)**2;
+  return tpN(`${v3St(0, b, `là hình vuông có cạnh bằng $${k}x$.`)} Tính thể tích của vật thể.`, v, t=> `$S(x) = ${k*k}x^{2}$, $V = ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+GT(12,3,2,'TH','Tính thể tích: thiết diện hình chữ nhật x và kx + c', R=>{
+  const k = 3*R.int(1, 2), c = 2*R.int(1, 3), b = R.int(1, 6), co = [k, c, 0], v = tpQ(co, 0, b), f = gF(co);
+  return tpN(`${v3St(0, b, `là hình chữ nhật có hai cạnh là $x$ và $${tpP([k, c])}$.`)} Tính thể tích của vật thể.`, v, t=> `$S(x) = ${tpP(co)}$.<br>$V = ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+GT(12,3,2,'TH','Tính thể tích: thiết diện hình chữ nhật a và √x', R=>{
+  const a = 3*R.int(1, 3), n = R.int(1, 4), v = 2*a*n**3/3, f = x=> a*Math.sqrt(x);
+  return tpN(`${v3St(0, n*n, `là hình chữ nhật có hai cạnh là $${a}$ và $\\sqrt{x}$.`)} Tính thể tích của vật thể.`, v, t=> `$S(x) = ${a}\\sqrt{x}$, một nguyên hàm là $${2*a/3}x\\sqrt{x}$.<br>$V = ${t}$.`.replace('$1x', '$x'), ()=> 2*a/3*n**3);
+});
+
+GT(12,3,2,'VD','Thiết diện tam giác đều: làm tròn', R=>{
+  const k = R.int(1, 4), b = R.int(1, 4), v0 = Math.sqrt(3)*k*k*b**3/12, f = x=> Math.sqrt(3)/4*(k*x)**2;
+  return tpRn(`${v3St(0, b, `là tam giác đều có cạnh bằng $${tpS(k)}x$.`)} Tính thể tích của vật thể (làm tròn kết quả đến hàng phần mười).`, v0, t=> `$S(x) = ${(c=> c[1] === 1 ? `${c[0] === 1 ? '' : c[0]}\\sqrt{3}` : `\\dfrac{${c[0] === 1 ? '' : c[0]}\\sqrt{3}}{${c[1]}}`)(qr(k*k, 4))}x^{2}$.<br>$V \\approx ${t}$.`, ()=> ngSi(f, 0, b));
+});
+
+GT(12,3,2,'TH','Thiết diện hình tròn bán kính kx: viết thể tích dạng aπ', R=>{
+  const k = 3*R.int(1, 3), b = R.int(1, 6), a = k*k*b**3/3, f = x=> Math.PI*(k*x)**2;
+  return tpN(`${v3St(0, b, `là hình tròn có bán kính $${k}x$.`)} Thể tích của vật thể có dạng $a\\pi$. Tìm $a$.`, a, t=> `$S(x) = ${k*k}\\pi x^{2}$, $V = ${t}\\pi$.`, ()=> ngSi(f, 0, b)/Math.PI);
+});
+
+GT(12,3,2,'VD','Hình chóp đáy vuông tính bằng tích phân', R=>{
+  const a = 3*R.int(1, 2), h = R.int(2, 9), v = a*a*h/3, f = x=> (a*x/h)**2;
+  return tpN(`Hình chóp đều có đáy là hình vuông cạnh $${a}$, chiều cao $${h}$. Đặt trục $Ox$ theo đường cao, gốc $O$ tại đỉnh. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông cạnh $${v3Fx(a, h)}$. Tính thể tích hình chóp bằng tích phân.`, v, t=> `$S(x) = ${v3Fx(a*a, h*h, 'x^{2}')}$.<br>$V = ${t}$.`, ()=> ngSi(f, 0, h));
+});
+
+GT(12,3,2,'VD','Hình nón tính bằng tích phân, làm tròn', R=>{
+  const r = R.int(1, 5), h = R.int(2, 9), v0 = Math.PI*r*r*h/3, f = x=> Math.PI*(r*x/h)**2;
+  return tpRn(`Hình nón có bán kính đáy $${r}$, chiều cao $${h}$. Đặt trục $Ox$ theo đường cao, gốc $O$ tại đỉnh. Tính thể tích hình nón bằng tích phân (làm tròn kết quả đến hàng phần mười).`, v0, t=> `Thiết diện tại $x$ là hình tròn bán kính $${v3Fx(r, h)}$.<br>$V = ${v3Pi(qr(r*r*h, 3))} \\approx ${t}$.`, ()=> ngSi(f, 0, h));
+});
+
+GT(12,3,2,'VD','Khối chóp cụt thiết diện vuông', R=>{
+  const k = 3*R.int(1, 2), h1 = R.int(1, 3), h2 = h1 + R.int(1, 3), v = k*k*(h2**3 - h1**3)/3, f = x=> (k*x)**2;
+  return tpN(`Một khối chóp cụt nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = ${h1}$, $x = ${h2}$. Thiết diện tại $x$ là hình vuông cạnh $${k}x$. Tính thể tích khối chóp cụt.`, v, t=> `$V = ${tpI(`${k*k}x^{2}`, h1, h2)} = ${t}$.`, ()=> ngSi(f, h1, h2));
+});
+
+GT(12,3,2,'VD','Chỏm cầu, làm tròn', R=>{
+  const r = R.int(2, 7), h = R.int(1, r - 1), v0 = Math.PI*(r*r*h - (r**3 - (r - h)**3)/3), f = x=> Math.PI*(r*r - x*x);
+  return tpRn(`Hình cầu bán kính $${r}$ bị một mặt phẳng cắt thành hai phần. Tính thể tích chỏm cầu có chiều cao $${h}$ (làm tròn kết quả đến hàng phần mười).`, v0, t=> `Chỏm cầu ứng với $${r - h} \\le x \\le ${r}$.<br>$V = ${tpI(`\\pi(${r*r} - x^{2})`, r - h, r)} \\approx ${t}$.`, ()=> ngSi(f, r - h, r));
+});
+
+GT(12,3,2,'VD','Đáy tròn, S(x) = 2k(R² − x²)', R=>{
+  const r = R.int(1, 6), k = 3*R.int(1, 2), v = 8*k*r**3/3, f = x=> 2*k*(r*r - x*x);
+  return tpN(`Một vật thể có đáy là hình tròn bán kính $${r}$ tâm $O$. Thiết diện vuông góc với trục $Ox$ tại $x$ có diện tích $S(x) = ${2*k}(${r*r} - x^{2})$. Tính thể tích của vật thể.`, v, t=> `$V = ${tpI(`${2*k}(${r*r} - x^{2})`, -r, r)} = ${t}$.`, ()=> ngSi(f, -r, r));
+});
+
+GT(12,3,2,'VD','Đáy tròn: diện tích thiết diện tỉ lệ với bình phương nửa dây cung', R=>{
+  const r2 = R.int(1, 7), k = 3*R.int(1, 5), V2 = 16*k*r2**3/3/4, f2 = x=> k*(r2*r2 - x*x);
+  return tpN(`Một vật thể có đáy là hình tròn tâm $O$, bán kính $${r2}$. Thiết diện vuông góc với trục $Ox$ tại $x$ có diện tích bằng $${k}$ lần bình phương nửa dây cung tại $x$. Tính thể tích của vật thể.`, V2, t=> `Nửa dây cung bằng $\\sqrt{${r2*r2} - x^{2}}$, $S(x) = ${k}(${r2*r2} - x^{2})$.<br>$V = ${tpI(`${k}(${r2*r2} - x^{2})`, -r2, r2)} = ${t}$.`, ()=> ngSi(f2, -r2, r2));
+});
+
+GT(12,3,2,'VD','Đáy parabol, thiết diện hình vuông', R=>{
+  const m = R.int(1, 4), k = R.int(1, 4), q = k*m**5, co = [1, -2*m, m*m, 0, 0], f = gF(co);
+  return tpN(`Một vật thể có đáy là hình phẳng giới hạn bởi parabol $y = x(${m} - x)$ và trục $Ox$. Thiết diện vuông góc với trục $Ox$ tại $x$ là hình vuông có cạnh nằm trên đáy, độ dài cạnh bằng tung độ của parabol. Gọi $V$ là thể tích của vật thể. Tính $${30*k}V$.`, q, t=> `$V = ${qT(qr(m**5, 30))}$ nên $${30*k}V = ${t}$.`, ()=> 30*k*ngSi(f, 0, m));
+});
+
+GT(12,3,2,'VD','Tìm b từ thể tích', R=>{
+  const k = R.int(1, 3), b = R.int(2, 15), v = k*b**3;
+  return tpN(`Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = b$ với $b > 0$. Thiết diện tại $x$ có diện tích $S(x) = ${tpP([3*k, 0, 0])}$. Biết thể tích của vật thể bằng $${v}$. Tìm $b$.`, b, t=> `$V = ${tpS(k)}b^{3}$, suy ra $b^{3} = ${b**3}$, $b = ${t}$.`, ()=> Math.cbrt(v/k));
+});
+
+GT(12,3,2,'TH','S(x) = k eˣ hoặc k sin x', R=>{
+  const w = R.pick([0, 1]), k = R.int(1, 25), a = R.int(2, 9);
+  if(w) return tpN(`Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = \\pi$. Thiết diện tại $x$ có diện tích $S(x) = ${tpS(k)}\\sin x$. Tính thể tích của vật thể.`, 2*k, t=> `$V = ${tpI(`${tpS(k)}\\sin x`, 0, '\\pi')} = ${t}$.`, ()=> ngSi(x=> k*Math.sin(x), 0, Math.PI));
+  return tpN(`Một vật thể nằm giữa hai mặt phẳng vuông góc với trục $Ox$ tại $x = 0$, $x = \\ln ${a}$. Thiết diện tại $x$ có diện tích $S(x) = ${tpS(k)}e^{x}$. Tính thể tích của vật thể.`, k*(a - 1), t=> `$V = ${tpI(`${tpS(k)}e^{x}`, 0, `\\ln ${a}`)} = ${t}$.`, ()=> ngSi(x=> k*Math.exp(x), 0, Math.log(a)));
+});
+
+GT(12,3,2,'VD','Bể nước: thể tích theo mực nước (m³)', R=>{
+  const a = R.int(2, 12), b = 2*R.int(1, 4), h = R.int(1, 8), co = [b, a], v = tpQ(co, 0, h), f = gF(co);
+  return tpN(`Một bể chứa nước có mặt cắt ngang song song với đáy, cách đáy $x$ mét, có diện tích $S(x) = ${tpP(co)}$ (m$^{2}$). Tính thể tích nước (theo m$^{3}$) trong bể khi mực nước cao $${h}$ m so với đáy.`, v, t=> `$V = ${tpI(`\\left(${tpP(co)}\\right)`, 0, h)} = ${t}$.`, ()=> ngSi(f, 0, h));
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (Chương IV lớp 12: nguyên hàm, tích phân, mỗi chuyên đề đủ 20 TN, 10 Đ–S, 16 TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* ——— tiện ích tích phân ——— */
+const tpS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const tpP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v);
+const tpV = (co, x)=> co.reduce((s, c)=> s*x + qv(c), 0);
+const tpG = (co)=> co.map((c, i)=> { const p = co.length - 1 - i; return qd(c, p + 1); }).concat([0]);   /* hệ số nguyên hàm (không hằng số) */
+const tpQ = (co, a, b)=>{ const d = co.length - 1; let s = [0, 1]; co.forEach((k, i)=>{ const p = d - i; s = qa(s, qm(qd(k, p + 1), b**(p + 1) - a**(p + 1))); }); return s; };   /* tích phân đa thức từ a đến b, chính xác */
+const tpI = (s, a, b, v)=> `\\int_{${a}}^{${b}} ${s}\\,d${v || 'x'}`;
+const tpF = (co)=> co.map((c, i)=> [qd(c, co.length - i), ngX(co.length - i)]);   /* các hạng tử nguyên hàm của đa thức */
+const tpB = (s, a, b)=> `\\left.\\left(${s}\\right)\\right|_{${a}}^{${b}}`;
+const tpPa = q=>{ q = qq(q); return q[0] < 0 ? `\\left(${qT(q)}\\right)` : qT(q); };
+const tpT = (R, stem, q, ws, lg, chk, hv, unit)=>{ const ans = ngNum(q, unit), wrong = ngW(R, ans, ws.map(x=> ngNum(x, unit))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(qT(q)), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpN = (stem, v0, lg, chk, hv)=>{ v0 = qv(v0); const v = ngRou(v0, 1); if(!near(v, v0, 1e-9) || String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, ngRou(chk(), 1), 1e-9)}; if(hv) o.hv = hv; return o; };   /* đáp số làm tròn một chữ số */
+
+/* ———— Ứng dụng hình học (12-13) ———— */
+const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
+const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
+const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
+const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
+const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
+const sSt = (y, a, b)=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$`;
+const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$ và trục hoành`;
+const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
+const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
+/* 12-13.4 Thể tích khối tròn xoay — số 148–191 (19 TN, 9 Đ–S, 16 TLN).
+   Chuỗi tư duy: V = π∫f² → nón, trụ, nón cụt, cầu bằng tích phân → căn, parabol, lượng giác, mũ, 1/x
+   → khối vành khăn V = π∫(f² − g²) → tìm ngược tham số, tỉ số. Hình tô là hình phẳng trước khi quay quanh Ox. */
+const v4Pi = q=>{ q = qq(q); const n = Math.abs(q[0]), s = q[0] < 0 ? '-' : '', u = n === 1 ? '\\pi' : `${n}\\pi`; return q[1] === 1 ? s + u : `${s}\\dfrac{${u}}{${q[1]}}`; };
+const v4T = (R, stem, q, ws, lg, chk, hv)=> gT(R, stem, v4Pi(q), qv(q)*Math.PI, ws.map(w=> [v4Pi(w), qv(w)*Math.PI]), lg, ()=> Math.PI*chk(), hv);
+const v4Q = (R, stem, q, w, chk)=> claim(R, `${stem} $${v4Pi(q)}$`, `${stem} $${v4Pi(w)}$`, ()=> near(chk(), qv(q), 1e-7), ()=> near(chk(), qv(w), 1e-7));
+const v4St = (y, a, b)=> `Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`;
+const v4Sp = y=> `Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$ và trục hoành. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`;
+const v4N = (pre, ask)=> `${pre} Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = a\\pi$, tìm $a$.`;
+const v4H = (y, a, b)=> `Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$.`;
+const v4P2 = n=>{ const q = qr(n, 2), u = `${q[0] === 1 ? '' : q[0]}\\pi^{2}`; return q[1] === 1 ? u : `\\dfrac{${u}}{2}`; };
+const v4Vh = (plF, F, plG, G, a, b, o)=>{ const hv = gHv(plF, F, [[a, b]], o), m = (a + b)/2, up = F(m) >= G(m); hv.cong = [{hamSo:plG}]; hv.to = [{a, b, tren:up ? plF : plG, duoi:up ? plG : plF}]; return hv; };
+const v4Sq = (f, a, b)=> ngSi(x=> f(x)**2, a, b);
+
+G(12,3,2,'TH','Chọn công thức thể tích khối tròn xoay (bẫy: thiếu π, thiếu bình phương)', R=>{
+  const a = R.int(-3, 1), b = a + R.int(2, 6), f = 'f(x)', tx = ['', `\\pi${tpI('[f(x)]^{2}', a, b)}`, tpI('[f(x)]^{2}', a, b), `\\pi${tpI('f(x)', a, b)}`, `${tpI('\\pi|f(x)|', a, b)}`], ans = {t:`$${tx[1]}$`, v:1}, wrong = [2, 3, 4].map(i=> ({t:`$${tx[i]}$`, v:i}));
+  const o = {stem:`Cho hàm số $y = f(x)$ liên tục trên đoạn $[${a}; ${b}]$. Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi đồ thị $y = f(x)$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$ quanh trục $Ox$ được tính theo công thức nào?`, ans, wrong, lg:`Thiết diện vuông góc với $Ox$ tại $x$ là hình tròn bán kính $|f(x)|$, diện tích $\\pi[f(x)]^{2}$.<br>Vậy $V = ${tx[1]}$.`, verify:()=> o.ans.v === 1};
+  return o;
+});
+
+G(12,3,2,'TH','Quay đoạn thẳng y = kx: khối nón, V = πk²b³/3', R=>{
+  const k = R.int(1, 3), b = R.int(1, 6), q = qr(k*k*b**3, 3), co = [k, 0], f = gF(co);
+  return v4T(R, v4St(tpP(co), 0, b), q, [qm(q, 3), qr(k*b*b, 2), qr(k*k*b*b, 2), qm(2, q)], t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, 0, b)} = ${t}$.<br>Đây là khối nón bán kính đáy $${k*b}$, chiều cao $${b}$.`, ()=> v4Sq(f, 0, b), gHv(gPl(co), f, [[0, b]]));
+});
+
+G(12,3,2,'VD','Quay đoạn thẳng y = mx + n: khối nón cụt', R=>{
+  const m = R.int(1, 2), n = R.int(1, 4), a = R.int(0, 2), b = a + R.int(1, 3), co = [m, n], sq = [m*m, 2*m*n, n*n], q = tpQ(sq, a, b), f = gF(co);
+  return v4T(R, v4St(tpP(co), a, b), q, [tpQ(co, a, b), qs(q, tpQ([0, 2*m*n, 0], a, b)), qm(2, q), qr(f(b)**2*(b - a), 1)], t=> `$V = \\pi${tpI(`(${tpP(co)})^{2}`, a, b)} = \\pi${tpI(`\\left(${tpP(sq)}\\right)`, a, b)} = ${t}$.`, ()=> v4Sq(f, a, b), gHv(gPl(co), f, [[a, b]]));
+});
+
+G(12,3,2,'TH','y = k√x trên [0; b]: V = πk²b²/2 (bình phương căn làm mất căn)', R=>{
+  const k = R.int(1, 4), b = R.int(1, 8), q = qr(k*k*b*b, 2), f = x=> k*Math.sqrt(x), pl = `${k}*sqrt(x)`;
+  return v4T(R, v4St(`${tpS(k)}\\sqrt{x}`, 0, b), q, [k*k*b*b, qr(k*k*b, 2), qr(2*k*b**1.5*0 + k*k*b*b, 3), qm(2, q)], t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x`, 0, b)} = ${t}$.`, ()=> ngSi(x=> k*k*x, 0, b), gHv(pl, f, [[0, b]]));
+});
+
+G(12,3,2,'TH','y = kx² trên [0; b]: V = πk²b⁵/5', R=>{
+  const k = R.int(1, 3), b = R.int(1, 4), q = qr(k*k*b**5, 5), co = [k, 0, 0], f = gF(co);
+  return v4T(R, v4St(tpP(co), 0, b), q, [qr(k*b**3, 3), qr(k*k*b**5, 3), qm(q, 5), qr(k*k*b**4, 4)], t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x^{4}`, 0, b)} = ${t}$.`, ()=> v4Sq(f, 0, b), gHv(gPl(co), f, [[0, b]]));
+});
+
+G(12,3,2,'VD','Parabol y = x(m − x) quay quanh Ox: V = πm⁵/30 (khai triển bình phương)', R=>{
+  const m = R.int(1, 6), k = R.int(1, 3), q = qr(k*k*m**5, 30), co = [-k, k*m, 0], sq = [k*k, -2*k*k*m, k*k*m*m, 0, 0], f = gF(co);
+  return v4T(R, v4Sp(tpP(co)), q, [qr(k*m**3, 6), qr(k*k*m**5, 15), qr(k*k*m**5, 10), qr(k*k*m**4, 12)], t=> `Giao với trục hoành: $x = 0$, $x = ${m}$.<br>$V = \\pi${tpI(`\\left(${tpP(sq)}\\right)`, 0, m)} = ${t}$.`, ()=> v4Sq(f, 0, m), gHv(gPl(co), f, [[0, m]]));
+});
+
+G(12,3,2,'TH','Quay đoạn thẳng y = c: khối trụ, kiểm chứng V = πc²h', R=>{
+  const c = R.int(1, 5), a = R.int(-2, 2), h = R.int(1, 8), b = a + h, q = c*c*h, f = x=> c;
+  return v4T(R, v4St(`${c}`, a, b), q, [c*h, 2*c*h, qr(c*c*h, 3), c*c*(a + h)], t=> `$V = \\pi${tpI(`${c*c}`, a, b)} = ${t}$.<br>Đây là khối trụ bán kính $${c}$, chiều cao $${h}$.`, ()=> v4Sq(f, a, b), gHv(String(c), f, [[a, b]]));
+});
+
+G(12,3,2,'TH','Nửa đường tròn quay quanh Ox: chứng minh V = 4πr³/3', R=>{
+  const r = R.int(1, 12), q = qr(4*r**3, 3), f = x=> Math.sqrt(r*r - x*x);
+  return v4T(R, `Cho hình phẳng giới hạn bởi nửa đường tròn $y = \\sqrt{${r*r} - x^{2}}$ và trục hoành. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`, q, [qm(2, q), qr(q[0], 2*q[1]), qm(q, 3), r**3], t=> `$V = \\pi${tpI(`(${r*r} - x^{2})`, -r, r)} = ${t}$.<br>Đây là khối cầu bán kính $${r}$.`, ()=> ngSi(x=> r*r - x*x, -r, r), r <= 6 ? {loai:'dothi', hamSo:`sqrt(${r*r}-x^2)`, luoi:true, ghiCucTri:false, khung:{xmin:-r - 0.8, xmax:r + 0.8, ymin:-0.8, ymax:r + 0.8}, to:[{a:-r, b:r, tren:`sqrt(${r*r}-x^2)`, duoi:'0'}]} : undefined);
+});
+
+G(12,3,2,'VD','y = k sin x trên [0; π]: dùng công thức hạ bậc, V = πk²·π/2', R=>{
+  const k = R.int(1, 15), n = k*k, A = v4P2(n), V = n*Math.PI**2/2, f = x=> k*Math.sin(x);
+  return gT(R, v4St(`${tpS(k)}\\sin x`, 0, '\\pi'), A, V, [[`${n === 1 ? '' : n}\\pi^{2}`, n*Math.PI**2], [`\\dfrac{${n === 1 ? '' : n}\\pi}{2}`, n*Math.PI/2], [`${2*k}\\pi`, 2*k*Math.PI], [`\\dfrac{${n === 1 ? '' : n}\\pi}{4}`, n*Math.PI/4]], t=> `$\\sin^{2}x = \\dfrac{1 - \\cos 2x}{2}$.<br>$V = \\pi${tpI(`${n === 1 ? '' : n}\\sin^{2}x`, 0, '\\pi')} = ${t}$.`, ()=> Math.PI*v4Sq(f, 0, Math.PI));
+});
+
+G(12,3,2,'TH','y = √(k eˣ) trên [0; ln a]: bình phương về k eˣ', R=>{
+  const k = R.int(1, 6), a = R.int(2, 9), q = k*(a - 1), f = x=> Math.sqrt(k*Math.exp(x));
+  return v4T(R, v4St(`\\sqrt{${k === 1 ? '' : k}e^{x}}`, 0, `\\ln ${a}`), q, [k*a, k*(a + 1), a - 1, k*(a - 2) || k*3], t=> `$V = \\pi${tpI(`${k === 1 ? '' : k}e^{x}`, 0, `\\ln ${a}`)} = ${t}$.`, ()=> ngSi(x=> k*Math.exp(x), 0, Math.log(a)));
+});
+
+G(12,3,2,'VD','y = k/x trên [1; b]: V = πk²(1 − 1/b)', R=>{
+  const k = R.int(1, 4), b = R.int(2, 6), q = qr(k*k*(b - 1), b), f = x=> k/x, y = k === 1 ? '\\dfrac{1}{x}' : `\\dfrac{${k}}{x}`;
+  return v4T(R, v4St(y, 1, b), q, [qr(k*k, b), qr(k*(b - 1), b), qa(k*k, qr(k*k, b)), k*k*(b - 1)], t=> `$V = \\pi${tpI(k === 1 ? '\\dfrac{1}{x^{2}}' : `\\dfrac{${k*k}}{x^{2}}`, 1, b)} = ${t}$.`, ()=> v4Sq(f, 1, b), gHv(`${k}/x`, f, [[1, b]]));
+});
+
+G(12,3,2,'VD','y = √(k/x) trên [a; b]: V = πk ln(b/a)', R=>{
+  const k = R.int(1, 6), a = R.int(1, 3), m = R.int(2, 5), b = a*m, A = `${tpS(k)}\\pi\\ln ${m}`, V = k*Math.PI*Math.log(m);
+  return gT(R, v4St(`\\sqrt{\\dfrac{${k}}{x}}`, a, b), A, V, [[`${tpS(k)}\\ln ${m}`, k*Math.log(m)], [`${tpS(k)}\\pi\\ln ${b}`, k*Math.PI*Math.log(b)], [`${tpS(2*k)}\\pi\\ln ${m}`, 2*k*Math.PI*Math.log(m)], [`${tpS(k)}\\pi\\ln ${m + 1}`, k*Math.PI*Math.log(m + 1)]], t=> `$V = \\pi${tpI(`\\dfrac{${k}}{x}`, a, b)} = ${t}$.`, ()=> Math.PI*ngSi(x=> k/x, a, b));
+});
+
+G(12,3,2,'VD','Khối vành: y = kmx và y = kx² quay quanh Ox: π∫(f² − g²), không phải π∫(f − g)²', R=>{
+  const m = R.int(1, 3), k = R.int(1, 4), q = qr(2*k*k*m**5, 15), sai = qr(k*k*m**5, 30), co = [k, 0, 0], l = [k*m, 0], F = gF(co), G0 = gF(l), n = k*k*m*m;
+  return v4T(R, `Cho hình phẳng giới hạn bởi parabol $y = ${tpP(co)}$ và đường thẳng $y = ${tpP(l)}$. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`, q, [sai, qr(k*k*m**5, 3), qr(k*k*m**5, 5), qr(k*m**3, 6)], t=> `Giao điểm tại $x = 0$, $x = ${m}$, đường thẳng nằm trên.<br>$V = \\pi${tpI(`\\left(${n === 1 ? '' : n}x^{2} - ${k*k === 1 ? '' : k*k}x^{4}\\right)`, 0, m)} = ${t}$.`, ()=> ngSi(x=> G0(x)**2 - F(x)**2, 0, m), v4Vh(gPl(co), F, gPl(l), G0, 0, m));
+});
+
+G(12,3,2,'VD','Khối vành: y = √(mx) và y = x', R=>{
+  const m = R.int(1, 9), k = R.int(1, 3), q = qr(k*k*m**3, 6), F = x=> k*Math.sqrt(m*x), G0 = x=> k*x;
+  return v4T(R, `Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{${m === 1 ? '' : m}x}$ và đường thẳng $y = ${tpP([k, 0])}$. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`, q, [qr(k*k*m**3, 2), qr(k*k*m**3, 3), qr(k*k*m**3, 30), qm(2, q)], t=> `Giao điểm tại $x = 0$, $x = ${m}$, đồ thị căn nằm trên.<br>$V = \\pi${tpI(`\\left(${tpP([-k*k, k*k*m, 0])}\\right)`, 0, m)} = ${t}$.`, ()=> ngSi(x=> F(x)**2 - G0(x)**2, 0, m));
+});
+
+G(12,3,2,'VD','Parabol y = kx² và đường ngang y = kn²: quay quanh Ox', R=>{
+  const n = R.int(1, 3), k = R.int(1, 4), q = qr(8*k*k*n**5, 5), c = k*n*n, F = gF([k, 0, 0]);
+  return v4T(R, `Cho hình phẳng giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ và đường thẳng $y = ${c}$. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`, q, [qr(4*k*k*n**5, 5), 2*k*k*n**5, qr(2*k*k*n**5, 5), qr(4*k*n**3, 3)], t=> `Giao điểm tại $x = ${-n}$, $x = ${n}$, đường thẳng nằm trên.<br>$V = \\pi${tpI(`\\left(${c*c} - ${k*k === 1 ? '' : k*k}x^{4}\\right)`, -n, n)} = ${t}$.`, ()=> ngSi(x=> c*c - (F(x))**2, -n, n), v4Vh(gPl([k, 0, 0]), F, String(c), x=> c, -n, n));
+});
+
+G(12,3,2,'VD','Tìm m từ thể tích: y = √x trên [0; m]', R=>{
+  const m = R.int(2, 15), V2 = m*m, k = R.int(1, 3);
+  return tpT(R, `Cho $m > 0$. Khi quay hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{x}$, trục hoành và đường thẳng $x = m$ quanh trục $Ox$, ta được khối tròn xoay có thể tích bằng $${v4Pi(qr(k*k*V2, 2))}$. Giá trị của $m$ bằng`, m, [m + 1, 2*m, m*m, m + 2], t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x`, 0, 'm')} = ${v4Pi(qr(k*k, 2))}m^{2}$.<br>Suy ra $m^{2} = ${V2}$, tức $m = ${t}$.`.replace('\\pim^{2}', '\\pi m^{2}'), ()=> Math.sqrt(2*qv(qr(k*k*V2, 2))/(k*k)));
+});
+
+G(12,3,2,'VD','Mặt phẳng x = c chia khối nón: tỉ số thể tích hai phần', R=>{
+  const c = R.int(1, 5), b = c + R.int(1, 4), k = R.int(1, 3), A = c**3, B = b**3 - c**3, v = qr(A, B), f = gF([k, 0]);
+  return tpT(R, `Quay hình phẳng giới hạn bởi đường thẳng $y = ${tpP([k, 0])}$, trục hoành và đường thẳng $x = ${b}$ quanh trục $Ox$ được một khối nón. Mặt phẳng vuông góc với trục $Ox$ tại $x = ${c}$ chia khối nón thành phần chứa đỉnh có thể tích $V_{1}$ và phần còn lại có thể tích $V_{2}$. Tỉ số $\\dfrac{V_{1}}{V_{2}}$ bằng`, v, [qr(c, b - c), qr(c*c, (b - c)**2), qr(c**3, b**3), qr(c, b)], t=> `$V_{1} = \\pi${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, 0, c)}$, $V_{2} = \\pi${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, c, b)}$.<br>Tỉ số bằng $\\dfrac{${c}^{3}}{${b}^{3} - ${c}^{3}} = ${t}$.`.replace(/\\dfrac\{(\d+)\}\{(\d+)\}\$\.$/, '\\dfrac{$1}{$2}$.'), ()=> v4Sq(f, 0, c)/v4Sq(f, c, b), gHv(gPl([k, 0]), f, [[0, c, 'V_1'], [c, b, 'V_2']]));
+});
+
+G(12,3,2,'VD','Nửa elip quay quanh Ox: khối elipxôit V = 4πab²/3', R=>{
+  const a = R.int(2, 6), b = R.int(1, 5), q = qr(4*a*b*b, 3), f = x=> b*Math.sqrt(1 - x*x/(a*a)); if(a === b) return null;
+  return v4T(R, `Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(b)}\\sqrt{1 - \\dfrac{x^{2}}{${a*a}}}$ và trục hoành. Thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$ bằng`, q, [qr(4*a*a*b, 3), qr(2*a*b*b, 3), qm(2, q), qr(4*a*b, 3)], t=> `$V = \\pi${tpI(`${b*b === 1 ? '' : b*b}\\left(1 - \\dfrac{x^{2}}{${a*a}}\\right)`, -a, a)} = ${t}$.`, ()=> ngSi(x=> b*b*(1 - x*x/(a*a)), -a, a));
+});
+
+G(12,3,2,'TH','Biết tích phân của [f(x)]² trên hai đoạn: V = π tổng (tính chất cộng cận)', R=>{
+  const a = R.int(-2, 1), c = a + R.int(1, 3), b = c + R.int(1, 3), p = R.int(1, 20), q = R.int(1, 20);
+  return v4T(R, `Cho hàm số $y = f(x)$ liên tục trên $\\mathbb{R}$, $${tpI('[f(x)]^{2}', a, c)} = ${p}$ và $${tpI('[f(x)]^{2}', c, b)} = ${q}$. Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi đồ thị hàm số, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$ quanh trục $Ox$ bằng`, p + q, [Math.abs(p - q) || p + q + 1, p*q, p, q], t=> `$V = \\pi${tpI('[f(x)]^{2}', a, b)} = \\pi(${p} + ${q}) = ${t}$.`, ()=> p + q);
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,2,'TH','Quay y = kx: bán kính đáy, chiều cao, thể tích, khớp công thức khối nón', R=>{
+  const k = R.int(1, 3), b = R.int(1, 5), co = [k, 0], f = gF(co), q = qr(k*k*b**3, 3);
+  return {stem:`Quay hình phẳng giới hạn bởi đường thẳng $y = ${tpP(co)}$, trục hoành và đường thẳng $x = ${b}$ quanh trục $Ox$ được khối $(N)$.`, hv:gHv(gPl(co), f, [[0, b]]),
+    items:[claim(R, `$(N)$ là khối nón có bán kính đáy bằng $${k*b}$`, `$(N)$ là khối nón có bán kính đáy bằng $${k*b + 1}$`, ()=> near(f(b), k*b, 1e-9), ()=> near(f(b), k*b + 1, 1e-9)),
+      claim(R, `$(N)$ có chiều cao bằng $${b}$`, `$(N)$ có chiều cao bằng $${b + 1}$`, ()=> true, ()=> false),
+      v4Q(R, `Thể tích của $(N)$ bằng`, q, qm(3, q), ()=> v4Sq(f, 0, b)),
+      claim(R, `Thể tích tính bằng tích phân bằng $\\dfrac{1}{3}\\pi r^{2}h$ với $r = ${k*b}$, $h = ${b}$`, `Thể tích tính bằng tích phân bằng $\\pi r^{2}h$ với $r = ${k*b}$, $h = ${b}$`, ()=> near(v4Sq(f, 0, b), (k*b)**2*b/3, 1e-8), ()=> near(v4Sq(f, 0, b), (k*b)**2*b, 1e-8))],
+    lg:`a) Tại $x = ${b}$, $y = ${k*b}$.<br>b) Chiều cao là đoạn trên trục $Ox$ từ $0$ đến $${b}$.<br>c) $V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, 0, b)} = ${v4Pi(q)}$.<br>d) $\\dfrac{1}{3}\\pi\\cdot ${k*b}^{2}\\cdot ${b} = ${v4Pi(q)}$.`};
+});
+
+GD(12,3,2,'TH','Nửa đường tròn quay quanh Ox: f², thể tích cả khối cầu, nửa khối cầu', R=>{
+  const r = R.int(1, 6), q = qr(4*r**3, 3), h = qr(2*r**3, 3), f2 = x=> r*r - x*x;
+  return {stem:`Quay hình phẳng giới hạn bởi nửa đường tròn $y = \\sqrt{${r*r} - x^{2}}$ và trục hoành quanh trục $Ox$ được khối $(C)$.`, hv:{loai:'dothi', hamSo:`sqrt(${r*r}-x^2)`, luoi:true, ghiCucTri:false, khung:{xmin:-r - 0.8, xmax:r + 0.8, ymin:-0.8, ymax:r + 0.8}, to:[{a:-r, b:r, tren:`sqrt(${r*r}-x^2)`, duoi:'0'}]},
+    items:[claim(R, `$y^{2} = ${r*r} - x^{2}$`, `$y^{2} = ${r} - x$`, ()=> near(f2(0), r*r, 1e-9), ()=> near(f2(0), r, 1e-9) && r !== 1),
+      claim(R, `$(C)$ là khối cầu bán kính $${r}$`, `$(C)$ là khối cầu bán kính $${2*r}$`, ()=> true, ()=> false),
+      v4Q(R, `Thể tích của $(C)$ bằng`, q, qm(2, q), ()=> ngSi(f2, -r, r)),
+      v4Q(R, `Phần của $(C)$ ứng với $0 \\le x \\le ${r}$ có thể tích`, h, q, ()=> ngSi(f2, 0, r))],
+    lg:`a) Bình phương hai vế.<br>b) Nửa đường tròn tâm $O$ bán kính $${r}$ quay quanh đường kính.<br>c) $V = \\pi${tpI(`(${r*r} - x^{2})`, -r, r)} = ${v4Pi(q)}$.<br>d) Đối xứng qua mặt phẳng $x = 0$ nên bằng nửa kết quả trên.`};
+});
+
+GD(12,3,2,'VD','Quay parabol y = x(m − x): khai triển f², thể tích, so với khối nón cùng cao', R=>{
+  const m = R.int(1, 4), k = R.int(1, 3), co = [-k, k*m, 0], sq = [k*k, -2*k*k*m, k*k*m*m, 0, 0], f = gF(co), q = qr(k*k*m**5, 30);
+  return {stem:`Quay hình phẳng giới hạn bởi parabol $y = ${tpP(co)}$ và trục hoành quanh trục $Ox$ được khối $(T)$.`, hv:gHv(gPl(co), f, [[0, m]]),
+    items:[claim(R, `$y^{2} = ${tpP(sq)}$`, `$y^{2} = ${tpP([k*k, 2*k*k*m, k*k*m*m, 0, 0])}$`, ()=> near(f(1)**2, gF(sq)(1), 1e-9), ()=> near(f(1)**2, gF([k*k, 2*k*k*m, k*k*m*m, 0, 0])(1), 1e-9)),
+      v4Q(R, `Thể tích của $(T)$ bằng`, q, qr(k*k*m**5, 15), ()=> v4Sq(f, 0, m)),
+      claim(R, `Thiết diện lớn nhất của $(T)$ vuông góc với $Ox$ đạt tại $x = ${nt(m/2)}$`, `Thiết diện lớn nhất của $(T)$ vuông góc với $Ox$ đạt tại $x = ${nt(m/4)}$`, ()=> f(m/2) > f(m/4), ()=> f(m/4) > f(m/2)),
+      v4Q(R, `Thiết diện đó có diện tích`, qr(k*k*m**4, 16), qr(k*k*m**4, 8), ()=> f(m/2)**2)],
+    lg:`a) Bình phương hàm số.<br>b) $V = \\pi${tpI(`\\left(${tpP(sq)}\\right)`, 0, m)} = ${v4Pi(q)}$.<br>c) Tung độ lớn nhất tại đỉnh parabol.<br>d) Bán kính $${qT(qr(k*m*m, 4))}$, diện tích $${v4Pi(qr(k*k*m**4, 16))}$.`};
+});
+
+GD(12,3,2,'VD','Khối vành y = x² và y = mx: sai lầm π∫(f − g)², công thức đúng, thể tích', R=>{
+  const m = R.int(1, 3), l = [m, 0], par = [1, 0, 0], F = gF(par), G0 = gF(l), q = qr(2*m**5, 15), s = qr(m**5, 30);
+  return {stem:`Quay hình phẳng $(H)$ giới hạn bởi parabol $y = x^{2}$ và đường thẳng $y = ${tpP(l)}$ quanh trục $Ox$ được khối $(K)$.`, hv:v4Vh(gPl(par), F, gPl(l), G0, 0, m),
+    items:[claim(R, `Hai đồ thị cắt nhau tại $x = 0$ và $x = ${m}$`, `Hai đồ thị cắt nhau tại $x = 0$ và $x = ${m + 1}$`, ()=> near(F(m), G0(m), 1e-9), ()=> near(F(m + 1), G0(m + 1), 1e-9)),
+      claim(R, `Thể tích của $(K)$ bằng $\\pi${tpI(`\\left[${m*m === 1 ? '' : m*m}x^{2} - x^{4}\\right]`, 0, m)}$`, `Thể tích của $(K)$ bằng $\\pi${tpI(`\\left(${tpP(l)} - x^{2}\\right)^{2}`, 0, m)}$`, ()=> near(ngSi(x=> G0(x)**2 - F(x)**2, 0, m), qv(q), 1e-8), ()=> near(ngSi(x=> (G0(x) - F(x))**2, 0, m), qv(q), 1e-8)),
+      v4Q(R, `Thể tích của $(K)$ bằng`, q, s, ()=> ngSi(x=> G0(x)**2 - F(x)**2, 0, m)),
+      claim(R, `$(K)$ có thể tích bằng khối nón sinh bởi đường thẳng trừ đi khối sinh bởi parabol trên đoạn $[0; ${m}]$`, `$(K)$ có thể tích bằng tổng của khối nón sinh bởi đường thẳng và khối sinh bởi parabol trên đoạn $[0; ${m}]$`, ()=> near(ngSi(x=> G0(x)**2, 0, m) - ngSi(x=> F(x)**2, 0, m), qv(q), 1e-8), ()=> near(ngSi(x=> G0(x)**2, 0, m) + ngSi(x=> F(x)**2, 0, m), qv(q), 1e-8))],
+    lg:`a) Giải $x^{2} = ${tpP(l)}$.<br>b) Mỗi thiết diện là hình vành khăn có diện tích $\\pi(R^{2} - r^{2})$, không phải $\\pi(R - r)^{2}$.<br>c) Tính tích phân ở câu b) được $V = ${v4Pi(q)}$.<br>d) Hình vành khăn bằng hình tròn lớn bỏ đi hình tròn nhỏ.`};
+});
+
+GD(12,3,2,'TH','Quay y = c trên đoạn: khối trụ, thể tích theo đoạn, tổng hai đoạn', R=>{
+  const c = R.int(1, 5), a = R.int(0, 2), h1 = R.int(1, 3), h2 = R.int(1, 3), m = a + h1, b = m + h2, f = x=> c;
+  return {stem:`Xét hình chữ nhật giới hạn bởi đường thẳng $y = ${c}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$. Quay hình đó quanh trục $Ox$ được khối $(T)$.`, hv:gHv(String(c), f, [[a, b]]),
+    items:[claim(R, `$(T)$ là khối trụ có bán kính $${c}$`, `$(T)$ là khối trụ có bán kính $${2*c}$`, ()=> true, ()=> false),
+      v4Q(R, `Thể tích của $(T)$ bằng`, c*c*(b - a), 2*c*c*(b - a), ()=> v4Sq(f, a, b)),
+      v4Q(R, `Phần của $(T)$ ứng với $${a} \\le x \\le ${m}$ có thể tích`, c*c*h1, 2*c*c*h1, ()=> v4Sq(f, a, m)),
+      claim(R, `Tổng thể tích hai phần ứng với $[${a}; ${m}]$ và $[${m}; ${b}]$ bằng thể tích của $(T)$`, `Tổng thể tích hai phần ứng với $[${a}; ${m}]$ và $[${m}; ${b}]$ lớn hơn thể tích của $(T)$`, ()=> near(v4Sq(f, a, m) + v4Sq(f, m, b), v4Sq(f, a, b), 1e-9), ()=> v4Sq(f, a, m) + v4Sq(f, m, b) > v4Sq(f, a, b) + 1e-6)],
+    lg:`a) Khoảng cách từ đường thẳng đến trục $Ox$ bằng $${c}$.<br>b) Khối trụ bán kính $${c}$, chiều cao $${b - a}$ có thể tích $${v4Pi(c*c*(b - a))}$.<br>c) Khối trụ bán kính $${c}$, chiều cao $${h1}$ có thể tích $${v4Pi(c*c*h1)}$.<br>d) Tính chất cộng cận của tích phân.`};
+});
+
+GD(12,3,2,'VD','y = √x trên [0; b]: y², thể tích, tỉ lệ thuận với b²', R=>{
+  const k = R.int(1, 3), b = R.int(1, 6), q = qr(k*k*b*b, 2), d = qr(4*k*k*b*b, 2), f = x=> k*Math.sqrt(x);
+  return {stem:`Quay hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{x}$, trục hoành và đường thẳng $x = ${b}$ quanh trục $Ox$ được khối $(P)$.`, hv:gHv(`${k}*sqrt(x)`, f, [[0, b]]),
+    items:[claim(R, `$y^{2} = ${k*k === 1 ? '' : k*k}x$`, `$y^{2} = ${2*k*k}x$`, ()=> near(f(1)**2, k*k, 1e-9), ()=> near(f(1)**2, 2*k*k, 1e-9)),
+      v4Q(R, `Thể tích của $(P)$ bằng`, q, qm(2, q), ()=> ngSi(x=> k*k*x, 0, b)),
+      v4Q(R, `Nếu thay đường thẳng $x = ${b}$ bằng $x = ${2*b}$ thì thể tích bằng`, d, qm(2, q), ()=> ngSi(x=> k*k*x, 0, 2*b)),
+      claim(R, `Khi tăng gấp đôi cận trên, thể tích tăng gấp $4$ lần`, `Khi tăng gấp đôi cận trên, thể tích tăng gấp $2$ lần`, ()=> near(ngSi(x=> k*k*x, 0, 2*b), 4*ngSi(x=> k*k*x, 0, b), 1e-8), ()=> near(ngSi(x=> k*k*x, 0, 2*b), 2*ngSi(x=> k*k*x, 0, b), 1e-8))],
+    lg:`a) Bình phương hàm số.<br>b) $V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x`, 0, b)} = ${v4Pi(q)}$.<br>c) Thay cận trên bằng $${2*b}$ được $${v4Pi(d)}$.<br>d) $V$ tỉ lệ thuận với bình phương cận trên.`};
+});
+
+GD(12,3,2,'VD','y = k sin x trên [0; π]: hạ bậc, thể tích, so sánh với y = k cos x trên [−π/2; π/2]', R=>{
+  const k = R.int(1, 6), n = k*k, N = n === 1 ? '' : n, A = n*Math.PI**2/2, f = x=> k*Math.sin(x), g = x=> k*Math.cos(x), P = Math.PI;
+  return {stem:`Gọi $(A)$ là khối tròn xoay sinh bởi hình phẳng giới hạn bởi đồ thị $y = ${tpS(k)}\\sin x$, trục hoành, hai đường thẳng $x = 0$, $x = \\pi$ khi quay quanh $Ox$. Gọi $(B)$ là khối tròn xoay sinh bởi hình phẳng giới hạn bởi đồ thị $y = ${tpS(k)}\\cos x$, trục hoành, hai đường thẳng $x = -\\dfrac{\\pi}{2}$, $x = \\dfrac{\\pi}{2}$ khi quay quanh $Ox$.`,
+    items:[claim(R, `$\\sin^{2}x = \\dfrac{1 - \\cos 2x}{2}$`, `$\\sin^{2}x = \\dfrac{1 + \\cos 2x}{2}$`, ()=> near(Math.sin(1)**2, (1 - Math.cos(2))/2, 1e-12), ()=> near(Math.sin(1)**2, (1 + Math.cos(2))/2, 1e-12)),
+      claim(R, `Thể tích của $(A)$ bằng $${v4P2(n)}$`, `Thể tích của $(A)$ bằng $\\dfrac{${N}\\pi}{2}$`, ()=> near(P*v4Sq(f, 0, P), A, 1e-6), ()=> near(P*v4Sq(f, 0, P), n*P/2, 1e-6)),
+      claim(R, `Thể tích của $(B)$ bằng thể tích của $(A)$`, `Thể tích của $(B)$ gấp đôi thể tích của $(A)$`, ()=> near(v4Sq(g, -P/2, P/2), v4Sq(f, 0, P), 1e-7), ()=> near(v4Sq(g, -P/2, P/2), 2*v4Sq(f, 0, P), 1e-7)),
+      claim(R, `Thiết diện lớn nhất của $(A)$ có bán kính $${k}$`, `Thiết diện lớn nhất của $(A)$ có bán kính $${k*k + 1}$`, ()=> near(f(P/2), k, 1e-9), ()=> near(f(P/2), k*k + 1, 1e-9))],
+    lg:`a) Công thức hạ bậc.<br>b) $V = \\pi${tpI(`${N}\\sin^{2}x`, 0, '\\pi')} = ${v4P2(n)}$.<br>c) Đồ thị $\\cos x$ là đồ thị $\\sin x$ tịnh tiến theo phương $Ox$, nên hai khối bằng nhau.<br>d) Giá trị lớn nhất của $${tpS(k)}\\sin x$ trên đoạn là $${k}$.`};
+});
+
+GD(12,3,2,'VD','Mặt phẳng x = c chia khối nón: thể tích hai phần, tỉ số', R=>{
+  const b = 2*R.int(1, 4), c = b/2, k = R.int(1, 3), co = [k, 0], f = gF(co), T = qr(k*k*b**3, 3), A = qr(k*k*c**3, 3);
+  return {stem:`Quay hình phẳng giới hạn bởi đường thẳng $y = ${tpP(co)}$, trục hoành và đường thẳng $x = ${b}$ quanh trục $Ox$ được khối nón $(N)$. Mặt phẳng vuông góc với $Ox$ tại $x = ${c}$ chia $(N)$ thành phần chứa đỉnh $(N_{1})$ và phần còn lại $(N_{2})$.`, hv:gHv(gPl(co), f, [[0, c, 'N_1'], [c, b, 'N_2']]),
+    items:[v4Q(R, `Thể tích của $(N)$ bằng`, T, qm(3, T), ()=> v4Sq(f, 0, b)),
+      v4Q(R, `Thể tích của $(N_{1})$ bằng`, A, qm(2, A), ()=> v4Sq(f, 0, c)),
+      v4Q(R, `Thể tích của $(N_{2})$ bằng`, qs(T, A), T, ()=> v4Sq(f, c, b)),
+      claim(R, `$(N_{2})$ có thể tích gấp $7$ lần $(N_{1})$`, `$(N_{2})$ có thể tích bằng $(N_{1})$`, ()=> near(v4Sq(f, c, b), 7*v4Sq(f, 0, c), 1e-8), ()=> near(v4Sq(f, c, b), v4Sq(f, 0, c), 1e-8))],
+    lg:`a) $\\pi${tpI(`${k*k === 1 ? '' : k*k}x^{2}`, 0, b)} = ${v4Pi(T)}$.<br>b) Cận trên $${c}$ cho $${v4Pi(A)}$.<br>c) Lấy hiệu được $${v4Pi(qs(T, A))}$.<br>d) Tỉ số bằng $7$.`};
+});
+
+GD(12,3,2,'VD','Nửa elip quay quanh Ox: y², thể tích, trường hợp a = b là khối cầu', R=>{
+  const a = R.int(2, 5), b = R.int(1, 4), q = qr(4*a*b*b, 3), f2 = x=> b*b*(1 - x*x/(a*a)); if(a === b) return null;
+  return {stem:`Quay hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(b)}\\sqrt{1 - \\dfrac{x^{2}}{${a*a}}}$ và trục hoành quanh trục $Ox$ được khối $(E)$.`,
+    items:[claim(R, `Đồ thị cắt trục hoành tại các điểm có hoành độ $${-a}$ và $${a}$`, `Đồ thị cắt trục hoành tại các điểm có hoành độ $${-a*a}$ và $${a*a}$`, ()=> near(f2(a), 0, 1e-9), ()=> near(f2(a*a), 0, 1e-9)),
+      claim(R, `Thiết diện lớn nhất vuông góc với $Ox$ có bán kính $${b}$`, `Thiết diện lớn nhất vuông góc với $Ox$ có bán kính $${a + b}$`, ()=> near(f2(0), b*b, 1e-9), ()=> near(f2(0), (a + b)**2, 1e-9)),
+      v4Q(R, `Thể tích của $(E)$ bằng`, q, qr(2*a*b*b, 3), ()=> ngSi(f2, -a, a)),
+      claim(R, `Thể tích của $(E)$ bằng $\\dfrac{4}{3}\\pi ab^{2}$ với $a = ${a}$, $b = ${b}$`, `Thể tích của $(E)$ bằng $\\dfrac{4}{3}\\pi a^{2}b$ với $a = ${a}$, $b = ${b}$`, ()=> near(ngSi(f2, -a, a), 4/3*a*b*b, 1e-8), ()=> near(ngSi(f2, -a, a), 4/3*a*a*b, 1e-8))],
+    lg:`a) Giải $1 - \\dfrac{x^{2}}{${a*a}} = 0$.<br>b) Tại $x = 0$ bán kính đạt lớn nhất, bằng $${b}$.<br>c) $V = \\pi${tpI(`${b*b === 1 ? '' : b*b}\\left(1 - \\dfrac{x^{2}}{${a*a}}\\right)`, -a, a)} = ${v4Pi(q)}$.<br>d) Thay số vào kết quả tổng quát; khi $a = b$ đây là công thức khối cầu.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,2,'TH','Tìm a: khối nón V = aπ', R=>{
+  const k = 3*R.int(1, 3), b = R.int(1, 6), co = [k, 0], f = gF(co), q = k*k*b**3/3;
+  return tpN(v4N(v4H(tpP(co), 0, b)), q, t=> `$V = \\pi${tpI(`${k*k}x^{2}`, 0, b)}$, nên $a = ${t}$.`, ()=> v4Sq(f, 0, b));
+});
+
+GT(12,3,2,'VD','Tìm a: khối nón cụt', R=>{
+  const m = R.int(1, 3), n = R.int(1, 5), a = 0, b = 3*R.int(1, 2), co = [m, n], sq = [m*m, 2*m*n, n*n], q = tpQ(sq, a, b), f = gF(co);
+  return tpN(v4N(v4H(tpP(co), a, b)), q, t=> `$V = \\pi${tpI(`\\left(${tpP(sq)}\\right)`, a, b)}$, nên $a = ${t}$.`, ()=> v4Sq(f, a, b));
+});
+
+GT(12,3,2,'TH','Tìm a: y = k√x trên [0; b]', R=>{
+  const k = R.int(1, 5), b = 2*R.int(1, 5), q = k*k*b*b/2;
+  return tpN(v4N(v4H(`${tpS(k)}\\sqrt{x}`, 0, b)), q, t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x`, 0, b)}$, nên $a = ${t}$.`, ()=> ngSi(x=> k*k*x, 0, b));
+});
+
+GT(12,3,2,'TH','Tìm a: y = kx² trên [0; b]', R=>{
+  const k = R.int(1, 4), b = R.int(1, 3), co = [k, 0, 0], f = gF(co), n = k*k*b**5;
+  return tpN(`${v4H(tpP(co), 0, b)} Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = \\dfrac{a\\pi}{5}$, tìm $a$.`, n, t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}x^{4}`, 0, b)} = ${v4Pi(qr(n, 5))}$, nên $a = ${t}$.`, ()=> 5*v4Sq(f, 0, b));
+});
+
+GT(12,3,2,'VD','Tìm a: parabol quay quanh Ox', R=>{
+  const m = R.int(1, 4), k = R.int(1, 4), co = [-k, k*m, 0], f = gF(co), n = k*k*m**5;
+  return tpN(`Cho hình phẳng giới hạn bởi parabol $y = ${tpP(co)}$ và trục hoành. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = \\dfrac{a\\pi}{30}$, tìm $a$.`, n, t=> `Khai triển $y^{2}$ rồi tính $V = ${v4Pi(qr(n, 30))}$.<br>Vậy $a = ${t}$.`, ()=> 30*v4Sq(f, 0, m));
+});
+
+GT(12,3,2,'TH','Tìm a: khối trụ', R=>{
+  const c = R.int(1, 6), a0 = R.int(-2, 2), h = R.int(1, 15), q = c*c*h, f = x=> c;
+  return tpN(v4N(v4H(`${c}`, a0, a0 + h)), q, t=> `Khối trụ bán kính $${c}$, chiều cao $${h}$, nên $a = ${t}$.`, ()=> v4Sq(f, a0, a0 + h));
+});
+
+GT(12,3,2,'TH','Tìm a: một phần khối cầu giữa hai mặt phẳng', R=>{
+  const j0 = R.int(1, 5), i0 = R.int(0, j0 - 1), r = 3*j0, c = 3*i0, q = r*r*(r - c) - (r**3 - c**3)/3;
+  return tpN(`Cho hình phẳng giới hạn bởi nửa đường tròn $y = \\sqrt{${r*r} - x^{2}}$, trục hoành và hai đường thẳng $x = ${c}$, $x = ${r}$. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = a\\pi$, tìm $a$.`, q, t=> `$V = \\pi${tpI(`(${r*r} - x^{2})`, c, r)}$, nên $a = ${t}$.`, ()=> ngSi(x=> r*r - x*x, c, r));
+});
+
+GT(12,3,2,'VD','Tìm a: y = k sin x, V = aπ²', R=>{
+  const k = R.int(1, 14), f = x=> k*Math.sin(x);
+  return tpN(`Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sin x$, trục hoành và hai đường thẳng $x = 0$, $x = \\pi$. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = a\\pi^{2}$, tìm $a$.`, k*k/2, t=> `$V = \\pi${tpI(`${k*k === 1 ? '' : k*k}\\sin^{2}x`, 0, '\\pi')} = ${v4P2(k*k)}$, nên $a = ${t}$.`, ()=> v4Sq(f, 0, Math.PI)/Math.PI);
+});
+
+GT(12,3,2,'TH','Tìm a: y = √(k eˣ)', R=>{
+  const k = R.int(1, 12), a0 = R.int(2, 9), q = k*(a0 - 1);
+  return tpN(v4N(v4H(`\\sqrt{${k === 1 ? '' : k}e^{x}}`, 0, `\\ln ${a0}`)), q, t=> `$V = \\pi${tpI(`${k === 1 ? '' : k}e^{x}`, 0, `\\ln ${a0}`)}$, nên $a = ${t}$.`, ()=> ngSi(x=> k*Math.exp(x), 0, Math.log(a0)));
+});
+
+GT(12,3,2,'VD','Tìm a: y = k/x trên [1; b]', R=>{
+  const b = R.pick([2, 4, 5, 10]), k = R.int(1, 8), y = `\\dfrac{${k*b}}{x}`, K = k*b, Q = K*K*(b - 1)/b, f = x=> K/x;
+  return tpN(v4N(v4H(y, 1, b)), Q, t=> `$V = \\pi${tpI(`\\dfrac{${K*K}}{x^{2}}`, 1, b)}$, nên $a = ${t}$.`, ()=> v4Sq(f, 1, b));
+});
+
+GT(12,3,2,'VD','Tìm a: khối vành y = kmx và y = kx²', R=>{
+  const m = R.int(1, 4), k = R.int(1, 4), n = 2*k*k*m**5, N = k*k*m*m, K = k*k;
+  return tpN(`Cho hình phẳng giới hạn bởi parabol $y = ${tpP([k, 0, 0])}$ và đường thẳng $y = ${tpP([k*m, 0])}$. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = \\dfrac{a\\pi}{15}$, tìm $a$.`, n, t=> `$V = \\pi${tpI(`\\left(${N === 1 ? '' : N}x^{2} - ${K === 1 ? '' : K}x^{4}\\right)`, 0, m)} = ${v4Pi(qr(n, 15))}$.<br>Vậy $a = ${t}$.`, ()=> 15*ngSi(x=> N*x*x - K*x**4, 0, m));
+});
+
+GT(12,3,2,'VD','Tìm a: khối vành y = √(mx) và y = x', R=>{
+  const m = R.int(1, 9), k = R.int(1, 2), n = k*k*m**3;
+  return tpN(`Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{${m === 1 ? '' : m}x}$ và đường thẳng $y = ${tpP([k, 0])}$. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = \\dfrac{a\\pi}{6}$, tìm $a$.`, n, t=> `Giao điểm tại $x = 0$, $x = ${m}$.<br>$V = \\pi${tpI(`\\left(${tpP([-k*k, k*k*m, 0])}\\right)`, 0, m)} = ${v4Pi(qr(n, 6))}$.<br>Vậy $a = ${t}$.`, ()=> 6*ngSi(x=> k*k*m*x - k*k*x*x, 0, m));
+});
+
+GT(12,3,2,'VD','Tìm a: y = x² và đường ngang y = n²', R=>{
+  const n = R.int(1, 3), c = n*n, k = R.int(1, 5), N = 8*n**5*k;
+  return tpN(`Cho hình phẳng giới hạn bởi parabol $y = x^{2}$ và đường thẳng $y = ${c}$. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $${k === 1 ? '' : k}V = \\dfrac{a\\pi}{5}$, tìm $a$.`, N, t=> `$V = \\pi${tpI(`\\left(${c*c} - x^{4}\\right)`, -n, n)} = ${v4Pi(qr(8*n**5, 5))}$.<br>Vậy $a = ${t}$.`, ()=> 5*k*ngSi(x=> c*c - x**4, -n, n));
+});
+
+GT(12,3,2,'VD','Tìm m từ thể tích y = k√x', R=>{
+  const m = R.int(2, 15), k = R.int(1, 3);
+  return tpN(`Cho $m > 0$. Khi quay hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(k)}\\sqrt{x}$, trục hoành và đường thẳng $x = m$ quanh trục $Ox$, ta được khối tròn xoay có thể tích bằng $${v4Pi(qr(k*k*m*m, 2))}$. Tìm $m$.`, m, t=> `$V = ${v4Pi(qr(k*k, 2))} m^{2}$, suy ra $m = ${t}$.`, ()=> Math.sqrt(2*qv(qr(k*k*m*m, 2))/(k*k)));
+});
+
+GT(12,3,2,'VD','Mặt phẳng chia khối nón: thể tích phần còn lại V₂ = aπ', R=>{
+  const c = R.int(1, 3), b = c + R.int(1, 4), k = 3*R.int(1, 2), q = k*k*(b**3 - c**3)/3;
+  return tpN(`Quay hình phẳng giới hạn bởi đường thẳng $y = ${k}x$, trục hoành và đường thẳng $x = ${b}$ quanh trục $Ox$ được một khối nón. Mặt phẳng vuông góc với trục $Ox$ tại $x = ${c}$ chia khối nón thành hai phần. Phần không chứa đỉnh có thể tích $a\\pi$. Tìm $a$.`, q, t=> `$\\pi${tpI(`${k*k}x^{2}`, c, b)} = ${t}\\pi$, nên $a = ${t}$.`, ()=> ngSi(x=> k*k*x*x, c, b));
+});
+
+GT(12,3,2,'VD','Tìm a: nửa elip quay quanh Ox', R=>{
+  const a0 = 3*R.int(1, 2), b = R.int(1, 8), q = 4*a0*b*b/3;
+  return tpN(`Cho hình phẳng giới hạn bởi đồ thị hàm số $y = ${tpS(b)}\\sqrt{1 - \\dfrac{x^{2}}{${a0*a0}}}$ và trục hoành. Gọi $V$ là thể tích khối tròn xoay tạo thành khi quay hình phẳng đó quanh trục $Ox$. Biết $V = a\\pi$, tìm $a$.`, q, t=> `$V = \\pi${tpI(`${b*b === 1 ? '' : b*b}\\left(1 - \\dfrac{x^{2}}{${a0*a0}}\\right)`, -a0, a0)}$, nên $a = ${t}$.`, ()=> ngSi(x=> b*b*(1 - x*x/(a0*a0)), -a0, a0));
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (Chương IV lớp 12: nguyên hàm, tích phân, mỗi chuyên đề đủ 20 TN, 10 Đ–S, 16 TLN) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* ——— tiện ích tích phân ——— */
+const tpS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const tpP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v);
+const tpV = (co, x)=> co.reduce((s, c)=> s*x + qv(c), 0);
+const tpG = (co)=> co.map((c, i)=> { const p = co.length - 1 - i; return qd(c, p + 1); }).concat([0]);   /* hệ số nguyên hàm (không hằng số) */
+const tpQ = (co, a, b)=>{ const d = co.length - 1; let s = [0, 1]; co.forEach((k, i)=>{ const p = d - i; s = qa(s, qm(qd(k, p + 1), b**(p + 1) - a**(p + 1))); }); return s; };   /* tích phân đa thức từ a đến b, chính xác */
+const tpI = (s, a, b, v)=> `\\int_{${a}}^{${b}} ${s}\\,d${v || 'x'}`;
+const tpF = (co)=> co.map((c, i)=> [qd(c, co.length - i), ngX(co.length - i)]);   /* các hạng tử nguyên hàm của đa thức */
+const tpB = (s, a, b)=> `\\left.\\left(${s}\\right)\\right|_{${a}}^{${b}}`;
+const tpPa = q=>{ q = qq(q); return q[0] < 0 ? `\\left(${qT(q)}\\right)` : qT(q); };
+const tpT = (R, stem, q, ws, lg, chk, hv, unit)=>{ const ans = ngNum(q, unit), wrong = ngW(R, ans, ws.map(x=> ngNum(x, unit))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(qT(q)), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpN = (stem, v0, lg, chk, hv)=>{ v0 = qv(v0); const v = ngRou(v0, 1); if(!near(v, v0, 1e-9) || String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const tpRn = (stem, v0, lg, chk, hv)=>{ const v = ngRou(v0, 1); if(String(v).length > 4) return null; const o = {stem, ans:v, lg:lg(nt(v)), verify:()=> near(o.ans, ngRou(chk(), 1), 1e-9)}; if(hv) o.hv = hv; return o; };   /* đáp số làm tròn một chữ số */
+
+/* ———— Ứng dụng hình học (12-13) ———— */
+const gF = co=> x=> co.reduce((s, c)=> s*x + c, 0);
+const gPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };   /* đa thức cho hamSo */
+const gHv = (pl, f, tos, o)=>{ o = o || {}; const lo = Math.min(...tos.map(t=> t[0])), hi = Math.max(...tos.map(t=> t[1])), ys = [0]; for(let i = 0; i <= 80; i++) ys.push(f(lo + (hi - lo)*i/80)); const hv = {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:Math.min(lo, 0) - 1.2, xmax:Math.max(hi, 0) + 1.2, ymin:Math.floor(Math.min(...ys)) - 0.8, ymax:Math.ceil(Math.max(...ys)) + 0.8}, to:tos.map(([a, b, nhan, nhanX])=>{ const up = f((a + b)/2) >= 0, t = {a, b, tren:up ? pl : '0', duoi:up ? '0' : pl}; if(nhan) t.nhan = nhan; if(nhanX != null) t.nhanX = nhanX; return t; })}; if(o.cong) hv.cong = o.cong; if(o.diem) hv.diem = o.diem; if(o.khung) Object.assign(hv.khung, o.khung); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };   /* khung quá cao thì bỏ lưới để số trên trục không chồng nhau */
+const qAb = q=>{ q = qq(q); return q[0] < 0 ? qm(-1, q) : q; };
+const sAb = (co, xs)=>{ let s = [0, 1]; for(let i = 0; i + 1 < xs.length; i++) s = qa(s, qAb(tpQ(co, xs[i], xs[i + 1]))); return s; };   /* diện tích chính xác giữa các điểm chia */
+const nAb = (f, xs)=>{ let s = 0; for(let i = 0; i + 1 < xs.length; i++) s += ngSi(x=> Math.abs(f(x)), xs[i], xs[i + 1]); return s; };   /* tính lại bằng số */
+const sSt = (y, a, b)=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$, trục hoành và hai đường thẳng $x = ${a}$, $x = ${b}$`;
+const sPa = y=> `Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y = ${y}$ và trục hoành`;
+const gT = (R, stem, A, V, Ws, lg, chk, hv)=>{ const ans = {t:`$${A}$`, v:V}, wrong = ngW(R, ans, Ws.map(([t, v])=> ({t:`$${t}$`, v}))); if(!wrong) return null; const o = {stem, ans, wrong, lg:lg(A), verify:()=> near(o.ans.v, chk(), 1e-6)}; if(hv) o.hv = hv; return o; };
+const gC = (R, pre, q, w, chk, unit)=> claimN(R, v=> `${pre}$${v}$${unit ? ' ' + unit : ''}`, qv(q), qT(q), qv(w), qT(w), chk);
+const gQs = q=>{ q = qq(q); return q[0] < 0 ? ` - ${qT(qm(-1, q))}` : ` + ${qT(q)}`; };
+const gE = (R, tex, q, w, chk)=> claimN(R, v=> `$${tex} = ${v}$`, qv(q), qT(q), qv(w), qT(w), chk);
+const nSq = (f, c)=> ngSi(u=> Math.abs(f(u*u))*2*u, 0, Math.sqrt(c));   /* tích phân hàm có căn x trên [0; c], đổi về biến u = căn x để tính số chính xác */
+const gDx = (h, w, L)=>{ const s = qr(h, w); return s[1] === 1 ? `${s[0] === 1 ? '' : s[0]}(${L} - x)` : `\\dfrac{${s[0]}}{${s[1]}}(${L} - x)`; };   /* đoạn thẳng đi xuống từ độ cao h, cắt trục hoành tại L, rộng w */
+/* 12-13.5 Bài toán thực tế: đồ thị vận tốc, diện tích và thể tích — số 192–235 (19 TN, 10 Đ–S, 15 TLN).
+   Chuỗi tư duy: đọc đồ thị v(t) → quãng đường là diện tích → đổi chiều → v(t) parabol → hai xe
+   → cổng, vườn, lá, kênh parabol → bát, thùng, bể cầu, ly, nêm. Số liệu thực tế, đơn vị ghi rõ trong đề. */
+const r5Pi = q=>{ q = qq(q); const n = Math.abs(q[0]), u = n === 1 ? '\\pi' : `${n}\\pi`; return q[1] === 1 ? u : `\\dfrac{${u}}{${q[1]}}`; };
+const r5K = (R, stem, q, ws, lg, chk, hv)=> gT(R, stem, r5Pi(q), qv(q)*Math.PI, ws.map(w=> [r5Pi(w), qv(w)*Math.PI]), lg, ()=> Math.PI*chk(), hv);
+const r5Q = (R, stem, q, w, chk)=> claim(R, `${stem} $${r5Pi(q)}$`, `${stem} $${r5Pi(w)}$`, ()=> near(chk(), qv(q), 1e-7), ()=> near(chk(), qv(w), 1e-7));
+const r5E = (P, x)=>{ for(let i = 0; i + 1 < P.length; i++){ const [a, u] = P[i], [b, w] = P[i + 1]; if(x >= a - 1e-12 && x <= b + 1e-12) return u + (w - u)*(x - a)/(b - a); } return NaN; };
+const r5S = (P, a, b)=>{ let s = 0; for(let i = 0; i + 1 < P.length; i++){ const lo = P[i][0], hi = P[i + 1][0]; if(lo >= a && hi <= b) s += (hi - lo)*(P[i][1] + P[i + 1][1]); } return qr(s, 2); };
+const r5N = (P, a, b)=>{ let s = 0; for(let i = 0; i + 1 < P.length; i++){ const lo = Math.max(P[i][0], a), hi = Math.min(P[i + 1][0], b); if(hi > lo) s += ngSi(x=> r5E(P, x), lo, hi); } return s; };
+const r5Pl = P=>{ const n = P.length, m = []; for(let i = 0; i + 1 < n; i++) m.push((P[i + 1][1] - P[i][1])/(P[i + 1][0] - P[i][0])); const B = (m[0] + m[n - 2])/2, cs = []; for(let i = 1; i <= n - 2; i++) cs.push([(m[i] - m[i - 1])/2, P[i][0]]); const A = P[0][1] - B*P[0][0] - cs.reduce((s, [c, x])=> s + c*Math.abs(P[0][0] - x), 0); let s = `${B < 0 ? '-' : ''}${Math.abs(B)}*x${A < 0 ? '-' : '+'}${Math.abs(A)}`; cs.forEach(([c, x])=>{ if(c) s += `${c < 0 ? '-' : '+'}${Math.abs(c)}*abs(x${x < 0 ? '+' + (-x) : '-' + x})`; }); const hi = P[n - 1][0]; return `${s}+0*sqrt((x+0.002)*(${hi + 0.002}-x))`; };
+const r5Hv = (P, tos)=>{ const f = r5Pl(P), ys = P.map(p=> p[1]), xs = P.map(p=> p[0]), hv = {loai:'dothi', hamSo:f, luoi:true, ghiCucTri:false, khung:{xmin:-0.8, xmax:Math.max(...xs) + 0.8, ymin:Math.min(...ys, 0) - 0.8, ymax:Math.max(...ys, 0) + 0.8}}; if(tos) hv.to = tos.map(([a, b])=>{ const up = r5E(P, (a + b)/2) >= 0; return {a, b, tren:up ? f : '0', duoi:up ? '0' : f}; }); if(hv.khung.ymax - hv.khung.ymin > 16) delete hv.luoi; return hv; };
+const r5St = 'Hình bên là đồ thị vận tốc $v(t)$ của một xe theo thời gian, trục hoành là thời gian $t$ (giây), trục tung là vận tốc $v$ (m/s).';
+const r5Tr = R=>{ const a = R.int(1, 3), b = R.int(2, 4), c = R.int(1, 3), h = 2*R.int(1, 4), L = a + b + c; return {a, b, c, h, L, P:[[0, 0], [a, h], [a + b, h], [L, 0]]}; };
+const r5X = R=>{ const w = R.int(2, 4), u = R.int(1, 3), h = 2*R.int(1, 3), k = 2*R.int(1, 2), m = w + u, P = [[0, 0], [w, h], [m, 0], [m + 1, -k], [m + 2, 0]]; return {w, u, h, k, m, P, E:m + 2, A:r5S(P, 0, m), B:r5S(P, m, m + 2)}; };
+const r5Pb = R=>{ const c = R.int(1, 5), V = 3*R.int(1, 4), s = 4*V*c/3, pl = `${V}-${V}/${c*c}*(x-${c})^2`, f = t=> V - V/(c*c)*(t - c)**2; return {c, V, s, pl, f}; };
+const r5PbHv = E=>{ const {c, V, pl} = E, g = `${pl}+0*sqrt((x+0.002)*(${2*c + 0.002}-x))`; return {loai:'dothi', hamSo:g, luoi:true, ghiCucTri:false, diem:[c], khung:{xmin:-0.8, xmax:2*c + 0.8, ymin:-0.8, ymax:V + 0.8}, to:[{a:0, b:2*c, tren:pl, duoi:'0'}]}; };
+const r5Cg = R=>{ const w = R.int(1, 6), h = R.int(2, 8), S = qr(4*w*h, 3), pl = `${h}-${h}/${w*w}*x^2`, f = x=> h - h/(w*w)*x*x; return {w, h, S, pl, f}; };
+const r5CgHv = E=>{ const {w, h, pl} = E; return {loai:'dothi', hamSo:pl, luoi:true, ghiCucTri:false, khung:{xmin:-w - 0.8, xmax:w + 0.8, ymin:-0.8, ymax:h + 0.8}, to:[{a:-w, b:w, tren:pl, duoi:'0'}]}; };
+const r5CgLg = E=> `Đặt hệ trục có gốc ở giữa chân cổng, parabol có phương trình $y = ${E.h} - ${qT(qr(E.h, E.w*E.w))}x^{2}$.<br>$S = ${tpI(`\\left(${E.h} - ${qT(qr(E.h, E.w*E.w))}x^{2}\\right)`, -E.w, E.w)} = ${qT(E.S)}$.`.replace(/- 1x\^/g, '- x^');
+
+G(12,3,2,'TH','Đồ thị vận tốc hình thang: quãng đường là diện tích', R=>{
+  const T = r5Tr(R), {a, b, c, h, L, P} = T, v = r5S(P, 0, L);
+  return tpT(R, `${r5St} Quãng đường xe đi được trong $${L}$ giây bằng`, v, [h*L, h*b, qr(h*L, 2), qa(v, h)], t=> `Quãng đường bằng diện tích hình thang dưới đồ thị: hai đáy $${L}$ và $${b}$, chiều cao $${h}$.<br>$s = \\dfrac{(${L} + ${b})\\cdot ${h}}{2} = ${t}$ (m).`, ()=> r5N(P, 0, L), r5Hv(P, [[0, L]]), 'm');
+});
+
+G(12,3,2,'TH','Xe chạy đều rồi phanh: quãng đường phần chạy đều và phần phanh', R=>{
+  const v = 2*R.int(1, 7), t1 = R.int(2, 6), t2 = R.int(1, 4), L = t1 + t2, P = [[0, v], [t1, v], [L, 0]], s = qa(v*t1, qr(v*t2, 2));
+  return tpT(R, `Hình bên là đồ thị vận tốc $v(t)$ của một xe từ lúc bắt đầu quan sát, trục hoành là thời gian $t$ (giây), trục tung là vận tốc $v$ (m/s). Xe chạy đều rồi phanh đến khi dừng. Quãng đường xe đi được từ lúc bắt đầu quan sát đến khi dừng bằng`, s, [v*L, v*t1, qr(v*L, 2), qr(v*t2, 2)], t=> `Phần chạy đều: $${v}\\cdot ${t1} = ${v*t1}$ m. Phần phanh là tam giác: $${qT(qr(v*t2, 2))}$ m.<br>Tổng bằng $${t}$ (m).`, ()=> r5N(P, 0, L), r5Hv(P, [[0, L]]), 'm');
+});
+
+G(12,3,2,'VD','Đồ thị vận tốc đổi dấu: độ dịch chuyển bằng hiệu hai diện tích', R=>{
+  const X = r5X(R), {P, E, A, B} = X, d = qa(A, B), S = qs(A, B);
+  return tpT(R, `${r5St.replace('một xe', 'một chất điểm')} Độ dịch chuyển của chất điểm trong $${E}$ giây bằng`, d, [S, qm(-1, d), A, qm(-1, S)], t=> `Phần trên trục hoành cho $${qT(A)}$ m, phần dưới trục hoành cho $${qT(B)}$ m.<br>Độ dịch chuyển bằng $${t}$ (m).`, ()=> r5N(P, 0, E), r5Hv(P, [[0, X.m], [X.m, E]]), 'm');
+});
+
+G(12,3,2,'VD','Đồ thị vận tốc đổi dấu: quãng đường bằng tổng hai diện tích', R=>{
+  const X = r5X(R), {P, E, A, B} = X, d = qa(A, B), S = qs(A, B);
+  return tpT(R, `${r5St.replace('một xe', 'một chất điểm')} Quãng đường chất điểm đi được trong $${E}$ giây bằng`, S, [d, A, qm(-1, B), qm(-1, S)], t=> `Vận tốc đổi dấu tại $t = ${X.m}$, chất điểm đổi chiều.<br>Quãng đường bằng tổng hai diện tích: $${qT(A)} + ${qT(qm(-1, B))} = ${t}$ (m).`, ()=> r5N(P, 0, X.m) - r5N(P, X.m, E), r5Hv(P, [[0, X.m], [X.m, E]]), 'm');
+});
+
+G(12,3,2,'VD','Đồ thị v(t) là parabol đỉnh I: s = 2/3 diện tích hình chữ nhật', R=>{
+  const E = r5Pb(R), {c, V, f} = E, T = 2*c;
+  return tpT(R, `Hình bên là đồ thị vận tốc $v(t)$ của một xe trong $${T}$ giây, là một phần parabol có đỉnh $(${c}; ${V})$ và đi qua gốc toạ độ; trục hoành là thời gian (giây), trục tung là vận tốc (m/s). Quãng đường xe đi được trong $${T}$ giây bằng`, E.s, [V*T, qr(V*T, 2), 2*V*T, E.s + V], t=> `$v(t) = ${V} - ${qT(qr(V, c*c))}(t - ${c})^{2}$.<br>$s = ${tpI(`v(t)`, 0, T, 't')} = ${t}$ (m).`.replace('- 1(t', '- (t'), ()=> ngSi(f, 0, T), r5PbHv(E), 'm');
+});
+
+G(12,3,2,'VD','v(t) parabol tới đỉnh rồi không đổi: chia đoạn tại đỉnh', R=>{
+  const c = R.int(1, 4), V = 3*R.int(1, 3), T = c + R.int(1, 4), A = 2*V*c/3, B = V*(T - c), f = t=> t <= c ? V - V/(c*c)*(t - c)**2 : V, pl = `${V}-${V}/${c*c}*(x-${c})^2`;
+  return tpT(R, `Một xe xuất phát từ trạng thái nghỉ. Trong $${c}$ giây đầu, đồ thị vận tốc là một phần parabol có đỉnh $(${c}; ${V})$; sau đó xe giữ nguyên vận tốc $${V}$ m/s đến thời điểm $t = ${T}$ giây. Quãng đường xe đi được trong $${T}$ giây bằng`, A + B, [V*T, A, B, V*c/2 + B], t=> `Giai đoạn đầu: $${tpI('v(t)', 0, c, 't')} = ${A}$ m. Giai đoạn sau: $${V}\\cdot ${T - c} = ${B}$ m.<br>Tổng bằng $${t}$ (m).`, ()=> ngSi(f, 0, c) + V*(T - c), {loai:'dothi', hamSo:`${pl}+0*sqrt(${c + 0.002}-x)+0*sqrt(x+0.002)`, luoi:true, ghiCucTri:false, khung:{xmin:-0.8, xmax:T + 0.8, ymin:-0.8, ymax:V + 0.8}, cong:[{hamSo:`${V}+0*sqrt(x-${c - 0.002})+0*sqrt(${T + 0.002}-x)`}], to:[{a:0, b:c, tren:pl, duoi:'0'}, {a:c, b:T, tren:String(V), duoi:'0'}]}, 'm');
+});
+
+G(12,3,2,'VD','Hai xe: xe A theo đường thẳng, xe B theo parabol, cùng tới vận tốc V: xe B đi xa hơn Vc/6', R=>{
+  const c = R.int(1, 5), V = 6*R.int(1, 4), d = V*c/6, F = t=> V - V/(c*c)*(t - c)**2, G0 = t=> V*t/c, pl = `${V}-${V}/${c*c}*(x-${c})^2`, ln = `${V}/${c}*x`;
+  return tpT(R, `Hình bên là đồ thị vận tốc của hai xe xuất phát cùng lúc, cùng vị trí, cùng chiều trên một đường thẳng: xe $A$ theo đường thẳng qua gốc toạ độ, xe $B$ theo parabol đỉnh $(${c}; ${V})$ đi qua gốc toạ độ, trục hoành là thời gian (giây), trục tung là vận tốc (m/s). Tại thời điểm $t = ${c}$, xe $B$ đi trước xe $A$ một đoạn bằng`, d, [V*c/2, 2*V*c/3, V*c/3, d + V], t=> `Quãng đường xe $A$: $${V*c/2}$ m. Quãng đường xe $B$: $${2*V*c/3}$ m.<br>Hiệu bằng $${t}$ (m).`, ()=> ngSi(F, 0, c) - ngSi(G0, 0, c), {loai:'dothi', hamSo:`${pl}+0*sqrt(${c + 0.002}-x)+0*sqrt(x+0.002)`, ghiCucTri:false, luoi:V <= 12, khung:{xmin:-0.8, xmax:c + 0.8, ymin:-0.8, ymax:V + 0.8}, cong:[{hamSo:`${ln}+0*sqrt(${c + 0.002}-x)+0*sqrt(x+0.002)`}], to:[{a:0, b:c, tren:pl, duoi:ln}]}, 'm');
+});
+
+G(12,3,2,'TH','Đọc gia tốc từ độ dốc đồ thị rồi tính quãng đường đến lúc đó', R=>{
+  const a = R.int(1, 5), t1 = R.int(2, 6), V = a*t1, P = [[0, 0], [t1, V], [t1 + 2, V]], s = qr(a*t1*t1, 2);
+  return tpT(R, `${r5St} Quãng đường xe đi được trong giai đoạn tăng tốc bằng`, s, [V*t1, a*t1, qa(s, 2*V), qr(a*t1, 2)], t=> `Trong giai đoạn tăng tốc, gia tốc bằng độ dốc $${a}$ m/s$^{2}$ và $t$ chạy từ $0$ đến $${t1}$.<br>Quãng đường bằng diện tích tam giác: $\\dfrac{${t1}\\cdot ${V}}{2} = ${t}$ (m).`, ()=> r5N(P, 0, t1), r5Hv(P), 'm');
+});
+
+G(12,3,2,'TH','Cổng parabol: diện tích bằng 2/3 hình chữ nhật bao ngoài', R=>{
+  const E = r5Cg(R), {w, h, S, f} = E;
+  return tpT(R, `Một cổng có dạng parabol, chân cổng rộng $${2*w}$ m, đỉnh cao $${h}$ m so với mặt đất. Diện tích mặt cổng bằng`, S, [2*w*h, w*h, qr(2*w*h, 3), qr(8*w*h, 3)], t=> `${r5CgLg(E)}`, ()=> ngSi(f, -w, w), r5CgHv(E), 'm$^{2}$');
+});
+
+G(12,3,2,'VD','Cổng parabol: tiền sơn mặt cổng theo đơn giá', R=>{
+  const E = r5Cg(R), {w, h, f} = E, g = 3*R.int(1, 8);
+  return tpT(R, `Một cổng có dạng parabol, chân cổng rộng $${2*w}$ m, đỉnh cao $${h}$ m. Người ta sơn một mặt cổng với giá $${10*g}$ nghìn đồng/m$^{2}$. Số tiền sơn bằng`, qm(qr(4*w*h, 3), 10*g), [qm(2*w*h, 10*g), qm(w*h, 10*g), qm(qr(2*w*h, 3), 10*g), 40*g*w*h], t=> `Diện tích mặt cổng bằng $${qT(E.S)}$ m$^{2}$.<br>Số tiền bằng $${qT(E.S)}\\cdot ${10*g} = ${t}$ (nghìn đồng).`, ()=> ngSi(f, -w, w)*10*g, undefined, 'nghìn đồng');
+});
+
+G(12,3,2,'VD','Vườn chữ nhật có bồn hoa parabol: diện tích phần còn lại', R=>{
+  const E = r5Cg(R), {w, h, f} = E, Rc = 2*w*h, v = qs(Rc, E.S);
+  return tpT(R, `Một khu vườn hình chữ nhật có hai kích thước $${2*w}$ m và $${h}$ m. Bồn hoa có dạng parabol, chân bồn là cả cạnh $${2*w}$ m, đỉnh chạm trung điểm cạnh đối diện. Phần còn lại của khu vườn có diện tích bằng`, v, [E.S, Rc, qr(Rc, 2), qr(Rc, 4)], t=> `Bồn hoa có diện tích $${qT(E.S)}$ m$^{2}$.<br>Phần còn lại: $${Rc} - ${qT(E.S)} = ${t}$ (m$^{2}$).`, ()=> 2*w*h - ngSi(f, -w, w), r5CgHv(E), 'm$^{2}$');
+});
+
+G(12,3,2,'VD','Lá trang trí giới hạn bởi hai parabol đối xứng qua trục hoành', R=>{
+  const k = R.int(1, 3), m = R.int(2, 6), S = qr(k*m**3, 3), p1 = [-k, k*m, 0], p2 = [k, -k*m, 0], F = gF(p1), G0 = gF(p2);
+  return tpT(R, `Một chiếc lá trang trí được giới hạn bởi hai parabol $y = ${tpP(p1)}$ và $y = ${tpP(p2)}$ (đơn vị trên hai trục là dm). Diện tích chiếc lá bằng`, S, [qr(k*m**3, 6), qr(2*k*m**3, 3), k*m**3, 0], t=> `Hai parabol cắt nhau tại $x = 0$, $x = ${m}$.<br>$S = ${tpI(`\\left(${tpP([-2*k, 2*k*m, 0])}\\right)`, 0, m)} = ${t}$ (dm$^{2}$).`, ()=> ngSi(x=> F(x) - G0(x), 0, m), k*m*m/4 <= 7 ? {loai:'dothi', hamSo:gPl(p1), luoi:true, ghiCucTri:false, khung:{xmin:-1.2, xmax:m + 1.2, ymin:-Math.ceil(k*m*m/4) - 0.8, ymax:Math.ceil(k*m*m/4) + 0.8}, cong:[{hamSo:gPl(p2)}], to:[{a:0, b:m, tren:gPl(p1), duoi:gPl(p2)}]} : undefined, 'dm$^{2}$');
+});
+G(12,3,2,'VD','Kênh có mặt cắt parabol: thể tích nước bằng diện tích mặt cắt nhân chiều dài', R=>{
+  const w = R.int(1, 4), h = R.int(1, 3), L = 3*R.int(1, 6), v = 4*w*h*L/3, f = x=> h - h/(w*w)*x*x;
+  return tpT(R, `Một con kênh dài $${L}$ m có mặt cắt ngang dạng parabol, miệng rộng $${2*w}$ m, sâu $${h}$ m. Khi kênh đầy nước, thể tích nước trong kênh bằng`, v, [2*w*h*L, w*h*L, 2*w*h*L/3, 8*w*h*L/3], t=> `Diện tích mặt cắt bằng $${qT(qr(4*w*h, 3))}$ m$^{2}$.<br>Thể tích bằng $${qT(qr(4*w*h, 3))}\\cdot ${L} = ${t}$ (m$^{3}$).`, ()=> ngSi(f, -w, w)*L, undefined, 'm$^{3}$');
+});
+
+G(12,3,2,'VD','Bát có thành là paraboloit: V = πr²h/2', R=>{
+  const r = 2*R.int(2, 6), h = R.int(2, 12), q = qr(r*r*h, 2), f2 = x=> r*r*x/h;
+  return r5K(R, `Một chiếc bát có mặt trong là mặt tròn xoay sinh bởi đường $y = ${r}\\sqrt{\\dfrac{x}{${h}}}$ ($0 \\le x \\le ${h}$) quay quanh trục $Ox$ (đơn vị cm). Dung tích của bát (theo cm$^{3}$) bằng`, q, [qm(2, q), qr(r*r*h, 3), qr(r*h, 2), qr(r*r*h, 4)], t=> `Miệng bát có bán kính $${r}$ cm, sâu $${h}$ cm.<br>$V = \\pi${tpI(`\\dfrac{${r*r}x}{${h}}`, 0, h)} = ${t}$ (cm$^{3}$).`, ()=> ngSi(f2, 0, h));
+});
+
+G(12,3,2,'VD','Thùng phình giữa, thành là cung parabol: tính V qua khai triển', R=>{
+  const r = 3*R.int(1, 3), d = 3*R.int(1, 2), Rm = r + d, h = 2*R.int(2, 5), q = qm(h, qa(qs(Rm*Rm, qr(2*Rm*d, 3)), qr(d*d, 5))), a = h/2, f = x=> Rm - d*x*x/(a*a);
+  return r5K(R, `Một thùng gỗ cao $${h}$ dm, hai đáy là hình tròn bán kính $${r}$ dm, giữa thùng có bán kính $${Rm}$ dm. Thành thùng là mặt tròn xoay sinh bởi một cung parabol có đỉnh ở giữa thùng. Thể tích thùng (theo dm$^{3}$) bằng`, q, [h*Rm*Rm, h*r*r, qm(h, qr(Rm*Rm + r*r, 2)), qm(h, qr(Rm*Rm + Rm*r + r*r, 3))], t=> `Đặt $Ox$ theo trục thùng, gốc ở giữa thùng: $y = ${Rm} - ${qT(qr(d, a*a))}x^{2}$.<br>$V = \\pi${tpI('y^{2}', -a, a)} = ${t}$ (dm$^{3}$).`.replace('- 1x^', '- x^'), ()=> ngSi(x=> f(x)**2, -a, a));
+});
+
+G(12,3,2,'VD','Bể cầu chứa nước sâu h: chỏm cầu V = πh²(R − h/3)', R=>{
+  const r = R.int(2, 9), h = R.int(1, r - 1), q = qm(h*h, qs(r, qr(h, 3))), f = x=> r*r - x*x;
+  return r5K(R, `Một bể nước hình cầu bán kính trong $${r}$ dm, nước trong bể sâu $${h}$ dm (điểm thấp nhất của bể tới mặt nước). Thể tích nước (theo dm$^{3}$) bằng`, q, [qr(4*r**3, 3), h*h*r, qm(2, q), qa(q, h*h)], t=> `Nước là chỏm cầu, ứng với $${r - h} \\le x \\le ${r}$ trên trục qua tâm.<br>$V = \\pi${tpI(`(${r*r} - x^{2})`, r - h, r)} = ${t}$ (dm$^{3}$).`, ()=> ngSi(f, r - h, r));
+});
+
+G(12,3,2,'VD','Cốc dạng nón cụt: dung tích bằng tích phân của đoạn thẳng', R=>{
+  const r1 = R.int(2, 4), r2 = r1 + R.int(1, 3), h = 3*R.int(2, 4), q = qr(h*(r1*r1 + r1*r2 + r2*r2), 3), m = qr(r2 - r1, h), f = x=> r1 + (r2 - r1)*x/h;
+  return r5K(R, `Một cốc nước có dạng hình nón cụt, bán kính đáy dưới $${r1}$ cm, bán kính miệng $${r2}$ cm, cao $${h}$ cm. Dung tích của cốc (theo cm$^{3}$) bằng`, q, [h*r2*r2, h*r1*r1, qm(h, qr(r1*r1 + r2*r2, 2)), h*r1*r2], t=> `Quay đoạn thẳng $y = ${r1} + ${qT(m)}x$ ($0 \\le x \\le ${h}$) quanh trục $Ox$.<br>$V = \\pi${tpI(`\\left(${r1} + ${qT(m)}x\\right)^{2}`, 0, h)} = ${t}$ (cm$^{3}$).`.replace(/\+ 1x/g, '+ x'), ()=> ngSi(x=> f(x)**2, 0, h));
+});
+
+G(12,3,2,'VD','Nêm cắt từ khối trụ bằng mặt phẳng nghiêng 45° qua đường kính đáy: V = 2r³/3', R=>{
+  const r = 3*R.int(1, 12), v = 2*r**3/3, f = x=> (r*r - x*x)/2;
+  return tpT(R, `Từ một khúc gỗ hình trụ bán kính $${r}$ cm, người ta cắt một cái nêm bằng mặt phẳng đi qua một đường kính của đáy và tạo với đáy góc $45^{\\circ}$. Đặt trục $Ox$ theo đường kính đó, thiết diện của nêm vuông góc với $Ox$ tại $x$ là tam giác vuông cân có cạnh góc vuông $\\sqrt{${r*r} - x^{2}}$. Thể tích của nêm (theo cm$^{3}$) bằng`, v, [2*v, v/2, r**3, 4*v/3], t=> `$S(x) = \\dfrac{${r*r} - x^{2}}{2}$.<br>$V = ${tpI(`\\dfrac{${r*r} - x^{2}}{2}`, -r, r)} = ${t}$ (cm$^{3}$).`, ()=> ngSi(f, -r, r));
+});
+
+G(12,3,2,'VD','Quả bóng bầu dục dạng khối elipxôit: V = 4πab²/3', R=>{
+  const a = 3*R.int(2, 5), b = R.int(3, 9), q = qr(4*a*b*b, 3), f2 = x=> b*b*(1 - x*x/(a*a)); if(b >= a) return null;
+  return r5K(R, `Một quả bóng bầu dục có dạng khối tròn xoay sinh bởi nửa elip $y = ${b}\\sqrt{1 - \\dfrac{x^{2}}{${a*a}}}$ quay quanh trục $Ox$ (đơn vị cm). Chiều dài bóng là $${2*a}$ cm, đường kính lớn nhất là $${2*b}$ cm. Thể tích quả bóng (theo cm$^{3}$) bằng`, q, [qr(4*a*a*b, 3), qr(2*a*b*b, 3), qm(2, q), qr(4*a*b, 3)], t=> `$V = \\pi${tpI(`${b*b}\\left(1 - \\dfrac{x^{2}}{${a*a}}\\right)`, -a, a)} = ${t}$ (cm$^{3}$).`, ()=> ngSi(f2, -a, a));
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,2,'TH','Đồ thị hình thang: gia tốc, quãng đường từng giai đoạn', R=>{
+  const T = r5Tr(R), {a, b, c, h, L, P} = T, A = qr(a*h, 2), B = b*h, C = qr(c*h, 2), S = r5S(P, 0, L), g = qr(h, a);
+  return {stem:r5St, hv:r5Hv(P, [[0, L]]),
+    items:[gC(R, `Gia tốc trong giai đoạn tăng tốc bằng `, g, qa(g, 1), ()=> (r5E(P, a) - r5E(P, 0))/a, 'm/s$^{2}$'),
+      gC(R, `Giai đoạn tăng tốc xe đi được `, A, qm(2, A), ()=> r5N(P, 0, a), 'm'),
+      gC(R, `Giai đoạn chạy đều xe đi được `, B, 2*B, ()=> r5N(P, a, a + b), 'm'),
+      gC(R, `Cả quá trình xe đi được `, S, h*L, ()=> r5N(P, 0, L), 'm')],
+    lg:`a) Độ dốc đoạn đầu bằng $${qT(g)}$.<br>b) Tam giác đáy $${a}$, cao $${h}$.<br>c) Hình chữ nhật $${b} \\times ${h}$.<br>d) Cộng thêm tam giác cuối ($${qT(C)}$ m) được $${qT(S)}$ m.`};
+});
+
+GD(12,3,2,'VD','Đồ thị đổi dấu: thời điểm đổi chiều, độ dịch chuyển, quãng đường', R=>{
+  const X = r5X(R), {P, E, m, A, B} = X, d = qa(A, B), S = qs(A, B);
+  return {stem:r5St.replace('một xe', 'một chất điểm'), hv:r5Hv(P, [[0, m], [m, E]]),
+    items:[claim(R, `Chất điểm đổi chiều chuyển động tại thời điểm $t = ${m}$`, `Chất điểm đổi chiều chuyển động tại thời điểm $t = ${m + 1}$`, ()=> r5E(P, m - 0.5)*r5E(P, m + 0.5) < 0, ()=> r5E(P, m + 0.5)*r5E(P, m + 1.5) < 0),
+      gC(R, `Từ $t = 0$ đến $t = ${m}$ chất điểm đi được `, A, qm(2, A), ()=> r5N(P, 0, m), 'm'),
+      gC(R, `Độ dịch chuyển trong $${E}$ giây bằng `, d, S, ()=> r5N(P, 0, E), 'm'),
+      gC(R, `Quãng đường đi được trong $${E}$ giây bằng `, S, d, ()=> r5N(P, 0, m) - r5N(P, m, E), 'm')],
+    lg:`a) Vận tốc đổi dấu tại $t = ${m}$.<br>b) Diện tích tam giác phía trên trục hoành.<br>c) $${qT(A)} - ${qT(qm(-1, B))} = ${qT(d)}$.<br>d) $${qT(A)} + ${qT(qm(-1, B))} = ${qT(S)}$.`};
+});
+
+GD(12,3,2,'VD','v(t) parabol đỉnh I: vận tốc lớn nhất, quãng đường nửa đầu, cả đoạn', R=>{
+  const E = r5Pb(R), {c, V, f} = E, T = 2*c, H = 2*V*c/3;
+  return {stem:`Hình bên là đồ thị vận tốc $v(t)$ của một xe trong $${T}$ giây, là một phần parabol có đỉnh $(${c}; ${V})$ và đi qua gốc toạ độ; trục hoành là thời gian (giây), trục tung là vận tốc (m/s).`, hv:r5PbHv(E),
+    items:[gC(R, `Vận tốc lớn nhất của xe bằng `, V, V + 1, ()=> f(c), 'm/s'),
+      gC(R, `Quãng đường xe đi được trong $${T}$ giây bằng `, E.s, V*T, ()=> ngSi(f, 0, T), 'm'),
+      gC(R, `Quãng đường xe đi được trong $${c}$ giây đầu bằng `, H, E.s, ()=> ngSi(f, 0, c), 'm'),
+      claim(R, `Xe dừng lại tại thời điểm $t = ${T}$`, `Xe dừng lại tại thời điểm $t = ${c}$`, ()=> near(f(T), 0, 1e-9), ()=> near(f(c), 0, 1e-9))],
+    lg:`a) Tung độ của đỉnh.<br>b) $${tpI('v(t)', 0, T, 't')} = ${E.s}$.<br>c) Đồ thị đối xứng qua $t = ${c}$ nên bằng nửa kết quả trên.<br>d) $v(${T}) = 0$.`};
+});
+
+GD(12,3,2,'TH','Cổng parabol: phương trình, diện tích, so với hình chữ nhật', R=>{
+  const E = r5Cg(R), {w, h, f, S} = E, Rc = 2*w*h;
+  return {stem:`Một cổng có dạng parabol, chân cổng rộng $${2*w}$ m, đỉnh cao $${h}$ m so với mặt đất. Đặt hệ trục có gốc ở giữa chân cổng, trục $Oy$ đi qua đỉnh, đơn vị là mét.`, hv:r5CgHv(E),
+    items:[claim(R, `Parabol có phương trình $y = ${h} - ${qT(qr(h, w*w))}x^{2}$`.replace('- 1x^', '- x^'), `Parabol có phương trình $y = ${h} - ${qT(qr(h, 2*w*w))}x^{2}$`.replace('- 1x^', '- x^'), ()=> near(f(w), 0, 1e-9), ()=> near(h - h/2, 0, 1e-9)),
+      gC(R, `Diện tích mặt cổng bằng `, S, Rc, ()=> ngSi(f, -w, w), 'm$^{2}$'),
+      gC(R, `Hình chữ nhật cùng chân, cùng chiều cao với cổng có diện tích `, Rc, S, ()=> 2*w*h, 'm$^{2}$'),
+      claim(R, `Diện tích mặt cổng bằng $\\dfrac{2}{3}$ diện tích hình chữ nhật đó`, `Diện tích mặt cổng bằng $\\dfrac{3}{4}$ diện tích hình chữ nhật đó`, ()=> near(ngSi(f, -w, w), 2/3*Rc, 1e-8), ()=> near(ngSi(f, -w, w), 3/4*Rc, 1e-8))],
+    lg:`a) Đỉnh $(0; ${h})$, đi qua $(${w}; 0)$.<br>b) $${tpI('y', -w, w)} = ${qT(S)}$.<br>c) $${2*w}\\cdot ${h} = ${Rc}$.<br>d) Tỉ số hai diện tích bằng $\\dfrac{2}{3}$.`};
+});
+
+GD(12,3,2,'VD','Kênh parabol: mặt cắt, thể tích, mực nước', R=>{
+  const w = R.int(1, 4), h = R.int(1, 3), L = 3*R.int(1, 6), S = qr(4*w*h, 3), f = x=> h - h/(w*w)*x*x, V = 4*w*h*L/3;
+  return {stem:`Một con kênh dài $${L}$ m có mặt cắt ngang dạng parabol, miệng rộng $${2*w}$ m, sâu $${h}$ m.`,
+    items:[gC(R, `Diện tích mặt cắt ngang của kênh bằng `, S, 2*w*h, ()=> ngSi(f, -w, w), 'm$^{2}$'),
+      gC(R, `Khi đầy nước, kênh chứa `, V, 2*w*h*L, ()=> ngSi(f, -w, w)*L, 'm$^{3}$'),
+      claim(R, `Thể tích nước tỉ lệ thuận với chiều dài kênh`, `Thể tích nước tỉ lệ thuận với bình phương chiều dài kênh`, ()=> near(ngSi(f, -w, w)*2*L, 2*V, 1e-8), ()=> near(ngSi(f, -w, w)*2*L, 4*V, 1e-8)),
+      claim(R, `Mặt cắt ngang chiếm $\\dfrac{2}{3}$ hình chữ nhật có hai kích thước $${2*w}$ m và $${h}$ m`, `Mặt cắt ngang chiếm $\\dfrac{1}{2}$ hình chữ nhật có hai kích thước $${2*w}$ m và $${h}$ m`, ()=> near(ngSi(f, -w, w), 2/3*2*w*h, 1e-8), ()=> near(ngSi(f, -w, w), w*h, 1e-8))],
+    lg:`a) $\\dfrac{4}{3}\\cdot ${w}\\cdot ${h} = ${qT(S)}$.<br>b) Mặt cắt không đổi nên thể tích bằng diện tích nhân chiều dài: $${V}$ m$^{3}$.<br>c) Vì diện tích mặt cắt không đổi.<br>d) Tính chất của parabol.`.replace(/\\cdot 1\\cdot /g, '\\cdot ').replace(/\\cdot 1 =/g, '=')};
+});
+
+GD(12,3,2,'VD','Bát paraboloit: y², dung tích, so với hình trụ cùng miệng và chiều cao', R=>{
+  const r = 2*R.int(2, 5), h = R.int(2, 10), q = qr(r*r*h, 2), tr = r*r*h, f2 = x=> r*r*x/h, sq = qr(r*r, h);
+  return {stem:`Một chiếc bát có mặt trong là mặt tròn xoay sinh bởi đường $y = ${r}\\sqrt{\\dfrac{x}{${h}}}$ ($0 \\le x \\le ${h}$) quay quanh trục $Ox$ (đơn vị cm).`,
+    items:[claim(R, `Miệng bát có bán kính $${r}$ cm`, `Miệng bát có bán kính $${r*r}$ cm`, ()=> near(Math.sqrt(f2(h)), r, 1e-9), ()=> near(Math.sqrt(f2(h)), r*r, 1e-9)),
+      r5Q(R, `Dung tích của bát (theo cm$^{3}$) bằng`, q, qm(2, q), ()=> ngSi(f2, 0, h)),
+      r5Q(R, `Hình trụ có cùng bán kính miệng và chiều cao với bát có thể tích (theo cm$^{3}$)`, tr, q, ()=> r*r*h),
+      claim(R, `Dung tích bát bằng một nửa thể tích hình trụ đó`, `Dung tích bát bằng một phần ba thể tích hình trụ đó`, ()=> near(ngSi(f2, 0, h), tr/2, 1e-8), ()=> near(ngSi(f2, 0, h), tr/3, 1e-8))],
+    lg:`a) Thay $x = ${h}$ được $y = ${r}$.<br>b) $V = \\pi${tpI(`${qT(sq)}x`, 0, h)} = ${r5Pi(q)}$.<br>c) $\\pi\\cdot ${r}^{2}\\cdot ${h} = ${r5Pi(tr)}$.<br>d) Tỉ số hai kết quả bằng $\\dfrac{1}{2}$.`};
+});
+
+GD(12,3,2,'VD','Thùng phình giữa: cung parabol, thể tích, so với trụ cùng đáy, trụ cùng bụng', R=>{
+  const r = 3*R.int(1, 2), d = 3, Rm = r + d, h = 2*R.int(2, 4), a = h/2, q = qm(h, qa(qs(Rm*Rm, qr(2*Rm*d, 3)), qr(d*d, 5))), f = x=> Rm - d*x*x/(a*a), V = ngSi(x=> f(x)**2, -a, a);
+  return {stem:`Một thùng gỗ cao $${h}$ dm, hai đáy là hình tròn bán kính $${r}$ dm, giữa thùng có bán kính $${Rm}$ dm. Thành thùng là mặt tròn xoay sinh bởi một cung parabol có đỉnh ở giữa thùng, quay quanh trục thùng $Ox$ với gốc $O$ ở giữa thùng.`,
+    items:[claim(R, `Cung parabol có phương trình $y = ${Rm} - ${qT(qr(d, a*a))}x^{2}$`.replace('- 1x^', '- x^'), `Cung parabol có phương trình $y = ${Rm} - ${qT(qr(d, a))}x^{2}$`.replace('- 1x^', '- x^'), ()=> near(f(a), r, 1e-9), ()=> a === 1),
+      r5Q(R, `Thể tích thùng (theo dm$^{3}$) bằng`, q, qm(2, q), ()=> V),
+      claim(R, `Thể tích thùng lớn hơn hình trụ bán kính $${r}$ dm, cao $${h}$ dm`, `Thể tích thùng nhỏ hơn hình trụ bán kính $${r}$ dm, cao $${h}$ dm`, ()=> V > r*r*h, ()=> V < r*r*h),
+      claim(R, `Thể tích thùng nhỏ hơn hình trụ bán kính $${Rm}$ dm, cao $${h}$ dm`, `Thể tích thùng lớn hơn hình trụ bán kính $${Rm}$ dm, cao $${h}$ dm`, ()=> V < Rm*Rm*h, ()=> V > Rm*Rm*h)],
+    lg:`a) Đỉnh $(0; ${Rm})$, đi qua $(${a}; ${r})$.<br>b) $V = \\pi${tpI('y^{2}', -a, a)} = ${r5Pi(q)}$.<br>c), d) Bán kính thiết diện luôn nằm giữa $${r}$ và $${Rm}$.`};
+});
+
+GD(12,3,2,'VD','Bể cầu: nước sâu h, thể tích, đầy nửa bể', R=>{
+  const r = R.int(2, 8), h = R.int(1, r - 1), q = qm(h*h, qs(r, qr(h, 3))), H = qr(2*r**3, 3), f = x=> r*r - x*x, rr = r*r - (r - h)**2;
+  return {stem:`Một bể nước hình cầu bán kính trong $${r}$ dm, nước trong bể sâu $${h}$ dm (điểm thấp nhất của bể tới mặt nước). Đặt trục $Ox$ thẳng đứng qua tâm, gốc tại tâm, chiều dương hướng xuống.`,
+    items:[claim(R, `Khối nước ứng với $${r - h} \\le x \\le ${r}$`, `Khối nước ứng với $0 \\le x \\le ${h}$`, ()=> r - h >= 0, ()=> false),
+      claim(R, `Mặt nước là hình tròn bán kính $\\sqrt{${rr}}$ dm`, `Mặt nước là hình tròn bán kính $${h}$ dm`, ()=> near(f(r - h), rr, 1e-9), ()=> near(f(r - h), h*h, 1e-9)),
+      r5Q(R, `Thể tích nước (theo dm$^{3}$) bằng`, q, qm(2, q), ()=> ngSi(f, r - h, r)),
+      r5Q(R, `Khi nước sâu $${r}$ dm, thể tích nước (theo dm$^{3}$) bằng`, H, qr(4*r**3, 3), ()=> ngSi(f, 0, r))],
+    lg:`a) Mặt nước cách tâm $${r - h}$ dm.<br>b) Bán kính bằng $\\sqrt{${r*r} - ${(r - h)**2}}$.<br>c) $V = \\pi${tpI(`(${r*r} - x^{2})`, r - h, r)} = ${r5Pi(q)}$.<br>d) Nước đầy đúng nửa hình cầu.`};
+});
+
+GD(12,3,2,'VD','Cốc nón cụt: đường sinh, dung tích, so với hình trụ', R=>{
+  const r1 = R.int(2, 4), r2 = r1 + R.int(1, 3), h = 3*R.int(2, 4), q = qr(h*(r1*r1 + r1*r2 + r2*r2), 3), m = qr(r2 - r1, h), f = x=> r1 + (r2 - r1)*x/h;
+  return {stem:`Một cốc nước có dạng hình nón cụt, bán kính đáy dưới $${r1}$ cm, bán kính miệng $${r2}$ cm, cao $${h}$ cm. Cốc được tạo bởi đoạn thẳng $y = ${r1} + ${qT(m)}x$ ($0 \\le x \\le ${h}$) quay quanh trục $Ox$.`.replace('+ 1x', '+ x'),
+    items:[gC(R, `Tại độ cao $x = ${h/3}$ cốc có bán kính `, qa(r1, qr(r2 - r1, 3)), qa(qa(r1, qr(r2 - r1, 3)), 1), ()=> f(h/3), 'cm'),
+      r5Q(R, `Dung tích của cốc (theo cm$^{3}$) bằng`, q, qm(2, q), ()=> ngSi(x=> f(x)**2, 0, h)),
+      claim(R, `Dung tích cốc nhỏ hơn hình trụ bán kính $${r2}$ cm, cao $${h}$ cm`, `Dung tích cốc lớn hơn hình trụ bán kính $${r2}$ cm, cao $${h}$ cm`, ()=> ngSi(x=> f(x)**2, 0, h) < r2*r2*h, ()=> ngSi(x=> f(x)**2, 0, h) > r2*r2*h),
+      claim(R, `Dung tích cốc lớn hơn hình trụ bán kính $${r1}$ cm, cao $${h}$ cm`, `Dung tích cốc nhỏ hơn hình trụ bán kính $${r1}$ cm, cao $${h}$ cm`, ()=> ngSi(x=> f(x)**2, 0, h) > r1*r1*h, ()=> ngSi(x=> f(x)**2, 0, h) < r1*r1*h)],
+    lg:`a) Thay $x = ${h/3}$ được $${qT(qa(r1, qr(r2 - r1, 3)))}$.<br>b) $V = \\pi${tpI('y^{2}', 0, h)} = ${r5Pi(q)}$.<br>c), d) Bán kính thiết diện nằm giữa $${r1}$ và $${r2}$.`};
+});
+
+GD(12,3,2,'VD','Nêm từ khối trụ: thiết diện, thể tích, so với nửa khối trụ', R=>{
+  const r = 3*R.int(1, 4), v = 2*r**3/3, f = x=> (r*r - x*x)/2;
+  return {stem:`Từ một khúc gỗ hình trụ bán kính $${r}$ cm, người ta cắt một cái nêm bằng mặt phẳng đi qua một đường kính của đáy và tạo với đáy góc $45^{\\circ}$. Đặt trục $Ox$ theo đường kính đó.`,
+    items:[claim(R, `Thiết diện tại $x$ là tam giác vuông cân có cạnh góc vuông $\\sqrt{${r*r} - x^{2}}$`, `Thiết diện tại $x$ là tam giác vuông cân có cạnh góc vuông $${r*r} - x^{2}$`, ()=> near(f(0), r*r/2, 1e-9), ()=> near(f(0), r**4/2, 1e-9)),
+      gC(R, `Thiết diện lớn nhất có diện tích `, r*r/2, r*r, ()=> f(0), 'cm$^{2}$'),
+      gC(R, `Thể tích của nêm bằng `, v, 2*v, ()=> ngSi(f, -r, r), 'cm$^{3}$'),
+      claim(R, `Nếu tăng gấp đôi bán kính thì thể tích nêm tăng gấp $8$ lần`, `Nếu tăng gấp đôi bán kính thì thể tích nêm tăng gấp $4$ lần`, ()=> near(ngSi(x=> (4*r*r - x*x)/2, -2*r, 2*r), 8*v, 1e-6), ()=> near(ngSi(x=> (4*r*r - x*x)/2, -2*r, 2*r), 4*v, 1e-6))],
+    lg:`a) Một cạnh góc vuông nằm trên đáy, góc nghiêng $45^{\\circ}$ nên cạnh kia bằng nó.<br>b) Tại $x = 0$: $\\dfrac{${r*r}}{2}$.<br>c) $${tpI(`\\dfrac{${r*r} - x^{2}}{2}`, -r, r)} = ${v}$.<br>d) $V = \\dfrac{2r^{3}}{3}$ tỉ lệ với $r^{3}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,2,'TH','Tính quãng đường từ đồ thị hình thang (m)', R=>{
+  const {b, h, L, P} = r5Tr(R), v = r5S(P, 0, L);
+  return tpN(`${r5St} Tính quãng đường (theo mét) xe đi được trong $${L}$ giây.`, v, t=> `Diện tích hình thang: $\\dfrac{(${L} + ${b})\\cdot ${h}}{2} = ${t}$.`, ()=> r5N(P, 0, L), r5Hv(P, [[0, L]]));
+});
+
+GT(12,3,2,'VD','Tính quãng đường khi đồ thị đổi dấu (m)', R=>{
+  const X = r5X(R), {P, E, m, A, B} = X, S = qs(A, B);
+  return tpN(`${r5St.replace('một xe', 'một chất điểm')} Tính quãng đường (theo mét) chất điểm đi được trong $${E}$ giây.`, S, t=> `Hai tam giác có diện tích $${qT(A)}$ và $${qT(qm(-1, B))}$. Tổng bằng $${t}$.`, ()=> r5N(P, 0, m) - r5N(P, m, E), r5Hv(P, [[0, m], [m, E]]));
+});
+
+GT(12,3,2,'VD','Tính quãng đường với v(t) parabol (m)', R=>{
+  const c = R.int(1, 6), V = 3*R.int(1, 5), s = 4*V*c/3, f = t=> V - V/(c*c)*(t - c)**2, T = 2*c;
+  return tpN(`Vận tốc $v(t)$ của một xe trong $${T}$ giây có đồ thị là một phần parabol đỉnh $(${c}; ${V})$ đi qua gốc toạ độ ($t$ tính bằng giây, $v$ tính bằng m/s). Tính quãng đường (theo mét) xe đi được trong $${T}$ giây.`, s, t=> `$s = ${tpI('v(t)', 0, T, 't')} = \\dfrac{2}{3}\\cdot ${T}\\cdot ${V} = ${t}$.`, ()=> ngSi(f, 0, T));
+});
+
+GT(12,3,2,'VD','Parabol tới đỉnh rồi không đổi (m)', R=>{
+  const c = 3*R.int(1, 2), V = R.int(2, 12), T = c + R.int(1, 6), A = 2*V*c/3, B = V*(T - c), f = t=> V - V/(c*c)*(t - c)**2;
+  return tpN(`Một xe xuất phát từ trạng thái nghỉ. Trong $${c}$ giây đầu, đồ thị vận tốc là một phần parabol có đỉnh $(${c}; ${V})$; sau đó xe giữ nguyên vận tốc $${V}$ m/s đến thời điểm $t = ${T}$ giây. Tính quãng đường (theo mét) xe đi được trong $${T}$ giây.`, A + B, t=> `Giai đoạn đầu $${A}$ m, giai đoạn sau $${B}$ m. Tổng bằng $${t}$.`, ()=> ngSi(f, 0, c) + V*(T - c));
+});
+
+GT(12,3,2,'VD','Hai xe đường thẳng và parabol: xe B đi trước bao nhiêu mét', R=>{
+  const c = 3*R.int(1, 5), V = 2*R.int(1, 8), d = V*c/6, F = t=> V - V/(c*c)*(t - c)**2, G0 = t=> V*t/c;
+  return tpN(`Hai xe xuất phát cùng lúc, cùng vị trí, cùng chiều. Vận tốc xe $A$ tăng đều từ $0$ đến $${V}$ m/s sau $${c}$ giây. Đồ thị vận tốc xe $B$ là một phần parabol đỉnh $(${c}; ${V})$ đi qua gốc toạ độ. Tại thời điểm $t = ${c}$, xe $B$ đi trước xe $A$ bao nhiêu mét?`, d, t=> `Xe $A$: $${V*c/2}$ m. Xe $B$: $${2*V*c/3}$ m. Hiệu bằng $${t}$.`, ()=> ngSi(F, 0, c) - ngSi(G0, 0, c));
+});
+
+GT(12,3,2,'TH','Diện tích cổng parabol (m²)', R=>{
+  const w = R.int(1, 9), h = 3*R.int(1, 4), v = 4*w*h/3, f = x=> h - h/(w*w)*x*x;
+  return tpN(`Một cổng có dạng parabol, chân cổng rộng $${2*w}$ m, đỉnh cao $${h}$ m so với mặt đất. Tính diện tích mặt cổng (theo m$^{2}$).`, v, t=> `Diện tích bằng $\\dfrac{2}{3}\\cdot ${2*w}\\cdot ${h} = ${t}$.`, ()=> ngSi(f, -w, w));
+});
+
+GT(12,3,2,'VD','Tiền sơn cổng parabol (nghìn đồng)', R=>{
+  const w = R.int(1, 6), h = 3*R.int(1, 3), g = 10*R.int(1, 9), v = 4*w*h*g/3, f = x=> h - h/(w*w)*x*x;
+  return tpN(`Một cổng có dạng parabol, chân cổng rộng $${2*w}$ m, đỉnh cao $${h}$ m. Người ta sơn một mặt cổng với giá $${g}$ nghìn đồng/m$^{2}$. Tính số tiền sơn (theo nghìn đồng).`, v, t=> `Diện tích mặt cổng bằng $${4*w*h/3}$ m$^{2}$.<br>Số tiền bằng $${4*w*h/3}\\cdot ${g} = ${t}$.`, ()=> ngSi(f, -w, w)*g);
+});
+
+GT(12,3,2,'VD','Phần còn lại của vườn có bồn parabol (m²)', R=>{
+  const w = R.int(1, 9), h = 3*R.int(1, 4), v = 2*w*h/3, f = x=> h - h/(w*w)*x*x;
+  return tpN(`Một khu vườn hình chữ nhật có hai kích thước $${2*w}$ m và $${h}$ m. Bồn hoa có dạng parabol, chân bồn là cả cạnh $${2*w}$ m, đỉnh chạm trung điểm cạnh đối diện. Tính diện tích phần còn lại của khu vườn (theo m$^{2}$).`, v, t=> `Bồn hoa chiếm $\\dfrac{2}{3}$ khu vườn, phần còn lại bằng $\\dfrac{1}{3}\\cdot ${2*w*h} = ${t}$.`, ()=> 2*w*h - ngSi(f, -w, w));
+});
+
+GT(12,3,2,'VD','Thể tích nước trong kênh parabol (m³)', R=>{
+  const w = R.int(1, 5), h = R.int(1, 3), L = 3*R.int(1, 8), v = 4*w*h*L/3, f = x=> h - h/(w*w)*x*x;
+  return tpN(`Một con kênh dài $${L}$ m có mặt cắt ngang dạng parabol, miệng rộng $${2*w}$ m, sâu $${h}$ m. Tính thể tích nước (theo m$^{3}$) khi kênh đầy.`, v, t=> `Diện tích mặt cắt bằng $${qT(qr(4*w*h, 3))}$ m$^{2}$.<br>Thể tích bằng $${t}$.`, ()=> ngSi(f, -w, w)*L);
+});
+
+GT(12,3,2,'VD','Dung tích bát paraboloit, viết dạng aπ', R=>{
+  const r = 2*R.int(1, 6), h = R.int(2, 12), a = r*r*h/2;
+  return tpN(`Một chiếc bát có mặt trong là mặt tròn xoay sinh bởi đường $y = ${r}\\sqrt{\\dfrac{x}{${h}}}$ ($0 \\le x \\le ${h}$) quay quanh trục $Ox$ (đơn vị cm). Dung tích của bát là $a\\pi$ cm$^{3}$. Tìm $a$.`, a, t=> `$V = \\pi${tpI(`${qT(qr(r*r, h))}x`, 0, h)}$, nên $a = ${t}$.`.replace('{1x}', '{x}'), ()=> ngSi(x=> r*r*x/h, 0, h));
+});
+
+GT(12,3,2,'VD','Thùng phình giữa, viết thể tích dạng aπ/15', R=>{
+  const r = R.int(1, 5), d = R.int(1, 3), Rm = r + d, h = 2*R.int(1, 4), a = h/2, f = x=> Rm - d*x*x/(a*a), n = h*(15*Rm*Rm - 10*Rm*d + 3*d*d);
+  return tpN(`Một thùng gỗ cao $${h}$ dm, hai đáy là hình tròn bán kính $${r}$ dm, giữa thùng có bán kính $${Rm}$ dm. Thành thùng là mặt tròn xoay sinh bởi một cung parabol có đỉnh ở giữa thùng. Thể tích thùng là $\\dfrac{a\\pi}{15}$ dm$^{3}$. Tìm $a$.`, n, t=> `Đặt gốc ở giữa thùng: $y = ${Rm} - ${qT(qr(d, a*a))}x^{2}$.<br>$V = \\pi${tpI('y^{2}', -a, a)}$, nên $a = ${t}$.`.replace('- 1x^', '- x^'), ()=> 15*ngSi(x=> f(x)**2, -a, a));
+});
+
+GT(12,3,2,'VD','Bể cầu chứa nước, viết dạng aπ', R=>{
+  const j0 = R.int(2, 6), r = 3*j0, h = 3*R.int(1, j0 - 1), a = h*h*(r - h/3);
+  return tpN(`Một bể nước hình cầu bán kính trong $${r}$ dm, nước trong bể sâu $${h}$ dm (điểm thấp nhất của bể tới mặt nước). Thể tích nước là $a\\pi$ dm$^{3}$. Tìm $a$.`, a, t=> `Nước là chỏm cầu: $V = \\pi${tpI(`(${r*r} - x^{2})`, r - h, r)}$, nên $a = ${t}$.`, ()=> ngSi(x=> r*r - x*x, r - h, r));
+});
+
+GT(12,3,2,'VD','Dung tích cốc nón cụt, viết dạng aπ', R=>{
+  const r1 = R.int(2, 5), r2 = r1 + R.int(1, 4), h = 3*R.int(1, 5), a = h*(r1*r1 + r1*r2 + r2*r2)/3, f = x=> r1 + (r2 - r1)*x/h;
+  return tpN(`Một cốc nước có dạng hình nón cụt, bán kính đáy dưới $${r1}$ cm, bán kính miệng $${r2}$ cm, cao $${h}$ cm. Dung tích của cốc là $a\\pi$ cm$^{3}$. Tìm $a$.`, a, t=> `Quay đoạn thẳng từ $(0; ${r1})$ đến $(${h}; ${r2})$ quanh trục $Ox$.<br>$V = \\pi${tpI('y^{2}', 0, h)}$, nên $a = ${t}$.`, ()=> ngSi(x=> f(x)**2, 0, h));
+});
+
+GT(12,3,2,'VD','Nêm từ khối trụ: tính 3V', R=>{
+  const r = R.int(1, 13), f = x=> (r*r - x*x)/2;
+  return tpN(`Từ một khúc gỗ hình trụ bán kính $${r}$ cm, người ta cắt một cái nêm bằng mặt phẳng đi qua một đường kính của đáy và tạo với đáy góc $45^{\\circ}$. Thiết diện vuông góc với đường kính đó tại $x$ là tam giác vuông cân có cạnh góc vuông $\\sqrt{${r*r} - x^{2}}$. Gọi $V$ (cm$^{3}$) là thể tích của nêm. Tính $3V$.`, 2*r**3, t=> `$V = ${tpI(`\\dfrac{${r*r} - x^{2}}{2}`, -r, r)} = ${qT(qr(2*r**3, 3))}$.<br>Vậy $3V = ${t}$.`, ()=> 3*ngSi(f, -r, r));
+});
+
+GT(12,3,2,'VD','Nhà vòm mái parabol: thể tích không khí (m³)', R=>{
+  const w = R.int(1, 6), h = 3*R.int(1, 2), L = R.int(3, 15), v = 4*w*h*L/3, f = x=> h - h/(w*w)*x*x;
+  return tpN(`Một nhà kính dạng vòm dài $${L}$ m, mặt cắt ngang là parabol có chân rộng $${2*w}$ m, đỉnh cao $${h}$ m. Tính thể tích không khí (theo m$^{3}$) trong nhà kính.`, v, t=> `Diện tích mặt cắt bằng $${4*w*h/3}$ m$^{2}$.<br>Thể tích bằng $${4*w*h/3}\\cdot ${L} = ${t}$.`, ()=> ngSi(f, -w, w)*L);
 });
 
 }
