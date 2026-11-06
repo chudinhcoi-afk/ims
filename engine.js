@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.48 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.49 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -223,10 +223,24 @@ const CHUYEN_DE = {
             ['Gắn hệ trục tính góc, khoảng cách trong hình không gian', '43,44,73,74,199-214'],
             ['Tìm điểm thoả điều kiện; giá trị nhỏ nhất', '13,41,42,58,60,61,215-228'],
             ['Bài toán thực tế: lực, chuyển động, định vị', '17,32,34,35,45,48,51,62,229-240']],
-  '12-11': [['Khái niệm, tính chất nguyên hàm; nguyên hàm của hàm luỹ thừa, đa thức', '1,2,10-20,46,50'],
-            ['Nguyên hàm của hàm lượng giác, hàm mũ, hàm 1/x', '21-30'],
-            ['Nguyên hàm thoả điều kiện cho trước; đồ thị', '3-5,9,31-35,48,49'],
-            ['Bài toán thực tế: chuyển động, tốc độ thay đổi, kinh tế', '6-8,36-45,47']],
+  '12-11': [['Khái niệm nguyên hàm; họ nguyên hàm; tính chất', '11-15,19,46,50,51-89'],
+            ['Nguyên hàm của hàm luỹ thừa, đa thức; biến đổi về luỹ thừa', '1,2,10,16-18,20,90-130'],
+            ['Nguyên hàm của hàm số lượng giác', '21-25,131-171'],
+            ['Nguyên hàm của hàm số mũ, hàm 1/x', '26-30,172-212'],
+            ['Tìm nguyên hàm thoả điều kiện; nguyên hàm hai lần; hàm hai công thức', '3-5,9,32-34,213-252'],
+            ['Nguyên hàm và đồ thị: đọc đồ thị, đơn điệu, cực trị của F', '31,35,48,49,253-294'],
+            ['Bài toán thực tế: chuyển động', '36-39,295-336'],
+            ['Bài toán thực tế: tốc độ thay đổi, kinh tế', '6-8,40-45,47,337-374']],
+  '12-12': [['Định nghĩa tích phân; công thức Newton – Leibniz; hàm đa thức, luỹ thừa', '1-6,18,19'],
+            ['Tích phân của hàm lượng giác, hàm mũ, hàm 1/x', '12-17'],
+            ['Tính chất của tích phân: tuyến tính, cộng cận, hàm từng khúc', '7-11'],
+            ['Ý nghĩa hình học của tích phân; tính tích phân từ đồ thị', '20'],
+            ['Ý nghĩa thực tiễn: quãng đường, lượng thay đổi', '']],
+  '12-13': [['Diện tích hình phẳng giới hạn bởi một đồ thị và trục hoành', '2-5,12-14'],
+            ['Diện tích hình phẳng giới hạn bởi hai đồ thị', '1,6'],
+            ['Thể tích vật thể theo diện tích thiết diện', ''],
+            ['Thể tích khối tròn xoay', '7,8,15'],
+            ['Bài toán thực tế: đồ thị vận tốc, diện tích và thể tích', '9-11']],
   '12-14': [['Vectơ pháp tuyến; phương trình mặt phẳng qua một điểm, biết vectơ pháp tuyến', '1,4-8,23,25-29,57'],
             ['Mặt phẳng qua ba điểm; phương trình theo đoạn chắn', '13-18,30-32,44-46,52'],
             ['Mặt phẳng song song, vuông góc, chứa đường thẳng; vị trí tương đối hai mặt phẳng', '9-12,21,22,33-43,53'],
@@ -432,7 +446,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.48';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.49';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 324 dạng cho 12-11, đồ thị tô được miền và vẽ đường cong thứ hai. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -4567,6 +4581,12 @@ function graphModelRaw(hv){
   return {ok:true, xmin, xmax, ymin, ymax, xu, yu, segs, marks, lines, sym, A};
 }
 const g3 = v=> String(Math.round(v*1000)/1000);
+// Tô miền giữa hai đường, đường cong vẽ kèm trên đồ thị (hv.to, hv.cong, hv.doc): chung cho SVG và TikZ
+function graphFn(expr){ try{ const f = mathCompile(mathParse(String(expr))); return x=>{ const v = f(x); return typeof v==='number' && isFinite(v) ? v : NaN; }; }catch(e){ return ()=> NaN; } }
+function graphToPoly(t, n){ const f = graphFn(t.tren), g = graphFn(t.duoi), N = n || 80, up = [], dn = []; for(let i = 0; i <= N; i++){ const x = t.a + (t.b - t.a)*i/N; up.push([x, f(x)]); dn.push([x, g(x)]); } return up.concat(dn.reverse()).filter(p=> isFinite(p[1])); }
+function graphToMid(t){ const f = graphFn(t.tren), g = graphFn(t.duoi), x = (t.a + t.b)/2; return [x, (f(x) + g(x))/2]; }
+function graphCongPts(c, M){ const f = graphFn(c.hamSo), N = 240, out = [[]]; for(let i = 0; i <= N; i++){ const x = M.xmin + (M.xmax - M.xmin)*i/N, y = f(x); if(isFinite(y) && Math.abs(y) < 1e4) out[out.length - 1].push([x, y]); else if(out[out.length - 1].length) out.push([]); } return out.filter(s=> s.length > 1); }
+function graphCongLab(c, M){ const seg = graphCongPts(c, M).flat().filter(p=> p[1] > M.ymin + 0.1*(M.ymax - M.ymin) && p[1] < M.ymax - 0.1*(M.ymax - M.ymin)); return seg.length ? seg[Math.floor(seg.length*0.12)] : null; }
 function graphToTikz(hv){
   const M = graphModel(hv);
   if(!M.ok) return `% Không vẽ được đồ thị: ${M.error}`;
@@ -4586,6 +4606,9 @@ function graphToTikz(hv){
     if(l.t==='ngang') o += `\\draw[dashed,thin] ${P(xmin,l.y)}--${P(xmax,l.y)};\n`;
     if(l.t==='xien') o += `\\draw[dashed,thin] ${P(xmin,l.a*xmin+l.b)}--${P(xmax,l.a*xmax+l.b)};\n`;
   });
+  (hv.to||[]).forEach(t=>{ o += `\\fill[gray!35] plot coordinates {${graphToPoly(t, 48).map(p=>P(p[0],p[1])).join(' ')}} -- cycle;\n`; });
+  (hv.doc||[]).forEach(d=>{ o += `\\draw[semithick] ${P(d.x,ymin)}--${P(d.x,ymax)};\n`; });
+  (hv.cong||[]).forEach(c=> graphCongPts(c, M).forEach(sg=>{ o += `\\draw[thick] plot coordinates {${sg.filter((_, i)=> i%3 === 0 || i === sg.length - 1).map(p=>P(p[0],p[1])).join(' ')}};\n`; }));
   (hv.duong||[]).forEach(l=>{ o += `\\draw[semithick] ${P(xmin,l.a*xmin+l.b)}--${P(xmax,l.a*xmax+l.b)};\n`; });
   M.segs.forEach(sg=>{
     // rút gọn điểm gần thẳng hàng để mã ngắn mà vẫn mượt
@@ -4612,8 +4635,11 @@ function graphToTikz(hv){
     if(Math.abs(m.x)>1e-9 && m.lx) o += `\\node[${Math.abs(m.y)<1e-9 ? (m.x<0?'above left':'above right') : (m.y>0?'below':'above')},inner sep=2pt] at ${P(m.x,0)} {$${m.lx}$};\n`;
     if(Math.abs(m.y)>1e-9 && m.ly) o += `\\node[${m.x>0?'left':(Math.abs(m.x)<1e-9?'left':'right')},inner sep=2pt] at ${P(0,m.y)} {$${m.ly}$};\n`;
   });
-  if(hv.ten){ const sg = M.segs[M.segs.length-1]; if(sg){ const p = sg[Math.floor(sg.length*0.85)]; o += `\\node[right] at ${P(p[0],p[1])} {$${hv.ten}$};\n`; } }
+  if(hv.ten){ const sg = M.segs[M.segs.length-1]; if(sg){ const p = sg[Math.floor(sg.length*(hv.tenViTri || 0.85))]; o += `\\node[right] at ${P(p[0],p[1])} {$${hv.ten}$};\n`; } }
   (hv.duong||[]).forEach(l=>{ if(!l.ten) return; const t = [0.88, 0.75, 0.6, 0.45, 0.3, 0.15].find(t=>{ const yy = l.a*(xmin + t*(xmax - xmin)) + l.b; return yy > ymin + 0.08*(ymax - ymin) && yy < ymax - 0.08*(ymax - ymin); }); if(t == null) return; const x = xmin + t*(xmax - xmin), y = l.a*x + l.b; if(y > ymin && y < ymax) o += `\\node[above left] at ${P(x,y)} {$${l.ten}$};\n`; });
+  (hv.to||[]).forEach(t=>{ if(t.nhan){ const m = graphToMid(t); o += `\\node at ${P(m[0],m[1])} {$${t.nhan}$};\n`; } });
+  (hv.doc||[]).forEach(d=>{ if(d.ten) o += `\\node[above right,inner sep=1.5pt] at ${P(d.x,ymax - 0.12*(ymax - ymin))} {$${d.ten}$};\n`; });
+  (hv.cong||[]).forEach(c=>{ const p = c.ten && graphCongLab(c, M); if(p) o += `\\node[right] at ${P(p[0],p[1])} {$${c.ten}$};\n`; });
   o += `\\end{tikzpicture}`;
   return o;
 }
@@ -4643,6 +4669,9 @@ function graphHtml(hv, opt){
     if(l.t==='ngang'){ inner += `<line x1="${X(M.xmin)}" y1="${Y(l.y)}" x2="${X(M.xmax)}" y2="${Y(l.y)}" stroke="currentColor" stroke-dasharray="4 3" stroke-width=".8"/>`; html += lab(0, l.y, l.label, M.xmin<-0.5?-10:10, -9); }
     if(l.t==='xien') inner += `<line x1="${X(M.xmin)}" y1="${Y(l.a*M.xmin+l.b)}" x2="${X(M.xmax)}" y2="${Y(l.a*M.xmax+l.b)}" stroke="currentColor" stroke-dasharray="4 3" stroke-width=".8"/>`;
   });
+  (hv.to||[]).forEach(t=>{ inner += `<polygon fill="currentColor" fill-opacity=".22" stroke="none" points="${graphToPoly(t).map(p=> X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(' ')}"/>`; if(t.nhan){ const m = graphToMid(t); html += lab(m[0], m[1], t.nhan, 0, 0); } });
+  (hv.doc||[]).forEach(d=>{ inner += `<line x1="${X(d.x)}" y1="${Y(M.ymin)}" x2="${X(d.x)}" y2="${Y(M.ymax)}" stroke="currentColor" stroke-width="1.1"/>`; if(d.ten) html += lab(d.x, M.ymax - 0.12*(M.ymax - M.ymin), d.ten, 18, -6); });
+  (hv.cong||[]).forEach(c=>{ graphCongPts(c, M).forEach(sg=>{ inner += `<polyline fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" points="${sg.map(p=> X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(' ')}"/>`; }); const p = c.ten && graphCongLab(c, M); if(p) html += lab(p[0], p[1], c.ten, 18, 0); });
   (hv.duong||[]).forEach(l=>{ inner += `<line x1="${X(M.xmin)}" y1="${Y(l.a*M.xmin+l.b)}" x2="${X(M.xmax)}" y2="${Y(l.a*M.xmax+l.b)}" stroke="currentColor" stroke-width="1.1"/>`; });
   M.segs.forEach(sg=>{ inner += `<polyline fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" points="${sg.map(p=> X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(' ')}"/>`; });
   svg += `<g clip-path="url(#${clipId})">${inner}</g>`;
@@ -4656,7 +4685,7 @@ function graphHtml(hv, opt){
     if(Math.abs(m.x)>1e-9 && m.lx) html += lab(m.x, 0, m.lx, Math.abs(m.y)<1e-9 ? (m.x<0?-8:8) : 0, Math.abs(m.y)<1e-9 ? -11 : (m.y>0?10:-10));
     if(Math.abs(m.y)>1e-9 && m.ly) html += lab(0, m.y, m.ly, m.x>0||Math.abs(m.x)<1e-9?-12:12, 0);
   });
-  if(hv.ten){ const sg = M.segs[M.segs.length-1]; if(sg){ const p = sg[Math.floor(sg.length*0.85)]; html += lab(p[0], p[1], hv.ten, 16, 0); } }
+  if(hv.ten){ const sg = M.segs[M.segs.length-1]; if(sg){ const p = sg[Math.floor(sg.length*(hv.tenViTri || 0.85))]; html += lab(p[0], p[1], hv.ten, hv.tenX || 16, 0); } }
   (hv.duong||[]).forEach(l=>{ if(!l.ten) return; const t = [0.88, 0.75, 0.6, 0.45, 0.3, 0.15].find(t=>{ const yy = l.a*(M.xmin + t*(M.xmax - M.xmin)) + l.b; return yy > M.ymin + 0.08*(M.ymax - M.ymin) && yy < M.ymax - 0.08*(M.ymax - M.ymin); }); if(t == null) return; const x = M.xmin + t*(M.xmax - M.xmin), y = l.a*x + l.b; if(y > M.ymin && y < M.ymax) html += lab(x, y, l.ten, -10, -11); });
   const info = opt.hocSinh ? '' : `<div class="small-text" style="color:var(--ok,#1e7a46);margin-top:4px">✓ Đồ thị <code>y = ${escHtml(hv.hamSo)}</code> — app tự vẽ${M.sym ? (M.sym.type==='tam' ? `, tâm đối xứng ở giữa khung` : `, trục đối xứng ở giữa khung`) : ''}; khung x ∈ [${g3(M.xmin).replace('.',',')}; ${g3(M.xmax).replace('.',',')}], y ∈ [${g3(M.ymin).replace('.',',')}; ${g3(M.ymax).replace('.',',')}].</div>`;
   return `<div style="margin-top:8px;overflow-x:auto"><div style="position:relative;width:${W}px;height:${H}px;color:var(--ink,#16213e);background:var(--paper-card,#fff)">
@@ -4667,9 +4696,14 @@ function graphNormalize(o){
   const g = {loai:'dothi', hamSo: String(o.hamSo||o.ham_so||o.f||'').trim()};
   if(o.ten) g.ten = String(o.ten).replace(/\$/g,'').trim();
   if(o.ghiCucTri===false) g.ghiCucTri = false;
+  if(o.tenX) g.tenX = +o.tenX;   // lệch ngang nhãn tên đồ thị (px), mặc định 16
+  if(o.tenViTri) g.tenViTri = +o.tenViTri;   // vị trí nhãn dọc theo đường cong (0..1), mặc định 0,85
   if(o.luoi) g.luoi = true;
   if(Array.isArray(o.diem)) g.diem = o.diem.map(Number).filter(isFinite);
   if(Array.isArray(o.duong)) g.duong = o.duong.map(d=> ({a:+d.a, b:+d.b, ten:d.ten ? String(d.ten) : undefined})).filter(d=> isFinite(d.a) && isFinite(d.b));   // V20.0: đường thẳng y = ax + b vẽ kèm (tiếp tuyến…)
+  if(Array.isArray(o.cong)) g.cong = o.cong.filter(d=> d && d.hamSo).map(d=> ({hamSo:String(d.hamSo), ten:d.ten ? String(d.ten) : undefined}));   // đường cong vẽ kèm
+  if(Array.isArray(o.doc)) g.doc = o.doc.filter(d=> d && isFinite(+d.x)).map(d=> ({x:+d.x, ten:d.ten ? String(d.ten) : undefined}));   // đường thẳng đứng x = a (nét liền)
+  if(Array.isArray(o.to)) g.to = o.to.filter(d=> d && isFinite(+d.a) && isFinite(+d.b)).map(d=> ({a:+d.a, b:+d.b, tren:String(d.tren), duoi:String(d.duoi == null ? '0' : d.duoi), nhan:d.nhan ? String(d.nhan) : undefined}));   // tô miền giữa hai đường trên [a; b], nhãn đặt giữa miền
   if(o.khung && typeof o.khung==='object') g.khung = {xmin:+o.khung.xmin, xmax:+o.khung.xmax, ymin:+o.khung.ymin, ymax:+o.khung.ymax};
   return g;
 }
@@ -42699,6 +42733,3656 @@ GE(12,2,1,'VD','Tự luận: tính phương sai từng bước qua bảng giá t
 
 }
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.48'; GEN[k].l1 = 'V2.48'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.1 Khái niệm nguyên hàm; họ nguyên hàm; tính chất — số 51–89 (17 TN, 8 Đ–S, 14 TLN).
+   Chuỗi tư duy: F' = f → họ nguyên hàm sai khác hằng số → tính chất tuyến tính → nhận ra đạo hàm của tích, hợp → đồng nhất hệ số. Chỉ dùng đạo hàm và định nghĩa, chưa dùng bảng nguyên hàm. */
+
+G(12,3,0,'TH','Họ nguyên hàm sai khác hằng số: chọn hàm số KHÔNG là một nguyên hàm của f(x) (ba phương án chỉ khác hằng số, một phương án sai hệ số)', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-4, 4), c = R.nz(-6, 6), P = nkP([[a, 3], [b, 2], [c, 1]]), f = ngDr(P), [c1, c2, c3] = R.distinct(3, -9, 9);
+  const opt = (ts, k)=>{ const l = ts.concat([[k, ngX(0)]]); return {t:`$${ngTx(l)}$`, v:ngVal(l, 1.37), l}; };
+  const badP = R.pick([nkP([[a, 3], [2*b, 2], [c, 1]]), nkP([[a, 3], [b, 2], [2*c, 1]]), nkP([[3*a, 3], [b, 2], [c, 1]])]), ans = opt(badP, c1), wrong = [opt(P, c1), opt(P, c2), opt(P, c3)];
+  const o = {stem:`Hàm số nào sau đây <b>không</b> là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$?`, ans, wrong,
+    lg:`Lấy đạo hàm từng phương án. Ba phương án chỉ khác nhau ở số hạng tự do đều có đạo hàm bằng $f(x)$.<br>Riêng hàm số ${ans.t} có đạo hàm bằng $${ngTx(ngDr(badP))}$, khác $f(x)$, nên không là nguyên hàm của $f(x)$.`,
+    verify:()=> near(o.ans.v, ngVal(badP.concat([[c1, ngX(0)]]), 1.37), 1e-9) && !ngIs(x=> ngVal(badP, x), x=> ngVal(f, x)) && wrong.every(w=> ngIs(x=> ngVal(w.l, x), x=> ngVal(f, x)))};
+  return o;
+});
+
+G(12,3,0,'TH','F là nguyên hàm của f: tính F\'(a) không cần tìm F (bẫy: đi tìm F rồi thế x = a, hoặc lấy đạo hàm của f)', R=>{
+  const a = R.nz(-2, 2), b = R.nz(-4, 4), c = R.nz(-6, 6), f = nkP([[a, 3], [b, 2], [c, 0]]), x0 = R.pick([-2, -1, 1, 2, 3]), v = ngVal(f, x0), P = ngPr(f), Pv = ngVal(P, x0);
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(ngVal(ngDr(f), x0)), ngNum(qr(Math.round(Pv*12), 12)), ngNum(v + c), ngNum(v - c), ngNum(-v)]); if(!wrong) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Giá trị của $F'(${x0})$ bằng`, ans, wrong,
+    lg:`Vì $F(x)$ là một nguyên hàm của $f(x)$ nên $F'(x) = f(x)$ với mọi $x$, không cần tìm $F(x)$.<br>Do đó $F'(${x0}) = f(${x0}) = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, ngDf(x=> ngVal(P, x), x0), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','F là nguyên hàm của f: tính F\'\'(a) = f\'(a) (bẫy: dừng ở f(a))', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-5, 5), c = R.nz(-5, 5), f = nkP([[a, 3], [b, 2], [c, 1]]), x0 = R.pick([-2, -1, 1, 2]), d = ngDr(f), v = ngVal(d, x0);
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(ngVal(f, x0)), ngNum(ngVal(ngDr(d), x0)), ngNum(v + 2), ngNum(-v), ngNum(v - c)]); if(!wrong) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Giá trị của $F''(${x0})$ bằng`, ans, wrong,
+    lg:`$F'(x) = f(x)$ nên $F''(x) = f'(x) = ${ngTx(d)}$.<br>Do đó $F''(${x0}) = ${qT(v)}$.`,
+    verify:()=>{ const h = 1e-3, Pz = x=> ngVal(ngPr(f), x); return near(o.ans.v, (Pz(x0 + h) - 2*Pz(x0) + Pz(x0 - h))/(h*h), 1e-4); }};
+  return o;
+});
+
+G(12,3,0,'TH','Biết một nguyên hàm F(x) chứa sin, cos, eˣ, luỹ thừa: tìm f(x) = F\'(x) (tư duy ngược; bẫy: lấy nguyên hàm tiếp, sai dấu của cos)', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-5, 5), c = R.nz(-4, 4), n = R.int(2, 4), tr = R.pick([ngS1, ngC1]), P = [[a, tr], [b, ngE1], [c, ngX(n)]], f = ngDr(P);
+  const opt = ts=> ({t:`$f(x) = ${ngTx(ts)}$`, v:ngVal(ts, 1.37)}), ans = opt(f);
+  const wrong = ngW(R, ans, [opt(ngPr(P)), opt(ngDr(P).map(([k, b0], i)=> i === 0 ? [qm(k, -1), b0] : [k, b0])), opt([[a, tr], [b, ngE1], [c*n, ngX(n - 1)]]), opt([f[0], f[1], [c, ngX(n - 1)]])]); if(!wrong) return null;
+  const o = {stem:`Biết hàm số $F(x) = ${ngTx(P)}$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$. Hàm số $f(x)$ là`, ans, wrong,
+    lg:`$F(x)$ là một nguyên hàm của $f(x)$ nên $f(x) = F'(x)$. Lấy đạo hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngDf(x=> ngVal(P, x), 1.37), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','F(x) = (ax + b)eˣ là một nguyên hàm của hàm số nào: dùng đạo hàm của tích (bẫy: đạo hàm từng thừa số rồi nhân)', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-6, 6); if(a + b === 0 || a - b === 0 || a + 2*b === 0) return null;
+  const opt = (p, q)=> ({t:`$f(x) = (${nkL(p, q)})e^{x}$`, v:(p*1.37 + q)*Math.exp(1.37)}), ans = opt(a, a + b);
+  const wrong = ngW(R, ans, [{t:`$f(x) = ${a === 1 ? '' : a === -1 ? '-' : a}e^{x}$`, v:a*Math.exp(1.37)}, opt(a, b - a), opt(a, b), opt(2*a, a + b)]); if(!wrong) return null;
+  const F = x=> (a*x + b)*Math.exp(x);
+  const o = {stem:`Biết hàm số $F(x) = (${nkL(a, b)})e^{x}$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$. Hàm số $f(x)$ là`, ans, wrong,
+    lg:`$f(x) = F'(x) = (${nkL(a, b)})'e^{x} + (${nkL(a, b)})(e^{x})' = ${a < 0 ? `(${a})` : a}e^{x} + (${nkL(a, b)})e^{x}$, tức ${ans.t}.`.replace(/= 1e\^/, '= e^').replace('= (-1)e^', '= -e^'),
+    verify:()=> near(o.ans.v, ngDf(F, 1.37), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','F(x) = k·ln(x² + a) là nguyên hàm của hàm số nào: đạo hàm của hàm hợp (bẫy: quên nhân đạo hàm của x² + a)', R=>{
+  const a = R.int(1, 12), k = R.pick([1, 2, 3, 4, 5, -1, -2, -3]), den = `x^{2} + ${a}`, fT = (n, s)=> `\\dfrac{${n === 1 ? s : n === -1 ? '-' + s : n + s}}{${den}}`.replace('\\dfrac{-', '-\\dfrac{');
+  const opt = (t, v)=> ({t:`$f(x) = ${t}$`, v}), X = 1.37, D = X*X + a, ans = opt(fT(2*k, 'x'), 2*k*X/D);
+  const wrong = ngW(R, ans, [opt(k === 1 ? `\\dfrac{1}{${den}}` : k === -1 ? `-\\dfrac{1}{${den}}` : k < 0 ? `-\\dfrac{${-k}}{${den}}` : `\\dfrac{${k}}{${den}}`, k/D), opt(fT(k, 'x'), k*X/D), opt(`\\dfrac{${Math.abs(2*k)}}{${den}}`.replace(/^/, k < 0 ? '-' : ''), 2*k/D), opt(`${fT(2*k, 'x').replace(den, `(${den})^{2}`)}`, 2*k*X/(D*D))]); if(!wrong) return null;
+  const P = x=> k*Math.log(x*x + a);
+  const o = {stem:`Biết hàm số $F(x) = ${k === 1 ? '' : k === -1 ? '-' : k}\\ln(x^{2} + ${a})$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$. Hàm số $f(x)$ là`, ans, wrong,
+    lg:`Đạo hàm của hàm hợp: $f(x) = F'(x) = ${k === 1 ? '' : k === -1 ? '-' : k}\\cdot\\dfrac{(x^{2} + ${a})'}{x^{2} + ${a}}$, tức ${ans.t}.`.replace('= \\cdot', '= ').replace('= -\\cdot', '= -'),
+    verify:()=> near(o.ans.v, ngDf(P, X), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','G(x) = kF(x) + mx + n với F là nguyên hàm của f: tính G\'(a) (tính chất đạo hàm, hằng số n mất đi, bẫy: quên m)', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-5, 5), f = nkP([[a, 2], [b, 1]]), k = R.pick([2, 3, 4, -2, -3]), m = R.nz(-6, 6), n = R.nz(-9, 9), x0 = R.pick([-2, -1, 1, 2, 3]), fv = ngVal(f, x0), v = k*fv + m;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(k*fv), ngNum(fv + m), ngNum(k*fv + m + n), ngNum(k*fv - m), ngNum(k*fv + m*x0)]); if(!wrong) return null;
+  const P = ngPr(f), Gf = x=> k*ngVal(P, x) + m*x + n;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$ và $G(x) = ${k}F(x)${ngSg(m).replace(/(\d+)$/, '$1x').replace(/ 1x$/, ' x')}${ngSg(n)}$. Giá trị của $G'(${x0})$ bằng`, ans, wrong,
+    lg:`$G'(x) = ${k}F'(x)${ngSg(m)} = ${k}f(x)${ngSg(m)}$.<br>Ta có $f(${x0}) = ${qT(fv)}$ nên $G'(${x0}) = ${k < 0 ? `(${k})` : k}\\cdot ${fv < 0 ? `(${fv})` : fv}${ngSg(m)} = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, ngDf(Gf, x0), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','Tính chất nguyên hàm: biết ∫f, ∫g, tìm ∫[p·f(x) − q·g(x)]dx (bẫy: đạo hàm thay vì giữ nguyên, sai dấu)', R=>{
+  const n = R.int(2, 4), B = R.pick([ngS1, ngC1, ngE1]), p = R.pick([2, 3, 4, 5]), q = R.pick([2, 3, 4, 5]), sg = R.pick([1, -1]), T = [[p, ngX(n)], [sg*q, B]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[p, ngX(n)], [-sg*q, B]]), ngOp([[1, ngX(n)], [sg, B]]), ngOp(ngDr(T)), ngOp([[p*n, ngX(n - 1)], [sg*q, B]]), ngOp([[p, ngX(n)], [sg*q*2, B]])]); if(!wrong) return null;
+  const o = {stem:`Cho $${ngI('f(x)')} = ${ngTx([[1, ngX(n)]])} + C$ và $${ngI('g(x)')} = ${ngTx([[1, B]])} + C$. Khi đó $${ngI(`\\left[${p}f(x) ${sg < 0 ? '-' : '+'} ${q}g(x)\\right]`)}$ bằng`, ans, wrong,
+    lg:`Theo tính chất của nguyên hàm: $${ngI(`\\left[${p}f(x) ${sg < 0 ? '-' : '+'} ${q}g(x)\\right]`)} = ${p}${ngI('f(x)')} ${sg < 0 ? '-' : '+'} ${q}${ngI('g(x)')}$, tức bằng ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, 1.37), 1e-9) && ngIs(x=> ngVal(T, x), x=> p*n*x**(n - 1) + sg*q*ngVal(ngDr([[1, B]]), x))};
+  return o;
+});
+
+G(12,3,0,'TH','Biết ∫f(x)dx, tìm ∫[f(x) + kx + m]dx (cộng thêm nguyên hàm của kx + m; bẫy: cộng nguyên kx + m vào kết quả)', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-6, 6), k = R.pick([2, 4, 6, -2, -4, 8, 10]), m = R.nz(-7, 7), F0 = nkP([[a, 3], [b, 1]]), T = [[a, ngX(3)], [k/2, ngX(2)], [b + m, ngX(1)]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[a, ngX(3)], [k + b, ngX(1)]]), ngOp([[a, ngX(3)], [k, ngX(2)], [b + m, ngX(1)]]), ngOp([[a, ngX(3)], [k/2, ngX(2)], [b, ngX(1)]]), ngOp([[a, ngX(3)], [b + k, ngX(1)], [m, ngX(0)]])]); if(!wrong) return null;
+  const f = ngDr(F0), I = x=> ngVal(F0, x) + ngVal(ngPr(nkP([[k, 1], [m, 0]])), x);
+  const o = {stem:`Cho $${ngI('f(x)')} = ${ngTx(F0)} + C$. Khi đó $${ngI(`\\left[f(x) ${k < 0 ? '-' : '+'} ${Math.abs(k)}x ${m < 0 ? '-' : '+'} ${Math.abs(m)}\\right]`)}$ bằng`.replace('+ 1x', '+ x'), ans, wrong,
+    lg:`Theo tính chất của nguyên hàm, tách thành $${ngI('f(x)')} + ${ngI(`(${nkL(k, m)})`)} = ${ngTx(F0)} + ${ngTx(ngPr(nkP([[k, 1], [m, 0]])))} + C$, tức bằng ${ans.t}.`.replace('+ -', '- '),
+    verify:()=> near(o.ans.v, I(1.37), 1e-9) && ngIs(I, x=> ngVal(f, x) + k*x + m)};
+  return o;
+});
+
+G(12,3,0,'TH','∫ k·f\'(x)dx = k·f(x) + C với f cho trước (nguyên hàm của đạo hàm; bẫy: lấy đạo hàm hoặc nguyên hàm của f)', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-5, 5), B = R.pick([ngS1, ngC1, ngE1]), n = R.int(2, 4), k = R.pick([2, 3, 4, 5, -2, -3]), f = [[a, ngX(n)], [b, B]], T = ngCm(f, k);
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp(f), ngOp(ngCm(ngDr(f), k)), ngOp(ngCm(ngPr(f), k)), ngOp(ngDr(f))]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $f(x) = ${ngTx(f)}$. Khi đó $${ngI(`\\left[${k}f'(x)\\right]`)}$ bằng`, ans, wrong,
+    lg:`$f(x)$ là một nguyên hàm của $f'(x)$ nên $${ngI("f'(x)")} = f(x) + C$.<br>Do đó $${ngI(`\\left[${k}f'(x)\\right]`)} = ${k}f(x) + C$, tức bằng ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, 1.37), 1e-9) && ngIs(x=> ngVal(T, x), x=> k*ngVal(ngDr(f), x))};
+  return o;
+});
+
+G(12,3,0,'TH','Biết ∫f(x)dx = đa thức + C, tính f(a) (f là đạo hàm của vế phải, bẫy: thế luôn x = a vào đa thức)', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-5, 5), c = R.nz(-7, 7), P = nkP([[a, 3], [b, 2], [c, 1]]), x0 = R.pick([-2, -1, 1, 2, 3]), f = ngDr(P), v = ngVal(f, x0);
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(ngVal(P, x0)), ngNum(ngVal(ngDr(f), x0)), ngNum(v + c), ngNum(v - c), ngNum(-v)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $f(x)$ thoả mãn $${ngI('f(x)')} = ${ngTx(P)} + C$. Giá trị của $f(${x0})$ bằng`, ans, wrong,
+    lg:`Từ giả thiết, $${ngTx(P)}$ là một nguyên hàm của $f(x)$, nên $f(x) = (${ngTx(P)})' = ${ngTx(f)}$.<br>Do đó $f(${x0}) = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, ngDf(x=> ngVal(P, x), x0), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','F(x) = ax³ + bx² + cx + d là một nguyên hàm của f(x) đa thức bậc hai: đồng nhất hệ số, tính a + b + c (bẫy: quên chia số mũ)', R=>{
+  const p = R.nz(-9, 9), q = R.nz(-8, 8), r = R.nz(-9, 9), f = nkP([[p, 2], [q, 1], [r, 0]]), A = qa(qa(qr(p, 3), qr(q, 2)), r);
+  const ans = ngNum(A), wrong = ngW(R, ans, [ngNum(p + q + r), ngNum(qa(qr(p, 2), qa(q, r))), ngNum(qa(qr(p, 3), qa(q, r))), ngNum(qa(qr(p, 3), qa(qr(q, 2), -r)))]); if(!wrong) return null;
+  const P = ngPr(f);
+  const o = {stem:`Biết hàm số $F(x) = ax^{3} + bx^{2} + cx + d$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Giá trị của $a + b + c$ bằng`, ans, wrong,
+    lg:`$F'(x) = 3ax^{2} + 2bx + c$. Đồng nhất với $f(x)$: $3a = ${p}$, $2b = ${q}$, $c = ${r}$, nên $a = ${qT(qr(p, 3))}$, $b = ${qT(qr(q, 2))}$, $c = ${r}$.<br>Vậy $a + b + c = ${qT(A)}$.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','F(x) = a·sin x + b·cos x là một nguyên hàm của p·sin x + q·cos x: đồng nhất hệ số, tính a + b (bẫy: đạo hàm của cos x mang dấu trừ)', R=>{
+  const p = R.nz(-9, 9), q = R.nz(-9, 9), a = q, b = -p, v = a + b; if(Math.abs(p) === Math.abs(q)) return null;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(p + q), ngNum(p - q), ngNum(-p - q), ngNum(2*q - p)]); if(!wrong) return null;
+  const f = [[p, ngS1], [q, ngC1]], Fn = x=> a*Math.sin(x) + b*Math.cos(x);
+  const o = {stem:`Biết hàm số $F(x) = a\\sin x + b\\cos x$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Giá trị của $a + b$ bằng`, ans, wrong,
+    lg:`$F'(x) = a\\cos x - b\\sin x$. Đồng nhất với $f(x)$: $a = ${q}$ và $-b = ${p}$, tức $b = ${-p}$.<br>Vậy $a + b = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, Fn(Math.PI/2) + Fn(0), 1e-9) && ngIs(Fn, x=> ngVal(f, x))};
+  return o;
+});
+
+G(12,3,0,'VD','Từ đạo hàm [(x + a)eˣ]\' = (x + a + 1)eˣ suy ra ∫(x + b)eˣdx: đọc ngược công thức đạo hàm, phải chọn a = b − 1 (bẫy: lấy a = b hoặc a = b + 1)', R=>{
+  const b = R.int(-9, 9); if([0, 1, -1].includes(b)) return null;
+  const opt = q=> ({t:`$(${nkL(1, q)})e^{x} + C$`, v:(1.37 + q)*Math.exp(1.37)}), ans = opt(b - 1);
+  const wrong = ngW(R, ans, [opt(b), opt(b + 1), opt(b - 2)]); if(!wrong) return null;
+  const Fn = x=> (x + b - 1)*Math.exp(x);
+  const o = {stem:`Biết rằng với mọi số thực $a$ ta có $\\left[(x + a)e^{x}\\right]' = (x + a + 1)e^{x}$. Khi đó $${ngI(`(${nkL(1, b)})e^{x}`)}$ bằng`, ans, wrong,
+    lg:`Cần $a + 1 = ${b}$, tức $a = ${b - 1}$. Khi đó $\\left[(${nkL(1, b - 1)})e^{x}\\right]' = (${nkL(1, b)})e^{x}$.<br>Vậy nguyên hàm cần tìm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(1.37), 1e-9) && ngIs(Fn, x=> (x + b)*Math.exp(x))};
+  return o;
+});
+
+G(12,3,0,'TH','F(x) = √(x − a) hoặc ln(x − a) là nguyên hàm của f trên khoảng nào: khái niệm nguyên hàm gắn với khoảng K (bẫy: khoảng chứa điểm hàm không xác định)', R=>{
+  const a = R.int(-9, 9), lk = R.pick([0, 1]), Ft = lk ? `\\ln(${nkL(1, -a)})` : `\\sqrt{${nkL(1, -a)}}`, ft = lk ? `\\dfrac{1}{${nkL(1, -a)}}` : `\\dfrac{1}{2\\sqrt{${nkL(1, -a)}}}`;
+  const ans = {t:`$(${a}; +\\infty)$`, v:'dung'}, wrong = [{t:`$(-\\infty; ${a})$`, v:'trai'}, {t:`$(${a - 2}; +\\infty)$`, v:'rong'}, {t:'$\\mathbb{R}$', v:'R'}];
+  const Fn = x=> lk ? Math.log(x - a) : Math.sqrt(x - a), fn = x=> lk ? 1/(x - a) : 1/(2*Math.sqrt(x - a));
+  const o = {stem:`Hàm số $F(x) = ${Ft}$ là một nguyên hàm của hàm số $f(x) = ${ft}$ trên khoảng nào sau đây?`, ans, wrong,
+    lg:`$F(x)$ xác định và có đạo hàm $F'(x) = ${ft}$ khi $x > ${a}$. Nguyên hàm phải xét trên một khoảng mà tại mọi điểm của nó $F'(x) = f(x)$.<br>Các khoảng còn lại chứa điểm $x \\le ${a}$, tại đó $F(x)$ không có đạo hàm. Vậy khoảng cần tìm là ${ans.t}.`,
+    verify:()=> o.ans.v === 'dung' && ngIs(Fn, fn, [a + 0.5, a + 1.3, a + 4]) && !isFinite(lk ? Math.log(a - 1 - a) : Math.sqrt(a - 1 - a))};
+  return o;
+});
+
+G(12,3,0,'TH','F và G là hai nguyên hàm của cùng một hàm số: tìm hằng số G(x) − F(x) (khai triển (x + a)² hoặc dùng sin²x + cos²x = 1)', R=>{
+  const kind = R.pick([0, 0, 1]);
+  if(kind === 0){ const a = R.nz(-6, 6), b = R.nz(-9, 9), v = b - a*a; if(b === a*a) return null;
+    const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(a*a - b), ngNum(b), ngNum(b + a*a), ngNum(2*a - b)]); if(!wrong) return null;
+    const Fx = x=> (x + a)**2, Gx = x=> x*x + 2*a*x + b;
+    const o = {stem:`Hai hàm số $F(x) = (${nkL(1, a)})^{2}$ và $G(x) = ${ngTx(nkP([[1, 2], [2*a, 1], [b, 0]]))}$ là hai nguyên hàm của cùng một hàm số trên $\\mathbb{R}$. Hiệu $G(x) - F(x)$ bằng`, ans, wrong,
+      lg:`Hai nguyên hàm của cùng một hàm số sai khác nhau một hằng số. Khai triển $F(x) = ${ngTx(nkP([[1, 2], [2*a, 1], [a*a, 0]]))}$.<br>Do đó $G(x) - F(x) = ${b} - ${a*a} = ${qT(v)}$.`,
+      verify:()=> near(o.ans.v, Gx(1.7) - Fx(1.7), 1e-9) && near(o.ans.v, Gx(-2.3) - Fx(-2.3), 1e-9)};
+    return o; }
+  const k = R.int(2, 9), b = R.nz(-9, 9), v = b - k; if(b === k) return null;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(k - b), ngNum(b), ngNum(b + k), ngNum(-b - k)]); if(!wrong) return null;
+  const Fx = x=> k*Math.sin(x)**2, Gx = x=> -k*Math.cos(x)**2 + b;
+  const o = {stem:`Hai hàm số $F(x) = ${k}\\sin^{2}x$ và $G(x) = -${k}\\cos^{2}x${ngSg(b)}$ là hai nguyên hàm của cùng một hàm số trên $\\mathbb{R}$. Hiệu $G(x) - F(x)$ bằng`, ans, wrong,
+    lg:`Hai nguyên hàm của cùng một hàm số sai khác nhau một hằng số. Ta có $G(x) - F(x) = -${k}(\\cos^{2}x + \\sin^{2}x)${ngSg(b)} = -${k}${ngSg(b)} = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, Gx(1.7) - Fx(1.7), 1e-9) && near(o.ans.v, Gx(-0.6) - Fx(-0.6), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Nhận ra đạo hàm của tích: ∫[x·f\'(x) + f(x)]dx = x·f(x) + C với f đa thức (bẫy: chỉ lấy f(x), hoặc x·f\'(x))', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-5, 5), c = R.nz(-6, 6), f = nkP([[a, 2], [b, 1], [c, 0]]), T = nkP([[a, 3], [b, 2], [c, 1]]);
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp(f), ngOp(nkP([[2*a, 2], [b, 1]])), ngOp(nkP([[a, 3], [b, 2], [2*c, 1]])), ngOp(nkP([[a, 3], [2*b, 2], [c, 1]]))]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $f(x) = ${ngTx(f)}$. Khi đó $${ngI("\\left[xf'(x) + f(x)\\right]")}$ bằng`, ans, wrong,
+    lg:`Ta có $\\left[xf(x)\\right]' = f(x) + xf'(x)$, nên $${ngI("\\left[xf'(x) + f(x)\\right]")} = xf(x) + C$.<br>Vậy kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, 1.37*ngVal(f, 1.37), 1e-9) && ngIs(x=> ngVal(T, x), x=> x*ngVal(ngDr(f), x) + ngVal(f, x))};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','Hàm số F(x) = k(x ln x − x) trên (0; +∞): đạo hàm, nguyên hàm sai khác hằng số, suy ra ∫k ln x dx và ∫(k ln x + k)dx từ đạo hàm của tích', R=>{
+  const k = R.int(2, 9), f = x=> k*Math.log(x), F = x=> k*(x*Math.log(x) - x);
+  return {stem:`Cho hàm số $F(x) = ${k}(x\\ln x - x)$ trên khoảng $(0; +\\infty)$.`,
+    items:[claim(R, `$F'(x) = ${k}\\ln x$`, `$F'(x) = ${k}\\ln x + ${k}$`, ()=> ngIs(F, f), ()=> ngIs(F, x=> f(x) + k)),
+      claim(R, `$G(x) = ${k}x\\ln x - ${k}x + ${k + 1}$ cũng là một nguyên hàm của $${k}\\ln x$ trên $(0; +\\infty)$`, `$G(x) = ${k}x\\ln x$ cũng là một nguyên hàm của $${k}\\ln x$ trên $(0; +\\infty)$`, ()=> ngIs(x=> F(x) + k + 1, f), ()=> ngIs(x=> k*x*Math.log(x), f)),
+      claim(R, `$${ngI(`(${k}\\ln x + ${k})`)} = ${k}x\\ln x + C$`, `$${ngI(`(${k}\\ln x + ${k})`)} = ${k}x\\ln x - ${k}x + C$`, ()=> ngIs(x=> k*x*Math.log(x), x=> f(x) + k), ()=> ngIs(F, x=> f(x) + k)),
+      claimN(R, v=> `$F(1) = ${v}$`, -k, String(-k), k, String(k), ()=> F(1))],
+    lg:`a) $F'(x) = ${k}\\left(\\ln x + x\\cdot\\dfrac{1}{x} - 1\\right) = ${k}\\ln x$.<br>b) Mọi nguyên hàm của $${k}\\ln x$ có dạng $F(x) + C$; hàm $${k}x\\ln x$ có đạo hàm $${k}\\ln x + ${k}$ nên không là nguyên hàm của $${k}\\ln x$.<br>c) $(${k}x\\ln x)' = ${k}\\ln x + ${k}$ nên $${ngI(`(${k}\\ln x + ${k})`)} = ${k}x\\ln x + C$.<br>d) $F(1) = ${k}(1\\cdot 0 - 1) = ${-k}$.`};
+});
+
+GD(12,3,0,'TH','Hình ảnh họ nguyên hàm: các đồ thị tịnh tiến theo trục tung, không cắt nhau, đúng một đồ thị đi qua mỗi điểm cho trước', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-4, 4), P = nkP([[a, 3], [b, 2]]), f = ngDr(P), y0 = R.nz(-6, 6), P0 = x=> ngVal(P, x), k = R.int(1, 5), v = ngVal(P, 1) + y0, w = v + R.pick([1, 2, -1]);
+  return {stem:`Cho hàm số $f(x) = ${ngTx(f)}$. Xét họ các nguyên hàm của $f(x)$ trên $\\mathbb{R}$.`,
+    items:[claim(R, `Mọi nguyên hàm của $f(x)$ có dạng $F(x) = ${ngTx(P)} + C$`, `Mọi nguyên hàm của $f(x)$ có dạng $F(x) = ${ngTx(ngDr(f))} + C$`, ()=> ngIs(P0, x=> ngVal(f, x)), ()=> ngIs(x=> ngVal(ngDr(f), x), x=> ngVal(f, x))),
+      claim(R, `Đồ thị của hai nguyên hàm khác nhau không có điểm chung`, `Đồ thị của hai nguyên hàm khác nhau cắt nhau tại ít nhất một điểm`, ()=> [-2, 0, 1, 3].every(x=> near(P0(x) + k - P0(x), k, 1e-9)) && k !== 0, ()=> k === 0),
+      claim(R, `Đồ thị nguyên hàm $${ngTx(P)} + ${k}$ nhận được từ đồ thị nguyên hàm $${ngTx(P)}$ bằng phép tịnh tiến theo trục tung $${k}$ đơn vị lên trên`, `Đồ thị nguyên hàm $${ngTx(P)} + ${k}$ nhận được từ đồ thị nguyên hàm $${ngTx(P)}$ bằng phép tịnh tiến theo trục hoành $${k}$ đơn vị sang phải`, ()=> near(P0(1.3) + k - P0(1.3), k, 1e-9), ()=> near(P0(1.3 - k), P0(1.3) + k, 1e-9)),
+      claimN(R, m=> `Nguyên hàm có đồ thị đi qua điểm $(0; ${y0})$ có giá trị tại $x = 1$ bằng $${m}$`, v, String(v), w, String(w), ()=> ngSi(x=> ngVal(f, x), 0, 1) + y0)],
+    lg:`a) Vì $(${ngTx(P)})' = f(x)$ nên họ nguyên hàm là $${ngTx(P)} + C$.<br>b) Hai nguyên hàm khác nhau chênh nhau một hằng số khác $0$ tại mọi $x$ nên đồ thị không có điểm chung.<br>c) Cộng thêm $${k}$ vào hàm số là tịnh tiến đồ thị theo trục tung $${k}$ đơn vị lên trên.<br>d) Đồ thị qua $(0; ${y0})$ nên $C = ${y0}$, giá trị tại $x = 1$ là $${qT(ngVal(P, 1))}${ngSg(y0)} = ${v}$.`};
+});
+
+GD(12,3,0,'TH','Biết ∫f = xᵐ + C, ∫g = xⁿ + C: tính f, tính chất tuyến tính đúng; nguyên hàm của tích KHÔNG bằng tích nguyên hàm; ∫f\'(x)dx = f(x) + C', R=>{
+  const m = R.int(2, 4), n = R.pick([2, 3, 4].filter(z=> z !== m)), p = R.int(2, 5), q = R.int(2, 5), Xm = [[1, ngX(m)]], Xn = [[1, ngX(n)]], f = ngDr(Xm), g = ngDr(Xn), fg = x=> ngVal(f, x)*ngVal(g, x), e = m + n - 1, Pfg = [[qr(m*n, e), ngX(e)]];
+  return {stem:`Cho hai hàm số $f(x)$, $g(x)$ thoả mãn $${ngI('f(x)')} = ${ngTx(Xm)} + C$ và $${ngI('g(x)')} = ${ngTx(Xn)} + C$.`,
+    items:[claim(R, `$f(x) = ${ngTx(f)}$`, `$f(x) = ${ngTx(ngPr(Xm))}$`, ()=> ngIs(x=> x**m, x=> ngVal(f, x)), ()=> ngIs(x=> x**m, x=> ngVal(ngPr(Xm), x))),
+      claim(R, `$${ngI(`\\left[${p}f(x) + ${q}g(x)\\right]`)} = ${ngTx([[p, ngX(m)], [q, ngX(n)]])} + C$`, `$${ngI(`\\left[${p}f(x) + ${q}g(x)\\right]`)} = ${ngTx([[p*m, ngX(m - 1)], [q*n, ngX(n - 1)]])} + C$`, ()=> ngIs(x=> p*x**m + q*x**n, x=> p*ngVal(f, x) + q*ngVal(g, x)), ()=> ngIs(x=> p*m*x**(m - 1) + q*n*x**(n - 1), x=> p*ngVal(f, x) + q*ngVal(g, x))),
+      claim(R, `$${ngI('f(x)g(x)')} = ${ngTx(Pfg)} + C$`, `$${ngI('f(x)g(x)')} = ${ngTx([[1, ngX(m + n)]])} + C$`, ()=> ngIs(x=> ngVal(Pfg, x), fg), ()=> ngIs(x=> x**(m + n), fg)),
+      claim(R, `$${ngI("f'(x)")} = ${ngTx(f)} + C$`, `$${ngI("f'(x)")} = ${ngTx(Xm)} + C$`, ()=> ngIs(x=> ngVal(f, x), x=> ngVal(ngDr(f), x)), ()=> ngIs(x=> x**m, x=> ngVal(ngDr(f), x)))],
+    lg:`a) $f(x) = (${ngTx(Xm)})' = ${ngTx(f)}$; tương tự $g(x) = ${ngTx(g)}$.<br>b) Theo tính chất tuyến tính, kết quả là $${p}\\cdot ${ngTx(Xm)} + ${q}\\cdot ${ngTx(Xn)} + C$.<br>c) $f(x)g(x) = ${ngTx([[m*n, ngX(e)]])}$ nên $${ngI('f(x)g(x)')} = ${ngTx(Pfg)} + C$; nguyên hàm của tích không bằng tích các nguyên hàm.<br>d) $f(x)$ là một nguyên hàm của $f'(x)$ nên $${ngI("f'(x)")} = f(x) + C = ${ngTx(f)} + C$.`};
+});
+
+GD(12,3,0,'VD','F là nguyên hàm của f, biết F(1), f(1), f\'(1): tính F\'(1), F\'\'(1), đạo hàm của xF(x) và của F²(x) tại 1', R=>{
+  const p = R.nz(-6, 6), q = R.nz(-6, 6), r = R.nz(-6, 6), rd = x=> Math.round(x*1e5)/1e5; if(p === r || p === q || r === 1 || p === 1) return null;
+  const v3 = r + p, w3 = p, v4 = 2*r*p, w4 = 2*r; if(v3 === w3 || v4 === w4) return null;
+  const f = x=> p + q*(x - 1), Fx = x=> r + p*(x - 1) + q*(x - 1)**2/2;
+  return {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$, $f$ có đạo hàm trên $\\mathbb{R}$ và $F(1) = ${r}$, $f(1) = ${p}$, $f'(1) = ${q}$.`,
+    items:[claimN(R, v=> `$F'(1) = ${v}$`, p, String(p), r, String(r), ()=> rd(ngDf(Fx, 1))),
+      claimN(R, v=> `$F''(1) = ${v}$`, q, String(q), p, String(p), ()=> rd((Fx(1.001) - 2*Fx(1) + Fx(0.999))/1e-6)),
+      claimN(R, v=> `Hàm số $G(x) = xF(x)$ có $G'(1) = ${v}$`, v3, String(v3), w3, String(w3), ()=> rd(ngDf(x=> x*Fx(x), 1))),
+      claimN(R, v=> `Hàm số $H(x) = F^{2}(x)$ có $H'(1) = ${v}$`, v4, String(v4), w4, String(w4), ()=> rd(ngDf(x=> Fx(x)**2, 1)))],
+    lg:`a) $F'(x) = f(x)$ nên $F'(1) = f(1) = ${p}$.<br>b) $F''(x) = f'(x)$ nên $F''(1) = ${q}$.<br>c) $G'(x) = F(x) + xF'(x) = F(x) + xf(x)$ nên $G'(1) = ${r}${ngSg(p)} = ${v3}$.<br>d) $H'(x) = 2F(x)F'(x) = 2F(x)f(x)$ nên $H'(1) = 2\\cdot ${r < 0 ? `(${r})` : r}\\cdot ${p < 0 ? `(${p})` : p} = ${v4}$.`};
+});
+
+GD(12,3,0,'TH','Ba nguyên hàm của k·sin 2x: k·sin²x, −k·cos²x, −(k/2)·cos 2x sai khác nhau hằng số (kiểm tra bằng đạo hàm hàm hợp)', R=>{
+  const k = R.pick([4, 6, 8, 10, 12]), h = k/2, f = x=> k*Math.sin(2*x), Fa = x=> k*Math.sin(x)**2, Ga = x=> -k*Math.cos(x)**2, Ha = x=> -h*Math.cos(2*x);
+  return {stem:`Cho hàm số $f(x) = ${k}\\sin 2x$ và các hàm số $F(x) = ${k}\\sin^{2}x$, $G(x) = -${k}\\cos^{2}x$ trên $\\mathbb{R}$.`,
+    items:[claim(R, `$F(x)$ là một nguyên hàm của $f(x)$`, `$F(x)$ là một nguyên hàm của $${2*k}\\sin 2x$`, ()=> ngIs(Fa, f), ()=> ngIs(Fa, x=> 2*f(x))),
+      claim(R, `$G(x)$ là một nguyên hàm của $f(x)$`, `$G(x)$ là một nguyên hàm của $-${k}\\sin 2x$`, ()=> ngIs(Ga, f), ()=> ngIs(Ga, x=> -f(x))),
+      claimN(R, v=> `$G(x) - F(x) = ${v}$ với mọi $x$`, -k, String(-k), k, String(k), ()=> Ga(0.8) - Fa(0.8)),
+      claim(R, `$H(x) = -${h}\\cos 2x$ là một nguyên hàm của $f(x)$`, `$H(x) = -${k}\\cos 2x$ là một nguyên hàm của $f(x)$`, ()=> ngIs(Ha, f), ()=> ngIs(x=> -k*Math.cos(2*x), f))],
+    lg:`a) $F'(x) = ${k}\\cdot 2\\sin x\\cos x = ${k}\\sin 2x = f(x)$.<br>b) $G'(x) = -${k}\\cdot 2\\cos x(-\\sin x) = ${k}\\sin 2x = f(x)$.<br>c) $G(x) - F(x) = -${k}(\\cos^{2}x + \\sin^{2}x) = ${-k}$.<br>d) $(-${h}\\cos 2x)' = ${h}\\cdot 2\\sin 2x = ${k}\\sin 2x = f(x)$; còn $(-${k}\\cos 2x)' = ${2*k}\\sin 2x$.`};
+});
+
+GD(12,3,0,'TH','Đồng nhất hệ số F(x) = ax² + bx + c là nguyên hàm của px + q với F(0) cho trước: tìm a, b, c và F(1)', R=>{
+  const t = R.nz(-4, 4), p = 2*t, q = R.nz(-7, 7), r = R.nz(-8, 8); if(q === p || t === q || r === 0) return null;
+  const Fx = x=> t*x*x + q*x + r, v4 = t + q + r, w4 = p + q + r; if(v4 === w4) return null;
+  return {stem:`Biết hàm số $F(x) = ax^{2} + bx + c$ là một nguyên hàm của hàm số $f(x) = ${nkL(p, q)}$ trên $\\mathbb{R}$ và $F(0) = ${r}$.`,
+    items:[claimN(R, v=> `$a = ${v}$`, t, String(t), p, String(p), ()=> ngDf(Fx, 1) - ngDf(Fx, 0) - (p - 2*t) - t),
+      claimN(R, v=> `$b = ${v}$`, q, String(q), q + p, String(q + p), ()=> ngDf(Fx, 0)),
+      claim(R, `$c = ${r}$`, `$c = 0$`, ()=> near(Fx(0), r, 1e-12), ()=> near(Fx(0), 0, 1e-12)),
+      claimN(R, v=> `$F(1) = ${v}$`, v4, String(v4), w4, String(w4), ()=> ngSi(x=> p*x + q, 0, 1) + r)],
+    lg:`$F'(x) = 2ax + b$. Đồng nhất với $f(x)$: $2a = ${p}$, $b = ${q}$ nên $a = ${t}$, $b = ${q}$.<br>$F(0) = c = ${r}$.<br>Do đó $F(x) = ${ngTx(nkP([[t, 2], [q, 1], [r, 0]]))}$ và $F(1) = ${v4}$.`};
+});
+
+GD(12,3,0,'VD','F(x) = ln(x² + a) và G(x) = ln(2x² + 2a): cùng là nguyên hàm của 2x/(x² + a) trên ℝ, hiệu bằng ln 2 (dùng tính chất lôgarit)', R=>{
+  const a = R.int(1, 12), f = x=> 2*x/(x*x + a), Fa = x=> Math.log(x*x + a), Ga = x=> Math.log(2*x*x + 2*a), den = `x^{2} + ${a}`, xs = [-1.2, 0.4, 2.1];
+  return {stem:`Cho các hàm số $F(x) = \\ln(${den})$ và $G(x) = \\ln(2x^{2} + ${2*a})$.`,
+    items:[claim(R, `$F'(x) = \\dfrac{2x}{${den}}$`, `$F'(x) = \\dfrac{1}{${den}}$`, ()=> ngIs(Fa, f, xs), ()=> ngIs(Fa, x=> 1/(x*x + a), xs)),
+      claim(R, `$F(x)$ là một nguyên hàm của $\\dfrac{2x}{${den}}$ trên toàn bộ $\\mathbb{R}$`, `$F(x)$ chỉ là nguyên hàm của $\\dfrac{2x}{${den}}$ trên khoảng $(0; +\\infty)$, không là nguyên hàm trên $\\mathbb{R}$`, ()=> ngIs(Fa, f, [-3, -1, 0.5, 2]), ()=> !ngIs(Fa, f, [-3, -1, 0.5, 2])),
+      claim(R, `$G(x)$ và $F(x)$ là hai nguyên hàm của cùng một hàm số`, `$G(x)$ là một nguyên hàm của $\\dfrac{4x}{${den}}$`, ()=> ngIs(Ga, f, xs), ()=> ngIs(Ga, x=> 2*f(x), xs)),
+      claim(R, `$G(x) - F(x) = \\ln 2$ với mọi $x$`, `$G(x) - F(x) = 2$ với mọi $x$`, ()=> near(Ga(1.3) - Fa(1.3), Math.log(2), 1e-9), ()=> near(Ga(1.3) - Fa(1.3), 2, 1e-9))],
+    lg:`a) $F'(x) = \\dfrac{(${den})'}{${den}} = \\dfrac{2x}{${den}}$.<br>b) $${den} > 0$ với mọi $x$ nên $F(x)$ có đạo hàm trên toàn $\\mathbb{R}$.<br>c), d) $G(x) = \\ln\\left[2(${den})\\right] = \\ln 2 + \\ln(${den}) = F(x) + \\ln 2$, nên $G$ và $F$ sai khác hằng số $\\ln 2$, cùng là nguyên hàm của $\\dfrac{2x}{${den}}$.`};
+});
+
+GD(12,3,0,'VD','F(x) = √(x² + m²): đạo hàm, suy ra ∫kx/√(x² + m²)dx, nguyên hàm thoả G(0) = 0 và giá trị tại x₀ (số đẹp từ bộ ba Pythagore)', R=>{
+  const [x0, m, c] = R.pick([[3, 4, 5], [4, 3, 5], [6, 8, 10], [8, 6, 10], [5, 12, 13], [12, 5, 13], [15, 8, 17], [8, 15, 17]]), k = R.int(2, 6), a = m*m, Fa = x=> Math.sqrt(x*x + a), f = x=> x/Fa(x), v = c - m, w = c;
+  return {stem:`Cho hàm số $F(x) = \\sqrt{x^{2} + ${a}}$ trên $\\mathbb{R}$.`,
+    items:[claim(R, `$F'(x) = \\dfrac{x}{\\sqrt{x^{2} + ${a}}}$`, `$F'(x) = \\dfrac{1}{2\\sqrt{x^{2} + ${a}}}$`, ()=> ngIs(Fa, f), ()=> ngIs(Fa, x=> 1/(2*Fa(x)))),
+      claim(R, `$${ngI(`\\dfrac{${k}x}{\\sqrt{x^{2} + ${a}}}`)} = ${k}\\sqrt{x^{2} + ${a}} + C$`, `$${ngI(`\\dfrac{${k}x}{\\sqrt{x^{2} + ${a}}}`)} = ${qT(qr(k, 2))}\\sqrt{x^{2} + ${a}} + C$`, ()=> ngIs(x=> k*Fa(x), x=> k*f(x)), ()=> ngIs(x=> k/2*Fa(x), x=> k*f(x))),
+      claimN(R, v2=> `$F(0) = ${v2}$`, m, String(m), a, String(a), ()=> Fa(0)),
+      claimN(R, v2=> `Nguyên hàm $G(x)$ của $\\dfrac{x}{\\sqrt{x^{2} + ${a}}}$ thoả $G(0) = 0$ có $G(${x0}) = ${v2}$`, v, String(v), w, String(w), ()=> ngSi(f, 0, x0))],
+    lg:`a) $F'(x) = \\dfrac{(x^{2} + ${a})'}{2\\sqrt{x^{2} + ${a}}} = \\dfrac{x}{\\sqrt{x^{2} + ${a}}}$.<br>b) Từ a) suy ra nguyên hàm của $\\dfrac{${k}x}{\\sqrt{x^{2} + ${a}}}$ là $${k}F(x) + C$.<br>c) $F(0) = \\sqrt{${a}} = ${m}$.<br>d) $G(x) = F(x) - F(0) = \\sqrt{x^{2} + ${a}} - ${m}$ nên $G(${x0}) = \\sqrt{${x0*x0 + a}} - ${m} = ${c} - ${m} = ${v}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','F(x) = (ax + b)√x là một nguyên hàm của (px + q)/√x trên (0; +∞): đồng nhất hệ số, tính a + b', R=>{
+  const t = R.nz(-5, 5), q = R.nz(-6, 6), p = 3*t, a = 2*t, b = 2*q, v = a + b;
+  const Fn = x=> (a*x + b)*Math.sqrt(x), fn = x=> (p*x + q)/Math.sqrt(x);
+  const o = {stem:`Biết hàm số $F(x) = (ax + b)\\sqrt{x}$ là một nguyên hàm của hàm số $f(x) = \\dfrac{${nkL(p, q)}}{\\sqrt{x}}$ trên khoảng $(0; +\\infty)$. Tính $a + b$.`, ans:v,
+    lg:`$F'(x) = a\\sqrt{x} + \\dfrac{ax + b}{2\\sqrt{x}} = \\dfrac{3ax + b}{2\\sqrt{x}}$.<br>Đồng nhất với $f(x)$: $\\dfrac{3a}{2} = ${p}$ và $\\dfrac{b}{2} = ${q}$, nên $a = ${a}$, $b = ${b}$.<br>Vậy $a + b = ${v}$.`,
+    verify:()=> near(o.ans, a + b, 1e-12) && ngIs(Fn, fn)};
+  return o;
+});
+
+GT(12,3,0,'TH','Biết ∫f(x)dx = x³ + ax² + bx + C, f(1) và f(−1): lập hệ tìm a, b rồi tính a + b', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-7, 7), p = 3 + 2*a + b, q = 3 - 2*a + b, v = a + b;
+  const o = {stem:`Cho hàm số $f(x)$ thoả mãn $${ngI('f(x)')} = x^{3} + ax^{2} + bx + C$ với $a$, $b$ là các số thực. Biết $f(1) = ${p}$ và $f(-1) = ${q}$. Tính $a + b$.`, ans:v,
+    lg:`$f(x) = (x^{3} + ax^{2} + bx)' = 3x^{2} + 2ax + b$.<br>Từ $f(1) = ${p}$ có $2a + b = ${p - 3}$; từ $f(-1) = ${q}$ có $-2a + b = ${q - 3}$.<br>Giải ra $a = ${a}$, $b = ${b}$. Vậy $a + b = ${v}$.`,
+    verify:()=>{ const b2 = (p - 3 + q - 3)/2, a2 = (p - q)/4; return near(o.ans, a2 + b2, 1e-12) && near(3 + 2*a2 + b2, p, 1e-12) && near(3 - 2*a2 + b2, q, 1e-12); }};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = (ax + b)sin x + c·cos x là một nguyên hàm của (mx + n)cos x: đồng nhất hệ số (hệ số của sin x phải triệt tiêu), tính a + 2b + 3c', R=>{
+  const m = R.nz(-6, 6), n = R.nz(-6, 6), a = m, b = n, c = m, v = a + 2*b + 3*c;
+  const Fn = x=> (a*x + b)*Math.sin(x) + c*Math.cos(x), fn = x=> (m*x + n)*Math.cos(x);
+  const o = {stem:`Biết hàm số $F(x) = (ax + b)\\sin x + c\\cos x$ là một nguyên hàm của hàm số $f(x) = (${nkL(m, n)})\\cos x$ trên $\\mathbb{R}$. Tính $a + 2b + 3c$.`, ans:v,
+    lg:`$F'(x) = a\\sin x + (ax + b)\\cos x - c\\sin x = (ax + b)\\cos x + (a - c)\\sin x$.<br>Đồng nhất với $f(x)$: $a = ${m}$, $b = ${n}$ và $a - c = 0$ nên $c = ${c}$.<br>Vậy $a + 2b + 3c = ${v}$.`,
+    verify:()=> near(o.ans, a + 2*b + 3*c, 1e-12) && ngIs(Fn, fn, [0.3, 1.1, 2.2, -1.4])};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = (ax + b)/(x + 1) là một nguyên hàm của k/(x + 1)² trên (−1; +∞), F(0) cho trước: tính a + b', R=>{
+  const k = R.nz(-9, 9), r = R.nz(-9, 9), b = r, a = r + k, v = a + b; if(a === 0) return null;
+  const Fn = x=> (a*x + b)/(x + 1), fn = x=> k/(x + 1)**2;
+  const o = {stem:`Biết hàm số $F(x) = \\dfrac{ax + b}{x + 1}$ là một nguyên hàm của hàm số $f(x) = ${k < 0 ? `-\\dfrac{${-k}}` : `\\dfrac{${k}}`}{(x + 1)^{2}}$ trên khoảng $(-1; +\\infty)$ và $F(0) = ${r}$. Tính $a + b$.`, ans:v,
+    lg:`$F'(x) = \\dfrac{a(x + 1) - (ax + b)}{(x + 1)^{2}} = \\dfrac{a - b}{(x + 1)^{2}}$ nên $a - b = ${k}$.<br>$F(0) = b = ${r}$, suy ra $a = ${a}$.<br>Vậy $a + b = ${v}$.`,
+    verify:()=> near(o.ans, a + b, 1e-12) && ngIs(Fn, fn) && near(Fn(0), r, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'TH','F(x) = a·ln x + bx² + cx là một nguyên hàm của phân thức (px² + qx + r)/x trên (0; +∞): chia tử cho x rồi đồng nhất, tính a + b + c', R=>{
+  const t = R.nz(-5, 5), p = 2*t, q = R.nz(-7, 7), r = R.nz(-8, 8), a = r, b = t, c = q, v = a + b + c;
+  const Fn = x=> a*Math.log(x) + b*x*x + c*x, fn = x=> (p*x*x + q*x + r)/x;
+  const o = {stem:`Biết hàm số $F(x) = a\\ln x + bx^{2} + cx$ là một nguyên hàm của hàm số $f(x) = \\dfrac{${ngTx(nkP([[p, 2], [q, 1], [r, 0]]))}}{x}$ trên khoảng $(0; +\\infty)$. Tính $a + b + c$.`, ans:v,
+    lg:`$f(x) = ${ngTx(nkP([[p, 1], [q, 0], [r, -1]]))}$ và $F'(x) = \\dfrac{a}{x} + 2bx + c$.<br>Đồng nhất hệ số: $a = ${r}$, $2b = ${p}$, $c = ${q}$, nên $b = ${t}$.<br>Vậy $a + b + c = ${v}$.`,
+    verify:()=> near(o.ans, a + b + c, 1e-12) && ngIs(Fn, fn)};
+  return o;
+});
+
+GT(12,3,0,'TH','G(x) = x·F(x) với F là nguyên hàm của f: G\'(2) = F(2) + 2f(2) (đạo hàm của tích, thay F\' = f)', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-7, 7), r = R.nz(-9, 9), f2 = 2*a + b, v = r + 2*f2;
+  const Pf = x=> a*x*x/2 + b*x, Fn = x=> Pf(x) - Pf(2) + r;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${nkL(a, b)}$ trên $\\mathbb{R}$ và $F(2) = ${r}$. Đặt $G(x) = xF(x)$. Tính $G'(2)$.`, ans:v,
+    lg:`$G'(x) = F(x) + xF'(x) = F(x) + xf(x)$.<br>Ta có $f(2) = ${f2}$ nên $G'(2) = ${r}${ngSg(2*f2)} = ${v}$.`,
+    verify:()=> near(o.ans, ngDf(x=> x*Fn(x), 2), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'VD','G(x) = F(x²) với F là nguyên hàm của f: G\'(a) = 2a·f(a²) (đạo hàm của hàm hợp, F\' = f)', R=>{
+  const p = R.nz(-4, 4), q = R.nz(-6, 6), a = R.pick([-2, -1, 1, 2]), fv = p*a*a*a*a + q, v = 2*a*fv;
+  const f = x=> p*x*x + q, Pf = x=> p*x*x*x/3 + q*x;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(nkP([[p, 2], [q, 0]]))}$ trên $\\mathbb{R}$. Đặt $G(x) = F(x^{2})$. Tính $G'(${a})$.`, ans:v,
+    lg:`$G'(x) = F'(x^{2})\\cdot (x^{2})' = 2x\\cdot f(x^{2})$.<br>Tại $x = ${a}$: $f(${a*a}) = ${fv}$ nên $G'(${a}) = ${2*a}\\cdot ${fv < 0 ? `(${fv})` : fv} = ${v}$.`,
+    verify:()=> near(o.ans, ngDf(x=> Pf(x*x), a), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'VD','F và G là hai nguyên hàm của cùng một f, biết F(a) và G(b): F(b) + G(a) không phụ thuộc f (hai số hạng tích phân triệt tiêu)', R=>{
+  const a = R.int(-2, 1), b = a + R.int(1, 3), r = R.int(-30, 30), s = R.int(-30, 30), p = R.nz(-4, 4), q = R.nz(-6, 6), v = r + s;
+  const f = x=> p*x + q, Pf = x=> p*x*x/2 + q*x, Fn = x=> Pf(x) - Pf(a) + r, Gn = x=> Pf(x) - Pf(b) + s;
+  const o = {stem:`Cho $F(x)$ và $G(x)$ là hai nguyên hàm của hàm số $f(x) = ${nkL(p, q)}$ trên $\\mathbb{R}$. Biết $F(${a}) = ${r}$ và $G(${b}) = ${s}$. Tính $F(${b}) + G(${a})$.`, ans:v,
+    lg:`Hai nguyên hàm sai khác nhau một hằng số: $F(x) = G(x) + k$, nên $F(${b}) = G(${b}) + k$ và $F(${a}) = G(${a}) + k$.<br>Suy ra $F(${b}) + G(${a}) = G(${b}) + k + F(${a}) - k = G(${b}) + F(${a}) = ${s}${ngSg(r)} = ${v}$.`,
+    verify:()=> near(o.ans, Fn(b) + Gn(a), 1e-9) && ngIs(Fn, f)};
+  return o;
+});
+
+GT(12,3,0,'TH','H(x) = pF(x) − qG(x) + kx với F, G lần lượt là nguyên hàm của f, g: H là nguyên hàm của pf − qg + k, tính giá trị tại a', R=>{
+  const p = R.int(2, 5), q = R.int(2, 5), k = R.nz(-6, 6), a1 = R.nz(-3, 3), b1 = R.nz(-5, 5), c1 = R.nz(-4, 4), d1 = R.nz(-5, 5), x0 = R.pick([1, 2, -1]);
+  const f = nkP([[a1, 2], [b1, 0]]), g = nkP([[c1, 1], [d1, 0]]), v = p*ngVal(f, x0) - q*ngVal(g, x0) + k;
+  const H = x=> p*ngVal(ngPr(f), x) - q*ngVal(ngPr(g), x) + k*x;
+  const o = {stem:`Cho $F(x)$, $G(x)$ lần lượt là một nguyên hàm của các hàm số $f(x) = ${ngTx(f)}$, $g(x) = ${ngTx(g)}$ trên $\\mathbb{R}$. Biết $H(x) = ${p}F(x) - ${q}G(x)${ngSg(k).replace(/(\d+)$/, '$1x').replace(/ 1x$/, ' x')}$ là một nguyên hàm của hàm số $h(x)$. Tính $h(${x0})$.`, ans:v,
+    lg:`$h(x) = H'(x) = ${p}f(x) - ${q}g(x)${ngSg(k)}$.<br>Với $f(${x0}) = ${ngVal(f, x0)}$, $g(${x0}) = ${ngVal(g, x0)}$ ta được $h(${x0}) = ${v}$.`,
+    verify:()=> near(o.ans, ngDf(H, x0), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm H của x·f\'(x) + f(x) thoả H(0) = c: nhận ra H(x) = x·f(x) + c, tính H(2) (nối tiếp dạng ∫[xf\' + f])', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-5, 5), d = R.nz(-6, 6), c = R.nz(-8, 8), f = nkP([[a, 2], [b, 1], [d, 0]]), fv = ngVal(f, 2), v = 2*fv + c;
+  const g = x=> x*ngVal(ngDr(f), x) + ngVal(f, x);
+  const o = {stem:`Cho hàm số $f(x) = ${ngTx(f)}$ và $H(x)$ là một nguyên hàm của hàm số $xf'(x) + f(x)$ trên $\\mathbb{R}$ thoả mãn $H(0) = ${c}$. Tính $H(2)$.`, ans:v,
+    lg:`$\\left[xf(x)\\right]' = xf'(x) + f(x)$ nên $H(x) = xf(x) + C$. Từ $H(0) = ${c}$ có $C = ${c}$.<br>$f(2) = ${fv}$ nên $H(2) = 2\\cdot ${fv < 0 ? `(${fv})` : fv}${ngSg(c)} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(g, 0, 2) + c, 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','F(x) = a·cos x + b·sin x + cx là một nguyên hàm của p·sin x + q·cos x + r: đồng nhất hệ số, tính a + b + c (bẫy dấu của đạo hàm cos x)', R=>{
+  const p = R.nz(-8, 8), q = R.nz(-8, 8), r = R.nz(-8, 8), a = -p, b = q, c = r, v = a + b + c;
+  const f = [[p, ngS1], [q, ngC1], [r, ngX(0)]], Fn = x=> a*Math.cos(x) + b*Math.sin(x) + c*x;
+  const o = {stem:`Biết hàm số $F(x) = a\\cos x + b\\sin x + cx$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Tính $a + b + c$.`, ans:v,
+    lg:`$F'(x) = -a\\sin x + b\\cos x + c$. Đồng nhất với $f(x)$: $-a = ${p}$, $b = ${q}$, $c = ${r}$, nên $a = ${a}$.<br>Vậy $a + b + c = ${v}$.`,
+    verify:()=> near(o.ans, a + b + c, 1e-12) && ngIs(Fn, x=> ngVal(f, x))};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = (x² + mx + n)ln x là một nguyên hàm của f(x) trên (0; +∞): tính f(1) = 1 + m + n (đạo hàm của tích, ln 1 = 0)', R=>{
+  const m = R.int(-9, 9), n = R.int(-9, 9), v = 1 + m + n, P = nkP([[1, 2], [m, 1], [n, 0]]), Fn = x=> ngVal(P, x)*Math.log(x);
+  if(!m || !n) return null;
+  const o = {stem:`Biết hàm số $F(x) = (${ngTx(P)})\\ln x$ là một nguyên hàm của hàm số $f(x)$ trên khoảng $(0; +\\infty)$. Tính $f(1)$.`, ans:v,
+    lg:`$f(x) = F'(x) = (${ngTx(ngDr(P))})\\ln x + \\dfrac{${ngTx(P)}}{x}$.<br>Vì $\\ln 1 = 0$ nên $f(1) = 1${ngSg(m)}${ngSg(n)} = ${v}$.`,
+    verify:()=> near(o.ans, ngDf(Fn, 1), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','F(x) = c·xⁿ là một nguyên hàm của k·xᵐ: tìm n = m + 1 và c = k/(m + 1), tính c + n', R=>{
+  const m = R.int(1, 7), t = R.nz(-12, 12), k = t*(m + 1), n = m + 1, c = t, v = c + n;
+  const o = {stem:`Biết hàm số $F(x) = cx^{n}$ (với $n$ là số nguyên dương, $c$ là số thực) là một nguyên hàm của hàm số $f(x) = ${ngTx([[k, ngX(m)]])}$ trên $\\mathbb{R}$. Tính $c + n$.`, ans:v,
+    lg:`$F'(x) = cnx^{n - 1}$. Đồng nhất với $f(x)$: $n - 1 = ${m}$ và $cn = ${k}$, nên $n = ${n}$, $c = ${c}$.<br>Vậy $c + n = ${v}$.`,
+    verify:()=> near(o.ans, n + k/n, 1e-12) && ngIs(x=> c*x**n, x=> k*x**m)};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = eˣ(a·sin x + b·cos x) là một nguyên hàm của eˣ(p·sin x + q·cos x): đồng nhất hệ số lập hệ hai ẩn, tính a·b', R=>{
+  const a = R.nz(-7, 7), b = R.nz(-7, 7), p = a - b, q = a + b, v = a*b; if(!p || !q) return null;
+  const Fn = x=> Math.exp(x)*(a*Math.sin(x) + b*Math.cos(x)), fn = x=> Math.exp(x)*(p*Math.sin(x) + q*Math.cos(x));
+  const o = {stem:`Biết hàm số $F(x) = e^{x}(a\\sin x + b\\cos x)$ là một nguyên hàm của hàm số $f(x) = e^{x}(${ngTx([[p, ngS1], [q, ngC1]])})$ trên $\\mathbb{R}$. Tính $a\\cdot b$.`, ans:v,
+    lg:`$F'(x) = e^{x}(a\\sin x + b\\cos x) + e^{x}(a\\cos x - b\\sin x) = e^{x}\\left[(a - b)\\sin x + (a + b)\\cos x\\right]$.<br>Đồng nhất: $a - b = ${p}$, $a + b = ${q}$, nên $a = ${a}$, $b = ${b}$.<br>Vậy $a\\cdot b = ${v}$.`,
+    verify:()=> near(o.ans, (p + q)/2*(q - p)/2, 1e-12) && ngIs(Fn, fn)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.2 Nguyên hàm của hàm luỹ thừa, đa thức; biến đổi về luỹ thừa — số 90–130 (16 TN, 10 Đ–S, 15 TLN).
+   Chuỗi tư duy: công thức xᵅ với α nguyên âm, hữu tỉ → biến đổi tích, bình phương, hằng đẳng thức, căn về tổng luỹ thừa → đọc hệ số của nguyên hàm → tính đối xứng. */
+
+G(12,3,0,'TH','Nguyên hàm của a/xⁿ + bx trên (0; +∞): viết a·x⁻ⁿ rồi dùng công thức xᵅ với α âm (bẫy: nâng số mũ theo trị tuyệt đối, quên dấu trừ)', R=>{
+  const n = R.pick([2, 3, 4]), a = R.nz(-9, 9)*(n - 1), b = 2*R.nz(-5, 5), f = [[a, ngX(-n)], [b, ngX(1)]], P = ngPr(f), a1 = qr(a, 1 - n);
+  const ans = ngOp(P, 1.37), wrong = ngW(R, ans, [ngOp([[qm(a1, -1), ngX(1 - n)], P[1]], 1.37), ngOp([[qr(a, n + 1), ngX(n + 1)], P[1]], 1.37), ngOp([[qr(a, n - 1), ngX(-n - 1)], P[1]], 1.37), ngOp([[a, ngX(1 - n)], [b, ngX(2)]], 1.37)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Viết $\\dfrac{${Math.abs(a)}}{x^{${n}}} = ${Math.abs(a)}x^{-${n}}$. Theo công thức $${ngI('x^{\\alpha}')} = \\dfrac{x^{\\alpha + 1}}{\\alpha + 1} + C$ với $\\alpha = -${n}$, ta có $${ngI(`x^{-${n}}`)} = \\dfrac{x^{-${n - 1}}}{-${n - 1}} + C$.<br>Vậy họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> ngVal(f, x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k·x^(p/q) với số mũ hữu tỉ: tăng số mũ thêm 1 rồi chia (bẫy: nhân với số mũ cũ, cộng sai phân số)', R=>{
+  const q = R.pick([2, 3, 4, 5]), p = R.pick([1, 2, 3, 4, 5, 7].filter(z=> ngG(z, q) === 1)), k = R.pick([1, 2, 3, 4, 5, 6, -1, -2]), e = qr(p, q), e1 = qa(e, 1), f = [[k, ngX(e)]], P = ngPr(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[qm(k, e1), ngX(e1)]]), ngOp([[qm(k, e), ngX(qs(e, 1))]]), ngOp([[qd(k, e), ngX(e)]]), ngOp([[k, ngX(e1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Áp dụng công thức nguyên hàm của $x^{\\alpha}$ với $\\alpha = ${qT(e)}$: $\\alpha + 1 = ${qT(e1)}$.<br>Vậy họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> k*Math.pow(x, qv(e)))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của tích (ax + b)(cx + d): khai triển thành đa thức (bẫy: nguyên hàm của tích bằng tích các nguyên hàm)', R=>{
+  const a = R.pick([1, 2, 3]), b = R.nz(-6, 6), c = R.pick([1, 2, 3]), d = R.nz(-6, 6); if(a*d + b*c === 0) return null;
+  const f = nkP([[a*c, 2], [a*d + b*c, 1], [b*d, 0]]), P = ngPr(f), A = ngPr(nkP([[a, 1], [b, 0]])), B = ngPr(nkP([[c, 1], [d, 0]]));
+  const tich = [[qm(qm(a, c), qr(1, 4)), ngX(4)], [qa(qm(qr(a, 2), d), qm(qr(c, 2), b)), ngX(3)], [b*d, ngX(2)]];
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp(tich), ngOp(f), ngOp(nkP([[a*c, 3], [a*d + b*c, 2], [b*d, 1]])), ngOp([[qr(a*c, 3), ngX(3)], [a*d + b*c, ngX(2)], [b*d, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = (${nkL(a, b)})(${nkL(c, d)})$ là`, ans, wrong,
+    lg:`Khai triển: $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (a*x + b)*(c*x + d))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (ax + b)²: khai triển (bẫy: viết (ax + b)³/3, quên chia a)', R=>{
+  const a = R.pick([2, 3, 4, 5]), b = R.nz(-6, 6), f = nkP([[a*a, 2], [2*a*b, 1], [b*b, 0]]), P = ngPr(f);
+  const cu = (k, kT)=> ({t:`$${kT}(${nkL(a, b)})^{3} + C$`, v:k*(a*1.37 + b)**3});
+  const ans = ngOp(P), wrong = ngW(R, ans, [cu(1/3, '\\dfrac{1}{3}'), ngOp(nkP([[a*a, 3], [2*a*b, 2], [b*b, 1]])), ngOp([[qr(a, 3), ngX(3)], [a*b, ngX(2)], [b*b, ngX(1)]]), ngOp([[qr(a*a, 3), ngX(3)], [2*a*b, ngX(2)], [b*b, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = (${nkL(a, b)})^{2}$ là`, ans, wrong,
+    lg:`Khai triển: $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (a*x + b)**2)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x² + a)² hoặc (x² − a)²: khai triển bậc bốn rồi lấy nguyên hàm (bẫy: thiếu 2ab, (x² + a)³/3)', R=>{
+  const a = R.nz(-6, 6), f = nkP([[1, 4], [2*a, 2], [a*a, 0]]), P = ngPr(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp(nkP([[1, 4], [a*a, 0]]).map(t=> t)).t ? ngOp(ngPr(nkP([[1, 4], [a*a, 0]]))) : null, ngOp(nkP([[1, 5], [2*a, 3], [a*a, 1]])), ngOp([[qr(1, 5), ngX(5)], [qr(a, 3), ngX(3)], [a*a, ngX(1)]]), {t:`$\\dfrac{1}{3}(${ngTx(nkP([[1, 2], [a, 0]]))})^{3} + C$`, v:(1.37**2 + a)**3/3}]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = (${ngTx(nkP([[1, 2], [a, 0]]))})^{2}$ là`, ans, wrong,
+    lg:`Khai triển: $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x*x + a)**2)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x − a)(x² + ax + a²): nhận ra hằng đẳng thức x³ − a³ (thay vì nhân bung)', R=>{
+  const a = R.int(1, 9), s = R.pick([1, -1]), a3 = s*a**3, f = nkP([[1, 3], [-a3, 0]]), P = ngPr(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp(ngPr(nkP([[1, 3], [a3, 0]]))), ngOp(nkP([[1, 4], [-a3, 1]])), ngOp([[qr(1, 4), ngX(4)], [-a3*3, ngX(1)]]), ngOp([[qr(1, 3), ngX(3)], [-a3, ngX(1)]])]); if(!wrong) return null;
+  const q2 = nkP([[1, 2], [s*a, 1], [a*a, 0]]);
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = (${nkL(1, -s*a)})(${ngTx(q2)})$ là`, ans, wrong,
+    lg:`Dùng hằng đẳng thức: $f(x) = ${a === 1 ? ngTx(f) : `x^{3} ${s > 0 ? '-' : '+'} ${a}^{3} = ${ngTx(f)}`}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x - s*a)*ngVal(q2, x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x² − a²)/(x − a) trên (a; +∞): rút gọn trước khi lấy nguyên hàm (bẫy: lấy nguyên hàm tử chia nguyên hàm mẫu)', R=>{
+  const a = R.int(-9, 9); if(a === 0) return null;
+  const f = nkP([[1, 1], [a, 0]]), P = ngPr(f), Pm = ngPr(nkP([[1, 1], [-a, 0]]));
+  const ans = ngOp(P, a + 1.37), wrong = ngW(R, ans, [ngOp(Pm, a + 1.37), ngOp(nkP([[1, 2], [a, 1]]), a + 1.37), {t:`$\\dfrac{x^{3}}{3} ${a*a === 1 ? '-' : `- ${a*a}`}x + C$`, v:(a + 1.37)**3/3 - a*a*(a + 1.37)}, ngOp([[qr(1, 2), ngX(2)], [2*a, ngX(1)]], a + 1.37)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{x^{2} - ${a*a}}{${nkL(1, -a)}}$ trên khoảng $(${a}; +\\infty)$ là`.replace('x^{2} - 1}', 'x^{2} - 1}'), ans, wrong,
+    lg:`Với $x > ${a}$: $f(x) = \\dfrac{(${nkL(1, -a)})(${nkL(1, a)})}{${nkL(1, -a)}} = ${nkL(1, a)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, a + 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x*x - a*a)/(x - a), [a + 0.5, a + 1.2, a + 3])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x³ − a³)/(x − a) trên (a; +∞): chia đa thức hoặc dùng hằng đẳng thức rồi lấy nguyên hàm', R=>{
+  const a = R.int(1, 6), s = R.pick([1, -1]), c = s*a, f = nkP([[1, 2], [c, 1], [c*c, 0]]), P = ngPr(f), lo = c, pt = c + 1.37;
+  const ans = ngOp(P, pt), wrong = ngW(R, ans, [ngOp(ngPr(nkP([[1, 2], [-c, 1], [c*c, 0]])), pt), ngOp(ngPr(nkP([[1, 2], [c*c, 0]])), pt), ngOp(nkP([[1, 3], [c, 2], [c*c, 1]]), pt), ngOp([[qr(1, 3), ngX(3)], [c, ngX(2)], [c*c, ngX(1)]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{x^{3} ${c > 0 ? '-' : '+'} ${a**3}}{${nkL(1, -c)}}$ trên khoảng $(${lo}; +\\infty)$ là`, ans, wrong,
+    lg:`$x^{3} ${c > 0 ? '-' : '+'} ${a**3} = (${nkL(1, -c)})(${ngTx(f)})$ nên với $x > ${lo}$ thì $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, pt), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x**3 - c**3)/(x - c), [c + 0.5, c + 1.2, c + 3])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của √x(ax + b): nhân vào rồi viết x^(3/2), x^(1/2) (bẫy: tách nguyên hàm từng thừa số)', R=>{
+  const a = R.pick([1, 2, 3, 5, -1, -2, -3]), b = R.nz(-6, 6), f = [[a, ngX([3, 2])], [b, ngX([1, 2])]], P = ngPr(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[qm(a, qr(3, 2)), ngX([5, 2])], [qm(b, qr(1, 2)), ngX([3, 2])]]), ngOp([[qm(a, qr(5, 2)), ngX([5, 2])], [qm(b, qr(3, 2)), ngX([3, 2])]]), ngOp([[qm(a, qr(2, 3)), ngX([3, 2])], [qm(b, qr(2, 3)), ngX([3, 2])]].slice(0, 1).concat([[b, ngX(1)]])), ngOp([[qm(a, qr(2, 5)), ngX([5, 2])], [qm(b, qr(2, 5)), ngX([3, 2])]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\sqrt{x}(${nkL(a, b)})$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`$f(x) = ${a === 1 ? '' : a === -1 ? '-' : a}x^{\\frac{3}{2}}${ngSg(b)}x^{\\frac{1}{2}}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`.replace(/([+-]) 1x\^/, '$1 x^'),
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> Math.sqrt(x)*(a*x + b))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (√x + a)(√x − a): hằng đẳng thức đưa về x − a² (bẫy: nhân nguyên hàm từng thừa số)', R=>{
+  const a = R.int(2, 15), f = nkP([[1, 1], [-a*a, 0]]), P = ngPr(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp(ngPr(nkP([[1, 1], [a*a, 0]]))), ngOp([[qr(1, 2), ngX(2)], [-a, ngX(1)]]), ngOp(nkP([[1, 2], [-a*a, 1]])), ngOp([[qr(1, 2), ngX(2)], [-2*a*a, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = (\\sqrt{x} + ${a})(\\sqrt{x} - ${a})$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Dùng hằng đẳng thức: $f(x) = (\\sqrt{x})^{2} - ${a}^{2} = ${ngTx(f)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (Math.sqrt(x) + a)*(Math.sqrt(x) - a))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (ax + b)/√x: tách thành a√x + b/√x rồi dùng công thức (bẫy: nguyên hàm của tử chia nguyên hàm của mẫu)', R=>{
+  const a = R.pick([1, 2, 3, 4, -1, -2, -3]), b = R.nz(-7, 7), f = [[a, ngX([1, 2])], [b, ngX([-1, 2])]], P = ngPr(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[qm(a, qr(2, 3)), ngX([3, 2])], [qm(b, qr(1, 2)), ngX([1, 2])]]), ngOp([[qm(a, qr(3, 2)), ngX([3, 2])], [qm(b, 2), ngX([1, 2])]]), ngOp([[qm(a, qr(2, 3)), ngX([3, 2])], [qm(b, -2), ngX([1, 2])]]), ngOp([[qm(a, qr(2, 3)), ngX([3, 2])], [b, ngX([1, 2])]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${nkL(a, b)}}{\\sqrt{x}}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Tách: $f(x) = ${ngTx(f)} = ${a === 1 ? '' : a === -1 ? '-' : a}x^{\\frac{1}{2}}${ngSg(b)}x^{-\\frac{1}{2}}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`.replace(/([+-]) 1x\^/, '$1 x^'),
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> (a*x + b)/Math.sqrt(x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của xᵐ·∛x, xᵐ·√x: gộp thành một luỹ thừa số mũ hữu tỉ (cộng số mũ, không nhân)', R=>{
+  const m = R.int(1, 3), q = R.pick([2, 3]), k = R.pick([1, 2, 3, 4, 5, 6, -2, -3]), e = qa(m, qr(1, q)), e1 = qa(e, 1), g = [[k, ngX(e)]], P = ngPr(g), root = q === 2 ? '\\sqrt{x}' : '\\sqrt[3]{x}';
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[k, ngX(e1)]]), ngOp([[qm(k, e), ngX(qs(e, 1))]]), ngOp([[qm(k, e1), ngX(e1)]]), ngOp([[qd(k, qr(m, q)), ngX(qr(m, q))]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${k === 1 ? '' : k === -1 ? '-' : k}x${m > 1 ? `^{${m}}` : ''}${root}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Gộp luỹ thừa bằng cách cộng số mũ: số mũ mới là $${m} + \\dfrac{1}{${q}} = ${qT(e)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, 1.37), 1e-9) && ngIs(x=> ngVal(P, x), x=> k*x**m*(q === 2 ? Math.sqrt(x) : Math.cbrt(x)))};
+  return o;
+});
+
+G(12,3,0,'TH','Biết ∫xᵅdx = (1/k)xᵏ + C với k hữu tỉ: tìm α = k − 1 (đọc ngược công thức, bẫy: α = k, α = k + 1)', R=>{
+  const q = R.pick([2, 3, 4, 5, 7]), p = R.pick([3, 5, 7, 8, 9, 11, 13].filter(z=> ngG(z, q) === 1 && z > q)), k = qr(p, q), al = qs(k, 1);
+  const ans = ngNum(al), wrong = ngW(R, ans, [ngNum(k), ngNum(qa(k, 1)), ngNum(qd(1, k)), ngNum(qs(k, 2))]); if(!wrong) return null;
+  const o = {stem:`Biết $${ngI('x^{\\alpha}')} = ${qT(qd(1, k))}x^{${`\\frac{${p}}{${q}}`}} + C$ trên khoảng $(0; +\\infty)$. Giá trị của $\\alpha$ bằng`, ans, wrong,
+    lg:`Công thức: $${ngI('x^{\\alpha}')} = \\dfrac{x^{\\alpha + 1}}{\\alpha + 1} + C$. So sánh: $\\alpha + 1 = ${qT(k)}$.<br>Do đó $\\alpha = ${qT(al)}$.`,
+    verify:()=> near(o.ans.v + 1, p/q, 1e-9) && ngIs(x=> q/p*Math.pow(x, p/q), x=> Math.pow(x, o.ans.v))};
+  return o;
+});
+
+G(12,3,0,'VD','Biết ∫(ax² + b/x²)dx = mx³ + n/x + C trên (0; +∞): đồng nhất hệ số, tính m + n (bẫy dấu của nguyên hàm 1/x²)', R=>{
+  const t = R.nz(-5, 5), a = 3*t, b = R.nz(-9, 9), m = t, n = -b, v = m + n;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(t + b), ngNum(a + b), ngNum(a - b), ngNum(-t - b)]); if(!wrong) return null;
+  const f = [[a, ngX(2)], [b, ngX(-2)]], Fn = x=> m*x**3 + n/x;
+  const o = {stem:`Biết $${ngI(`\\left(${ngTx(f)}\\right)`)} = mx^{3} + \\dfrac{n}{x} + C$ trên khoảng $(0; +\\infty)$, với $m$, $n$ là các số thực. Giá trị của $m + n$ bằng`, ans, wrong,
+    lg:`$${ngI(`(${a}x^{2})`)} = ${ngTx([[t, ngX(3)]])} + C$ và $${ngI('x^{-2}')} = -x^{-1} + C = -\\dfrac{1}{x} + C$.<br>Do đó $m = ${m}$, $n = ${n}$ và $m + n = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, ngIs(Fn, x=> ngVal(f, x)) ? m + n : NaN, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Hệ số của x³ trong một nguyên hàm của (x + a)²(x + b): khai triển đến đúng hệ số cần tìm rồi chia 3 (không cần khai triển hết)', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-6, 6), c2 = 2*a + b; if(c2 === 0) return null;
+  const v = qr(c2, 3), ans = ngNum(v), wrong = ngW(R, ans, [ngNum(c2), ngNum(qr(a + b, 3)), ngNum(qr(c2, 2)), ngNum(qr(2*a - b, 3))]); if(!wrong) return null;
+  const co = [1, 2*a + b, a*a + 2*a*b, a*a*b], F = x=> x**4/4 + co[1]*x**3/3 + co[2]*x**2/2 + co[3]*x;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = (${nkL(1, a)})^{2}(${nkL(1, b)})$. Hệ số của $x^{3}$ trong đa thức $F(x)$ bằng`, ans, wrong,
+    lg:`Hệ số của $x^{2}$ trong $f(x)$ là $2\\cdot ${ngPa(a)}${ngSg(b)} = ${c2}$.<br>Trong nguyên hàm, số hạng $${c2 === 1 ? '' : c2 === -1 ? '-' : c2}x^{2}$ sinh ra $${ngTx([[qr(c2, 3), ngX(3)]])}$. Vậy hệ số của $x^{3}$ là $${qT(v)}$.`,
+    verify:()=> near(o.ans.v, (F(1) - F(-1) - 2*(co[2]*0) - 2*co[3])/2 - 0.25*0 - 0, 1e-9) && ngIs(F, x=> (x + a)**2*(x + b))};
+  return o;
+});
+
+G(12,3,0,'TH','Chọn đẳng thức ĐÚNG về nguyên hàm luỹ thừa trong bốn đẳng thức có hệ số thay đổi (nối các công thức xⁿ, x⁻ⁿ, √x)', R=>{
+  const k = R.int(2, 9), n = R.int(2, 6), m = R.int(2, 4);
+  const s1 = {t:`$${ngI(`${k}x^{${n}}`)} = ${ngTx([[qr(k, n + 1), ngX(n + 1)]])} + C$`, v:1}, b1 = {t:`$${ngI(`${k}x^{${n}}`)} = ${ngTx([[k*n, ngX(n - 1)]])} + C$`, v:2}, b2 = {t:`$${ngI(`\\dfrac{${k}}{x^{${m}}}`)} = ${ngTx([[qr(k, m + 1), ngX(m + 1)]])} + C$`, v:3}, b3 = {t:`$${ngI(`${k}\\sqrt{x}`)} = ${ngTx([[qr(k, 2), ngX([-1, 2])]])} + C$`, v:4}, b4 = {t:`$${ngI(`${k}`)} = ${k} + C$`, v:5};
+  const wrong = R.shuffle([b1, b2, b3, b4]).slice(0, 3);
+  const o = {stem:`Trên khoảng $(0; +\\infty)$, đẳng thức nào sau đây <b>đúng</b>?`, ans:s1, wrong,
+    lg:`Theo công thức $${ngI('x^{\\alpha}')} = \\dfrac{x^{\\alpha + 1}}{\\alpha + 1} + C$ và tính chất của nguyên hàm, đẳng thức đúng là ${s1.t}.<br>Các đẳng thức còn lại sai vì đạo hàm vế phải khác hàm số dưới dấu nguyên hàm.`,
+    verify:()=> o.ans.v === 1 && ngIs(x=> k/(n + 1)*x**(n + 1), x=> k*x**n) && !ngIs(x=> k*n*x**(n - 1), x=> k*x**n)};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','f(x) = (x + a)(x − a): khai triển, họ nguyên hàm, nguyên hàm thoả F(0) = 0 và nhận xét nguyên hàm của tích khác tích các nguyên hàm', R=>{
+  const a = R.int(2, 6), x0 = R.pick([3, 6, 9]), f = nkP([[1, 2], [-a*a, 0]]), P = ngPr(f), v = ngVal(P, x0), w = v + 2*a*a*x0;
+  const Gp = x=> (x*x/2 + a*x)*(x*x/2 - a*x);
+  return {stem:`Cho hàm số $f(x) = (x + ${a})(x - ${a})$.`,
+    items:[claim(R, `$f(x) = ${ngTx(f)}$`, `$f(x) = ${ngTx(nkP([[1, 2], [a*a, 0]]))}$`, ()=> near((1.3 + a)*(1.3 - a), 1.69 - a*a, 1e-9), ()=> near((1.3 + a)*(1.3 - a), 1.69 + a*a, 1e-9)),
+      claim(R, `$${ngI('f(x)')} = ${ngTx(P)} + C$`, `$${ngI('f(x)')} = \\left(\\dfrac{x^{2}}{2} + ${a}x\\right)\\left(\\dfrac{x^{2}}{2} - ${a}x\\right) + C$`, ()=> ngIs(x=> ngVal(P, x), x=> ngVal(f, x)), ()=> ngIs(Gp, x=> ngVal(f, x))),
+      claim(R, `Hàm số $${ngTx(P)}${ngSg(a + 1)}$ là một nguyên hàm của $f(x)$`, `Hàm số $${ngTx(nkP([[1, 3], [-a*a, 1]]))}$ là một nguyên hàm của $f(x)$`, ()=> ngIs(x=> ngVal(P, x) + a + 1, x=> ngVal(f, x)), ()=> ngIs(x=> x**3 - a*a*x, x=> ngVal(f, x))),
+      claimN(R, m=> `Nguyên hàm $F(x)$ của $f(x)$ thoả $F(0) = 0$ có $F(${x0}) = ${m}$`, v, String(v), w, String(w), ()=> ngSi(x=> ngVal(f, x), 0, x0))],
+    lg:`a) Hằng đẳng thức: $(x + ${a})(x - ${a}) = x^{2} - ${a*a}$.<br>b) $${ngI('f(x)')} = ${ngTx(P)} + C$; nguyên hàm của tích không bằng tích các nguyên hàm.<br>c) Cộng thêm hằng số vẫn là nguyên hàm; còn $${ngTx(nkP([[1, 3], [-a*a, 1]]))}$ có đạo hàm $${ngTx(nkP([[3, 2], [-a*a, 0]]))}$, khác $f(x)$.<br>d) $F(0) = 0$ nên $C = 0$ và $F(${x0}) = ${x0**3/3} - ${a*a*x0} = ${v}$.`};
+});
+
+GD(12,3,0,'TH','Bảng công thức căn thức k√x, k/√x, k·x√x: lấy nguyên hàm sau khi viết x^(1/2), x^(−1/2), x^(3/2)', R=>{
+  const t = R.int(1, 4), k = 15*t;
+  return {stem:`Xét các họ nguyên hàm sau trên khoảng $(0; +\\infty)$.`,
+    items:[claim(R, `$${ngI(`${k}\\sqrt{x}`)} = ${10*t}x\\sqrt{x} + C$`, `$${ngI(`${k}\\sqrt{x}`)} = ${qT(qr(k, 2))}\\cdot\\dfrac{1}{\\sqrt{x}} + C$`, ()=> ngIs(x=> 10*t*x*Math.sqrt(x), x=> k*Math.sqrt(x)), ()=> ngIs(x=> k/2/Math.sqrt(x), x=> k*Math.sqrt(x))),
+      claim(R, `$${ngI(`\\dfrac{${k}}{\\sqrt{x}}`)} = ${2*k}\\sqrt{x} + C$`, `$${ngI(`\\dfrac{${k}}{\\sqrt{x}}`)} = ${qT(qr(k, 2))}\\sqrt{x} + C$`, ()=> ngIs(x=> 2*k*Math.sqrt(x), x=> k/Math.sqrt(x)), ()=> ngIs(x=> k/2*Math.sqrt(x), x=> k/Math.sqrt(x))),
+      claim(R, `$${ngI(`${k}x\\sqrt{x}`)} = ${6*t}x^{2}\\sqrt{x} + C$`, `$${ngI(`${k}x\\sqrt{x}`)} = ${qT(qr(3*k, 2))}\\sqrt{x} + C$`, ()=> ngIs(x=> 6*t*x*x*Math.sqrt(x), x=> k*x*Math.sqrt(x)), ()=> ngIs(x=> 1.5*k*Math.sqrt(x), x=> k*x*Math.sqrt(x))),
+      claim(R, `$${ngI(`\\dfrac{${k}}{x\\sqrt{x}}`)} = -\\dfrac{${2*k}}{\\sqrt{x}} + C$`, `$${ngI(`\\dfrac{${k}}{x\\sqrt{x}}`)} = \\dfrac{${2*k}}{\\sqrt{x}} + C$`, ()=> ngIs(x=> -2*k/Math.sqrt(x), x=> k/(x*Math.sqrt(x))), ()=> ngIs(x=> 2*k/Math.sqrt(x), x=> k/(x*Math.sqrt(x))))],
+    lg:`a) $\\sqrt{x} = x^{\\frac{1}{2}}$ nên $${ngI(`${k}x^{\\frac{1}{2}}`)} = ${k}\\cdot\\dfrac{2}{3}x^{\\frac{3}{2}} + C = ${10*t}x\\sqrt{x} + C$.<br>b) $\\dfrac{1}{\\sqrt{x}} = x^{-\\frac{1}{2}}$ nên kết quả là $${k}\\cdot 2x^{\\frac{1}{2}} + C = ${2*k}\\sqrt{x} + C$.<br>c) $x\\sqrt{x} = x^{\\frac{3}{2}}$ nên kết quả là $${k}\\cdot\\dfrac{2}{5}x^{\\frac{5}{2}} + C = ${6*t}x^{2}\\sqrt{x} + C$.<br>d) $\\dfrac{1}{x\\sqrt{x}} = x^{-\\frac{3}{2}}$ nên kết quả là $${k}\\cdot\\dfrac{x^{-\\frac{1}{2}}}{-\\frac{1}{2}} + C = -\\dfrac{${2*k}}{\\sqrt{x}} + C$.`};
+});
+
+GD(12,3,0,'TH','f(x) = a/x² + bx trên (0; +∞): nguyên hàm của a/x² mang dấu trừ, F(1) cho trước, tính F(2), dấu của F\'', R=>{
+  const t = R.int(1, 5), a = 2*t, b = R.pick([2, 4, 6, -2, -4]), c = R.nz(-6, 6), f = [[a, ngX(-2)], [b, ngX(1)]], P = ngPr(f), Pv = x=> ngVal(P, x), Fn = x=> Pv(x) - Pv(1) + c, v = Fn(2), w = v + a; if(Pv(1) === 0) return null;
+  return {stem:`Cho hàm số $f(x) = ${ngTx(f)}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(1) = ${c}$.`,
+    items:[claim(R, `$${ngI(`\\dfrac{${a}}{x^{2}}`)} = -\\dfrac{${a}}{x} + C$`, `$${ngI(`\\dfrac{${a}}{x^{2}}`)} = \\dfrac{${a}}{x} + C$`, ()=> ngIs(x=> -a/x, x=> a/x/x), ()=> ngIs(x=> a/x, x=> a/x/x)),
+      claim(R, `$F(x) = ${ngTx(P)}${ngSg(ngRd(c - Pv(1)))}$`, `$F(x) = ${ngTx(P)}${ngSg(c)}$`, ()=> near(Pv(1) + (c - Pv(1)), c, 1e-9), ()=> near(Pv(1) + c, c, 1e-9)),
+      claimN(R, m=> `$F(2) = ${m}$`, v, qT(qr(Math.round(v*2), 2)), w, qT(qr(Math.round(w*2), 2)), ()=> ngSi(x=> ngVal(f, x), 1, 2) + c),
+      claimN(R, m=> `$F'(1) = ${m}$`, a + b, String(a + b), c, String(c), ()=> ngRd(ngDf(Fn, 1)))],
+    lg:`a) $${ngI('x^{-2}')} = -x^{-1} + C$ nên $${ngI(`\\dfrac{${a}}{x^{2}}`)} = -\\dfrac{${a}}{x} + C$.<br>b) $F(x) = ${ngTx(P)} + C$. Từ $F(1) = ${c}$ suy ra $C = ${ngRd(c - Pv(1))}$.<br>c) $F(2) = ${qT(qr(Math.round(Pv(2)*2), 2))}${ngSg(ngRd(c - Pv(1)))} = ${qT(qr(Math.round(v*2), 2))}$.<br>d) $F'(1) = f(1) = ${a + b}$.`};
+});
+
+GD(12,3,0,'VD','f(x) = (x² + a)/x²: tách thành 1 + a/x², nguyên hàm, nguyên hàm thoả F(1) = 0, giá trị tại x = 2 và tính đơn điệu khi a > 0', R=>{
+  const a = 2*R.int(1, 6), f = [[1, ngX(0)], [a, ngX(-2)]], P = ngPr(f), Pv = x=> ngVal(P, x), C = -Pv(1), Fn = x=> Pv(x) + C, v = Fn(2), w = v + 2;
+  return {stem:`Cho hàm số $f(x) = \\dfrac{x^{2} + ${a}}{x^{2}}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(1) = 0$.`,
+    items:[claim(R, `$f(x) = ${ngTx(f)}$`, `$f(x) = x^{2} + ${qT(qr(a, 2))}$`, ()=> near((1.21 + a)/1.21, 1 + a/1.21, 1e-9), ()=> near((1.21 + a)/1.21, 1.21 + a/2, 1e-9)),
+      claim(R, `$F(x) = x - \\dfrac{${a}}{x}${ngSg(C)}$`, `$F(x) = x + \\dfrac{${a}}{x}${ngSg(-1 - a)}$`, ()=> ngIs(Fn, x=> ngVal(f, x)) && near(Fn(1), 0, 1e-9), ()=> ngIs(x=> x + a/x - 1 - a, x=> ngVal(f, x))),
+      claimN(R, m=> `$F(2) = ${m}$`, v, String(v), w, String(w), ()=> ngSi(x=> ngVal(f, x), 1, 2)),
+      claim(R, `Hàm số $F(x)$ đồng biến trên $(0; +\\infty)$`, `Hàm số $F(x)$ nghịch biến trên $(0; +\\infty)$`, ()=> [0.2, 1, 5].every(x=> ngVal(f, x) > 0), ()=> [0.2, 1, 5].every(x=> ngVal(f, x) < 0))],
+    lg:`a) Chia từng số hạng: $f(x) = 1 + \\dfrac{${a}}{x^{2}}$.<br>b) $F(x) = x - \\dfrac{${a}}{x} + C$; $F(1) = 0$ cho $1 - ${a} + C = 0$, tức $C = ${C}$.<br>c) $F(2) = 2 - ${a/2}${ngSg(C)} = ${v}$.<br>d) $F'(x) = f(x) > 0$ với mọi $x > 0$ nên $F$ đồng biến trên $(0; +\\infty)$.`};
+});
+
+GD(12,3,0,'VD','Hai cách lấy nguyên hàm (ax + b)²: khai triển được F, nhận ra G = (ax + b)³/(3a) rồi so sánh, hằng số G − F = b³/(3a)', R=>{
+  const a = R.pick([2, 3]), t = R.nz(-3, 3), b = t*R.pick([3, 6].filter(z=> z % a === 0).concat([6])), f = x=> (a*x + b)**2, Fc = nkP([[a*a, 2], [2*a*b, 1], [b*b, 0]]), P = ngPr(Fc), Pn = x=> ngVal(P, x), Gn = x=> (a*x + b)**3/(3*a), dv = b**3/(3*a);
+  if(!Number.isInteger(dv) || Math.abs(dv) > 999) return null;
+  return {stem:`Cho hàm số $f(x) = (${nkL(a, b)})^{2}$ và các hàm số $F(x) = ${ngTx(P)}$, $G(x) = \\dfrac{(${nkL(a, b)})^{3}}{${3*a}}$.`,
+    items:[claim(R, `$F(x)$ là một nguyên hàm của $f(x)$`, `$F(x)$ là một nguyên hàm của $${ngTx(nkP([[a, 2], [b, 0]]))}$`, ()=> ngIs(Pn, f), ()=> ngIs(Pn, x=> a*x*x + b)),
+      claim(R, `$G'(x) = f(x)$`, `$G'(x) = ${a}f(x)$`, ()=> ngIs(Gn, f), ()=> ngIs(Gn, x=> a*f(x))),
+      claim(R, `$\\dfrac{(${nkL(a, b)})^{3}}{3}$ không là nguyên hàm của $f(x)$`, `$\\dfrac{(${nkL(a, b)})^{3}}{3}$ là một nguyên hàm của $f(x)$`, ()=> !ngIs(x=> (a*x + b)**3/3, f), ()=> ngIs(x=> (a*x + b)**3/3, f)),
+      claimN(R, m=> `$G(x) - F(x) = ${m}$ với mọi $x$`, dv, String(dv), -dv, String(-dv), ()=> Gn(1.3) - Pn(1.3))],
+    lg:`a) $F'(x) = ${ngTx(Fc)} = (${nkL(a, b)})^{2}$.<br>b) $G'(x) = \\dfrac{3(${nkL(a, b)})^{2}\\cdot ${a}}{${3*a}} = (${nkL(a, b)})^{2} = f(x)$.<br>c) Đạo hàm của $\\dfrac{(${nkL(a, b)})^{3}}{3}$ là $${a}(${nkL(a, b)})^{2}$, khác $f(x)$.<br>d) $F$, $G$ cùng là nguyên hàm của $f$ nên sai khác hằng số; tại $x = 0$: $G(0) - F(0) = \\dfrac{${b < 0 ? `(${b})` : b}^{3}}{${3*a}} = ${dv}$.`};
+});
+
+GD(12,3,0,'TH','f(x) = (√x + a)²: khai triển x + 2a√x + a², họ nguyên hàm, giá trị F(4) khi F(0) = 0 và kiểm tra F\'(4)', R=>{
+  const t = R.nz(-3, 3), a = 3*t, f = [[1, ngX(1)], [2*a, ngX([1, 2])], [a*a, ngX(0)]], P = ngPr(f), Pv = x=> ngVal(P, x), v = Pv(4), f4 = (2 + a)**2;
+  if(!Number.isInteger(ngRd(v))) return null;
+  return {stem:`Cho hàm số $f(x) = (\\sqrt{x}${ngSg(a)})^{2}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = 0$ (coi $F$ liên tục tại $0$).`,
+    items:[claim(R, `$f(x) = ${ngTx(f)}$`, `$f(x) = x + ${a*a}$`, ()=> near((Math.sqrt(2) + a)**2, ngVal(f, 2), 1e-9), ()=> near((Math.sqrt(2) + a)**2, 2 + a*a, 1e-9)),
+      claim(R, `$F(x) = ${ngTx(P)}$`, `$F(x) = ${ngTx([P[0], [2*a, ngX([3, 2])], P[2]])}$`, ()=> ngIs(Pv, x=> ngVal(f, x)), ()=> ngIs(x=> ngVal([P[0], [2*a, ngX([3, 2])], P[2]], x), x=> ngVal(f, x))),
+      claimN(R, m=> `$F(4) = ${m}$`, ngRd(v), String(ngRd(v)), ngRd(v) + 4, String(ngRd(v) + 4), ()=> ngRd(Pv(4))),
+      claimN(R, m=> `$F'(4) = ${m}$`, f4, String(f4), 4 + a*a, String(4 + a*a), ()=> ngRd(ngDf(Pv, 4)))],
+    lg:`a) Khai triển: $(\\sqrt{x}${ngSg(a)})^{2} = x${ngSg(2*a)}\\sqrt{x} + ${a*a}$.<br>b) Lấy nguyên hàm từng số hạng, $${ngI(`${Math.abs(2*a)}\\sqrt{x}`)} = ${Math.abs(4*a/3)}x\\sqrt{x} + C$, và $F(0) = 0$ nên $C = 0$: $F(x) = ${ngTx(P)}$.<br>c) $F(4) = 8${ngSg(ngRd(4*a/3*8))} + ${4*a*a} = ${ngRd(v)}$.<br>d) $F'(4) = f(4) = (2${ngSg(a)})^{2} = ${f4}$.`};
+});
+
+GD(12,3,0,'TH','Nguyên hàm tổng quát của xⁿ, x⁻ⁿ, căn bậc ba: kiểm tra từng công thức có tham số, bẫy trường hợp số mũ', R=>{
+  const n = R.int(2, 6), a = R.int(2, 7), m = R.int(2, 5);
+  return {stem:`Xét các đẳng thức sau trên khoảng $(0; +\\infty)$, với $C$ là hằng số.`,
+    items:[claim(R, `$${ngI(`${a}x^{${n}}`)} = ${ngTx([[qr(a, n + 1), ngX(n + 1)]])} + C$`, `$${ngI(`${a}x^{${n}}`)} = ${ngTx([[qr(a, n), ngX(n + 1)]])} + C$`, ()=> ngIs(x=> a/(n + 1)*x**(n + 1), x=> a*x**n), ()=> ngIs(x=> a/n*x**(n + 1), x=> a*x**n)),
+      claim(R, `$${ngI(`x^{-${m}}`)} = ${qT(qr(-1, m - 1))}x^{-${m - 1}} + C$`.replace('-1x', '-x').replace('{1}{1}x', ''), `$${ngI(`x^{-${m}}`)} = ${qT(qr(1, m + 1))}x^{-${m + 1}} + C$`, ()=> ngIs(x=> -1/(m - 1)*x**(1 - m), x=> x**(-m)), ()=> ngIs(x=> 1/(m + 1)*x**(-m - 1), x=> x**(-m))),
+      claim(R, `$${ngI(`\\sqrt[3]{x}`)} = \\dfrac{3}{4}x\\sqrt[3]{x} + C$`, `$${ngI(`\\sqrt[3]{x}`)} = \\dfrac{1}{3}x\\sqrt[3]{x} + C$`, ()=> ngIs(x=> 0.75*x*Math.cbrt(x), x=> Math.cbrt(x)), ()=> ngIs(x=> x*Math.cbrt(x)/3, x=> Math.cbrt(x))),
+      claim(R, `$${ngI(`${a}`)} = ${a}x + C$`, `$${ngI(`${a}`)} = ${a} + C$`, ()=> ngIs(x=> a*x, ()=> a), ()=> ngIs(()=> a, ()=> a))],
+    lg:`a) Theo công thức, $${ngI(`x^{${n}}`)} = \\dfrac{x^{${n + 1}}}{${n + 1}} + C$, nhân với $${a}$.<br>b) Với $\\alpha = -${m}$ thì $\\alpha + 1 = -${m - 1}$, nên kết quả là $\\dfrac{x^{-${m - 1}}}{-${m - 1}} + C$.<br>c) $\\sqrt[3]{x} = x^{\\frac{1}{3}}$ nên kết quả là $\\dfrac{3}{4}x^{\\frac{4}{3}} + C = \\dfrac{3}{4}x\\sqrt[3]{x} + C$.<br>d) Đạo hàm của $${a}x$ bằng $${a}$ nên $${ngI(`${a}`)} = ${a}x + C$.`.replace(/x\^\{-1\}/g, 'x^{-1}')};
+});
+
+GD(12,3,0,'VD','f(x) = (x³ − a³)/(x − a) trên (a; +∞) với a > 0: rút gọn, nguyên hàm, F(0) không xác định theo công thức ban đầu, giá trị trên khoảng', R=>{
+  const a = R.int(1, 4), f = nkP([[1, 2], [a, 1], [a*a, 0]]), P = ngPr(f), Pv = x=> ngVal(P, x), x0 = a + 3, c = R.nz(-6, 6), I = Pv(x0) - Pv(a + 1), v = Math.round((I + c)*6)/6, w = v + a*a;
+  const vT = qT(qr(Math.round(v*6), 6)), wT = qT(qr(Math.round(w*6), 6));
+  return {stem:`Cho hàm số $f(x) = \\dfrac{x^{3} - ${a**3}}{${nkL(1, -a)}}$ trên khoảng $(${a}; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(${a + 1}) = ${c}$.`,
+    items:[claim(R, `$f(x) = ${ngTx(f)}$ với mọi $x > ${a}$`, `$f(x) = ${ngTx(nkP([[1, 2], [-a, 1], [a*a, 0]]))}$ với mọi $x > ${a}$`, ()=> near((8**3 - a**3)/(8 - a), ngVal(f, 8), 1e-9), ()=> near((8**3 - a**3)/(8 - a), 64 - 8*a + a*a, 1e-9)),
+      claim(R, `$${ngI('f(x)')} = ${ngTx(P)} + C$`, `$${ngI('f(x)')} = ${ngTx(nkP([[1, 3], [a, 2], [a*a, 1]]))} + C$`, ()=> ngIs(Pv, x=> ngVal(f, x)), ()=> ngIs(x=> x**3 + a*x*x + a*a*x, x=> ngVal(f, x))),
+      claim(R, `$f(x) > 0$ với mọi $x > ${a}$ nên $F$ đồng biến trên $(${a}; +\\infty)$`, `$F$ nghịch biến trên $(${a}; +\\infty)$`, ()=> [a + 0.1, a + 2, a + 9].every(x=> ngVal(f, x) > 0), ()=> [a + 0.1, a + 2].every(x=> ngVal(f, x) < 0)),
+      claimN(R, m=> `$F(${x0}) = ${m}$`, v, vT, w, wT, ()=> ngSi(x=> ngVal(f, x), a + 1, x0) + c)],
+    lg:`a) $x^{3} - ${a**3} = (${nkL(1, -a)})(${ngTx(f)})$, rút gọn với $x > ${a}$.<br>b) Lấy nguyên hàm từng số hạng.<br>c) $f(x) = ${ngTx(f)} > 0$ với mọi $x > ${a}$ vì các hệ số dương, nên $F$ đồng biến.<br>d) Với $G(x) = ${ngTx(P)}$ thì $F(x) = G(x) + C$ và $F(${x0}) - F(${a + 1}) = G(${x0}) - G(${a + 1}) = ${qT(qr(Math.round(I*6), 6))}$ nên $F(${x0}) = ${vT}$.`};
+});
+
+GD(12,3,0,'TH','F(x) = x³/3 + ax² + a²x và G(x) = (x + a)³/3: cùng là nguyên hàm của (x + a)², hiệu bằng a³/3; giá trị tại 0 và tại 1', R=>{
+  const a = 3*R.nz(-2, 2), P = nkP([[1, 3]]).length ? [[qr(1, 3), ngX(3)], [a, ngX(2)], [a*a, ngX(1)]] : 0, Pv = x=> ngVal(P, x), Gn = x=> (x + a)**3/3, f = x=> (x + a)**2, d = a**3/3, v1 = ngRd(Pv(3)), w1 = v1 + a;
+  return {stem:`Cho các hàm số $F(x) = ${ngTx(P)}$ và $G(x) = \\dfrac{(${nkL(1, a)})^{3}}{3}$.`,
+    items:[claim(R, `$F'(x) = (${nkL(1, a)})^{2}$`, `$F'(x) = x^{2} + ${a*a}$`, ()=> ngIs(Pv, f), ()=> ngIs(Pv, x=> x*x + a*a)),
+      claim(R, `$G(x)$ cũng là một nguyên hàm của $(${nkL(1, a)})^{2}$`, `$G(x)$ không là nguyên hàm của $(${nkL(1, a)})^{2}$`, ()=> ngIs(Gn, f), ()=> !ngIs(Gn, f)),
+      claimN(R, m=> `$G(x) - F(x) = ${m}$ với mọi $x$`, d, String(d), -d, String(-d), ()=> Gn(0.7) - Pv(0.7)),
+      claimN(R, m=> `$F(3) = ${m}$`, v1, String(v1), w1, String(w1), ()=> ngRd(ngSi(f, 0, 3)))],
+    lg:`a) $F'(x) = x^{2}${ngSx(2*a)} + ${a*a} = (${nkL(1, a)})^{2}$.<br>b) $G'(x) = \\dfrac{3(${nkL(1, a)})^{2}}{3} = (${nkL(1, a)})^{2}$.<br>c) $G$ và $F$ sai khác hằng số; tại $x = 0$: $G(0) - F(0) = \\dfrac{${ngPa(a)}^{3}}{3} = ${d}$.<br>d) $F(3) = 9 + ${ngPa(9*a)} + ${3*a*a} = ${v1}$.`};
+});
+
+GD(12,3,0,'TH','f(x) = x²(x − a): nhân vào thành x³ − ax², họ nguyên hàm, nguyên hàm thoả F(0) = 0 có giá trị tại a, tính F\'(−1)', R=>{
+  const t = R.pick([1, 2]), k = R.pick([1, 2, 4]), a = 3*t, f = nkP([[k, 3], [-k*a, 2]]), P = ngPr(f), Pv = x=> ngVal(P, x), v = Math.round(Pv(a)*4)/4, w = v + k*a, fm = -k - k*a;
+  const qv1 = qr(Math.round(v*4), 4), qw1 = qr(Math.round(w*4), 4), l = x=> k*x*x*(x - a);
+  return {stem:`Cho hàm số $f(x) = ${k === 1 ? '' : k}x^{2}(x - ${a})$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claim(R, `$f(x) = ${ngTx(f)}$`, `$f(x) = ${ngTx(nkP([[k, 3], [-k*a, 1]]))}$`, ()=> near(l(1.3), ngVal(f, 1.3), 1e-9), ()=> near(l(1.3), k*1.3**3 - k*a*1.3, 1e-9)),
+      claim(R, `$F(x) = ${ngTx(P)}$`, `$F(x) = ${ngTx(ngPr(nkP([[k, 2]])))}\\cdot ${k === 1 ? '' : ''}\\left(\\dfrac{x^{2}}{2} - ${a}x\\right)$`, ()=> ngIs(Pv, l), ()=> ngIs(x=> k*x**3/3*(x*x/2 - a*x), l)),
+      claimN(R, m=> `$F(${a}) = ${m}$`, v, qT(qv1), w, qT(qw1), ()=> ngSi(l, 0, a)),
+      claimN(R, m=> `$F'(-1) = ${m}$`, fm, String(fm), -fm, String(-fm), ()=> ngRd(ngDf(Pv, -1)))],
+    lg:`a) Nhân vào: $f(x) = ${ngTx(f)}$.<br>b) Lấy nguyên hàm từng số hạng, $F(0) = 0$ nên $C = 0$: $F(x) = ${ngTx(P)}$. Nguyên hàm của tích không bằng tích các nguyên hàm.<br>c) $F(${a}) = ${qT(qv1)}$.<br>d) $F'(-1) = f(-1) = ${fm}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','Nguyên hàm của (x² + ax + b)(x + c) có hệ số của x bằng bc và hệ số của x² bằng (ac + b)/2: khai triển đúng phần cần, tính tổng hai hệ số', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-6, 6), c = R.nz(-5, 5), s2 = (a*c + b)/2, s1 = b*c, v = s2 + s1; if(!Number.isInteger(2*v) || !(a*c + b)) return null;
+  const co = [1, a + c, a*c + b, b*c], F = x=> x**4/4 + co[1]*x**3/3 + co[2]*x**2/2 + co[3]*x;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = (${ngTx(nkP([[1, 2], [a, 1], [b, 0]]))})(${nkL(1, c)})$. Tính tổng hệ số của $x^{2}$ và hệ số của $x$ trong đa thức $F(x)$ (viết dạng thập phân nếu cần).`, ans:v,
+    lg:`Khai triển: $f(x) = ${ngTx(nkP([[1, 3], [a + c, 2], [a*c + b, 1], [b*c, 0]]))}$.<br>Trong $F(x)$, hệ số của $x^{2}$ là $${qT(qr(a*c + b, 2))}$, hệ số của $x$ là $${b*c}$. Tổng bằng $${nt(v)}$.`,
+    verify:()=> near(o.ans, (F(1) + F(-1))/2 + (F(1) - F(-1))/2 - 0.25 - co[1]/3, 1e-9) && ngIs(F, x=> (x*x + a*x + b)*(x + c))};
+  return o;
+});
+
+GT(12,3,0,'TH','∫(ax + b)²dx = mx³ + nx² + px + C với a chia hết cho 3: đồng nhất, tính m + n + p', R=>{
+  const a = R.pick([3, -3, 6, -6]), b = R.nz(-9, 9), m = a*a/3, n = a*b, p = b*b, v = m + n + p; if(String(v).length > 4) return null;
+  const F = x=> m*x**3 + n*x*x + p*x;
+  const o = {stem:`Biết $${ngI(`(${nkL(a, b)})^{2}`)} = mx^{3} + nx^{2} + px + C$ với $m$, $n$, $p$ là các số thực. Tính $m + n + p$.`, ans:v,
+    lg:`Khai triển: $(${nkL(a, b)})^{2} = ${ngTx(nkP([[a*a, 2], [2*a*b, 1], [b*b, 0]]))}$.<br>Lấy nguyên hàm: $m = ${m}$, $n = ${n}$, $p = ${p}$.<br>Vậy $m + n + p = ${v}$.`,
+    verify:()=> near(o.ans, F(1), 1e-9) && ngIs(F, x=> (a*x + b)**2)};
+  return o;
+});
+
+GT(12,3,0,'TH','∫(x + a)(x − b)dx = x³/3 + mx² + nx + C: khai triển, tính 2m + n', R=>{
+  const a = R.int(-9, 9), b = R.int(-9, 9); if(!a || !b || a === b || a + b === 0) return null;
+  const m = (a - b)/2, n = -a*b, v = 2*m + n;
+  const F = x=> x**3/3 + m*x*x + n*x;
+  const o = {stem:`Biết $${ngI(`(${nkL(1, a)})(${nkL(1, -b)})`)} = \\dfrac{x^{3}}{3} + mx^{2} + nx + C$ với $m$, $n$ là các số thực. Tính $2m + n$.`, ans:v,
+    lg:`Khai triển: $(${nkL(1, a)})(${nkL(1, -b)}) = ${ngTx(nkP([[1, 2], [a - b, 1], [-a*b, 0]]))}$.<br>Lấy nguyên hàm: $m = ${qT(qr(a - b, 2))}$, $n = ${n}$.<br>Vậy $2m + n = ${v}$.`,
+    verify:()=> near(o.ans, 2*m + n, 1e-12) && ngIs(F, x=> (x + a)*(x - b))};
+  return o;
+});
+
+GT(12,3,0,'TH','∫√x(ax + b)dx = m·x²√x + n·x√x + C với a chia hết cho 5, b chia hết cho 3: tính m + n', R=>{
+  const s = R.nz(-5, 5), t = R.nz(-5, 5), a = 5*s, b = 3*t, m = 2*s, n = 2*t, v = m + n;
+  const F = x=> m*x*x*Math.sqrt(x) + n*x*Math.sqrt(x);
+  const o = {stem:`Biết $${ngI(`\\sqrt{x}(${nkL(a, b)})`)} = mx^{2}\\sqrt{x} + nx\\sqrt{x} + C$ trên khoảng $(0; +\\infty)$, với $m$, $n$ là các số thực. Tính $m + n$.`, ans:v,
+    lg:`$\\sqrt{x}(${nkL(a, b)}) = ${a}x^{\\frac{3}{2}}${ngSg(b)}x^{\\frac{1}{2}}$.<br>Lấy nguyên hàm: $m = ${a}\\cdot\\dfrac{2}{5} = ${m}$, $n = ${b}\\cdot\\dfrac{2}{3} = ${n}$.<br>Vậy $m + n = ${v}$.`,
+    verify:()=> near(o.ans, m + n, 1e-12) && ngIs(F, x=> Math.sqrt(x)*(a*x + b))};
+  return o;
+});
+
+GT(12,3,0,'TH','∫(ax + b)/√x dx = m·x√x + n√x + C: tách phân số, tính 3m + n', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), m = 2*a/3, n = 2*b, v = 2*a + 2*b;
+  const F = x=> m*x*Math.sqrt(x) + n*Math.sqrt(x);
+  const o = {stem:`Biết $${ngI(`\\dfrac{${nkL(a, b)}}{\\sqrt{x}}`)} = mx\\sqrt{x} + n\\sqrt{x} + C$ trên khoảng $(0; +\\infty)$, với $m$, $n$ là các số thực. Tính $3m + n$.`, ans:v,
+    lg:`$\\dfrac{${nkL(a, b)}}{\\sqrt{x}} = ${ngTx([[a, ngX([1, 2])], [b, ngX([-1, 2])]])}$.<br>Lấy nguyên hàm: $m = ${qT(qr(2*a, 3))}$, $n = ${n}$.<br>Vậy $3m + n = ${v}$.`,
+    verify:()=> near(o.ans, 3*m + n, 1e-9) && ngIs(F, x=> (a*x + b)/Math.sqrt(x))};
+  return o;
+});
+
+GT(12,3,0,'TH','∫(ax³ + b)/x² dx = mx² + n/x + C trên (0; +∞): chia cho x² rồi đồng nhất, tính m + n', R=>{
+  const a = 2*R.nz(-6, 6), b = R.nz(-9, 9), m = a/2, n = -b, v = m + n;
+  const F = x=> m*x*x + n/x;
+  const o = {stem:`Biết $${ngI(`\\dfrac{${ngTx(nkP([[a, 3], [b, 0]]))}}{x^{2}}`)} = mx^{2} + \\dfrac{n}{x} + C$ trên khoảng $(0; +\\infty)$, với $m$, $n$ là các số thực. Tính $m + n$.`, ans:v,
+    lg:`$\\dfrac{${ngTx(nkP([[a, 3], [b, 0]]))}}{x^{2}} = ${ngTx([[a, ngX(1)], [b, ngX(-2)]])}$.<br>Lấy nguyên hàm: $m = ${m}$, $n = ${n}$ (vì $${ngI('x^{-2}')} = -\\dfrac{1}{x} + C$).<br>Vậy $m + n = ${v}$.`,
+    verify:()=> near(o.ans, m + n, 1e-12) && ngIs(F, x=> (a*x**3 + b)/x/x)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k∛x thoả F(0) = c: tính F(8) (căn bậc ba đẹp tại x = 8)', R=>{
+  const k = R.nz(-9, 9), c = R.int(-9, 9), v = 12*k + c;
+  const f = x=> k*Math.cbrt(x);
+  const o = {stem:`Cho hàm số $f(x) = ${k === 1 ? '' : k === -1 ? '-' : k}\\sqrt[3]{x}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$, liên tục tại $x = 0$, thoả mãn $F(0) = ${c}$. Tính $F(8)$.`, ans:v,
+    lg:`$\\sqrt[3]{x} = x^{\\frac{1}{3}}$ nên $F(x) = ${ngTx([[qm(k, qr(3, 4)), ngX([4, 3])]])}${c ? ngSg(c) : ''}$.<br>Vì $8^{\\frac{4}{3}} = 2^{4} = 16$ nên $F(8) = ${ngPa(k)}\\cdot\\dfrac{3}{4}\\cdot 16${c ? ngSg(c) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngRd(ngSi(f, 1e-9, 8, 20000) + c), 2e-3)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của 3k√x thoả F(0) = c: tính F(4) (2/3 triệt tiêu với hệ số)', R=>{
+  const k = R.nz(-9, 9), c = R.int(-9, 9), v = 16*k + c;
+  const Fn = x=> 2*k*x*Math.sqrt(x) + c;
+  const o = {stem:`Cho hàm số $f(x) = ${3*k}\\sqrt{x}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$, liên tục tại $x = 0$, thoả mãn $F(0) = ${c}$. Tính $F(4)$.`, ans:v,
+    lg:`$${ngI(`\\left(${3*k}x^{\\frac{1}{2}}\\right)`)} = ${ngTx([[2*k, ngX([3, 2])]])} + C$. Từ $F(0) = ${c}$ có $C = ${c}$.<br>$F(4) = ${ngPa(2*k)}\\cdot 8${c ? ngSg(c) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, Fn(4), 1e-9) && ngIs(Fn, x=> 3*k*Math.sqrt(x))};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k/√x thoả F(1) = c: tính F(9) (F(x) = 2k√x + C, số mũ −1/2)', R=>{
+  const k = R.nz(-9, 9), c = R.int(-9, 9), v = 4*k + c;
+  const Fn = x=> 2*k*Math.sqrt(x) - 2*k + c;
+  const o = {stem:`Cho hàm số $f(x) = ${k < 0 ? `-\\dfrac{${-k}}` : `\\dfrac{${k}}`}{\\sqrt{x}}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(1) = ${c}$. Tính $F(9)$.`, ans:v,
+    lg:`$F(x) = ${2*k}\\sqrt{x} + C$. Từ $F(1) = ${c}$ có $C = ${c - 2*k}$.<br>$F(9) = ${ngPa(2*k)}\\cdot 3${ngSg(c - 2*k)} = ${v}$.`,
+    verify:()=> near(o.ans, Fn(9), 1e-9) && ngIs(Fn, x=> k/Math.sqrt(x)) && near(Fn(1), c, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của a/x² thoả F(1) = b: tính F(2) (bẫy dấu của −a/x)', R=>{
+  const t = R.nz(-9, 9), a = 2*t, b = R.int(-9, 9), v = t + b;
+  const Fn = x=> -a/x + a + b;
+  const o = {stem:`Cho hàm số $f(x) = ${a < 0 ? `-\\dfrac{${-a}}` : `\\dfrac{${a}}`}{x^{2}}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(1) = ${b}$. Tính $F(2)$.`, ans:v,
+    lg:`$F(x) = ${a < 0 ? `\\dfrac{${-a}}` : `-\\dfrac{${a}}`}{x} + C$. Từ $F(1) = ${b}$ có $C = ${a + b}$.<br>$F(2) = ${-t}${ngSg(a + b)} = ${v}$.`.replace('+ 0$', '$').replace('= 0 + ', '= '),
+    verify:()=> near(o.ans, ngSi(x=> a/x/x, 1, 2) + b, 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','F(1) − F(−1) với F là nguyên hàm của đa thức bậc ba: chỉ số hạng bậc chẵn của f đóng góp (bậc lẻ của F triệt tiêu đối xứng)', R=>{
+  const a = R.nz(-9, 9), t = R.nz(-5, 5), b = 3*t, c = R.nz(-9, 9), d = R.nz(-9, 9), v = 2*(t + d), f = nkP([[a, 3], [b, 2], [c, 1], [d, 0]]);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Tính $F(1) - F(-1)$.`, ans:v,
+    lg:`$F(x) = ${ngTx(ngPr(f))} + C$.<br>Các số hạng bậc chẵn của $F$ có giá trị bằng nhau tại $x = 1$ và $x = -1$ nên triệt tiêu; chỉ còn số hạng bậc lẻ: $F(1) - F(-1) = 2\\left(${t}${ngSg(d)}\\right) = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> ngVal(f, x), -1, 1), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = x³ + ax² + bx là một nguyên hàm của f, biết f(x) = 0 có hai nghiệm p, q: viết f = 3(x − p)(x − q) rồi đồng nhất, tính a + b', R=>{
+  const p = R.int(-5, 5), s = R.pick([2, 4, 6]), q = p + s, a = -3*(p + q)/2, b = 3*p*q, v = a + b; if(!Number.isInteger(a) || !p || !q) return null;
+  const f = x=> 3*x*x + 2*a*x + b;
+  const o = {stem:`Biết $F(x) = x^{3} + ax^{2} + bx$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$ và phương trình $f(x) = 0$ có hai nghiệm $x = ${p}$, $x = ${q}$. Tính $a + b$.`, ans:v,
+    lg:`$f(x) = F'(x) = 3x^{2} + 2ax + b$. Hai nghiệm $${p}$, $${q}$ nên theo định lí Vi-ét: $-\\dfrac{2a}{3} = ${p + q}$, $\\dfrac{b}{3} = ${p*q}$.<br>Do đó $a = ${a}$, $b = ${b}$ và $a + b = ${v}$.`,
+    verify:()=> near(f(p), 0, 1e-9) && near(f(q), 0, 1e-9) && near(o.ans, a + b, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của (x² − a²)/(x + a) trên (−a; +∞) thoả F(0) = c: rút gọn thành x − a rồi tính F(x₀)', R=>{
+  const a = R.int(1, 9), x0 = R.pick([2, 4, 6, 8]), c = R.int(-9, 9), v = x0*x0/2 - a*x0 + c;
+  const f = x=> (x*x - a*a)/(x + a);
+  const o = {stem:`Cho hàm số $f(x) = \\dfrac{x^{2} - ${a*a}}{x + ${a}}$ trên khoảng $(-${a}; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$. Tính $F(${x0})$.`, ans:v,
+    lg:`Với $x > -${a}$: $f(x) = x - ${a}$. Do đó $F(x) = \\dfrac{x^{2}}{2} - ${a}x + C$, và $F(0) = ${c}$ cho $C = ${c}$.<br>$F(${x0}) = ${x0*x0/2} - ${a*x0}${c ? ngSg(c) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(f, 0, x0) + c, 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','∫(√x − a)(√x + a)/√x dx: rút gọn thành √x − a²/√x, nguyên hàm F có F(0) = 0, tính F(9)', R=>{
+  const a = R.int(1, 5), k = R.pick([1, 2, 3, 4, 5, 6, 7]), v = k*(18 - 6*a*a);
+  const f = x=> k*(x - a*a)/Math.sqrt(x), Fn = x=> k*(2/3*x*Math.sqrt(x) - 2*a*a*Math.sqrt(x));
+  const o = {stem:`Cho hàm số $f(x) = \\dfrac{${k === 1 ? '' : k}(\\sqrt{x} - ${a})(\\sqrt{x} + ${a})}{\\sqrt{x}}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$, liên tục tại $x = 0$, thoả mãn $F(0) = 0$. Tính $F(9)$.`, ans:v,
+    lg:`$f(x) = ${k === 1 ? '' : k}\\cdot\\dfrac{x - ${a*a}}{\\sqrt{x}} = ${ngTx([[k, ngX([1, 2])], [-k*a*a, ngX([-1, 2])]])}$.`.replace('= \\cdot', '= ') + `<br>$F(x) = ${ngTx(ngPr([[k, ngX([1, 2])], [-k*a*a, ngX([-1, 2])]]))}$ (hằng số bằng $0$ vì $F(0) = 0$).<br>$F(9) = ${18*k} - ${6*k*a*a} = ${v}$.`,
+    verify:()=> near(o.ans, Fn(9), 1e-9) && ngIs(Fn, f)};
+  return o;
+});
+
+GT(12,3,0,'VD','f là đa thức chứa toàn bậc chẵn, F(0) = k: F(x) + F(−x) = 2k với mọi x (nguyên hàm trừ đi hằng số là hàm lẻ)', R=>{
+  const a = R.nz(-5, 5)*5, b = R.nz(-5, 5)*3, c = R.nz(-9, 9), k = R.int(-30, 30), x0 = R.int(2, 7), f = nkP([[a, 4], [b, 2], [c, 0]]), P = ngPr(f), v = 2*k;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${k}$. Tính $F(${x0}) + F(-${x0})$.`, ans:v,
+    lg:`$F(x) = ${ngTx(P)}${k ? ngSg(k) : ''}$. Phần đa thức chỉ gồm các luỹ thừa bậc lẻ nên đổi dấu khi thay $x$ bởi $-x$.<br>Do đó $F(${x0}) + F(-${x0}) = 2\\cdot ${ngPa(k)} = ${v}$.`,
+    verify:()=> near(o.ans, ngVal(P, x0) + ngVal(P, -x0) + 2*k, 1e-9)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.3 Nguyên hàm của hàm số lượng giác — số 131–171 (17 TN, 9 Đ–S, 15 TLN).
+   Chỉ dùng ∫sin x, ∫cos x, ∫1/cos²x, ∫1/sin²x; biểu thức phức tạp phải biến đổi về các dạng đó (hằng đẳng thức, công thức nhân đôi, hạ bậc đúng x/2) hoặc kiểm tra bằng đạo hàm. Chuỗi: công thức → biến đổi → rút gọn trên khoảng → giá trị tại góc đặc biệt. */
+const lgS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const lgX = [[0, '0'], [Math.PI/6, '\\dfrac{\\pi}{6}'], [Math.PI/4, '\\dfrac{\\pi}{4}'], [Math.PI/3, '\\dfrac{\\pi}{3}'], [Math.PI/2, '\\dfrac{\\pi}{2}'], [Math.PI, '\\pi']];
+
+G(12,3,0,'TH','Nguyên hàm của a/cos²x + b/sin²x trên (0; π/2): nhớ đúng hai công thức, dấu trừ ở cot x', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), f = [[a, ngSe], [b, ngCs]], P = ngPr(f), pt = 0.73;
+  const ans = ngOp(P, pt), wrong = ngW(R, ans, [ngOp([[a, ngT1], [b, ngK1]], pt), ngOp([[qm(a, -1), ngT1], [b, ngK1]], pt), ngOp([[a, ngK1], [qm(b, -1), ngT1]], pt), ngOp([[qm(a, -1), ngT1], [qm(b, -1), ngK1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$ là`, ans, wrong,
+    lg:`Ta có $${ngI('\\dfrac{1}{\\cos^{2}x}')} = \\tan x + C$ và $${ngI('\\dfrac{1}{\\sin^{2}x}')} = -\\cot x + C$.<br>Vậy họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, pt), 1e-9) && ngIs(x=> ngVal(P, x), x=> ngVal(f, x), [0.3, 0.8, 1.2])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a·cos x + b/sin²x hoặc a·sin x + b/cos²x trên (0; π/2): phối hợp công thức (bẫy dấu)', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), f = R.pick([[[a, ngC1], [b, ngCs]], [[a, ngS1], [b, ngSe]]]), P = ngPr(f), pt = 0.73, sw = ts=> ts.map(([c, B])=> [qm(c, -1), B]);
+  const ans = ngOp(P, pt), wrong = ngW(R, ans, [ngOp(sw(P), pt), ngOp([sw(P)[0], P[1]], pt), ngOp([P[0], sw(P)[1]], pt), ngOp(ngDr(f.slice(0, 1)).concat([P[1]]), pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$ là`, ans, wrong,
+    lg:`Lấy nguyên hàm từng số hạng theo bảng nguyên hàm của các hàm số lượng giác, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, pt), 1e-9) && ngIs(x=> ngVal(P, x), x=> ngVal(f, x), [0.3, 0.8, 1.2])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k·sin(x/2)cos(x/2): dùng công thức nhân đôi đưa về (k/2)·sin x (bẫy: quên hệ số 1/2)', R=>{
+  const t = R.nz(-9, 9), k = 2*t, f = [[t, ngS1]], P = ngPr(f), pt = 0.73;
+  const ans = ngOp(P, pt), wrong = ngW(R, ans, [ngOp([[k, ngC1]], pt), ngOp([[qm(k, -1), ngC1]], pt), ngOp([[t, ngC1]], pt), ngOp([[qm(t, 2), ngS1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${lgS(k)}\\sin\\dfrac{x}{2}\\cos\\dfrac{x}{2}$ là`, ans, wrong,
+    lg:`Vì $\\sin x = 2\\sin\\dfrac{x}{2}\\cos\\dfrac{x}{2}$ nên $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, pt), 1e-9) && ngIs(x=> ngVal(P, x), x=> k*Math.sin(x/2)*Math.cos(x/2))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k[cos²(x/2) − sin²(x/2)] hoặc k[cos²(x/2) + sin²(x/2)] : nhận ra cos x hoặc 1 (nhìn đúng dấu trước khi dùng công thức)', R=>{
+  const k = R.nz(-9, 9), m = R.pick([1, -1]), pt = 0.73, T = m > 0 ? [[k, ngS1]] : [[k, ngX(1)]];
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp([[k, ngX(1)]], pt + 1e-9).t === ans.t ? null : ngOp([[k, ngX(1)]], pt), ngOp([[qm(k, -1), ngS1]], pt), ngOp([[k, ngC1]], pt), ngOp([[qm(k, -1), ngC1]], pt), ngOp([[qr(k, 2), ngS1]], pt), m < 0 ? ngOp([[k, ngS1]], pt) : null]); if(!wrong) return null;
+  const f = x=> k*(Math.cos(x/2)**2 - m*Math.sin(x/2)**2);
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${lgS(k)}\\left(\\cos^{2}\\dfrac{x}{2} ${m > 0 ? '-' : '+'} \\sin^{2}\\dfrac{x}{2}\\right)$ là`, ans, wrong,
+    lg:`${m > 0 ? 'Theo công thức nhân đôi, $\\cos^{2}\\dfrac{x}{2} - \\sin^{2}\\dfrac{x}{2} = \\cos x$' : 'Ta có $\\cos^{2}\\dfrac{x}{2} + \\sin^{2}\\dfrac{x}{2} = 1$'} nên $f(x) = ${m > 0 ? ngTx([[k, ngC1]]) : k}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), f)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k·sin²x + k·cos²x + m·cos x: gom hằng đẳng thức sin²x + cos²x = 1 trước khi lấy nguyên hàm', R=>{
+  const k = R.int(2, 9), m = R.nz(-9, 9), T = [[k, ngX(1)], [m, ngS1]], pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp([[k, ngX(1)], [qm(m, -1), ngS1]], pt), ngOp([[m, ngS1]], pt), ngOp([[k, ngX(0)], [m, ngS1]], pt), ngOp([[2*k, ngX(1)], [m, ngS1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${k}\\sin^{2}x + ${k}\\cos^{2}x${ngSx(m, '\\cos x')}$ là`, ans, wrong,
+    lg:`$${k}\\sin^{2}x + ${k}\\cos^{2}x = ${k}(\\sin^{2}x + \\cos^{2}x) = ${k}$ nên $f(x) = ${k}${ngSx(m, '\\cos x')}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> k + m*Math.cos(x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k(1 + tan²x) trên (−π/2; π/2): 1 + tan²x = 1/cos²x (bẫy: tan³x/3, x + tan³x)', R=>{
+  const k = R.nz(-9, 9), T = [[k, ngT1]], pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [{t:`$${lgS(k)}\\left(x + \\dfrac{\\tan^{3}x}{3}\\right) + C$`, v:k*(pt + Math.tan(pt)**3/3)}, ngOp([[qm(k, -1), ngT1]], pt), ngOp([[k, ngX(1)], [k, ngT1]], pt), ngOp([[k, ngK1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${lgS(k)}(1 + \\tan^{2}x)$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$ là`, ans, wrong,
+    lg:`Vì $1 + \\tan^{2}x = \\dfrac{1}{\\cos^{2}x}$ nên $f(x) = ${ngTx([[k, ngSe]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> k*(1 + Math.tan(x)**2), [-0.7, 0.3, 1.1])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k(1 + cot²x) trên (0; π): 1 + cot²x = 1/sin²x, nguyên hàm mang dấu trừ', R=>{
+  const k = R.nz(-9, 9), T = [[qm(k, -1), ngK1]], pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp([[k, ngK1]], pt), ngOp([[k, ngX(1)], [qm(k, -1), ngK1]], pt), ngOp([[qm(k, -1), ngT1]], pt), ngOp([[k, ngT1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${lgS(k)}(1 + \\cot^{2}x)$ trên khoảng $(0; \\pi)$ là`, ans, wrong,
+    lg:`Vì $1 + \\cot^{2}x = \\dfrac{1}{\\sin^{2}x}$ nên $f(x) = ${ngTx([[k, ngCs]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> k*(1 + 1/Math.tan(x)**2), [0.4, 1.1, 2.3])};
+  return o;
+});
+
+G(12,3,0,'VD','Nguyên hàm của k·cos 2x/(sin²x cos²x) trên (0; π/2): tách cos 2x = cos²x − sin²x để được hiệu hai phân thức cơ bản', R=>{
+  const k = R.nz(-9, 9), f = [[k, ngCs], [qm(k, -1), ngSe]], T = ngPr(f), pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp([[k, ngK1], [qm(k, -1), ngT1]], pt), ngOp([[k, ngK1], [k, ngT1]], pt), ngOp([[qm(k, -1), ngK1], [k, ngT1]], pt), ngOp([[qm(k, 2), ngS1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${lgS(k)}\\cos 2x}{\\sin^{2}x\\cos^{2}x}$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$ là`, ans, wrong,
+    lg:`$\\dfrac{\\cos 2x}{\\sin^{2}x\\cos^{2}x} = \\dfrac{\\cos^{2}x - \\sin^{2}x}{\\sin^{2}x\\cos^{2}x} = \\dfrac{1}{\\sin^{2}x} - \\dfrac{1}{\\cos^{2}x}$.<br>Do đó $f(x) = ${ngTx(f)}$ và kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> k*Math.cos(2*x)/(Math.sin(x)*Math.cos(x))**2, [0.3, 0.9, 1.3])};
+  return o;
+});
+
+G(12,3,0,'VD','Nguyên hàm của k·cos 2x/(cos x ± sin x) trên khoảng thích hợp: phân tích tử cos²x − sin²x rồi rút gọn', R=>{
+  const k = R.nz(-9, 9), s = R.pick([1, -1]), f = [[k, ngC1], [-s*k, ngS1]], T = ngPr(f), pt = 0.5, I = s > 0 ? '\\left(0; \\dfrac{\\pi}{2}\\right)' : '\\left(0; \\dfrac{\\pi}{4}\\right)';
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp(ngPr([[k, ngC1], [s*k, ngS1]]), pt), ngOp([[k, ngC1], [-s*k, ngS1]], pt), ngOp([[qm(k, -1), ngS1], [s*k, ngC1]], pt), ngOp([[k, ngS1], [k, ngC1], [k, ngX(1)]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${lgS(k)}\\cos 2x}{\\cos x ${s > 0 ? '+' : '-'} \\sin x}$ trên khoảng $${I}$ là`, ans, wrong,
+    lg:`$\\cos 2x = \\cos^{2}x - \\sin^{2}x = (\\cos x - \\sin x)(\\cos x + \\sin x)$ nên trên khoảng đã cho $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> k*Math.cos(2*x)/(Math.cos(x) + s*Math.sin(x)), [0.2, 0.4, 0.7])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k(1 − cos²x)/sin x trên (0; π) hoặc k(1 − sin²x)/cos x trên (−π/2; π/2): rút gọn về sin x, cos x', R=>{
+  const k = R.nz(-9, 9), s = R.pick([0, 1]), T = s ? [[k, ngS1]] : [[qm(k, -1), ngC1]], pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp(s ? [[qm(k, -1), ngS1]] : [[k, ngC1]], pt), ngOp(s ? [[k, ngC1]] : [[k, ngS1]], pt), ngOp(s ? [[qm(k, -1), ngC1]] : [[qm(k, -1), ngS1]], pt), ngOp([[k, ngT1]], pt)]); if(!wrong) return null;
+  const f = x=> s ? k*(1 - Math.sin(x)**2)/Math.cos(x) : k*(1 - Math.cos(x)**2)/Math.sin(x);
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${s ? `\\dfrac{${lgS(k)}(1 - \\sin^{2}x)}{\\cos x}$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)` : `\\dfrac{${lgS(k)}(1 - \\cos^{2}x)}{\\sin x}$ trên khoảng $(0; \\pi)`}$ là`, ans, wrong,
+    lg:`$${s ? '1 - \\sin^{2}x = \\cos^{2}x' : '1 - \\cos^{2}x = \\sin^{2}x'}$ nên $f(x) = ${ngTx([[k, s ? ngC1 : ngS1]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), f, [0.3, 0.9, 1.2])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a·tan x·cos x + b trên (−π/2; π/2): tan x·cos x = sin x, không cần công thức của tan x', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-7, 7), T = [[qm(a, -1), ngC1], [b, ngX(1)]], pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp([[a, ngC1], [b, ngX(1)]], pt), ngOp([[a, ngS1], [b, ngX(1)]], pt), ngOp([[qm(a, -1), ngC1], [b, ngX(0)]], pt), ngOp([[qm(a, -1), ngS1], [b, ngX(1)]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${lgS(a)}\\tan x\\cos x${ngSg(b)}$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$ là`, ans, wrong,
+    lg:`$\\tan x\\cos x = \\sin x$ nên $f(x) = ${ngTx([[a, ngS1], [b, ngX(0)]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> a*Math.tan(x)*Math.cos(x) + b, [-0.7, 0.4, 1.1])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a·cot x·sin x + b/cos²x trên (0; π/2): cot x·sin x = cos x', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-7, 7), T = [[a, ngS1], [b, ngT1]], pt = 0.73;
+  const ans = ngOp(T, pt), wrong = ngW(R, ans, [ngOp([[qm(a, -1), ngS1], [b, ngT1]], pt), ngOp([[a, ngC1], [b, ngT1]], pt), ngOp([[qm(a, -1), ngC1], [b, ngT1]], pt), ngOp([[a, ngS1], [qm(b, -1), ngK1]], pt)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${lgS(a)}\\cot x\\sin x ${b < 0 ? '-' : '+'} ${ngTx([[Math.abs(b), ngSe]])}$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$ là`, ans, wrong,
+    lg:`$\\cot x\\sin x = \\cos x$ nên $f(x) = ${ngTx([[a, ngC1], [b, ngSe]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, pt), 1e-9) && ngIs(x=> ngVal(T, x), x=> a/Math.tan(x)*Math.sin(x) + b/Math.cos(x)**2, [0.3, 0.8, 1.2])};
+  return o;
+});
+
+G(12,3,0,'VD','Chọn nguyên hàm của k/(1 + cos x) trên (−π; π): 1 + cos x = 2cos²(x/2), kiểm tra bằng đạo hàm của tan(x/2)', R=>{
+  const k = 2*R.nz(-6, 6)*R.pick([1, 1, 1]), h = k/2, op = c=> ({t:`$${lgS(c)}\\tan\\dfrac{x}{2} + C$`, v:c*Math.tan(0.73/2)});
+  const ans = op(k), wrong = ngW(R, ans, [op(h), op(2*k), op(-k), op(-h)]); if(!wrong) return null;
+  const Fn = x=> k*Math.tan(x/2), f = x=> k/(1 + Math.cos(x));
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${k < 0 ? `-\\dfrac{${-k}}` : `\\dfrac{${k}}`}{1 + \\cos x}$ trên khoảng $(-\\pi; \\pi)$ là`, ans, wrong,
+    lg:`$1 + \\cos x = 2\\cos^{2}\\dfrac{x}{2}$. Đạo hàm: $\\left(\\tan\\dfrac{x}{2}\\right)' = \\dfrac{1}{2\\cos^{2}\\dfrac{x}{2}} = \\dfrac{1}{1 + \\cos x}$.<br>Do đó kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(0.73), 1e-9) && ngIs(Fn, f, [-1.2, 0.4, 2])};
+  return o;
+});
+
+G(12,3,0,'VD','Chọn nguyên hàm của k/(1 − cos x) trên (0; 2π): 1 − cos x = 2sin²(x/2), kiểm tra bằng đạo hàm của cot(x/2) (dấu trừ)', R=>{
+  const k = 2*R.nz(-6, 6), op = c=> ({t:`$${lgS(c)}\\cot\\dfrac{x}{2} + C$`, v:c/Math.tan(0.73/2)});
+  const ans = op(-k), wrong = ngW(R, ans, [op(k), op(k/2), op(-k/2), op(-2*k)]); if(!wrong) return null;
+  const Fn = x=> -k/Math.tan(x/2), f = x=> k/(1 - Math.cos(x));
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${k < 0 ? `-\\dfrac{${-k}}` : `\\dfrac{${k}}`}{1 - \\cos x}$ trên khoảng $(0; 2\\pi)$ là`, ans, wrong,
+    lg:`$1 - \\cos x = 2\\sin^{2}\\dfrac{x}{2}$. Đạo hàm: $\\left(\\cot\\dfrac{x}{2}\\right)' = -\\dfrac{1}{2\\sin^{2}\\dfrac{x}{2}} = -\\dfrac{1}{1 - \\cos x}$.<br>Do đó kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(0.73), 1e-9) && ngIs(Fn, f, [1.2, 3, 5])};
+  return o;
+});
+
+G(12,3,0,'TH','Chọn đẳng thức ĐÚNG trong bốn công thức nguyên hàm lượng giác có hệ số k (bẫy dấu, nhầm sin với cos, nhầm tan với cot)', R=>{
+  const k = R.int(2, 15);
+  const s1 = R.pick([{t:`$${ngI(`${k}\\sin x`)} = -${k}\\cos x + C$`, F:x=> -k*Math.cos(x), f:x=> k*Math.sin(x)}, {t:`$${ngI(`${k}\\cos x`)} = ${k}\\sin x + C$`, F:x=> k*Math.sin(x), f:x=> k*Math.cos(x)}, {t:`$${ngI(`\\dfrac{${k}}{\\cos^{2}x}`)} = ${k}\\tan x + C$`, F:x=> k*Math.tan(x), f:x=> k/Math.cos(x)**2}, {t:`$${ngI(`\\dfrac{${k}}{\\sin^{2}x}`)} = -${k}\\cot x + C$`, F:x=> -k/Math.tan(x), f:x=> k/Math.sin(x)**2}]);
+  const bad = [{t:`$${ngI(`${k}\\sin x`)} = ${k}\\cos x + C$`, v:2}, {t:`$${ngI(`${k}\\cos x`)} = -${k}\\sin x + C$`, v:3}, {t:`$${ngI(`\\dfrac{${k}}{\\cos^{2}x}`)} = ${k}\\cot x + C$`, v:4}, {t:`$${ngI(`\\dfrac{${k}}{\\sin^{2}x}`)} = ${k}\\tan x + C$`, v:5}, {t:`$${ngI(`\\dfrac{${k}}{\\sin^{2}x}`)} = ${k}\\cot x + C$`, v:6}];
+  const o = {stem:`Trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$, đẳng thức nào sau đây <b>đúng</b>?`, ans:{t:s1.t, v:1}, wrong:R.shuffle(bad).slice(0, 3),
+    lg:`Lấy đạo hàm vế phải để kiểm tra: chỉ có đẳng thức ${s1.t} cho đạo hàm đúng bằng hàm số dưới dấu nguyên hàm.`,
+    verify:()=> o.ans.v === 1 && ngIs(s1.F, s1.f, [0.3, 0.8, 1.2])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a·cos x + b có đồ thị đi qua điểm (π/2; c): tìm C rồi chọn đúng hàm (bẫy: lấy C = c)', R=>{
+  const a = R.nz(-6, 6), b = 2*R.nz(-4, 4), c = R.nz(-9, 9), hb = b/2, C = c - a, Cp = C;  /* F(π/2) = a + bπ/2 + C: chọn b chẵn để giữ π đẹp */
+  const lf = C0=> `${ngTx([[a, ngS1], [b, ngX(1)]])}${C0 ? ngSg(C0) : ''}`, e = C0=> a*Math.sin(0.73) + b*0.73 + C0;
+  const K = c - a - hb*Math.PI, kT = cc=> `${cc ? cc + ' ' : ''}${hb < 0 ? '+' : '-'} ${Math.abs(hb) === 1 ? '' : Math.abs(hb)}\\pi`;
+  const opt = (cc, sg)=> ({t:`$${ngTx([[a, ngS1], [b, ngX(1)]])} ${cc === 0 ? (sg > 0 ? (hb < 0 ? '+' : '-') : (hb < 0 ? '-' : '+')) + ` ${Math.abs(hb) === 1 ? '' : Math.abs(hb)}\\pi` : (cc > 0 ? '+ ' : '- ') + Math.abs(cc) + ' ' + (sg > 0 ? (hb < 0 ? '+' : '-') : (hb < 0 ? '-' : '+')) + ` ${Math.abs(hb) === 1 ? '' : Math.abs(hb)}\\pi`}$`, v:a*Math.sin(0.73) + b*0.73 + cc - sg*hb*Math.PI});
+  const ans = opt(c - a, 1), wrong = ngW(R, ans, [opt(c - a, -1), opt(c + a, 1), opt(c, 1), opt(-a, 1), opt(a - c, 1)]); if(!wrong) return null;
+  const Fn = x=> a*Math.sin(x) + b*x + K;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx([[a, ngC1], [b, ngX(0)]])}$ thoả mãn $F\\left(\\dfrac{\\pi}{2}\\right) = ${c}$. Hàm số $F(x)$ là`, ans, wrong,
+    lg:`$F(x) = ${ngTx([[a, ngS1], [b, ngX(1)]])} + C$. Từ $F\\left(\\dfrac{\\pi}{2}\\right) = ${c}$: $${a}${ngSg(hb)}\\pi + C = ${c}$, tức $C = ${c}${ngSg(-a)}${hb < 0 ? ' + ' : ' - '}${Math.abs(hb) === 1 ? '' : Math.abs(hb)}\\pi$.<br>Vậy $F(x) = ${ans.t.slice(1)}.`.replace(/([+-]) 1\\pi/g, '$1 \\pi'),
+    verify:()=> near(o.ans.v, Fn(0.73), 1e-9) && near(Fn(Math.PI/2), c, 1e-9) && ngIs(Fn, x=> a*Math.cos(x) + b)};
+  return o;
+});
+
+G(12,3,0,'TH','Hàm số nào sau đây là một nguyên hàm của cos x·k + sin x·m: thử đạo hàm từng phương án tại biểu thức, phân biệt −cos x với cos x', R=>{
+  const k = R.nz(-9, 9), m = R.nz(-9, 9), f = [[k, ngC1], [m, ngS1]], P = ngPr(f), pt = 0.73, c0 = R.int(2, 9), opt = (ts, c)=> {const l = ts.concat([[c, ngX(0)]]); return {t:`$${ngTx(l)}$`, v:ngVal(l, pt)};};
+  const ans = opt(P, c0), wrong = ngW(R, ans, [opt([[qm(k, -1), ngS1], [m, ngC1]], c0), opt([[k, ngS1], [m, ngC1]], c0), opt([[qm(k, -1), ngS1], [qm(m, -1), ngC1]], c0), opt(f, c0)]); if(!wrong) return null;
+  const o = {stem:`Hàm số nào sau đây là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$?`, ans, wrong,
+    lg:`Họ nguyên hàm của $f(x)$ là $${ngTx(P)} + C$. Với $C = ${c0}$ ta được một nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, pt) + c0, 1e-9) && ngIs(x=> ngVal(P, x) + c0, x=> ngVal(f, x))};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','f(x) = a·sin x + b·cos x, F(0) cho trước: họ nguyên hàm, C, F(π/2), F(π)', R=>{
+  const a = R.nz(-6, 6), b = R.nz(-6, 6), c = R.nz(-8, 8), f = [[a, ngS1], [b, ngC1]], P = ngPr(f), C = c + a, Fn = x=> ngVal(P, x) + C, v1 = b + C, w1 = b + c, v2 = a + C, w2 = -a + C;
+  if(a === b || v1 === w1 || v2 === w2 || !C) return null;
+  return {stem:`Cho hàm số $f(x) = ${ngTx(f)}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$.`,
+    items:[claim(R, `$${ngI('f(x)')} = ${ngTx(P)} + C$`, `$${ngI('f(x)')} = ${ngTx([[a, ngC1], [qm(b, -1), ngS1]])} + C$`, ()=> ngIs(x=> ngVal(P, x), x=> ngVal(f, x)), ()=> ngIs(x=> a*Math.cos(x) - b*Math.sin(x), x=> ngVal(f, x))),
+      claimN(R, v=> `$F(x) = ${ngTx(P)}${ngSg(v)}$`.replace(/\+ (-?\d+)\$/, '+ $1$'), C, String(C), c, String(c), ()=> c - ngVal(P, 0)),
+      claimN(R, v=> `$F\\left(\\dfrac{\\pi}{2}\\right) = ${v}$`, v1, String(v1), w1, String(w1), ()=> ngRd(Fn(Math.PI/2))),
+      claimN(R, v=> `$F(\\pi) = ${v}$`, v2, String(v2), w2, String(w2), ()=> ngRd(ngSi(x=> ngVal(f, x), 0, Math.PI) + c))],
+    lg:`a) $${ngI('\\sin x')} = -\\cos x + C$, $${ngI('\\cos x')} = \\sin x + C$.<br>b) $F(0) = ${-a} + C = ${c}$ nên $C = ${C}$.<br>c) $F\\left(\\dfrac{\\pi}{2}\\right) = ${b}${ngSg(C)} = ${v1}$.<br>d) $F(\\pi) = ${a}${ngSg(C)} = ${v2}$.`};
+});
+
+GD(12,3,0,'TH','Bảng công thức lượng giác có hệ số: ∫k/cos²x, ∫k/sin²x, ∫k·sin x, ∫k(tan²x + 1) trên (0; π/2)', R=>{
+  const k = R.int(2, 12), xs = [0.3, 0.8, 1.2];
+  return {stem:`Xét các họ nguyên hàm sau trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$.`,
+    items:[claim(R, `$${ngI(`\\dfrac{${k}}{\\cos^{2}x}`)} = ${k}\\tan x + C$`, `$${ngI(`\\dfrac{${k}}{\\cos^{2}x}`)} = -${k}\\tan x + C$`, ()=> ngIs(x=> k*Math.tan(x), x=> k/Math.cos(x)**2, xs), ()=> ngIs(x=> -k*Math.tan(x), x=> k/Math.cos(x)**2, xs)),
+      claim(R, `$${ngI(`\\dfrac{${k}}{\\sin^{2}x}`)} = -${k}\\cot x + C$`, `$${ngI(`\\dfrac{${k}}{\\sin^{2}x}`)} = ${k}\\cot x + C$`, ()=> ngIs(x=> -k/Math.tan(x), x=> k/Math.sin(x)**2, xs), ()=> ngIs(x=> k/Math.tan(x), x=> k/Math.sin(x)**2, xs)),
+      claim(R, `$${ngI(`${k}\\sin x`)} = -${k}\\cos x + C$`, `$${ngI(`${k}\\sin x`)} = ${k}\\cos x + C$`, ()=> ngIs(x=> -k*Math.cos(x), x=> k*Math.sin(x), xs), ()=> ngIs(x=> k*Math.cos(x), x=> k*Math.sin(x), xs)),
+      claim(R, `$${ngI(`${k}(\\tan^{2}x + 1)`)} = ${k}\\tan x + C$`, `$${ngI(`${k}(\\tan^{2}x + 1)`)} = ${k}\\tan x + ${k}x + C$`, ()=> ngIs(x=> k*Math.tan(x), x=> k*(Math.tan(x)**2 + 1), xs), ()=> ngIs(x=> k*Math.tan(x) + k*x, x=> k*(Math.tan(x)**2 + 1), xs))],
+    lg:`a) $(\\tan x)' = \\dfrac{1}{\\cos^{2}x}$.<br>b) $(\\cot x)' = -\\dfrac{1}{\\sin^{2}x}$ nên nguyên hàm mang dấu trừ.<br>c) $(\\cos x)' = -\\sin x$ nên nguyên hàm của $\\sin x$ là $-\\cos x + C$.<br>d) $\\tan^{2}x + 1 = \\dfrac{1}{\\cos^{2}x}$ nên kết quả là $${k}\\tan x + C$.`};
+});
+
+GD(12,3,0,'VD','f(x) = k·cot²x trên (0; π): k(1/sin²x − 1), nguyên hàm −k·cot x − kx + C, F(π/2) cho trước, tính đơn điệu', R=>{
+  const k = R.int(1, 8), c = R.nz(-9, 9), f = x=> k/Math.tan(x)**2, Fn = x=> -k/Math.tan(x) - k*x + k*Math.PI/2 + c, h = k/2, kT = k === 1 ? '' : k, Pi = k % 2 ? `\\dfrac{${k === 1 ? '' : k}\\pi}{2}` : `${k === 2 ? '' : h}\\pi`;
+  return {stem:`Cho hàm số $f(x) = ${kT}\\cot^{2}x$ trên khoảng $(0; \\pi)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F\\left(\\dfrac{\\pi}{2}\\right) = ${c}$.`,
+    items:[claim(R, `$f(x) = ${ngTx([[k, ngCs], [-k, ngX(0)]])}$`, `$f(x) = ${ngTx([[k, ngCs], [k, ngX(0)]])}$`, ()=> near(f(1), k/Math.sin(1)**2 - k, 1e-9), ()=> near(f(1), k/Math.sin(1)**2 + k, 1e-9)),
+      claim(R, `$${ngI('f(x)')} = ${ngTx([[-k, ngK1], [-k, ngX(1)]])} + C$`, `$${ngI('f(x)')} = ${ngTx([[k, ngK1], [-k, ngX(1)]])} + C$`, ()=> ngIs(x=> -k/Math.tan(x) - k*x, f, [0.5, 1, 2]), ()=> ngIs(x=> k/Math.tan(x) - k*x, f, [0.5, 1, 2])),
+      claim(R, `$F(x) = ${ngTx([[-k, ngK1], [-k, ngX(1)]])} + ${Pi}${ngSg(c)}$`, `$F(x) = ${ngTx([[-k, ngK1], [-k, ngX(1)]])}${ngSg(c)}$`, ()=> near(Fn(Math.PI/2), c, 1e-9), ()=> near(-k/Math.tan(Math.PI/2) - k*Math.PI/2 + c, c, 1e-9)),
+      claim(R, `Hàm số $F(x)$ đồng biến trên $(0; \\pi)$`, `Hàm số $F(x)$ nghịch biến trên $(0; \\pi)$`, ()=> [0.3, 1, 2.2].every(x=> f(x) >= 0), ()=> [0.3, 1, 2.2].every(x=> f(x) <= 0))],
+    lg:`a) $\\cot^{2}x = \\dfrac{1}{\\sin^{2}x} - 1$.<br>b) Lấy nguyên hàm từng số hạng: $${ngTx([[-k, ngK1], [-k, ngX(1)]])} + C$.<br>c) Tại $x = \\dfrac{\\pi}{2}$: $\\cot\\dfrac{\\pi}{2} = 0$ nên $-${Pi} + C = ${c}$, tức $C = ${Pi}${ngSg(c)}$.<br>d) $F'(x) = f(x) \\ge 0$ và chỉ bằng $0$ tại $x = \\dfrac{\\pi}{2}$ nên $F$ đồng biến trên $(0; \\pi)$.`};
+});
+
+GD(12,3,0,'TH','f(x) = k·sin²(x/2): hạ bậc k/2 − (k/2)cos x, nguyên hàm, F(0) = 0, F(π), F\'(π)', R=>{
+  const t = R.int(1, 8), k = 2*t, f = x=> k*Math.sin(x/2)**2, Fn = x=> t*x - t*Math.sin(x), tT = t === 1 ? '' : t;
+  return {stem:`Cho hàm số $f(x) = ${k}\\sin^{2}\\dfrac{x}{2}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claim(R, `$f(x) = ${t} - ${tT}\\cos x$`, `$f(x) = ${t} + ${tT}\\cos x$`, ()=> near(f(1.1), t - t*Math.cos(1.1), 1e-9), ()=> near(f(1.1), t + t*Math.cos(1.1), 1e-9)),
+      claim(R, `$F(x) = ${tT}x - ${tT}\\sin x$`, `$F(x) = ${tT}x + ${tT}\\sin x$`, ()=> ngIs(Fn, f) && near(Fn(0), 0, 1e-9), ()=> ngIs(x=> t*x + t*Math.sin(x), f)),
+      claim(R, `$F(\\pi) = ${tT}\\pi$`, `$F(\\pi) = ${k}\\pi$`, ()=> near(Fn(Math.PI), t*Math.PI, 1e-9), ()=> near(Fn(Math.PI), k*Math.PI, 1e-9)),
+      claimN(R, v=> `$F'(\\pi) = ${v}$`, k, String(k), t, String(t), ()=> ngRd(ngDf(Fn, Math.PI)))],
+    lg:`a) $\\sin^{2}\\dfrac{x}{2} = \\dfrac{1 - \\cos x}{2}$ nên $f(x) = ${t} - ${tT}\\cos x$.<br>b) $F(x) = ${tT}x - ${tT}\\sin x + C$, $F(0) = 0$ cho $C = 0$.<br>c) $F(\\pi) = ${tT}\\pi - 0 = ${tT}\\pi$.<br>d) $F'(\\pi) = f(\\pi) = ${k}\\sin^{2}\\dfrac{\\pi}{2} = ${k}$.`};
+});
+
+GD(12,3,0,'TH','f(x) = (a + b·tan x)cos x trên (−π/2; π/2): rút gọn a·cos x + b·sin x, nguyên hàm, F(0), F(π/2 trừ) qua giá trị tại π/4', R=>{
+  const t = R.int(1, 6), a = 2*t, b = 2*R.nz(-4, 4), c = R.nz(-9, 9), f = x=> (a + b*Math.tan(x))*Math.cos(x), P = [[a, ngS1], [-b, ngC1]], C = c + b, Fn = x=> ngVal(P, x) + C, r2 = (a - b)/2;
+  if(a === b || !C) return null;
+  const v = ngRd(Fn(Math.PI/4)), vT = `${r2 === 1 ? '' : r2 === -1 ? '-' : r2}\\sqrt{2}${ngSg(C)}`, wT = `${r2 === 1 ? '' : r2 === -1 ? '-' : r2}\\sqrt{2}${ngSg(c)}`;
+  return {stem:`Cho hàm số $f(x) = (${a}${ngSx(b, '\\tan x')})\\cos x$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$.`,
+    items:[claim(R, `$f(x) = ${ngTx([[a, ngC1], [b, ngS1]])}$`, `$f(x) = ${ngTx([[a, ngC1], [b, ngC1 ]]).length ? ngTx([[a, ngS1], [b, ngC1]]) : ''}$`, ()=> near(f(0.6), a*Math.cos(0.6) + b*Math.sin(0.6), 1e-9), ()=> near(f(0.6), a*Math.sin(0.6) + b*Math.cos(0.6), 1e-9)),
+      claim(R, `$${ngI('f(x)')} = ${ngTx(P)} + C$`, `$${ngI('f(x)')} = ${ngTx([[a, ngS1], [b, ngC1]])} + C$`, ()=> ngIs(x=> ngVal(P, x), f, [-0.8, 0.3, 1]), ()=> ngIs(x=> a*Math.sin(x) + b*Math.cos(x), f, [-0.8, 0.3, 1])),
+      claimN(R, v2=> `$F(x) = ${ngTx(P)}${ngSg(v2)}$`, C, String(C), c, String(c), ()=> ngRd(c - ngVal(P, 0))),
+      claim(R, `$F\\left(\\dfrac{\\pi}{4}\\right) = ${vT}$`, `$F\\left(\\dfrac{\\pi}{4}\\right) = ${wT}$`, ()=> near(ngRd(Fn(Math.PI/4)), v, 1e-9), ()=> near(ngRd(ngVal(P, Math.PI/4) + c), v, 1e-9))],
+    lg:`a) $\\tan x\\cos x = \\sin x$ nên $f(x) = ${ngTx([[a, ngC1], [b, ngS1]])}$.<br>b) Lấy nguyên hàm từng số hạng.<br>c) $F(0) = ${-b} + C = ${c}$ nên $C = ${C}$.<br>d) $F\\left(\\dfrac{\\pi}{4}\\right) = ${a}\\cdot\\dfrac{\\sqrt{2}}{2}${b < 0 ? ' + ' : ' - '}${Math.abs(b)}\\cdot\\dfrac{\\sqrt{2}}{2}${ngSg(C)} = ${vT}$.`};
+});
+
+GD(12,3,0,'VD','f(x) = sin x + cos x: nguyên hàm sin x − cos x + C, các giá trị F(0), F(π/2), F(π) với F(0) = 0; nhận xét giá trị lớn hơn F(π)', R=>{
+  const k = R.int(2, 9), f = x=> k*(Math.sin(x) + Math.cos(x)), Fn = x=> k*(Math.sin(x) - Math.cos(x)) + k, c2 = 2*k, c3 = 2*k;
+  return {stem:`Cho hàm số $f(x) = ${k}(\\sin x + \\cos x)$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claim(R, `$F(x) = ${k}\\sin x - ${k}\\cos x + ${k}$`, `$F(x) = ${k}\\cos x - ${k}\\sin x - ${k}$`, ()=> ngIs(Fn, f) && near(Fn(0), 0, 1e-9), ()=> ngIs(x=> k*Math.cos(x) - k*Math.sin(x) - k, f)),
+      claimN(R, v=> `$F\\left(\\dfrac{\\pi}{2}\\right) = ${v}$`, c2, String(c2), k, String(k), ()=> ngRd(Fn(Math.PI/2))),
+      claimN(R, v=> `$F(\\pi) = ${v}$`, c3, String(c3), 0, '0', ()=> ngRd(Fn(Math.PI))),
+      claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$`, `Hàm số $F(x)$ nghịch biến trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$`, ()=> [0.1, 0.8, 1.5].every(x=> f(x) > 0), ()=> [0.1, 0.8, 1.5].every(x=> f(x) < 0))],
+    lg:`a) $F(x) = ${k}\\sin x - ${k}\\cos x + C$, $F(0) = -${k} + C = 0$ nên $C = ${k}$.<br>b) $F\\left(\\dfrac{\\pi}{2}\\right) = ${k} - 0 + ${k} = ${c2}$.<br>c) $F(\\pi) = 0 + ${k} + ${k} = ${c3}$.<br>d) Trên $\\left(0; \\dfrac{\\pi}{2}\\right)$ cả $\\sin x$, $\\cos x$ đều dương nên $F'(x) = f(x) > 0$, $F$ đồng biến.`};
+});
+
+GD(12,3,0,'TH','f(x) = k·cos x với F(0) = 0: giá trị tại các góc đặc biệt π/6, π/4, π/2 và điểm đạt giá trị lớn nhất của F trên [0; π]', R=>{
+  const t = R.int(1, 8), k = 2*t, Fn = x=> k*Math.sin(x), s2 = `${t === 1 ? '' : t}\\sqrt{2}`, s3 = `${t === 1 ? '' : t}\\sqrt{3}`;
+  return {stem:`Cho hàm số $f(x) = ${k}\\cos x$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claimN(R, v=> `$F\\left(\\dfrac{\\pi}{6}\\right) = ${v}$`, t, String(t), k, String(k), ()=> ngRd(Fn(Math.PI/6))),
+      claim(R, `$F\\left(\\dfrac{\\pi}{4}\\right) = ${s2}$`, `$F\\left(\\dfrac{\\pi}{4}\\right) = ${s3}$`, ()=> near(Fn(Math.PI/4), t*Math.SQRT2, 1e-9), ()=> near(Fn(Math.PI/4), t*Math.sqrt(3), 1e-9)),
+      claimN(R, v=> `$F\\left(\\dfrac{\\pi}{2}\\right) = ${v}$`, k, String(k), 0, '0', ()=> ngRd(Fn(Math.PI/2))),
+      claim(R, `Trên đoạn $[0; \\pi]$, $F(x)$ đạt giá trị lớn nhất tại $x = \\dfrac{\\pi}{2}$`, `Trên đoạn $[0; \\pi]$, $F(x)$ đạt giá trị lớn nhất tại $x = \\pi$`, ()=> Fn(Math.PI/2) >= Math.max(Fn(1), Fn(2), Fn(Math.PI)), ()=> Fn(Math.PI) >= Fn(Math.PI/2))],
+    lg:`$F(x) = ${k}\\sin x$ (vì $F(0) = 0$).<br>a) $F\\left(\\dfrac{\\pi}{6}\\right) = ${k}\\cdot\\dfrac{1}{2} = ${t}$.<br>b) $F\\left(\\dfrac{\\pi}{4}\\right) = ${k}\\cdot\\dfrac{\\sqrt{2}}{2} = ${s2}$.<br>c) $F\\left(\\dfrac{\\pi}{2}\\right) = ${k}$.<br>d) $f(x) = ${k}\\cos x$ đổi dấu từ dương sang âm tại $x = \\dfrac{\\pi}{2}$ nên $F$ lớn nhất tại đó trên $[0; \\pi]$.`};
+});
+
+GD(12,3,0,'TH','f(x) = a/cos²x với a > 0, F(0) = b: F(π/4), F(π/3), F\', đồng biến trên (−π/2; π/2)', R=>{
+  const a = R.int(1, 9), b = R.nz(-9, 9), f = x=> a/Math.cos(x)**2, Fn = x=> a*Math.tan(x) + b, s3 = `${a === 1 ? '' : a}\\sqrt{3}${ngSg(b)}`, s3b = `${a === 1 ? '' : a}\\sqrt{2}${ngSg(b)}`;
+  return {stem:`Cho hàm số $f(x) = \\dfrac{${a}}{\\cos^{2}x}$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${b}$.`,
+    items:[claim(R, `$F(x) = ${a === 1 ? '' : a}\\tan x${ngSg(b)}$`, `$F(x) = ${a === 1 ? '' : a}\\cot x${ngSg(b)}$`, ()=> ngIs(Fn, f, [-1, 0.2, 1]), ()=> ngIs(x=> a/Math.tan(x) + b, f, [0.2, 1])),
+      claimN(R, v=> `$F\\left(\\dfrac{\\pi}{4}\\right) = ${v}$`, a + b, String(a + b), a, String(a), ()=> ngRd(Fn(Math.PI/4))),
+      claim(R, `$F\\left(\\dfrac{\\pi}{3}\\right) = ${s3}$`, `$F\\left(\\dfrac{\\pi}{3}\\right) = ${s3b}$`, ()=> near(Fn(Math.PI/3), a*Math.sqrt(3) + b, 1e-9), ()=> near(Fn(Math.PI/3), a*Math.SQRT2 + b, 1e-9)),
+      claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$`, `Hàm số $F(x)$ có điểm cực trị trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$`, ()=> [-1.5, -0.5, 0, 0.5, 1.5].every(x=> f(x) > 0), ()=> [-1.5, 0, 1.5].some(x=> f(x) <= 0))],
+    lg:`a) $F(x) = ${a === 1 ? '' : a}\\tan x + C$, $F(0) = C = ${b}$.<br>b) $F\\left(\\dfrac{\\pi}{4}\\right) = ${a}${ngSg(b)} = ${a + b}$.<br>c) $\\tan\\dfrac{\\pi}{3} = \\sqrt{3}$ nên $F\\left(\\dfrac{\\pi}{3}\\right) = ${s3}$.<br>d) $F'(x) = f(x) > 0$ với mọi $x$ trong khoảng nên $F$ đồng biến và không có cực trị.`};
+});
+
+GD(12,3,0,'VD','F(x) = k·sin x·cos x và G(x) = (k/2)·sin 2x: cùng là một hàm số, đạo hàm k·cos 2x; suy ra ∫k·cos 2x dx và tính F(π/4)', R=>{
+  const t = R.int(1, 8), k = 2*t, Fn = x=> k*Math.sin(x)*Math.cos(x), Gn = x=> t*Math.sin(2*x), f = x=> k*Math.cos(2*x), tT = t === 1 ? '' : t;
+  return {stem:`Cho các hàm số $F(x) = ${k}\\sin x\\cos x$ và $G(x) = ${tT}\\sin 2x$ trên $\\mathbb{R}$.`,
+    items:[claim(R, `$F'(x) = ${k}\\cos 2x$`, `$F'(x) = ${k}\\sin 2x$`, ()=> ngIs(Fn, f), ()=> ngIs(Fn, x=> k*Math.sin(2*x))),
+      claim(R, `$F(x) = G(x)$ với mọi $x$`, `$F(x) = 2G(x)$ với mọi $x$`, ()=> [0.3, 1.2, 2].every(x=> near(Fn(x), Gn(x), 1e-9)), ()=> [0.3, 1.2, 2].every(x=> near(Fn(x), 2*Gn(x), 1e-9))),
+      claim(R, `$${ngI(`${k}\\cos 2x`)} = ${tT}\\sin 2x + C$`, `$${ngI(`${k}\\cos 2x`)} = ${k}\\sin 2x + C$`, ()=> ngIs(Gn, f), ()=> ngIs(x=> k*Math.sin(2*x), f)),
+      claimN(R, v=> `$F\\left(\\dfrac{\\pi}{4}\\right) = ${v}$`, t, String(t), k, String(k), ()=> ngRd(Fn(Math.PI/4)))],
+    lg:`a) $F'(x) = ${k}(\\cos^{2}x - \\sin^{2}x) = ${k}\\cos 2x$.<br>b) $\\sin 2x = 2\\sin x\\cos x$ nên $G(x) = ${t === 1 ? '' : t + '\\cdot '}2\\sin x\\cos x = F(x)$.<br>c) Từ a), b): $G'(x) = ${k}\\cos 2x$ nên nguyên hàm là $${tT}\\sin 2x + C$.<br>d) $F\\left(\\dfrac{\\pi}{4}\\right) = ${k}\\cdot\\dfrac{\\sqrt{2}}{2}\\cdot\\dfrac{\\sqrt{2}}{2} = ${t}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','F là nguyên hàm của a·sin x + b·cos x: F(π) − F(0) = 2a, số hạng b·sin x triệt tiêu', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), v = 2*a, f = [[a, ngS1], [b, ngC1]];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Tính $F(\\pi) - F(0)$.`, ans:v,
+    lg:`$F(x) = ${ngTx(ngPr(f))} + C$.<br>$F(\\pi) - F(0) = ${ngPa(a)}\\cdot 1 - ${ngPa(-a)}\\cdot 1 = ${v}$ (số hạng chứa $\\sin x$ bằng $0$ tại cả hai đầu).`,
+    verify:()=> near(o.ans, ngSi(x=> ngVal(f, x), 0, Math.PI), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','F là nguyên hàm của a·sin x + b·cos x: F(π/2) − F(0) = a + b', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), v = a + b, f = [[a, ngS1], [b, ngC1]];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$. Tính $F\\left(\\dfrac{\\pi}{2}\\right) - F(0)$.`, ans:v,
+    lg:`$F(x) = ${ngTx(ngPr(f))} + C$.<br>$F\\left(\\dfrac{\\pi}{2}\\right) = ${b} + C$, $F(0) = ${-a} + C$ nên hiệu bằng $${b}${ngSg(a)} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> ngVal(f, x), 0, Math.PI/2), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k/sin²x trên (0; π) thoả F(π/4) = c: tính F(π/2) (dấu trừ của cot x)', R=>{
+  const k = R.nz(-9, 9), c = R.int(-9, 9), v = k + c;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx([[k, ngCs]])}$ trên khoảng $(0; \\pi)$ thoả mãn $F\\left(\\dfrac{\\pi}{4}\\right) = ${c}$. Tính $F\\left(\\dfrac{\\pi}{2}\\right)$.`, ans:v,
+    lg:`$F(x) = ${ngTx([[-k, ngK1]])} + C$. Từ $F\\left(\\dfrac{\\pi}{4}\\right) = ${c}$: $${-k} + C = ${c}$, tức $C = ${v}$.<br>$F\\left(\\dfrac{\\pi}{2}\\right) = 0 + C = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> k/Math.sin(x)**2, Math.PI/4, Math.PI/2) + c, 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k(1 + tan²x) thoả F(0) = c: tính F(π/3), làm tròn đến hàng phần mười (tan π/3 = √3)', R=>{
+  const k = R.nz(-9, 9), c = R.int(-9, 9), v = ngRou(k*Math.sqrt(3) + c, 1);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${lgS(k)}(1 + \\tan^{2}x)$ trên khoảng $\\left(-\\dfrac{\\pi}{2}; \\dfrac{\\pi}{2}\\right)$ thoả mãn $F(0) = ${c}$. Tính $F\\left(\\dfrac{\\pi}{3}\\right)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$1 + \\tan^{2}x = \\dfrac{1}{\\cos^{2}x}$ nên $F(x) = ${lgS(k)}\\tan x${c ? ngSg(c) : ''}$ (vì $F(0) = ${c}$).<br>$F\\left(\\dfrac{\\pi}{3}\\right) = ${lgS(k)}\\sqrt{3}${c ? ngSg(c) : ''} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(x=> k*(1 + Math.tan(x)**2), 0, Math.PI/3) + c, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k·cos x (k > 0) thoả F(0) = c: giá trị lớn nhất của F trên [0; π]', R=>{
+  const k = R.int(1, 20), c = R.int(-15, 15), v = k + c, Fn = x=> k*Math.sin(x) + c;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${lgS(k)}\\cos x$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Tìm giá trị lớn nhất của $F(x)$ trên đoạn $[0; \\pi]$.`, ans:v,
+    lg:`$F(x) = ${lgS(k)}\\sin x${c ? ngSg(c) : ''}$. Trên $[0; \\pi]$, $\\sin x$ lớn nhất bằng $1$ tại $x = \\dfrac{\\pi}{2}$.<br>Vậy giá trị lớn nhất của $F(x)$ là $${k}${c ? ngSg(c) : ''} = ${v}$.`,
+    verify:()=>{ let m = -1e9; for(let i = 0; i <= 2000; i++) m = Math.max(m, Fn(Math.PI*i/2000)); return near(o.ans, m, 1e-5); }};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = k·sin²x là một nguyên hàm của k·sin 2x: tính F(π/2) − F(π/6) có phân số 3/4', R=>{
+  const t = R.nz(-15, 15), k = 4*t, v = 3*t, Fn = x=> k*Math.sin(x)**2;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${k}\\sin 2x$ trên $\\mathbb{R}$. Tính $F\\left(\\dfrac{\\pi}{2}\\right) - F\\left(\\dfrac{\\pi}{6}\\right)$.`, ans:v,
+    lg:`Ta có $(\\sin^{2}x)' = 2\\sin x\\cos x = \\sin 2x$ nên $F(x) = ${k}\\sin^{2}x + C$.<br>$F\\left(\\dfrac{\\pi}{2}\\right) - F\\left(\\dfrac{\\pi}{6}\\right) = ${k}\\left(1 - \\dfrac{1}{4}\\right) = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> k*Math.sin(2*x), Math.PI/6, Math.PI/2), 1e-7) && ngIs(Fn, x=> k*Math.sin(2*x))};
+  return o;
+});
+
+GT(12,3,0,'VD','∫[a·cos²(x/2) + b·sin²(x/2)]dx = mx + n·sin x + C: hạ bậc rồi đồng nhất, tính m + 2n', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9); if((a + b) % 2 || a === b) return null;
+  const m = (a + b)/2, n = (a - b)/2, v = m + 2*n, f = x=> a*Math.cos(x/2)**2 + b*Math.sin(x/2)**2, Fn = x=> m*x + n*Math.sin(x);
+  const o = {stem:`Biết $${ngI(`\\left(${a}\\cos^{2}\\dfrac{x}{2}${ngSg(b)}\\sin^{2}\\dfrac{x}{2}\\right)`)} = mx + n\\sin x + C$ với $m$, $n$ là các số thực. Tính $m + 2n$.`.replace(/([+-]) 1\\sin/, '$1 \\sin').replace('(1\\cos', '(\\cos').replace('(-1\\cos', '(-\\cos'), ans:v,
+    lg:`Hạ bậc: $\\cos^{2}\\dfrac{x}{2} = \\dfrac{1 + \\cos x}{2}$, $\\sin^{2}\\dfrac{x}{2} = \\dfrac{1 - \\cos x}{2}$.<br>Hàm số bằng $${m}${ngSx(n, '\\cos x')}$ nên $m = ${m}$, $n = ${n}$.<br>Vậy $m + 2n = ${v}$.`.replace(/^(.*?)Hàm số bằng \$0 \+ /, '$1Hàm số bằng $').replace(/Hàm số bằng \$0 - /, 'Hàm số bằng $-'),
+    verify:()=> near(o.ans, m + 2*n, 1e-12) && ngIs(Fn, f)};
+  return o;
+});
+
+GT(12,3,0,'VD','∫k·cos 2x/(cos x + sin x)dx = m·sin x + n·cos x + C trên (0; π/2): rút gọn, tính m + n', R=>{
+  const k = R.nz(-15, 15), m = k, n = k, v = m + n, f = x=> k*Math.cos(2*x)/(Math.cos(x) + Math.sin(x)), Fn = x=> m*Math.sin(x) + n*Math.cos(x);
+  const o = {stem:`Biết $${ngI(`\\dfrac{${lgS(k)}\\cos 2x}{\\cos x + \\sin x}`)} = m\\sin x + n\\cos x + C$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$, với $m$, $n$ là các số thực. Tính $m + n$.`, ans:v,
+    lg:`$\\cos 2x = (\\cos x - \\sin x)(\\cos x + \\sin x)$ nên hàm số dưới dấu nguyên hàm bằng $${ngTx([[k, ngC1], [-k, ngS1]])}$.<br>Nguyên hàm là $${ngTx([[k, ngS1], [k, ngC1]])} + C$, nên $m = ${k}$, $n = ${k}$.<br>Vậy $m + n = ${v}$.`,
+    verify:()=> near(o.ans, m + n, 1e-12) && ngIs(Fn, f, [0.3, 0.8, 1.3])};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của a·cos x + b thoả F(0) = c: tính F(π), làm tròn đến hàng phần mười (a·sin π = 0)', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), c = R.int(-9, 9), v = ngRou(b*Math.PI + c, 1), f = [[a, ngC1], [b, ngX(0)]];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Tính $F(\\pi)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$F(x) = ${ngTx([[a, ngS1], [b, ngX(1)]])}${c ? ngSg(c) : ''}$ (vì $F(0) = ${c}$).<br>$F(\\pi) = ${b}\\pi${c ? ngSg(c) : ''} \\approx ${nt(v)}$.`.replace('= 1\\pi', '= \\pi').replace('= -1\\pi', '= -\\pi'),
+    verify:()=> near(o.ans, ngRou(ngSi(x=> ngVal(f, x), 0, Math.PI) + c, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của a·sin x + bx thoả F(0) = 0: tính F(π) = 2a + bπ²/2, làm tròn đến hàng phần mười', R=>{
+  const a = R.nz(-9, 9), t = R.nz(-4, 4), b = 2*t, v = ngRou(2*a + t*Math.PI**2, 1), f = [[a, ngS1], [b, ngX(1)]];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$. Tính $F(\\pi)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$F(x) = ${ngTx([[-a, ngC1], [t, ngX(2)]])} + C$; $F(0) = ${-a} + C = 0$ nên $C = ${a}$.<br>$F(\\pi) = ${a}${t === 1 ? ' + ' : t === -1 ? ' - ' : ngSg(t) + ''}\\pi^{2}${ngSg(a)} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(x=> ngVal(f, x), 0, Math.PI), 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','F(x) = ax + b·sin x + c·cos x là một nguyên hàm của k(sin(x/2) − cos(x/2))²: khai triển, tính a + b + c', R=>{
+  const k = R.nz(-15, 15), a = k, b = 0, c = k, v = a + b + c, f = x=> k*(Math.sin(x/2) - Math.cos(x/2))**2, Fn = x=> a*x + c*Math.cos(x);
+  const o = {stem:`Biết hàm số $F(x) = ax + b\\sin x + c\\cos x$ là một nguyên hàm của hàm số $f(x) = ${lgS(k)}\\left(\\sin\\dfrac{x}{2} - \\cos\\dfrac{x}{2}\\right)^{2}$ trên $\\mathbb{R}$. Tính $a + b + c$.`, ans:v,
+    lg:`Khai triển: $\\left(\\sin\\dfrac{x}{2} - \\cos\\dfrac{x}{2}\\right)^{2} = 1 - 2\\sin\\dfrac{x}{2}\\cos\\dfrac{x}{2} = 1 - \\sin x$.<br>$F'(x) = a + b\\cos x - c\\sin x$; đồng nhất với $${k} ${k < 0 ? '+' : '-'} ${Math.abs(k) === 1 ? '' : Math.abs(k)}\\sin x$: $a = ${k}$, $b = 0$, $c = ${k}$.<br>Vậy $a + b + c = ${v}$.`,
+    verify:()=> near(o.ans, a + b + c, 1e-12) && ngIs(Fn, f)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của k/(1 + cos x) trên (−π; π) thoả F(0) = c: F(x) = k·tan(x/2) + c, tính F(π/2)', R=>{
+  const k = R.nz(-15, 15), c = R.int(-15, 15), v = k + c;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${k < 0 ? `-\\dfrac{${-k}}` : `\\dfrac{${k}}`}{1 + \\cos x}$ trên khoảng $(-\\pi; \\pi)$ thoả mãn $F(0) = ${c}$. Tính $F\\left(\\dfrac{\\pi}{2}\\right)$.`, ans:v,
+    lg:`$1 + \\cos x = 2\\cos^{2}\\dfrac{x}{2}$ và $\\left(\\tan\\dfrac{x}{2}\\right)' = \\dfrac{1}{2\\cos^{2}\\dfrac{x}{2}}$ nên $F(x) = ${lgS(k)}\\tan\\dfrac{x}{2}${c ? ngSg(c) : ''}$.<br>$F\\left(\\dfrac{\\pi}{2}\\right) = ${k}${c ? ngSg(c) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> k/(1 + Math.cos(x)), 0, Math.PI/2) + c, 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','f(x) = k(tan x·cos x + cot x·sin x) trên (0; π/2): rút gọn k(sin x + cos x), F(π/2 ) − F(0) tính qua giới hạn đẹp tại π/6, π/3', R=>{
+  const k = R.nz(-15, 15), Fn = x=> k*(Math.sin(x) - Math.cos(x)), v = 0, x1 = Math.PI/4;
+  const ans = ngRou(k*Math.SQRT2 - 0, 1) === 0 ? null : ngRou(Fn(Math.PI/3) - Fn(Math.PI/6), 1); if(ans === null) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${lgS(k)}(\\tan x\\cos x + \\cot x\\sin x)$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$. Tính $F\\left(\\dfrac{\\pi}{3}\\right) - F\\left(\\dfrac{\\pi}{6}\\right)$ (làm tròn kết quả đến hàng phần mười).`, ans,
+    lg:`$\\tan x\\cos x = \\sin x$, $\\cot x\\sin x = \\cos x$ nên $f(x) = ${lgS(k)}(\\sin x + \\cos x)$ và $F(x) = ${lgS(k)}(\\sin x - \\cos x) + C$.<br>$F\\left(\\dfrac{\\pi}{3}\\right) - F\\left(\\dfrac{\\pi}{6}\\right) = ${lgS(k)}\\left[\\left(\\dfrac{\\sqrt{3}}{2} - \\dfrac{1}{2}\\right) - \\left(\\dfrac{1}{2} - \\dfrac{\\sqrt{3}}{2}\\right)\\right] = ${lgS(k)}(\\sqrt{3} - 1) \\approx ${nt(ans)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(x=> k*(Math.tan(x)*Math.cos(x) + Math.sin(x)/Math.tan(x)), Math.PI/6, Math.PI/3), 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Từ (x·sin x + cos x)\' = x·cos x: nguyên hàm của kx·cos x thoả F(0) = c, tính F(π) = c − 2k', R=>{
+  const k = R.nz(-9, 9), c = R.int(-15, 15), v = c - 2*k;
+  const Fn = x=> k*(x*Math.sin(x) + Math.cos(x)) + c - k, f = x=> k*x*Math.cos(x);
+  const o = {stem:`Biết $(x\\sin x + \\cos x)' = x\\cos x$. Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${lgS(k)}x\\cos x$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Tính $F(\\pi)$.`, ans:v,
+    lg:`Từ giả thiết, $F(x) = ${lgS(k)}(x\\sin x + \\cos x) + C$. $F(0) = ${k} + C = ${c}$ nên $C = ${c - k}$.<br>$F(\\pi) = ${lgS(k)}(0 - 1)${ngSg(c - k)} = ${v}$.`.replace('+ 0$', '$').replace('- 0$', '$'),
+    verify:()=> near(o.ans, Fn(Math.PI), 1e-9) && ngIs(Fn, f)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của a/cos²x + b/sin²x: F(π/4) − F(π/6) có √3, làm tròn đến hàng phần mười', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), v = ngRou(a*(1 - Math.sqrt(3)/3) + b*(Math.sqrt(3) - 1), 1), f = x=> a/Math.cos(x)**2 + b/Math.sin(x)**2;
+  if(v === 0) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx([[a, ngSe], [b, ngCs]])}$ trên khoảng $\\left(0; \\dfrac{\\pi}{2}\\right)$. Tính $F\\left(\\dfrac{\\pi}{4}\\right) - F\\left(\\dfrac{\\pi}{6}\\right)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$F(x) = ${ngTx([[a, ngT1], [-b, ngK1]])} + C$.<br>Tại $x = \\dfrac{\\pi}{4}$: $\\tan x = \\cot x = 1$; tại $x = \\dfrac{\\pi}{6}$: $\\tan x = \\dfrac{\\sqrt{3}}{3}$, $\\cot x = \\sqrt{3}$.<br>Hiệu bằng $${lgS(a)}\\left(1 - \\dfrac{\\sqrt{3}}{3}\\right) ${b < 0 ? '-' : '+'} ${Math.abs(b) === 1 ? '' : Math.abs(b)}(\\sqrt{3} - 1) \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(f, Math.PI/6, Math.PI/4), 1), 1e-9)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.4 Nguyên hàm của hàm số mũ, hàm 1/x — số 172–212 (17 TN, 9 Đ–S, 15 TLN).
+   Chuỗi tư duy: ∫aˣ, ∫eˣ, ∫1/x → chia tử cho x → rút gọn bằng hằng đẳng thức và luỹ thừa cùng cơ số → ln|x| trên từng khoảng → đọc ngược đạo hàm, đồng nhất hệ số. */
+const mhS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const mhP = f=> ngPr(f).map(([c, b])=> [c, b.k === 'ln' ? ngLp : b]);   /* trên (0; +∞) viết ln x */
+const mhE2 = {n:'e^{2x}', d:'', f:x=> Math.exp(2*x), k:'e2'};
+const mhI = 1.37;
+
+G(12,3,0,'TH','Nguyên hàm của a·eˣ + b/x trên (0; +∞) (bẫy: ∫1/x = −1/x², ∫eˣ = xeˣ)', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), f = [[a, ngE1], [b, ngX(-1)]], P = mhP(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[a, ngE1], [-b, ngX(-2)]]), ngOp([[a, ngE1], [b, ngX(-2)]]), ngOp([[qm(a, -1), ngE1], [b, ngLp]]), ngOp([[a, ngE1], [qm(b, -1), ngLp]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Ta có $${ngI('e^{x}')} = e^{x} + C$ và trên $(0; +\\infty)$: $${ngI('\\dfrac{1}{x}')} = \\ln x + C$.<br>Vậy họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, mhI), 1e-9) && ngIs(x=> ngVal(P, x), x=> ngVal(f, x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a/x + b/x² trên (0; +∞): phân biệt hai công thức, dấu trừ ở −1/x', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), f = [[a, ngX(-1)], [b, ngX(-2)]], P = mhP(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[a, ngLp], [b, ngX(-1)]]), ngOp([[-a, ngX(-2)], [b, ngLp]]), ngOp([[a, ngLp], [qm(b, 2), ngX(-3)]]), ngOp([[-a, ngLp], [-b, ngX(-1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`$${ngI('\\dfrac{1}{x}')} = \\ln x + C$ và $${ngI('\\dfrac{1}{x^{2}}')} = -\\dfrac{1}{x} + C$ trên $(0; +\\infty)$.<br>Vậy họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, mhI), 1e-9) && ngIs(x=> ngVal(P, x), x=> ngVal(f, x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x² + a)/x trên (0; +∞): chia tử cho x trước (bẫy: nguyên hàm tử chia nguyên hàm mẫu)', R=>{
+  const a = R.nz(-12, 12), f = [[1, ngX(1)], [a, ngX(-1)]], P = mhP(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[1, ngX(2)], [a, ngLp]]), ngOp([[qr(1, 2), ngX(2)], [a, ngX(-2)]]), ngOp([[qr(1, 2), ngX(2)], [qm(a, -1), ngLp]]), ngOp([[qr(1, 3), ngX(3)], [a, ngLp]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${ngTx(nkP([[1, 2], [a, 0]]))}}{x}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Chia tử cho $x$: $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, mhI), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x*x + a)/x)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x + a)²/x trên (0; +∞): khai triển bình phương rồi chia cho x', R=>{
+  const a = R.nz(-7, 7), f = [[1, ngX(1)], [2*a, ngX(0)], [a*a, ngX(-1)]], P = mhP(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[qr(1, 2), ngX(2)], [a, ngX(1)], [a*a, ngLp]]), ngOp([[qr(1, 2), ngX(2)], [2*a, ngX(1)], [a, ngLp]]), ngOp([[1, ngX(2)], [2*a, ngX(1)], [a*a, ngLp]]), ngOp([[qr(1, 2), ngX(2)], [2*a, ngX(1)], [-a*a, ngLp]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{(${nkL(1, a)})^{2}}{x}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Khai triển và chia cho $x$: $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, mhI), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x + a)**2/x)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (x − a)(x + b)/x trên (0; +∞): nhân tử rồi chia từng số hạng cho x', R=>{
+  const a = R.int(1, 7), b = R.int(1, 7); if(a === b) return null;
+  const c = b - a, d = -a*b, f = [[1, ngX(1)], [c, ngX(0)], [d, ngX(-1)]], P = mhP(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[qr(1, 2), ngX(2)], [c, ngX(1)], [-d, ngLp]]), ngOp([[qr(1, 2), ngX(2)], [a + b, ngX(1)], [d, ngLp]]), ngOp([[1, ngX(2)], [c, ngX(1)], [d, ngLp]]), ngOp([[qr(1, 2), ngX(2)], [c, ngX(1)], [d, ngX(-2)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{(x - ${a})(x + ${b})}{x}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Nhân tử rồi chia cho $x$: $f(x) = ${ngTx(f)}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, mhI), 1e-9) && ngIs(x=> ngVal(P, x), x=> (x - a)*(x + b)/x)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của eˣ(a + b·e⁻ˣ): nhân phân phối, eˣ·e⁻ˣ = 1 (bẫy: giữ nguyên tích, nguyên hàm từng thừa số)', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), T = [[a, ngE1], [b, ngX(1)]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[a, ngE1], [b, ngX(0)]]), ngOp([[qm(a, -1), ngE1], [b, ngX(1)]]), ngOp([[a, ngE1], [qm(b, -1), ngX(1)]]), ngOp([[b, ngE1], [a, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = e^{x}\\left(${a}${ngSg(b)}e^{-x}\\right)$ là`.replace(/([+-]) 1e\^/, '$1 e^'), ans, wrong,
+    lg:`Nhân phân phối, chú ý $e^{x}\\cdot e^{-x} = 1$: $f(x) = ${ngTx([[a, ngE1], [b, ngX(0)]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> Math.exp(x)*(a + b*Math.exp(-x)))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của (e²ˣ − a²)/(eˣ + a) với a > 0: hằng đẳng thức đưa về eˣ − a', R=>{
+  const a = R.int(1, 15), T = [[1, ngE1], [-a, ngX(1)]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[1, ngE1], [a, ngX(1)]]), ngOp([[1, ngE1], [-a, ngX(0)]]), ngOp([[1, ngE1], [-a*a, ngX(1)]]), ngOp([[qr(1, 2), mhE2], [-a, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{e^{2x} - ${a*a}}{e^{x} + ${a}}$ trên $\\mathbb{R}$ là`, ans, wrong,
+    lg:`$e^{2x} - ${a*a} = (e^{x} - ${a})(e^{x} + ${a})$ nên $f(x) = e^{x} - ${a}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> (Math.exp(2*x) - a*a)/(Math.exp(x) + a))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của [(ab)ˣ + bˣ]/bˣ: chia cho bˣ được aˣ + 1 (luỹ thừa cùng số mũ)', R=>{
+  const a = R.pick([2, 3, 5, 6, 7]), b = R.pick([2, 3, 4, 5].filter(z=> z !== a)), k = R.nz(-8, 8), T = [[1, ngAL(a)], [k, ngX(1)]], ab = a*b;
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[1, ngA(a)], [k, ngX(1)]]), ngOp([[1, ngAL(ab)], [k, ngX(1)]]), ngOp([[1, ngAL(a)], [k, ngX(0)]]), ngOp([[-1, ngAL(a)], [k, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${ab}^{x}${ngSg(k)}\\cdot ${b}^{x}}{${b}^{x}}$ là`.replace(/([+-]) 1\\cdot /, '$1 '), ans, wrong,
+    lg:`Chia từng số hạng: $\\dfrac{${ab}^{x}}{${b}^{x}} = ${a}^{x}$ nên $f(x) = ${a}^{x}${ngSg(k)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> a**x + k)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của aˣ(aˣ + 1): nhân vào được (a²)ˣ + aˣ rồi dùng công thức hai lần', R=>{
+  const a = R.pick([2, 3, 5, 6, 7]), k = R.nz(-6, 6), T = [[1, ngAL(a*a)], [k, ngAL(a)]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[1, ngAL(a*a)], [k, ngA(a)]]), ngOp([[1, ngA(a*a)], [k, ngA(a)]]), ngOp([[1, ngAL(a*a)], [k, ngX(1)]]), ngOp([[1, ngAL(a*a)], [-k, ngAL(a)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${a}^{x}\\left(${a}^{x}${ngSg(k)}\\right)$ là`, ans, wrong,
+    lg:`Nhân vào: $f(x) = ${a*a}^{x} ${k < 0 ? '-' : '+'} ${Math.abs(k) === 1 ? '' : Math.abs(k) + '\\cdot '}${a}^{x}$.<br>Lấy nguyên hàm từng số hạng, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> a**x*(a**x + k))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a^(kx) = (aᵏ)ˣ: mẫu là ln aᵏ = k·ln a (bẫy: quên k, nhân thay vì chia)', R=>{
+  const a = R.pick([2, 3, 5, 7]), k = R.pick([2, 3, 4]), c = R.pick([1, 2, 3, 5, 7, -1, -3]), base = a**k, v = c*base**mhI/(k*Math.log(a)); if(ngG(Math.abs(c), k) > 1) return null;
+  const opt = (t, val)=> ({t:`$${t} + C$`, v:val}), cT = c === 1 ? '' : c === -1 ? '-' : `${c} \\cdot `, pw = `${a}^{${k}x}`;
+  const ans = opt(`\\dfrac{${c === 1 ? '' : c === -1 ? '' : Math.abs(c) + ' \\cdot '}${pw}}{${k}\\ln ${a}}`.replace(/^/, c < 0 ? '-' : ''), v);
+  const wrong = ngW(R, ans, [opt(`\\dfrac{${c === 1 ? '' : c === -1 ? '' : Math.abs(c) + ' \\cdot '}${pw}}{\\ln ${a}}`.replace(/^/, c < 0 ? '-' : ''), c*base**mhI/Math.log(a)), opt(`${cT}${k}\\cdot ${pw}\\ln ${a}`.replace('-1\\cdot', '-'), c*k*base**mhI*Math.log(a)), opt(`\\dfrac{${c === 1 ? '' : c === -1 ? '' : Math.abs(c) + ' \\cdot '}${pw}}{${k}}`.replace(/^/, c < 0 ? '-' : ''), c*base**mhI/k), opt(`${cT}${pw}\\ln ${a}`, c*base**mhI*Math.log(a))]); if(!wrong) return null;
+  const Fn = x=> c*base**x/(k*Math.log(a));
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${cT}${pw}$ là`, ans, wrong,
+    lg:`Viết $${pw} = (${a}^{${k}})^{x} = ${base}^{x}$. Theo công thức, $${ngI(`${base}^{x}`)} = \\dfrac{${base}^{x}}{\\ln ${base}} + C$, và $\\ln ${base} = ${k}\\ln ${a}$.<br>Vậy kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(mhI), 1e-9) && ngIs(Fn, x=> c*base**x)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của eᵃˣ·eᵇˣ: gộp e^((a + b)x) rồi chia cho a + b (bẫy: cộng nguyên hàm, nhân hai nguyên hàm)', R=>{
+  const a = R.int(1, 6), b = R.int(1, 6), s = a + b, c = R.pick([1, 2, 3, -1, -2]), E = `e^{${s}x}`, cT = c === 1 ? '' : c === -1 ? '-' : c, X0 = 0.3, e0 = Math.exp(s*X0);
+  if(ngG(Math.abs(c), s) > 1) return null;
+  const opt = q=>{ const [n, d] = qr(q[0], q[1]), N = Math.abs(n) === 1 ? '' : Math.abs(n); return {t:`$${n < 0 ? '-' : ''}${d === 1 ? `${N}${E}` : `\\dfrac{${N}${E}}{${d}}`} + C$`, v:n/d*e0}; };
+  const ans = opt([c, s]), wrong = ngW(R, ans, [opt([c, 1]), opt([c*s, 1]), opt([c, a*b]), opt([c, s + 1])]); if(!wrong) return null;
+  const Fn = x=> c*Math.exp(s*x)/s;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${cT}e^{${a === 1 ? '' : a}x}\\cdot e^{${b === 1 ? '' : b}x}$ là`, ans, wrong,
+    lg:`Gộp luỹ thừa: $f(x) = ${cT}${E}$. Vì $(${E})' = ${s}${E}$ nên $${ngI(E)} = \\dfrac{${E}}{${s}} + C$.<br>Vậy kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(X0), 1e-9) && ngIs(Fn, x=> c*Math.exp(a*x)*Math.exp(b*x), [0.1, 0.3, 0.5])};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k/(mx) trên (0; +∞): tách hệ số k/m ra ngoài (bẫy: k·ln(mx)/m khác k·ln x/m chỉ hằng số; nhầm m·ln x)', R=>{
+  const m = R.int(2, 9), k = R.int(1, 15); if(ngG(k, m) !== 1) return null;
+  const f = [[qr(k, m), ngX(-1)]], P = mhP(f);
+  const ans = ngOp(P), wrong = ngW(R, ans, [ngOp([[k, ngLp]]), ngOp([[qr(m, k), ngLp]]), ngOp([[qr(-k, m), ngX(-2)]]), ngOp([[k*m, ngLp]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${k}}{${m}x}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`$f(x) = ${qT(qr(k, m))}\\cdot\\dfrac{1}{x}$ nên họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(P, mhI), 1e-9) && ngIs(x=> ngVal(P, x), x=> k/(m*x))};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của a/x trên (−∞; 0): ln|x| = ln(−x), không dùng ln x (bẫy: ln x không xác định)', R=>{
+  const a = R.nz(-15, 15), Fn = x=> a*Math.log(-x), opt = (t, v)=> ({t:`$${t} + C$`, v}), v0 = -1.37, A = mhS(a);
+  const ans = opt(`${A}\\ln(-x)`, Fn(v0)), wrong = ngW(R, ans, [opt(`${mhS(-a)}\\ln(-x)`, -Fn(v0)), opt(`${A}\\ln x`, 100 + a), opt(`${a < 0 ? '' : '-'}\\dfrac{${Math.abs(a)}}{x^{2}}`, -a/(v0*v0)), opt(`${a}x`, a*v0 + 1000)]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${ngTx([[a, ngX(-1)]])}$ trên khoảng $(-\\infty; 0)$ là`, ans, wrong,
+    lg:`Trên $(-\\infty; 0)$: $${ngI('\\dfrac{1}{x}')} = \\ln|x| + C = \\ln(-x) + C$.<br>Vậy họ nguyên hàm là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(v0), 1e-9) && ngIs(Fn, x=> a/x, [-0.5, -1.2, -3])};
+  return o;
+});
+
+G(12,3,0,'VD','Chọn nguyên hàm của k·ln x/x trên (0; +∞): kiểm tra bằng đạo hàm của (ln x)² (bẫy: quên chia 2)', R=>{
+  const t = R.nz(-8, 8), k = 2*t, op = c=> ({t:`$${mhS(c)}\\ln^{2}x + C$`, v:c*Math.log(mhI)**2});
+  const ans = op(t), wrong = ngW(R, ans, [op(k), op(2*k), op(-t), {t:`$${mhS(k)}\\ln x + C$`, v:k*Math.log(mhI)}]); if(!wrong) return null;
+  const Fn = x=> t*Math.log(x)**2;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\dfrac{${mhS(k)}\\ln x}{x}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Ta có $(\\ln^{2}x)' = 2\\ln x\\cdot\\dfrac{1}{x} = \\dfrac{2\\ln x}{x}$.<br>Do đó nguyên hàm của $\\dfrac{${mhS(k)}\\ln x}{x}$ là ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(mhI), 1e-9) && ngIs(Fn, x=> k*Math.log(x)/x)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k·e^(ln x) + m/x trên (0; +∞): rút gọn e^(ln x) = x trước', R=>{
+  const t = R.nz(-8, 8), k = 2*t, m = R.nz(-9, 9), T = [[t, ngX(2)], [m, ngLp]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[k, ngX(2)], [m, ngLp]]), ngOp([[t, ngX(2)], [-m, ngLp]]), ngOp([[k, ngE1], [m, ngLp]]), ngOp([[k, ngX(1)], [m, ngLp]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = ${k}e^{\\ln x}${ngSg(m).replace(/ (\d+)$/, ' \\dfrac{$1}{x}')}$ trên khoảng $(0; +\\infty)$ là`, ans, wrong,
+    lg:`Với $x > 0$: $e^{\\ln x} = x$ nên $f(x) = ${ngTx([[k, ngX(1)], [m, ngX(-1)]])}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> k*Math.exp(Math.log(x)) + m/x)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của ln(eᵏˣ) + m: rút gọn ln(eᵏˣ) = kx trước, đưa về đa thức', R=>{
+  const t = R.nz(-8, 8), k = 2*t, m = R.nz(-9, 9), T = [[t, ngX(2)], [m, ngX(1)]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[k, ngX(2)], [m, ngX(1)]]), ngOp([[k, ngX(1)], [m, ngX(0)]]), ngOp([[t, ngX(2)], [-m, ngX(1)]]), ngOp([[qr(k, 3), ngX(3)], [m, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = \\ln\\left(e^{${k}x}\\right)${ngSg(m)}$ là`, ans, wrong,
+    lg:`$\\ln\\left(e^{${k}x}\\right) = ${k}x$ nên $f(x) = ${nkL(k, m)}$.<br>Lấy nguyên hàm, ta được ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> Math.log(Math.exp(k*x)) + m, [0.3, 0.9, 1.3])};
+  return o;
+});
+
+G(12,3,0,'VD','Nguyên hàm của (eˣ + k)²: khai triển e²ˣ + 2k·eˣ + k² (nguyên hàm của e²ˣ là e²ˣ/2)', R=>{
+  const k = R.nz(-7, 7), T = [[qr(1, 2), mhE2], [2*k, ngE1], [k*k, ngX(1)]];
+  const ans = ngOp(T), wrong = ngW(R, ans, [ngOp([[1, mhE2], [2*k, ngE1], [k*k, ngX(1)]]), ngOp([[qr(1, 2), mhE2], [k, ngE1], [k*k, ngX(1)]]), ngOp([[qr(1, 2), mhE2], [2*k, ngE1], [k*k, ngX(0)]]), ngOp([[qr(1, 2), mhE2], [k*k, ngX(1)]])]); if(!wrong) return null;
+  const o = {stem:`Họ nguyên hàm của hàm số $f(x) = (e^{x}${ngSg(k)})^{2}$ là`, ans, wrong,
+    lg:`Khai triển: $f(x) = ${ngTx([[1, mhE2], [2*k, ngE1], [k*k, ngX(0)]])}$. Vì $(e^{2x})' = 2e^{2x}$ nên $${ngI('e^{2x}')} = \\dfrac{e^{2x}}{2} + C$.<br>Vậy kết quả là ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngVal(T, mhI), 1e-9) && ngIs(x=> ngVal(T, x), x=> (Math.exp(x) + k)**2)};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','f(x) = a/x trên (0; +∞) với a > 0, F(1) = b: công thức F, F(e), F(e²), đồng biến', R=>{
+  const a = R.int(1, 9), b = R.nz(-9, 9), f = x=> a/x, Fn = x=> a*Math.log(x) + b, A = mhS(a);
+  return {stem:`Cho hàm số $f(x) = ${ngTx([[a, ngX(-1)]])}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(1) = ${b}$.`,
+    items:[claim(R, `$F(x) = ${A}\\ln x${ngSg(b)}$`, `$F(x) = ${A}\\ln x${ngSg(b - a)}$`, ()=> ngIs(Fn, f) && near(Fn(1), b, 1e-9), ()=> near(a*Math.log(1) + b - a, b, 1e-9)),
+      claimN(R, v=> `$F(e) = ${v}$`, a + b, String(a + b), a*Math.E === 0 ? 0 : b, String(b), ()=> ngRd(Fn(Math.E))),
+      claimN(R, v=> `$F(e^{2}) = ${v}$`, 2*a + b, String(2*a + b), a*a + b, String(a*a + b), ()=> ngRd(Fn(Math.E**2))),
+      claim(R, `Hàm số $F(x)$ đồng biến trên $(0; +\\infty)$`, `Hàm số $F(x)$ nghịch biến trên $(0; +\\infty)$`, ()=> [0.1, 1, 9].every(x=> f(x) > 0), ()=> [0.1, 1, 9].every(x=> f(x) < 0))],
+    lg:`a) $F(x) = ${A}\\ln x + C$; $F(1) = C = ${b}$.<br>b) $F(e) = ${a}${ngSg(b)} = ${a + b}$.<br>c) $F(e^{2}) = ${2*a}${ngSg(b)} = ${2*a + b}$.<br>d) $F'(x) = f(x) > 0$ với mọi $x > 0$ nên $F$ đồng biến.`};
+});
+
+GD(12,3,0,'VD','Hai nguyên hàm của 1/(mx): (1/m)ln x và (1/m)ln(mx) sai khác hằng số (1/m)ln m; kiểm tra bằng đạo hàm', R=>{
+  const m = R.int(2, 9), f = x=> 1/(m*x), Fa = x=> Math.log(x)/m, Ga = x=> Math.log(m*x)/m, T = qT(qr(1, m));
+  return {stem:`Cho hàm số $f(x) = \\dfrac{1}{${m}x}$ trên khoảng $(0; +\\infty)$ và các hàm số $F(x) = ${T}\\ln x$, $G(x) = ${T}\\ln(${m}x)$.`,
+    items:[claim(R, `$F(x)$ là một nguyên hàm của $f(x)$`, `$F(x)$ không là nguyên hàm của $f(x)$`, ()=> ngIs(Fa, f), ()=> !ngIs(Fa, f)),
+      claim(R, `$G(x)$ là một nguyên hàm của $f(x)$`, `$G(x)$ là một nguyên hàm của $\\dfrac{1}{x}$`, ()=> ngIs(Ga, f), ()=> ngIs(Ga, x=> 1/x)),
+      claim(R, `$G(x) - F(x) = ${T}\\ln ${m}$ với mọi $x > 0$`, `$G(x) - F(x) = \\ln ${m}$ với mọi $x > 0$`, ()=> near(Ga(1.7) - Fa(1.7), Math.log(m)/m, 1e-9), ()=> near(Ga(1.7) - Fa(1.7), Math.log(m), 1e-9)),
+      claim(R, `$${ngI(`\\dfrac{${m}}{x}`)} = ${m}\\ln x + C$`, `$${ngI(`\\dfrac{${m}}{x}`)} = \\dfrac{${m}}{x^{2}} + C$`, ()=> ngIs(x=> m*Math.log(x), x=> m/x), ()=> ngIs(x=> m/x/x, x=> m/x))],
+    lg:`a) $F'(x) = ${T}\\cdot\\dfrac{1}{x} = f(x)$.<br>b) $G'(x) = ${T}\\cdot\\dfrac{${m}}{${m}x} = \\dfrac{1}{${m}x}$.<br>c) $G(x) = ${T}(\\ln ${m} + \\ln x) = F(x) + ${T}\\ln ${m}$.<br>d) $${ngI(`\\dfrac{${m}}{x}`)} = ${m}\\ln x + C$ trên $(0; +\\infty)$.`};
+});
+
+GD(12,3,0,'TH','f(x) = eˣ + k, F(0) = 0: công thức F có hằng số −1, F(1), F(ln 2) (e^(ln 2) = 2), F\'(0)', R=>{
+  const k = R.nz(-8, 8), f = x=> Math.exp(x) + k, Fn = x=> Math.exp(x) + k*x - 1, kT = `${k === 1 ? '' : k === -1 ? '-' : k}`;
+  return {stem:`Cho hàm số $f(x) = e^{x}${ngSg(k)}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claim(R, `$F(x) = e^{x}${ngSx(k)} - 1$`, `$F(x) = e^{x}${ngSx(k)}$`, ()=> ngIs(Fn, f) && near(Fn(0), 0, 1e-9), ()=> near(Math.exp(0), 0, 1e-9)),
+      claim(R, `$F(1) = e${ngSg(k - 1)}$`, `$F(1) = e${ngSg(k)}$`, ()=> near(Fn(1), Math.E + k - 1, 1e-9), ()=> near(Fn(1), Math.E + k, 1e-9)),
+      claim(R, `$F(\\ln 2) = 1${ngSx(k, '\\ln 2')}$`, `$F(\\ln 2) = 2${ngSx(k, '\\ln 2')}$`, ()=> near(Fn(Math.LN2), 1 + k*Math.LN2, 1e-9), ()=> near(Fn(Math.LN2), 2 + k*Math.LN2, 1e-9)),
+      claimN(R, v=> `$F'(0) = ${v}$`, 1 + k, String(1 + k), k, String(k), ()=> ngRd(ngDf(Fn, 0)))],
+    lg:`a) $F(x) = e^{x}${ngSx(k)} + C$; $F(0) = 1 + C = 0$ nên $C = -1$.<br>b) $F(1) = e${ngSg(k)} - 1 = e${ngSg(k - 1)}$.<br>c) $F(\\ln 2) = e^{\\ln 2}${ngSx(k, '\\ln 2')} - 1 = 1${ngSx(k, '\\ln 2')}$.<br>d) $F'(0) = f(0) = 1${ngSg(k)} = ${1 + k}$.`.replace(/\+ 0\$/g, '$').replace(/- 0\$/g, '$')};
+});
+
+GD(12,3,0,'TH','f(x) = aˣ: nguyên hàm aˣ/ln a, không dùng công thức xⁿ; ∫(a²)ˣ, F(1) − F(0) = (a − 1)/ln a', R=>{
+  const a = R.pick([2, 3, 5, 6, 7, 10]), Fn = x=> a**x/Math.log(a), f = x=> a**x;
+  return {stem:`Cho hàm số $f(x) = ${a}^{x}$ và $F(x) = \\dfrac{${a}^{x}}{\\ln ${a}}$.`,
+    items:[claim(R, `$F(x)$ là một nguyên hàm của $f(x)$`, `$F'(x) = ${a}^{x}\\ln ${a}$`, ()=> ngIs(Fn, f), ()=> ngIs(Fn, x=> a**x*Math.log(a))),
+      claim(R, `$${ngI(`${a}^{x}`)} \\ne \\dfrac{${a}^{x + 1}}{x + 1} + C$`, `$${ngI(`${a}^{x}`)} = \\dfrac{${a}^{x + 1}}{x + 1} + C$`, ()=> !ngIs(x=> a**(x + 1)/(x + 1), f), ()=> ngIs(x=> a**(x + 1)/(x + 1), f)),
+      claim(R, `$${ngI(`${a*a}^{x}`)} = \\dfrac{${a*a}^{x}}{2\\ln ${a}} + C$`, `$${ngI(`${a*a}^{x}`)} = \\dfrac{${a*a}^{x}}{\\ln ${a}} + C$`, ()=> ngIs(x=> (a*a)**x/(2*Math.log(a)), x=> (a*a)**x), ()=> ngIs(x=> (a*a)**x/Math.log(a), x=> (a*a)**x)),
+      claim(R, `$F(1) - F(0) = \\dfrac{${a - 1}}{\\ln ${a}}$`, `$F(1) - F(0) = \\dfrac{${a}}{\\ln ${a}}$`, ()=> near(Fn(1) - Fn(0), (a - 1)/Math.log(a), 1e-9), ()=> near(Fn(1) - Fn(0), a/Math.log(a), 1e-9))],
+    lg:`a) $F'(x) = \\dfrac{${a}^{x}\\ln ${a}}{\\ln ${a}} = ${a}^{x}$.<br>b) Công thức $x^{\\alpha}$ chỉ áp dụng khi cơ số là biến; ở đây biến nằm ở số mũ nên phải dùng $${ngI('a^{x}')} = \\dfrac{a^{x}}{\\ln a} + C$.<br>c) $\\ln ${a*a} = 2\\ln ${a}$ nên kết quả có mẫu $2\\ln ${a}$.<br>d) $F(1) - F(0) = \\dfrac{${a} - 1}{\\ln ${a}}$.`};
+});
+
+GD(12,3,0,'VD','Nguyên hàm của 1/x trên ℝ \\ {0}: hai hằng số độc lập, biết F(1), F(−1), tính F(e), F(−e²)', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9); if(a === b) return null;
+  const Fn = x=> Math.log(Math.abs(x)) + (x > 0 ? a : b);
+  return {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = \\dfrac{1}{x}$ trên $\\mathbb{R} \\setminus \\{0\\}$ thoả mãn $F(1) = ${a}$ và $F(-1) = ${b}$.`,
+    items:[claim(R, `$F(x) = \\ln x${ngSg(a)}$ với mọi $x > 0$`, `$F(x) = \\ln x${ngSg(b)}$ với mọi $x > 0$`, ()=> near(Fn(2), Math.log(2) + a, 1e-9), ()=> near(Fn(2), Math.log(2) + b, 1e-9)),
+      claim(R, `$F(x) = \\ln(-x)${ngSg(b)}$ với mọi $x < 0$`, `$F(x) = \\ln(-x)${ngSg(a)}$ với mọi $x < 0$`, ()=> near(Fn(-2), Math.log(2) + b, 1e-9), ()=> near(Fn(-2), Math.log(2) + a, 1e-9)),
+      claimN(R, v=> `$F(e) = ${v}$`, a + 1, String(a + 1), b + 1, String(b + 1), ()=> ngRd(Fn(Math.E))),
+      claimN(R, v=> `$F(-e^{2}) = ${v}$`, b + 2, String(b + 2), a + 2, String(a + 2), ()=> ngRd(Fn(-(Math.E**2))))],
+    lg:`Trên mỗi khoảng $(0; +\\infty)$, $(-\\infty; 0)$ nguyên hàm có một hằng số riêng: $F(x) = \\ln x + C_{1}$ khi $x > 0$, $F(x) = \\ln(-x) + C_{2}$ khi $x < 0$.<br>$F(1) = C_{1} = ${a}$, $F(-1) = C_{2} = ${b}$.<br>Do đó $F(e) = 1${ngSg(a)} = ${a + 1}$ và $F(-e^{2}) = 2${ngSg(b)} = ${b + 2}$.`};
+});
+
+GD(12,3,0,'TH','f(x) = (x + k)/x trên (0; +∞): tách 1 + k/x, nguyên hàm, F(1) = 0, F(e) và F\'(k)', R=>{
+  const k = R.int(2, 9), f = x=> (x + k)/x, Fn = x=> x + k*Math.log(x) - 1, K = mhS(k);
+  return {stem:`Cho hàm số $f(x) = \\dfrac{x + ${k}}{x}$ trên khoảng $(0; +\\infty)$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(1) = 0$.`,
+    items:[claim(R, `$f(x) = 1 + ${ngTx([[k, ngX(-1)]])}$`, `$f(x) = x + ${ngTx([[k, ngX(-1)]])}$`, ()=> near(f(1.7), 1 + k/1.7, 1e-9), ()=> near(f(1.7), 1.7 + k/1.7, 1e-9)),
+      claim(R, `$F(x) = x + ${K}\\ln x - 1$`, `$F(x) = x + ${K}\\ln x$`, ()=> ngIs(Fn, f) && near(Fn(1), 0, 1e-9), ()=> near(1 + k*Math.log(1), 0, 1e-9)),
+      claim(R, `$F(e) = e + ${k - 1}$`.replace('e + 0', 'e'), `$F(e) = e + ${k}$`, ()=> near(Fn(Math.E), Math.E + k - 1, 1e-9), ()=> near(Fn(Math.E), Math.E + k, 1e-9)),
+      claim(R, `$F'(${k}) = 2$`, `$F'(${k}) = ${k + 1}$`, ()=> near(f(k), 2, 1e-9), ()=> near(f(k), k + 1, 1e-9))],
+    lg:`a) Chia từng số hạng: $f(x) = 1 + ${ngTx([[k, ngX(-1)]])}$.<br>b) $F(x) = x + ${K}\\ln x + C$; $F(1) = 1 + C = 0$ nên $C = -1$.<br>c) $F(e) = e + ${k} - 1 = e + ${k - 1}$.`.replace('= e + 0', '= e') + `<br>d) $F'(${k}) = f(${k}) = \\dfrac{${2*k}}{${k}} = 2$.`};
+});
+
+GD(12,3,0,'TH','f(x) = k·e²ˣ: (e²ˣ)\' = 2e²ˣ, nguyên hàm (k/2)e²ˣ, F(0), F(ln 2), F(ln 3)', R=>{
+  const t = R.nz(-8, 8), k = 2*t, c = R.int(-6, 6), f = x=> k*Math.exp(2*x), Fn = x=> t*Math.exp(2*x) + c - t, T = mhS(t), v4 = 8*t + c, v9 = 9*t - t + c;
+  return {stem:`Cho hàm số $f(x) = ${k}e^{2x}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$.`,
+    items:[claim(R, `$${ngI('f(x)')} = ${T}e^{2x} + C$`, `$${ngI('f(x)')} = ${k}e^{2x} + C$`, ()=> ngIs(x=> t*Math.exp(2*x), f, [0.1, 0.4, 0.8]), ()=> ngIs(x=> k*Math.exp(2*x), f, [0.1, 0.4, 0.8])),
+      claim(R, `$F(x) = ${T}e^{2x}${c - t ? ngSg(c - t) : ''}$`, `$F(x) = ${T}e^{2x}${c + t ? ngSg(c + t) : ''}$`, ()=> near(Fn(0), c, 1e-9), ()=> near(t + c + t, c, 1e-9)),
+      claimN(R, v=> `$F(\\ln 2) = ${v}$`, 3*t + c, String(3*t + c), 4*t + c, String(4*t + c), ()=> ngRd(Fn(Math.LN2))),
+      claimN(R, v=> `$F(\\ln 3) = ${v}$`, v9, String(v9), 9*t + c, String(9*t + c), ()=> ngRd(Fn(Math.log(3))))],
+    lg:`a) $(e^{2x})' = 2e^{2x}$ nên $${ngI(`\\left(${k}e^{2x}\\right)`)} = ${T}e^{2x} + C$.<br>b) $F(0) = ${t} + C = ${c}$ nên $C = ${c - t}$.<br>c) $e^{2\\ln 2} = 4$ nên $F(\\ln 2) = ${ngPa(4*t)}${ngSg(c - t)} = ${3*t + c}$.`.replace('+ 0 =', '=').replace('- 0 =', '=') + `<br>d) $e^{2\\ln 3} = 9$ nên $F(\\ln 3) = ${ngPa(9*t)}${ngSg(c - t)} = ${v9}$.`.replace('+ 0 =', '=').replace('- 0 =', '=')};
+});
+
+GD(12,3,0,'VD','f(x) = aˣ·eˣ = (ae)ˣ: gộp cơ số, ln(ae) = 1 + ln a, nguyên hàm (ae)ˣ/(1 + ln a); so với cách nhân nguyên hàm từng thừa số', R=>{
+  const a = R.pick([2, 3, 5, 6, 7]), B = a*Math.E, f = x=> B**x, Fn = x=> B**x/(1 + Math.log(a));
+  return {stem:`Cho hàm số $f(x) = ${a}^{x}\\cdot e^{x}$ trên $\\mathbb{R}$.`,
+    items:[claim(R, `$f(x) = (${a}e)^{x}$`, `$f(x) = ${a}e^{x}$`, ()=> near(f(1.3), (a*Math.E)**1.3, 1e-9), ()=> near(f(1.3), a*Math.exp(1.3), 1e-9)),
+      claim(R, `$\\ln(${a}e) = 1 + \\ln ${a}$`, `$\\ln(${a}e) = \\ln ${a}$`, ()=> near(Math.log(B), 1 + Math.log(a), 1e-9), ()=> near(Math.log(B), Math.log(a), 1e-9)),
+      claim(R, `$${ngI('f(x)')} = \\dfrac{${a}^{x}e^{x}}{1 + \\ln ${a}} + C$`, `$${ngI('f(x)')} = \\dfrac{${a}^{x}e^{x}}{\\ln ${a}} + C$`, ()=> ngIs(Fn, f), ()=> ngIs(x=> B**x/Math.log(a), f)),
+      claim(R, `Mọi nguyên hàm của $f(x)$ đều đồng biến trên $\\mathbb{R}$`, `Mọi nguyên hàm của $f(x)$ đều nghịch biến trên $\\mathbb{R}$`, ()=> [-3, 0, 3].every(x=> f(x) > 0), ()=> [-3, 0, 3].every(x=> f(x) < 0))],
+    lg:`a) $${a}^{x}\\cdot e^{x} = (${a}e)^{x}$ (cùng số mũ).<br>b) $\\ln(${a}e) = \\ln ${a} + \\ln e = 1 + \\ln ${a}$.<br>c) Áp dụng công thức $${ngI('a^{x}')} = \\dfrac{a^{x}}{\\ln a} + C$ với cơ số $${a}e$.<br>d) Đạo hàm của mọi nguyên hàm bằng $f(x) > 0$ nên chúng đều đồng biến.`};
+});
+
+GD(12,3,0,'VD','f(x) = k·e⁻ˣ (k > 0), F(0) = 0: (e⁻ˣ)\' = −e⁻ˣ, F(x) = k − k·e⁻ˣ, F(ln 2), luôn nhỏ hơn k, đồng biến', R=>{
+  const t = R.int(1, 8), k = 2*t, f = x=> k*Math.exp(-x), Fn = x=> k - k*Math.exp(-x);
+  return {stem:`Cho hàm số $f(x) = ${k}e^{-x}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claim(R, `$${ngI('f(x)')} = -${k}e^{-x} + C$`, `$${ngI('f(x)')} = ${k}e^{-x} + C$`, ()=> ngIs(x=> -k*Math.exp(-x), f), ()=> ngIs(x=> k*Math.exp(-x), f)),
+      claim(R, `$F(x) = ${k} - ${k}e^{-x}$`, `$F(x) = -${k}e^{-x}$`, ()=> near(Fn(0), 0, 1e-9) && ngIs(Fn, f), ()=> near(-k, 0, 1e-9)),
+      claimN(R, v=> `$F(\\ln 2) = ${v}$`, t, String(t), k, String(k), ()=> ngRd(Fn(Math.LN2))),
+      claim(R, `$F(x) < ${k}$ với mọi $x$`, `Tồn tại $x$ để $F(x) > ${k}$`, ()=> [-2, 0, 5, 30].every(x=> Fn(x) < k), ()=> [-2, 0, 5, 30].some(x=> Fn(x) > k))],
+    lg:`a) $(e^{-x})' = -e^{-x}$ nên $${ngI(`${k}e^{-x}`)} = -${k}e^{-x} + C$.<br>b) $F(0) = -${k} + C = 0$ nên $C = ${k}$.<br>c) $e^{-\\ln 2} = \\dfrac{1}{2}$ nên $F(\\ln 2) = ${k} - ${t} = ${t}$.<br>d) $${k}e^{-x} > 0$ với mọi $x$ nên $F(x) = ${k} - ${k}e^{-x} < ${k}$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','Nguyên hàm của a/x trên (0; +∞) thoả F(1) = b: tính F(e²) = 2a + b (ln e² = 2)', R=>{
+  const a = R.nz(-9, 9), b = R.int(-15, 15), v = 2*a + b;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx([[a, ngX(-1)]])}$ trên khoảng $(0; +\\infty)$ thoả mãn $F(1) = ${b}$. Tính $F(e^{2})$.`, ans:v,
+    lg:`$F(x) = ${mhS(a)}\\ln x + C$; $F(1) = C = ${b}$.<br>$F(e^{2}) = ${ngPa(a)}\\cdot 2${b ? ngSg(b) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> a/x, 1, Math.E**2, 8000) + b, 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của a/x + bx thoả F(1) = c: tính F(e), làm tròn đến hàng phần mười', R=>{
+  const a = R.nz(-9, 9), t = R.nz(-4, 4), b = 2*t, c = R.int(-9, 9), v = ngRou(a + t*(Math.E**2 - 1) + c, 1), f = [[a, ngX(-1)], [b, ngX(1)]];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx(f)}$ trên khoảng $(0; +\\infty)$ thoả mãn $F(1) = ${c}$. Tính $F(e)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$F(x) = ${ngTx([[a, ngLp], [t, ngX(2)]])} + C$; $F(1) = ${t} + C = ${c}$ nên $C = ${c - t}$.<br>$F(e) = ${a}${t === 1 ? ' + ' : t === -1 ? ' - ' : ngSg(t)}e^{2}${c - t ? ngSg(c - t) : ''} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(x=> ngVal(f, x), 1, Math.E) + c, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k·eˣ thoả F(0) = c: tính F(ln 3) = 2k + c', R=>{
+  const k = R.nz(-15, 15), c = R.int(-15, 15), v = 2*k + c;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${mhS(k)}e^{x}$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Tính $F(\\ln 3)$.`, ans:v,
+    lg:`$F(x) = ${mhS(k)}e^{x} + C$; $F(0) = ${k} + C = ${c}$ nên $C = ${c - k}$.<br>$F(\\ln 3) = ${ngPa(3*k)}${c - k ? ngSg(c - k) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> k*Math.exp(x), 0, Math.log(3)) + c, 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của eˣ + k thoả F(0) = 0: tính F(ln 2), làm tròn đến hàng phần mười', R=>{
+  const k = R.nz(-15, 15), v = ngRou(1 + k*Math.LN2, 1);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = e^{x}${ngSg(k)}$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$. Tính $F(\\ln 2)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$F(x) = e^{x}${ngSx(k)} + C$; $F(0) = 1 + C = 0$ nên $C = -1$.<br>$F(\\ln 2) = 2${ngSx(k, '\\ln 2')} - 1 \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(x=> Math.exp(x) + k, 0, Math.LN2), 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của k·aˣ·ln a: F(x) = k·aˣ + C, tính F(n) − F(0) = k(aⁿ − 1)', R=>{
+  const a = R.pick([2, 3]), n = a === 2 ? R.int(2, 4) : 2, k = R.nz(-9, 9), v = k*(a**n - 1);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${mhS(k)}\\cdot ${a}^{x}\\ln ${a}$ trên $\\mathbb{R}$. Tính $F(${n}) - F(0)$.`.replace('= \\cdot ', '= ').replace('= -\\cdot ', '= -'), ans:v,
+    lg:`$(${a}^{x})' = ${a}^{x}\\ln ${a}$ nên $F(x) = ${mhS(k)}\\cdot ${a}^{x} + C$.`.replace('= \\cdot ', '= ').replace('= -\\cdot ', '= -') + `<br>$F(${n}) - F(0) = ${mhS(k)}(${a**n} - 1) = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> k*a**x*Math.log(a), 0, n), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','∫(ax² + b)/x dx = mx² + n·ln x + C trên (0; +∞): tính m + n', R=>{
+  const t = R.nz(-8, 8), a = 2*t, b = R.nz(-9, 9), m = t, n = b, v = m + n, Fn = x=> m*x*x + n*Math.log(x);
+  const o = {stem:`Biết $${ngI(`\\dfrac{${ngTx(nkP([[a, 2], [b, 0]]))}}{x}`)} = mx^{2} + n\\ln x + C$ trên khoảng $(0; +\\infty)$, với $m$, $n$ là các số thực. Tính $m + n$.`, ans:v,
+    lg:`Chia tử cho $x$: $${ngTx([[a, ngX(1)], [b, ngX(-1)]])}$.<br>Lấy nguyên hàm: $m = ${m}$, $n = ${n}$.<br>Vậy $m + n = ${v}$.`,
+    verify:()=> near(o.ans, m + n, 1e-12) && ngIs(Fn, x=> (a*x*x + b)/x)};
+  return o;
+});
+
+GT(12,3,0,'TH','∫(x + a)²/x dx = px² + qx + r·ln x + C: tính tích p·q·r', R=>{
+  const a = R.nz(-9, 9), p = 0.5, q = 2*a, r = a*a, v = a*a*a, Fn = x=> p*x*x + q*x + r*Math.log(x);
+  const o = {stem:`Biết $${ngI(`\\dfrac{(${nkL(1, a)})^{2}}{x}`)} = px^{2} + qx + r\\ln x + C$ trên khoảng $(0; +\\infty)$, với $p$, $q$, $r$ là các số thực. Tính $p\\cdot q\\cdot r$.`, ans:v,
+    lg:`$\\dfrac{(${nkL(1, a)})^{2}}{x} = ${ngTx([[1, ngX(1)], [2*a, ngX(0)], [a*a, ngX(-1)]])}$.<br>Lấy nguyên hàm: $p = \\dfrac{1}{2}$, $q = ${q}$, $r = ${r}$.<br>Vậy $p\\cdot q\\cdot r = ${v}$.`,
+    verify:()=> near(o.ans, p*q*r, 1e-12) && ngIs(Fn, x=> (x + a)**2/x)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của (e²ˣ − a²)/(eˣ + a) thoả F(0) = c: rút gọn eˣ − a, tính F(ln 3), làm tròn đến hàng phần mười', R=>{
+  const a = R.int(1, 9), c = R.int(-9, 9), v = ngRou(3 - a*Math.log(3) + c - 1, 1);
+  const f = x=> (Math.exp(2*x) - a*a)/(Math.exp(x) + a);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = \\dfrac{e^{2x} - ${a*a}}{e^{x} + ${a}}$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Tính $F(\\ln 3)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$f(x) = e^{x} - ${a}$ nên $F(x) = e^{x}${ngSx(-a)} + C$; $F(0) = 1 + C = ${c}$ nên $C = ${c - 1}$.<br>$F(\\ln 3) = 3${ngSx(-a, '\\ln 3')}${c - 1 ? ngSg(c - 1) : ''} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(f, 0, Math.log(3)) + c, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = a·eˣ + b·ln x + cx là một nguyên hàm của (p·x·eˣ + q + rx)/x: chia cho x rồi đồng nhất, tính a + b + c', R=>{
+  const p = R.nz(-9, 9), q = R.nz(-9, 9), r = R.nz(-9, 9), v = p + q + r, Fn = x=> p*Math.exp(x) + q*Math.log(x) + r*x, fn = x=> (p*x*Math.exp(x) + q + r*x)/x;
+  const o = {stem:`Biết hàm số $F(x) = ae^{x} + b\\ln x + cx$ là một nguyên hàm của hàm số $f(x) = \\dfrac{${mhS(p)}xe^{x}${ngSg(q)}${ngSx(r)}}{x}$ trên khoảng $(0; +\\infty)$. Tính $a + b + c$.`, ans:v,
+    lg:`$f(x) = ${ngTx([[p, ngE1], [q, ngX(-1)], [r, ngX(0)]])}$ và $F'(x) = ae^{x} + \\dfrac{b}{x} + c$.<br>Đồng nhất: $a = ${p}$, $b = ${q}$, $c = ${r}$.<br>Vậy $a + b + c = ${v}$.`,
+    verify:()=> near(o.ans, p + q + r, 1e-12) && ngIs(Fn, fn)};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = (ax + b)e⁻ˣ là một nguyên hàm của (px + q)e⁻ˣ: đạo hàm tích với (e⁻ˣ)\' = −e⁻ˣ, đồng nhất, tính a + b', R=>{
+  const p = R.nz(-9, 9), q = R.nz(-9, 9), a = -p, b = a - q, v = a + b, Fn = x=> (a*x + b)*Math.exp(-x), fn = x=> (p*x + q)*Math.exp(-x);
+  const o = {stem:`Biết hàm số $F(x) = (ax + b)e^{-x}$ là một nguyên hàm của hàm số $f(x) = (${nkL(p, q)})e^{-x}$ trên $\\mathbb{R}$. Tính $a + b$.`, ans:v,
+    lg:`$F'(x) = ae^{-x} - (ax + b)e^{-x} = (-ax + a - b)e^{-x}$.<br>Đồng nhất: $-a = ${p}$, $a - b = ${q}$, nên $a = ${a}$, $b = ${b}$.<br>Vậy $a + b = ${v}$.`,
+    verify:()=> near(o.ans, a + b, 1e-12) && ngIs(Fn, fn)};
+  return o;
+});
+
+GT(12,3,0,'VD','F(x) = (ax + b)ln x + cx là một nguyên hàm của p·ln x + q/x + r: đạo hàm tích, đồng nhất ba hệ số, tính a + b + c', R=>{
+  const p = R.nz(-9, 9), q = R.nz(-9, 9), r = R.nz(-9, 9), a = p, b = q, c = r - p, v = a + b + c, Fn = x=> (a*x + b)*Math.log(x) + c*x, fn = x=> p*Math.log(x) + q/x + r;
+  const o = {stem:`Biết hàm số $F(x) = (ax + b)\\ln x + cx$ là một nguyên hàm của hàm số $f(x) = ${mhS(p)}\\ln x${q < 0 ? ' - ' : ' + '}\\dfrac{${Math.abs(q)}}{x}${ngSg(r)}$ trên khoảng $(0; +\\infty)$. Tính $a + b + c$.`, ans:v,
+    lg:`$F'(x) = a\\ln x + \\dfrac{ax + b}{x} + c = a\\ln x + \\dfrac{b}{x} + a + c$.<br>Đồng nhất: $a = ${p}$, $b = ${q}$, $a + c = ${r}$ nên $c = ${c}$.<br>Vậy $a + b + c = ${v}$.`,
+    verify:()=> near(o.ans, a + b + c, 1e-12) && ngIs(Fn, fn)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của k/x trên ℝ \\ {0} biết F(1), F(−1): tính F(−e³) − F(e) (hai hằng số khác nhau)', R=>{
+  const k = R.nz(-9, 9), a = R.int(-9, 9), b = R.int(-9, 9), v = 3*k + b - k - a; if(a === b) return null;
+  const Fn = x=> k*Math.log(Math.abs(x)) + (x > 0 ? a : b);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx([[k, ngX(-1)]])}$ trên $\\mathbb{R} \\setminus \\{0\\}$ thoả mãn $F(1) = ${a}$, $F(-1) = ${b}$. Tính $F(-e^{3}) - F(e)$.`, ans:v,
+    lg:`$F(x) = ${mhS(k)}\\ln x${a ? ngSg(a) : ''}$ khi $x > 0$ và $F(x) = ${mhS(k)}\\ln(-x)${b ? ngSg(b) : ''}$ khi $x < 0$.<br>$F(-e^{3}) = ${ngPa(3*k)}${b ? ngSg(b) : ''}$, $F(e) = ${k}${a ? ngSg(a) : ''}$.<br>Hiệu bằng $${v}$.`,
+    verify:()=> near(o.ans, ngRd(Fn(-(Math.E**3)) - Fn(Math.E)), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của k·ln x/x trên (0; +∞) thoả F(1) = c: F(x) = (k/2)ln²x + c, tính F(e²) = 2k + c', R=>{
+  const k = R.nz(-15, 15), c = R.int(-15, 15), v = 2*k + c;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = \\dfrac{${mhS(k)}\\ln x}{x}$ trên khoảng $(0; +\\infty)$ thoả mãn $F(1) = ${c}$. Tính $F(e^{2})$.`, ans:v,
+    lg:`$(\\ln^{2}x)' = \\dfrac{2\\ln x}{x}$ nên $F(x) = ${qT(qr(k, 2))}\\ln^{2}x + C$; $F(1) = C = ${c}$.<br>$F(e^{2}) = ${qT(qr(k, 2))}\\cdot 4${c ? ngSg(c) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> k*Math.log(x)/x, 1, Math.E**2, 8000) + c, 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','F là nguyên hàm của k·aˣ: F(1) − F(0) = k(a − 1)/ln a, làm tròn đến hàng phần mười', R=>{
+  const a = R.pick([2, 3, 5, 7, 10]), k = R.nz(-9, 9), v = ngRou(k*(a - 1)/Math.log(a), 1);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${mhS(k)}${k === 1 || k === -1 ? '' : '\\cdot '}${a}^{x}$ trên $\\mathbb{R}$. Tính $F(1) - F(0)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$F(x) = ${ngTx([[k, ngAL(a)]])} + C$.<br>$F(1) - F(0) = ${k < 0 ? '-' : ''}\\dfrac{${Math.abs(k*(a - 1))}}{\\ln ${a}} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(x=> k*a**x, 0, 1), 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Nguyên hàm của 3k·e^(2·ln x) trên (0; +∞) thoả F(1) = c: rút gọn e^(2 ln x) = x², tính F(x₀)', R=>{
+  const k = R.nz(-6, 6), c = R.int(-9, 9), x0 = R.pick([2, 3]), v = k*(x0**3 - 1) + c;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${3*k}e^{2\\ln x}$ trên khoảng $(0; +\\infty)$ thoả mãn $F(1) = ${c}$. Tính $F(${x0})$.`, ans:v,
+    lg:`$e^{2\\ln x} = e^{\\ln x^{2}} = x^{2}$ nên $f(x) = ${ngTx([[3*k, ngX(2)]])}$ và $F(x) = ${ngTx([[k, ngX(3)]])} + C$; $F(1) = ${k} + C = ${c}$ nên $C = ${c - k}$.<br>$F(${x0}) = ${ngPa(k*x0**3)}${c - k ? ngSg(c - k) : ''} = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> 3*k*Math.exp(2*Math.log(x)), 1, x0) + c, 1e-7)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.5 Tìm nguyên hàm thoả điều kiện; nguyên hàm hai lần; hàm hai công thức — số 213–252 (18 TN, 10 Đ–S, 12 TLN).
+   Chuỗi tư duy: biết f' tìm f → điều kiện đồ thị đi qua điểm, hệ số góc tiếp tuyến → f'' hai hằng số → |x|, hàm từng khúc, F liên tục → nhận ra đạo hàm của tích, của f². */
+const dkS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const dkP = co=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]));
+const dkV = (co, x)=> co.reduce((s, c)=> s*x + c, 0);
+
+G(12,3,0,'TH','Biết f\'(x) là đa thức bậc hai và f(0) = c: tìm f(x) (bẫy: quên hằng số c, lấy đạo hàm tiếp)', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-5, 5), d = R.nz(-6, 6), c = R.nz(-9, 9), g = [3*a, 2*b, d], co = [a, b, d, c], opt = C=> ({t:`$f(x) = ${dkP(C)}$`, v:dkV(C, 1.37)});
+  const ans = opt(co), wrong = ngW(R, ans, [opt([a, b, d, 0]), opt([a, b, d, -c]), opt([0, 6*a, 2*b, c]), opt([3*a, 2*b, d, c])]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f'(x) = ${dkP(g)}$ và $f(0) = ${c}$. Hàm số $f(x)$ là`, ans, wrong,
+    lg:`$f(x)$ là một nguyên hàm của $f'(x)$ nên $f(x) = ${dkP([a, b, d, 0])} + C$.<br>Từ $f(0) = ${c}$ có $C = ${c}$. Vậy ${ans.t}.`,
+    verify:()=> near(o.ans.v, ngSi(x=> dkV(g, x), 0, 1.37) + c, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết f\'(x) = a/x trên (0; +∞) và f(1) = c: tính f(e²) (ln 1 = 0 nên C = c)', R=>{
+  const a = R.nz(-9, 9), c = R.nz(-9, 9), v = 2*a + c;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(a + c), ngNum(2*a), ngNum(a*a + c), ngNum(c - 2*a), ngNum(2*a + c + 1)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ xác định trên $(0; +\\infty)$ có $f'(x) = ${ngTx([[a, ngX(-1)]])}$ và $f(1) = ${c}$. Giá trị của $f(e^{2})$ bằng`, ans, wrong,
+    lg:`$f(x) = ${dkS(a)}\\ln x + C$, $f(1) = C = ${c}$.<br>$f(e^{2}) = ${ngPa(a)}\\cdot 2${ngSg(c)} = ${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(x=> a/x, 1, Math.E**2, 8000) + c, 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết f\'(x) = a·sin x và f(0) = c: tính f(π) = 2a + c (bẫy: C = c, sai dấu −cos x)', R=>{
+  const a = R.nz(-9, 9), c = R.nz(-9, 9), v = 2*a + c;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(c), ngNum(c - 2*a), ngNum(a + c), ngNum(2*a)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f'(x) = ${dkS(a)}\\sin x$ và $f(0) = ${c}$. Giá trị của $f(\\pi)$ bằng`, ans, wrong,
+    lg:`$f(x) = ${dkS(-a)}\\cos x + C$; $f(0) = ${-a} + C = ${c}$ nên $C = ${a + c}$.<br>$f(\\pi) = ${a + c ? a + ngSg(a + c) + ' = ' : ''}${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(x=> a*Math.sin(x), 0, Math.PI) + c, 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết f\'(x) = eˣ + a và f(0) = c: tính f(1) (bẫy: e⁰ = 1 nên C = c − 1)', R=>{
+  const a = R.nz(-8, 8), c = R.nz(-8, 8), K = a + c - 1, opt = k=> ({t:`$e${k ? ngSg(k) : ''}$`, v:Math.E + k}); if(!K) return null;
+  const ans = opt(K), wrong = ngW(R, ans, [opt(a + c), opt(a + c + 1), opt(c - 1), opt(a - c - 1)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f'(x) = e^{x}${ngSg(a)}$ và $f(0) = ${c}$. Giá trị của $f(1)$ bằng`, ans, wrong,
+    lg:`$f(x) = e^{x}${ngSx(a)} + C$; $f(0) = 1 + C = ${c}$ nên $C = ${c - 1}$.<br>$f(1) = e${ngSg(a)}${ngSg(c - 1)}$, tức bằng ${ans.t}.`.replace(' + 0,', ',').replace(' - 0,', ','),
+    verify:()=> near(o.ans.v, ngSi(x=> Math.exp(x) + a, 0, 1) + c, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','Đồ thị nguyên hàm F đi qua điểm A(x₀; y₀): tính F tại điểm khác', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-6, 6), x0 = R.pick([-1, 0, 1, 2]), y0 = R.nz(-9, 9), x1 = x0 + R.pick([1, 2]), g = [2*a, b], Pv = x=> a*x*x + b*x, C = y0 - Pv(x0), v = Pv(x1) + C;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(Pv(x1)), ngNum(Pv(x1) + y0), ngNum(Pv(x1) - y0), ngNum(dkV(g, x1) + y0), ngNum(v + 2)]); if(!wrong) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dkP(g)}$ và đồ thị $y = F(x)$ đi qua điểm $A(${x0}; ${y0})$. Giá trị của $F(${x1})$ bằng`, ans, wrong,
+    lg:`$F(x) = ${dkP([a, b, 0])} + C$. Đồ thị qua $A$ nên $F(${x0}) = ${y0}$, suy ra $C = ${C}$.<br>$F(${x1}) = ${C ? Pv(x1) + ngSg(C) + ' = ' : ''}${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(x=> dkV(g, x), x0, x1) + y0, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm có đồ thị đi qua gốc toạ độ: chọn đúng hàm F của a·cos x + b·eˣ (bẫy: e⁰ = 1 tạo hằng số −b)', R=>{
+  const a = R.nz(-9, 9), b = R.nz(-9, 9), opt = (t1, k)=> {const l = [[t1, ngS1], [b, ngE1], [k, ngX(0)]]; return {t:`$F(x) = ${ngTx(l)}$`, v:ngVal(l, 1.37)};};
+  const ans = opt(a, -b), wrong = ngW(R, ans, [opt(a, 0), opt(a, b), opt(-a, -b), opt(a, -a)]); if(!wrong) return null;
+  const Fn = x=> a*Math.sin(x) + b*Math.exp(x) - b;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${ngTx([[a, ngC1], [b, ngE1]])}$ và đồ thị $y = F(x)$ đi qua gốc toạ độ. Hàm số $F(x)$ là`, ans, wrong,
+    lg:`$F(x) = ${ngTx([[a, ngS1], [b, ngE1]])} + C$. Đồ thị qua gốc toạ độ nên $F(0) = ${b} + C = 0$, tức $C = ${-b}$.<br>Vậy ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(1.37), 1e-9) && near(Fn(0), 0, 1e-12) && ngIs(Fn, x=> a*Math.cos(x) + b*Math.exp(x))};
+  return o;
+});
+
+G(12,3,0,'TH','Đường cong có hệ số góc tiếp tuyến tại điểm hoành độ x bằng 2ax + b, đi qua điểm cho trước: tính tung độ tại x₁ (ý nghĩa hình học của đạo hàm)', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-6, 6), x0 = R.pick([0, 1, -1]), y0 = R.nz(-8, 8), x1 = x0 + 2, Pv = x=> a*x*x + b*x, C = y0 - Pv(x0), v = Pv(x1) + C;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(2*a*x1 + b), ngNum(Pv(x1)), ngNum(Pv(x1) + y0), ngNum(v - 2*b), ngNum(v + 4*a)]); if(!wrong) return null;
+  const o = {stem:`Đường cong $y = f(x)$ đi qua điểm $M(${x0}; ${y0})$ và tiếp tuyến của nó tại mỗi điểm có hoành độ $x$ có hệ số góc bằng $${dkP([2*a, b])}$. Giá trị của $f(${x1})$ bằng`, ans, wrong,
+    lg:`Hệ số góc tiếp tuyến là $f'(x)$ nên $f'(x) = ${dkP([2*a, b])}$ và $f(x) = ${dkP([a, b, 0])} + C$.<br>$f(${x0}) = ${y0}$ cho $C = ${C}$. Vậy $f(${x1}) = ${qT(v)}$.`,
+    verify:()=> near(o.ans.v, ngSi(x=> 2*a*x + b, x0, x1) + y0, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm F của đa thức thoả F(0) + F(1) = k: lập phương trình tìm C rồi tính F(2)', R=>{
+  const a = R.nz(-3, 3), b = 2*R.nz(-3, 3), k = 2*R.nz(-8, 8) + a + b/2, Pv = x=> a*x*x*x + b/2*x*x, C = (k - Pv(1))/2, v = Pv(2) + C;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(Pv(2) + k), ngNum(Pv(2) + k - Pv(1)), ngNum(Pv(2) + 2*C), ngNum(Pv(2) - C)]); if(!wrong) return null;
+  const g = [3*a, b, 0];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dkP(g)}$ thoả mãn $F(0) + F(1) = ${k}$. Giá trị của $F(2)$ bằng`, ans, wrong,
+    lg:`$F(x) = ${dkP([a, b/2, 0, 0])} + C$. Ta có $F(0) + F(1) = 2C + ${ngPa(Pv(1))} = ${k}$ nên $C = ${C}$.<br>$F(2) = ${C ? Pv(2) + ngSg(C) + ' = ' : ''}${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(x=> dkV(g, x), 0, 2) + (k - ngSi(x=> dkV(g, x), 0, 1))/2, 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết f\'\'(x) = 6x + 2a, f\'(0), f(0): lấy nguyên hàm hai lần, tính f(1) (bẫy: thiếu số hạng f\'(0)·x)', R=>{
+  const a = R.nz(-5, 5), p = R.nz(-6, 6), q = R.nz(-6, 6), v = 1 + a + p + q;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(1 + a + q), ngNum(3 + a + p + q), ngNum(1 + 2*a + p + q), ngNum(1 + a + p)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = ${dkP([6, 2*a])}$, $f'(0) = ${p}$ và $f(0) = ${q}$. Giá trị của $f(1)$ bằng`, ans, wrong,
+    lg:`$f'(x) = ${dkP([3, 2*a, p])}$ (hằng số bằng $f'(0)$).<br>$f(x) = ${dkP([1, a, p, q])}$ (hằng số bằng $f(0)$).<br>Vậy $f(1) = ${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(t=> ngSi(u=> 6*u + 2*a, 0, t, 200) + p, 0, 1, 200) + q, 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết f\'\'(x) = a·cos x, f\'(0), f(0): tính f(π/2) (hai lần nguyên hàm lượng giác)', R=>{
+  const t = R.nz(-5, 5), a = R.nz(-8, 8), p = 2*t, q = R.nz(-8, 8), f0 = q + a, K = q + 2*a, opt = (c, k)=> ({t:`$${dkS(c)}\\pi${k ? ngSg(k) : ''}$`, v:c*Math.PI + k}); if(!K) return null;
+  const ans = opt(t, K), wrong = ngW(R, ans, [opt(t, f0), opt(t, q), opt(2*t, K), opt(-t, K)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = ${dkS(a)}\\cos x$, $f'(0) = ${p}$ và $f(0) = ${f0}$. Giá trị của $f\\left(\\dfrac{\\pi}{2}\\right)$ bằng`, ans, wrong,
+    lg:`$f'(x) = ${dkS(a)}\\sin x${ngSg(p)}$ (vì $f'(0) = ${p}$).<br>$f(x) = ${dkS(-a)}\\cos x${ngSx(p)} + C$; $f(0) = ${-a} + C = ${f0}$ nên $C = ${K}$.<br>Vậy $f\\left(\\dfrac{\\pi}{2}\\right) = ${ans.t.slice(1)}.`,
+    verify:()=> near(o.ans.v, ngSi(u=> a*Math.sin(u) + p, 0, Math.PI/2) + f0, 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết f\'\'(x) = eˣ, f\'(0) = p, f(0) = q: f(x) = eˣ + (p − 1)x + q − 1 (mỗi lần nguyên hàm có e⁰ = 1)', R=>{
+  const p = R.nz(-7, 7), q = R.nz(-7, 7), K = p + q - 2, opt = k=> ({t:`$e${k ? ngSg(k) : ''}$`, v:Math.E + k}); if(!K) return null;
+  const ans = opt(K), wrong = ngW(R, ans, [opt(p + q), opt(p + q - 1), opt(q - 1), opt(p + q + 2)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = e^{x}$, $f'(0) = ${p}$ và $f(0) = ${q}$. Giá trị của $f(1)$ bằng`, ans, wrong,
+    lg:`$f'(x) = e^{x} + C_{1}$; $f'(0) = 1 + C_{1} = ${p}$ nên $C_{1} = ${p - 1}$.<br>$f(x) = e^{x}${p - 1 ? ngSx(p - 1) : ''} + C_{2}$; $f(0) = 1 + C_{2} = ${q}$ nên $C_{2} = ${q - 1}$.<br>Vậy $f(1) = e${ngSg(p - 1)}${ngSg(q - 1)}$, tức bằng ${ans.t}.`.replace(/ [+-] 0(?=[ ,$])/g, ''),
+    verify:()=> near(o.ans.v, ngSi(u=> Math.exp(u) + p - 1, 0, 1) + q, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Biết f\'\'(x) = a/x² trên (0; +∞), f\'(1) = p, f(1) = q: tính f(e) (hai lần nguyên hàm, lần sau ra ln x)', R=>{
+  const a = R.nz(-6, 6), p = R.nz(-6, 6), q = R.nz(-6, 6), k = p + a, K = q - k, opt = (c, d)=> ngDec(ngRou(c*Math.E + d, 1)); if(!k) return null;
+  const ans = opt(k, K - a), wrong = ngW(R, ans, [opt(k, K + a), opt(p, K - a), opt(k, q - a), opt(-k, K - a), opt(k + 1, K - a)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ trên $(0; +\\infty)$ có $f''(x) = ${ngTx([[a, ngX(-2)]])}$, $f'(1) = ${p}$ và $f(1) = ${q}$. Giá trị của $f(e)$ làm tròn đến hàng phần mười bằng`, ans, wrong,
+    lg:`$f'(x) = ${ngTx([[-a, ngX(-1)]])} + C_{1}$; $f'(1) = ${-a} + C_{1} = ${p}$ nên $C_{1} = ${k}$.<br>$f(x) = ${dkS(-a)}\\ln x${ngSx(k)} + C_{2}$; $f(1) = ${k} + C_{2} = ${q}$ nên $C_{2} = ${K}$.<br>$f(e) = ${-a}${ngSg(k)}\\cdot e${K ? ngSg(K) : ''} \\approx ${nt(ans.v)}$.`.replace(/([+-]) 1\\cdot e/, '$1 e'),
+    verify:()=> near(o.ans.v, ngRou(ngSi(u=> -a/u + k, 1, Math.E) + q, 1), 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Nguyên hàm của k|x| trên ℝ thoả F(0) = 0: chia hai khoảng, tính F(a) + F(−b)', R=>{
+  const t = R.nz(-5, 5), k = 2*t, a = R.int(1, 5), b = R.pick([1, 2, 3, 4, 5].filter(z=> z !== a)), v = t*(a*a - b*b);
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(t*(a*a + b*b)), ngNum(-v), ngNum(k*(a - b)), ngNum(k*(a*a - b*b))]); if(!wrong) return null;
+  const f = x=> k*Math.abs(x), Fn = x=> t*x*Math.abs(x);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${k}|x|$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$. Giá trị của $F(${a}) + F(-${b})$ bằng`, ans, wrong,
+    lg:`Với $x \\ge 0$: $f(x) = ${k}x$ nên $F(x) = ${ngTx([[t, ngX(2)]])}$. Với $x < 0$: $f(x) = ${-k}x$ nên $F(x) = ${ngTx([[-t, ngX(2)]])}$.<br>$F(${a}) = ${t*a*a}$, $F(-${b}) = ${-t*b*b}$. Tổng bằng $${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(f, 0, a) + (-ngSi(f, -b, 0)), 1e-7) && near(Fn(a) + Fn(-b), v, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Hàm hai công thức f(x) = eˣ khi x < 0, 1 + 2ax khi x ≥ 0 (liên tục tại 0), F(0) = 0: tính F(1)', R=>{
+  const a = R.nz(-6, 6), c = R.nz(-8, 8), v = 1 + a + c;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(1 + 2*a + c), ngNum(a + c), ngNum(Math.round(1 + a)), ngNum(2 + a + c), ngNum(1 - a + c)]); if(!wrong) return null;
+  const f = x=> x < 0 ? Math.exp(x) : 1 + 2*a*x;
+  const o = {stem:`Cho hàm số $f(x) = \\begin{cases} e^{x} & \\text{khi } x < 0 \\\\ ${dkP([2*a, 1])} & \\text{khi } x \\ge 0 \\end{cases}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Giá trị của $F(1)$ bằng`, ans, wrong,
+    lg:`Hai công thức bằng nhau tại $x = 0$ nên $f$ liên tục, $F$ tồn tại trên $\\mathbb{R}$.<br>Với $x \\ge 0$: $F(x) = ${dkP([a, 1, 0])} + C$ và $F(0) = ${c}$ nên $C = ${c}$.<br>$F(1) = ${a} + 1${ngSg(c)} = ${v}$.`,
+    verify:()=> near(o.ans.v, ngSi(f, 0, 1) + c, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','F là nguyên hàm của ax + b, biết F(0), F(1), F(2): tìm a, b từ hai hiệu F(1) − F(0), F(2) − F(1), tính a + b', R=>{
+  const t = R.nz(-5, 5), a = 2*t, b = R.nz(-7, 7), p = R.nz(-8, 8), q = p + t + b, r = q + 3*t + b, v = a + b;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(t + b), ngNum(a - b), ngNum(q - p), ngNum(r - p)]); if(!wrong) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ax + b$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${p}$, $F(1) = ${q}$, $F(2) = ${r}$. Giá trị của $a + b$ bằng`, ans, wrong,
+    lg:`$F(x) = \\dfrac{a}{2}x^{2} + bx + C$, $C = ${p}$.<br>$F(1) - F(0) = \\dfrac{a}{2} + b = ${q - p}$; $F(2) - F(1) = \\dfrac{3a}{2} + b = ${r - q}$.<br>Trừ vế: $a = ${a}$, $b = ${b}$. Vậy $a + b = ${v}$.`,
+    verify:()=>{ const a2 = (r - q) - (q - p), b2 = q - p - a2/2; return near(o.ans.v, a2 + b2, 1e-9); }};
+  return o;
+});
+
+G(12,3,0,'VD','f(x)·f\'(x) = a, f(0) = b > 0: nhận ra (f²)\' = 2f·f\', suy ra f²(x) = 2ax + b², tính f(x₀)', R=>{
+  const b = R.int(1, 9), c = b + R.int(1, 12), d = c*c - b*b, a = R.pick([d, d/2, d/4, 2*d].filter(z=> Number.isInteger(z))), x0 = d/(2*a), v = c; if(x0 <= 0) return null;
+  const ans = ngNum(c), wrong = ngW(R, ans, [ngNum(c*c), ngNum(b + a*x0), ngNum(c + 1), ngNum(2*c), ngNum(c - 1)]); if(!wrong) return null;
+  const ff = x=> Math.sqrt(2*a*x + b*b), xT = qT(qr(d, 2*a)), xW = Number.isInteger(x0) ? `(${x0})` : `\\left(${xT}\\right)`;
+  const o = {stem:`Cho hàm số $y = f(x)$ nhận giá trị dương, có đạo hàm trên $[0; +\\infty)$ và thoả mãn $f(x)\\cdot f'(x) = ${a}$, $f(0) = ${b}$. Giá trị của $f${xW}$ bằng`, ans, wrong,
+    lg:`$\\left[f^{2}(x)\\right]' = 2f(x)f'(x) = ${2*a}$ nên $f^{2}(x) = ${2*a}x + C$; $f(0) = ${b}$ cho $C = ${b*b}$.<br>Với $x = ${xT}$: $f^{2}(x) = ${d} + ${b*b} = ${c*c}$. Vì $f(x) > 0$ nên giá trị cần tìm là $${c}$.`,
+    verify:()=> near(o.ans.v, ff(d/(2*a)), 1e-9) && ngIs(ff, x=> a/ff(x), [0.2, 1, 2])};
+  return o;
+});
+
+G(12,3,0,'VD','f\'(x) = 2x·f²(x), f nhận giá trị dương: chia cho f² nhận ra (−1/f)\' = 2x, suy ra 1/f(x) = C − x², tính f tại x₀', R=>{
+  const b = R.int(2, 9), c = b*b*R.pick([1, 1]) + R.pick([1, 2, 3, 5, 6, 7]), x0 = R.pick([1, 2]), den = c - x0*x0; if(den <= 0) return null;
+  const ans = ngNum(qr(1, den)), wrong = ngW(R, ans, [ngNum(qr(1, c)), ngNum(qr(1, c + x0*x0)), ngNum(den), ngNum(qr(2, den))]); if(!wrong) return null;
+  const ff = x=> 1/(c - x*x);
+  const o = {stem:`Cho hàm số $y = f(x)$ nhận giá trị dương và có đạo hàm trên $[0; ${x0}]$, thoả mãn $f'(x) = 2x\\cdot f^{2}(x)$ và $f(0) = \\dfrac{1}{${c}}$. Giá trị của $f(${x0})$ bằng`, ans, wrong,
+    lg:`Chia hai vế cho $f^{2}(x)$: $\\dfrac{f'(x)}{f^{2}(x)} = 2x$, tức $\\left[-\\dfrac{1}{f(x)}\\right]' = 2x$. Do đó $-\\dfrac{1}{f(x)} = x^{2} + C$.<br>$f(0) = \\dfrac{1}{${c}}$ cho $C = ${-c}$, nên $f(x) = \\dfrac{1}{${c} - x^{2}}$.<br>Vậy $f(${x0}) = ${qT(qr(1, den))}$.`,
+    verify:()=> near(o.ans.v, ff(x0), 1e-9) && ngIs(ff, x=> 2*x*ff(x)**2, [0.2, 0.5, 0.8])};
+  return o;
+});
+
+G(12,3,0,'VD','xf\'(x) + f(x) = đa thức trên (0; +∞): nhận ra [xf(x)]\', biết f(1), tính f(2)', R=>{
+  const a = R.nz(-3, 3), b = 2*R.nz(-3, 3), c = R.nz(-6, 6), Pv = x=> a*x**3 + b/2*x*x, K = c - Pv(1), v = (Pv(2) + K)/2;
+  const ans = ngNum(qr(Pv(2) + K, 2)), wrong = ngW(R, ans, [ngNum(Pv(2) + K), ngNum(qr(Pv(2) + c, 2)), ngNum(qr(Pv(2), 2)), ngNum(qr(Pv(2) + K, 4))]); if(!wrong) return null;
+  const g = [3*a, b, 0];
+  const o = {stem:`Cho hàm số $y = f(x)$ có đạo hàm trên $(0; +\\infty)$ thoả mãn $xf'(x) + f(x) = ${dkP(g)}$ và $f(1) = ${c}$. Giá trị của $f(2)$ bằng`, ans, wrong,
+    lg:`Vế trái bằng $\\left[xf(x)\\right]'$ nên $xf(x) = ${dkP([a, b/2, 0, 0])} + C$.<br>Tại $x = 1$: $${c} = ${Pv(1)} + C$ nên $C = ${K}$.<br>Tại $x = 2$: $2f(2) = ${Pv(2)}${K ? ngSg(K) : ''} = ${Pv(2) + K}$, nên $f(2) = ${qT(qr(Pv(2) + K, 2))}$.`,
+    verify:()=> near(o.ans.v, (c + ngSi(x=> dkV(g, x), 1, 2))/2, 1e-8)};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','Biết f\'(x) = 2x + 2a, f(0) = b: công thức f, f(1), giá trị nhỏ nhất, đồ thị parabol', R=>{
+  const a = R.nz(-5, 5), b = R.nz(-8, 8), co = [1, 2*a, b], fv = x=> dkV(co, x), mn = b - a*a;
+  return {stem:`Cho hàm số $y = f(x)$ có $f'(x) = ${dkP([2, 2*a])}$ và $f(0) = ${b}$.`,
+    items:[claim(R, `$f(x) = ${dkP(co)}$`, `$f(x) = ${dkP([2, 2*a, b])}$`, ()=> near(ngDf(fv, 1), 2 + 2*a, 1e-6), ()=> near(ngDf(x=> dkV([2, 2*a, b], x), 1), 2 + 2*a, 1e-6)),
+      claimN(R, v=> `$f(1) = ${v}$`, 1 + 2*a + b, String(1 + 2*a + b), 2 + 2*a + b, String(2 + 2*a + b), ()=> fv(1)),
+      claimN(R, v=> `Giá trị nhỏ nhất của $f(x)$ trên $\\mathbb{R}$ bằng $${v}$`, mn, String(mn), b, String(b), ()=> fv(-a)),
+      claim(R, `Hàm số $f(x)$ nghịch biến trên khoảng $(-\\infty; ${-a})$`, `Hàm số $f(x)$ đồng biến trên khoảng $(-\\infty; ${-a})$`, ()=> dkV([2, 2*a], -a - 1) < 0, ()=> dkV([2, 2*a], -a - 1) > 0)],
+    lg:`a) $f(x) = ${dkP([1, 2*a, 0])} + C$, $f(0) = C = ${b}$.<br>b) $f(1) = ${1 + 2*a + b}$.<br>c) $f(x) = (${nkL(1, a)})^{2}${ngSg(mn)}$ nên giá trị nhỏ nhất là $${mn}$, đạt tại $x = ${-a}$.<br>d) $f'(x) = 2(${nkL(1, a)}) < 0$ khi $x < ${-a}$ nên $f$ nghịch biến trên $(-\\infty; ${-a})$.`.replace(/ \+ 0\$/, '$')};
+});
+
+GD(12,3,0,'TH','Biết f\'(x) = a·cos x (a > 0), f(0) = b: công thức f, f(π/2), giá trị lớn nhất trên ℝ, f(π)', R=>{
+  const a = R.int(1, 9), b = R.nz(-9, 9), fv = x=> a*Math.sin(x) + b, A = dkS(a);
+  return {stem:`Cho hàm số $y = f(x)$ có $f'(x) = ${A}\\cos x$ và $f(0) = ${b}$.`,
+    items:[claim(R, `$f(x) = ${A}\\sin x${ngSg(b)}$`, `$f(x) = -${A}\\sin x${ngSg(b)}$`, ()=> ngIs(fv, x=> a*Math.cos(x)), ()=> ngIs(x=> -a*Math.sin(x) + b, x=> a*Math.cos(x))),
+      claimN(R, v=> `$f\\left(\\dfrac{\\pi}{2}\\right) = ${v}$`, a + b, String(a + b), b, String(b), ()=> ngRd(fv(Math.PI/2))),
+      claimN(R, v=> `Giá trị lớn nhất của $f(x)$ trên $\\mathbb{R}$ bằng $${v}$`, a + b, String(a + b), a, String(a), ()=> ngRd(fv(Math.PI/2))),
+      claimN(R, v=> `$f(\\pi) = ${v}$`, b, String(b), b + 2*a, String(b + 2*a), ()=> ngRd(ngSi(x=> a*Math.cos(x), 0, Math.PI) + b))],
+    lg:`a) $f(x) = ${A}\\sin x + C$, $f(0) = C = ${b}$.<br>b) $\\sin\\dfrac{\\pi}{2} = 1$ nên $f\\left(\\dfrac{\\pi}{2}\\right) = ${a + b}$.<br>c) $\\sin x \\le 1$ nên giá trị lớn nhất là $${a + b}$.<br>d) $\\sin\\pi = 0$ nên $f(\\pi) = ${b}$.`};
+});
+
+GD(12,3,0,'VD','Biết f\'(x) = k(eˣ − 1) với k > 0, f(0) = 0: f(x) = k(eˣ − x − 1), f(1), cực tiểu tại 0 nên f(x) ≥ 0', R=>{
+  const k = R.int(1, 9), K = dkS(k), fv = x=> k*(Math.exp(x) - x - 1), v = k === 1 ? 'e - 2' : `${k}e - ${2*k}`, w = k === 1 ? 'e - 1' : `${k}e - ${k}`;
+  return {stem:`Cho hàm số $y = f(x)$ có $f'(x) = ${k === 1 ? 'e^{x} - 1' : `${k}(e^{x} - 1)`}$ và $f(0) = 0$.`,
+    items:[claim(R, `$f(x) = ${k === 1 ? 'e^{x} - x - 1' : `${k}(e^{x} - x - 1)`}$`, `$f(x) = ${k === 1 ? 'e^{x} - x' : `${k}(e^{x} - x)`}$`, ()=> near(fv(0), 0, 1e-12) && ngIs(fv, x=> k*(Math.exp(x) - 1)), ()=> near(k*(1 - 0), 0, 1e-12)),
+      claim(R, `$f(1) = ${v}$`, `$f(1) = ${w}$`, ()=> near(fv(1), k*Math.E - 2*k, 1e-9), ()=> near(fv(1), k*Math.E - k, 1e-9)),
+      claim(R, `Hàm số $f(x)$ đạt cực tiểu tại $x = 0$`, `Hàm số $f(x)$ đạt cực đại tại $x = 0$`, ()=> k*(Math.exp(-0.1) - 1) < 0 && k*(Math.exp(0.1) - 1) > 0, ()=> k*(Math.exp(-0.1) - 1) > 0),
+      claim(R, `$f(x) \\ge 0$ với mọi $x \\in \\mathbb{R}$`, `Tồn tại $x$ để $f(x) < 0$`, ()=> [-5, -1, 0, 1, 4].every(x=> fv(x) >= 0), ()=> [-5, -1, 1, 4].some(x=> fv(x) < 0))],
+    lg:`a) $f(x) = ${k === 1 ? '' : k}(e^{x} - x) + C$; $f(0) = ${k} + C = 0$ nên $C = ${-k}$.`.replace('= (e^', '= (e^') + `<br>b) $f(1) = ${k === 1 ? '' : k}(e - 1) - ${k} = ${v}$.<br>c) $f'(x) < 0$ khi $x < 0$, $f'(x) > 0$ khi $x > 0$ nên $f$ đạt cực tiểu tại $x = 0$.<br>d) Giá trị cực tiểu đó cũng là giá trị nhỏ nhất và bằng $f(0) = 0$ nên $f(x) \\ge 0$.`};
+});
+
+GD(12,3,0,'VD','Biết f\'(x) = 1 − 1/x trên (0; +∞), f(1) = a: f(x) = x − ln x + a − 1, giá trị nhỏ nhất a, f(e)', R=>{
+  const a = R.nz(-9, 9), fv = x=> x - Math.log(x) + a - 1, g = x=> 1 - 1/x;
+  return {stem:`Cho hàm số $y = f(x)$ xác định trên $(0; +\\infty)$ có $f'(x) = 1 - \\dfrac{1}{x}$ và $f(1) = ${a}$.`,
+    items:[claim(R, `$f(x) = x - \\ln x${a - 1 ? ngSg(a - 1) : ''}$`, `$f(x) = x + \\dfrac{1}{x^{2}}${a - 2 ? ngSg(a - 2) : ''}$`, ()=> ngIs(fv, g) && near(fv(1), a, 1e-9), ()=> ngIs(x=> x + 1/x/x + a - 2, g)),
+      claim(R, `$f(e) = e${a - 2 ? ngSg(a - 2) : ''}$`, `$f(e) = e${a - 1 ? ngSg(a - 1) : ''}$`, ()=> near(fv(Math.E), Math.E + a - 2, 1e-9), ()=> near(fv(Math.E), Math.E + a - 1, 1e-9)),
+      claim(R, `Hàm số $f(x)$ nghịch biến trên khoảng $(0; 1)$`, `Hàm số $f(x)$ đồng biến trên khoảng $(0; 1)$`, ()=> [0.1, 0.5, 0.9].every(x=> g(x) < 0), ()=> [0.1, 0.5, 0.9].every(x=> g(x) > 0)),
+      claimN(R, v=> `Giá trị nhỏ nhất của $f(x)$ trên $(0; +\\infty)$ bằng $${v}$`, a, String(a), a - 1, String(a - 1), ()=>{ let m = 1e9; for(let i = 1; i < 4000; i++) m = Math.min(m, fv(i/1000)); return ngRd(Math.round(m*1e4)/1e4); })],
+    lg:`a) $f(x) = x - \\ln x + C$; $f(1) = 1 + C = ${a}$ nên $C = ${a - 1}$.<br>b) $f(e) = e - 1${ngSg(a - 1)} = e${a - 2 ? ngSg(a - 2) : ''}$.<br>c) $f'(x) < 0$ khi $0 < x < 1$ nên $f$ nghịch biến trên $(0; 1)$.<br>d) $f'(x)$ đổi dấu từ âm sang dương tại $x = 1$ nên giá trị nhỏ nhất là $f(1) = ${a}$.`.replace(/ [+-] 0\$/, '$')};
+});
+
+GD(12,3,0,'TH','Biết f\'\'(x) = 6x, f\'(0) = a, f(0) = b: hai hằng số, f(x) = x³ + ax + b, f(1), f\'(1)', R=>{
+  const a = R.nz(-6, 6), b = R.nz(-8, 8), co = [1, 0, a, b], fv = x=> dkV(co, x);
+  return {stem:`Cho hàm số $y = f(x)$ có $f''(x) = 6x$, $f'(0) = ${a}$ và $f(0) = ${b}$.`,
+    items:[claim(R, `$f'(x) = ${dkP([3, 0, a])}$`, `$f'(x) = ${dkP([3, 0, 0])}$`, ()=> near(ngDf(fv, 0), a, 1e-6), ()=> near(ngDf(fv, 0), 0, 1e-6)),
+      claim(R, `$f(x) = ${dkP(co)}$`, `$f(x) = ${dkP([1, 0, 0, b])}$`, ()=> near(fv(0), b, 1e-9) && near(ngDf(fv, 0), a, 1e-6), ()=> near(ngDf(x=> x**3 + b, 0), a, 1e-6)),
+      claimN(R, v=> `$f(1) = ${v}$`, 1 + a + b, String(1 + a + b), 1 + b, String(1 + b), ()=> fv(1)),
+      claimN(R, v=> `$f'(1) = ${v}$`, 3 + a, String(3 + a), 6, '6', ()=> ngRd(ngDf(fv, 1)))],
+    lg:`a) $f'(x) = 3x^{2} + C_{1}$, $f'(0) = C_{1} = ${a}$.<br>b) $f(x) = x^{3}${ngSx(a)} + C_{2}$, $f(0) = C_{2} = ${b}$.<br>c) $f(1) = 1${ngSg(a)}${ngSg(b)} = ${1 + a + b}$.<br>d) $f'(1) = 3${ngSg(a)} = ${3 + a}$.`};
+});
+
+GD(12,3,0,'TH','Biết f\'\'(x) = 2, f\'(a) = 0, f(a) = c: f(x) = (x − a)² + c, giá trị tại a + 2, cực tiểu tại a', R=>{
+  const a = R.nz(-5, 5), c = R.nz(-8, 8), fv = x=> (x - a)**2 + c, co = [1, -2*a, a*a + c];
+  return {stem:`Cho hàm số $y = f(x)$ có $f''(x) = 2$, $f'(${a}) = 0$ và $f(${a}) = ${c}$.`,
+    items:[claim(R, `$f'(x) = ${nkL(2, -2*a)}$`, `$f'(x) = 2x$`, ()=> near(2*a - 2*a, 0, 1e-12), ()=> near(2*a, 0, 1e-12)),
+      claim(R, `$f(x) = (${nkL(1, -a)})^{2}${ngSg(c)}$`, `$f(x) = ${dkP([1, 0, c])}$`, ()=> near(fv(a), c, 1e-12) && near(ngDf(fv, a), 0, 1e-6), ()=> near(ngDf(x=> x*x + c, a), 0, 1e-6)),
+      claimN(R, v=> `$f(${a + 2}) = ${v}$`, c + 4, String(c + 4), c + 2, String(c + 2), ()=> fv(a + 2)),
+      claim(R, `Hàm số $f(x)$ đạt cực tiểu tại $x = ${a}$`, `Hàm số $f(x)$ đạt cực đại tại $x = ${a}$`, ()=> fv(a - 1) > fv(a) && fv(a + 1) > fv(a), ()=> fv(a - 1) < fv(a))],
+    lg:`a) $f'(x) = 2x + C_{1}$; $f'(${a}) = 0$ cho $C_{1} = ${-2*a}$.<br>b) $f(x) = ${dkP([1, -2*a, 0])} + C_{2}$; $f(${a}) = ${c}$ cho $C_{2} = ${a*a + c}$, tức $f(x) = (${nkL(1, -a)})^{2}${ngSg(c)}$.<br>c) $f(${a + 2}) = 2^{2}${ngSg(c)} = ${c + 4}$.<br>d) $f'(x)$ đổi dấu từ âm sang dương tại $x = ${a}$ nên $f$ đạt cực tiểu tại đó.`};
+});
+
+GD(12,3,0,'TH','Biết f\'\'(x) = k·cos x (k > 0), f\'(0) = 0, f(0) = 0: f(x) = k(1 − cos x), f(π) = 2k, 0 ≤ f ≤ 2k', R=>{
+  const k = R.int(1, 9), fv = x=> k*(1 - Math.cos(x)), K = k === 1 ? '' : k;
+  return {stem:`Cho hàm số $y = f(x)$ có $f''(x) = ${K}\\cos x$, $f'(0) = 0$ và $f(0) = 0$.`,
+    items:[claim(R, `$f'(x) = ${K}\\sin x$`, `$f'(x) = -${K}\\sin x$`, ()=> near(ngDf(fv, 1.1), k*Math.sin(1.1), 1e-5), ()=> near(ngDf(fv, 1.1), -k*Math.sin(1.1), 1e-5)),
+      claim(R, `$f(x) = ${k} - ${K}\\cos x$`, `$f(x) = -${K}\\cos x$`, ()=> near(fv(0), 0, 1e-12), ()=> near(-k, 0, 1e-12)),
+      claimN(R, v=> `$f(\\pi) = ${v}$`, 2*k, String(2*k), 0, '0', ()=> ngRd(fv(Math.PI))),
+      claim(R, `$0 \\le f(x) \\le ${2*k}$ với mọi $x$`, `Tồn tại $x$ để $f(x) > ${2*k}$`, ()=> [0, 1, 2, 3, 4, 5, 6].every(x=> fv(x) >= 0 && fv(x) <= 2*k), ()=> [0, 1, 2, 3, 4, 5, 6].some(x=> fv(x) > 2*k))],
+    lg:`a) $f'(x) = ${K}\\sin x + C_{1}$, $f'(0) = C_{1} = 0$.<br>b) $f(x) = -${K}\\cos x + C_{2}$, $f(0) = -${k} + C_{2} = 0$ nên $C_{2} = ${k}$.<br>c) $f(\\pi) = ${k} + ${k} = ${2*k}$.<br>d) $-1 \\le \\cos x \\le 1$ nên $0 \\le f(x) \\le ${2*k}$.`};
+});
+
+GD(12,3,0,'VD','f(x) = 2ax khi x ≤ 1, 2a khi x > 1: liên tục tại 1; F(0) = 0; công thức F trên mỗi khoảng, F(3)', R=>{
+  const a = R.nz(-6, 6), f = x=> x <= 1 ? 2*a*x : 2*a, Fn = x=> x <= 1 ? a*x*x : 2*a*x - a, A = dkS(a), B = dkS(2*a);
+  return {stem:`Cho hàm số $f(x) = \\begin{cases} ${2*a}x & \\text{khi } x \\le 1 \\\\ ${2*a} & \\text{khi } x > 1 \\end{cases}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = 0$.`,
+    items:[claim(R, `Hàm số $f(x)$ liên tục tại $x = 1$`, `Hàm số $f(x)$ gián đoạn tại $x = 1$`, ()=> near(2*a*1, 2*a, 1e-12), ()=> !near(2*a*1, 2*a, 1e-12)),
+      claim(R, `$F(x) = ${A}x^{2}$ khi $x \\le 1$`, `$F(x) = ${B}x^{2}$ khi $x \\le 1$`, ()=> near(Fn(0.7), a*0.49, 1e-12), ()=> near(Fn(0.7), 2*a*0.49, 1e-12)),
+      claim(R, `$F(x) = ${B}x${ngSg(-a)}$ khi $x > 1$`, `$F(x) = ${B}x$ khi $x > 1$`, ()=> near(Fn(2), 4*a - a, 1e-12), ()=> near(Fn(2), 4*a, 1e-12)),
+      claimN(R, v=> `$F(3) = ${v}$`, 5*a, String(5*a), 6*a, String(6*a), ()=> ngRd(ngSi(f, 0, 1) + ngSi(f, 1, 3)))],
+    lg:`a) Hai công thức cùng cho giá trị $${2*a}$ tại $x = 1$.<br>b) Với $x \\le 1$: $F(x) = ${A}x^{2} + C_{1}$, $F(0) = 0$ cho $C_{1} = 0$.<br>c) Với $x > 1$: $F(x) = ${B}x + C_{2}$; $F$ liên tục tại $1$ nên $${2*a} + C_{2} = ${a}$, tức $C_{2} = ${-a}$.<br>d) $F(3) = ${6*a}${ngSg(-a)} = ${5*a}$.`};
+});
+
+GD(12,3,0,'VD','f(x) = k|x − a| (k > 0), F(a) = 0: F(x) = k(x − a)²/2 khi x ≥ a, −k(x − a)²/2 khi x < a, F đồng biến trên ℝ', R=>{
+  const t = R.int(1, 7), k = 2*t, a = R.nz(-5, 5), f = x=> k*Math.abs(x - a), Fn = x=> t*(x - a)*Math.abs(x - a), T = dkS(t), v = 4*t;
+  return {stem:`Cho hàm số $f(x) = ${k}|${nkL(1, -a)}|$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(${a}) = 0$.`,
+    items:[claim(R, `$F(x) = ${T}(${nkL(1, -a)})^{2}$ khi $x \\ge ${a}$`, `$F(x) = ${k}(${nkL(1, -a)})^{2}$ khi $x \\ge ${a}$`, ()=> near(Fn(a + 1.5), t*2.25, 1e-9), ()=> near(Fn(a + 1.5), k*2.25, 1e-9)),
+      claim(R, `$F(x) = -${T}(${nkL(1, -a)})^{2}$ khi $x < ${a}$`, `$F(x) = ${T}(${nkL(1, -a)})^{2}$ khi $x < ${a}$`, ()=> near(Fn(a - 1.5), -t*2.25, 1e-9), ()=> near(Fn(a - 1.5), t*2.25, 1e-9)),
+      claimN(R, m=> `$F(${a + 2}) - F(${a - 2}) = ${m}$`, 2*v, String(2*v), 0, '0', ()=> ngRd(ngSi(f, a - 2, a) + ngSi(f, a, a + 2))),
+      claim(R, `Hàm số $F(x)$ đồng biến trên $\\mathbb{R}$`, `Hàm số $F(x)$ đạt cực tiểu tại $x = ${a}$`, ()=> [a - 2, a - 0.1, a + 0.1, a + 2].every(x=> f(x) > 0), ()=> Fn(a - 1) > Fn(a))],
+    lg:`a), b) Với $x \\ge ${a}$: $f(x) = ${k}(${nkL(1, -a)})$, nguyên hàm là $${T}(${nkL(1, -a)})^{2} + C$; với $x < ${a}$ có thêm dấu trừ. $F(${a}) = 0$ cho hằng số bằng $0$ (hai phía khớp nhau tại $x = ${a}$).<br>c) $F(${a + 2}) = ${v}$, $F(${a - 2}) = ${-v}$, hiệu bằng $${2*v}$.<br>d) $F'(x) = f(x) \\ge 0$ và chỉ bằng $0$ tại $x = ${a}$ nên $F$ đồng biến trên $\\mathbb{R}$, không có cực trị.`};
+});
+
+GD(12,3,0,'VD','f(x)·f\'(x) = a, f(0) = b > 0: (f²)\' = 2a, công thức f²(x), f(x₀), f đồng biến khi a > 0', R=>{
+  const [b, c] = R.pick([[1, 3], [2, 4], [3, 5], [1, 5], [3, 7], [2, 6], [1, 7], [5, 7]]), a = R.pick([1, 2, 4]), d = c*c - b*b, x0 = d/(2*a), ff = x=> Math.sqrt(2*a*x + b*b), xT = qT(qr(d, 2*a)), g = x=> a/ff(x), xW = Number.isInteger(x0) ? `(${x0})` : `\\left(${xT}\\right)`;
+  return {stem:`Cho hàm số $y = f(x)$ nhận giá trị dương, có đạo hàm trên $[0; +\\infty)$ và thoả mãn $f(x)f'(x) = ${a}$, $f(0) = ${b}$.`,
+    items:[claim(R, `$\\left[f^{2}(x)\\right]' = ${2*a}$`, `$\\left[f^{2}(x)\\right]' = ${a}$`, ()=> near(ngDf(x=> ff(x)**2, 1.2), 2*a, 1e-5), ()=> near(ngDf(x=> ff(x)**2, 1.2), a, 1e-5)),
+      claim(R, `$f^{2}(x) = ${2*a}x + ${b*b}$`, `$f^{2}(x) = ${2*a}x + ${b*b + 1}$`, ()=> near(ff(1)**2, 2*a + b*b, 1e-9), ()=> near(ff(1)**2, 2*a + b*b + 1, 1e-9)),
+      claimN(R, m=> `$f${xW} = ${m}$`, c, String(c), c*c, String(c*c), ()=> ngRd(ff(x0))),
+      claim(R, `Hàm số $f(x)$ đồng biến trên $(0; +\\infty)$`, `Hàm số $f(x)$ nghịch biến trên $(0; +\\infty)$`, ()=> [0.1, 1, 9].every(x=> g(x) > 0), ()=> [0.1, 1, 9].every(x=> g(x) < 0))],
+    lg:`a) $\\left[f^{2}(x)\\right]' = 2f(x)f'(x) = ${2*a}$.<br>b) $f^{2}(x) = ${2*a}x + C$, $f(0) = ${b}$ cho $C = ${b*b}$.<br>c) $f^{2}${xW} = ${d} + ${b*b} = ${c*c}$ và $f > 0$ nên giá trị là $${c}$.<br>d) $f'(x) = \\dfrac{${a}}{f(x)} > 0$ nên $f$ đồng biến.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','Biết f\'(x) = mx + b, f(0) = p, f(2) = q: tìm tham số m từ f(2) − f(0) = 2m + 2b', R=>{
+  const m = R.nz(-9, 9), b = R.nz(-7, 7), p = R.int(-9, 9), q = p + 2*m + 2*b;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f'(x) = mx${ngSg(b)}$ với $m$ là tham số thực. Biết $f(0) = ${p}$ và $f(2) = ${q}$. Tìm $m$.`, ans:m,
+    lg:`$f(x) = \\dfrac{m}{2}x^{2}${ngSx(b)}${p ? ngSg(p) : ''}$.<br>$f(2) = 2m${ngSg(2*b)}${p ? ngSg(p) : ''} = ${q}$ nên $2m = ${2*m}$, tức $m = ${m}$.`,
+    verify:()=> near(o.ans, (q - p - 2*b)/2, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'VD','Biết f\'\'(x) = 6x + 2a, f\'(0) = p, f(0), f(1): tìm a', R=>{
+  const a = R.nz(-9, 9), p = R.nz(-6, 6), q = R.int(-9, 9), r = 1 + a + p + q;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = 6x + 2a$ với $a$ là tham số thực. Biết $f'(0) = ${p}$, $f(0) = ${q}$ và $f(1) = ${r}$. Tìm $a$.`, ans:a,
+    lg:`$f'(x) = 3x^{2} + 2ax${ngSg(p)}$, $f(x) = x^{3} + ax^{2}${ngSx(p)}${q ? ngSg(q) : ''}$.<br>$f(1) = 1 + a${ngSg(p)}${q ? ngSg(q) : ''} = ${r}$ nên $a = ${a}$.`,
+    verify:()=> near(o.ans, r - 1 - p - q, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'TH','Biết f\'\'(x) = k không đổi và f(0), f(1), f(2): k = f(0) − 2f(1) + f(2)', R=>{
+  const k = 2*R.nz(-9, 9), b = R.nz(-6, 6), c = R.nz(-9, 9), fv = x=> k/2*x*x + b*x + c, f0 = c, f1 = fv(1), f2 = fv(2);
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = k$ với $k$ là hằng số, biết $f(0) = ${f0}$, $f(1) = ${f1}$, $f(2) = ${f2}$. Tìm $k$.`, ans:k,
+    lg:`$f(x) = \\dfrac{k}{2}x^{2} + mx + n$. Từ $f(0) = ${f0}$ có $n = ${f0}$.<br>$\\dfrac{k}{2} + m = ${f1 - f0}$ và $2k + 2m = ${f2 - f0}$. Trừ vế: $k = ${f2 - f0} - 2\\cdot ${ngPa(f1 - f0)} = ${k}$.`,
+    verify:()=> near(o.ans, f0 - 2*f1 + f2, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'VD','Biết f\'\'(x) = a·sin x, f\'(0) = p, f(0) = q: tính f(π), làm tròn đến hàng phần mười', R=>{
+  const a = R.nz(-6, 6), p = R.nz(-6, 6), q = R.int(-9, 9), k = p + a, v = ngRou(k*Math.PI + q, 1); if(!k) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = ${dkS(a)}\\sin x$, $f'(0) = ${p}$ và $f(0) = ${q}$. Tính $f(\\pi)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$f'(x) = ${dkS(-a)}\\cos x + C_{1}$; $f'(0) = ${-a} + C_{1} = ${p}$ nên $C_{1} = ${k}$.<br>$f(x) = ${dkS(-a)}\\sin x${ngSx(k)} + C_{2}$; $f(0) = C_{2} = ${q}$.<br>$f(\\pi) = ${dkS(k)}\\pi${q ? ngSg(q) : ''} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(u=> -a*Math.cos(u) + k, 0, Math.PI) + q, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Biết f\'\'(x) = eˣ, f\'(0) = p, f(0) = q: tính f(ln 2), làm tròn đến hàng phần mười', R=>{
+  const p = R.nz(-9, 9), q = R.int(-9, 9), v = ngRou(2 + (p - 1)*Math.LN2 + q - 1, 1);
+  const o = {stem:`Cho hàm số $y = f(x)$ có $f''(x) = e^{x}$, $f'(0) = ${p}$ và $f(0) = ${q}$. Tính $f(\\ln 2)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`$f'(x) = e^{x} + C_{1}$ với $C_{1} = ${p - 1}$.<br>$f(x) = e^{x}${p - 1 ? ngSx(p - 1) : ''} + C_{2}$ với $C_{2} = ${q - 1}$.<br>$f(\\ln 2) = 2${p - 1 ? ngSx(p - 1, '\\ln 2') : ''}${q - 1 ? ngSg(q - 1) : ''} \\approx ${nt(v)}$.`,
+    verify:()=> near(o.ans, ngRou(ngSi(u=> Math.exp(u) + p - 1, 0, Math.LN2) + q, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Hàm hai công thức f(x) = cos x khi x ≤ 0, 1 + 2ax khi x > 0, F(0) = c: tính F(1) + F(−π/2) (mỗi phía một công thức)', R=>{
+  const a = R.nz(-9, 9), c = R.int(-9, 9), v = 1 + a + c + (c - 1);
+  const f = x=> x <= 0 ? Math.cos(x) : 1 + 2*a*x;
+  const o = {stem:`Cho hàm số $f(x) = \\begin{cases} \\cos x & \\text{khi } x \\le 0 \\\\ ${dkP([2*a, 1])} & \\text{khi } x > 0 \\end{cases}$ và $F(x)$ là nguyên hàm của $f(x)$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$. Tính $F(1) + F\\left(-\\dfrac{\\pi}{2}\\right)$.`, ans:v,
+    lg:`Với $x > 0$: $F(x) = ${dkP([a, 1, 0])}${c ? ngSg(c) : ''}$, nên $F(1) = ${1 + a + c}$.<br>Với $x \\le 0$: $F(x) = \\sin x${c ? ngSg(c) : ''}$, nên $F\\left(-\\dfrac{\\pi}{2}\\right) = ${c - 1}$.<br>Tổng bằng $${v}$.`,
+    verify:()=> near(o.ans, ngRd(ngSi(f, 0, 1) + c - ngSi(f, -Math.PI/2, 0) + c), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','F là nguyên hàm của k|x| trên ℝ: tính F(a) − F(−a) = k·a²', R=>{
+  const k = R.nz(-6, 6), a = R.int(1, 5), v = k*a*a;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dkS(k)}|x|$ trên $\\mathbb{R}$. Tính $F(${a}) - F(-${a})$.`, ans:v,
+    lg:`Trên $[0; ${a}]$: $F(${a}) - F(0) = ${dkS(k)}\\cdot\\dfrac{${a*a}}{2}$. Trên $[-${a}; 0]$: $F(0) - F(-${a}) = ${dkS(k)}\\cdot\\dfrac{${a*a}}{2}$.<br>Cộng lại: $F(${a}) - F(-${a}) = ${v}$.`.replace(/= \\cdot/g, '= ').replace(/= -\\cdot/g, '= -'),
+    verify:()=> near(o.ans, ngSi(x=> k*Math.abs(x), -a, 0) + ngSi(x=> k*Math.abs(x), 0, a), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','F là nguyên hàm của k|x² − 1| trên ℝ: F(2) − F(0) = 2k (chia đoạn tại x = 1)', R=>{
+  const t = R.nz(-9, 9), x1 = 2, k = t, v = 2*k, g = x=> k*Math.abs(x*x - 1);
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dkS(k)}|x^{2} - 1|$ trên $\\mathbb{R}$. Tính $F(2) - F(0)$.`, ans:v,
+    lg:`Trên $[0; 1]$: $|x^{2} - 1| = 1 - x^{2}$, phần tăng là $${dkS(k)}\\left(1 - \\dfrac{1}{3}\\right)$.<br>Trên $[1; 2]$: $|x^{2} - 1| = x^{2} - 1$, phần tăng là $${dkS(k)}\\left(\\dfrac{7}{3} - 1\\right)$.<br>Cộng lại: $${dkS(k)}\\left(\\dfrac{2}{3} + \\dfrac{4}{3}\\right) = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(g, 0, 1) + ngSi(g, 1, 2), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','f(x)·f\'(x) = a, f(0) = b > 0: tính f(x₀) bằng cách nhận ra (f²)\' (đáp số nguyên từ b² + 2ax₀ là số chính phương)', R=>{
+  const b = R.int(1, 15), c = b + R.int(1, 20), d = c*c - b*b, a = R.pick([1, 2, 3, 4, 6].filter(z=> d % (2*z) === 0)); if(!a) return null;
+  const x0 = d/(2*a), v = c;
+  const o = {stem:`Cho hàm số $y = f(x)$ nhận giá trị dương, có đạo hàm trên $[0; +\\infty)$ và thoả mãn $f(x)f'(x) = ${a}$, $f(0) = ${b}$. Tính $f(${x0})$.`, ans:v,
+    lg:`$\\left[f^{2}(x)\\right]' = 2f(x)f'(x) = ${2*a}$ nên $f^{2}(x) = ${2*a}x + ${b*b}$.<br>$f^{2}(${x0}) = ${d} + ${b*b} = ${c*c}$ và $f > 0$ nên $f(${x0}) = ${c}$.`,
+    verify:()=> near(o.ans, Math.sqrt(2*a*x0 + b*b), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','xf\'(x) + f(x) = g(x) trên (0; +∞) biết f(1): tính 2f(2) (nối tiếp dạng [xf(x)]\')', R=>{
+  const a = R.nz(-5, 5), b = 2*R.nz(-5, 5), c = R.int(-9, 9), g = [3*a, b, 0], Pv = x=> a*x**3 + b/2*x*x, v = c + Pv(2) - Pv(1);
+  const o = {stem:`Cho hàm số $y = f(x)$ có đạo hàm trên $(0; +\\infty)$ thoả mãn $xf'(x) + f(x) = ${dkP(g)}$ và $f(1) = ${c}$. Tính $2f(2)$.`, ans:v,
+    lg:`$\\left[xf(x)\\right]' = ${dkP(g)}$ nên $xf(x) = ${dkP([a, b/2, 0, 0])} + C$.<br>Tại $x = 1$: $C = ${c - Pv(1)}$.<br>Tại $x = 2$: $2f(2) = ${c - Pv(1) ? Pv(2) + ngSg(c - Pv(1)) + ' = ' : ''}${v}$.`,
+    verify:()=> near(o.ans, c + ngSi(x=> dkV(g, x), 1, 2), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','x²f\'(x) + 2xf(x) = g(x): nhận ra [x²f(x)]\', biết f(1), tính 4f(2)', R=>{
+  const a = R.nz(-5, 5), c = R.nz(-9, 9), d = R.int(-9, 9), g = [3*a, c], Pv = x=> a*x**3 + c*x, v = d + Pv(2) - Pv(1);
+  const o = {stem:`Cho hàm số $y = f(x)$ có đạo hàm trên $(0; +\\infty)$ thoả mãn $x^{2}f'(x) + 2xf(x) = ${ngTx([[3*a, ngX(2)], [c, ngX(0)]])}$ và $f(1) = ${d}$. Tính $4f(2)$.`, ans:v,
+    lg:`Vế trái bằng $\\left[x^{2}f(x)\\right]'$ nên $x^{2}f(x) = ${ngTx([[a, ngX(3)], [c, ngX(1)]])} + C$.<br>Tại $x = 1$: $C = ${d - Pv(1)}$.<br>Tại $x = 2$: $4f(2) = ${d - Pv(1) ? Pv(2) + ngSg(d - Pv(1)) + ' = ' : ''}${v}$.`,
+    verify:()=> near(o.ans, d + ngSi(x=> 3*a*x*x + c, 1, 2), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','eˣ[f(x) + f\'(x)] = 2x + a: nhận ra [eˣf(x)]\', biết f(0), tính f(1), làm tròn đến hàng phần mười', R=>{
+  const a = R.nz(-9, 9), c = R.nz(-9, 9), v = ngRou((1 + a + c)/Math.E, 1); if((1 + a + c) === 0) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ có đạo hàm trên $\\mathbb{R}$ thoả mãn $e^{x}\\left[f(x) + f'(x)\\right] = ${dkP([2, a])}$ và $f(0) = ${c}$. Tính $f(1)$ (làm tròn kết quả đến hàng phần mười).`, ans:v,
+    lg:`Vế trái bằng $\\left[e^{x}f(x)\\right]'$ nên $e^{x}f(x) = ${dkP([1, a, 0])} + C$; tại $x = 0$: $C = ${c}$.<br>Tại $x = 1$: $e\\cdot f(1) = ${1 + a + c}$ nên $f(1) = \\dfrac{${1 + a + c}}{e} \\approx ${nt(v)}$.`.replace('\\dfrac{-', '-\\dfrac{'),
+    verify:()=> near(o.ans, ngRou((c + ngSi(x=> 2*x + a, 0, 1))/Math.E, 1), 1e-9)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.6 Nguyên hàm và đồ thị: đọc đồ thị, đơn điệu, cực trị của F — số 253–294 (18 TN, 8 Đ–S, 16 TLN).
+   Chuỗi tư duy: F' = f nên dấu của f quyết định đơn điệu của F → đọc đồ thị f tìm cực trị F → đọc đồ thị F tìm f → hệ số góc tiếp tuyến → giá trị cực trị, số nghiệm. */
+const dtS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const dtP = co=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]));
+const dtV = (co, x)=> co.reduce((s, c)=> s*x + c, 0);
+const dtPl = co=>{ const d = co.length - 1; let s = ''; co.forEach((c, i)=>{ const p = d - i; if(!c) return; const a = Math.abs(c), sg = c < 0 ? '-' : (s ? '+' : ''); s += sg + (p === 0 ? a : (a === 1 ? '' : a + '*')) + (p === 0 ? '' : p === 1 ? 'x' : 'x^' + p); }); return s || '0'; };
+const dtHv = (co, ten, ds, lo, hi)=>{ const L = lo == null ? Math.min(-1.5, Math.min(...ds) - 2.5) : lo, H = hi == null ? Math.max(1.5, Math.max(...ds) + 2.5) : hi, ys = []; for(let x = L; x <= H; x += 0.5) ys.push(dtV(co, x)); const ymin = Math.max(-7, Math.floor(Math.min(...ys, 0)) - 1), ymax = Math.min(7, Math.ceil(Math.max(...ys, 0)) + 1); return {loai:'dothi', hamSo:dtPl(co), ten, tenX:-38, luoi:true, ghiCucTri:false, diem:ds, khung:{xmin:L, xmax:H, ymin:ymin - 0.5, ymax:ymax + 0.5}}; };
+/* nguyên hàm (có hằng số c) của đa thức, chính xác theo phân số */
+const dtPv = (co, x, c)=>{ const d = co.length - 1; let s = [c || 0, 1]; co.forEach((k, i)=>{ const p = d - i; s = qa(s, qr(k*x**(p + 1), p + 1)); }); return s; };
+const dtLine = R=>{ const m = R.pick([1, 2, -1, -2]), r = R.int(-6, 6); return {m, r, co:[m, -m*r], ds:[r, r + 1]}; };
+const dtPara = R=>{ const a = R.pick([1, -1]), al = R.int(-6, 4), be = al + R.pick([2, 3, 4]); return {a, al, be, co:[a, -a*(al + be), a*al*be], ds:[al, be]}; };
+const dtTxt = {c:'hình vẽ'};
+
+G(12,3,0,'TH','Cho đồ thị f là đường thẳng, F(0) = c: chọn F(x) (đọc hệ số góc rồi lấy nguyên hàm)', R=>{
+  const {m, r, co, ds} = dtLine(R), c = R.nz(-6, 6), n = co[1], T = [[qr(m, 2), ngX(2)], [n, ngX(1)], [c, ngX(0)]], opt = l=> ({t:`$F(x) = ${ngTx(l)}$`, v:ngVal(l, 1.37)});
+  const ans = opt(T), wrong = ngW(R, ans, [opt([[m, ngX(2)], [n, ngX(1)], [c, ngX(0)]]), opt([[qr(m, 2), ngX(2)], [-n, ngX(1)], [c, ngX(0)]]), opt([[qr(m, 2), ngX(2)], [n, ngX(1)]]), opt([[qr(m, 2), ngX(2)], [c, ngX(1)], [n, ngX(0)]]), opt([[qr(-m, 2), ngX(2)], [n, ngX(1)], [c, ngX(0)]])]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$. Hàm số $F(x)$ là`, ans, wrong,
+    lg:`Đường thẳng đi qua $(${r}; 0)$ và $(${r + 1}; ${m})$ nên $f(x) = ${dtP(co)}$.<br>$F(x) = ${ngTx(T.slice(0, 2))} + C$, $F(0) = C = ${c}$. Vậy ${ans.t}.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> near(o.ans.v, ngSi(x=> dtV(co, x), 0, 1.37) + c, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','Cho đồ thị parabola y = f(x) cắt Ox tại hai điểm, f(x) đổi dấu từ dương sang âm hoặc ngược lại: F đạt cực tiểu tại x bằng bao nhiêu', R=>{
+  const {a, al, be, co, ds} = dtPara(R), x0 = a > 0 ? be : al, xm = a > 0 ? al : be;
+  const ans = ngNum(x0), wrong = ngW(R, ans, [ngNum(xm), ngNum((al + be)/2 === Math.round((al + be)/2) ? (al + be)/2 : x0 + 1), ngNum(-x0 === x0 ? x0 + 2 : -x0), ngNum(x0 + 1), ngNum(0)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Hàm số $F(x)$ đạt cực tiểu tại`.replace('tại', 'tại $x$ bằng'), ans, wrong,
+    lg:`$F'(x) = f(x)$. Từ đồ thị, $f(x)$ đổi dấu từ âm sang dương khi đi qua $x = ${x0}$.<br>Do đó $F(x)$ đạt cực tiểu tại $x = ${x0}$; giá trị này khác với hoành độ đỉnh parabol.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> near(dtV(co, o.ans.v), 0, 1e-9) && dtV(co, o.ans.v - 0.1) < 0 && dtV(co, o.ans.v + 0.1) > 0};
+  return o;
+});
+
+G(12,3,0,'TH','Cho đồ thị parabola y = f(x): F đồng biến trên khoảng nào (khoảng f > 0, không phải khoảng f tăng)', R=>{
+  const {a, al, be, co, ds} = dtPara(R), h = (al + be)/2, iv = (p, q)=> `$(${p}; ${q})$`, inf = '-\\infty', sup = '+\\infty';
+  const ans = a < 0 ? {t:iv(al, be), v:'u'} : {t:iv(be, sup), v:'u'}, wrong = a < 0 ? [{t:iv(be, sup), v:'v'}, {t:iv(inf, al), v:'w'}, {t:iv(inf, h === Math.round(h) ? h : nt(h)), v:'x'}] : [{t:iv(al, be), v:'v'}, {t:iv(inf, be), v:'w'}, {t:iv(al, sup), v:'x'}];
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Hàm số $F(x)$ đồng biến trên khoảng nào sau đây?`, ans, wrong,
+    lg:`$F'(x) = f(x)$ nên $F$ đồng biến trên khoảng mà $f(x) > 0$, tức phần đồ thị $f$ nằm trên trục hoành.<br>Từ hình vẽ, khoảng cần chọn là ${ans.t}.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=>{ const x = a < 0 ? (al + be)/2 : be + 1.5; return o.ans.v === 'u' && dtV(co, x) > 0; }};
+  return o;
+});
+
+G(12,3,0,'TH','Cho đồ thị y = f(x) là đường thẳng: F đạt cực đại hoặc cực tiểu tại giao điểm với Ox, nhận biết từ chiều đổi dấu', R=>{
+  const {m, r, co, ds} = dtLine(R), up = m > 0, ask = R.pick(['đại', 'tiểu']), ok = (ask === 'đại') !== up;
+  const op = (t, v)=> ({t, v}), ans = ok ? op(`$x = ${r}$`, r) : op('Hàm số $F(x)$ không có điểm cực ' + ask, 99), wrong = ok ? [op(`$x = ${r + 1}$`, r + 1), op(`$x = ${r - 1}$`, r - 1), op('Hàm số $F(x)$ không có điểm cực ' + ask, 99)] : [op(`$x = ${r}$`, r), op(`$x = ${r + 1}$`, r + 1), op(`$x = ${r - 1}$`, r - 1)];
+  const o = {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Điểm cực ${ask} của hàm số $F(x)$ là`, ans, wrong,
+    lg:`$F'(x) = f(x)$. Từ đồ thị, $f(x)$ đổi dấu từ ${up ? 'âm sang dương' : 'dương sang âm'} tại $x = ${r}$ nên $F$ đạt cực ${up ? 'tiểu' : 'đại'} tại đó và không có cực trị khác.<br>Vậy đáp án là ${ans.t}.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> (ok ? o.ans.v === r : o.ans.v === 99) && (dtV(co, r - 0.5) > 0) === !up};
+  return o;
+});
+
+G(12,3,0,'VD','Cho đồ thị f là đường thẳng, F(0) = c: tính giá trị cực trị của F', R=>{
+  const {m, r, co, ds} = dtLine(R), c = R.nz(-6, 6); if(!r) return null;
+  const q = dtPv(co, r, c), ans = ngNum(q), wrong = ngW(R, ans, [ngNum(c), ngNum(qs(q, 2*c)), ngNum(qa(q, m)), ngNum(qa(qm(qs(q, c), 2), c)), ngNum(qm(qs(q, c), -1))]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$. Giá trị cực trị của hàm số $F(x)$ bằng`, ans, wrong,
+    lg:`Từ hình vẽ, $f(x) = ${dtP(co)}$, nên $F(x) = ${ngTx(ngPr(nkP([[co[0], 1], [co[1], 0]])))}${ngSg(c)}$.<br>$F$ đạt cực trị tại $x = ${r}$ và $F(${r}) = ${qT(q)}$.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> near(o.ans.v, ngSi(x=> dtV(co, x), 0, r) + c, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','Cho đồ thị F là parabol: tính f(a) = F\'(a) (đọc công thức F rồi đạo hàm)', R=>{
+  const a = R.pick([1, -1, 2, -2, 3, -3]), h = R.int(-4, 4), k = R.int(-3, 3), co = [a, -2*a*h, a*h*h + k], x0 = h + R.pick([1, 2, -1, 3, -2, 4]), v = 2*a*(x0 - h); if(Math.abs(a) >= 2 && Math.abs(a + k) > 6) return null;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(dtV(co, x0)), ngNum(a*(x0 - h)), ngNum(-v), ngNum(2*a*x0), ngNum(v + k)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = F(x)$ là hàm số bậc hai có đồ thị là parabol như hình vẽ (đỉnh và một điểm trên parabol đã được đánh dấu). Biết $F(x)$ là một nguyên hàm của hàm số $f(x)$. Giá trị của $f(${x0})$ bằng`, ans, wrong,
+    lg:`Parabol có đỉnh $(${h}; ${k})$, đi qua $(${h + 1}; ${a + k})$ nên $F(x) = ${dtS(a)}(${nkL(1, -h)})^{2}${k ? ngSg(k) : ''}$.<br>$f(x) = F'(x) = ${dtP([2*a, -2*a*h])}$, do đó $f(${x0}) = ${qT(v)}$.`.replace('(x)^{2}', 'x^{2}'),
+    hv:dtHv(co, 'y = F(x)', [h, h + 1]),
+    verify:()=> near(o.ans.v, ngDf(x=> dtV(co, x), x0), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','Cho đồ thị F là đường thẳng: F là nguyên hàm của hàm hằng f(x) = hệ số góc', R=>{
+  const p = R.nz(-6, 6)*R.pick([1]), b = R.int(-3, 3), s = R.pick([1, 2, 3]), m = qr(p, s), x1 = s > 1 ? s : 1, y1 = b + (s > 1 ? p : p), co = [qv(m), b]; if(Math.abs(y1) > 6) return null;
+  const ans = {t:`$f(x) = ${qT(m)}$`, v:qv(m)}, wrong = ngW(R, ans, [{t:`$f(x) = ${qT(qm(m, -1))}$`, v:-qv(m)}, {t:`$f(x) = ${qT(b === 0 ? 1 : b)}$`, v:b === 0 ? 1 : b}, {t:`$f(x) = ${qT(x1)}$`, v:x1}, {t:`$f(x) = ${qT(qd(1, m))}$`, v:1/qv(m)}, {t:`$f(x) = ${qT(y1 || 2)}$`, v:y1 || 2}]); if(!wrong) return null;
+  const pl = s === 1 ? dtPl([p, b]) : `${p}/${s}*x${b < 0 ? '-' : '+'}${Math.abs(b)}`;
+  const o = {stem:`Cho hàm số $y = F(x)$ có đồ thị là đường thẳng như hình vẽ. Biết $F(x)$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$. Hàm số $f(x)$ là`, ans, wrong,
+    lg:`Đường thẳng đi qua $(0; ${b})$ và $(${x1}; ${y1})$ nên có hệ số góc $${qT(m)}$, tức $F(x) = ${ngTx([[m, ngX(1)], [b, ngX(0)]])}$.<br>Do đó ${ans.t}.`,
+    hv:{loai:'dothi', hamSo:pl, ten:'y = F(x)', tenX:-38, luoi:true, ghiCucTri:false, diem:[0, x1], khung:{xmin:-4.5, xmax:4.5, ymin:-7.5, ymax:7.5}},
+    verify:()=> near(o.ans.v, (y1 - b)/x1, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Cho đồ thị bậc ba y = F(x) hai cực trị trên lưới, biết hệ số của x³: dựng f(x) = 3a(x − α)(x − β) rồi tính f(2)', R=>{
+  const s = R.pick([1, -1]), al = R.int(-5, 3), be = al + 2, k = R.int(-2, 2), co = [s, -3*s*(al + be)/2, 3*s*al*be, k + s*(-(al**3) + 3*(al + be)/2*al*al - 3*al*be*al)], f = [3*s, -3*s*(al + be), 3*s*al*be];
+  const y1 = dtV(co, al), y2 = dtV(co, be), v = dtV(f, 2); if(Math.abs(y1) > 6 || Math.abs(y2) > 6) return null;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(v/3), ngNum(-v), ngNum(dtV(co, 2)), ngNum(v + 3), ngNum(2*v)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc ba $y = F(x)$ có đồ thị như hình vẽ, hệ số của $x^{3}$ bằng $${s}$, và $F(x)$ là một nguyên hàm của hàm số $f(x)$. Giá trị của $f(2)$ bằng`, ans, wrong,
+    lg:`$f$ là tam thức bậc hai có hai nghiệm là hoành độ các điểm cực trị $${al}$, $${be}$ và hệ số của $x^{2}$ bằng $${3*s}$.<br>Do đó $f(x) = ${3*s}(${nkL(1, -al)})(${nkL(1, -be)})$ và $f(2) = ${qT(v)}$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\)\$/, ')x$'),
+    hv:{loai:'dothi', hamSo:dtPl(co), ten:'y = F(x)', tenX:-38, luoi:true, ghiCucTri:false, diem:[al, be], khung:{xmin:Math.min(-1.5, al - 2.5), xmax:Math.max(1.5, be + 2.5), ymin:Math.floor(Math.min(y1, y2, 0)) - 1.5, ymax:Math.ceil(Math.max(y1, y2, 0)) + 1.5}},
+    verify:()=> near(o.ans.v, ngDf(x=> dtV(co, x), 2), 1e-5) && near(ngDf(x=> dtV(co, x), al), 0, 1e-5)};
+  return o;
+});
+
+G(12,3,0,'TH','Cho bảng xét dấu của f(x) (không có hình): F có điểm cực đại tại đâu', R=>{
+  const [x1, x2] = R.distinct(2, -6, 6).sort((p, q)=> p - q), s = R.pick([1, -1]), xd = s > 0 ? x1 : x2, xt = s > 0 ? x2 : x1;
+  const ans = ngNum(xd), wrong = ngW(R, ans, [ngNum(xt), ngNum(x1 + x2), ngNum(xd + 1), ngNum(xt - 1), ngNum(0)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ liên tục trên $\\mathbb{R}$ có $f(x) ${s > 0 ? '>' : '<'} 0$ khi $x \\in (-\\infty; ${x1}) \\cup (${x2}; +\\infty)$, $f(x) ${s > 0 ? '<' : '>'} 0$ khi $x \\in (${x1}; ${x2})$ và $f(${x1}) = f(${x2}) = 0$. Gọi $F(x)$ là một nguyên hàm của $f(x)$. Hàm số $F(x)$ đạt cực đại tại $x$ bằng`, ans, wrong,
+    lg:`$F'(x) = f(x)$ đổi dấu từ dương sang âm khi đi qua $x = ${xd}$ nên $F$ đạt cực đại tại $x = ${xd}$.`,
+    verify:()=> near(o.ans.v, s > 0 ? x1 : x2, 1e-12)};
+  return o;
+});
+
+G(12,3,0,'TH','f(x) = k(x − α)(x − β) cho bằng công thức, F là nguyên hàm: chọn điểm cực tiểu của F (dấu của k đổi vai trò α, β)', R=>{
+  const k = R.nz(-6, 6), [al, be] = R.distinct(2, -7, 7).sort((p, q)=> p - q), xt = k > 0 ? be : al, xd = k > 0 ? al : be;
+  const ans = ngNum(xt), wrong = ngW(R, ans, [ngNum(xd), ngNum((al + be)/2), ngNum(k), ngNum(al + be), ngNum(xt + 1)]); if(!wrong) return null;
+  const co = [k, -k*(al + be), k*al*be];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtS(k)}(${nkL(1, -al)})(${nkL(1, -be)})$. Hàm số $F(x)$ đạt cực tiểu tại $x$ bằng`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\)\$/, ')x$'), ans, wrong,
+    lg:`$F'(x) = f(x)$ có hai nghiệm $${al}$, $${be}$; với hệ số $${k}$ ${k > 0 ? 'dương' : 'âm'}, $f$ đổi dấu từ âm sang dương tại $x = ${xt}$.<br>Vậy $F$ đạt cực tiểu tại $x = ${xt}$.`,
+    verify:()=> dtV(co, o.ans.v - 0.01) < 0 && dtV(co, o.ans.v + 0.01) > 0};
+  return o;
+});
+
+G(12,3,0,'VD','Cho đồ thị parabol y = f(x), F là nguyên hàm: giá trị lớn nhất của F trên đoạn [a; b] đạt tại điểm nào', R=>{
+  const {a, al, be, co, ds} = dtPara(R), lo = al - 1, hi = be + 1, xs = [lo, al, be, hi], val = x=> qv(dtPv(co, x, 0)), best = xs.reduce((p, q)=> val(q) > val(p) ? q : p, xs[0]);
+  if(xs.filter(x=> near(val(x), val(best), 1e-9)).length > 1) return null;
+  const ans = ngNum(best), wrong = ngW(R, ans, xs.filter(x=> x !== best).map(x=> ngNum(x)).concat([ngNum(0)])); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Trên đoạn $[${lo}; ${hi}]$, hàm số $F(x)$ đạt giá trị lớn nhất tại $x$ bằng`, ans, wrong,
+    lg:`Từ hình vẽ, $f(x) = ${dtP(co)}$. Xét dấu $f$ để lập bảng biến thiên của $F$ trên đoạn: cần so sánh $F$ tại $x = ${lo}$, $${al}$, $${be}$, $${hi}$.<br>Tính được $F(${lo}) - F(${al}) = ${qT(qs(dtPv(co, lo, 0), dtPv(co, al, 0)))}$, $F(${hi}) - F(${be}) = ${qT(qs(dtPv(co, hi, 0), dtPv(co, be, 0)))}$, $F(${be}) - F(${al}) = ${qT(qs(dtPv(co, be, 0), dtPv(co, al, 0)))}$.<br>Vậy $F$ lớn nhất tại $x = ${best}$.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=>{ let m = -1e9; for(let i = 0; i <= 2000; i++) m = Math.max(m, val(lo + (hi - lo)*i/2000)); return near(val(o.ans.v), m, 1e-5); }};
+  return o;
+});
+
+G(12,3,0,'TH','So sánh F(a) và F(b) khi đồ thị f nằm trên hoặc dưới trục hoành trên [a; b]', R=>{
+  const {a, al, be, co, ds} = dtPara(R), inner = a < 0, p = al, q = be, cmp = inner;  /* trên (al; be): a < 0 thì f > 0 */
+  const ans = {t:`$F(${p}) ${inner ? '<' : '>'} F(${q})$`, v:1}, wrong = [{t:`$F(${p}) ${inner ? '>' : '<'} F(${q})$`, v:2}, {t:`$F(${p}) = F(${q})$`, v:3}, {t:`$F(${p}) + F(${q}) = 0$`, v:4}];
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Khẳng định nào sau đây đúng?`, ans, wrong,
+    lg:`Trên khoảng $(${p}; ${q})$ đồ thị $f$ nằm ${inner ? 'phía trên' : 'phía dưới'} trục hoành nên $F'(x) = f(x) ${inner ? '>' : '<'} 0$, tức $F$ ${inner ? 'đồng biến' : 'nghịch biến'} trên $[${p}; ${q}]$.<br>Do đó ${ans.t}.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> o.ans.v === 1 && (qv(dtPv(co, q, 0)) > qv(dtPv(co, p, 0))) === inner};
+  return o;
+});
+
+G(12,3,0,'TH','Hệ số góc tiếp tuyến của đồ thị F tại điểm hoành độ x₀ là f(x₀): đọc trên đồ thị f (đường thẳng)', R=>{
+  const m = R.pick([1, 2, 3, -1, -2, -3]), r = R.int(-4, 4), co = [m, -m*r], ds = [r, r + 1], x0 = r + R.pick([-3, -2, -1, 1, 2, 3, 4]), v = dtV(co, x0);
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(m), ngNum(-v), ngNum(x0), ngNum(v + m), ngNum(r)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Hệ số góc của tiếp tuyến của đồ thị $y = F(x)$ tại điểm có hoành độ $x = ${x0}$ bằng`, ans, wrong,
+    lg:`Hệ số góc tiếp tuyến là $F'(${x0}) = f(${x0})$. Từ hình vẽ, $f(x) = ${dtP(co)}$.<br>Vậy hệ số góc bằng $${v}$.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> near(o.ans.v, dtV(co, x0), 1e-12)};
+  return o;
+});
+
+G(12,3,0,'TH','Tiếp tuyến của đồ thị F song song với trục hoành tại các điểm f(x) = 0: tổng hoành độ các tiếp điểm, đọc từ đồ thị f', R=>{
+  const {a, al, be, co, ds} = dtPara(R), v = al + be;
+  const ans = ngNum(v), wrong = ngW(R, ans, [ngNum(al*be), ngNum(be - al), ngNum(-v), ngNum(v/2), ngNum(v + 1)]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$. Tổng hoành độ các điểm trên đồ thị $y = F(x)$ tại đó tiếp tuyến song song với trục hoành hoặc trùng với trục hoành bằng`, ans, wrong,
+    lg:`Tiếp tuyến có hệ số góc $0$ khi $F'(x) = f(x) = 0$.<br>Từ đồ thị, $f(x) = 0$ tại $x = ${al}$ và $x = ${be}$. Tổng bằng $${v}$.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> near(dtV(co, al), 0, 1e-12) && near(dtV(co, be), 0, 1e-12) && near(o.ans.v, -co[1]/co[0], 1e-12)};
+  return o;
+});
+
+G(12,3,0,'VD','Viết tiếp tuyến của đồ thị F tại x₀ với F là nguyên hàm của đa thức, F(x₀) cho trước: y = f(x₀)(x − x₀) + F(x₀)', R=>{
+  const a = R.nz(-3, 3), b = R.nz(-4, 4), x0 = R.pick([1, 2, -1]), y0 = R.nz(-6, 6), s = 2*a*x0 + b, k = y0 - s*x0, opt = (p, q)=> ({t:`$y = ${dtP([p, q])}$`, v:p*1.37 + q}); if(!s) return null;
+  const ans = opt(s, k), wrong = ngW(R, ans, [opt(s, y0), opt(s, y0 + s*x0), opt(y0, s), opt(-s, y0 + s*x0), opt(2*a, k)]); if(!wrong) return null;
+  const co = [2*a, b];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtP(co)}$ thoả mãn $F(${x0}) = ${y0}$. Phương trình tiếp tuyến của đồ thị $y = F(x)$ tại điểm có hoành độ $x = ${x0}$ là`, ans, wrong,
+    lg:`Hệ số góc là $F'(${x0}) = f(${x0}) = ${s}$, tiếp điểm $(${x0}; ${y0})$.<br>Tiếp tuyến: $y = ${s}(${nkL(1, -x0)})${ngSg(y0)}$, tức ${ans.t}.`.replace('= 1(', '= (').replace('= -1(', '= -('),
+    verify:()=> near(o.ans.v, s*1.37 + y0 - s*x0, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Cho đồ thị parabol y = f(x), F(0) = c: F có đồ thị đối xứng, F(h + t) + F(h − t) = 2F(h) với h là hoành độ đỉnh', R=>{
+  const a = R.pick([3, -3, 6, -6]), h = R.int(-2, 2), k = R.pick([1, 2, 3, -1, -2, -3]), t = R.int(1, 3), Fh = R.nz(-9, 9), v = 2*Fh; if(!k) return null;
+  const co = [a, -2*a*h, a*h*h + k], U = h ? `(${nkL(1, -h)})` : 'x', Pl = x=> a/3*(x - h)**3 + k*(x - h) + Fh, ans = ngNum(v), wrong = ngW(R, ans, [ngNum(Fh), ngNum(v + 2*k*t), ngNum(v + 2*a*t*t*t/3), ngNum(0), ngNum(v - 1)]); if(!wrong) return null;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtP(co)}$ thoả mãn $F(${h}) = ${Fh}$. Giá trị của $F(${h + t}) + F(${h - t})$ bằng`, ans, wrong,
+    lg:`Viết $f(x) = ${dtS(a)}${U}^{2}${ngSg(k)}$ nên $F(x) = ${dtS(a/3)}${U}^{3}${ngSx(k, U)}${ngSg(Fh)}$.<br>Hai số hạng đầu đổi dấu khi đổi $${nkL(1, -h)}$ thành số đối, nên tổng bằng $2\\cdot ${ngPa(Fh)} = ${v}$.`,
+    verify:()=> near(o.ans.v, Pl(h + t) + Pl(h - t), 1e-9) && ngIs(Pl, x=> dtV(co, x))};
+  return o;
+});
+
+G(12,3,0,'VD','F là nguyên hàm của 3k(x² − 1), F(0) = c: phương trình F(x) = m có ba nghiệm khi m thuộc khoảng (giá trị cực tiểu; giá trị cực đại)', R=>{
+  const k = R.int(1, 6), c = R.int(-9, 9), lo = c - 2*k, hi = c + 2*k, iv = (p, q)=> ({t:`$(${p}; ${q})$`, v:p*1000 + q}), ans = iv(lo, hi);
+  const wrong = ngW(R, ans, [iv(c - 3*k, c + 3*k), iv(c, hi), iv(lo, c), iv(c - k, c + k)]); if(!wrong) return null;
+  const Fn = x=> k*x**3 - 3*k*x + c;
+  const o = {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = ${dtS(3*k)}(x^{2} - 1)$ thoả mãn $F(0) = ${c}$. Phương trình $F(x) = m$ có ba nghiệm phân biệt khi và chỉ khi $m$ thuộc khoảng nào?`, ans, wrong,
+    lg:`$F(x) = ${dtP([k, 0, -3*k, c])}$, cực đại tại $x = -1$ với $F(-1) = ${hi}$, cực tiểu tại $x = 1$ với $F(1) = ${lo}$.<br>Đường thẳng $y = m$ cắt đồ thị tại ba điểm khi $${lo} < m < ${hi}$, tức $m$ thuộc ${ans.t}.`,
+    verify:()=> near(o.ans.v, Fn(1)*1000 + Fn(-1), 1e-9) && ngIs(Fn, x=> 3*k*(x*x - 1))};
+  return o;
+});
+
+G(12,3,0,'VD','Cho đồ thị parabol y = f(x) biết hệ số a của x², cắt Ox tại α, β: tính F(β) − F(α) = −a(β − α)³/6', R=>{
+  const a = R.pick([1, 2, 3, 4, -1, -2, -3, -4]), al = R.int(-4, 2), d = R.pick([2, 3, 4]), be = al + d, co = [a, -a*(al + be), a*al*be], q = qs(dtPv(co, be, 0), dtPv(co, al, 0));
+  const ans = ngNum(q), wrong = ngW(R, ans, [ngNum(qm(q, -1)), ngNum(qm(q, 2)), ngNum(qm(q, 3)), ngNum(qd(q, 2)), ngNum(qa(q, a))]); if(!wrong) return null;
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ, hệ số của $x^{2}$ bằng $${a}$, và $F(x)$ là một nguyên hàm của $f(x)$. Giá trị của $F(${be}) - F(${al})$ bằng`, ans, wrong,
+    lg:`Từ hình vẽ, $f(x) = ${dtS(a)}(${nkL(1, -al)})(${nkL(1, -be)}) = ${dtP(co)}$.<br>$F(x) = ${ngTx(ngPr(nkP([[co[0], 2], [co[1], 1], [co[2], 0]])))} + C$, hằng số $C$ triệt tiêu khi lấy hiệu.<br>$F(${be}) - F(${al}) = ${qT(q)}$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\) =/, ')x ='),
+    hv:dtHv(co, 'y = f(x)', [al, be]),
+    verify:()=> near(o.ans.v, ngSi(x=> dtV(co, x), al, be), 1e-7)};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','Đồ thị parabol y = f(x) (bề lõm lên) cắt Ox tại α < β: dấu của f, đơn điệu, cực trị của F, so sánh F(α), F(β)', R=>{
+  const al = R.int(-3, 1), be = al + R.pick([2, 3, 4]), co = [1, -(al + be), al*be], Fv = x=> qv(dtPv(co, x, 0)), h = (al + be)/2;
+  return {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$.`,
+    items:[claim(R, `$f(x) < 0$ với mọi $x \\in (${al}; ${be})$`, `$f(x) > 0$ với mọi $x \\in (${al}; ${be})$`, ()=> dtV(co, h) < 0, ()=> dtV(co, h) > 0),
+      claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $(${be}; +\\infty)$`, `Hàm số $F(x)$ nghịch biến trên khoảng $(${be}; +\\infty)$`, ()=> dtV(co, be + 1) > 0, ()=> dtV(co, be + 1) < 0),
+      claim(R, `Hàm số $F(x)$ đạt cực đại tại $x = ${al}$`, `Hàm số $F(x)$ đạt cực tiểu tại $x = ${al}$`, ()=> dtV(co, al - 0.1) > 0 && dtV(co, al + 0.1) < 0, ()=> dtV(co, al - 0.1) < 0 && dtV(co, al + 0.1) > 0),
+      claim(R, `$F(${al}) > F(${be})$`, `$F(${al}) < F(${be})$`, ()=> Fv(al) > Fv(be), ()=> Fv(al) < Fv(be))],
+    hv:dtHv(co, 'y = f(x)', [al, be]),
+    lg:`a) Trên $(${al}; ${be})$ đồ thị nằm dưới trục hoành nên $f(x) < 0$.<br>b) Khi $x > ${be}$ đồ thị nằm trên trục hoành nên $F'(x) > 0$.<br>c) $f$ đổi dấu từ dương sang âm tại $x = ${al}$ nên $F$ đạt cực đại tại đó.<br>d) $F$ nghịch biến trên $[${al}; ${be}]$ nên $F(${al}) > F(${be})$.`};
+});
+
+GD(12,3,0,'TH','Đồ thị parabol y = f(x) (bề lõm xuống) cắt Ox tại α < β: F đồng biến trên (α; β), cực tiểu tại α, F(β) > F(α)', R=>{
+  const al = R.int(-3, 1), be = al + R.pick([2, 3, 4]), co = [-1, al + be, -al*be], Fv = x=> qv(dtPv(co, x, 0)), h = (al + be)/2;
+  return {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ và $F(x)$ là một nguyên hàm của $f(x)$.`,
+    items:[claim(R, `$f(x) > 0$ với mọi $x \\in (${al}; ${be})$`, `$f(x) < 0$ với mọi $x \\in (${al}; ${be})$`, ()=> dtV(co, h) > 0, ()=> dtV(co, h) < 0),
+      claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $(${al}; ${be})$`, `Hàm số $F(x)$ nghịch biến trên khoảng $(${al}; ${be})$`, ()=> dtV(co, h) > 0, ()=> dtV(co, h) < 0),
+      claim(R, `Hàm số $F(x)$ đạt cực tiểu tại $x = ${al}$`, `Hàm số $F(x)$ đạt cực tiểu tại $x = ${be}$`, ()=> dtV(co, al - 0.1) < 0 && dtV(co, al + 0.1) > 0, ()=> dtV(co, be - 0.1) < 0 && dtV(co, be + 0.1) > 0),
+      claim(R, `$F(${be}) > F(${al})$`, `$F(${be}) < F(${al})$`, ()=> Fv(be) > Fv(al), ()=> Fv(be) < Fv(al))],
+    hv:dtHv(co, 'y = f(x)', [al, be]),
+    lg:`a) Trên $(${al}; ${be})$ đồ thị nằm trên trục hoành.<br>b) $F'(x) = f(x) > 0$ trên khoảng đó nên $F$ đồng biến.<br>c) $f$ đổi dấu từ âm sang dương tại $x = ${al}$ và từ dương sang âm tại $x = ${be}$.<br>d) $F$ đồng biến trên $[${al}; ${be}]$ nên $F(${be}) > F(${al})$.`};
+});
+
+GD(12,3,0,'VD','Đồ thị y = f(x) là đường thẳng đi xuống cắt Ox tại r, F(r) = c: công thức F, cực đại, tính đối xứng F(r + t) = F(r − t)', R=>{
+  const m = R.pick([-1, -2]), r = R.int(-2, 2), c = R.nz(-6, 6), co = [m, -m*r], t = R.int(1, 3), v = c + m*t*t/2, w = c - m*t*t/2, Fn = x=> m/2*(x - r)**2 + c;
+  return {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(${r}) = ${c}$.`,
+    items:[claim(R, `$f(x) = ${dtP(co)}$`, `$f(x) = ${dtP([-m, m*r || 1])}$`, ()=> near(dtV(co, r), 0, 1e-12) && near(dtV(co, r + 1), m, 1e-12), ()=> false),
+      claim(R, `Hàm số $F(x)$ đạt cực đại tại $x = ${r}$`, `Hàm số $F(x)$ đạt cực tiểu tại $x = ${r}$`, ()=> dtV(co, r - 0.1) > 0 && dtV(co, r + 0.1) < 0, ()=> dtV(co, r - 0.1) < 0),
+      claim(R, `$F(x) \\le ${c}$ với mọi $x$`, `$F(x) \\ge ${c}$ với mọi $x$`, ()=> [-5, 0, 5].every(x=> Fn(x) <= c), ()=> [-5, 0, 5].every(x=> Fn(x) >= c)),
+      claim(R, `$F(${r + t}) = F(${r - t})$`, `$F(${r + t}) > F(${r - t})$`, ()=> near(Fn(r + t), Fn(r - t), 1e-9), ()=> Fn(r + t) > Fn(r - t) + 1e-9)],
+    hv:dtHv(co, 'y = f(x)', [r, r + 1]),
+    lg:`a) Đường thẳng đi qua $(${r}; 0)$, $(${r + 1}; ${m})$.<br>b) $f$ đổi dấu từ dương sang âm tại $x = ${r}$.<br>c) Giá trị cực đại cũng là giá trị lớn nhất của $F$, bằng $${c}$.<br>d) $F(x) = ${m === -2 ? '-' : '-\\dfrac{1}{2}'}(${nkL(1, -r)})^{2}${ngSg(c)}$ nên $F$ đối xứng qua $x = ${r}$.`.replace('(x)^{2}', 'x^{2}')};
+});
+
+GD(12,3,0,'TH','Đồ thị y = F(x) là parabol: công thức F, f(x) = F\'(x), f(h) = 0, dấu của f', R=>{
+  const a = R.pick([1, -1]), h = R.int(-2, 2), k = R.int(-3, 3), co = [a, -2*a*h, a*h*h + k], f = [2*a, -2*a*h], x0 = h + 2;
+  return {stem:`Cho hàm số $y = F(x)$ là hàm số bậc hai có đồ thị là parabol như hình vẽ (đỉnh và một điểm trên parabol đã được đánh dấu) và $F(x)$ là một nguyên hàm của hàm số $f(x)$.`,
+    items:[claim(R, `$F(x) = ${dtP(co)}$`, `$F(x) = ${dtP([a, 2*a*h, a*h*h + k])}$`, ()=> near(dtV(co, h), k, 1e-12), ()=> h === 0 ? false : near(dtV([a, 2*a*h, a*h*h + k], h), k, 1e-12)),
+      claim(R, `$f(x) = ${dtP(f)}$`, `$f(x) = ${dtP([a, -a*h])}$`, ()=> ngIs(x=> dtV(co, x), x=> dtV(f, x)), ()=> ngIs(x=> dtV(co, x), x=> dtV([a, -a*h], x))),
+      claimN(R, v=> `$f(${x0}) = ${v}$`, 4*a, String(4*a), 2*a, String(2*a), ()=> ngRd(ngDf(x=> dtV(co, x), x0))),
+      claim(R, `$f(x) ${a > 0 ? '<' : '>'} 0$ với mọi $x < ${h}$`, `$f(x) ${a > 0 ? '>' : '<'} 0$ với mọi $x < ${h}$`, ()=> a > 0 ? dtV(f, h - 1) < 0 : dtV(f, h - 1) > 0, ()=> a > 0 ? dtV(f, h - 1) > 0 : dtV(f, h - 1) < 0)],
+    hv:dtHv(co, 'y = F(x)', [h, h + 1]),
+    lg:`a) Parabol đỉnh $(${h}; ${k})$, đi qua $(${h + 1}; ${a + k})$ nên hệ số của $x^{2}$ là $${a}$: $F(x) = ${dtP(co)}$.<br>b) $f(x) = F'(x) = ${dtP(f)}$.<br>c) $f(${x0}) = ${4*a}$.<br>d) $F$ ${a > 0 ? 'nghịch biến' : 'đồng biến'} khi $x < ${h}$ nên $f(x) ${a > 0 ? '<' : '>'} 0$ trên khoảng đó.`};
+});
+
+GD(12,3,0,'VD','Đồ thị y = F(x) bậc ba hai cực trị: nghiệm của f, dấu của f giữa hai nghiệm, tích hai nghiệm, f là tam thức bậc hai', R=>{
+  const s = R.pick([1, -1]), al = R.int(-3, 0), be = al + 2, k = R.int(-2, 2), co = [s, -3*s*(al + be)/2, 3*s*al*be, k], f = [3*s, -3*s*(al + be), 3*s*al*be];
+  const y1 = dtV(co, al), y2 = dtV(co, be); if(Math.abs(y1) > 6 || Math.abs(y2) > 6) return null;
+  return {stem:`Cho hàm số $y = F(x)$ là hàm số bậc ba có đồ thị như hình vẽ và $F(x)$ là một nguyên hàm của hàm số $f(x)$.`,
+    items:[claim(R, `Phương trình $f(x) = 0$ có hai nghiệm $x = ${al}$ và $x = ${be}$`, `Phương trình $f(x) = 0$ có đúng một nghiệm`, ()=> near(dtV(f, al), 0, 1e-12) && near(dtV(f, be), 0, 1e-12), ()=> false),
+      claim(R, `$f(x) ${s > 0 ? '<' : '>'} 0$ với mọi $x \\in (${al}; ${be})$`, `$f(x) ${s > 0 ? '>' : '<'} 0$ với mọi $x \\in (${al}; ${be})$`, ()=> s > 0 ? dtV(f, al + 1) < 0 : dtV(f, al + 1) > 0, ()=> s > 0 ? dtV(f, al + 1) > 0 : dtV(f, al + 1) < 0),
+      claimN(R, v=> `$F(${al}) - F(${be}) = ${v}$`, y1 - y2, String(y1 - y2), y2 - y1, String(y2 - y1), ()=> -ngRd(ngSi(x=> dtV(f, x), al, be))),
+      claim(R, `Hệ số của $x^{2}$ trong $f(x)$ ${s > 0 ? 'dương' : 'âm'}`, `Hệ số của $x^{2}$ trong $f(x)$ ${s > 0 ? 'âm' : 'dương'}`, ()=> s*f[0] > 0, ()=> s*f[0] < 0)],
+    hv:{loai:'dothi', hamSo:dtPl(co), ten:'y = F(x)', tenX:-38, luoi:true, ghiCucTri:false, diem:[al, be], khung:{xmin:-5.5, xmax:4.5, ymin:Math.floor(Math.min(y1, y2, 0)) - 1.5, ymax:Math.ceil(Math.max(y1, y2, 0)) + 1.5}},
+    lg:`a) $f = F'$ nên nghiệm của $f$ là hoành độ hai điểm cực trị $${al}$, $${be}$.<br>b) Trên $(${al}; ${be})$, $F$ ${s > 0 ? 'nghịch biến' : 'đồng biến'} nên $f(x) ${s > 0 ? '<' : '>'} 0$.<br>c) Đọc đồ thị: $F(${al}) = ${y1}$, $F(${be}) = ${y2}$, hiệu bằng $${y1 - y2}$.<br>d) $f$ là tam thức ${s > 0 ? 'âm giữa hai nghiệm nên hệ số dương' : 'dương giữa hai nghiệm nên hệ số âm'}.`};
+});
+
+GD(12,3,0,'TH','f(x) = k·sin x trên [0; 2π] (k > 0): F đồng biến trên (0; π), cực đại tại π, F(π) − F(0) = 2k, F(2π) = F(0)', R=>{
+  const k = R.int(1, 9), f = x=> k*Math.sin(x), Fn = x=> -k*Math.cos(x);
+  return {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtS(k)}\\sin x$ trên đoạn $[0; 2\\pi]$.`,
+    items:[claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $(0; \\pi)$`, `Hàm số $F(x)$ nghịch biến trên khoảng $(0; \\pi)$`, ()=> [0.5, 1.5, 3].every(x=> f(x) > 0), ()=> [0.5, 1.5, 3].every(x=> f(x) < 0)),
+      claim(R, `Hàm số $F(x)$ đạt cực đại tại $x = \\pi$`, `Hàm số $F(x)$ đạt cực tiểu tại $x = \\pi$`, ()=> f(3) > 0 && f(3.3) < 0, ()=> f(3) < 0 && f(3.3) > 0),
+      claimN(R, v=> `$F(\\pi) - F(0) = ${v}$`, 2*k, String(2*k), k, String(k), ()=> ngRd(Fn(Math.PI) - Fn(0))),
+      claim(R, `$F(2\\pi) = F(0)$`, `$F(2\\pi) = F(0) + ${2*k}$`, ()=> near(Fn(2*Math.PI), Fn(0), 1e-9), ()=> near(Fn(2*Math.PI), Fn(0) + 2*k, 1e-9))],
+    lg:`$F(x) = ${dtS(-k)}\\cos x + C$.<br>a) Trên $(0; \\pi)$, $\\sin x > 0$ nên $F'(x) > 0$.<br>b) $f$ đổi dấu từ dương sang âm tại $x = \\pi$.<br>c) $F(\\pi) - F(0) = ${k} + ${k} = ${2*k}$.<br>d) $\\cos 2\\pi = \\cos 0$ nên $F(2\\pi) = F(0)$.`};
+});
+
+GD(12,3,0,'VD','f(x) = eˣ − a (a > 0): F đạt cực tiểu tại ln a, hai khoảng đơn điệu, giá trị cực tiểu khi F(0) = 1', R=>{
+  const a = R.pick([2, 3, 4, 5, 6, 7]), c = R.int(1, 5), f = x=> Math.exp(x) - a, Fn = x=> Math.exp(x) - a*x + c - 1, x0 = Math.log(a), valT = `${a}${ngSx(-a, `\\ln ${a}`)}${c - 1 ? ngSg(c - 1) : ''}`, wrT = `${a}${ngSx(a, `\\ln ${a}`)}${c - 1 ? ngSg(c - 1) : ''}`;
+  return {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = e^{x} - ${a}$ trên $\\mathbb{R}$ thoả mãn $F(0) = ${c}$.`,
+    items:[claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $(\\ln ${a}; +\\infty)$`, `Hàm số $F(x)$ nghịch biến trên khoảng $(\\ln ${a}; +\\infty)$`, ()=> f(x0 + 1) > 0, ()=> f(x0 + 1) < 0),
+      claim(R, `Hàm số $F(x)$ đạt cực tiểu tại $x = \\ln ${a}$`, `Hàm số $F(x)$ đạt cực đại tại $x = \\ln ${a}$`, ()=> f(x0 - 0.1) < 0 && f(x0 + 0.1) > 0, ()=> f(x0 - 0.1) > 0),
+      claim(R, `$F(x) = e^{x} - ${a}x${c - 1 ? ngSg(c - 1) : ''}$`, `$F(x) = e^{x} - ${a}x${ngSg(c)}$`, ()=> near(Fn(0), c, 1e-12) && ngIs(Fn, f), ()=> near(1 + c, c, 1e-12)),
+      claim(R, `Giá trị cực tiểu của $F(x)$ bằng $${valT}$`, `Giá trị cực tiểu của $F(x)$ bằng $${wrT}$`, ()=> near(Fn(x0), a - a*Math.log(a) + c - 1, 1e-9), ()=> near(Fn(x0), a + a*Math.log(a) + c - 1, 1e-9))],
+    lg:`a), b) $f(x) = 0$ khi $x = \\ln ${a}$; $f(x) < 0$ khi $x < \\ln ${a}$, $f(x) > 0$ khi $x > \\ln ${a}$.<br>c) $F(x) = e^{x} - ${a}x + C$; $F(0) = 1 + C = ${c}$ nên $C = ${c - 1}$.<br>d) $F(\\ln ${a}) = ${a} - ${a}\\ln ${a}${c - 1 ? ngSg(c - 1) : ''}$.`};
+});
+
+GD(12,3,0,'VD','f(x) = 1/x − k trên (0; +∞) với k > 0: F đạt cực đại tại 1/k, đồng biến trên (0; 1/k), giá trị cực đại khi F(1) cho trước', R=>{
+  const k = R.int(2, 6), c = R.nz(-6, 6), f = x=> 1/x - k, Fn = x=> Math.log(x) - k*x + k + c, x0 = 1/k, T = qT(qr(1, k));
+  return {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = \\dfrac{1}{x} - ${k}$ trên khoảng $(0; +\\infty)$ thoả mãn $F(1) = ${c}$.`,
+    items:[claim(R, `Hàm số $F(x)$ đồng biến trên khoảng $\\left(0; ${T}\\right)$`, `Hàm số $F(x)$ nghịch biến trên khoảng $\\left(0; ${T}\\right)$`, ()=> f(x0/2) > 0, ()=> f(x0/2) < 0),
+      claim(R, `Hàm số $F(x)$ đạt cực đại tại $x = ${T}$`, `Hàm số $F(x)$ đạt cực tiểu tại $x = ${T}$`, ()=> f(x0*0.9) > 0 && f(x0*1.1) < 0, ()=> f(x0*0.9) < 0),
+      claim(R, `$F(x) = \\ln x - ${k}x${k + c ? ngSg(k + c) : ''}$`, `$F(x) = \\ln x - ${k}x${ngSg(c)}$`, ()=> near(Fn(1), c, 1e-12) && ngIs(Fn, f), ()=> near(-k + c, c, 1e-12)),
+      claim(R, `$F(x) \\le F\\left(${T}\\right)$ với mọi $x > 0$`, `$F(x) \\ge F\\left(${T}\\right)$ với mọi $x > 0$`, ()=> [0.01, 0.5, 2, 9].every(x=> Fn(x) <= Fn(x0) + 1e-12), ()=> [0.01, 0.5, 2, 9].every(x=> Fn(x) >= Fn(x0) - 1e-12))],
+    lg:`a), b) $f(x) = 0$ khi $x = ${T}$; $f(x) > 0$ khi $0 < x < ${T}$, $f(x) < 0$ khi $x > ${T}$.<br>c) $F(x) = \\ln x - ${k}x + C$; $F(1) = -${k} + C = ${c}$ nên $C = ${k + c}$.<br>d) Giá trị cực đại đồng thời là giá trị lớn nhất của $F$ trên $(0; +\\infty)$.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','Đồ thị f là đường thẳng, F(0) = c: đọc công thức rồi tính F(x₁)', R=>{
+  const {m, r, co, ds} = dtLine(R), c = R.int(-9, 9), x1 = R.pick([2, 4, -2]), v = qv(dtPv(co, x1, c));
+  const o = {stem:`Cho hàm số bậc nhất $y = f(x)$ có đồ thị là đường thẳng như hình vẽ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$. Tính $F(${x1})$.`, ans:v,
+    lg:`Từ hình vẽ, $f(x) = ${dtP(co)}$.<br>$F(x) = ${ngTx(ngPr(nkP([[co[0], 1], [co[1], 0]])))}${c ? ngSg(c) : ''}$ nên $F(${x1}) = ${nt(v)}$.`,
+    hv:dtHv(co, 'y = f(x)', ds),
+    verify:()=> near(o.ans, ngSi(x=> dtV(co, x), 0, x1) + c, 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'TH','Đồ thị parabol y = f(x) đọc được nghiệm, f(x) = a(x − α)(x − β): tính F(3) với F(0) = c (a = ±3 cho số đẹp)', R=>{
+  const s = R.pick([1, -1]), al = R.int(-3, 1), be = al + R.pick([2, 3, 4]), g = [s, -s*(al + be), s*al*be], t = R.pick([1, 3]), co = g.map(x=> x), c = R.int(-9, 9), q = dtPv(co, 3, c), v = qv(q); if(q[1] > 2) return null;
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ, hai giao điểm với trục hoành đã được đánh dấu, hệ số của $x^{2}$ bằng $${s}$. Gọi $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$. Tính $F(3)$ (viết dạng thập phân nếu cần).`, ans:v,
+    lg:`Từ hình vẽ, $f(x) = ${dtS(s)}(${nkL(1, -al)})(${nkL(1, -be)}) = ${dtP(co)}$.<br>$F(x) = ${ngTx(ngPr(nkP([[co[0], 2], [co[1], 1], [co[2], 0]])))}${c ? ngSg(c) : ''}$ nên $F(3) = ${nt(v)}$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\) =/, ')x ='),
+    hv:dtHv(co, 'y = f(x)', [al, be]),
+    verify:()=> near(o.ans, ngSi(x=> dtV(co, x), 0, 3) + c, 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','Đồ thị f là đường thẳng đi lên, F(0) = c: giá trị cực tiểu của F', R=>{
+  const m = R.pick([2, 4, 6]), r = R.int(-3, 3), c = R.int(-15, 15), co = [m, -m*r], v = qv(dtPv(co, r, c)), hv0 = m > 2 ? null : 1;
+  const o = {stem:`Cho hàm số bậc nhất $f(x) = ${dtP(co)}$ và $F(x)$ là nguyên hàm của $f(x)$ thoả mãn $F(0) = ${c}$. Tìm giá trị cực tiểu của $F(x)$.`, ans:v,
+    lg:`$F(x) = ${dtP([m/2, -m*r, 0])}${c ? ngSg(c) : ''}$, cực tiểu tại $x = ${r}$ (vì $f$ đổi dấu từ âm sang dương).<br>Giá trị cực tiểu là $F(${r}) = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> dtV(co, x), 0, r) + c, 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','F là nguyên hàm của 3k(x − α)(x − β): hiệu giá trị cực đại và cực tiểu không phụ thuộc hằng số C', R=>{
+  const k = R.int(1, 6), al = R.int(-4, 2), d = R.pick([2, 4]), be = al + d, co = [3*k, -3*k*(al + be), 3*k*al*be], v = k*d**3/2;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtS(3*k)}(${nkL(1, -al)})(${nkL(1, -be)})$. Tính hiệu giữa giá trị cực đại và giá trị cực tiểu của $F(x)$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\)\$/, ')x$'), ans:v,
+    lg:`$F$ đạt cực đại tại $x = ${al}$, cực tiểu tại $x = ${be}$.<br>$F(x) = ${dtP([k, -3*k*(al + be)/2, 3*k*al*be, 0])} + C$, nên hiệu $F(${al}) - F(${be}) = ${v}$ (hằng số $C$ triệt tiêu).`,
+    verify:()=> near(o.ans, -ngSi(x=> dtV(co, x), al, be), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','Đồ thị parabol y = f(x): tổng hai điểm cực trị của F bằng tổng hai nghiệm đọc được', R=>{
+  const s = R.pick([1, -1]), al = R.int(-4, 3), be = al + R.pick([1, 2, 3, 4]), c0 = R.pick([1, 2, 3, 4, 5, 6, 7]), x1 = c0, x2 = -c0 + al + be + R.int(0, 3), k = s;
+  const [p, q] = [R.int(-9, 8), 0], u = R.int(-9, 9), w = u + R.pick([1, 2, 3, 4, 5]), v = 3*u + 2*w, co = [s, -s*(u + w), s*u*w];
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtP(co)}$ và $x_{1} < x_{2}$ là hai điểm cực trị của $F(x)$. Tính $3x_{1} + 2x_{2}$.`, ans:v,
+    lg:`$F'(x) = f(x) = ${dtS(s)}(${nkL(1, -u)})(${nkL(1, -w)})$ đổi dấu tại hai nghiệm nên $x_{1} = ${u}$, $x_{2} = ${w}$.<br>Vậy $3x_{1} + 2x_{2} = ${v}$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\)\$/, ')x$'),
+    verify:()=> near(dtV(co, u), 0, 1e-9) && near(dtV(co, w), 0, 1e-9) && near(o.ans, 3*u + 2*w, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'TH','Hệ số góc tiếp tuyến của đồ thị F tại x₀ khi đọc f từ đồ thị parabol', R=>{
+  const a = R.pick([1, -1, 2, -2]), h = R.int(-2, 2), k = R.int(-3, 3), co = [a, -2*a*h, a*h*h + k], x0 = h + R.pick([2, -2, 1, 3]), v = dtV(co, x0); if(Math.abs(a + k) > 6) return null;
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ (đỉnh và một điểm khác đã đánh dấu) và $F(x)$ là một nguyên hàm của $f(x)$. Tính hệ số góc của tiếp tuyến của đồ thị $y = F(x)$ tại điểm có hoành độ $x = ${x0}$.`, ans:v,
+    lg:`Từ hình vẽ, $f(x) = ${dtS(a)}(${nkL(1, -h)})^{2}${k ? ngSg(k) : ''}$.<br>Hệ số góc là $F'(${x0}) = f(${x0}) = ${v}$.`.replace('(x)^{2}', 'x^{2}'),
+    hv:dtHv(co, 'y = f(x)', [h, h + 1]),
+    verify:()=> near(o.ans, a*(x0 - h)**2 + k, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Tiếp tuyến của đồ thị F tại x₀ cắt trục tung tại tung độ F(x₀) − x₀·f(x₀)', R=>{
+  const a = R.nz(-4, 4), b = R.nz(-6, 6), x0 = R.pick([1, 2, -1, -2]), y0 = R.int(-9, 9), s = 2*a*x0 + b, v = y0 - s*x0;
+  const o = {stem:`Cho $F(x)$ là một nguyên hàm của hàm số $f(x) = ${dtP([2*a, b])}$ thoả mãn $F(${x0}) = ${y0}$. Tiếp tuyến của đồ thị $y = F(x)$ tại điểm có hoành độ $x = ${x0}$ cắt trục tung tại điểm có tung độ bằng bao nhiêu?`, ans:v,
+    lg:`Hệ số góc $f(${x0}) = ${s}$, tiếp điểm $(${x0}; ${y0})$. Tiếp tuyến: $y = ${s}(${nkL(1, -x0)})${y0 ? ngSg(y0) : ''}$.<br>Tại $x = 0$: $y = ${v}$.`.replace('= 1(', '= (').replace('= -1(', '= -('),
+    verify:()=> near(o.ans, s*(0 - x0) + y0, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'TH','Đồ thị y = F(x) là parabol: tính F(x₁) + f(x₁) (đọc cả giá trị của hàm và đạo hàm)', R=>{
+  const a = R.pick([1, -1, 2, -2]), h = R.int(-2, 2), k = R.int(-3, 3), co = [a, -2*a*h, a*h*h + k], x1 = h + R.pick([1, 2, -1, -2]), v = dtV(co, x1) + 2*a*(x1 - h); if(Math.abs(a + k) > 6) return null;
+  const o = {stem:`Cho hàm số $y = F(x)$ là hàm số bậc hai có đồ thị là parabol như hình vẽ (đỉnh và một điểm khác đã đánh dấu) và $F(x)$ là một nguyên hàm của hàm số $f(x)$. Tính $F(${x1}) + f(${x1})$.`, ans:v,
+    lg:`Từ hình vẽ, $F(x) = ${dtS(a)}(${nkL(1, -h)})^{2}${k ? ngSg(k) : ''}$ và $f(x) = ${dtP([2*a, -2*a*h])}$.<br>$F(${x1}) = ${dtV(co, x1)}$, $f(${x1}) = ${2*a*(x1 - h)}$, tổng bằng $${v}$.`.replace('(x)^{2}', 'x^{2}'),
+    hv:dtHv(co, 'y = F(x)', [h, h + 1]),
+    verify:()=> near(o.ans, dtV(co, x1) + ngDf(x=> dtV(co, x), x1), 1e-5)};
+  return o;
+});
+
+GT(12,3,0,'VD','F là nguyên hàm của 3k(x² − 1): số giá trị nguyên của m để F(x) = m có ba nghiệm phân biệt bằng 4k − 1', R=>{
+  const k = R.int(1, 20), c = R.int(-9, 9), v = 4*k - 1;
+  const o = {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = ${3*k}(x^{2} - 1)$ thoả mãn $F(0) = ${c}$. Có bao nhiêu giá trị nguyên của $m$ để phương trình $F(x) = m$ có ba nghiệm phân biệt?`, ans:v,
+    lg:`$F(x) = ${dtP([k, 0, -3*k, c])}$, $F(-1) = ${c + 2*k}$ là giá trị cực đại, $F(1) = ${c - 2*k}$ là giá trị cực tiểu.<br>Ba nghiệm khi $${c - 2*k} < m < ${c + 2*k}$; số giá trị nguyên là $${4*k - 1}$.`,
+    verify:()=>{ let n = 0; for(let m = c - 2*k + 1; m < c + 2*k; m++) n++; return near(o.ans, n, 1e-12); }};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của a(x − α)(x − β) trên đoạn [α; β + 1], F(α) cho trước: tính giá trị nhỏ nhất của F trên đoạn', R=>{
+  const k = R.int(1, 6), al = R.int(-3, 2), d = R.pick([2, 4]), be = al + d, c = R.int(-15, 15), co = [3*k, -3*k*(al + be), 3*k*al*be], v = c - k*d**3/2;
+  const o = {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = ${dtS(3*k)}(${nkL(1, -al)})(${nkL(1, -be)})$ thoả mãn $F(${al}) = ${c}$. Tìm giá trị nhỏ nhất của $F(x)$ trên đoạn $[${al}; ${be + 1}]$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\)\$/, ')x$'), ans:v,
+    lg:`Trên $(${al}; ${be})$, $f(x) < 0$; khi $x > ${be}$, $f(x) > 0$. Vậy trên đoạn đã cho $F$ nhỏ nhất tại $x = ${be}$.<br>$F(x) = ${dtP([k, -3*k*(al + be)/2, 3*k*al*be, 0])} + C$, từ $F(${al}) = ${c}$ tìm được $C$ và $F(${be}) = ${v}$.`,
+    verify:()=> near(o.ans, c + ngSi(x=> dtV(co, x), al, be), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'VD','Hai đường thẳng y = f(x), y = g(x) cắt nhau tại x₀; F, G là nguyên hàm với F(0) = G(0): F − G đạt cực trị tại x₀, tính giá trị đó', R=>{
+  const m = R.pick([2, 4, 6, -2, -4, -6]), x0 = R.pick([1, 2, 3, 4, -1, -2, -3, -4]), n = R.int(-3, 3), b1 = R.int(-3, 3), a1 = R.pick([1, -1, 2, -2]), h = [m, -m*x0], g = [a1, b1], f = [a1 + m, b1 - m*x0], v = m/2*x0*x0 - m*x0*x0;
+  if(!f[0]) return null;
+  const o = {stem:`Cho hai hàm số $f(x) = ${dtP(f)}$, $g(x) = ${dtP(g)}$. Gọi $F(x)$, $G(x)$ lần lượt là nguyên hàm của $f(x)$, $g(x)$ thoả mãn $F(0) = G(0)$. Tìm giá trị cực trị của hàm số $H(x) = F(x) - G(x)$.`, ans:v,
+    lg:`$H'(x) = f(x) - g(x) = ${dtP(h)}$, đổi dấu tại $x = ${x0}$; $H(0) = 0$.<br>$H(x) = ${dtP([m/2, -m*x0, 0])}$ nên giá trị cực trị là $H(${x0}) = ${v}$.`,
+    verify:()=> near(o.ans, ngSi(x=> dtV(f, x) - dtV(g, x), 0, x0), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','F là hàm bậc hai đi qua ba điểm (0; p), (1; q), (2; r): tính f(3) = F\'(3)', R=>{
+  const a = R.nz(-6, 6), b = R.nz(-7, 7), p = R.int(-9, 9), q = a + b + p, r = 4*a + 2*b + p, v = 6*a + b;
+  const o = {stem:`Cho $F(x)$ là hàm số bậc hai có đồ thị đi qua ba điểm $(0; ${p})$, $(1; ${q})$, $(2; ${r})$ và $F(x)$ là một nguyên hàm của hàm số $f(x)$. Tính $f(3)$.`, ans:v,
+    lg:`$F(x) = ax^{2} + bx + c$, $c = ${p}$; $a + b = ${q - p}$; $4a + 2b = ${r - p}$. Giải được $a = ${a}$, $b = ${b}$.<br>$f(x) = ${dtP([2*a, b])}$ nên $f(3) = ${v}$.`,
+    verify:()=>{ const a2 = (r - 2*q + p)/2, b2 = q - p - a2; return near(o.ans, 6*a2 + b2, 1e-9); }};
+  return o;
+});
+
+GT(12,3,0,'TH','Đỉnh parabol y = F(x): F(h) + f(h + 1) (f(h) = 0, đọc hai giá trị khác nhau trên đồ thị)', R=>{
+  const a = R.pick([1, -1, 2, -2]), h = R.int(-2, 2), k = R.int(-3, 3), co = [a, -2*a*h, a*h*h + k], v = k + 2*a; if(Math.abs(a + k) > 6) return null;
+  const a2 = R.pick([1, 1]);
+  const o = {stem:`Cho $F(x) = ${dtP(co)}$ là một nguyên hàm của hàm số $f(x)$ trên $\\mathbb{R}$ và $x = x_{0}$ là nghiệm của phương trình $f(x) = 0$. Tính $F(x_{0}) + f(x_{0} + 1)$.`, ans:v,
+    lg:`$f(x) = F'(x) = ${dtP([2*a, -2*a*h])}$, nghiệm $x_{0} = ${h}$.<br>$F(${h}) = ${k}$ và $f(${h + 1}) = ${2*a}$. Tổng bằng $${v}$.`,
+    verify:()=> near(o.ans, dtV(co, h) + ngDf(x=> dtV(co, x), h + 1), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'VD','Hai điểm F(x₁) = F(x₂) trên đồ thị F (hàm bậc hai): nghiệm của f là trung điểm của x₁, x₂', R=>{
+  const m = R.nz(-5, 5), x1 = R.int(-9, 5), d = R.pick([2, 4, 6, 8]), x2 = x1 + d, r = (x1 + x2)/2, a = R.int(2, 9), b = -a*r, v = a*a*0 + r;
+  const ans2 = a*r*r*0 + 2*r + 1;
+  const o = {stem:`Cho hàm số $f(x) = ${a}x + b$ và $F(x)$ là một nguyên hàm của $f(x)$ thoả mãn $F(${x1}) = F(${x2})$. Tính giá trị của biểu thức $\\dfrac{-b}{${a}}$.`, ans:r,
+    lg:`$F(x)$ là hàm bậc hai có đồ thị đối xứng qua đường thẳng $x = -\\dfrac{b}{${a}}$ (nghiệm của $f$).<br>$F(${x1}) = F(${x2})$ nên trục đối xứng đi qua trung điểm: $-\\dfrac{b}{${a}} = \\dfrac{${x1} + ${ngPa(x2)}}{2} = ${r}$.`,
+    verify:()=> near(ngSi(x=> a*x + b, x1, x2), 0, 1e-7) && near(o.ans, -b/a, 1e-12)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nguyên hàm của k(x − α)(x − β) có cực đại tại x₁ với F(x₁) cho trước, tính F(x₁ + 1) (đọc đúng cực đại theo dấu k)', R=>{
+  const t = R.pick([1, 2, 3, 4]), s = R.pick([1, -1]), k = 6*t*s, al = R.int(-4, 3), be = al + 2, xd = s > 0 ? al : be, c = R.int(-20, 20), co = [k, -k*(al + be), k*al*be], x1 = xd + 1, v = qv(qa(c, qs(dtPv(co, x1, 0), dtPv(co, xd, 0))));
+  const o = {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = ${k}(${nkL(1, -al)})(${nkL(1, -be)})$ và giá trị cực đại của $F(x)$ bằng $${c}$. Tính $F(${x1})$.`.replace(/\(x\)\(/, 'x(').replace(/\)\(x\)\$/, ')x$'), ans:v,
+    lg:`Với hệ số $${k}$ ${s > 0 ? 'dương' : 'âm'}, $f$ đổi dấu từ dương sang âm tại $x = ${xd}$ nên $F$ đạt cực đại tại đó, $F(${xd}) = ${c}$.<br>$F(x) = ${dtP([k/3, -k*(al + be)/2, k*al*be, 0])} + C$, tính $F(${x1}) - F(${xd}) = ${v - c}$.<br>Vậy $F(${x1}) = ${v}$.`,
+    verify:()=> near(o.ans, c + ngSi(x=> dtV(co, x), xd, x1), 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','F là nguyên hàm của k·cos x trên [0; π], F(0) = c: giá trị nhỏ nhất của F trên đoạn khi k âm hoặc dương', R=>{
+  const k = R.nz(-15, 15), c = R.int(-9, 9), v = Math.min(c, c + k), Fn = x=> k*Math.sin(x) + c;
+  const o = {stem:`Cho $F(x)$ là nguyên hàm của hàm số $f(x) = ${dtS(k)}\\cos x$ thoả mãn $F(0) = ${c}$. Tìm giá trị nhỏ nhất của $F(x)$ trên đoạn $[0; \\pi]$.`, ans:v,
+    lg:`$F(x) = ${dtS(k)}\\sin x${c ? ngSg(c) : ''}$. Trên $[0; \\pi]$: $0 \\le \\sin x \\le 1$.<br>${k > 0 ? `Vì hệ số dương nên $F$ nhỏ nhất khi $\\sin x = 0$, giá trị $${v}$.` : `Vì hệ số âm nên $F$ nhỏ nhất khi $\\sin x = 1$, giá trị $${v}$.`}`,
+    verify:()=>{ let m = 1e9; for(let i = 0; i <= 2000; i++) m = Math.min(m, Fn(Math.PI*i/2000)); return near(o.ans, m, 1e-5); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.7 Bài toán thực tế: chuyển động — số 295–336 (19 TN, 9 Đ–S, 14 TLN).
+   Mô hình chung: v = s', a = v'. Chuỗi tư duy: biết v tìm s → biết a tìm v rồi s → điểm dừng, đổi chiều, độ cao lớn nhất → hai giai đoạn → gặp nhau, tìm tham số. Chỉ dùng nguyên hàm kèm điều kiện đầu, chưa dùng tích phân. */
+const cdS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const cdP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v || 't');
+const cdV = (co, x)=> co.reduce((s, c)=> s*x + c, 0);
+const cdI = (co, x)=>{ const d = co.length - 1; let s = 0; co.forEach((k, i)=>{ const p = d - i; s += k*x**(p + 1)/(p + 1); }); return s; };   /* nguyên hàm không có hằng số */
+const cdQ = (co, x)=>{ const d = co.length - 1; let s = [0, 1]; co.forEach((k, i)=>{ const p = d - i, c = Array.isArray(k) ? k : [k, 1]; s = qa(s, qr(c[0]*x**(p + 1), c[1]*(p + 1))); }); return s; };
+const cdD = (x, u)=> ngDec(x, u);
+
+G(12,3,0,'TH','Thang máy khởi hành với v(t) = at: quãng đường sau T giây (s là nguyên hàm của v, bẫy: lấy v(T), s = aT²)', R=>{
+  const a = R.pick([0.5, 1, 1.5, 2, 2.5]), T = R.int(2, 8), s = a*T*T/2;
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(a*T, 'm'), cdD(a*T*T, 'm'), cdD(s + a, 'm'), cdD(a*T*T/4, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một thang máy bắt đầu đi lên từ trạng thái đứng yên với vận tốc $v(t) = ${nt(a)}t$ (m/s), $t$ tính bằng giây, trong $${T}$ giây đầu. Quãng đường thang máy đi được trong $${T}$ giây đó bằng`.replace('= 1t', '= t'), ans, wrong,
+    lg:`$s(t)$ là nguyên hàm của $v(t)$ với $s(0) = 0$ nên $s(t) = ${nt(a/2)}t^{2}$.<br>$s(${T}) = ${nt(s)}$ (m).`.replace('= 1t', '= t'),
+    verify:()=> near(o.ans.v, ngSi(t=> a*t, 0, T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Ô tô tăng tốc với v(t) = v₀ + at: quãng đường trong T giây kể từ lúc tăng tốc', R=>{
+  const v0 = R.pick([8, 10, 12, 14, 15, 16, 18, 20]), a = R.pick([1, 2, 3]), T = R.pick([4, 5, 6, 8, 10]), s = v0*T + a*T*T/2;
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(v0 + a*T, 'm'), cdD(v0*T + a*T*T, 'm'), cdD(v0*T, 'm'), cdD(a*T*T/2, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một ô tô đang chạy với vận tốc $${v0}$ m/s thì tăng tốc, vận tốc sau đó là $v(t) = ${cdP([a, v0])}$ (m/s), $t$ tính bằng giây kể từ lúc tăng tốc. Quãng đường ô tô đi được trong $${T}$ giây đầu kể từ lúc tăng tốc bằng`, ans, wrong,
+    lg:`$s(t) = ${cdP([qr(a, 2), v0, 0])}$ với $s(0) = 0$.<br>$s(${T}) = ${nt(s)}$ (m).`,
+    verify:()=> near(o.ans.v, ngSi(t=> a*t + v0, 0, T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Xe máy phanh với v(t) = v₀ − kt: tìm thời điểm dừng rồi quãng đường đến khi dừng (bẫy: thay t tuỳ ý, thiếu bước v = 0)', R=>{
+  const k = R.pick([2, 3, 4, 5, 6]), T = R.int(2, 6), v0 = k*T, s = v0*v0/(2*k);
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(v0*T, 'm'), cdD(v0*v0/k, 'm'), cdD(T, 'm'), cdD(s + v0, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một xe máy đang chạy với vận tốc $${v0}$ m/s thì phanh, vận tốc sau đó là $v(t) = ${cdP([-k, v0])}$ (m/s), $t$ tính bằng giây. Từ lúc phanh đến khi dừng hẳn, xe đi được quãng đường bằng`, ans, wrong,
+    lg:`Xe dừng khi $v(t) = 0$, tức $t = ${T}$.<br>$s(t) = ${cdP([qr(-k, 2), v0, 0])}$ nên $s(${T}) = ${nt(s)}$ (m).`,
+    verify:()=> near(o.ans.v, ngSi(t=> v0 - k*t, 0, T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Vật rơi tự do từ độ cao h₀ với g = 10 m/s²: độ cao sau t giây h(t) = h₀ − 5t² (nguyên hàm của v = −10t)', R=>{
+  const h0 = R.pick([60, 80, 100, 120, 150, 180, 200]), t = R.int(1, 4), h = h0 - 5*t*t; if(h <= 0) return null;
+  const ans = cdD(h, 'm'), wrong = ngW(R, ans, [cdD(5*t*t, 'm'), cdD(h0 - 10*t, 'm'), cdD(h0 - 10*t*t, 'm'), cdD(h0 + 5*t*t, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một vật được thả rơi tự do từ độ cao $${h0}$ m. Lấy chiều dương hướng lên, vận tốc của vật là $v(t) = -10t$ (m/s) với $t$ tính bằng giây. Độ cao của vật so với mặt đất sau $${t}$ giây bằng`, ans, wrong,
+    lg:`Độ cao $h(t)$ là nguyên hàm của $v(t)$: $h(t) = -5t^{2} + C$, $h(0) = ${h0}$ nên $C = ${h0}$.<br>$h(${t}) = ${h}$ (m).`,
+    verify:()=> near(o.ans.v, h0 + ngSi(u=> -10*u, 0, t), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Ném vật thẳng đứng từ mặt đất với v(t) = v₀ − 10t: thời gian bay đến khi chạm đất là 2v₀/10 (bẫy: chỉ tính đến điểm cao nhất)', R=>{
+  const v0 = R.pick([10, 12, 15, 18, 20, 24, 25, 30, 35, 40, 45, 50]), T = v0/5;
+  const ans = cdD(T, 'giây'), wrong = ngW(R, ans, [cdD(v0/10, 'giây'), cdD(v0/20, 'giây'), cdD(T + 1, 'giây'), cdD(2*T, 'giây')]); if(!wrong) return null;
+  const o = {stem:`Một quả bóng được ném thẳng đứng lên từ mặt đất với vận tốc $v(t) = ${v0} - 10t$ (m/s), $t$ tính bằng giây. Kể từ lúc ném đến khi quả bóng rơi trở lại mặt đất mất`, ans, wrong,
+    lg:`Độ cao $h(t) = ${v0}t - 5t^{2}$ (nguyên hàm của $v$ với $h(0) = 0$).<br>$h(t) = 0$ với $t > 0$ khi $t = ${nt(T)}$ (giây).`,
+    verify:()=> near(v0*o.ans.v - 5*o.ans.v**2, 0, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Biết gia tốc a(t) bậc nhất và vận tốc đầu v₀: tính vận tốc tại thời điểm T (v là nguyên hàm của a)', R=>{
+  const p = R.pick([2, 4, 6]), q = R.int(1, 5), v0 = R.int(2, 15), T = R.int(2, 6), v = p/2*T*T + q*T + v0;
+  const ans = cdD(v, 'm/s'), wrong = ngW(R, ans, [cdD(p*T + q, 'm/s'), cdD(p*T + q + v0, 'm/s'), cdD(p/2*T*T + q*T, 'm/s'), cdD(p*T*T + q*T + v0, 'm/s')]); if(!wrong) return null;
+  const o = {stem:`Một vật chuyển động với gia tốc $a(t) = ${cdP([p, q])}$ (m/s$^{2}$), $t$ tính bằng giây, vận tốc ban đầu $${v0}$ m/s. Vận tốc của vật tại thời điểm $t = ${T}$ giây bằng`, ans, wrong,
+    lg:`$v(t)$ là nguyên hàm của $a(t)$: $v(t) = ${cdP([p/2, q, 0])} + C$, $v(0) = ${v0}$ nên $C = ${v0}$.<br>$v(${T}) = ${nt(v)}$ (m/s).`,
+    verify:()=> near(o.ans.v, ngSi(t=> p*t + q, 0, T) + v0, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Biết a(t) = 6t + 2b, v(0), s(0) = 0: lấy nguyên hàm hai lần, tính s(T)', R=>{
+  const b = R.int(1, 4), v0 = R.int(2, 12), T = R.int(2, 5), s = T**3 + b*T*T + v0*T;
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(T**3 + b*T*T, 'm'), cdD(3*T*T + 2*b*T + v0, 'm'), cdD(3*T**3 + b*T*T + v0*T, 'm'), cdD(T**3 + 2*b*T*T + v0*T, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một vật chuyển động với gia tốc $a(t) = ${cdP([6, 2*b])}$ (m/s$^{2}$), $t$ tính bằng giây, vận tốc ban đầu $${v0}$ m/s. Quãng đường vật đi được trong $${T}$ giây đầu bằng`, ans, wrong,
+    lg:`$v(t) = ${cdP([3, 2*b, v0])}$ (m/s) và $s(t) = ${cdP([1, b, v0, 0])}$ với $s(0) = 0$.<br>$s(${T}) = ${s}$ (m).`,
+    verify:()=> near(o.ans.v, ngSi(t=> 3*t*t + 2*b*t + v0, 0, T), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Quãng đường đi trong giây thứ n: s(n) − s(n − 1), khác với s(n) (bẫy đọc đề)', R=>{
+  const a = R.pick([3, 6]), b = R.pick([2, 4, 6]), n = R.int(2, 6), co = [a, b, 0], F = t=> a/3*t**3 + b/2*t*t, s = F(n) - F(n - 1);
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(F(n), 'm'), cdD(cdV(co, n), 'm'), cdD(F(n + 1) - F(n), 'm'), cdD(F(n - 1), 'm')]); if(!wrong) return null;
+  const o = {stem:`Một chất điểm chuyển động thẳng với vận tốc $v(t) = ${cdP([a, b, 0])}$ (m/s), $t$ tính bằng giây. Quãng đường chất điểm đi được trong giây thứ $${n}$ bằng`, ans, wrong,
+    lg:`$s(t) = ${cdP([a/3, b/2, 0, 0])}$. Giây thứ $${n}$ là khoảng từ $t = ${n - 1}$ đến $t = ${n}$.<br>Quãng đường bằng $s(${n}) - s(${n - 1}) = ${F(n)} - ${F(n - 1)} = ${nt(s)}$ (m).`,
+    verify:()=> near(o.ans.v, ngSi(t=> cdV(co, t), n - 1, n), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Chất điểm có v(t) = (t − p)(t − q): vị trí tại thời điểm đổi chiều lần đầu (nghiệm nhỏ của v, x là nguyên hàm của v)', R=>{
+  const p = R.pick([1, 2, 3]), q = p + R.pick([2, 3, 4]), x0 = R.int(1, 9), co = [1, -(p + q), p*q], Q = cdQ(co, p), X = qa(Q, x0);
+  const ans = {t:`$${qT(X)}$ m`, v:qv(X)}, wrong = ngW(R, ans, [{t:`$${qT(qa(cdQ(co, q), x0))}$ m`, v:qv(qa(cdQ(co, q), x0))}, {t:`$${qT(Q)}$ m`, v:qv(Q)}, {t:`$${x0}$ m`, v:x0}, {t:`$${qT(qa(X, p))}$ m`, v:qv(qa(X, p))}]); if(!wrong) return null;
+  const o = {stem:`Một chất điểm chuyển động trên trục số với vận tốc $v(t) = ${cdP(co)}$ (m/s), $t \\ge 0$ tính bằng giây, vị trí ban đầu $x(0) = ${x0}$ (m). Vị trí của chất điểm tại thời điểm nó đổi chiều chuyển động lần đầu tiên bằng`, ans, wrong,
+    lg:`$v(t) = (t - ${p})(t - ${q})$ đổi dấu lần đầu tại $t = ${p}$.<br>$x(t) = ${cdP([qr(1, 3), qr(-(p + q), 2), p*q, x0])}$ nên $x(${p}) = ${qT(X)}$ (m).`,
+    verify:()=> near(o.ans.v, x0 + ngSi(t=> cdV(co, t), 0, p), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Drone bay thẳng đứng với v(t) = at − t²: độ cao lớn nhất tại t = a (khi v đổi dấu), h(t) là nguyên hàm của v', R=>{
+  const a = R.pick([3, 6, 9, 12]), k = R.pick([1, 2]), co = [-k, k*a, 0], h = -k/3*a**3 + k*a*a*a/2, h0 = R.int(0, 10)*5;
+  const ans = cdD(h + h0, 'm'), wrong = ngW(R, ans, [cdD(h, 'm'), cdD(k*a*a/4 + h0, 'm'), cdD(-k*a**3/3 + k*a**3 + h0, 'm'), cdD(cdI(co, a/2) + h0, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một drone bay thẳng đứng từ độ cao $${h0}$ m với vận tốc $v(t) = ${cdP(co)}$ (m/s), $t$ tính bằng giây, $0 \\le t \\le ${a + 2}$. Độ cao lớn nhất drone đạt được bằng`.replace('từ độ cao $0$ m', 'từ mặt đất'), ans, wrong,
+    lg:`$v(t) = ${cdS(-k)}t(t - ${a})$ đổi dấu từ dương sang âm tại $t = ${a}$ nên độ cao lớn nhất tại đó (không phải tại đỉnh của parabol vận tốc).<br>$h(t) = ${cdP([qr(-k, 3), qr(k*a, 2), 0, h0])}$, $h(${a}) = ${nt(h + h0)}$ (m).`,
+    verify:()=> near(o.ans.v, h0 + ngSi(t=> cdV(co, t), 0, a), 1e-7)};
+  return o;
+});
+
+G(12,3,0,'VD','Tàu điện hai giai đoạn: tăng tốc rồi chạy đều, v cho bởi hai công thức, tính tổng quãng đường', R=>{
+  const a = R.pick([1, 2]), T1 = R.pick([10, 15, 20, 25]), T2 = R.pick([20, 30, 40, 50, 60]), v1 = a*T1, s = a*T1*T1/2 + v1*T2;
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(v1*(T1 + T2), 'm'), cdD(a*T1*T1/2, 'm'), cdD(v1*T2, 'm'), cdD(a*T1*T1 + v1*T2, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một đoàn tàu điện rời ga: trong $${T1}$ giây đầu vận tốc là $v(t) = ${a === 1 ? '' : a}t$ (m/s), sau đó tàu giữ nguyên vận tốc đã đạt thêm $${T2}$ giây. Tổng quãng đường tàu đi được bằng`, ans, wrong,
+    lg:`Giai đoạn 1: $s = ${nt(a/2)}\\cdot ${T1}^{2} = ${a*T1*T1/2}$ (m), vận tốc cuối $${v1}$ m/s.<br>Giai đoạn 2: $s = ${v1}\\cdot ${T2} = ${v1*T2}$ (m).<br>Tổng bằng $${s}$ (m).`.replace('1\\cdot', ''),
+    verify:()=> near(o.ans.v, ngSi(t=> t <= T1 ? a*t : v1, 0, T1) + ngSi(()=> v1, T1, T1 + T2), 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','Vận tốc trung bình trên [0; T] bằng s(T)/T khi v(t) là đa thức (bẫy: lấy trung bình cộng v(0), v(T))', R=>{
+  const a = R.pick([3, 6, 9]), T = R.pick([2, 3, 4, 5, 6]), b = R.pick([2, 4, 6, 8]), s = a/3*T**3 + b*T, m = s/T, va = (b + a*T*T + b)/2;
+  const ans = cdD(ngRou(m, 2), 'm/s'), wrong = ngW(R, ans, [cdD(va, 'm/s'), cdD(a*T*T + b, 'm/s'), cdD(s, 'm/s'), cdD(ngRou(m + T, 2), 'm/s')]); if(!wrong || !near(m, ngRou(m, 2), 1e-9)) return null;
+  const o = {stem:`Một vật chuyển động thẳng với vận tốc $v(t) = ${cdP([a, 0, b])}$ (m/s), $t$ tính bằng giây. Vận tốc trung bình của vật trong $${T}$ giây đầu bằng`, ans, wrong,
+    lg:`$s(t) = ${cdP([a/3, 0, b, 0])}$ nên $s(${T}) = ${nt(s)}$ (m).<br>Vận tốc trung bình bằng $\\dfrac{s(${T})}{${T}} = ${nt(m)}$ (m/s).`,
+    verify:()=> near(o.ans.v, ngSi(t=> cdV([a, 0, b], t), 0, T)/T, 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Ô tô giảm tốc đều a = −k để dừng đúng sau d mét: tìm k = v₀²/(2d)', R=>{
+  const v0 = R.pick([10, 12, 15, 16, 18, 20, 24, 25, 30]), k = R.pick([0.5, 0.8, 1, 1.2, 1.5, 1.6, 2, 2.4, 2.5, 3, 3.2, 3.6, 4, 4.8, 5, 6, 6.4, 7.2, 7.5, 8, 9, 10]), d = ngRou(v0*v0/(2*k), 6); if(!Number.isInteger(d*2) || d < 5) return null;
+  const ans = cdD(k, 'm/s²').t ? {t:`$${nt(k)}$ m/s$^{2}$`, v:k} : null, wrong = ngW(R, ans, [{t:`$${nt(k*2)}$ m/s$^{2}$`, v:2*k}, {t:`$${nt(k/2)}$ m/s$^{2}$`, v:k/2}, {t:`$${nt(ngRou(v0/d, 3))}$ m/s$^{2}$`, v:ngRou(v0/d, 3)}, {t:`$${nt(k + 1)}$ m/s$^{2}$`, v:k + 1}]); if(!wrong) return null;
+  const o = {stem:`Một ô tô đang chạy với vận tốc $${v0}$ m/s thì người lái giảm tốc đều với gia tốc $-k$ (m/s$^{2}$) để dừng lại đúng sau quãng đường $${nt(d)}$ m. Giá trị của $k$ bằng`, ans, wrong,
+    lg:`$v(t) = ${v0} - kt$, $s(t) = ${v0}t - \\dfrac{k}{2}t^{2}$. Dừng khi $t = \\dfrac{${v0}}{k}$.<br>$s = \\dfrac{${v0*v0}}{2k} = ${nt(d)}$ nên $k = ${nt(k)}$.`,
+    verify:()=>{ const t = v0/o.ans.v; return near(v0*t - o.ans.v/2*t*t, d, 1e-6); }};
+  return o;
+});
+
+G(12,3,0,'VD','Xe A đi đều, xe B xuất phát sau đuổi theo với v = at: thời điểm B đuổi kịp A (lập phương trình hai nguyên hàm bằng nhau)', R=>{
+  const T = R.pick([8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 26, 28, 30]), a = R.pick([1, 2, 3]), v = a*T/2;
+  const ans = cdD(T, 'giây'), wrong = ngW(R, ans, [cdD(T/2, 'giây'), cdD(2*T, 'giây'), cdD(v/a + 1, 'giây'), cdD(T + 2, 'giây')]); if(!wrong) return null;
+  const o = {stem:`Lúc $t = 0$, xe A đi ngang qua một trạm với vận tốc không đổi $${nt(v)}$ m/s; cùng lúc đó xe B xuất phát từ trạm với vận tốc $v(t) = ${a === 1 ? '' : a}t$ (m/s) cùng chiều với A. Xe B đuổi kịp xe A sau`, ans, wrong,
+    lg:`Quãng đường: $s_{A}(t) = ${nt(v)}t$, $s_{B}(t) = ${nt(a/2)}t^{2}$.<br>Đuổi kịp khi $s_{A} = s_{B}$ với $t > 0$: $t = ${T}$ (giây). Lúc hai xe cùng vận tốc thì B chưa đuổi kịp.`.replace('= 1t^', '= t^'),
+    verify:()=> near(v*o.ans.v, a/2*o.ans.v**2, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'TH','Vận tốc v(t) = k√t: quãng đường trong T giây với T là số chính phương (nguyên hàm của căn)', R=>{
+  const t0 = R.pick([1, 2, 3]), k = 3*t0, r = R.pick([1, 2, 3, 4, 5]), T = r*r, s = 2*t0*r**3;
+  const ans = cdD(s, 'm'), wrong = ngW(R, ans, [cdD(k*r, 'm'), cdD(k*T, 'm'), cdD(k*r**3, 'm'), cdD(s + k, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một vật chuyển động với vận tốc $v(t) = ${k}\\sqrt{t}$ (m/s), $t$ tính bằng giây. Quãng đường vật đi được trong $${T}$ giây đầu bằng`.replace('trong $1$ giây đầu', 'trong giây đầu tiên'), ans, wrong,
+    lg:`$s(t) = ${2*t0}t\\sqrt{t}$ với $s(0) = 0$.<br>$s(${T}) = ${2*t0}\\cdot ${r**3} = ${s}$ (m).`.replace('2\\cdot', '2\\cdot'),
+    verify:()=> near(o.ans.v, ngSi(t=> k*Math.sqrt(t), 1e-9, T, 40000), 2e-2) && near(o.ans.v, 2*t0*T*Math.sqrt(T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Con lắc nhỏ có v(t) = k·cos t (cm/s), x(0) = 0: li độ lớn nhất bằng k (x là nguyên hàm của v)', R=>{
+  const k = R.int(2, 20), x0 = R.int(1, 3), max = k + x0;
+  const ans = cdD(max, 'cm'), wrong = ngW(R, ans, [cdD(k, 'cm'), cdD(2*k + x0, 'cm'), cdD(x0, 'cm'), cdD(max + 1, 'cm')]); if(!wrong) return null;
+  const o = {stem:`Một vật dao động trên trục số với vận tốc $v(t) = ${cdS(k)}\\cos t$ (cm/s), $t$ tính bằng giây, vị trí ban đầu $x(0) = ${x0}$ (cm). Giá trị lớn nhất của vị trí $x(t)$ bằng`, ans, wrong,
+    lg:`$x(t) = ${cdS(k)}\\sin t${ngSg(x0)}$. Vì $\\sin t \\le 1$ nên giá trị lớn nhất là $${max}$ (cm).`,
+    verify:()=>{ let m = -1e9; for(let i = 0; i <= 4000; i++) m = Math.max(m, k*Math.sin(i*0.002) + x0); return near(o.ans.v, m, 1e-5); }};
+  return o;
+});
+
+G(12,3,0,'TH','Bóng ném từ độ cao h₀ với v(t) = v₀ − 10t: độ cao lớn nhất h₀ + v₀²/20', R=>{
+  const v0 = R.pick([10, 12, 14, 15, 16, 18, 20, 22, 24, 25, 30]), h0 = R.pick([1, 2, 5, 10, 15, 20]), h = h0 + v0*v0/20;
+  const ans = cdD(h, 'm'), wrong = ngW(R, ans, [cdD(v0*v0/20, 'm'), cdD(h0 + v0*v0/10, 'm'), cdD(h0 + v0, 'm'), cdD(v0*v0/10, 'm')]); if(!wrong) return null;
+  const o = {stem:`Từ độ cao $${h0}$ m, một quả bóng được ném thẳng đứng lên với vận tốc $v(t) = ${v0} - 10t$ (m/s), $t$ tính bằng giây. Độ cao lớn nhất của quả bóng so với mặt đất bằng`, ans, wrong,
+    lg:`Bóng cao nhất khi $v(t) = 0$, tức $t = ${nt(v0/10)}$.<br>$h(t) = ${h0} + ${v0}t - 5t^{2}$ nên $h(${nt(v0/10)}) = ${nt(h)}$ (m).`,
+    verify:()=> near(o.ans.v, h0 + ngSi(t=> v0 - 10*t, 0, v0/10), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Chạy nước rút: a(t) = k − mt rồi hết tăng tốc khi a = 0: vận tốc lớn nhất của vận động viên (v là nguyên hàm của a)', R=>{
+  const t0 = R.pick([4, 5, 6, 8]), k = R.pick([2, 3, 4]), m = k/t0, vm = k*t0/2, v0 = R.pick([0, 0, 1, 2]);
+  const ans = cdD(vm + v0, 'm/s'), wrong = ngW(R, ans, [cdD(k*t0 + v0, 'm/s'), cdD(vm, 'm/s').t === ans.t ? cdD(vm + 1, 'm/s') : cdD(vm, 'm/s'), cdD(k + v0, 'm/s'), cdD(vm/2 + v0, 'm/s')]); if(!wrong) return null;
+  const mT = qT(qr(k, t0));
+  const o = {stem:`Một vận động viên có gia tốc $a(t) = ${k} - ${mT === '1' ? '' : mT}t$ (m/s$^{2}$) trong $${t0}$ giây đầu, $t$ tính bằng giây, vận tốc ban đầu $${v0}$ m/s. Vận tốc lớn nhất trong khoảng thời gian đó bằng`, ans, wrong,
+    lg:`$a(t) \\ge 0$ trên $[0; ${t0}]$ nên $v$ tăng, lớn nhất tại $t = ${t0}$.<br>$v(t) = ${k}t - ${qT(qr(k, 2*t0))}t^{2}${v0 ? ngSg(v0) : ''}$ nên $v(${t0}) = ${nt(vm + v0)}$ (m/s).`,
+    verify:()=> near(o.ans.v, v0 + ngSi(t=> k - m*t, 0, t0), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Hai giai đoạn hãm phanh: quãng đường phản xạ cộng quãng đường phanh, so với khoảng cách vật cản (có đâm hay không)', R=>{
+  const v0 = R.pick([15, 18, 20, 24, 25]), tp = R.pick([0.5, 1]), k = R.pick([5, 6, 8]), sp = v0*v0/(2*k), s = v0*tp + sp, d = Math.round(s) + R.pick([-5, 5, 8, -8]); if(!Number.isInteger(s*2) || d <= sp || near(d, s, 1e-9)) return null;
+  const ok = s < d, A = `Không đâm, xe dừng cách vật cản $${nt(Math.abs(d - s))}$ m`, B = `Có đâm, xe cần $${nt(s)}$ m mới dừng được`, W1 = `Không đâm, xe dừng cách vật cản $${nt(d - sp)}$ m`, W2 = `Có đâm, xe cần $${nt(s + v0)}$ m mới dừng được`, W3 = 'Xe dừng đúng tại vị trí vật cản';
+  const ans = {t:ok ? A : B, v:1}, wrong = [{t:ok ? B : A, v:2}, {t:W1, v:3}, {t:ok ? W2 : W3, v:4}];
+  const o = {stem:`Một ô tô chạy với vận tốc $${v0}$ m/s, người lái thấy vật cản cách xe $${d}$ m. Sau $${nt(tp)}$ giây phản xạ (xe vẫn chạy đều), xe phanh với $v(t) = ${v0} - ${k}t$ (m/s), $t$ tính từ lúc phanh. Nhận định nào đúng?`, ans, wrong,
+    lg:`Trong thời gian phản xạ xe đi được $${nt(v0*tp)}$ m. Khi phanh, xe dừng sau $\\dfrac{${v0}}{${k}}$ giây, đi thêm $${nt(sp)}$ m.<br>Tổng quãng đường để dừng là $${nt(s)}$ m, so với $${d}$ m nên ${ok ? 'xe không đâm vào vật cản' : 'xe đâm vào vật cản'}.`,
+    verify:()=> o.ans.v === 1 && near(s, v0*tp + ngSi(t=> v0 - k*t, 0, v0/k), 1e-8) && (o.ans.t.startsWith('Không') === ok)};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','Ô tô tăng tốc v(t) = v₀ + at trong T giây: công thức s, s(T), vận tốc cuối, vận tốc trung bình', R=>{
+  const a = R.pick([1, 2, 3]), v0 = R.pick([10, 12, 14, 16, 18, 20]), T = R.pick([4, 6, 8, 10]), S = v0*T + a*T*T/2, vc = v0 + a*T, vtb = S/T;
+  return {stem:`Một ô tô tăng tốc với vận tốc $v(t) = ${cdP([a, v0])}$ (m/s), $t$ tính bằng giây, trong $${T}$ giây đầu kể từ $t = 0$.`,
+    items:[claim(R, `Quãng đường $s(t) = ${cdP([qr(a, 2), v0, 0])}$ (m) với $s(0) = 0$`, `Quãng đường $s(t) = ${cdP([a, v0, 0])}$ (m) với $s(0) = 0$`, ()=> ngIs(t=> a/2*t*t + v0*t, t=> a*t + v0), ()=> ngIs(t=> a*t*t + v0*t, t=> a*t + v0)),
+      claimN(R, m=> `Quãng đường đi được trong $${T}$ giây đó là $${m}$ m`, S, String(S), S + a*T*T/2, String(S + a*T*T/2), ()=> ngSi(t=> a*t + v0, 0, T)),
+      claimN(R, m=> `Vận tốc tại thời điểm $t = ${T}$ là $${m}$ m/s`, vc, String(vc), vc + a, String(vc + a), ()=> a*T + v0),
+      claim(R, `Vận tốc trung bình trong $${T}$ giây đó bằng trung bình cộng của vận tốc đầu và vận tốc cuối`, `Vận tốc trung bình trong $${T}$ giây đó bằng vận tốc cuối`, ()=> near(vtb, (v0 + vc)/2, 1e-9), ()=> near(vtb, vc, 1e-9))],
+    lg:`a) $s$ là nguyên hàm của $v$, $s(0) = 0$.<br>b) $s(${T}) = ${S}$ (m).<br>c) $v(${T}) = ${vc}$ (m/s).<br>d) Vận tốc trung bình $= \\dfrac{${S}}{${T}} = ${nt(vtb)}$ (m/s), bằng $\\dfrac{${v0} + ${vc}}{2}$.`};
+});
+
+GD(12,3,0,'TH','Vật rơi tự do từ độ cao 5n²: h(t), thời gian chạm đất n giây, vận tốc lúc chạm đất, quãng đường trong giây cuối', R=>{
+  const n = R.int(3, 8), h0 = 5*n*n, h = t=> h0 - 5*t*t, vd = 10*n, sl = h(n - 1);
+  return {stem:`Một vật rơi tự do từ độ cao $${h0}$ m với vận tốc $v(t) = -10t$ (m/s), chiều dương hướng lên, $t$ tính bằng giây.`,
+    items:[claim(R, `Độ cao của vật là $h(t) = ${h0} - 5t^{2}$ (m)`, `Độ cao của vật là $h(t) = ${h0} - 10t^{2}$ (m)`, ()=> ngIs(h, t=> -10*t) && near(h(0), h0, 1e-9), ()=> ngIs(t=> h0 - 10*t*t, t=> -10*t)),
+      claimN(R, m=> `Vật chạm đất sau $${m}$ giây`, n, String(n), 2*n, String(2*n), ()=> Math.sqrt(h0/5)),
+      claimN(R, m=> `Tốc độ của vật lúc chạm đất là $${m}$ m/s`, vd, String(vd), 2*vd, String(2*vd), ()=> Math.abs(-10*n)),
+      claimN(R, m=> `Trong giây cuối cùng vật rơi được $${m}$ m`, sl, String(sl), 5, '5', ()=> h(n - 1) - h(n))],
+    lg:`a) $h(t)$ là nguyên hàm của $v$, $h(0) = ${h0}$.<br>b) $h(t) = 0$ khi $t = ${n}$.<br>c) Tốc độ là $|v(${n})| = ${vd}$ (m/s).<br>d) Giây cuối: $h(${n - 1}) - h(${n}) = ${sl}$ (m).`};
+});
+
+GD(12,3,0,'TH','Ném lên từ mặt đất v(t) = v₀ − 10t: thời điểm cao nhất, độ cao lớn nhất, thời gian bay, đối xứng về vận tốc', R=>{
+  const v0 = 10*R.int(1, 5), tc = v0/10, hm = v0*v0/20, T = 2*tc;
+  return {stem:`Một quả bóng được ném thẳng đứng lên từ mặt đất với vận tốc $v(t) = ${v0} - 10t$ (m/s), $t$ tính bằng giây.`,
+    items:[claimN(R, m=> `Bóng lên cao nhất tại thời điểm $t = ${m}$ giây`, tc, String(tc), T, String(T), ()=> v0/10),
+      claimN(R, m=> `Độ cao lớn nhất của bóng là $${m}$ m`, hm, String(hm), 2*hm, String(2*hm), ()=> ngSi(t=> v0 - 10*t, 0, tc)),
+      claimN(R, m=> `Bóng chạm đất tại thời điểm $t = ${m}$ giây`, T, String(T), tc, String(tc), ()=> v0/5),
+      claim(R, `Lúc chạm đất vận tốc của bóng bằng $-${v0}$ m/s`, `Lúc chạm đất vận tốc của bóng bằng $0$ m/s`, ()=> near(v0 - 10*T, -v0, 1e-9), ()=> near(v0 - 10*T, 0, 1e-9))],
+    lg:`$h(t) = ${v0}t - 5t^{2}$.<br>a) $v = 0$ khi $t = ${tc}$.<br>b) $h(${tc}) = ${hm}$ (m).<br>c) $h(t) = 0$, $t > 0$ khi $t = ${T}$.<br>d) $v(${T}) = ${v0} - ${10*T} = ${-v0}$ (m/s).`};
+});
+
+GD(12,3,0,'TH','Gia tốc a(t) = 6t, v(0) = v₀, s(0) = 0: công thức v, s, giá trị tại t = 2', R=>{
+  const v0 = R.int(2, 12), T = R.pick([2, 3, 4]), v = t=> 3*t*t + v0, s = t=> t**3 + v0*t;
+  return {stem:`Một vật chuyển động với gia tốc $a(t) = 6t$ (m/s$^{2}$), $t$ tính bằng giây, vận tốc ban đầu $${v0}$ m/s.`,
+    items:[claim(R, `$v(t) = 3t^{2} + ${v0}$ (m/s)`, `$v(t) = 6t^{2} + ${v0}$ (m/s)`, ()=> ngIs(v, t=> 6*t), ()=> ngIs(t=> 6*t*t + v0, t=> 6*t)),
+      claim(R, `$s(t) = t^{3} + ${v0}t$ (m) với $s(0) = 0$`, `$s(t) = t^{3} + ${v0}$ (m) với $s(0) = 0$`, ()=> ngIs(s, v), ()=> near(v0, 0, 1e-12)),
+      claimN(R, m=> `$v(${T}) = ${m}$ (m/s)`, v(T), String(v(T)), 6*T, String(6*T), ()=> v(T)),
+      claimN(R, m=> `Quãng đường trong $${T}$ giây đầu là $${m}$ m`, s(T), String(s(T)), s(T) + 2*T, String(s(T) + 2*T), ()=> ngSi(v, 0, T))],
+    lg:`a) $v(t)$ là nguyên hàm của $a(t)$, $v(0) = ${v0}$.<br>b) $s(t)$ là nguyên hàm của $v(t)$, $s(0) = 0$.<br>c) $v(${T}) = ${v(T)}$ (m/s).<br>d) $s(${T}) = ${s(T)}$ (m).`};
+});
+
+GD(12,3,0,'VD','Phanh khẩn cấp có thời gian phản xạ: đi đều t_p giây rồi phanh v = v₀ − kt: tổng quãng đường, so với khoảng cách đèn đỏ', R=>{
+  const v0 = R.pick([15, 16, 20, 24, 25, 30]), tp = 1, k = R.pick([5, 6, 8, 10]), sp = v0*v0/(2*k), S = v0*tp + sp, d = Math.ceil(S) + R.pick([3, 5, -3, -5]); if(!Number.isInteger(2*sp)) return null;
+  const tp2 = v0/k;
+  return {stem:`Một ô tô chạy đều với vận tốc $${v0}$ m/s, người lái thấy đèn đỏ ở cách xe $${d}$ m. Sau $1$ giây phản xạ, xe phanh với vận tốc $v(t) = ${v0} - ${k}t$ (m/s), $t$ tính bằng giây kể từ lúc phanh.`,
+    items:[claimN(R, m=> `Trong thời gian phản xạ xe đi được $${m}$ m`, v0, String(v0), 0, '0', ()=> v0*tp),
+      claim(R, `Thời gian phanh đến khi dừng là $${nt(tp2)}$ giây`, `Thời gian phanh đến khi dừng là $${nt(tp2 + 1)}$ giây`, ()=> near(v0 - k*tp2, 0, 1e-9), ()=> near(v0 - k*(tp2 + 1), 0, 1e-9)),
+      claim(R, `Quãng đường từ lúc thấy đèn đến khi dừng là $${nt(S)}$ m`, `Quãng đường từ lúc thấy đèn đến khi dừng là $${nt(sp)}$ m`, ()=> near(ngSi(t=> v0 - k*t, 0, tp2) + v0, S, 1e-7), ()=> near(ngSi(t=> v0 - k*t, 0, tp2) + v0, sp, 1e-7)),
+      claim(R, `Xe dừng ${S <= d ? 'trước' : 'sau'} vạch đèn đỏ`, `Xe dừng ${S <= d ? 'sau' : 'trước'} vạch đèn đỏ`, ()=> true, ()=> false)],
+    lg:`a) $${v0}\\cdot 1 = ${v0}$ (m).<br>b) $v(t) = 0$ khi $t = ${nt(tp2)}$.<br>c) Đoạn phanh: $s = ${v0}t - ${nt(k/2)}t^{2}$, tại $t = ${nt(tp2)}$ được $${nt(sp)}$ (m); tổng $${nt(S)}$ (m).<br>d) So sánh $${nt(S)}$ với $${d}$ nên xe dừng ${S <= d ? 'trước' : 'sau'} vạch.`};
+});
+
+GD(12,3,0,'VD','Chất điểm có v(t) = −t² + 2pt: gia tốc, vận tốc lớn nhất tại t = p, quãng đường đến t = p, đổi chiều tại t = 2p', R=>{
+  const p = R.pick([1, 2, 3, 4, 5]), co = [-1, 2*p, 0], a = t=> -2*t + 2*p, vm = p*p, S = 2*p**3/3;
+  return {stem:`Một chất điểm chuyển động thẳng với vận tốc $v(t) = ${cdP(co)}$ (m/s), $t \\ge 0$ tính bằng giây.`,
+    items:[claim(R, `Gia tốc $a(t) = ${cdP([-2, 2*p])}$ (m/s$^{2}$)`, `Gia tốc $a(t) = ${cdP([-2, p])}$ (m/s$^{2}$)`, ()=> ngIs(t=> cdV(co, t), a), ()=> ngIs(t=> cdV(co, t), t=> -2*t + p)),
+      claimN(R, m=> `Vận tốc lớn nhất của chất điểm là $${m}$ m/s`, vm, String(vm), 2*vm, String(2*vm), ()=> cdV(co, p)),
+      claim(R, `Chất điểm đổi chiều chuyển động tại $t = ${2*p}$ giây`, `Chất điểm đổi chiều chuyển động tại $t = ${p}$ giây`, ()=> cdV(co, 2*p - 0.1) > 0 && cdV(co, 2*p + 0.1) < 0, ()=> cdV(co, p - 0.1)*cdV(co, p + 0.1) < 0),
+      claim(R, `Quãng đường đi được từ $t = 0$ đến $t = ${p}$ là $${qT(qr(2*p**3, 3))}$ m`, `Quãng đường đi được từ $t = 0$ đến $t = ${p}$ là $${vm*p}$ m`, ()=> near(ngSi(t=> cdV(co, t), 0, p), S, 1e-8), ()=> near(ngSi(t=> cdV(co, t), 0, p), vm*p, 1e-8))],
+    lg:`a) $a(t) = v'(t)$.<br>b) $v(t)$ là parabol, lớn nhất tại đỉnh $t = ${p}$, bằng $${vm}$ (m/s).<br>c) $v(t) = -t(t - ${2*p})$ đổi dấu tại $t = ${2*p}$.<br>d) $s(t) = -\\dfrac{t^{3}}{3}${ngSx(p, 't^{2}')}$, $s(${p}) = ${qT(qr(2*p**3, 3))}$ (m).`};
+});
+
+GD(12,3,0,'VD','Tàu chạy ba pha: tăng tốc đều, chạy đều, giảm tốc đều: quãng đường từng pha, tổng', R=>{
+  const a = R.pick([1, 2]), T1 = R.pick([10, 20, 30]), T2 = R.pick([60, 90, 120]), b = R.pick([1, 2].filter(z=> (a*T1) % z === 0)), v = a*T1, T3 = v/b, s1 = v*T1/2, s2 = v*T2, s3 = v*T3/2, S = s1 + s2 + s3;
+  return {stem:`Một đoàn tàu rời ga: trong $${T1}$ giây đầu tăng tốc với $v(t) = ${a === 1 ? '' : a}t$ (m/s), rồi chạy đều trong $${T2}$ giây, sau đó giảm tốc với gia tốc $-${b}$ m/s$^{2}$ đến khi dừng.`,
+    items:[claimN(R, m=> `Vận tốc chạy đều là $${m}$ m/s`, v, String(v), v/2, String(v/2), ()=> a*T1),
+      claimN(R, m=> `Quãng đường trong pha tăng tốc là $${m}$ m`, s1, String(s1), 2*s1, String(2*s1), ()=> ngSi(t=> a*t, 0, T1)),
+      claimN(R, m=> `Thời gian giảm tốc đến khi dừng là $${m}$ giây`, T3, String(T3), T3 + 5, String(T3 + 5), ()=> v/b),
+      claimN(R, m=> `Tổng quãng đường tàu đi được là $${m}$ m`, S, String(S), S - s3, String(S - s3), ()=> ngSi(t=> a*t, 0, T1) + v*T2 + ngSi(t=> v - b*t, 0, T3))],
+    lg:`a) $v(${T1}) = ${v}$ (m/s).<br>b) $s = ${nt(a/2)}\\cdot ${T1}^{2} = ${s1}$ (m).<br>c) $${v} - ${cdS(b)}t = 0$ khi $t = ${T3}$.<br>d) Tổng: $${s1} + ${s2} + ${s3} = ${S}$ (m).`.replace('= 1\\cdot', '= ')};
+});
+
+GD(12,3,0,'TH','Vật dao động v(t) = k·cos t (cm/s), x(0) = 0: công thức x, vị trí xa nhất, x(π) = 0, gia tốc a(t)', R=>{
+  const k = R.int(2, 15), x = t=> k*Math.sin(t), K = cdS(k);
+  return {stem:`Một vật dao động trên trục số với vận tốc $v(t) = ${K}\\cos t$ (cm/s), $t$ tính bằng giây, $x(0) = 0$.`,
+    items:[claim(R, `$x(t) = ${K}\\sin t$ (cm)`, `$x(t) = -${K}\\sin t$ (cm)`, ()=> ngIs(x, t=> k*Math.cos(t)), ()=> ngIs(t=> -k*Math.sin(t), t=> k*Math.cos(t))),
+      claimN(R, m=> `Giá trị lớn nhất của $x(t)$ là $${m}$ cm`, k, String(k), 2*k, String(2*k), ()=> ngRd(x(Math.PI/2))),
+      claimN(R, m=> `$x(\\pi) = ${m}$ (cm)`, 0, '0', k, String(k), ()=> ngRd(x(Math.PI))),
+      claim(R, `Gia tốc $a(t) = -${K}\\sin t$ (cm/s$^{2}$)`, `Gia tốc $a(t) = ${K}\\sin t$ (cm/s$^{2}$)`, ()=> ngIs(t=> k*Math.cos(t), t=> -k*Math.sin(t)), ()=> ngIs(t=> k*Math.cos(t), t=> k*Math.sin(t)))],
+    lg:`a) $x(t)$ là nguyên hàm của $v(t)$, $x(0) = 0$.<br>b) $\\sin t \\le 1$ nên giá trị lớn nhất là $${k}$ (cm).<br>c) $\\sin\\pi = 0$.<br>d) $a(t) = v'(t) = -${K}\\sin t$.`};
+});
+
+GD(12,3,0,'VD','Drone bay lên rồi hạ: v(t) = k(pt − t²) trên [0; p], h(0) = 0: độ cao tại p, tại p/2, vận tốc lớn nhất', R=>{
+  const k = R.pick([1, 2]), p = R.pick([6, 12]), co = [-k, k*p, 0], H = t=> -k/3*t**3 + k*p/2*t*t, vm = k*p*p/4;
+  return {stem:`Một drone bay thẳng đứng từ mặt đất với vận tốc $v(t) = ${cdS(k)}t(${p} - t)$ (m/s), $t$ tính bằng giây, $0 \\le t \\le ${p}$.`,
+    items:[claim(R, `Độ cao $h(t) = ${cdP([qr(-k, 3), k*p/2, 0, 0])}$ (m)`, `Độ cao $h(t) = ${cdP([-k, k*p, 0])}$ (m)`, ()=> ngIs(H, t=> cdV(co, t)), ()=> ngIs(t=> cdV(co, t), t=> cdV(co, t))),
+      claimN(R, m=> `Tại $t = ${p}$ giây drone ở độ cao $${m}$ m`, H(p), String(H(p)), 0, '0', ()=> ngSi(t=> cdV(co, t), 0, p)),
+      claimN(R, m=> `Vận tốc lớn nhất của drone là $${m}$ m/s`, vm, String(vm), 2*vm, String(2*vm), ()=> cdV(co, p/2)),
+      claim(R, `Trên đoạn $[0; ${p}]$ độ cao của drone luôn tăng`, `Trên đoạn $[0; ${p}]$ độ cao của drone tăng rồi giảm`, ()=> [1, p/2, p - 1].every(t=> cdV(co, t) > 0), ()=> cdV(co, p - 1) < 0)],
+    lg:`a) $h(t)$ là nguyên hàm của $v(t)$, $h(0) = 0$.<br>b) $h(${p}) = ${H(p)}$ (m).<br>c) $v(t)$ là parabol, lớn nhất tại $t = ${p/2}$, bằng $${vm}$ (m/s).<br>d) $v(t) > 0$ trên $(0; ${p})$ nên độ cao luôn tăng.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','Xe đạp có v(t) = at + b: quãng đường trong T giây (đơn vị m)', R=>{
+  const a = R.pick([0.5, 1, 1.5, 2]), b = R.int(1, 9), T = R.pick([2, 4, 6, 8, 10]), v = a*T*T/2 + b*T; if(String(v).length > 4) return null;
+  const o = {stem:`Một xe đạp chuyển động với vận tốc $v(t) = ${nt(a)}t + ${b}$ (m/s), $t$ tính bằng giây. Tính quãng đường (theo mét) xe đi được trong $${T}$ giây đầu.`.replace('= 1t', '= t'), ans:v,
+    lg:`$s(t) = ${nt(a/2)}t^{2}${ngSx(b, 't')}$ với $s(0) = 0$.<br>$s(${T}) = ${nt(v)}$ (m).`.replace('= 1t', '= t'),
+    verify:()=> near(o.ans, ngSi(t=> a*t + b, 0, T), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Quãng đường phanh của ô tô v(t) = v₀ − kt (đến khi dừng)', R=>{
+  const k = R.pick([2, 4, 5, 8, 10]), T = R.int(2, 6), v0 = k*T, v = v0*T/2;
+  const o = {stem:`Một ô tô đang chạy thì phanh, vận tốc sau đó là $v(t) = ${v0} - ${k}t$ (m/s), $t$ tính bằng giây. Tính quãng đường (theo mét) từ lúc phanh đến khi xe dừng.`, ans:v,
+    lg:`Xe dừng khi $t = ${T}$. $s(t) = ${v0}t - ${k === 2 ? '' : nt(k/2)}t^{2}$.<br>$s(${T}) = ${nt(v)}$ (m).`,
+    verify:()=> near(o.ans, ngSi(t=> v0 - k*t, 0, T), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Rơi tự do g = 10: từ độ cao h tính tốc độ lúc chạm đất', R=>{
+  const n = R.int(1, 15), h = 5*n*n, v = 10*n;
+  const o = {stem:`Một vật rơi tự do từ độ cao $${h}$ m với tốc độ $v(t) = 10t$ (m/s), $t$ tính bằng giây. Tính tốc độ (m/s) của vật lúc chạm đất.`, ans:v,
+    lg:`Quãng đường rơi $s(t) = 5t^{2}$. Chạm đất khi $5t^{2} = ${h}$, tức $t = ${n}$.<br>Tốc độ lúc đó là $v(${n}) = ${v}$ (m/s).`,
+    verify:()=> near(ngSi(t=> 10*t, 0, o.ans/10), h, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Chất điểm v(t) = at² + b: quãng đường trong giây thứ n', R=>{
+  const a = R.pick([3, 6, 9]), b = R.int(1, 9), n = R.int(2, 6), v = a/3*(n**3 - (n - 1)**3) + b;
+  const o = {stem:`Một chất điểm chuyển động với vận tốc $v(t) = ${a}t^{2} + ${b}$ (m/s), $t$ tính bằng giây. Tính quãng đường (theo mét) chất điểm đi được trong giây thứ $${n}$.`, ans:v,
+    lg:`$s(t) = ${cdS(a/3)}t^{3}${ngSx(b, 't')}$. Giây thứ $${n}$ từ $t = ${n - 1}$ đến $t = ${n}$.<br>Quãng đường bằng $s(${n}) - s(${n - 1}) = ${v}$ (m).`,
+    verify:()=> near(o.ans, ngSi(t=> a*t*t + b, n - 1, n), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'TH','Gia tốc a(t) = pt + q, v(0) = v₀: tính v(T)', R=>{
+  const p = R.pick([2, 4, 6]), q = R.int(1, 6), v0 = R.int(1, 15), T = R.int(2, 6), v = p/2*T*T + q*T + v0;
+  const o = {stem:`Một vật có gia tốc $a(t) = ${cdP([p, q])}$ (m/s$^{2}$), $t$ tính bằng giây, vận tốc ban đầu $${v0}$ m/s. Tính vận tốc (m/s) của vật tại $t = ${T}$ giây.`, ans:v,
+    lg:`$v(t) = ${cdP([p/2, q, v0])}$ (m/s).<br>$v(${T}) = ${v}$ (m/s).`,
+    verify:()=> near(o.ans, ngSi(t=> p*t + q, 0, T) + v0, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Gia tốc a(t) = 6t + 2b, v(0) = v₀: tính s(T) (hai lần nguyên hàm)', R=>{
+  const b = R.int(1, 5), v0 = R.int(1, 12), T = R.int(2, 6), v = T**3 + b*T*T + v0*T;
+  const o = {stem:`Một vật có gia tốc $a(t) = ${cdP([6, 2*b])}$ (m/s$^{2}$), $t$ tính bằng giây, vận tốc ban đầu $${v0}$ m/s. Tính quãng đường (theo mét) vật đi được trong $${T}$ giây đầu.`, ans:v,
+    lg:`$v(t) = ${cdP([3, 2*b, v0])}$, $s(t) = ${cdP([1, b, v0, 0])}$.<br>$s(${T}) = ${v}$ (m).`,
+    verify:()=> near(o.ans, ngSi(t=> 3*t*t + 2*b*t + v0, 0, T), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','Từ vận tốc v₀ giảm tốc đều dừng sau d mét: tính độ lớn gia tốc k', R=>{
+  const v0 = R.pick([10, 12, 14, 15, 16, 18, 20, 24, 25, 30]), k = R.pick([0.5, 0.8, 1, 1.2, 1.5, 1.6, 2, 2.4, 2.5, 3, 3.2, 3.6, 4, 4.8, 5, 6, 6.4, 7.2, 7.5, 8, 9, 10]), d = ngRou(v0*v0/(2*k), 6); if(!Number.isInteger(d*2) || d < 5) return null;
+  const o = {stem:`Một ô tô chạy với vận tốc $${v0}$ m/s thì giảm tốc đều với gia tốc $-k$ (m/s$^{2}$) và dừng lại sau khi đi được $${nt(d)}$ m. Tính $k$.`, ans:k,
+    lg:`$v(t) = ${v0} - kt$, dừng khi $t = \\dfrac{${v0}}{k}$. Quãng đường $s = \\dfrac{${v0*v0}}{2k}$.<br>Từ $\\dfrac{${v0*v0}}{2k} = ${nt(d)}$ suy ra $k = ${nt(k)}$.`,
+    verify:()=>{ const t = v0/o.ans; return near(v0*t - o.ans/2*t*t, d, 1e-6); }};
+  return o;
+});
+
+GT(12,3,0,'VD','Hai xe xuất phát cùng lúc, cùng chiều từ hai vị trí: B nhanh dần đuổi A chạy đều, tính thời điểm gặp', R=>{
+  const T = R.pick([7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 26, 28]), a = R.pick([1, 2]), v = R.pick([3, 4, 5, 6]), d = a*T*T/2 - v*T; if(d <= 0 || !Number.isInteger(d)) return null;
+  const o = {stem:`Lúc $t = 0$, xe A đang ở trước xe B một đoạn $${d}$ m và chạy đều với vận tốc $${v}$ m/s; xe B xuất phát từ đứng yên với vận tốc $v_{B}(t) = ${a === 1 ? '' : a}t$ (m/s) cùng chiều. Sau bao nhiêu giây xe B đuổi kịp xe A?`, ans:T,
+    lg:`$s_{B}(t) = ${a === 2 ? '' : nt(a/2)}t^{2}$, $s_{A}(t) = ${d} + ${v}t$.<br>Giải $${a === 2 ? '' : nt(a/2)}t^{2} = ${d} + ${v}t$ với $t > 0$ được $t = ${T}$.`,
+    verify:()=> near(a/2*o.ans**2, d + v*o.ans, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Vận tốc v(t) = k√t: quãng đường trong T giây với T chính phương', R=>{
+  const t0 = R.int(1, 5), k = 3*t0, r = R.pick([1, 2, 3, 4, 5]), T = r*r, v = 2*t0*r**3;
+  const o = {stem:`Một vật có vận tốc $v(t) = ${k}\\sqrt{t}$ (m/s), $t$ tính bằng giây. Tính quãng đường (theo mét) vật đi được trong $${T}$ giây đầu.`.replace('trong $1$ giây đầu', 'trong giây đầu tiên'), ans:v,
+    lg:`$s(t) = ${2*t0}t\\sqrt{t}$ với $s(0) = 0$.<br>$s(${T}) = ${v}$ (m).`,
+    verify:()=> near(o.ans, 2*t0*T**1.5, 1e-9) && ngIs(t=> 2*t0*t*Math.sqrt(t), t=> k*Math.sqrt(t))};
+  return o;
+});
+
+GT(12,3,0,'VD','Gia tốc a(t) = 3t², v(0) = 0: tính s(T) = T⁴/4 với T chẵn', R=>{
+  const T = R.pick([2, 4, 6]), k = R.int(1, 8), v = k*T**4/4 + T*R.pick([0]);
+  const o = {stem:`Một vật xuất phát từ trạng thái đứng yên với gia tốc $a(t) = ${3*k}t^{2}$ (m/s$^{2}$), $t$ tính bằng giây. Tính quãng đường (theo mét) vật đi được trong $${T}$ giây đầu.`, ans:v,
+    lg:`$v(t) = ${cdS(k)}t^{3}$, $s(t) = ${ngTx([[qr(k, 4), ngX(4)]], 't')}$.<br>$s(${T}) = ${v}$ (m).`,
+    verify:()=> near(o.ans, ngSi(t=> k*t**3, 0, T), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','Tàu hai giai đoạn: tăng tốc rồi chạy đều, tính tổng quãng đường theo km (một chữ số thập phân)', R=>{
+  const a = R.pick([1, 2]), T1 = R.pick([20, 30, 40]), T2 = R.pick([60, 120, 180, 240, 300]), v1 = a*T1, s = a*T1*T1/2 + v1*T2, km = ngRou(s/1000, 1);
+  const o = {stem:`Một đoàn tàu rời ga, trong $${T1}$ giây đầu có vận tốc $v(t) = ${a === 1 ? '' : a}t$ (m/s), sau đó chạy đều với vận tốc đã đạt trong $${T2}$ giây. Tính tổng quãng đường tàu đi được theo kilômét (làm tròn đến hàng phần mười).`, ans:km,
+    lg:`Giai đoạn 1: $${a*T1*T1/2}$ m, vận tốc cuối $${v1}$ m/s. Giai đoạn 2: $${v1*T2}$ m.<br>Tổng $${s}$ m, tức khoảng $${nt(km)}$ km.`,
+    verify:()=> near(o.ans, ngRou((ngSi(t=> a*t, 0, T1) + v1*T2)/1000, 1), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Sau bao lâu xe đi hết d mét với v(t) = at + b: giải phương trình bậc hai s(t) = d', R=>{
+  const a = R.pick([2, 4, 6]), b = R.int(1, 10), T = R.int(3, 15), d = a/2*T*T + b*T; if(String(d).length > 4) return null;
+  const o = {stem:`Một xe chuyển động với vận tốc $v(t) = ${cdP([a, b])}$ (m/s), $t$ tính bằng giây. Sau bao nhiêu giây kể từ $t = 0$ xe đi được $${d}$ m?`, ans:T,
+    lg:`$s(t) = ${cdP([a/2, b, 0])}$. Giải $${cdP([a/2, b, 0])} = ${d}$ với $t > 0$ được $t = ${T}$ (giây).`,
+    verify:()=> near(ngSi(t=> a*t + b, 0, o.ans), d, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Vận tốc trung bình trong T giây của v(t) = at² + b (tính s(T)/T)', R=>{
+  const a = R.pick([3, 6, 9, 12]), b = R.int(1, 9), T = R.pick([2, 3, 4, 5, 6]), v = a/3*T*T + b;
+  const o = {stem:`Một vật có vận tốc $v(t) = ${a}t^{2} + ${b}$ (m/s), $t$ tính bằng giây. Tính vận tốc trung bình (m/s) của vật trong $${T}$ giây đầu.`, ans:v,
+    lg:`$s(t) = ${cdS(a/3)}t^{3}${ngSx(b, 't')}$ nên $s(${T}) = ${a/3*T**3 + b*T}$ (m).<br>Vận tốc trung bình $= \\dfrac{s(${T})}{${T}} = ${v}$ (m/s).`,
+    verify:()=> near(o.ans, ngSi(t=> a*t*t + b, 0, T)/T, 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','Bóng ném từ độ cao h₀: thời điểm chạm đất là nghiệm dương của h₀ + v₀t − 5t² = 0', R=>{
+  const T = R.int(2, 15), u = R.pick([2, 4, 6, 8, 10, 12, 16, 20]), v0 = 5*u*1, tc = u/2, h0 = 5*T*T - v0*T, x = 5*T*(T - u); if(h0 <= 0 || h0 > 200) return null;
+  const o = {stem:`Từ một tháp cao $${h0}$ m, một quả bóng được ném thẳng đứng lên với vận tốc $v(t) = ${v0} - 10t$ (m/s), $t$ tính bằng giây. Sau bao nhiêu giây bóng chạm đất?`, ans:T,
+    lg:`$h(t) = ${h0} + ${v0}t - 5t^{2}$. Giải $h(t) = 0$ với $t > 0$ được $t = ${T}$ (giây).`,
+    verify:()=> near(h0 + v0*o.ans - 5*o.ans**2, 0, 1e-9)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
+})();
+
+// ---------- V2.49: dạng thay số bổ sung (12-11 Nguyên hàm: 324 dạng, đủ 20 TN, 10 Đ–S, 16 TLN mỗi chuyên đề) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương IV lớp 12 (nguyên hàm, tích phân). Được ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const ngG = (a, b)=> b ? ngG(b, a % b) : Math.abs(a);
+const qr = (n, d = 1)=>{ if(d < 0){ n = -n; d = -d; } const g = ngG(n, d) || 1; return [n/g, d/g]; };
+const qq = c=> Array.isArray(c) ? qr(c[0], c[1]) : [c, 1];
+const qa = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[1] + b[0]*a[1], a[1]*b[1]); };
+const qs = (a, b)=> qa(a, qm(b, -1));
+const qm = (a, b)=>{ a = qq(a); b = qq(b); return qr(a[0]*b[0], a[1]*b[1]); };
+const qd = (a, b)=>{ b = qq(b); return qm(a, [b[1], b[0]]); };
+const qv = c=>{ c = qq(c); return c[0]/c[1]; };
+const qT = c=>{ c = qq(c); const n = Math.abs(c[0]), s = c[0] < 0 ? '-' : ''; return c[1] === 1 ? s + n : `${s}\\dfrac{${n}}{${c[1]}}`; };
+/* cơ sở: {n: tử (chuỗi, '' = 1), d: mẫu (chuỗi, '' = 1), f: hàm số, k: khoá, dot: nối hệ số bằng \cdot} */
+const ngX = e=>{ e = qq(e); const [p, q] = e; const v = p/q;
+  if(p === 0) return {n:'', d:'', f:()=> 1, k:'p0'};
+  const k = `p${p}/${q}`, f = x=> Math.pow(x, v);
+  if(q === 1){ if(p === 1) return {n:'x', d:'', f:x=> x, k}; if(p > 0) return {n:`x^{${p}}`, d:'', f, k}; if(p === -1) return {n:'', d:'x', f, k}; return {n:'', d:`x^{${-p}}`, f, k}; }
+  if(q === 2){ if(p === 1) return {n:'\\sqrt{x}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt{x}', f, k}; if(p === 3) return {n:'x\\sqrt{x}', d:'', f, k}; if(p === -3) return {n:'', d:'x\\sqrt{x}', f, k}; if(p === 5) return {n:'x^{2}\\sqrt{x}', d:'', f, k}; }
+  if(q === 3){ if(p === 1) return {n:'\\sqrt[3]{x}', d:'', f, k}; if(p === 2) return {n:'\\sqrt[3]{x^{2}}', d:'', f, k}; if(p === -1) return {n:'', d:'\\sqrt[3]{x}', f, k}; if(p === -2) return {n:'', d:'\\sqrt[3]{x^{2}}', f, k}; if(p === 4) return {n:'x\\sqrt[3]{x}', d:'', f, k}; if(p === 5) return {n:'x\\sqrt[3]{x^{2}}', d:'', f, k}; }
+  return {n:`x^{${p < 0 ? '-' : ''}\\frac{${Math.abs(p)}}{${q}}}`, d:'', f, k}; };
+const ngS1 = {n:'\\sin x', d:'', f:Math.sin, k:'sin'}, ngC1 = {n:'\\cos x', d:'', f:Math.cos, k:'cos'}, ngT1 = {n:'\\tan x', d:'', f:Math.tan, k:'tan'}, ngK1 = {n:'\\cot x', d:'', f:x=> 1/Math.tan(x), k:'cot'};
+const ngSe = {n:'', d:'\\cos^{2}x', f:x=> 1/Math.cos(x)**2, k:'sec2'}, ngCs = {n:'', d:'\\sin^{2}x', f:x=> 1/Math.sin(x)**2, k:'csc2'};
+const ngE1 = {n:'e^{x}', d:'', f:Math.exp, k:'exp', dot:false}, ngA = a=> ({n:`${a}^{x}`, d:'', f:x=> Math.pow(a, x), k:`a${a}`, dot:true, a}), ngAL = a=> ({n:`${a}^{x}`, d:`\\ln ${a}`, f:x=> Math.pow(a, x)/Math.log(a), k:`L${a}`, dot:true, a});
+const ngLn = {n:'\\ln|x|', d:'', f:x=> Math.log(Math.abs(x)), k:'ln'}, ngLp = {n:'\\ln x', d:'', f:Math.log, k:'lnp'};
+const ngTm = ([c, b], first)=>{ c = qq(c); const n = Math.abs(c[0]), d = c[1]; let s;
+  if(!b.n && !b.d) s = qT([n, d]);
+  else if(b.d){ const num = b.n ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : String(n); s = `\\dfrac{${num}}{${d === 1 ? '' : d}${b.d}}`; }
+  else s = d === 1 ? (n === 1 ? b.n : (b.dot ? `${n} \\cdot ${b.n}` : `${n}${b.n}`)) : `\\dfrac{${n}}{${d}}${b.dot ? ' \\cdot ' : ''}${b.n}`;
+  return (c[0] < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + ')) + s; };
+const ngTx = (ts, v)=>{ const l = ts.filter(t=> qq(t[0])[0] !== 0); const s = l.length ? l.map((t, i)=> ngTm(t, i === 0)).join('') : '0'; return v ? s.replace(/x/g, v) : s; };
+const ngVal = (ts, x)=> ts.reduce((s, [c, b])=> s + qv(c)*b.f(x), 0);
+const ngPr1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [qm(c, -1), ngC1]; if(k === 'cos') return [c, ngS1]; if(k === 'sec2') return [c, ngT1]; if(k === 'csc2') return [qm(c, -1), ngK1]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'a') return [c, ngAL(b.a)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); if(k === 'p0') return [c, ngX(1)]; if(p === -q) return [c, ngLn]; const e = qa([p, q], 1); return [qd(c, e), ngX(e)]; }
+  throw new Error('ngPr1: ' + k); };
+const ngPr = ts=> ts.filter(t=> qq(t[0])[0] !== 0).map(ngPr1);
+const ngD1 = ([c, b])=>{ const k = b.k;
+  if(k === 'sin') return [c, ngC1]; if(k === 'cos') return [qm(c, -1), ngS1]; if(k === 'tan') return [c, ngSe]; if(k === 'cot') return [qm(c, -1), ngCs]; if(k === 'exp') return [c, ngE1];
+  if(k[0] === 'L') return [c, ngA(b.a)]; if(k === 'ln' || k === 'lnp') return [c, ngX(-1)];
+  if(k === 'p0') return [0, ngX(0)];
+  if(k[0] === 'p'){ const [p, q] = k.slice(1).split('/').map(Number); return [qm(c, [p, q]), ngX(qs([p, q], 1))]; }
+  throw new Error('ngD1: ' + k); };
+const ngDr = ts=> ts.map(ngD1).filter(t=> qq(t[0])[0] !== 0);
+const ngCm = (ts, k)=> ts.map(([c, b])=> [qm(c, k), b]);   /* nhân cả tổng với k */
+const ngDf = (F, x)=> (F(x + 1e-5) - F(x - 1e-5))/2e-5;
+const ngIs = (F, f, xs)=> (xs || [0.4, 0.9, 1.7, 2.6]).every(x=> Math.abs(ngDf(F, x) - f(x)) < 1e-4*Math.max(1, Math.abs(f(x))));
+const ngSi = (fn, lo, hi, n0)=>{ const n = n0 || 2000, h = (hi - lo)/n; let s = fn(lo) + fn(hi); for(let i = 1; i < n; i++) s += fn(lo + i*h)*(i % 2 ? 4 : 2); return s*h/3; };
+const ngSg = n=> n < 0 ? ` - ${-n}` : ` + ${n}`;   /* "+ 3" hoặc "- 3" */
+const ngOp = (ts, pt, suf)=> ({t:`$${ngTx(ts)}${suf == null ? ' + C' : suf}$`, v:ngVal(ts, pt == null ? 1.37 : pt)});
+const ngNum = (c, unit)=> ({t:`$${qT(c)}$${unit ? ' ' + unit : ''}`, v:qv(c)});
+const ngDec = (x, unit)=> ({t:`$${nt(x)}$${unit ? ' ' + unit : ''}`, v:x});
+/* chọn 3 phương án sai khác giá trị từ danh sách ứng viên; không đủ thì trả null */
+const ngW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand)){ if(!c || !isFinite(c.v)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-7 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* ∫ của f (chuỗi) */
+const ngI = s=> `\\int ${s}\\,dx`;
+const ngRou = (x, k)=> Math.round(x*10**k)/10**k;
+const nkL = (p, q)=> ngTx([[p, ngX(1)], [q, ngX(0)]]);
+const nkP = cs=> cs.map(([c, e])=> [c, ngX(e)]);
+const ngSx = (n, v)=> ` ${n < 0 ? '-' : '+'} ${Math.abs(n) === 1 ? '' : Math.abs(n)}${v || 'x'}`;   /* "+ 3x", "- x" */
+const ngPa = n=> n < 0 ? `(${n})` : String(n);   /* số âm đặt trong ngoặc khi nhân */
+const ngRd = x=> Math.round(x*1e5)/1e5;
+/* 12-11.8 Bài toán thực tế: tốc độ thay đổi, kinh tế — số 337–374 (16 TN, 9 Đ–S, 13 TLN).
+   Mô hình chung: biết tốc độ thay đổi Q'(t) và giá trị ban đầu thì tìm được Q(t). Chuỗi: lượng tích luỹ → thời điểm đạt ngưỡng → cực trị khi Q' đổi dấu → chi phí, doanh thu, lợi nhuận biên. Chỉ dùng nguyên hàm, chưa dùng tích phân. */
+const ktS = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+const ktP = (co, v)=> ngTx(co.map((c, i)=> [c, ngX(co.length - 1 - i)]), v || 't');
+const ktV = (co, x)=> co.reduce((s, c)=> s*x + c, 0);
+const ktI = (co, x)=>{ const d = co.length - 1; let s = 0; co.forEach((k, i)=>{ const p = d - i; s += k*x**(p + 1)/(p + 1); }); return s; };
+const ktD = (x, u)=> ngDec(x, u);
+
+G(12,3,0,'TH','Dân số thị trấn tăng với tốc độ P\'(t) = a + bt (nghìn người/năm): tính dân số sau T năm', R=>{
+  const a = R.pick([0.4, 0.5, 0.6, 0.8, 1, 1.2]), b = R.pick([0.02, 0.04, 0.06, 0.1, 0.2]), P0 = R.pick([20, 25, 30, 40, 50]), T = R.pick([5, 10, 15, 20]), v = ngRou(P0 + a*T + b*T*T/2, 4);
+  const ans = ktD(v, 'nghìn người'), wrong = ngW(R, ans, [ktD(ngRou(a + b*T, 4), 'nghìn người'), ktD(ngRou(P0 + a*T + b*T*T, 4), 'nghìn người'), ktD(ngRou(P0 + a + b*T, 4), 'nghìn người'), ktD(ngRou(a*T + b*T*T/2, 4), 'nghìn người')]); if(!wrong) return null;
+  const o = {stem:`Dân số của một thị trấn tăng với tốc độ $P'(t) = ${nt(a)} + ${nt(b)}t$ (nghìn người/năm), $t$ tính bằng năm kể từ năm 2020. Năm 2020 thị trấn có $${P0}$ nghìn người. Dân số sau $${T}$ năm bằng`.replace('+ 1t', '+ t').replace('= 1 +', '= 1 +'), ans, wrong,
+    lg:`$P(t) = ${nt(a)}t + ${nt(b/2)}t^{2} + ${P0}$ (nguyên hàm của $P'$, $P(0) = ${P0}$).<br>$P(${T}) = ${nt(v)}$ (nghìn người).`.replace('= 1t', '= t'),
+    verify:()=> near(o.ans.v, P0 + ngSi(t=> a + b*t, 0, T), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'TH','Nước chảy vào bể với tốc độ r(t) = a + bt (lít/phút), bể có sẵn V₀ lít: lượng nước sau T phút', R=>{
+  const a = R.pick([2, 3, 4, 5, 6]), b = R.pick([1, 2, 3, 4]), V0 = R.pick([10, 20, 30, 40, 50, 100]), T = R.pick([5, 8, 10, 12, 15, 20]), v = V0 + a*T + b*T*T/2;
+  const ans = ktD(v, 'lít'), wrong = ngW(R, ans, [ktD(a + b*T + V0, 'lít'), ktD(a*T + b*T*T/2, 'lít'), ktD(V0 + a*T + b*T*T, 'lít'), ktD(V0 + (a + b*T)*T, 'lít')]); if(!wrong) return null;
+  const o = {stem:`Nước chảy vào một bể với tốc độ $r(t) = ${ktP([b, a])}$ (lít/phút), $t$ tính bằng phút. Ban đầu bể có $${V0}$ lít nước. Lượng nước trong bể sau $${T}$ phút bằng`, ans, wrong,
+    lg:`$V(t)$ là nguyên hàm của $r(t)$: $V(t) = ${ktP([qr(b, 2), a, V0])}$.<br>$V(${T}) = ${nt(v)}$ (lít).`,
+    verify:()=> near(o.ans.v, V0 + ngSi(t=> a + b*t, 0, T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Bể chứa rò rỉ V\'(t) = −kt (lít/giờ): sau bao lâu cạn (tốc độ rò tăng dần, giải V(t) = 0)', R=>{
+  const k = R.pick([2, 4, 6, 8, 10]), T = R.int(3, 20), V0 = k/2*T*T;
+  const ans = ktD(T, 'giờ'), wrong = ngW(R, ans, [ktD(ngRou(V0/k, 2), 'giờ'), ktD(2*T, 'giờ'), ktD(T + 2, 'giờ'), ktD(ngRou(T/2, 2), 'giờ')]); if(!wrong) return null;
+  const o = {stem:`Một thùng chứa $${V0}$ lít nước bị rò với tốc độ thay đổi của lượng nước là $V'(t) = -${k}t$ (lít/giờ), $t$ tính bằng giờ. Thùng cạn sau`, ans, wrong,
+    lg:`$V(t) = ${V0} - ${k === 2 ? '' : k/2}t^{2}$. Giải $V(t) = 0$ với $t > 0$ được $t = ${T}$ (giờ).`,
+    verify:()=> near(V0 + ngSi(t=> -k*t, 0, o.ans.v), 0, 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Cây cao thêm với tốc độ h\'(t) = k/√t (cm/tuần): chiều cao sau T tuần với T chính phương', R=>{
+  const k = R.pick([1, 2, 3, 4, 5, 6]), r = R.pick([2, 3, 4, 5, 6]), T = r*r, c = R.pick([10, 15, 20, 25, 30]), H1 = c, v = 2*k*r + c - 2*k;
+  const ans = ktD(v, 'cm'), wrong = ngW(R, ans, [ktD(k*r + c - k, 'cm'), ktD(2*k*r + c, 'cm'), ktD(ngRou(k/r, 3) + c, 'cm'), ktD(2*k*T + c, 'cm')]); if(!wrong) return null;
+  const o = {stem:`Một cây non cao thêm với tốc độ $h'(t) = ${k < 0 ? '-' : ''}\\dfrac{${k}}{\\sqrt{t}}$ (cm/tuần), $t \\ge 1$ tính bằng tuần. Sau $1$ tuần cây cao $${c}$ cm. Chiều cao của cây sau $${T}$ tuần bằng`, ans, wrong,
+    lg:`$h(t) = ${2*k}\\sqrt{t} + C$; $h(1) = ${2*k} + C = ${c}$ nên $C = ${c - 2*k}$.<br>$h(${T}) = ${2*k}\\cdot ${r}${ngSg(c - 2*k)} = ${v}$ (cm).`,
+    verify:()=> near(o.ans.v, 2*k*Math.sqrt(T) + c - 2*k, 1e-9) && ngIs(t=> 2*k*Math.sqrt(t), t=> k/Math.sqrt(t))};
+  return o;
+});
+
+G(12,3,0,'TH','Chi phí biên C\'(x) = a + bx, chi phí cố định C₀: tổng chi phí sản xuất x sản phẩm, tính theo triệu đồng', R=>{
+  const a = R.pick([10, 12, 15, 18, 20]), b = R.pick([0.02, 0.04, 0.05, 0.1]), C0 = R.pick([100, 150, 200, 300, 500]), x = R.pick([100, 200, 300, 400, 500]), v = ngRou(C0 + a*x + b*x*x/2, 4);
+  const ans = ktD(v, 'nghìn đồng'), wrong = ngW(R, ans, [ktD(ngRou(a*x + b*x*x/2, 4), 'nghìn đồng'), ktD(ngRou(C0 + a + b*x, 4), 'nghìn đồng'), ktD(ngRou(C0 + a*x + b*x*x, 4), 'nghìn đồng'), ktD(ngRou(C0 + a*x, 4), 'nghìn đồng')]); if(!wrong) return null;
+  const o = {stem:`Một xưởng có chi phí biên $C'(x) = ${nt(a)} + ${nt(b)}x$ (nghìn đồng/sản phẩm) và chi phí cố định $${C0}$ nghìn đồng. Tổng chi phí sản xuất $${x}$ sản phẩm bằng`, ans, wrong,
+    lg:`$C(x) = ${nt(a)}x + ${nt(b/2)}x^{2} + ${C0}$ (nguyên hàm của $C'$, $C(0) = ${C0}$).<br>$C(${x}) = ${nt(v)}$ (nghìn đồng).`,
+    verify:()=> near(o.ans.v, C0 + ngSi(u=> a + b*u, 0, x), 1e-7)};
+  return o;
+});
+
+G(12,3,0,'VD','Doanh thu biên R\'(x) = a − bx, chi phí biên C\'(x) = c: lợi nhuận lớn nhất khi R\' = C\', tìm sản lượng', R=>{
+  const b = R.pick([0.5, 1, 2]), x0 = R.pick([20, 25, 30, 35, 40, 45, 50, 55, 60, 70, 80, 90, 100, 120]), c = R.pick([10, 15, 20, 25]), a = c + b*x0;
+  const ans = ktD(x0, 'sản phẩm'), wrong = ngW(R, ans, [ktD(ngRou(a/b, 3), 'sản phẩm'), ktD(ngRou(2*x0, 3), 'sản phẩm'), ktD(ngRou(c/b, 3), 'sản phẩm'), ktD(ngRou(x0/2, 3), 'sản phẩm')]); if(!wrong) return null;
+  const o = {stem:`Một cơ sở có doanh thu biên $R'(x) = ${nt(a)} - ${nt(b)}x$ (nghìn đồng/sản phẩm) và chi phí biên không đổi $C'(x) = ${c}$ (nghìn đồng/sản phẩm). Lợi nhuận lớn nhất đạt được khi sản xuất và bán`.replace('- 1x', '- x'), ans, wrong,
+    lg:`Lợi nhuận $P(x) = R(x) - C(x)$, $P'(x) = ${nt(a - c)} - ${nt(b)}x$.<br>$P'(x)$ đổi dấu từ dương sang âm tại $x = ${x0}$ nên lợi nhuận lớn nhất tại đó.`.replace('- 1x', '- x'),
+    verify:()=> near(a - b*o.ans.v, c, 1e-9) && a - b*(x0 - 1) > c && a - b*(x0 + 1) < c};
+  return o;
+});
+
+G(12,3,0,'TH','Giá trị máy khấu hao V\'(t) = −a (triệu đồng/năm) trong T năm rồi thanh lý: giá trị còn lại', R=>{
+  const a = R.pick([15, 20, 25, 30, 40, 50]), V0 = R.pick([300, 400, 500, 600, 800]), T = R.pick([2, 3, 4, 5, 6]), v = V0 - a*T; if(v <= 0) return null;
+  const ans = ktD(v, 'triệu đồng'), wrong = ngW(R, ans, [ktD(a*T, 'triệu đồng'), ktD(V0 + a*T, 'triệu đồng'), ktD(V0 - a, 'triệu đồng'), ktD(V0 - a*T*T, 'triệu đồng')]); if(!wrong) return null;
+  const o = {stem:`Một máy mới có giá $${V0}$ triệu đồng, giá trị giảm với tốc độ không đổi $V'(t) = -${a}$ (triệu đồng/năm). Giá trị của máy sau $${T}$ năm bằng`, ans, wrong,
+    lg:`$V(t) = ${V0} - ${a}t$.<br>$V(${T}) = ${v}$ (triệu đồng).`,
+    verify:()=> near(o.ans.v, V0 + ngSi(()=> -a, 0, T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Nhiệt độ trong ngày T\'(t) = k(14 − t) (°C/giờ), t từ 6 đến 20 giờ: nhiệt độ cao nhất lúc 14 giờ', R=>{
+  const k = R.pick([0.25, 0.5, 0.75, 1]), T6 = R.pick([16, 18, 20, 22, 24, 25]), Hi = T6 + k/2*64, v = Hi;
+  const ans = ktD(v, '°C'), wrong = ngW(R, ans, [ktD(T6, '°C'), ktD(T6 + k*64, '°C'), ktD(T6 + k/2*196, '°C'), ktD(T6 + k*8, '°C')]); if(!wrong) return null;
+  const o = {stem:`Nhiệt độ ngoài trời trong một ngày thay đổi với tốc độ $T'(t) = ${nt(k)}(14 - t)$ (°C/giờ), $t$ là thời điểm trong ngày, $6 \\le t \\le 20$. Lúc $6$ giờ nhiệt độ là $${T6}$ °C. Nhiệt độ cao nhất trong khoảng đó bằng`.replace('= 1(', '= ('), ans, wrong,
+    lg:`$T'(t)$ đổi dấu từ dương sang âm tại $t = 14$ nên nhiệt độ cao nhất lúc $14$ giờ.<br>$T(t) = ${nt(14*k)}t - ${nt(k/2)}t^{2} + C$, $T(6) = ${T6}$ cho $T(14) = ${nt(v)}$ (°C).`,
+    verify:()=> near(o.ans.v, T6 + ngSi(t=> k*(14 - t), 6, 14), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Nồng độ thuốc trong máu C\'(t) = a − 2bt: thời điểm nồng độ cao nhất t = a/(2b), giá trị a²/(4b)', R=>{
+  const b = R.pick([1, 2, 3, 5]), t0 = R.pick([2, 3, 4, 5, 6]), a = 2*b*t0, v = a*t0 - b*t0*t0;
+  const ans = ktD(v, 'mg/l'), wrong = ngW(R, ans, [ktD(a, 'mg/l'), ktD(2*v, 'mg/l'), ktD(b*t0*t0, 'mg/l').v === v ? ktD(v + a, 'mg/l') : ktD(v + a, 'mg/l'), ktD(ngRou(v/2, 3), 'mg/l')]); if(!wrong) return null;
+  const o = {stem:`Sau khi uống thuốc, nồng độ thuốc trong máu thay đổi với tốc độ $C'(t) = ${ktP([-2*b, a])}$ (mg/l mỗi giờ), $t$ tính bằng giờ, $C(0) = 0$. Nồng độ thuốc cao nhất bằng`, ans, wrong,
+    lg:`$C'(t)$ đổi dấu từ dương sang âm tại $t = ${t0}$.<br>$C(t) = ${ktP([-b, a, 0])}$ nên $C(${t0}) = ${v}$ (mg/l).`,
+    verify:()=> near(o.ans.v, ngSi(t=> a - 2*b*t, 0, t0), 1e-8)};
+  return o;
+});
+
+G(12,3,0,'VD','Số ca nhiễm mỗi ngày f(t) = t(k − t): tổng số ca tích luỹ N(t) là nguyên hàm, đỉnh dịch khi f lớn nhất tại t = k/2', R=>{
+  const k = R.pick([10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]), t0 = k/2, m = R.pick([1, 2, 3]), v = m*k*k/4;
+  const ans = ktD(v, 'ca'), wrong = ngW(R, ans, [ktD(m*k*k, 'ca'), ktD(m*k*k/2, 'ca'), ktD(m*k, 'ca'), ktD(m*t0, 'ca')]); if(!wrong) return null;
+  const o = {stem:`Trong một đợt dịch, tốc độ tăng số ca nhiễm tích luỹ là $N'(t) = ${ktS(m)}t(${k} - t)$ (ca/ngày), $t$ tính bằng ngày, $0 \\le t \\le ${k}$. Số ca mới trong một ngày lớn nhất bằng`, ans, wrong,
+    lg:`$N'(t)$ là parabol, lớn nhất tại đỉnh $t = ${t0}$.<br>$N'(${t0}) = ${ktS(m)}\\cdot ${t0}\\cdot ${t0} = ${v}$ (ca/ngày).`.replace('= \\cdot ', '= '),
+    verify:()=>{ let mx = 0; for(let t = 0; t <= k; t += 0.01) mx = Math.max(mx, m*t*(k - t)); return near(o.ans.v, mx, 1e-3); }};
+  return o;
+});
+
+G(12,3,0,'TH','Số người biết tin đồn N\'(t) = a/t (t ≥ 1): N(t) = a·ln t + N(1), tính N(e²)', R=>{
+  const a = R.pick([100, 120, 150, 200, 250, 300, 400, 500]), n1 = R.pick([50, 100, 150, 200, 300]), v = 2*a + n1;
+  const ans = ktD(v, 'người'), wrong = ngW(R, ans, [ktD(a + n1, 'người'), ktD(2*a, 'người'), ktD(a*a === 0 ? 0 : 4*a + n1, 'người'), ktD(n1 - 2*a < 0 ? 2*n1 + a : n1 - 2*a, 'người')]); if(!wrong) return null;
+  const o = {stem:`Số người biết một thông tin tăng với tốc độ $N'(t) = \\dfrac{${a}}{t}$ (người/ngày), $t \\ge 1$ tính bằng ngày. Sau ngày đầu tiên có $${n1}$ người biết. Số người biết sau $e^{2}$ ngày bằng`, ans, wrong,
+    lg:`$N(t) = ${a}\\ln t + C$, $N(1) = C = ${n1}$.<br>$N(e^{2}) = ${a}\\cdot 2 + ${n1} = ${v}$ (người).`,
+    verify:()=> near(o.ans.v, n1 + ngSi(t=> a/t, 1, Math.E**2, 8000), 1e-5)};
+  return o;
+});
+
+G(12,3,0,'TH','Vết dầu loang bán kính r\'(t) = k/(2√t) (m/giờ): bán kính sau T giờ, r(0) = 0, tính diện tích π r²', R=>{
+  const k = R.pick([1, 3, 5, 7, 9]), r = R.pick([1, 2, 3, 4, 5]), T = r*r, R0 = k*r, A = R0*R0, op = c=> ({t:`$${c}\\pi$ m$^{2}$`, v:c*Math.PI});
+  const ans = op(A), wrong = ngW(R, ans, [op(2*A), op(R0), op(A*T), op(ngRou(A/2, 3))]); if(!wrong) return null;
+  const o = {stem:`Một vết dầu loang hình tròn có bán kính tăng với tốc độ $r'(t) = \\dfrac{${k}}{2\\sqrt{t}}$ (m/giờ), $r(0) = 0$, $t$ tính bằng giờ. Diện tích vết dầu sau $${T}$ giờ bằng`.replace('sau $1$ giờ', 'sau $1$ giờ'), ans, wrong,
+    lg:`$r(t) = ${ktS(k)}\\sqrt{t}$ (nguyên hàm của $r'$, $r(0) = 0$).<br>$r(${T}) = ${R0}$ (m) nên diện tích bằng $\\pi\\cdot ${R0}^{2} = ${A}\\pi$ (m$^{2}$).`,
+    verify:()=> near(o.ans.v, Math.PI*(k*Math.sqrt(T))**2, 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Pin điện thoại sạc với tốc độ Q\'(t) = a − bt (%/phút): sau bao nhiêu phút lên từ Q₀ đến 100%', R=>{
+  const b = R.pick([0.02, 0.04, 0.05, 0.1, 0.25]), T = R.pick([4, 8, 10, 12, 15, 16, 20, 25, 30, 35, 40, 45, 50, 60]), a = R.pick([2, 2.5, 3, 3.5, 5, 6, 7, 8]), rise = a*T - b/2*T*T, Q0 = ngRou(100 - rise, 6); if(Q0 < 0 || Q0 > 70 || a - b*T <= 0 || !Number.isInteger(Q0)) return null;
+  const ans = ktD(T, 'phút'), wrong = ngW(R, ans, [ktD(ngRou((100 - Q0)/a, 2), 'phút'), ktD(T + 10, 'phút'), ktD(ngRou(T/2, 2), 'phút'), ktD(ngRou(a/b, 2), 'phút')]); if(!wrong) return null;
+  const o = {stem:`Pin một điện thoại đang ở mức $${Math.round(Q0)}\\%$ thì được sạc với tốc độ tăng mức pin $Q'(t) = ${nt(a)} - ${nt(b)}t$ ($\\%$/phút), $t$ tính bằng phút. Pin đầy ($100\\%$) sau`, ans, wrong,
+    lg:`$Q(t) = ${Math.round(Q0)} + ${nt(a)}t - ${nt(b/2)}t^{2}$.<br>Giải $Q(t) = 100$ và chọn nghiệm nhỏ (trước khi tốc độ sạc về $0$) được $t = ${T}$ (phút).`,
+    verify:()=> near(Q0 + ngSi(t=> a - b*t, 0, o.ans.v), 100, 1e-6)};
+  return o;
+});
+
+G(12,3,0,'TH','Điện năng tiêu thụ: công suất P(t) = a + bt (kW), điện năng A\'(t) = P(t): tính điện năng trong T giờ', R=>{
+  const a = R.pick([1, 2, 3, 4, 5]), b = R.pick([0.5, 1, 1.5, 2]), T = R.pick([2, 4, 6, 8, 10]), v = a*T + b*T*T/2;
+  const ans = ktD(v, 'kWh'), wrong = ngW(R, ans, [ktD(a + b*T, 'kWh'), ktD(a*T + b*T*T, 'kWh'), ktD(a*T, 'kWh'), ktD((a + b*T)*T, 'kWh')]); if(!wrong) return null;
+  const o = {stem:`Một phân xưởng có công suất điện $P(t) = ${a} + ${nt(b)}t$ (kW), $t$ tính bằng giờ. Điện năng tiêu thụ $A(t)$ (kWh) là nguyên hàm của $P(t)$ với $A(0) = 0$. Điện năng tiêu thụ trong $${T}$ giờ đầu bằng`.replace('+ 1t', '+ t'), ans, wrong,
+    lg:`$A(t) = ${a === 1 ? '' : a}t + ${nt(b/2)}t^{2}$.<br>$A(${T}) = ${nt(v)}$ (kWh).`.replace('+ 1t', '+ t'),
+    verify:()=> near(o.ans.v, ngSi(t=> a + b*t, 0, T), 1e-9)};
+  return o;
+});
+
+G(12,3,0,'VD','Lợi nhuận biên P\'(x) = a − bx: tổng lợi nhuận tăng thêm khi tăng sản lượng từ x₁ lên x₂ là P(x₂) − P(x₁)', R=>{
+  const a = R.pick([40, 50, 60, 80, 100]), b = R.pick([1, 2]), x1 = R.pick([5, 10, 15]), x2 = x1 + R.pick([5, 10]), v = a*(x2 - x1) - b/2*(x2*x2 - x1*x1);
+  const ans = ktD(v, 'triệu đồng'), wrong = ngW(R, ans, [ktD(a - b*x2, 'triệu đồng'), ktD(a*x2 - b/2*x2*x2, 'triệu đồng'), ktD(a*(x2 - x1) - b*(x2*x2 - x1*x1), 'triệu đồng'), ktD(a*(x2 - x1), 'triệu đồng')]); if(!wrong || v <= 0) return null;
+  const o = {stem:`Một doanh nghiệp có lợi nhuận biên $P'(x) = ${a} - ${b === 1 ? '' : b}x$ (triệu đồng/tấn), $x$ là sản lượng (tấn). Khi tăng sản lượng từ $${x1}$ tấn lên $${x2}$ tấn, lợi nhuận tăng thêm`, ans, wrong,
+    lg:`$P(x) = ${a}x - ${b === 2 ? '' : nt(b/2)}x^{2} + C$.<br>Phần tăng bằng $P(${x2}) - P(${x1}) = ${nt(v)}$ (triệu đồng), hằng số $C$ triệt tiêu.`,
+    verify:()=> near(o.ans.v, ngSi(x=> a - b*x, x1, x2), 1e-7)};
+  return o;
+});
+
+G(12,3,0,'TH','Lượng nước hồ thuỷ lợi V\'(t) = a − bt (nghìn m³/ngày): sau T ngày lượng nước là bao nhiêu, phân biệt tăng hay giảm', R=>{
+  const a = R.pick([20, 30, 40, 50]), b = R.pick([2, 4, 5]), V0 = R.pick([200, 300, 500, 800]), T = R.pick([4, 6, 8, 10, 12, 15]), v = V0 + a*T - b/2*T*T;
+  const ans = ktD(v, 'nghìn m³'), wrong = ngW(R, ans, [ktD(V0 + a*T - b*T*T, 'nghìn m³'), ktD(a*T - b/2*T*T, 'nghìn m³'), ktD(V0 + a - b*T, 'nghìn m³'), ktD(V0 + a*T + b/2*T*T, 'nghìn m³')]); if(!wrong || v <= 0) return null;
+  const o = {stem:`Lượng nước trong một hồ thay đổi với tốc độ $V'(t) = ${ktP([-b, a])}$ (nghìn m$^{3}$/ngày), $t$ tính bằng ngày. Ban đầu hồ có $${V0}$ nghìn m$^{3}$. Lượng nước trong hồ sau $${T}$ ngày bằng`, ans, wrong,
+    lg:`$V(t) = ${ktP([qr(-b, 2), a, V0])}$ (nguyên hàm của $V'$, $V(0) = ${V0}$).<br>$V(${T}) = ${nt(v)}$ (nghìn m$^{3}$).`,
+    verify:()=> near(o.ans.v, V0 + ngSi(t=> a - b*t, 0, T), 1e-8)};
+  return o;
+});
+
+/* ———— Đ–S ———— */
+GD(12,3,0,'TH','Nước chảy vào bể r(t) = a + bt, bể có sẵn V₀ lít: công thức V, V(T), tốc độ tăng dần, thời điểm đầy', R=>{
+  const a = R.pick([2, 4, 6]), b = R.pick([2, 4]), V0 = R.pick([20, 40, 60, 100]), T = R.pick([10, 20, 30]), Vm = V0 + a*T + b/2*T*T, V = t=> V0 + a*t + b/2*t*t;
+  return {stem:`Nước chảy vào một bể với tốc độ $r(t) = ${ktP([b, a])}$ (lít/phút), $t$ tính bằng phút. Ban đầu bể có $${V0}$ lít nước, sức chứa của bể là $${Vm}$ lít.`,
+    items:[claim(R, `$V(t) = ${ktP([b/2, a, V0])}$ (lít)`, `$V(t) = ${ktP([b, a, V0])}$ (lít)`, ()=> ngIs(V, t=> a + b*t), ()=> ngIs(t=> b*t*t + a*t + V0, t=> a + b*t)),
+      claimN(R, m=> `Sau $10$ phút bể có $${m}$ lít nước`, V(10), String(V(10)), V(10) + 50, String(V(10) + 50), ()=> V0 + ngSi(t=> a + b*t, 0, 10)),
+      claim(R, `Lượng nước chảy vào mỗi phút tăng dần theo thời gian`, `Lượng nước chảy vào mỗi phút giảm dần theo thời gian`, ()=> b > 0, ()=> b < 0),
+      claimN(R, m=> `Bể đầy sau $${m}$ phút`, T, String(T), T + 5, String(T + 5), ()=> V(T) === Vm ? T : -1)],
+    lg:`a) $V$ là nguyên hàm của $r$, $V(0) = ${V0}$.<br>b) $V(10) = ${V(10)}$ (lít).<br>c) $r(t)$ đồng biến vì hệ số của $t$ dương.<br>d) $V(${T}) = ${Vm}$ nên bể đầy sau $${T}$ phút.`};
+});
+
+GD(12,3,0,'TH','Chi phí biên C\'(x) = a + bx, chi phí cố định: công thức C, C(100), chi phí trung bình, chi phí của sản phẩm thứ x', R=>{
+  const a = R.pick([20, 25, 30, 40]), b = R.pick([0.1, 0.2, 0.4]), C0 = R.pick([500, 800, 1000, 2000]), C = x=> C0 + a*x + b/2*x*x, x0 = 100, tb = C(x0)/x0, cb = a + b*x0;
+  return {stem:`Một xưởng có chi phí biên $C'(x) = ${a} + ${nt(b)}x$ (nghìn đồng/sản phẩm), chi phí cố định $${C0}$ nghìn đồng.`,
+    items:[claim(R, `$C(x) = ${nt(b/2)}x^{2} + ${a}x + ${C0}$ (nghìn đồng)`, `$C(x) = ${nt(b)}x^{2} + ${a}x + ${C0}$ (nghìn đồng)`, ()=> ngIs(C, x=> a + b*x), ()=> ngIs(x=> b*x*x + a*x + C0, x=> a + b*x)),
+      claimN(R, m=> `Chi phí sản xuất $100$ sản phẩm là $${m}$ nghìn đồng`, C(x0), nt(C(x0)).replace('{,}', '.'), C(x0) - C0, nt(C(x0) - C0).replace('{,}', '.'), ()=> C0 + ngSi(x=> a + b*x, 0, x0)),
+      claim(R, `Chi phí trung bình mỗi sản phẩm khi sản xuất $100$ sản phẩm là $${nt(tb)}$ nghìn đồng`, `Chi phí trung bình mỗi sản phẩm khi sản xuất $100$ sản phẩm là $${nt(tb + 5)}$ nghìn đồng`, ()=> near(C(x0)/x0, tb, 1e-9), ()=> near(C(x0)/x0, tb + 5, 1e-9)),
+      claim(R, `Khi sản xuất càng nhiều, chi phí biên càng tăng`, `Khi sản xuất càng nhiều, chi phí biên càng giảm`, ()=> b > 0, ()=> b < 0)],
+    lg:`a) $C$ là nguyên hàm của $C'$, $C(0) = ${C0}$.<br>b) $C(100) = ${nt(C(x0))}$ (nghìn đồng).<br>c) Chi phí trung bình $= \\dfrac{C(100)}{100} = ${nt(tb)}$ (nghìn đồng).<br>d) $C'(x)$ đồng biến vì hệ số của $x$ dương.`};
+});
+
+GD(12,3,0,'VD','Doanh thu biên R\'(x) = a − 2bx, chi phí biên C\'(x) = c, chi phí cố định: R(x), P(x), sản lượng tối ưu, lợi nhuận lớn nhất', R=>{
+  const b = R.pick([1, 2, 3]), x0 = R.pick([10, 15, 20, 25, 30]), c = R.pick([10, 20, 30]), a = c + 2*b*x0, F = R.pick([50, 100, 200]), Rv = x=> a*x - b*x*x, Pv = x=> Rv(x) - c*x - F;
+  return {stem:`Một cơ sở có doanh thu biên $R'(x) = ${a} - ${2*b}x$ và chi phí biên $C'(x) = ${c}$ (triệu đồng/tấn), chi phí cố định $${F}$ triệu đồng, $R(0) = 0$.`,
+    items:[claim(R, `$R(x) = ${a}x - ${b === 1 ? '' : b}x^{2}$`, `$R(x) = ${a}x - ${2*b}x^{2}$`, ()=> ngIs(Rv, x=> a - 2*b*x), ()=> ngIs(x=> a*x - 2*b*x*x, x=> a - 2*b*x)),
+      claim(R, `Lợi nhuận $P(x) = ${ktP([-b, a - c, -F], 'x')}$`, `Lợi nhuận $P(x) = ${ktP([-b, a - c, F], 'x')}$`, ()=> near(Pv(7), -b*49 + (a - c)*7 - F, 1e-9), ()=> near(Pv(7), -b*49 + (a - c)*7 + F, 1e-9)),
+      claimN(R, m=> `Lợi nhuận lớn nhất khi sản lượng là $${m}$ tấn`, x0, String(x0), 2*x0, String(2*x0), ()=> (a - c)/(2*b)),
+      claimN(R, m=> `Lợi nhuận lớn nhất bằng $${m}$ triệu đồng`, Pv(x0), String(Pv(x0)), Rv(x0), String(Rv(x0)), ()=> Pv((a - c)/(2*b)))],
+    lg:`a) $R$ là nguyên hàm của $R'$, $R(0) = 0$.<br>b) $C(x) = ${c}x + ${F}$, $P(x) = R(x) - C(x)$.<br>c) $P'(x) = ${a - c} - ${2*b}x = 0$ khi $x = ${x0}$, đổi dấu từ dương sang âm.<br>d) $P(${x0}) = ${Pv(x0)}$ (triệu đồng).`};
+});
+
+GD(12,3,0,'VD','Nồng độ thuốc C\'(t) = a − 2bt (C(0) = 0): công thức C, thời điểm cao nhất, nồng độ cao nhất, thời điểm thuốc hết', R=>{
+  const b = R.pick([1, 2, 3]), t0 = R.pick([2, 3, 4, 5, 6]), a = 2*b*t0, C = t=> a*t - b*t*t, Mx = C(t0), Te = 2*t0;
+  return {stem:`Nồng độ một loại thuốc trong máu thay đổi với tốc độ $C'(t) = ${ktP([-2*b, a])}$ (mg/l mỗi giờ), $t$ tính bằng giờ, $C(0) = 0$.`,
+    items:[claim(R, `$C(t) = ${ktP([-b, a, 0])}$ (mg/l)`, `$C(t) = ${ktP([-2*b, a, 0])}$ (mg/l)`, ()=> ngIs(C, t=> a - 2*b*t), ()=> ngIs(t=> -2*b*t*t + a*t, t=> a - 2*b*t)),
+      claimN(R, m=> `Nồng độ đạt cao nhất tại thời điểm $t = ${m}$ giờ`, t0, String(t0), Te, String(Te), ()=> a/(2*b)),
+      claimN(R, m=> `Nồng độ cao nhất là $${m}$ mg/l`, Mx, String(Mx), a, String(a), ()=> C(t0)),
+      claimN(R, m=> `Nồng độ trở về $0$ tại thời điểm $t = ${m}$ giờ`, Te, String(Te), t0, String(t0), ()=> a/b)],
+    lg:`a) $C$ là nguyên hàm của $C'$, $C(0) = 0$.<br>b) $C'(t)$ đổi dấu từ dương sang âm tại $t = ${t0}$.<br>c) $C(${t0}) = ${Mx}$ (mg/l).<br>d) $C(t) = ${ktS(-b)}t(t - ${Te})$ bằng $0$ tại $t = ${Te}$.`};
+});
+
+GD(12,3,0,'TH','Nhiệt độ T\'(t) = k(14 − t) trong ngày: đơn điệu, cao nhất lúc 14 giờ, nhiệt độ lúc 10 giờ và 18 giờ bằng nhau', R=>{
+  const k = R.pick([0.25, 0.5, 1]), T6 = R.pick([16, 18, 20, 22]), T = t=> T6 + k*(14*(t - 6) - (t*t - 36)/2), Hi = T(14), v10 = T(10), v18 = T(18);
+  return {stem:`Nhiệt độ ngoài trời trong ngày thay đổi với tốc độ $T'(t) = ${nt(k)}(14 - t)$ (°C/giờ), $6 \\le t \\le 20$, $t$ là giờ trong ngày, $T(6) = ${T6}$ °C.`.replace('= 1(', '= ('),
+    items:[claim(R, `Nhiệt độ tăng dần từ $6$ giờ đến $14$ giờ`, `Nhiệt độ giảm dần từ $6$ giờ đến $14$ giờ`, ()=> k*(14 - 10) > 0, ()=> k*(14 - 10) < 0),
+      claimN(R, m=> `Nhiệt độ cao nhất trong ngày là $${m}$ °C`, Hi, nt(Hi).replace('{,}', '.'), T6, String(T6), ()=> T6 + ngSi(t=> k*(14 - t), 6, 14)),
+      claimN(R, m=> `Nhiệt độ lúc $10$ giờ là $${m}$ °C`, v10, nt(v10).replace('{,}', '.'), Hi, nt(Hi).replace('{,}', '.'), ()=> T6 + ngSi(t=> k*(14 - t), 6, 10)),
+      claim(R, `Nhiệt độ lúc $10$ giờ bằng nhiệt độ lúc $18$ giờ`, `Nhiệt độ lúc $18$ giờ cao hơn nhiệt độ lúc $10$ giờ`, ()=> near(v10, v18, 1e-9), ()=> v18 > v10 + 1e-9)],
+    lg:`a) $T'(t) > 0$ khi $t < 14$.<br>b) $T(14) = ${nt(Hi)}$ (°C).<br>c) $T(10) = ${nt(v10)}$ (°C).<br>d) $T(t)$ là parabol có trục $t = 14$ nên $T(10) = T(18)$.`};
+});
+
+GD(12,3,0,'TH','Máy khấu hao V\'(t) = −a, V(0) = V₀: công thức, sau T năm, thời điểm giá trị còn một nửa, thời điểm bằng 0', R=>{
+  const a = R.pick([20, 25, 40, 50]), n = R.pick([8, 10, 12]), V0 = a*n, V = t=> V0 - a*t, T = R.pick([2, 3, 4, 5]);
+  return {stem:`Một máy có giá $${V0}$ triệu đồng, giá trị giảm với tốc độ $V'(t) = -${a}$ (triệu đồng/năm), $t$ tính bằng năm.`,
+    items:[claim(R, `$V(t) = ${V0} - ${a}t$`, `$V(t) = ${V0} - ${a}t^{2}$`, ()=> ngIs(V, ()=> -a), ()=> ngIs(t=> V0 - a*t*t, ()=> -a)),
+      claimN(R, m=> `Sau $${T}$ năm giá trị máy là $${m}$ triệu đồng`, V(T), String(V(T)), a*T, String(a*T), ()=> V0 + ngSi(()=> -a, 0, T)),
+      claimN(R, m=> `Giá trị máy còn một nửa sau $${m}$ năm`, n/2, String(n/2), n, String(n), ()=> V0/2/a),
+      claimN(R, m=> `Giá trị máy bằng $0$ sau $${m}$ năm`, n, String(n), 2*n, String(2*n), ()=> V0/a)],
+    lg:`a) Lấy nguyên hàm, $V(0) = ${V0}$.<br>b) $V(${T}) = ${V(T)}$.<br>c) $${V0} - ${a}t = ${V0/2}$ khi $t = ${n/2}$.<br>d) $${V0} - ${a}t = 0$ khi $t = ${n}$.`};
+});
+
+GD(12,3,0,'TH','Dân số P\'(t) = a + bt: P(10), P(0), mức tăng trong năm thứ 11, tốc độ tăng năm 2030', R=>{
+  const a = R.pick([1, 2, 3]), b = R.pick([0.2, 0.4]), P0 = R.pick([50, 80, 100]), P = t=> P0 + a*t + b/2*t*t, v10 = P(10), r10 = a + 10*b, y11 = P(11) - P(10);
+  return {stem:`Dân số một vùng tăng với tốc độ $P'(t) = ${a} + ${nt(b)}t$ (nghìn người/năm), $t$ tính bằng năm kể từ 2020, $P(0) = ${P0}$ (nghìn người).`,
+    items:[claim(R, `$P(t) = ${nt(b/2)}t^{2} + ${a === 1 ? '' : a}t + ${P0}$`, `$P(t) = ${nt(b)}t^{2} + ${a === 1 ? '' : a}t + ${P0}$`, ()=> ngIs(P, t=> a + b*t), ()=> ngIs(t=> b*t*t + a*t + P0, t=> a + b*t)),
+      claimN(R, m=> `Dân số năm 2030 là $${m}$ nghìn người`, v10, nt(v10).replace('{,}', '.'), v10 + 10, nt(v10 + 10).replace('{,}', '.'), ()=> ngRd(P0 + ngSi(t=> a + b*t, 0, 10))),
+      claimN(R, m=> `Tốc độ tăng dân số năm 2030 là $${m}$ nghìn người/năm`, r10, nt(r10).replace('{,}', '.'), v10, nt(v10).replace('{,}', '.'), ()=> ngRd(a + 10*b)),
+      claim(R, `Mức tăng dân số từ năm 2030 đến năm 2031 lớn hơn tốc độ tăng dân số năm 2030`, `Mức tăng dân số từ năm 2030 đến năm 2031 nhỏ hơn tốc độ tăng dân số năm 2030`, ()=> y11 > r10, ()=> y11 < r10)],
+    lg:`a) $P$ là nguyên hàm của $P'$, $P(0) = ${P0}$.<br>b) $P(10) = ${nt(v10)}$.<br>c) $P'(10) = ${nt(r10)}$.<br>d) $P(11) - P(10) = ${nt(ngRd(y11))} > ${nt(r10)}$ vì tốc độ tăng dần theo thời gian.`};
+});
+
+GD(12,3,0,'VD','Pin sạc Q\'(t) = a − bt (%/phút) từ Q₀: Q(t), mức pin sau 20 phút, sạc chậm dần, thời điểm tốc độ bằng 0', R=>{
+  const b = R.pick([0.05, 0.1]), a = R.pick([2, 3]), Q0 = R.pick([10, 20, 30]), Q = t=> Q0 + a*t - b/2*t*t, v = Q(20), te = a/b;
+  return {stem:`Pin một điện thoại ở mức $${Q0}\\%$ được sạc với tốc độ $Q'(t) = ${a} - ${nt(b)}t$ ($\\%$/phút), $t$ tính bằng phút.`,
+    items:[claim(R, `$Q(t) = ${Q0} + ${a}t - ${nt(b/2)}t^{2}$`, `$Q(t) = ${Q0} + ${a}t - ${nt(b)}t^{2}$`, ()=> ngIs(Q, t=> a - b*t), ()=> ngIs(t=> Q0 + a*t - b*t*t, t=> a - b*t)),
+      claimN(R, m=> `Sau $20$ phút pin ở mức $${m}\\%$`, v, nt(v).replace('{,}', '.'), v + 10, nt(v + 10).replace('{,}', '.'), ()=> ngRd(Q0 + ngSi(t=> a - b*t, 0, 20))),
+      claim(R, `Tốc độ sạc giảm dần theo thời gian`, `Tốc độ sạc tăng dần theo thời gian`, ()=> a - b*5 > a - b*10, ()=> a - b*5 < a - b*10),
+      claimN(R, m=> `Tốc độ sạc bằng $0$ tại thời điểm $t = ${m}$ phút`, te, String(te), te/2, String(te/2), ()=> a/b)],
+    lg:`a) $Q$ là nguyên hàm của $Q'$, $Q(0) = ${Q0}$.<br>b) $Q(20) = ${nt(v)}$.<br>c) $Q'(t)$ nghịch biến.<br>d) $${a} - ${nt(b)}t = 0$ khi $t = ${te}$.`};
+});
+
+GD(12,3,0,'TH','Cây cao h\'(t) = k/√t: công thức h, h(4), h(9), mức tăng chậm dần', R=>{
+  const k = R.pick([1, 2, 3, 4]), c = R.pick([10, 15, 20, 30]), h = t=> 2*k*Math.sqrt(t) + c - 2*k;
+  return {stem:`Một cây non có tốc độ tăng chiều cao $h'(t) = \\dfrac{${k}}{\\sqrt{t}}$ (cm/tuần), $t \\ge 1$ tính bằng tuần, $h(1) = ${c}$ (cm).`,
+    items:[claim(R, `$h(t) = ${2*k}\\sqrt{t}${c - 2*k ? ngSg(c - 2*k) : ''}$`, `$h(t) = ${ktS(k)}\\sqrt{t}${ngSg(c - k)}$`, ()=> ngIs(h, t=> k/Math.sqrt(t), [1.5, 2, 4]), ()=> ngIs(t=> k*Math.sqrt(t) + c - k, t=> k/Math.sqrt(t), [1.5, 2, 4])),
+      claimN(R, m=> `$h(4) = ${m}$ (cm)`, h(4), String(h(4)), h(4) + k, String(h(4) + k), ()=> ngRd(h(4))),
+      claimN(R, m=> `$h(9) = ${m}$ (cm)`, h(9), String(h(9)), h(9) + 2*k, String(h(9) + 2*k), ()=> ngRd(h(9))),
+      claim(R, `Tốc độ tăng chiều cao giảm dần theo thời gian`, `Tốc độ tăng chiều cao tăng dần theo thời gian`, ()=> k/Math.sqrt(2) > k/Math.sqrt(3), ()=> k/Math.sqrt(2) < k/Math.sqrt(3))],
+    lg:`a) $h(t) = ${2*k}\\sqrt{t} + C$, $h(1) = ${c}$ cho $C = ${c - 2*k}$.<br>b) $h(4) = ${h(4)}$ (cm).<br>c) $h(9) = ${h(9)}$ (cm).<br>d) $h'(t) = \\dfrac{${k}}{\\sqrt{t}}$ nghịch biến.`};
+});
+
+/* ———— TLN ———— */
+GT(12,3,0,'TH','Nước chảy vào bể r(t) = a + bt, tính lượng nước sau T phút (lít)', R=>{
+  const a = R.int(1, 9), b = R.pick([1, 2, 3, 4]), V0 = R.pick([10, 20, 30, 50]), T = R.pick([4, 6, 8, 10, 12]), v = V0 + a*T + b*T*T/2;
+  const o = {stem:`Nước chảy vào bể với tốc độ $r(t) = ${ktP([b, a])}$ (lít/phút), $t$ tính bằng phút. Ban đầu bể có $${V0}$ lít. Tính lượng nước (lít) trong bể sau $${T}$ phút.`, ans:v,
+    lg:`$V(t) = ${ktP([qr(b, 2), a, V0])}$.<br>$V(${T}) = ${nt(v)}$ (lít).`,
+    verify:()=> near(o.ans, V0 + ngSi(t=> a + b*t, 0, T), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'TH','Chi phí biên C\'(x) = a + bx với chi phí cố định: chi phí sản xuất x sản phẩm (triệu đồng)', R=>{
+  const a = R.pick([1, 2, 3, 4, 5]), b = R.pick([0.2, 0.4, 0.5, 1]), C0 = R.pick([10, 20, 30, 50]), x = R.pick([10, 20, 30, 40]), v = C0 + a*x + b/2*x*x; if(String(v).length > 4) return null;
+  const o = {stem:`Một xưởng có chi phí biên $C'(x) = ${a} + ${nt(b)}x$ (triệu đồng/tấn), chi phí cố định $${C0}$ triệu đồng. Tính chi phí (triệu đồng) khi sản xuất $${x}$ tấn.`.replace('+ 1x', '+ x'), ans:v,
+    lg:`$C(x) = ${nt(b/2)}x^{2} + ${a === 1 ? '' : a}x + ${C0}$.<br>$C(${x}) = ${nt(v)}$ (triệu đồng).`,
+    verify:()=> near(o.ans, C0 + ngSi(u=> a + b*u, 0, x), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','Doanh thu biên, chi phí biên: sản lượng cho lợi nhuận lớn nhất', R=>{
+  const b = R.pick([0.5, 1, 2]), x0 = R.int(10, 60), c = R.pick([5, 10, 15, 20]), a = c + b*x0;
+  const o = {stem:`Một cơ sở có doanh thu biên $R'(x) = ${nt(a)} - ${nt(b)}x$ và chi phí biên $C'(x) = ${c}$ (triệu đồng/tấn). Tính sản lượng $x$ (tấn) để lợi nhuận lớn nhất.`.replace('- 1x', '- x'), ans:x0,
+    lg:`$P'(x) = R'(x) - C'(x) = ${nt(a - c)} - ${nt(b)}x$, đổi dấu từ dương sang âm tại $x = ${x0}$.`.replace('- 1x', '- x'),
+    verify:()=> near(a - b*o.ans, c, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nồng độ thuốc C\'(t) = a − 2bt: nồng độ cao nhất (mg/l)', R=>{
+  const b = R.pick([1, 2, 3, 5]), t0 = R.int(2, 8), a = 2*b*t0, v = b*t0*t0;
+  const o = {stem:`Nồng độ thuốc trong máu thay đổi với tốc độ $C'(t) = ${ktP([-2*b, a])}$ (mg/l mỗi giờ), $t$ tính bằng giờ, $C(0) = 0$. Tính nồng độ thuốc cao nhất (mg/l).`, ans:v,
+    lg:`$C(t) = ${ktP([-b, a, 0])}$, $C'(t)$ đổi dấu tại $t = ${t0}$.<br>Nồng độ cao nhất là $C(${t0}) = ${v}$ (mg/l).`,
+    verify:()=> near(o.ans, ngSi(t=> a - 2*b*t, 0, t0), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','Nhiệt độ T\'(t) = k(14 − t): nhiệt độ cao nhất trong ngày, biết T(6)', R=>{
+  const k = R.pick([0.25, 0.5, 0.75, 1]), T6 = R.int(14, 28), v = T6 + 32*k;
+  const o = {stem:`Nhiệt độ ngoài trời thay đổi với tốc độ $T'(t) = ${nt(k)}(14 - t)$ (°C/giờ), $6 \\le t \\le 20$, $t$ là giờ trong ngày. Lúc $6$ giờ nhiệt độ là $${T6}$ °C. Tính nhiệt độ cao nhất (°C) trong khoảng đó.`.replace('= 1(', '= ('), ans:v,
+    lg:`$T'(t)$ đổi dấu từ dương sang âm tại $t = 14$.<br>$T(14) = ${T6} + ${nt(k)}\\left(14\\cdot 8 - \\dfrac{14^{2} - 6^{2}}{2}\\right) = ${nt(v)}$ (°C).`.replace('+ 1\\left', '+ \\left'),
+    verify:()=> near(o.ans, T6 + ngSi(t=> k*(14 - t), 6, 14), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'TH','Lợi nhuận biên P\'(x) = a − bx: lợi nhuận tăng thêm khi sản lượng tăng từ x₁ lên x₂', R=>{
+  const a = R.pick([30, 40, 50, 60]), b = R.pick([1, 2]), x1 = R.pick([2, 4, 6, 8]), x2 = x1 + R.pick([2, 4, 6]), v = a*(x2 - x1) - b/2*(x2*x2 - x1*x1); if(v <= 0) return null;
+  const o = {stem:`Một doanh nghiệp có lợi nhuận biên $P'(x) = ${a} - ${b === 1 ? '' : b}x$ (triệu đồng/tấn). Tính phần lợi nhuận tăng thêm (triệu đồng) khi tăng sản lượng từ $${x1}$ tấn lên $${x2}$ tấn.`, ans:v,
+    lg:`$P(x) = ${a}x - ${b === 2 ? '' : nt(b/2)}x^{2} + C$.<br>$P(${x2}) - P(${x1}) = ${nt(v)}$ (triệu đồng).`,
+    verify:()=> near(o.ans, ngSi(x=> a - b*x, x1, x2), 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'TH','Số người biết tin N\'(t) = a/t: N(e²) (đơn vị trăm người)', R=>{
+  const a = R.pick([1, 2, 3, 4, 5, 6, 7, 8, 9]), n = R.int(1, 9), v = 2*a + n;
+  const o = {stem:`Số người (tính bằng trăm người) biết một thông tin tăng với tốc độ $N'(t) = ${ngTx([[a, ngX(-1)]], 't')}$ (trăm người/ngày), $t \\ge 1$ tính bằng ngày. Sau ngày đầu có $${n}$ trăm người biết. Tính số trăm người biết tin sau $e^{2}$ ngày.`, ans:v,
+    lg:`$N(t) = ${ktS(a)}\\ln t + ${n}$.<br>$N(e^{2}) = ${2*a} + ${n} = ${v}$ (trăm người).`,
+    verify:()=> near(o.ans, n + ngSi(t=> a/t, 1, Math.E**2, 8000), 1e-5)};
+  return o;
+});
+
+GT(12,3,0,'VD','Bể rò V\'(t) = −kt: thời gian cạn (giờ)', R=>{
+  const k = R.pick([2, 4, 6, 8, 10]), T = R.int(3, 18), V0 = k/2*T*T; if(String(V0).length > 4) return null;
+  const o = {stem:`Một thùng chứa $${V0}$ lít nước bị rò với tốc độ $V'(t) = -${k}t$ (lít/giờ), $t$ tính bằng giờ. Sau bao nhiêu giờ thùng cạn?`, ans:T,
+    lg:`$V(t) = ${V0} - ${k === 2 ? '' : k/2}t^{2}$. Giải $V(t) = 0$ với $t > 0$ được $t = ${T}$ (giờ).`,
+    verify:()=> near(V0 + ngSi(t=> -k*t, 0, o.ans), 0, 1e-7)};
+  return o;
+});
+
+GT(12,3,0,'VD','Pin sạc: sau bao nhiêu phút mức pin đạt 100%', R=>{
+  const b = R.pick([0.02, 0.04, 0.05, 0.1, 0.25]), T = R.pick([4, 8, 10, 12, 15, 16, 20, 25, 30, 35, 40, 45, 50, 60]), a = R.pick([2, 2.5, 3, 3.5, 5, 6, 7, 8]), rise = a*T - b/2*T*T, Q0 = ngRou(100 - rise, 6); if(Q0 < 0 || Q0 > 70 || a - b*T <= 0 || !Number.isInteger(Q0)) return null;
+  const o = {stem:`Pin một điện thoại ở mức $${Q0}\\%$ được sạc với tốc độ $Q'(t) = ${nt(a)} - ${nt(b)}t$ ($\\%$/phút), $t$ tính bằng phút. Sau bao nhiêu phút pin đạt $100\\%$ (lấy nghiệm nhỏ hơn)?`, ans:T,
+    lg:`$Q(t) = ${Q0} + ${nt(a)}t - ${nt(b/2)}t^{2}$.<br>Giải $Q(t) = 100$, nghiệm nhỏ là $t = ${T}$ (phút).`,
+    verify:()=> near(Q0 + ngSi(t=> a - b*t, 0, o.ans), 100, 1e-6)};
+  return o;
+});
+
+GT(12,3,0,'TH','Công suất điện P(t) = a + bt: điện năng tiêu thụ trong T giờ (kWh)', R=>{
+  const a = R.int(1, 9), b = R.pick([0.5, 1, 1.5, 2]), T = R.pick([2, 4, 6, 8, 10]), v = a*T + b*T*T/2;
+  const o = {stem:`Một phân xưởng có công suất điện $P(t) = ${a} + ${nt(b)}t$ (kW), $t$ tính bằng giờ, điện năng $A(t)$ là nguyên hàm của $P(t)$, $A(0) = 0$. Tính điện năng (kWh) tiêu thụ trong $${T}$ giờ đầu.`.replace('+ 1t', '+ t'), ans:v,
+    lg:`$A(t) = ${a === 1 ? '' : a}t + ${nt(b/2)}t^{2}$.<br>$A(${T}) = ${nt(v)}$ (kWh).`.replace('+ 1t', '+ t'),
+    verify:()=> near(o.ans, ngSi(t=> a + b*t, 0, T), 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Lượng nước hồ V\'(t) = a − bt: lượng nước lớn nhất khi V\' đổi dấu (nghìn m³)', R=>{
+  const b = R.pick([2, 4, 5, 6]), t0 = R.int(4, 12), a = b*t0, V0 = R.pick([100, 200, 300]), v = V0 + b*t0*t0/2; if(String(v).length > 4) return null;
+  const o = {stem:`Lượng nước trong hồ thay đổi với tốc độ $V'(t) = ${ktP([-b, a])}$ (nghìn m$^{3}$/ngày), $t$ tính bằng ngày, ban đầu có $${V0}$ nghìn m$^{3}$. Tính lượng nước lớn nhất (nghìn m$^{3}$) của hồ.`, ans:v,
+    lg:`$V'(t)$ đổi dấu từ dương sang âm tại $t = ${t0}$.<br>$V(t) = ${ktP([qr(-b, 2), a, V0])}$, $V(${t0}) = ${v}$ (nghìn m$^{3}$).`,
+    verify:()=> near(o.ans, V0 + ngSi(t=> a - b*t, 0, t0), 1e-8)};
+  return o;
+});
+
+GT(12,3,0,'VD','Hai bể: bể A cạn dần V\'_A = −a, bể B đầy dần V\'_B = b: thời điểm hai bể bằng nhau', R=>{
+  const a = R.pick([2, 3, 4, 5]), b = R.pick([1, 2, 3]), T = R.int(5, 25), B0 = R.pick([10, 20, 30]), A0 = B0 + (a + b)*T;
+  const o = {stem:`Bể A có $${A0}$ lít nước, xả ra với tốc độ $${a}$ lít/phút; bể B có $${B0}$ lít, được bơm vào với tốc độ $${b}$ lít/phút. Sau bao nhiêu phút lượng nước hai bể bằng nhau?`, ans:T,
+    lg:`$V_{A}(t) = ${A0} - ${a}t$, $V_{B}(t) = ${B0} + ${b === 1 ? '' : b}t$.<br>Giải $V_{A}(t) = V_{B}(t)$ được $t = ${T}$ (phút).`,
+    verify:()=> near(A0 - a*o.ans, B0 + b*o.ans, 1e-9)};
+  return o;
+});
+
+GT(12,3,0,'VD','Số ca nhiễm N\'(t) = t(k − t): tổng số ca tích luỹ tới ngày k (nguyên hàm, k chia hết cho 6)', R=>{
+  const k = R.pick([6, 12, 18, 24]), m = R.pick([1, 2, 3]), v = m*k**3/6; if(String(v).length > 4) return null;
+  const o = {stem:`Trong một đợt dịch, tốc độ tăng số ca nhiễm tích luỹ là $N'(t) = ${ktS(m)}t(${k} - t)$ (ca/ngày), $0 \\le t \\le ${k}$, $N(0) = 0$. Tính tổng số ca nhiễm tích luỹ đến ngày thứ $${k}$.`, ans:v,
+    lg:`$N(t) = ${ktP([qr(-m, 3), qr(m*k, 2), 0, 0])}$.<br>$N(${k}) = ${v}$ (ca).`,
+    verify:()=> near(o.ans, ngSi(t=> m*t*(k - t), 0, k), 1e-6)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.49'; GEN[k].l1 = 'V2.49'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
