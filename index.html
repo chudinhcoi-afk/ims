@@ -4,11 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IMs — Infinity Maths</title>
-<meta name="theme-color" content="#1d2b53">
+<meta name="theme-color" content="#16213e">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
 <link rel="stylesheet" href="engine.css">
 <link rel="stylesheet" href="app.css">
@@ -16,15 +21,35 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
 </head>
 <body class="ims">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-luyen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+    <symbol id="i-lotrinh" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"/></symbol>
+    <symbol id="i-de" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-sai" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-tiendo" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-max" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8Z"/></symbol>
+  </defs>
+</svg>
+<nav class="side" id="tabs" aria-label="Điều hướng chính">
+  <div class="brand side-brand"><span class="logo">∞</span><span><b>IMs</b><small>Infinity Maths</small></span></div>
+  <a href="#/luyen" data-t="luyen"><svg><use href="#i-luyen"/></svg><span>Luyện tập</span></a>
+  <a href="#/lotrinh" data-t="lotrinh"><svg><use href="#i-lotrinh"/></svg><span>Lộ trình</span></a>
+  <a href="#/de" data-t="de"><svg><use href="#i-de"/></svg><span>Làm đề</span></a>
+  <a href="#/sai" data-t="sai"><svg><use href="#i-sai"/></svg><span>Lỗi sai</span></a>
+  <a href="#/tiendo" data-t="tiendo"><svg><use href="#i-tiendo"/></svg><span>Tiến độ</span></a>
+  <div class="side-foot" id="sideFoot"></div>
+</nav>
 <header class="top"><div class="brand"><span class="logo">∞</span><b>IMs</b><small>Infinity Maths</small></div><div id="topRight"></div></header>
 <main id="view"><div class="loading">Đang tải bộ câu hỏi…</div></main>
-<nav class="tabs" id="tabs">
-  <a href="#/luyen" data-t="luyen"><i>✎</i>Luyện tập</a>
-  <a href="#/lotrinh" data-t="lotrinh"><i>◎</i>Lộ trình</a>
-  <a href="#/de" data-t="de"><i>▤</i>Làm đề</a>
-  <a href="#/sai" data-t="sai"><i>↻</i>Lỗi sai</a>
-  <a href="#/tiendo" data-t="tiendo"><i>▲</i>Tiến độ</a>
-</nav>
+<div id="gate" class="gate" hidden></div>
+<div id="modal" class="modal" hidden></div>
 <script src="firebase-config.js"></script>
 <script src="cloud.js"></script>
 <script src="engine.js"></script>
