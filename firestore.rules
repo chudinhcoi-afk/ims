@@ -70,16 +70,17 @@ service cloud.firestore {
     function okSeatId(n) { return n.matches('^([0-9]|[1-3][0-9]|4[0-7])$') || (n == '48' && isAdmin()); }
     function okSeatDoc(d) { return d.keys().hasOnly(['uid', 'at']) && d.uid == request.auth.uid && d.at == request.time; }
     function inPair(pair) { return signedIn() && pair.split('_').size() == 2 && request.auth.uid in pair.split('_'); }
+    function blkPath(uid) { return /databases/$(database)/documents/blocks/$(uid); }
     function okMsg(room, pair, m) {
-      let me = presPath(room, request.auth.uid);
-      let blk = /databases/$(database)/documents/blocks/$(m.to);
       return m.keys().hasOnly(['from', 'to', 'text', 'at'])
         && m.from == request.auth.uid && m.to is string && m.to != m.from && m.to in pair.split('_')
         && m.text is string && m.text.size() > 0 && m.text.size() <= 200
         && m.at == request.time
-        && exists(me) && getAfter(me).data.get('lm', null) == request.time
-        && (get(me).data.get('lm', null) == null || get(me).data.lm < request.time - duration.value(2, 's'))
-        && (!exists(blk) || !(request.auth.uid in get(blk).data.u));
+        && exists(presPath(room, request.auth.uid))
+        && getAfter(presPath(room, request.auth.uid)).data.get('lm', null) == request.time
+        && (get(presPath(room, request.auth.uid)).data.get('lm', null) == null
+            || get(presPath(room, request.auth.uid)).data.lm < request.time - duration.value(2, 's'))
+        && (!exists(blkPath(m.to)) || !(request.auth.uid in get(blkPath(m.to)).data.u));
     }
     match /classrooms/{room} {
       allow read: if signedIn() && okRoom(room);
