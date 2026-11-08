@@ -1,6 +1,6 @@
-// IMs service worker (0.2; 0.5: lưu cả phông chữ Be Vietnam Pro): lưu app + bộ câu hỏi vào máy để luyện khi mất mạng; có bản mới thì tự cập nhật ở lần mở sau
-const CACHE = 'ims-v0-5';
-const CORE = ['./', 'index.html', 'app.css', 'app.js', 'engine.js', 'engine.css', 'pack.json', 'cloud.js', 'firebase-config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png',
+// IMs service worker (0.2; 0.5: lưu cả phông chữ Be Vietnam Pro; 0.6: thêm lớp học 2D): lưu app + bộ câu hỏi vào máy để luyện khi mất mạng; có bản mới thì tự cập nhật ở lần mở sau
+const CACHE = 'ims-v0-6';
+const CORE = ['./', 'index.html', 'app.css', 'app.js', 'engine.js', 'engine.css', 'pack.json', 'cloud.js', 'classroom.js', 'classroom.css', 'firebase-config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png',
   'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js'];
 self.addEventListener('install', e=> e.waitUntil(caches.open(CACHE).then(c=> c.addAll(CORE.map(u=> new Request(u, {cache:'reload'})))).then(()=> self.skipWaiting())));
 self.addEventListener('activate', e=> e.waitUntil(caches.keys().then(ks=> Promise.all(ks.filter(k=> k !== CACHE).map(k=> caches.delete(k)))).then(()=> self.clients.claim())));

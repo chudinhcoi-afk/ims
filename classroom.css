@@ -1,0 +1,115 @@
+/* IMs 0.6 — Lớp học 2D (#/lophoc). Canvas phủ kín vùng nội dung; các nút nổi phía trên (lớp, công cụ), phía dưới (thanh hành động), bảng chọn và khung chat. */
+body.ims.lop main{padding:0;overflow:hidden}
+.ims .lop{position:absolute;inset:0;overflow:hidden;background:#e9edf5;user-select:none;-webkit-user-select:none}
+.ims .lop canvas#lopCv{position:absolute;inset:0;display:block;touch-action:none;-webkit-touch-callout:none}
+.ims .lop .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* thanh trên: chọn lớp + công cụ */
+.ims .lop-top{position:absolute;left:0;right:0;top:0;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding:10px 12px;pointer-events:none;z-index:3}
+.ims .lop-top > *{pointer-events:auto}
+.ims .lop-room{display:flex;flex-direction:column;align-items:flex-start;gap:0;border:0;border-radius:14px;padding:7px 14px 7px 12px;background:var(--navy);color:#fff;font:600 14px/1.25 var(--font);cursor:pointer;box-shadow:var(--sh2);text-align:left;max-width:60vw}
+.ims .lop-room b{font-size:15px;display:flex;align-items:center;gap:6px}
+.ims .lop-room b::after{content:"";width:6px;height:6px;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(45deg);margin:-3px 0 0 2px}
+.ims .lop-room span{font-size:12px;color:#aeb8d6;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.ims .lop-tools{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.ims .lop-tools > span:not([hidden]){display:flex;gap:6px}
+.ims .lop-tools .btn.sm{box-shadow:var(--sh);padding:8px 12px;font-size:13.5px}
+.ims .lzoom{display:inline-flex;background:#fff;border:1px solid var(--line2);border-radius:12px;overflow:hidden;box-shadow:var(--sh)}
+.ims .lzoom button{border:0;background:transparent;width:36px;height:35px;font:700 17px/1 var(--font);color:var(--navy);cursor:pointer}
+.ims .lzoom button + button{border-left:1px solid var(--line)}
+.ims .lzoom button:hover{background:#f3f5fa}
+@media (hover:none){.ims .lzoom{display:none}}
+
+.ims .lop-demo{position:absolute;left:0;right:0;margin:0 auto;width:max-content;top:62px;z-index:2;background:var(--gold2);border:1px solid #efd99a;color:#5c4700;border-radius:999px;padding:5px 14px;font-size:12.5px;white-space:nowrap;box-shadow:var(--sh);max-width:calc(100% - 24px);overflow:hidden;text-overflow:ellipsis}
+.ims .lop-demo a{color:var(--navy);font-weight:700}
+@media (max-width:560px){.ims .lop-demo{white-space:normal;text-align:center;border-radius:12px;top:auto;bottom:74px;width:auto;left:12px;right:12px}}
+
+.ims .lop-toast{position:absolute;left:0;right:0;margin:0 auto;width:max-content;top:104px;transform:translateY(-8px);opacity:0;z-index:6;display:flex;align-items:center;gap:10px;max-width:min(520px,calc(100% - 24px));background:var(--navy);color:#fff;border-radius:14px;padding:10px 12px 10px 16px;font-size:14px;box-shadow:var(--sh2);transition:opacity .2s,transform .2s}
+.ims .lop-toast.in{opacity:1;transform:none}
+.ims .lop-toast.out{opacity:0}
+.ims .lop-toast .btn{flex:none}
+
+/* thanh hành động dưới */
+.ims .lop-bar{position:absolute;left:0;right:0;margin:0 auto;width:max-content;bottom:12px;z-index:3;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:nowrap;max-width:calc(100% - 16px);padding:6px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh2);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ims .lop-bar .btn{padding:11px 16px;font-size:15px;white-space:nowrap;position:relative}
+.ims .lop-bar .btn.ico{padding:10px 12px;font-size:18px;line-height:1}
+.ims .lop-bar .lhint{font-size:13.5px;color:var(--muted);padding:0 8px;line-height:1.35;min-width:0}
+.ims .lop-bar .lhint b{color:var(--navy)}
+.ims .lav{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid rgba(255,255,255,.85);box-shadow:0 0 0 1px rgba(20,27,45,.2);flex:none}
+.ims .dot{position:absolute;top:-5px;right:-5px;min-width:18px;height:18px;border-radius:9px;background:var(--bad);color:#fff;font:700 11px/18px var(--font);font-style:normal;text-align:center;padding:0 4px}
+@media (max-width:560px){
+  .ims .lop-bar{left:8px;right:8px;width:auto;max-width:none;bottom:8px;border-radius:16px}
+  .ims .lop-bar .btn{padding:10px 12px;font-size:14.5px;flex:1 1 auto;min-width:0}
+  .ims .lop-bar .btn.ico{flex:none}
+  .ims .lop-bar .lhint{flex:1;font-size:12.5px}
+  .ims .lop-top{padding:8px}
+  .ims .lop-tools .btn.sm{padding:7px 10px;font-size:13px}
+}
+
+/* bảng chọn */
+.ims .lop-sheet{position:absolute;z-index:5;left:50%;bottom:76px;transform:translateX(-50%);width:min(420px,calc(100% - 16px));max-height:calc(100% - 140px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 18px 16px;box-shadow:var(--sh2);animation:lopIn .18s ease-out}
+.ims .lop-sheet h3{margin:0 0 6px;font-size:18px;color:var(--navy);font-weight:800;padding-right:30px}
+.ims .lop-sheet .muted{margin:0 0 12px}
+.ims .lop-sheet .seg{margin:0 0 10px}
+.ims .lop-sheet .fl{display:block;margin:0 0 10px}
+.ims .lop-sheet .fl span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:0 0 4px}
+.ims .lop-sheet .inp{width:100%;border:1.5px solid var(--line2);border-radius:12px;padding:10px 12px;font:16px/1.3 var(--font);background:#fff;color:var(--ink)}
+.ims .lop-sheet .inp:focus{outline:none;border-color:var(--acc)}
+.ims .lop-sheet .row{margin-top:4px}
+.ims .lop-sheet .lrow{display:flex;gap:8px}
+.ims .lop-sheet .lrow .inp{flex:1;min-width:0}
+.ims .lop-sheet .lrow .btn{flex:none}
+.ims .lop-sheet.emo{width:auto;padding:8px 44px 8px 8px;border-radius:999px}
+.ims .lemo{display:flex;gap:2px}
+.ims .lemo button{border:0;background:transparent;font-size:24px;width:42px;height:42px;border-radius:50%;cursor:pointer}
+.ims .lemo button:hover{background:#f3f5fa}
+.ims .lx{position:absolute;right:10px;top:10px;width:32px;height:32px;border:0;border-radius:50%;background:#f1f3f8;color:var(--muted);font:500 22px/1 var(--font);cursor:pointer;z-index:1}
+.ims .lx:hover{background:#e6e9f1;color:var(--ink)}
+.ims .lop-sheet.emo .lx{top:13px;right:8px}
+.ims .lcard{display:flex;align-items:center;gap:12px;margin:0 0 12px;padding-right:30px}
+.ims .lcard .nm{font-size:17px;color:var(--navy);margin-right:6px}
+.ims .lcard .muted{margin:2px 0 0;font-size:13.5px}
+.ims .lavc{width:52px;height:52px;flex:none;border-radius:16px;background:linear-gradient(160deg,#f3f5fa,#e3e8f3)}
+.ims .lavc.big{width:72px;height:72px}
+.ims .tag{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:1px 7px;background:#eef1f7;color:var(--muted);vertical-align:2px;margin-left:4px}
+.ims .tag.gold{background:var(--gold2);color:#7a5a00}
+.ims .lsmall{font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+.ims .lsmall a,.ims .lnote a{color:var(--muted)}
+.ims .lk{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.ims .lk > span{flex:none;width:62px;font-size:13px;font-weight:600;color:var(--muted)}
+.ims .lk > div{display:flex;gap:6px;flex-wrap:wrap}
+.ims .sw{width:28px;height:28px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line2);cursor:pointer}
+.ims .sw.on{box-shadow:0 0 0 2.5px var(--navy)}
+.ims .chip.sm{padding:5px 11px;font-size:13px}
+.ims .lin{display:flex;align-items:center;gap:10px;width:100%;border:0;border-top:1px solid var(--line);background:transparent;padding:12px 4px;font:500 15px/1.3 var(--font);color:var(--ink);cursor:pointer;text-align:left;position:relative}
+.ims .lin:hover{background:#f6f8fc}
+.ims .lin .dot{position:static;margin-left:auto}
+.ims .lrep{border-top:1px solid var(--line);padding:10px 0;font-size:14px}
+.ims .lrepm{overflow-wrap:anywhere;background:#f6f8fc;border-radius:10px;padding:8px 10px;margin:6px 0;font-size:13.5px;max-height:160px;overflow:auto}
+.ims .lrep code{font-size:11.5px}
+.ims .lop-sheet .loading{padding:20px 0}
+
+/* khung chat riêng */
+.ims .lop-chat{position:absolute;z-index:4;right:12px;bottom:76px;width:340px;height:min(440px,calc(100% - 150px));display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh2);overflow:hidden;animation:lopIn .18s ease-out}
+.ims .lop-chat[hidden],.ims .lop-sheet[hidden],.ims .lop-toast[hidden],.ims .lop-demo[hidden]{display:none}
+.ims .lch{display:flex;align-items:center;gap:8px;padding:12px 48px 12px 14px;background:var(--navy);color:#fff;position:relative}
+.ims .lch b{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ims .lch .tag{background:rgba(255,255,255,.14);color:#dbe1f2}
+.ims .lch .lx{top:8px;background:rgba(255,255,255,.12);color:#fff}
+.ims .lmsgs{flex:1;overflow-y:auto;padding:12px;background:#f6f8fc;display:flex;flex-direction:column;gap:6px;user-select:text;-webkit-user-select:text}
+.ims .lm{display:flex}
+.ims .lm span{max-width:80%;background:#fff;border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:7px 11px;font-size:14.5px;line-height:1.4;word-wrap:break-word;overflow-wrap:anywhere}
+.ims .lm.me{justify-content:flex-end}
+.ims .lm.me span{background:var(--navy);border-color:var(--navy);color:#fff;border-radius:14px 14px 4px 14px}
+.ims .lempty{margin:auto;color:var(--muted);font-size:13.5px;text-align:center;padding:20px}
+.ims .lfoot{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
+.ims .lfoot input{flex:1;min-width:0;border:1.5px solid var(--line2);border-radius:12px;padding:9px 12px;font:16px/1.3 var(--font)}
+.ims .lfoot input:focus{outline:none;border-color:var(--acc)}
+.ims .lnote{font-size:11.5px;color:var(--muted);padding:0 12px 10px;text-align:center}
+@media (max-width:560px){
+  .ims .lop-chat{left:8px;right:8px;width:auto;bottom:8px;height:min(62%,460px);border-radius:18px;z-index:6}
+  .ims .lop-sheet{bottom:8px;width:calc(100% - 16px);max-height:calc(100% - 70px);z-index:6}
+}
+@keyframes lopIn{from{opacity:0;transform:translate(var(--lx,-50%),10px)}to{opacity:1;transform:translate(var(--lx,-50%),0)}}
+.ims .lop-chat{--lx:0}
+@media (max-width:560px){.ims .lop-sheet{--lx:-50%}}
