@@ -10,7 +10,8 @@ window.IMS_FIREBASE = {      // dự án Firebase "IMs Infinity Maths" (ims-infi
   storageBucket: "ims-infinity-maths.firebasestorage.app",
   messagingSenderId: "86339854694",
   appId: "1:86339854694:web:c9260021123941f280e8a7",
-  requireLogin: false   // true: bắt buộc đăng nhập mới được luyện
+  requireLogin: false,  // true: bắt buộc đăng nhập mới được luyện
+  kiosk: true           // true: chỉ dùng được ở chế độ toàn màn hình, thoát ra là app tự đóng (IMs 0.5); false: tắt
 };
 /* Ví dụ:
 window.IMS_FIREBASE = {

@@ -3,9 +3,11 @@
    0.2: đăng nhập (email/mật khẩu hoặc Google) và lưu tiến độ lên tài khoản qua cloud.js; chưa cấu hình Firebase thì chỉ lưu trên máy.
    0.3: gói học — chưa có gói thì mỗi ngày làm miễn phí FREE câu; quản trị cấp / gia hạn gói ngay trong app (mục Quản trị).
    0.3.1: trang cài app lên màn hình (#/caidat) — link gửi học sinh: https://chudinhcoi-afk.github.io/ims/#/caidat
-   0.4: mục Lộ trình — chọn câu theo kết quả làm bài (học theo chế độ chẩn đoán của Numbas): Kiểm tra đầu vào theo chương, Luyện đến thành thạo theo chuyên đề. */
+   0.4: mục Lộ trình — chọn câu theo kết quả làm bài (học theo chế độ chẩn đoán của Numbas): Kiểm tra đầu vào theo chương, Luyện đến thành thạo theo chuyên đề.
+   0.5: chỉ dùng ở chế độ toàn màn hình (thoát ra là app tự đóng); giao diện mới: thanh bên trên máy tính, tìm dạng, luyện tiếp, đồng hồ và bảng câu khi làm đề,
+        phím tắt (A–D, Enter, ←/→), biểu đồ 14 ngày, hộp thoại trong app thay cho alert/confirm của trình duyệt (để không bật ra khỏi toàn màn hình). */
 const IMS = (()=>{
-const VER = '0.4';
+const VER = '0.5';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
@@ -28,6 +30,85 @@ const baiName = (gr, ci, bi)=> (((PPCT[gr] || [])[ci] || {}).bai || [])[bi] || '
 const grades = ()=> [...new Set(KEYS.map(k=> G[k].grade))].sort((a, b)=> a - b);
 function math(el){ try{ renderMathInElement(el, {delimiters:[{left:'$$', right:'$$', display:true}, {left:'$', right:'$', display:false}], throwOnError:false}); }catch(e){} }
 const noDot = s=> String(s || '').trim().replace(/\.+$/, '');
+const ico = id=> `<svg><use href="#i-${id}"/></svg>`;
+const backBtn = href=> `<a class="back" href="${href}" aria-label="Quay lại">${ico('back')}</a>`;
+const toTop = ()=>{ const v = $('view'); if(v) v.scrollTop = 0; };
+const fold = s=> String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
+const mmss = ms=>{ const s = Math.max(0, Math.floor(ms/1000)); return String(Math.floor(s/60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+const hoverDev = ()=> !!(window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches);
+function streak(){ let n = 0; for(let d = new Date(); ; d.setDate(d.getDate() - 1)){ const k = d.toISOString().slice(0, 10); if(DB.days[k]) n++; else if(k !== today()) break; if(n > 999) break; } return n; }
+
+/* ---------- hộp thoại trong app (0.5): alert/confirm của trình duyệt có thể đẩy trang ra khỏi toàn màn hình ---------- */
+let MDONE = null;
+function ask(msg, ok = 'Đồng ý', cancel = 'Huỷ'){
+  return new Promise(res=>{ const m = $('modal'); if(MDONE) MDONE(false);
+    MDONE = v=>{ MDONE = null; m.hidden = true; m.innerHTML = ''; res(v); };
+    m.innerHTML = `<div class="mbox" role="dialog" aria-modal="true"><p>${esc(msg)}</p><div class="row">${cancel ? `<button class="btn sec" id="mNo">${esc(cancel)}</button>` : ''}<button class="btn" id="mOk">${esc(ok)}</button></div></div>`;
+    m.hidden = false; $('mOk').onclick = ()=> MDONE && MDONE(true); if($('mNo')) $('mNo').onclick = ()=> MDONE && MDONE(false);
+    m.onclick = e=>{ if(e.target === m && MDONE) MDONE(false); }; $('mOk').focus(); }); }
+const say = msg=> ask(msg, 'Đã hiểu', '');
+
+/* ---------- chỉ dùng ở chế độ toàn màn hình (0.5) ----------
+   • Mở app: màn chặn "Vào IMs" — trình duyệt chỉ cho bật toàn màn hình sau một lần bấm của người dùng.
+   • Đang dùng mà thoát toàn màn hình (Esc, vuốt quay lại, đổi tab) hoặc rời app (chuyển ứng dụng, tắt màn hình) → IMs tự đóng:
+     đề đang làm được nộp luôn, phiên luyện đang mở kết thúc, màn hình bị xoá, thử đóng cửa sổ; muốn dùng tiếp phải bấm "Mở lại" (vào lại toàn màn hình).
+   • iPhone không cho trang web bật toàn màn hình → phải cài IMs lên màn hình chính (app cài chạy toàn màn hình); khi đó chỉ kiểm tra việc rời app.
+   • Đăng nhập Google (cửa sổ bật lên) và hộp cài app: tạm ngừng kiểm tra, xong thì mời bấm vào lại toàn màn hình, không tính là thoát.
+   • Máy tính dùng Chrome/Edge: khoá phím Esc (phải giữ Esc mới thoát) để tránh thoát nhầm. Giữ màn hình sáng khi đang dùng (Wake Lock).
+   • Tắt khi chạy thử: firebase-config.js đặt kiosk:false, hoặc mở trên localhost với ?kiosk=0. Trang #/caidat (hướng dẫn cài) không bị chặn. */
+const KIOSK = {on: CF.kiosk !== false && !(/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]kiosk=0/.test(location.search)), armed:false, closed:null, pause:0, resume:false, wake:null, after:null};
+const fsEl = ()=> document.fullscreenElement || document.webkitFullscreenElement || null;
+const fsApi = ()=>{ const d = document.documentElement; return d.requestFullscreen || d.webkitRequestFullscreen || null; };
+const appMode = ()=> !!((window.matchMedia && (matchMedia('(display-mode: fullscreen)').matches || matchMedia('(display-mode: standalone)').matches)) || navigator.standalone === true);
+const fsOK = ()=> !!fsEl() || (!fsApi() && appMode());
+const kExempt = ()=> /^#\/caidat/.test(location.hash || '');
+function kArm(){ KIOSK.armed = true; KIOSK.resume = false; KIOSK.closed = null;
+  try{ if(navigator.keyboard && navigator.keyboard.lock) navigator.keyboard.lock(['Escape']).catch(()=>{}); }catch(e){}
+  try{ if(navigator.wakeLock && !KIOSK.wake) navigator.wakeLock.request('screen').then(l=>{ KIOSK.wake = l; l.addEventListener('release', ()=>{ KIOSK.wake = null; }); }).catch(()=>{}); }catch(e){}
+  kRender(); }
+function kEnter(){   // gọi ngay trong sự kiện bấm
+  const d = document.documentElement, f = fsApi();
+  if(f && !fsEl()){   // bật xong: sự kiện fullscreenchange sẽ gọi kArm
+    let told = false; const fail = ()=>{ if(told || fsEl() || KIOSK.armed) return; told = true; kRender(); say('Trình duyệt này chưa cho bật toàn màn hình. Em bấm lại nút, hoặc mở IMs bằng Chrome / Edge / Safari (hoặc app IMs đã cài).'); };
+    try{ const p = f.call(d, {navigationUI:'hide'}); if(p && p.catch) p.catch(fail); }catch(e){ fail(); }
+    setTimeout(fail, 2500); return; }
+  if(fsOK()) kArm(); else kRender(); }
+function kReopen(){ const to = KIOSK.after || '#/luyen'; KIOSK.closed = null; KIOSK.after = null; if(to !== '#/ketqua') S = null;
+  if(location.hash !== to) location.hash = to; else route(); kEnter(); }
+function kClose(why){
+  if(KIOSK.closed || !KIOSK.armed) return; KIOSK.armed = false; let note = '';
+  if(S && S.mode === 'de' && !S.res){ finishDe(); note = `Đề đang làm đã được nộp tự động: đúng ${S.res.ok}/${S.res.n} câu. Câu chưa làm tính là sai.`; KIOSK.after = '#/ketqua'; }
+  else { if(S && !S.res && S.items && S.items.length) note = 'Phiên luyện tập đang mở đã kết thúc. Kết quả các câu đã kiểm tra vẫn được lưu.'; S = null; KIOSK.after = null; }
+  const k = DB.kiosk || (DB.kiosk = {n:0}); k.n++; k.at = Date.now(); save();
+  KIOSK.closed = {why, note}; if(MDONE) MDONE(false); $('view').innerHTML = ''; document.body.classList.remove('focus');
+  try{ if(KIOSK.wake) KIOSK.wake.release(); }catch(e){}
+  try{ if(navigator.keyboard && navigator.keyboard.unlock) navigator.keyboard.unlock(); }catch(e){}
+  try{ if(fsEl()) (document.exitFullscreen || document.webkitExitFullscreen).call(document).catch?.(()=>{}); }catch(e){}
+  kRender(); try{ window.close(); }catch(e){} }
+function kPause(fn){ KIOSK.pause++;   // tạm ngừng kiểm tra trong lúc có cửa sổ của hệ thống (đăng nhập Google, hộp cài app)
+  const end = ()=> setTimeout(()=>{ KIOSK.pause = Math.max(0, KIOSK.pause - 1); if(KIOSK.on && !KIOSK.closed && !fsOK()){ KIOSK.armed = false; KIOSK.resume = true; } kRender(); }, 600);
+  return Promise.resolve().then(fn).finally(end); }
+function kRender(){
+  const g = $('gate'); if(!g) return;
+  if(!KIOSK.on || (KIOSK.armed && fsOK()) || (!KIOSK.closed && kExempt())){ g.hidden = true; g.innerHTML = ''; return; }
+  let h;
+  if(KIOSK.closed) h = `<div class="glogo warn">${ico('lock')}</div><h1>IMs đã đóng</h1><p>${esc(KIOSK.closed.why)}</p>${KIOSK.closed.note ? `<div class="why">${esc(KIOSK.closed.note)}</div>` : ''}
+      <button class="gbtn" onclick="IMS.kReopen()">${ico('max')}Mở lại IMs</button><p style="font-size:13px">IMs chỉ chạy ở chế độ toàn màn hình. Không dùng nữa thì em đóng cửa sổ này.</p>`;
+  else if(!fsApi() && !appMode()) h = `<div class="glogo">∞</div><h1>Cài IMs để bắt đầu</h1><p>IMs chỉ chạy toàn màn hình. Trình duyệt này không bật được toàn màn hình cho trang web${isIOS() ? ' (iPhone)' : ''}, nên em cần cài IMs lên màn hình chính rồi mở từ biểu tượng <b>∞ IMs</b>.</p>
+      <button class="gbtn" onclick="location.hash='#/caidat'">Xem cách cài IMs</button>`;
+  else if(KIOSK.resume) h = `<div class="glogo">∞</div><h1>Tiếp tục với IMs</h1><p>Bấm nút dưới đây để quay lại chế độ toàn màn hình.</p><button class="gbtn" onclick="IMS.kEnter()" autofocus>${ico('max')}Tiếp tục toàn màn hình</button>`;
+  else h = `<div class="glogo">∞</div><h1>IMs · Infinity Maths</h1><p>Luyện Toán THPT — câu hỏi sinh mới mỗi lần, có lời giải chi tiết.</p>
+      <button class="gbtn" onclick="IMS.kEnter()" autofocus>${ico('max')}Vào IMs toàn màn hình</button>
+      <div class="rules"><div>IMs chỉ chạy ở chế độ toàn màn hình để em tập trung làm bài.</div><div>Thoát toàn màn hình, đổi tab hay chuyển sang ứng dụng khác thì IMs tự đóng; đề đang làm sẽ được nộp luôn.</div><div>${hoverDev() ? 'Muốn thoát IMs: nhấn giữ phím Esc.' : 'Muốn thoát IMs: vuốt hoặc bấm nút quay lại của máy.'}</div></div>`;
+  g.innerHTML = `<div class="gbox">${h}</div>`; g.hidden = false;
+  const b = g.querySelector('.gbtn'); if(b && hoverDev()) b.focus(); }
+['fullscreenchange', 'webkitfullscreenchange'].forEach(ev=> document.addEventListener(ev, ()=>{
+  if(!KIOSK.on) return; if(fsEl()){ if(!KIOSK.closed) kArm(); return; }
+  if(KIOSK.pause) return; if(KIOSK.armed) kClose('Em đã thoát khỏi chế độ toàn màn hình.'); else kRender(); }));
+document.addEventListener('visibilitychange', ()=>{
+  if(!KIOSK.on) return;
+  if(document.visibilityState === 'hidden'){ if(KIOSK.armed && !KIOSK.pause) kClose('Em đã rời khỏi IMs (đổi tab, chuyển ứng dụng hoặc tắt màn hình).'); }
+  else if(KIOSK.armed && !KIOSK.wake){ try{ navigator.wakeLock && navigator.wakeLock.request('screen').then(l=>{ KIOSK.wake = l; }).catch(()=>{}); }catch(e){} } });
 
 /* ---------- cài app lên màn hình (0.3.1) ----------
    Android/Chrome: giữ sự kiện beforeinstallprompt để nút "Cài IMs" mở hộp cài của máy. iPhone: Apple không cho web tự cài → hướng dẫn Chia sẻ → Thêm vào MH chính.
@@ -64,7 +145,7 @@ function newItem(key){ const it = practiceGenItem(key); if(!it) return null; con
 function figHtml(q){ if(!q.hinhVe) return ''; try{ return `<div class="fig">${renderHinhVeHtml(q.hinhVe, {hocSinh:true})}</div>`; }catch(e){ return ''; } }
 function qHtml(c, idx){
   const q = c.q, k = c.kind, done = c.done; let h = `<div class="qcard"><div>${k === 'DS' ? (q.dannhap || q.cauhoi || '') : (q.cauhoi || '')}</div>${figHtml(q)}`;
-  if(k === 'TN') h += `<div class="opts">${['A','B','C','D'].map(L=>{ const cls = done ? (L === q.dapan ? 'isok' : (c.ans === L ? 'isno' : '')) : (c.ans === L ? 'sel' : ''); return `<button class="opt ${cls}" ${done ? 'disabled' : ''} onclick="IMS.pick(${idx},'${L}')"><b>${L}</b><span>${noDot(q[L])}.</span></button>`; }).join('')}</div>`;
+  if(k === 'TN') h += `<div class="opts${shortOpts(q) ? ' two' : ''}">${['A','B','C','D'].map(L=>{ const cls = done ? (L === q.dapan ? 'isok' : (c.ans === L ? 'isno' : '')) : (c.ans === L ? 'sel' : ''); return `<button class="opt ${cls}" ${done ? 'disabled' : ''} onclick="IMS.pick(${idx},'${L}')"><b>${L}</b><span>${noDot(q[L])}.</span></button>`; }).join('')}</div>`;
   else if(k === 'DS') h += (q.menhde || []).map((m, j)=>{ const a = (c.ans || [])[j], tr = m.dung ? 'Đ' : 'S';
       const cl = v=> done ? (v === tr ? 'isok' : (a === v ? 'isno' : '')) : (a === v ? 'sel' : '');
       return `<div class="ds"><span class="tx"><b>${m.label || 'abcd'[j]})</b> ${m.text}</span><button class="${cl('Đ')}" ${done ? 'disabled' : ''} onclick="IMS.pickDS(${idx},${j},'Đ')">Đ</button><button class="${cl('S')}" ${done ? 'disabled' : ''} onclick="IMS.pickDS(${idx},${j},'S')">S</button></div>`; }).join('');
@@ -83,35 +164,53 @@ function setTab(t){ document.querySelectorAll('#tabs a').forEach(a=> a.classList
 function topRight(){ const n = DB.days[today()] || 0, t = !paid() ? `<a class="free" href="#/goi" title="Mỗi ngày làm miễn phí ${FREE} câu">Miễn phí: còn ${freeLeft()}/${FREE}</a>` : n ? `<span>Hôm nay: ${n} câu</span>` : '';
   let a = ''; if(C && C.state !== 'off'){ const u = C.state === 'in' && C.user, nm = u && ((C.profile && C.profile.name) || u.displayName || u.email || '?');
     a = u ? `<a class="acct in" href="#/taikhoan" title="${esc(nm)}">${esc(String(nm).trim().split(/\s+/).pop().charAt(0).toLocaleUpperCase('vi'))}</a>` : `<a class="acct" href="#/taikhoan">Đăng nhập</a>`; }
-  $('topRight').innerHTML = t + a; }
+  $('topRight').innerHTML = t + a;
+  const sf = $('sideFoot'); if(sf) sf.innerHTML = `<div>Hôm nay: <b style="color:#fff">${n}</b> câu · chuỗi ${streak()} ngày</div>${KIOSK.on ? `<div style="margin-top:6px">Giữ <span class="kbd">Esc</span> để thoát IMs</div>` : ''}<div style="margin-top:6px;opacity:.7">IMs ${VER}</div>`; }
+const gradeSeg = (gs, v)=> `<div class="seg">${gs.map(g=> `<button class="${g === DB.grade ? 'on' : ''}" onclick="IMS.grade(${g}${v ? `,'${v}'` : ''})">Lớp ${g}</button>`).join('')}</div>`;
+const dangRow = (k, sub)=>{ const p = pct(k); return `<div class="dang" onclick="IMS.startDang('${k}')"><span class="kind ${G[k].kind || 'TN'}">${KS[G[k].kind || 'TN']}</span><span class="t">${esc(name(G[k]))}${sub ? `<br><span class="muted">${sub}</span>` : ''}</span><span class="pct ${p == null ? '' : p >= 80 ? 'good' : p < 50 ? 'low' : ''}">${p == null ? '' : p + '%'}</span><span class="go">›</span></div>`; };
+const firstName = ()=>{ const p = C && C.state === 'in' && C.profile; return p && p.name ? String(p.name).trim().split(/\s+/).pop() : ''; };
+let LQ = '';   // chữ đang tìm trong mục Luyện tập
 function vLuyen(){
   setTab('luyen'); const gs = grades(); if(!gs.includes(DB.grade)) DB.grade = gs.at(-1);
-  const ks = KEYS.filter(k=> G[k].grade === DB.grade), cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b);
-  let h = `<h1>Luyện tập theo dạng</h1><div class="chips">${gs.map(g=> `<button class="chip ${g === DB.grade ? 'on' : ''}" onclick="IMS.grade(${g})">Lớp ${g}</button>`).join('')}</div>`;
+  const all = Object.values(DB.by), n = all.reduce((s, r)=> s + r.n, 0), ok = all.reduce((s, r)=> s + r.ok, 0), td = DB.days[today()] || 0, nm = firstName();
+  let h = `<div class="hero"><div class="hx"><h1>${nm ? `Chào ${esc(nm)}!` : 'Luyện tập theo dạng'}</h1><p>${td ? `Hôm nay em đã làm ${td} câu. Cố lên!` : 'Chọn một dạng bên dưới để bắt đầu — mỗi lần là một câu mới.'}</p>
+    <div class="hs"><div><b>${td}</b>hôm nay</div><div><b>${n ? Math.round(100*ok/n) : 0}%</b>làm đúng</div><div><b>${streak()}</b>ngày liên tiếp</div></div></div></div>`;
+  const last = KEYS.filter(k=> DB.by[k] && DB.by[k].at).sort((a, b)=> DB.by[b].at - DB.by[a].at)[0];
+  if(last) h += `<div class="card cont" onclick="IMS.startDang('${last}')"><span class="ic">${ico('play')}</span><span class="t"><span class="muted">Luyện tiếp · Lớp ${G[last].grade}${pct(last) != null ? ' · đúng ' + pct(last) + '%' : ''}</span><b>${esc(name(G[last]))}</b></span><span class="go" style="color:var(--muted);font-size:20px">›</span></div>`;
+  h += `<div class="row" style="justify-content:space-between;align-items:center;margin-top:6px">${gradeSeg(gs)}</div>`;
   if(PACK && PACK.dev) h += `<div class="notice">Bản chạy thử: đang dùng toàn bộ bộ sinh của MathBank. Bản phát hành chỉ có các dạng giáo viên đã duyệt.</div>`;
-  h += cis.map(ci=>{ const a = ks.filter(k=> G[k].ci === ci), bis = [...new Set(a.map(k=> G[k].bi))].sort((x, y)=> x - y), tried = a.filter(k=> DB.by[k]).length;
-    return `<details class="ch"><summary>${esc(chName(DB.grade, ci))}<span class="n">${tried}/${a.length} dạng</span></summary>` + bis.map(bi=> `<div class="bai">${esc(baiName(DB.grade, ci, bi))}</div>` + a.filter(k=> G[k].bi === bi).map(k=>{ const p = pct(k);
-      return `<div class="dang" onclick="IMS.startDang('${k}')"><span class="kind ${G[k].kind || 'TN'}">${KS[G[k].kind || 'TN']}</span><span class="t">${esc(name(G[k]))}</span><span class="pct ${p >= 80 ? 'good' : ''}">${p == null ? '' : p + '%'}</span></div>`; }).join('')).join('') + `</details>`; }).join('');
-  $('view').innerHTML = h || '<div class="empty">Chưa có bộ câu hỏi.</div>'; }
+  h += `<label class="search">${ico('search')}<input id="lq" type="search" placeholder="Tìm dạng: cực trị, tích phân, xác suất…" value="${esc(LQ)}" oninput="IMS.q(this.value)" autocomplete="off"></label><div id="lbody"></div>`;
+  $('view').innerHTML = h; lBody(); }
+function lBody(){
+  const box = $('lbody'); if(!box) return; const ks = KEYS.filter(k=> G[k].grade === DB.grade), q = fold(LQ).trim();
+  if(q){ const ws = q.split(/\s+/), sc = {}, has = (t, w)=> (' ' + t).includes(' ' + w);   // xếp hạng: cả cụm trong tên dạng → mọi từ trong tên dạng → có từ nằm ở tên bài / chương
+    const hit = ks.filter(k=>{ const n1 = fold(name(G[k])), n2 = fold(chName(G[k].grade, G[k].ci) + ' ' + baiName(G[k].grade, G[k].ci, G[k].bi));
+      if(!ws.every(w=> has(n1, w) || has(n2, w))) return false; sc[k] = n1.includes(q) ? 0 : ws.every(w=> has(n1, w)) ? 1 : 2; return true; }).sort((x, y)=> sc[x] - sc[y]);
+    box.innerHTML = hit.length ? `<p class="muted" style="margin:0 0 8px">${hit.length} dạng phù hợp${hit.length > 80 ? ' · hiện 80 dạng đầu' : ''}</p><div class="card" style="padding:0;overflow:hidden">${hit.slice(0, 80).map(k=> dangRow(k, esc(baiName(G[k].grade, G[k].ci, G[k].bi)))).join('')}</div>` : `<div class="empty"><span class="big">🔍</span>Không tìm thấy dạng nào khớp “${esc(LQ)}” ở lớp ${DB.grade}.</div>`; return; }
+  const cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b);
+  box.innerHTML = cis.map(ci=>{ const a = ks.filter(k=> G[k].ci === ci), bis = [...new Set(a.map(k=> G[k].bi))].sort((x, y)=> x - y), tried = a.filter(k=> DB.by[k]).length, done = a.filter(k=> (pct(k) || 0) >= 80).length, p = a.length ? Math.round(100*done/a.length) : 0;
+    return `<details class="ch"><summary><span class="ring" style="--p:${p}" data-v="${p}%"></span><span class="st">${esc(chName(DB.grade, ci))}<br><span class="muted" style="font-weight:400">${tried}/${a.length} dạng đã làm · ${done} thành thạo</span></span></summary>` + bis.map(bi=> `<div class="bai">${esc(baiName(DB.grade, ci, bi))}</div>` + a.filter(k=> G[k].bi === bi).map(k=> dangRow(k)).join('')).join('') + `</details>`; }).join('') || '<div class="empty">Chưa có bộ câu hỏi.</div>'; }
 function vDe(){
   setTab('de'); const gs = grades(); if(!gs.includes(DB.grade)) DB.grade = gs.at(-1);
   const ks = KEYS.filter(k=> G[k].grade === DB.grade), cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b), sel = DB.deSel && DB.deSel.g === DB.grade ? DB.deSel.cis : [];
-  $('view').innerHTML = `<h1>Làm đề theo chủ đề</h1><div class="chips">${gs.map(g=> `<button class="chip ${g === DB.grade ? 'on' : ''}" onclick="IMS.grade(${g},'de')">Lớp ${g}</button>`).join('')}</div>
-    <div class="card"><b>Chọn chương</b>${cis.map(ci=> `<label class="ck"><input type="checkbox" value="${ci}" ${sel.includes(ci) ? 'checked' : ''} class="deci"> ${esc(chName(DB.grade, ci))} <span class="muted">(${ks.filter(k=> G[k].ci === ci).length} dạng)</span></label>`).join('')}</div>
-    <div class="card"><b>Số câu</b><div class="chips" style="margin-top:8px">${[10, 20, 30].map(n=> `<button class="chip ${(DB.deN || 10) === n ? 'on' : ''}" onclick="IMS.deN(${n})">${n} câu</button>`).join('')}</div>
-    <b>Hình thức</b><div class="chips" style="margin-top:8px">${['TN','DS','TLN'].map(k=> `<button class="chip ${(DB.deK || ['TN','DS','TLN']).includes(k) ? 'on' : ''}" onclick="IMS.deK('${k}')">${KN[k]}</button>`).join('')}</div></div>
-    <button class="btn gold" style="width:100%" onclick="IMS.startDe()">Bắt đầu làm đề</button><p class="muted">Mỗi lần làm là một đề mới, số liệu khác. Làm xong bấm Nộp bài để xem điểm và lời giải từng câu.</p>`; }
+  $('view').innerHTML = `<h1>Làm đề theo chủ đề</h1><p class="sub">Mỗi lần làm là một đề mới, số liệu khác. Có đồng hồ tính giờ; làm xong bấm Nộp bài để xem điểm và lời giải từng câu.</p>${gradeSeg(gs, 'de')}
+    <div class="grid2"><div class="card"><div class="cardh"><span class="lbl" style="margin:0">Chọn chương</span><button class="btn ghost sm" onclick="IMS.deAll()">${sel.length === cis.length && cis.length ? 'Bỏ chọn hết' : 'Chọn tất cả'}</button></div>${cis.map(ci=> `<label class="ck"><input type="checkbox" value="${ci}" ${sel.includes(ci) ? 'checked' : ''} class="deci" onchange="IMS.deCi()"><span>${esc(chName(DB.grade, ci))}</span><span class="muted">${ks.filter(k=> G[k].ci === ci).length} dạng</span></label>`).join('')}</div>
+    <div class="card"><span class="lbl">Số câu</span><div class="chips">${[10, 20, 30].map(n=> `<button class="chip ${(DB.deN || 10) === n ? 'on' : ''}" onclick="IMS.deN(${n})">${n} câu</button>`).join('')}</div>
+    <span class="lbl">Hình thức</span><div class="chips">${['TN','DS','TLN'].map(k=> `<button class="chip ${(DB.deK || ['TN','DS','TLN']).includes(k) ? 'on' : ''}" onclick="IMS.deK('${k}')">${KN[k]}</button>`).join('')}</div>
+    <button class="btn gold big block" style="margin-top:6px" onclick="IMS.startDe()">${ico('play')}Bắt đầu làm đề</button>${!paid() ? `<p class="muted" style="margin:10px 0 0;text-align:center">Hôm nay còn ${freeLeft()}/${FREE} câu miễn phí</p>` : ''}</div></div>`; }
 function vSai(){
   setTab('sai'); const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)).sort((a, b)=> DB.wrong[b] - DB.wrong[a]);
-  $('view').innerHTML = `<h1>Ôn lỗi sai</h1><p class="muted">Các dạng em từng làm sai. Làm đúng 3 lần liên tiếp thì dạng đó ra khỏi danh sách.</p>` + (ks.length ? `<button class="btn gold" style="width:100%;margin-bottom:12px" onclick="IMS.startSai()">Ôn tất cả (${ks.length} dạng)</button><div class="card" style="padding:0">${ks.map(k=> `<div class="dang" onclick="IMS.startDang('${k}')"><span class="kind ${G[k].kind || 'TN'}">${KS[G[k].kind || 'TN']}</span><span class="t">${esc(name(G[k]))}<br><span class="muted">Lớp ${G[k].grade} · sai ${DB.wrong[k]} lần</span></span></div>`).join('')}</div>` : '<div class="empty">Chưa có lỗi sai nào. Luyện tập thêm nhé!</div>'); }
+  $('view').innerHTML = `<h1>Ôn lỗi sai</h1><p class="sub">Các dạng em từng làm sai, sai nhiều xếp trước. Làm đúng 3 lần liên tiếp thì dạng đó ra khỏi danh sách.</p>` + (ks.length ? `<button class="btn gold big block" style="margin-bottom:14px" onclick="IMS.startSai()">${ico('sai')}Ôn tất cả (${ks.length} dạng)</button><div class="card" style="padding:0;overflow:hidden">${ks.map(k=> dangRow(k, `Lớp ${G[k].grade} · sai ${DB.wrong[k]} lần`)).join('')}</div>` : '<div class="empty"><span class="big">🎉</span>Chưa có lỗi sai nào. Luyện tập thêm nhé!</div>'); }
 function vTienDo(){
-  setTab('tiendo'); const all = Object.values(DB.by), n = all.reduce((s, r)=> s + r.n, 0), ok = all.reduce((s, r)=> s + r.ok, 0), days = Object.keys(DB.days).sort();
-  let streak = 0; for(let d = new Date(); ; d.setDate(d.getDate() - 1)){ const k = d.toISOString().slice(0, 10); if(DB.days[k]) streak++; else if(k !== today()) break; if(streak > 999) break; }
-  const gs = grades(); let h = `<h1>Tiến độ</h1><div class="stat"><div><b>${n}</b><span>câu đã làm</span></div><div><b>${n ? Math.round(100*ok/n) : 0}%</b><span>làm đúng</span></div><div><b>${streak}</b><span>ngày liên tiếp</span></div></div>`;
+  setTab('tiendo'); const all = Object.values(DB.by), n = all.reduce((s, r)=> s + r.n, 0), ok = all.reduce((s, r)=> s + r.ok, 0);
+  const gs = grades(); let h = `<h1>Tiến độ</h1><div class="stat"><div><b>${n}</b><span>câu đã làm</span></div><div><b>${n ? Math.round(100*ok/n) : 0}%</b><span>làm đúng</span></div><div><b>${streak()}</b><span>ngày liên tiếp</span></div></div>`;
+  const D = []; for(let i = 13; i >= 0; i--){ const d = new Date(); d.setDate(d.getDate() - i); const k = d.toISOString().slice(0, 10); D.push({k, v:DB.days[k] || 0, l:i ? String(d.getDate()) : 'Nay'}); }
+  const mx = Math.max(1, ...D.map(d=> d.v));
+  h += `<div class="card"><div class="cardh"><b>14 ngày gần đây</b><span class="muted">${D.reduce((s, d)=> s + d.v, 0)} câu</span></div><div class="days">${D.map(d=> `<div class="${d.l === 'Nay' ? 'td' : ''}" title="${d.k}: ${d.v} câu"><i class="${d.v ? '' : 'z'}" style="height:${d.v ? Math.max(6, Math.round(70*d.v/mx)) : 3}px"></i><span>${d.l}</span></div>`).join('')}</div></div>`;
   gs.forEach(g=>{ const ks = KEYS.filter(k=> G[k].grade === g), cis = [...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b);
     h += `<h2>Lớp ${g}</h2>` + cis.map(ci=>{ const a = ks.filter(k=> G[k].ci === ci), done = a.filter(k=> (pct(k) || 0) >= 80).length;
-      return `<div class="card" style="padding:10px 14px"><div class="row" style="justify-content:space-between"><span>${esc(chName(g, ci))}</span><span class="muted">${done}/${a.length} dạng thành thạo</span></div><div class="bar"><i style="width:${a.length ? Math.round(100*done/a.length) : 0}%"></i></div></div>`; }).join(''); });
-  h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. ${C && C.state === 'in' && C.user ? `Tiến độ được lưu vào tài khoản ${esc(C.user.email || '')}.` : C && C.state !== 'off' ? `Dữ liệu đang lưu trên máy này. <a href="#/taikhoan">Đăng nhập</a> để không mất tiến độ khi đổi máy.` : 'Dữ liệu lưu trên máy này.'}</p>${standalone() ? '' : `<a class="btn sec" href="#/caidat" style="display:block;text-align:center;margin:8px 0">📲 Cài IMs lên màn hình</a>`}<p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
+      return `<div class="card" style="padding:12px 16px"><div class="row" style="justify-content:space-between;flex-wrap:nowrap"><span style="min-width:0">${esc(chName(g, ci))}</span><span class="muted" style="white-space:nowrap">${done}/${a.length} thành thạo</span></div><div class="bar"><i style="width:${a.length ? Math.round(100*done/a.length) : 0}%"></i></div></div>`; }).join(''); });
+  h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. ${C && C.state === 'in' && C.user ? `Tiến độ được lưu vào tài khoản ${esc(C.user.email || '')}.` : C && C.state !== 'off' ? `Dữ liệu đang lưu trên máy này. <a href="#/taikhoan">Đăng nhập</a> để không mất tiến độ khi đổi máy.` : 'Dữ liệu lưu trên máy này.'}</p>${standalone() ? '' : `<a class="btn sec block" href="#/caidat" style="margin:8px 0">📲 Cài IMs lên màn hình</a>`}<p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
   $('view').innerHTML = h; }
 /* ---------- lộ trình (0.4): chọn câu theo kết quả làm bài ----------
    Học theo chế độ chẩn đoán của Numbas (DIAGNOSYS và Mastery). Chủ đề = chuyên đề (một buổi dạy) của MathBank, xếp theo thứ tự PPCT trong chương;
@@ -151,13 +250,13 @@ function stTag(ma){ const t = LT(), c = cdBy(ma); if(t.done[ma]) return `<span c
 function vLoTrinh(){
   setTab('lotrinh'); const gs = grades(); if(!gs.includes(DB.grade)) DB.grade = gs.at(-1);
   const g = DB.grade, cis = [...new Set(KEYS.filter(k=> G[k].grade === g).map(k=> G[k].ci))].sort((a, b)=> a - b), t = LT();
-  let h = `<h1>Lộ trình</h1><div class="chips">${gs.map(x=> `<button class="chip ${x === g ? 'on' : ''}" onclick="IMS.grade(${x},'lt')">Lớp ${x}</button>`).join('')}</div>
-    <p class="muted" style="margin-top:0"><b>Kiểm tra đầu vào</b>: vài câu để biết em đã nắm đến chuyên đề nào của chương. <b>Luyện đến thành thạo</b>: làm lần lượt các dạng của một chuyên đề, sai dạng nào thì dạng đó quay lại với số liệu mới cho tới khi đúng hết.</p>`;
+  let h = `<h1>Lộ trình</h1>${gradeSeg(gs, 'lt')}
+    <p class="sub" style="margin-top:0"><b>Kiểm tra đầu vào</b>: vài câu để biết em đã nắm đến chuyên đề nào của chương. <b>Luyện đến thành thạo</b>: làm lần lượt các dạng của một chuyên đề, sai dạng nào thì dạng đó quay lại với số liệu mới cho tới khi đúng hết.</p>`;
   h += cis.map(ci=>{ const L = cdsOf(g, ci); if(!L.length) return ''; const d = t.diag[g + '|' + ci], nDone = L.filter(c=> t.done[c.ma]).length, first = d ? L.find(c=> !d.r[c.ma] && !t.done[c.ma]) : null;
-    return `<details class="ch" ${d || L.some(c=> t.q[c.ma]) ? 'open' : ''}><summary>${esc(chName(g, ci))}<span class="n">${nDone}/${L.length} chuyên đề</span></summary><div class="ltbox">`
-      + `<button class="btn sec" style="width:100%" onclick="IMS.startChan(${g},${ci})">${d ? 'Kiểm tra lại' : 'Kiểm tra đầu vào'} · khoảng ${diagLen(L)} câu</button>`
+    return `<details class="ch" ${d || L.some(c=> t.q[c.ma]) ? 'open' : ''}><summary><span class="ring" style="--p:${Math.round(100*nDone/L.length)}" data-v="${nDone}/${L.length}"></span><span class="st">${esc(chName(g, ci))}<br><span class="muted" style="font-weight:400">${nDone}/${L.length} chuyên đề thành thạo</span></span></summary><div class="ltbox">`
+      + `<button class="btn sec block" onclick="IMS.startChan(${g},${ci})">${d ? 'Kiểm tra lại' : 'Kiểm tra đầu vào'} · khoảng ${diagLen(L)} câu</button>`
       + (d ? `<p class="muted" style="margin:8px 0 0">Kiểm tra ngày ${new Date(d.at).toLocaleDateString('vi-VN')}. ${first ? `Nên học tiếp: <b>${esc(first.ten)}</b>.` : 'Em đã nắm cả chương — luyện thành thạo từng chuyên đề để chắc chắn.'}</p>` : '')
-      + `</div>` + L.map(c=> `<div class="dang" onclick="IMS.startThao('${c.ma}')"><span class="kind TN">${esc(c.ma)}</span><span class="t">${esc(c.ten)}<br><span class="muted">${c.keys.length} dạng</span></span>${stTag(c.ma)}</div>`).join('') + `</details>`; }).join('');
+      + `</div>` + L.map(c=> `<div class="dang" onclick="IMS.startThao('${c.ma}')"><span class="kind ma">${esc(c.ma)}</span><span class="t">${esc(c.ten)}<br><span class="muted">${c.keys.length} dạng</span></span>${stTag(c.ma)}</div>`).join('') + `</details>`; }).join('');
   $('view').innerHTML = h; }
 function startChan(g, ci){ const L = cdsOf(g, ci); if(!L.length || !canDo(1)) return;
   S = {mode:'chan', g, ci, L, st:L.map(()=> null), tested:{}, items:[], i:0, back:'#/lotrinh'}; chanNext(); }
@@ -170,12 +269,12 @@ function chanAnswer(c){ const m = c.cd, st = S.st, b = baiOf(S.L[m]); S.tested[S
 function chanEnd(){ const r = {}; S.L.forEach((c, j)=>{ r[c.ma] = S.st[j] ? 1 : 0; }); LT().diag[S.g + '|' + S.ci] = {at:Date.now(), r, t:S.tested}; save(); S.res = r; location.hash = '#/chandoan'; }
 function vChan(){ if(!S || S.mode !== 'chan' || !S.res){ location.hash = '#/lotrinh'; return; } setTab('lotrinh');
   const L = S.L, first = L.find(c=> !S.res[c.ma]), nOk = L.filter(c=> S.res[c.ma]).length;
-  let h = `<div class="qhead"><a class="back" href="#/lotrinh">‹</a><span>Kết quả kiểm tra đầu vào</span></div><h1 style="margin-top:0">${esc(chName(S.g, S.ci))}</h1>
+  let h = `<div class="qhead">${backBtn('#/lotrinh')}<span class="ttl">Kết quả kiểm tra đầu vào</span></div><h1 style="margin-top:0">${esc(chName(S.g, S.ci))}</h1>
     <div class="score">${nOk}/${L.length}</div><p class="muted" style="text-align:center">chuyên đề đã nắm · em làm ${S.items.length} câu, đúng ${S.items.filter(c=> c.ok).length} câu</p><div class="card" style="padding:4px 14px">`;
   h += L.map(c=> `<div class="rv"><span class="mk ${S.res[c.ma] ? 'ok' : 'no'}">${S.res[c.ma] ? '✓' : '✗'}</span><span style="flex:1">${esc(c.ten)}<br><span class="muted">${c.ma in S.tested ? 'đã hỏi 1 câu' : S.res[c.ma] ? 'suy ra: em làm được chuyên đề sau cùng bài' : 'suy ra: em chưa làm được chuyên đề trước cùng bài'}</span></span></div>`).join('') + `</div>`;
-  h += first ? `<button class="btn gold" style="width:100%" onclick="IMS.startThao('${first.ma}')">Luyện đến thành thạo: ${esc(first.ten)}</button>` : `<div class="fb ok">Em đã nắm cả chương. Hãy luyện thành thạo từng chuyên đề để chắc chắn hơn.</div>`;
-  h += `<p class="muted">Mỗi chuyên đề hỏi nhiều nhất một câu; trong cùng một bài, làm được chuyên đề sau thì coi như nắm chuyên đề trước. Kết quả mang tính gợi ý để chọn chỗ bắt đầu học.</p><a class="btn sec" href="#/lotrinh" style="display:block;text-align:center">Về Lộ trình</a>`;
-  $('view').innerHTML = h; window.scrollTo(0, 0); }
+  h += first ? `<button class="btn gold block" onclick="IMS.startThao('${first.ma}')">Luyện đến thành thạo: ${esc(first.ten)}</button>` : `<div class="fb ok">Em đã nắm cả chương. Hãy luyện thành thạo từng chuyên đề để chắc chắn hơn.</div>`;
+  h += `<p class="muted">Mỗi chuyên đề hỏi nhiều nhất một câu; trong cùng một bài, làm được chuyên đề sau thì coi như nắm chuyên đề trước. Kết quả mang tính gợi ý để chọn chỗ bắt đầu học.</p><a class="btn sec block" href="#/lotrinh">Về Lộ trình</a>`;
+  $('view').innerHTML = h; toTop(); }
 function startThao(ma){ const c = cdBy(ma); if(!c || !canDo(1)) return; const t = LT();
   let q = t.q[ma] && Array.isArray(t.q[ma].k) ? t.q[ma].k.filter(k=> c.keys.includes(k)) : null; if(!q || !q.length) q = qOrder(c.keys);
   t.q[ma] = {k:q, at:Date.now()}; save(); S = {mode:'thao', ma, c, items:[], i:0, back:'#/lotrinh', n:0}; thaoNext(); }
@@ -185,45 +284,57 @@ function thaoNext(){ const q = LT().q[S.ma]; if(!q || !q.k.length) return thaoEn
 function thaoAnswer(c){ const t = LT(), q = t.q[S.ma]; if(!q) return; S.n++; const k = q.k.shift(); if(!c.ok) q.k.push(k); q.at = Date.now(); if(!q.k.length){ delete t.q[S.ma]; t.done[S.ma] = Date.now(); } save(); }
 function thaoEnd(){ const t = LT(); delete t.q[S.ma]; t.done[S.ma] = t.done[S.ma] || Date.now(); save(); location.hash = '#/xong'; }
 function vXong(){ if(!S || S.mode !== 'thao'){ location.hash = '#/lotrinh'; return; } setTab('lotrinh'); const c = S.c, nx = cdsOf(c.g, c.ci)[c.i + 1];
-  $('view').innerHTML = `<div class="qhead"><a class="back" href="#/lotrinh">‹</a><span>Luyện đến thành thạo</span></div><div class="fb ok" style="font-size:17px">✓ Em đã thành thạo chuyên đề <b>${esc(c.ten)}</b>: làm đúng cả ${c.keys.length} dạng${S.n ? ` sau ${S.n} câu` : ''}.</div>`
-    + (nx ? `<button class="btn gold" style="width:100%;margin-bottom:10px" onclick="IMS.startThao('${nx.ma}')">Chuyên đề tiếp theo: ${esc(nx.ten)}</button>` : '') + `<a class="btn sec" href="#/lotrinh" style="display:block;text-align:center">Về Lộ trình</a>`; }
+  $('view').innerHTML = `<div class="qhead">${backBtn('#/lotrinh')}<span class="ttl">Luyện đến thành thạo</span></div><div class="fb ok" style="font-size:17px">✓ Em đã thành thạo chuyên đề <b>${esc(c.ten)}</b>: làm đúng cả ${c.keys.length} dạng${S.n ? ` sau ${S.n} câu` : ''}.</div>`
+    + (nx ? `<button class="btn gold block" style="margin-bottom:10px" onclick="IMS.startThao('${nx.ma}')">Chuyên đề tiếp theo: ${esc(nx.ten)}</button>` : '') + `<a class="btn sec block" href="#/lotrinh">Về Lộ trình</a>`; }
 function ltAnswered(c){ if(!S || c.ltDone) return; c.ltDone = true; if(S.mode === 'chan') chanAnswer(c); else if(S.mode === 'thao') thaoAnswer(c); }
 /* ---------- phiên làm bài ---------- */
 const goLam = ()=>{ if(location.hash === '#/lam') vLam(); else location.hash = '#/lam'; };
 const backOf = d=> (location.hash && !/^#\/(lam|ketqua|xem)/.test(location.hash)) ? location.hash : d;
 function startDang(key){ if(!canDo(1)) return; S = {mode:'dang', keys:[key], items:[newItem(key)], i:0, back:backOf('#/luyen')}; goLam(); }
 function startSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length || !canDo(1)) return; S = {mode:'sai', keys:ks, items:[newItem(ks[0])], i:0, back:'#/sai', qi:0}; goLam(); }
-function startDe(){
+async function startDe(){
   const cis = [...document.querySelectorAll('.deci:checked')].map(x=> +x.value), kinds = DB.deK || ['TN','DS','TLN'], n = DB.deN || 10;
-  if(!cis.length){ alert('Hãy chọn ít nhất một chương.'); return; } DB.deSel = {g:DB.grade, cis}; save();
-  if(!paid() && freeLeft() < n){ if(freeLeft() > 0) alert(`Hôm nay em còn ${freeLeft()} câu miễn phí, chưa đủ cho đề ${n} câu. Hãy chọn đề ngắn hơn hoặc mua gói học.`); else location.hash = '#/goi'; return; }
-  let ks = KEYS.filter(k=> G[k].grade === DB.grade && cis.includes(G[k].ci) && kinds.includes(G[k].kind || 'TN')); if(!ks.length){ alert('Các chương đã chọn chưa có dạng thuộc hình thức này.'); return; }
+  if(!cis.length){ say('Hãy chọn ít nhất một chương.'); return; } DB.deSel = {g:DB.grade, cis}; save();
+  if(!paid() && freeLeft() < n){ if(freeLeft() > 0) say(`Hôm nay em còn ${freeLeft()} câu miễn phí, chưa đủ cho đề ${n} câu. Hãy chọn đề ngắn hơn hoặc mua gói học.`); else location.hash = '#/goi'; return; }
+  let ks = KEYS.filter(k=> G[k].grade === DB.grade && cis.includes(G[k].ci) && kinds.includes(G[k].kind || 'TN')); if(!ks.length){ say('Các chương đã chọn chưa có dạng thuộc hình thức này.'); return; }
   ks = ks.sort(()=> Math.random() - 0.5); const pick = []; for(let i = 0; i < n; i++) pick.push(ks[i % ks.length]);
   const R = {TN:0, DS:1, TLN:2}; pick.sort((a, b)=> R[G[a].kind || 'TN'] - R[G[b].kind || 'TN']);
   const items = pick.map(newItem).filter(Boolean); S = {mode:'de', items, i:0, back:'#/de', t0:Date.now()}; goLam(); }
-function vLam(){
-  if(!S){ location.hash = '#/luyen'; return; } const c = S.items[S.i]; if(!c){ $('view').innerHTML = '<div class="empty">Không sinh được câu hỏi.</div>'; return; }
-  const de = S.mode === 'de', g = G[c.key];
+function finishDe(){ S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length}; }
+const shortOpts = q=> ['A','B','C','D'].every(L=> String(q[L] || '').replace(/\\[a-z]+|[{}$\s]/gi, '').length <= 22) && !q.hinhVe;
+/* vLam(how): how = undefined → lên đầu trang (câu mới); 'keep' → giữ chỗ đang xem (chọn đáp án); 'fb' → cuộn tới phần nhận xét, lời giải */
+function vLam(how){
+  if(!S){ location.hash = '#/luyen'; return; } const c = S.items[S.i]; if(!c){ $('view').innerHTML = `<div class="qhead">${backBtn(S.back || '#/luyen')}</div><div class="empty">Không sinh được câu hỏi.</div>`; return; }
+  const de = S.mode === 'de', g = G[c.key], v = $('view'), y = v.scrollTop;
   const q = S.mode === 'thao' && LT().q[S.ma], tot = S.mode === 'thao' ? S.c.keys.length : 0, left = q ? q.k.length : 0;
-  const head = de ? `Câu ${S.i + 1}/${S.items.length}` : S.mode === 'chan' ? `Kiểm tra đầu vào · câu ${S.items.length} · ${esc(chName(S.g, S.ci))}` : S.mode === 'thao' ? `${esc(S.c.ten)} · còn ${left}/${tot} dạng` : esc(name(g));
-  let h = `<div class="qhead"><a class="back" href="${S.back}">‹</a><span>${head}</span><span style="margin-left:auto" class="kind ${c.kind}">${KN[c.kind]}</span></div>${S.mode === 'thao' ? `<div class="bar" style="margin:-2px 0 10px"><i style="width:${tot ? Math.round(100*(tot - left)/tot) : 0}%"></i></div>` : ''}${qHtml(c, S.i)}`;
-  if(de){ h += `<div class="row"><button class="btn sec" ${S.i ? '' : 'disabled'} onclick="IMS.go(-1)">‹ Câu trước</button>${S.i < S.items.length - 1 ? `<button class="btn" onclick="IMS.go(1)">Câu sau ›</button>` : `<button class="btn gold" onclick="IMS.submit()">Nộp bài</button>`}</div><p class="muted" style="text-align:center">Đã làm ${S.items.filter(answered).length}/${S.items.length} câu</p>`; }
-  else if(!c.done){ h += c.kind === 'TL' ? `<button class="btn" style="width:100%" onclick="IMS.check()">Xem lời giải</button>` : `<button class="btn" style="width:100%" ${answered(c) ? '' : 'disabled'} id="chk" onclick="IMS.check()">Kiểm tra</button>`; }
-  else { h += c.kind === 'TL' && c.ok == null ? `<div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:10px"><button class="btn" onclick="IMS.self(true)">Em làm đúng</button><button class="btn sec" onclick="IMS.self(false)">Chưa đúng</button></div>`
-      : `<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Chính xác!' : '✗ Chưa đúng — xem lời giải bên dưới.'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px">${S.mode === 'sai' ? `<button class="btn" onclick="IMS.nextSai()">Câu tiếp ›</button>` : S.mode === 'chan' ? `<button class="btn" onclick="IMS.nextChan()">${S.st.includes(null) ? 'Câu tiếp ›' : 'Xem kết quả ›'}</button>` : S.mode === 'thao' ? `<button class="btn" onclick="IMS.nextThao()">${LT().q[S.ma] ? (c.ok ? 'Dạng tiếp theo ›' : 'Tiếp — dạng này sẽ quay lại ›') : 'Hoàn thành ›'}</button>` : `<button class="btn" onclick="IMS.again()">Câu khác cùng dạng ›</button>`}</div>`; }
-  $('view').innerHTML = h; math($('view')); window.scrollTo(0, 0); }
+  const head = de ? `Đề ${S.items.length} câu · câu ${S.i + 1}` : S.mode === 'chan' ? `Kiểm tra đầu vào · câu ${S.items.length} · ${esc(chName(S.g, S.ci))}` : S.mode === 'thao' ? `${esc(S.c.ten)} · còn ${left}/${tot} dạng` : esc(name(g));
+  let h = `<div class="qhead">${backBtn(S.back)}<span class="ttl" title="${head}">${head}</span>${de ? `<span class="timer">${ico('clock')}<span id="tmr">${mmss(Date.now() - S.t0)}</span></span>` : ''}<span class="kind ${c.kind}">${KN[c.kind]}</span></div>`;
+  if(S.mode === 'thao') h += `<div class="bar" style="margin:-2px 0 12px"><i style="width:${tot ? Math.round(100*(tot - left)/tot) : 0}%"></i></div>`;
+  if(de) h += `<div class="qnav" id="qnav">${S.items.map((x, i)=> `<button class="${i === S.i ? 'cur' : answered(x) ? 'an' : ''}" onclick="IMS.goto(${i})" aria-label="Câu ${i + 1}">${i + 1}</button>`).join('')}</div>`;
+  h += qHtml(c, S.i);
+  const keys = c.kind === 'TN' ? '<kbd>A</kbd>–<kbd>D</kbd> chọn đáp án · ' : '';
+  if(de){ const nA = S.items.filter(answered).length;
+    h += `<div class="actbar"><div class="row"><button class="btn sec" ${S.i ? '' : 'disabled'} onclick="IMS.go(-1)">‹ Câu trước</button>${S.i < S.items.length - 1 ? `<button class="btn" data-k="enter" onclick="IMS.go(1)">Câu sau ›</button>` : `<button class="btn gold" onclick="IMS.submit()">Nộp bài</button>`}</div><div class="hint">Đã làm <b>${nA}/${S.items.length}</b> câu${nA === S.items.length && S.i < S.items.length - 1 ? ` · <a href="javascript:IMS.submit()">Nộp bài ngay</a>` : ''}<span class="hint keys"> · ${keys}<kbd>←</kbd> <kbd>→</kbd> chuyển câu</span></div></div>`; }
+  else if(!c.done){ h += `<div class="actbar">` + (c.kind === 'TL' ? `<button class="btn block" data-k="enter" onclick="IMS.check()">Xem lời giải</button>` : `<button class="btn block" data-k="enter" ${answered(c) ? '' : 'disabled'} id="chk" onclick="IMS.check()">Kiểm tra</button>`) + `<div class="hint keys">${keys}<kbd>Enter</kbd> ${c.kind === 'TL' ? 'xem lời giải' : 'kiểm tra'}</div></div>`; }
+  else if(c.kind === 'TL' && c.ok == null){ h += `<div class="lg" id="fbk"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="actbar"><div class="row"><button class="btn" onclick="IMS.self(true)">Em làm đúng</button><button class="btn sec" onclick="IMS.self(false)">Chưa đúng</button></div></div>`; }
+  else { const nx = S.mode === 'sai' ? `<button class="btn block" data-k="enter" onclick="IMS.nextSai()">Câu tiếp ›</button>` : S.mode === 'chan' ? `<button class="btn block" data-k="enter" onclick="IMS.nextChan()">${S.st.includes(null) ? 'Câu tiếp ›' : 'Xem kết quả ›'}</button>` : S.mode === 'thao' ? `<button class="btn block" data-k="enter" onclick="IMS.nextThao()">${LT().q[S.ma] ? (c.ok ? 'Dạng tiếp theo ›' : 'Tiếp — dạng này sẽ quay lại ›') : 'Hoàn thành ›'}</button>` : `<button class="btn block" data-k="enter" onclick="IMS.again()">Câu khác cùng dạng ›</button>`;
+    h += `<div class="fb ${c.ok ? 'ok' : 'no'}" id="fbk">${c.ok ? '✓ Chính xác!' : '✗ Chưa đúng — xem lời giải bên dưới.'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="actbar">${nx}<div class="hint keys"><kbd>Enter</kbd> tiếp tục</div></div>`; }
+  v.innerHTML = h; math(v);
+  if(how === 'keep') v.scrollTop = y; else if(how === 'fb' && $('fbk')){ v.scrollTop = y; const f = $('fbk'), top = f.offsetTop - v.clientHeight/3; if(f.offsetTop + 60 > y + v.clientHeight || f.offsetTop < y) v.scrollTo({top:Math.max(0, top), behavior:'smooth'}); } else toTop();
+  const nav = $('qnav'); if(nav){ const b = nav.children[S.i]; if(b) nav.scrollLeft = b.offsetLeft - nav.clientWidth/2 + 18; }
+  const inp = v.querySelector('input.ans:not(:disabled)'); if(inp && hoverDev() && how !== 'keep') inp.focus({preventScroll:true}); }
 function vKetQua(){
-  if(!S || !S.res){ location.hash = '#/de'; return; } const r = S.res, mins = Math.max(1, Math.round((S.t1 - S.t0)/60000));
-  let h = `<div class="qhead"><a class="back" href="#/de">‹</a><span>Kết quả</span></div><div class="score">${r.ok}/${r.n}</div><p class="muted" style="text-align:center">Đúng ${Math.round(100*r.ok/r.n)}% · ${mins} phút</p><div class="card" style="padding:4px 14px">`;
-  h += S.items.map((c, i)=> `<div class="rv" onclick="IMS.review(${i})"><span class="mk ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓' : '✗'}</span><span style="flex:1">Câu ${i + 1}. ${esc(name(G[c.key]))}</span><span class="muted">›</span></div>`).join('');
+  if(!S || !S.res){ location.hash = '#/de'; return; } const r = S.res, mins = Math.max(1, Math.round((S.t1 - S.t0)/60000)), p = Math.round(100*r.ok/r.n);
+  let h = `<div class="qhead">${backBtn('#/de')}<span class="ttl">Kết quả làm đề</span></div><div class="card" style="text-align:center;padding:22px 16px"><div class="score" style="color:${p >= 80 ? 'var(--ok)' : p >= 50 ? 'var(--navy)' : 'var(--bad)'}">${r.ok}/${r.n}</div><p class="muted" style="margin:2px 0 0">Đúng ${p}% · ${mins} phút · ${p >= 80 ? 'Rất tốt!' : p >= 50 ? 'Khá — xem lại các câu sai nhé.' : 'Cần ôn thêm — xem lời giải từng câu.'}</p><div class="bar" style="max-width:320px;margin:14px auto 0"><i style="width:${p}%"></i></div></div><div class="card" style="padding:4px 16px">`;
+  h += S.items.map((c, i)=> `<div class="rv" onclick="IMS.review(${i})"><span class="mk ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓' : '✗'}</span><span style="flex:1;min-width:0">Câu ${i + 1}. ${esc(name(G[c.key]))}</span><span class="kind ${c.kind}">${KS[c.kind]}</span><span class="muted">›</span></div>`).join('');
   h += `</div><div class="row"><button class="btn gold" onclick="IMS.startDe2()">Làm đề mới</button><button class="btn sec" onclick="location.hash='#/sai'">Ôn lỗi sai</button></div>`;
   $('view').innerHTML = h; }
 function vXem(){ if(!S || !S.res){ location.hash = '#/de'; return; } const i = S.rv || 0, c = S.items[i];
-  $('view').innerHTML = `<div class="qhead"><a class="back" href="#/ketqua">‹</a><span>Câu ${i + 1}/${S.items.length}</span></div>${qHtml(c, i)}<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Đúng' : '✗ Sai'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px"><button class="btn sec" ${i ? '' : 'disabled'} onclick="IMS.review(${i - 1})">‹ Câu trước</button><button class="btn sec" ${i < S.items.length - 1 ? '' : 'disabled'} onclick="IMS.review(${i + 1})">Câu sau ›</button></div>`;
-  math($('view')); window.scrollTo(0, 0); }
+  $('view').innerHTML = `<div class="qhead">${backBtn('#/ketqua')}<span class="ttl">Xem lại · câu ${i + 1}/${S.items.length}</span><span class="kind ${c.kind}">${KN[c.kind]}</span></div>${qHtml(c, i)}<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Đúng' : answered(c) ? '✗ Sai' : '✗ Chưa làm'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="actbar"><div class="row"><button class="btn sec" ${i ? '' : 'disabled'} onclick="IMS.review(${i - 1})">‹ Câu trước</button><button class="btn sec" ${i < S.items.length - 1 ? '' : 'disabled'} onclick="IMS.review(${i + 1})">Câu sau ›</button></div></div>`;
+  math($('view')); toTop(); }
 /* ---------- trang cài đặt (0.3.1) ---------- */
 function vCai(){
-  setTab(''); let h = `<div class="qhead"><a class="back" href="#/luyen">‹</a><span>Cài IMs lên màn hình</span></div>`;
+  setTab(''); let h = `<div class="qhead">${backBtn('#/luyen')}<span class="ttl">Cài IMs lên màn hình</span></div>`;
   const step = (n, t)=> `<div class="step"><b>${n}</b><span>${t}</span></div>`;
   if(standalone() || INSTALLED) h += `<div class="fb ok">✓ IMs đã được cài trên máy này. Từ nay em mở IMs bằng biểu tượng <b>∞ IMs</b> trên màn hình.</div><a class="btn" style="display:block;text-align:center" href="#/luyen">Vào luyện tập ›</a>`;
   else if(inApp()) h += `<div class="card"><b>Em đang mở IMs trong ${/Zalo/i.test(UA) ? 'Zalo' : 'ứng dụng nhắn tin'}</b><p class="muted" style="margin:6px 0 0">Trình duyệt trong Zalo/Facebook không cài được ứng dụng. Hãy mở IMs bằng ${isIOS() ? 'Safari' : 'Chrome'}:</p></div>`
@@ -241,13 +352,14 @@ function vCai(){
       + step(2, `Bấm nút <b>⋮</b> ở góc trên bên phải → chọn <b>Thêm vào màn hình chính</b> / <b>Cài đặt ứng dụng</b>. Trên máy tính: bấm biểu tượng cài đặt ở cuối thanh địa chỉ.`)
       + `<p class="muted">Nếu máy đã cài IMs rồi thì nút cài sẽ không hiện — em tìm biểu tượng <b>∞ IMs</b> trên màn hình.</p>`;
   $('view').innerHTML = h; }
-async function install(){ if(!INST){ vCai(); return; } INST.prompt(); try{ const r = await INST.userChoice; if(r && r.outcome === 'accepted') INSTALLED = true; }catch(e){} INST = null; vCai(); }
+async function install(){ if(!INST){ vCai(); return; } const ev = INST; INST = null;
+  await kPause(async()=>{ ev.prompt(); try{ const r = await ev.userChoice; if(r && r.outcome === 'accepted') INSTALLED = true; }catch(e){} }); vCai(); }
 async function copyLink(){ const u = APP_URL + '#/caidat'; try{ await navigator.clipboard.writeText(u); $('cpMsg').innerHTML = '✓ Đã chép link. Mở ' + (isIOS() ? 'Safari' : 'Chrome') + ', dán vào thanh địa chỉ.'; }catch(e){ $('cpMsg').textContent = u; } }
 
 /* ---------- gói học, quản trị (0.3) ---------- */
 function vGoi(){
   setTab(''); const pl = C && C.plan, u = pl && toDate(pl.until), signed = C && C.state === 'in' && C.user;
-  let h = `<div class="qhead"><a class="back" href="#/luyen">‹</a><span>Gói học</span></div>`;
+  let h = `<div class="qhead">${backBtn('#/luyen')}<span class="ttl">Gói học</span></div>`;
   if(paid()) h += `<div class="fb ok">${C && C.admin ? 'Tài khoản quản trị: không giới hạn số câu.' : `Em đang dùng ${esc(planLabel(pl))}${u ? ' đến hết ngày ' + u.toLocaleDateString('vi-VN') : ''}. Luyện không giới hạn!`}</div>`;
   else h += `<div class="card"><b>${freeLeft() ? `Hôm nay em còn ${freeLeft()}/${FREE} câu miễn phí` : `Em đã dùng hết ${FREE} câu miễn phí hôm nay`}</b><p class="muted" style="margin:6px 0 0">Mỗi ngày IMs tặng ${FREE} câu để luyện thử mọi dạng. Mua gói học để luyện không giới hạn, làm đề đủ ${30} câu, ôn hết lỗi sai.</p>${u && u <= new Date() ? `<p class="muted">${esc(planLabel(pl))} của em đã hết hạn ngày ${u.toLocaleDateString('vi-VN')}.</p>` : ''}</div>`;
   const now = new Date();
@@ -258,7 +370,7 @@ function vGoi(){
 let QT = {q:'', found:null, list:null, msg:'', busy:false};
 function vQT(){
   setTab(''); if(!C || !C.admin){ location.hash = '#/taikhoan'; return; }
-  let h = `<div class="qhead"><a class="back" href="#/taikhoan">‹</a><span>Quản trị gói học</span></div>`;
+  let h = `<div class="qhead">${backBtn('#/taikhoan')}<span class="ttl">Quản trị gói học</span></div>`;
   h += `<div class="card"><b>Tìm học sinh</b><p class="muted" style="margin:4px 0 8px">Nhập email tài khoản (hoặc mã UID). Học sinh phải đăng nhập và lưu hồ sơ ít nhất một lần.</p><div class="row"><input id="qtQ" class="inp" type="email" placeholder="email@gmail.com" value="${esc(QT.q)}" autocapitalize="off" style="flex:1"><button class="btn" ${QT.busy ? 'disabled' : ''} onclick="IMS.qtFind()">Tìm</button></div>${QT.msg ? `<div class="fb ${/^✓/.test(QT.msg) ? 'ok' : 'no'}" style="margin-top:8px">${esc(QT.msg)}</div>` : ''}</div>`;
   (QT.found || []).forEach((f, i)=>{ const u = f.plan && toDate(f.plan.until), on = u && u > new Date() && f.plan.plan !== 'free';
     h += `<div class="card"><b>${esc(f.name || '(chưa có tên)')}</b> <span class="muted">· Lớp ${esc(f.grade || '?')}${f.school ? ' · ' + esc(f.school) : ''}</span><div class="muted">${esc(f.email || '')}</div>
@@ -274,12 +386,12 @@ async function qtFind(){ QT.q = val('qtQ'); QT.msg = ''; QT.found = null; if(!QT
   catch(e){ QT.msg = C.msg(e); }
   QT.busy = false; vQT(); }
 async function qtGrant(i, code){ const f = QT.found[i], P = PLANS[code], cur = f.plan && toDate(f.plan.until), base = cur && cur > new Date() && f.plan.plan !== 'free' ? cur : new Date(), until = planUntil(code, base), note = val('qtNote' + i);
-  if(!confirm(`${f.name || f.email}\n${P.label} — hạn đến hết ngày ${until.toLocaleDateString('vi-VN')}${note ? '\nGhi chú: ' + note : ''}\n\nXác nhận cấp gói?`)) return;
+  if(!await ask(`${f.name || f.email}\n${P.label} — hạn đến hết ngày ${until.toLocaleDateString('vi-VN')}${note ? '\nGhi chú: ' + note : ''}\n\nXác nhận cấp gói?`, 'Cấp gói')) return;
   QT.busy = true; vQT();
   try{ await C.setPlan(f.uid, code, P.label, until, note); f.plan = await C.planOf(f.uid); QT.msg = `✓ Đã cấp ${P.label} cho ${f.name || f.email} đến ${until.toLocaleDateString('vi-VN')}.`; QT.list = null; }
   catch(e){ QT.msg = C.msg(e); }
   QT.busy = false; vQT(); }
-async function qtRevoke(i){ const f = QT.found[i]; if(!confirm(`Thu hồi gói của ${f.name || f.email}? Học sinh quay về ${FREE} câu miễn phí mỗi ngày.`)) return;
+async function qtRevoke(i){ const f = QT.found[i]; if(!await ask(`Thu hồi gói của ${f.name || f.email}? Học sinh quay về ${FREE} câu miễn phí mỗi ngày.`, 'Thu hồi')) return;
   QT.busy = true; vQT();
   try{ await C.setPlan(f.uid, 'free', 'Đã thu hồi', new Date(), val('qtNote' + i) || 'thu hồi'); f.plan = await C.planOf(f.uid); QT.msg = `✓ Đã thu hồi gói của ${f.name || f.email}.`; QT.list = null; }
   catch(e){ QT.msg = C.msg(e); }
@@ -294,7 +406,7 @@ const inp = (id, type, ph, v)=> `<input id="${id}" class="inp" type="${type}" pl
 const val = id=> ($(id) && $(id).value || '').trim();
 function vTK(){
   document.querySelectorAll('#view .inp').forEach(x=>{ FORM[x.id] = x.value; });
-  setTab(''); let h = `<div class="qhead"><a class="back" href="#/luyen">‹</a><span>Tài khoản</span></div>`;
+  setTab(''); let h = `<div class="qhead">${backBtn('#/luyen')}<span class="ttl">Tài khoản</span></div>`;
   const st = C ? C.state : 'off', msgs = (AERR ? `<div class="fb no">${esc(AERR)}</div>` : '') + (AOK ? `<div class="fb ok">${esc(AOK)}</div>` : '');
   if(st === 'off') h += `<div class="empty">Bản này chưa bật đăng nhập. Tiến độ lưu trên máy.</div>`;
   else if(st === 'loading') h += `<div class="loading">Đang kết nối…</div>`;
@@ -336,7 +448,7 @@ async function acct(what){
   try{
     if(what === 'login') await C.signIn(em, pw);
     else if(what === 'signup'){ await C.signUp(em, pw, f); DB.grade = g; save(); }
-    else if(what === 'google') await C.google();
+    else if(what === 'google') await kPause(()=> C.google());
     else if(what === 'reset'){ await C.reset(em); AOK = 'Đã gửi thư. Mở hộp thư (cả mục Thư rác) để đặt mật khẩu mới.'; }
     else if(what === 'profile'){ await C.saveProfile(f); EDIT = false; if(DB.grade !== g){ DB.grade = g; save(); } }
     else if(what === 'out') await C.signOut();
@@ -358,9 +470,22 @@ function onCloud(st){
   if(st === 'out' && CF.requireLogin && location.hash !== '#/taikhoan'){ location.hash = '#/taikhoan'; return; }
   const r = location.hash || '';
   if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri' || r === '#/caidat'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem|chandoan|xong)$/.test(r)) route(); else topRight(); }
-function route(){ topRight(); const r = (location.hash || '#/luyen').slice(2);
+let LASTR = null;
+function route(){ topRight(); kRender(); if(KIOSK.closed){ $('view').innerHTML = ''; return; } const r = (location.hash || '#/luyen').slice(2);
+  document.body.classList.toggle('focus', /^(lam|ketqua|xem|chandoan|xong)$/.test(r)); if(r !== LASTR){ LASTR = r; toTop(); }
   if(C && CF.requireLogin && r !== 'taikhoan' && r !== 'caidat' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
   ({luyen:vLuyen, lotrinh:vLoTrinh, chandoan:vChan, xong:vXong, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai}[r] || vLuyen)(); }
+
+/* ---------- phím tắt khi làm bài (0.5): A–D hoặc 1–4 chọn đáp án, Enter kiểm tra / câu tiếp, ←/→ chuyển câu trong đề ---------- */
+function onKey(e){
+  if(!$('modal').hidden){ if(e.key === 'Escape' && MDONE){ e.preventDefault(); MDONE(false); } return; }
+  if(!$('gate').hidden || !S || location.hash !== '#/lam' || e.metaKey || e.ctrlKey || e.altKey) return;
+  const c = S.items[S.i]; if(!c) return; const t = e.target, typing = t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName);
+  if(e.key === 'Enter'){ if(t && t.tagName === 'BUTTON' && !typing && t.closest('#view') && !t.dataset.k) return; const b = document.querySelector('#view [data-k="enter"]:not(:disabled)'); if(b){ e.preventDefault(); b.click(); } return; }
+  if(typing) return;
+  const L = {A:'A', B:'B', C:'C', D:'D', 1:'A', 2:'B', 3:'C', 4:'D'}[e.key.length === 1 ? e.key.toUpperCase() : ''];
+  if(L && c.kind === 'TN' && !c.done){ e.preventDefault(); IMS.pick(S.i, L); return; }
+  if(S.mode === 'de' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')){ e.preventDefault(); IMS.go(e.key === 'ArrowRight' ? 1 : -1); } }
 
 /* ---------- khởi động ---------- */
 async function boot(){
@@ -370,6 +495,8 @@ async function boot(){
   KEYS = KEYS.filter(k=> PPCT[G[k].grade] && PPCT[G[k].grade][G[k].ci]); KSET = new Set(KEYS);
   window.addEventListener('hashchange', ()=>{ if(location.hash === '#/taikhoan'){ AERR = AOK = ''; EDIT = false; FORM = {}; } route(); }); route();
   if(C){ C.on(onCloud); C.init(); }
+  setInterval(()=>{ const el = $('tmr'); if(el && S && S.t0 && !S.res) el.textContent = mmss(Date.now() - S.t0); }, 1000);
+  document.addEventListener('keydown', onKey);
   if('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 boot();
@@ -377,17 +504,23 @@ return {
   grade(g, v){ DB.grade = g; save(); v === 'de' ? vDe() : v === 'lt' ? vLoTrinh() : vLuyen(); },
   startDang, startSai, startDe, startDe2(){ location.hash = '#/de'; },
   deN(n){ DB.deN = n; save(); vDe(); }, deK(k){ const a = DB.deK || ['TN','DS','TLN']; DB.deK = a.includes(k) ? (a.length > 1 ? a.filter(x=> x !== k) : a) : a.concat(k); save(); vDe(); },
-  pick(i, L){ const c = S.items[i]; if(c.done) return; c.ans = L; vLam(); },
-  pickDS(i, j, v){ const c = S.items[i]; if(c.done) return; c.ans = c.ans || []; c.ans[j] = v; vLam(); },
+  pick(i, L){ const c = S.items[i]; if(c.done) return; c.ans = L; vLam('keep'); },
+  pickDS(i, j, v){ const c = S.items[i]; if(c.done) return; c.ans = c.ans || []; c.ans[j] = v; vLam('keep'); },
   typed(i, v){ const c = S.items[i]; c.ans = v; const b = $('chk'); if(b) b.disabled = !String(v).trim(); },
-  check(){ const c = S.items[S.i]; c.done = true; if(c.kind !== 'TL'){ c.ok = grade(c); record(c.key, c.ok); ltAnswered(c); } vLam(); topRight(); },
-  self(ok){ const c = S.items[S.i]; c.ok = ok; record(c.key, ok); ltAnswered(c); vLam(); topRight(); },
+  check(){ const c = S.items[S.i]; if(c.done || (c.kind !== 'TL' && !answered(c))) return; c.done = true; if(c.kind !== 'TL'){ c.ok = grade(c); record(c.key, c.ok); ltAnswered(c); } vLam('fb'); topRight(); },
+  self(ok){ const c = S.items[S.i]; c.ok = ok; record(c.key, ok); ltAnswered(c); vLam('fb'); topRight(); },
   startChan, startThao, nextChan(){ if(S.st.includes(null) && !canDo(1)) return; chanNext(); }, nextThao(){ if(LT().q[S.ma] && !canDo(1)) return; thaoNext(); },
   again(){ if(!canDo(1)) return; const k = S.items[S.i].key, it = newItem(k); if(it){ S.items.push(it); S.i = S.items.length - 1; } vLam(); },
-  nextSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length){ alert('Hết lỗi sai rồi. Giỏi lắm!'); location.hash = '#/sai'; return; } if(!canDo(1)) return; S.qi = ((S.qi || 0) + 1) % ks.length; const it = newItem(ks[S.qi]); S.items.push(it); S.i = S.items.length - 1; vLam(); },
-  go(d){ S.i = Math.max(0, Math.min(S.items.length - 1, S.i + d)); vLam(); },
-  submit(){ const left = S.items.filter(c=> !answered(c)).length; if(left && !confirm(`Còn ${left} câu chưa làm. Vẫn nộp bài?`)) return;
-    S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length}; location.hash = '#/ketqua'; },
+  nextSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length){ say('Hết lỗi sai rồi. Giỏi lắm!').then(()=>{ location.hash = '#/sai'; }); return; } if(!canDo(1)) return; S.qi = ((S.qi || 0) + 1) % ks.length; const it = newItem(ks[S.qi]); S.items.push(it); S.i = S.items.length - 1; vLam(); },
+  go(d){ const j = Math.max(0, Math.min(S.items.length - 1, S.i + d)); if(j !== S.i){ S.i = j; vLam(); } },
+  goto(i){ S.i = i; vLam(); },
+  async submit(){ if(!S || S.mode !== 'de' || S.res) return; const left = S.items.filter(c=> !answered(c)).length;
+    if(!await ask(left ? `Còn ${left} câu chưa làm (tính là sai). Vẫn nộp bài?` : 'Nộp bài và xem kết quả?', 'Nộp bài', 'Làm tiếp')) return;
+    if(!S || S.res) return; finishDe(); location.hash = '#/ketqua'; },
+  q(v){ LQ = v; lBody(); },
+  deCi(){ DB.deSel = {g:DB.grade, cis:[...document.querySelectorAll('.deci:checked')].map(x=> +x.value)}; save(); },
+  deAll(){ const all = [...document.querySelectorAll('.deci')], on = all.every(x=> x.checked); DB.deSel = {g:DB.grade, cis:on ? [] : all.map(x=> +x.value)}; save(); vDe(); },
+  kEnter, kReopen,
   am(m){ AM = m; AERR = AOK = ''; vTK(); }, acct, edit(v){ EDIT = v; AERR = ''; vTK(); },
   review(i){ S.rv = i; location.hash === '#/xem' ? vXem() : (location.hash = '#/xem'); },
   install, copyLink,
