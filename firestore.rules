@@ -1,6 +1,6 @@
 rules_version = '2';
 // Luật bảo mật Firestore cho app IMs. Dán toàn bộ file này vào Firebase console → Firestore Database → Rules → Publish.
-// Học sinh chỉ đọc/ghi hồ sơ và tiến độ của chính mình; gói học (plans) chỉ quản trị ghi được; tài khoản quản trị tạo tay trong console (collection admins, document id = UID).
+// Học sinh chỉ đọc/ghi hồ sơ và tiến độ của chính mình; lớp học 2D (0.6): xem phần classrooms ở dưới; gói học (plans) chỉ quản trị ghi được; tài khoản quản trị tạo tay trong console (collection admins, document id = UID).
 service cloud.firestore {
   match /databases/{database}/documents {
     function signedIn() { return request.auth != null; }
@@ -39,6 +39,85 @@ service cloud.firestore {
     match /admins/{uid} {
       allow read: if isMe(uid);
       allow write: if false;
+    }
+
+    // ---------- Lớp học 2D (IMs 0.6, classroom.js) ----------
+    // Mọi người đã đăng nhập đọc được ai đang ở trong lớp; mỗi người chỉ ghi bản ghi hiện diện của chính mình, t luôn là giờ máy chủ (nhịp lastSeen).
+    // Ghế: giữ được nếu ghế trống, của chính mình, hoặc người đang giữ đã quá 120 giây không cập nhật. Ghế 48 (giáo viên) chỉ quản trị ngồi.
+    // Tin nhắn riêng: chỉ hai người trong cặp đọc/gửi (quản trị đọc được); ≤ 200 ký tự; 1 tin / 2 giây (trường lm trong hiện diện); bị chặn thì không gửi được.
+    function okRoom(r) { return r.matches('^[A-Za-z0-9_-]{1,16}$'); }
+    function presPath(room, uid) { return /databases/$(database)/documents/classrooms/$(room)/presence/$(uid); }
+    function okPresence(d) {
+      return d.keys().hasOnly(['name', 'lk', 'x', 'y', 'tx', 'ty', 'dir', 'seat', 'st', 'sc', 'scAt', 'em', 'emAt', 'gv', 'dmTo', 'dmAt', 'lm', 't'])
+        && d.name is string && d.name.size() <= 40
+        && d.x is number && d.y is number && d.x >= 0 && d.x <= 16 && d.y >= 0 && d.y <= 20
+        && (!('tx' in d) || (d.tx is number && d.tx >= -1 && d.tx <= 16)) && (!('ty' in d) || (d.ty is number && d.ty >= -1 && d.ty <= 20))
+        && (!('dir' in d) || (d.dir is int && d.dir >= 0 && d.dir <= 3))
+        && d.seat is int && d.seat >= -1 && d.seat <= 48
+        && (!('lk' in d) || (d.lk is string && d.lk.size() <= 12))
+        && (!('st' in d) || d.st in ['', 'lam'])
+        && (!('sc' in d) || (d.sc is string && d.sc.size() <= 7))
+        && (!('scAt' in d) || d.scAt is number) && (!('emAt' in d) || d.emAt is number) && (!('dmAt' in d) || d.dmAt is number)
+        && (!('em' in d) || (d.em is int && d.em >= -1 && d.em <= 7))
+        && (!('gv' in d) || d.gv == false || isAdmin())
+        && (!('dmTo' in d) || (d.dmTo is string && d.dmTo.size() <= 128))
+        && (!('lm' in d) || d.lm == request.time || (resource != null && resource.data.get('lm', null) == d.lm))
+        && d.t == request.time;
+    }
+    function seatFree(room, holder) {
+      return !exists(presPath(room, holder)) || get(presPath(room, holder)).data.t < request.time - duration.value(120, 's');
+    }
+    function okSeatId(n) { return n.matches('^([0-9]|[1-3][0-9]|4[0-7])$') || (n == '48' && isAdmin()); }
+    function okSeatDoc(d) { return d.keys().hasOnly(['uid', 'at']) && d.uid == request.auth.uid && d.at == request.time; }
+    function inPair(pair) { return signedIn() && pair.split('_').size() == 2 && request.auth.uid in pair.split('_'); }
+    function okMsg(room, pair, m) {
+      let me = presPath(room, request.auth.uid);
+      let blk = /databases/$(database)/documents/blocks/$(m.to);
+      return m.keys().hasOnly(['from', 'to', 'text', 'at'])
+        && m.from == request.auth.uid && m.to is string && m.to != m.from && m.to in pair.split('_')
+        && m.text is string && m.text.size() > 0 && m.text.size() <= 200
+        && m.at == request.time
+        && exists(me) && getAfter(me).data.get('lm', null) == request.time
+        && (get(me).data.get('lm', null) == null || get(me).data.lm < request.time - duration.value(2, 's'))
+        && (!exists(blk) || !(request.auth.uid in get(blk).data.u));
+    }
+    match /classrooms/{room} {
+      allow read: if signedIn() && okRoom(room);
+      allow write: if isAdmin() && okRoom(room)
+        && request.resource.data.keys().hasOnly(['board', 'by', 'at'])
+        && request.resource.data.board is string && request.resource.data.board.size() <= 120
+        && request.resource.data.by == request.auth.uid;
+      match /presence/{uid} {
+        allow read: if signedIn();
+        allow create, update: if isMe(uid) && okRoom(room) && okPresence(request.resource.data);
+        allow delete: if isMe(uid) || isAdmin();
+      }
+      match /seats/{n} {
+        allow read: if signedIn();
+        allow create: if signedIn() && okRoom(room) && okSeatId(n) && okSeatDoc(request.resource.data);
+        allow update: if signedIn() && okSeatId(n) && okSeatDoc(request.resource.data)
+          && (resource.data.uid == request.auth.uid || seatFree(room, resource.data.uid));
+        allow delete: if signedIn() && (resource.data.uid == request.auth.uid || isAdmin());
+      }
+      match /dm/{pair}/msgs/{id} {
+        allow read: if inPair(pair) || isAdmin();
+        allow create: if inPair(pair) && okMsg(room, pair, request.resource.data);
+        allow delete: if isAdmin();
+      }
+    }
+    match /blocks/{uid} {
+      allow read: if isMe(uid);
+      allow create, update: if isMe(uid) && request.resource.data.keys().hasOnly(['u'])
+        && request.resource.data.u is list && request.resource.data.u.size() <= 300;
+      allow delete: if isMe(uid);
+    }
+    match /reports/{id} {
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['by', 'byName', 'who', 'whoName', 'room', 'msgs', 'at'])
+        && request.resource.data.by == request.auth.uid && request.resource.data.at == request.time
+        && request.resource.data.who is string && request.resource.data.room is string
+        && request.resource.data.msgs is list && request.resource.data.msgs.size() <= 30;
+      allow read, delete: if isAdmin();
     }
     match /{document=**} {
       allow read, write: if false;

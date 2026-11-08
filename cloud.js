@@ -4,13 +4,16 @@
      users/{uid}     hồ sơ học sinh: name, grade, school, email, createdAt, lastSeen  (học sinh tự sửa được)
      progress/{uid}  tiến độ: {v, json, dev, updatedAt}                               (học sinh tự sửa được)
      plans/{uid}     gói đã mua: {plan, label, until, note, by, at}                  (chỉ giáo viên/quản trị ghi)
-     admins/{uid}    tài khoản quản trị                                               (tạo tay trong Firebase console) */
+     admins/{uid}    tài khoản quản trị                                               (tạo tay trong Firebase console)
+     classrooms/{lop}/…, blocks/{uid}, reports/{id}   lớp học 2D (0.6) — xem đầu file classroom.js
+   Chạy thử trên máy với Firebase Emulator: mở http://localhost:8791/?kiosk=0&emu=1 (cần chạy emulator auth :9099, firestore :8080). */
 const CLOUD = (()=>{
-const CFG = window.IMS_FIREBASE || null, SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
+const EMU = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]emu=1/.test(location.search);
+const CFG = EMU ? Object.assign({}, window.IMS_FIREBASE || {apiKey:'demo'}, {projectId:'demo-ims', emulator:{auth:'http://127.0.0.1:9099', firestore:'127.0.0.1:8080'}}) : window.IMS_FIREBASE || null, SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
 const DEV = (()=>{ try{ let d = localStorage.getItem('ims_dev'); if(!d){ d = Math.random().toString(36).slice(2, 10); localStorage.setItem('ims_dev', d); } return d; }catch(e){ return 'x'; } })();
 let auth = null, fs = null, user = null, profile = null, plan = null, admin = false, state = CFG && CFG.apiKey ? 'loading' : 'off';
 let ready = false, loaded = false, pending = null, timer = null, lastSync = null, syncErr = null, unsub = null;
-const subs = [];
+const subs = [], outs = [];   // outs: việc cần làm trước khi đăng xuất (lớp học 2D: rời lớp)
 const emit = ()=> subs.forEach(f=>{ try{ f(state); }catch(e){ console.error(e); } });
 const loadJs = src=> new Promise((ok, no)=>{ const s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = ()=> no(new Error('load ' + src)); document.head.appendChild(s); });
 
@@ -51,8 +54,8 @@ async function init(){
   catch(e){ state = 'offline'; emit(); return; }   // mất mạng lần đầu mở: vẫn luyện được, lưu trên máy
   try{
     firebase.initializeApp(CFG); auth = firebase.auth(); fs = firebase.firestore();
+    if(CFG.emulator){ auth.useEmulator(CFG.emulator.auth); const [h, p] = CFG.emulator.firestore.split(':'); fs.useEmulator(h, +p); }   // phải gọi trước mọi lệnh Firestore khác
     try{ await fs.enablePersistence({synchronizeTabs:true}); }catch(e){}
-    if(CFG.emulator){ auth.useEmulator(CFG.emulator.auth); const [h, p] = CFG.emulator.firestore.split(':'); fs.useEmulator(h, +p); }
   }catch(e){ console.error(e); state = 'offline'; emit(); return; }
   auth.onAuthStateChanged(async u=>{
     if(unsub){ unsub(); unsub = null; } const same = user && u && user.uid === u.uid; user = u; loaded = false; if(!same){ ready = false; pending = null; profile = plan = null; admin = false; }
@@ -107,7 +110,8 @@ const api = {
   signIn: (email, pass)=> auth.signInWithEmailAndPassword(email.trim(), pass),
   google(){ const pr = new firebase.auth.GoogleAuthProvider(); pr.setCustomParameters({prompt:'select_account'}); return auth.signInWithPopup(pr); },
   reset: email=> auth.sendPasswordResetEmail(email.trim()),
-  async signOut(){ await flush(); return auth.signOut(); },
+  beforeSignOut(f){ outs.push(f); },
+  async signOut(){ await flush(); for(const f of outs){ try{ await f(); }catch(e){} } return auth.signOut(); },
 };
 return api;
 })();

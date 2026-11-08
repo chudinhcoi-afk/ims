@@ -5,9 +5,10 @@
    0.3.1: trang cài app lên màn hình (#/caidat) — link gửi học sinh: https://chudinhcoi-afk.github.io/ims/#/caidat
    0.4: mục Lộ trình — chọn câu theo kết quả làm bài (học theo chế độ chẩn đoán của Numbas): Kiểm tra đầu vào theo chương, Luyện đến thành thạo theo chuyên đề.
    0.5: chỉ dùng ở chế độ toàn màn hình (thoát ra là app tự đóng); giao diện mới: thanh bên trên máy tính, tìm dạng, luyện tiếp, đồng hồ và bảng câu khi làm đề,
-        phím tắt (A–D, Enter, ←/→), biểu đồ 14 ngày, hộp thoại trong app thay cho alert/confirm của trình duyệt (để không bật ra khỏi toàn màn hình). */
+        phím tắt (A–D, Enter, ←/→), biểu đồ 14 ngày, hộp thoại trong app thay cho alert/confirm của trình duyệt (để không bật ra khỏi toàn màn hình).
+   0.6: Lớp học 2D (#/lophoc, mã trong classroom.js): 48 chỗ ngồi, đi lại, vào chỗ, luyện đề ngay tại chỗ, thấy các bạn khác, nhắn riêng. */
 const IMS = (()=>{
-const VER = '0.5';
+const VER = '0.6';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
@@ -35,6 +36,7 @@ const backBtn = href=> `<a class="back" href="${href}" aria-label="Quay lại">$
 const toTop = ()=>{ const v = $('view'); if(v) v.scrollTop = 0; };
 const fold = s=> String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[đĐ]/g, 'd').toLowerCase();
 const mmss = ms=>{ const s = Math.max(0, Math.floor(ms/1000)); return String(Math.floor(s/60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+const LOPM = ()=> typeof LOP !== 'undefined' ? LOP : null;   // lớp học 2D (classroom.js, nạp sau app.js)
 const hoverDev = ()=> !!(window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches);
 function streak(){ let n = 0; for(let d = new Date(); ; d.setDate(d.getDate() - 1)){ const k = d.toISOString().slice(0, 10); if(DB.days[k]) n++; else if(k !== today()) break; if(n > 999) break; } return n; }
 
@@ -80,7 +82,7 @@ function kClose(why){
   if(S && S.mode === 'de' && !S.res){ finishDe(); note = `Đề đang làm đã được nộp tự động: đúng ${S.res.ok}/${S.res.n} câu. Câu chưa làm tính là sai.`; KIOSK.after = '#/ketqua'; }
   else { if(S && !S.res && S.items && S.items.length) note = 'Phiên luyện tập đang mở đã kết thúc. Kết quả các câu đã kiểm tra vẫn được lưu.'; S = null; KIOSK.after = null; }
   const k = DB.kiosk || (DB.kiosk = {n:0}); k.n++; k.at = Date.now(); save();
-  KIOSK.closed = {why, note}; if(MDONE) MDONE(false); $('view').innerHTML = ''; document.body.classList.remove('focus');
+  KIOSK.closed = {why, note}; if(MDONE) MDONE(false); if(LOPM()) LOPM().route(''); $('view').innerHTML = ''; document.body.classList.remove('focus');   // LOPM().route(''): rời lớp học 2D, nhả ghế
   try{ if(KIOSK.wake) KIOSK.wake.release(); }catch(e){}
   try{ if(navigator.keyboard && navigator.keyboard.unlock) navigator.keyboard.unlock(); }catch(e){}
   try{ if(fsEl()) (document.exitFullscreen || document.webkitExitFullscreen).call(document).catch?.(()=>{}); }catch(e){}
@@ -296,11 +298,21 @@ async function startDe(){
   const cis = [...document.querySelectorAll('.deci:checked')].map(x=> +x.value), kinds = DB.deK || ['TN','DS','TLN'], n = DB.deN || 10;
   if(!cis.length){ say('Hãy chọn ít nhất một chương.'); return; } DB.deSel = {g:DB.grade, cis}; save();
   if(!paid() && freeLeft() < n){ if(freeLeft() > 0) say(`Hôm nay em còn ${freeLeft()} câu miễn phí, chưa đủ cho đề ${n} câu. Hãy chọn đề ngắn hơn hoặc mua gói học.`); else location.hash = '#/goi'; return; }
-  let ks = KEYS.filter(k=> G[k].grade === DB.grade && cis.includes(G[k].ci) && kinds.includes(G[k].kind || 'TN')); if(!ks.length){ say('Các chương đã chọn chưa có dạng thuộc hình thức này.'); return; }
-  ks = ks.sort(()=> Math.random() - 0.5); const pick = []; for(let i = 0; i < n; i++) pick.push(ks[i % ks.length]);
+  const ks = KEYS.filter(k=> G[k].grade === DB.grade && cis.includes(G[k].ci) && kinds.includes(G[k].kind || 'TN')); if(!ks.length){ say('Các chương đã chọn chưa có dạng thuộc hình thức này.'); return; }
+  makeDe(ks, n, '#/de'); }
+function makeDe(ks, n, back){
+  ks = ks.slice().sort(()=> Math.random() - 0.5); const pick = []; for(let i = 0; i < n; i++) pick.push(ks[i % ks.length]);
   const R = {TN:0, DS:1, TLN:2}; pick.sort((a, b)=> R[G[a].kind || 'TN'] - R[G[b].kind || 'TN']);
-  const items = pick.map(newItem).filter(Boolean); S = {mode:'de', items, i:0, back:'#/de', t0:Date.now()}; goLam(); }
-function finishDe(){ S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length}; }
+  const items = pick.map(newItem).filter(Boolean); S = {mode:'de', items, i:0, back, t0:Date.now()}; goLam(); }
+/* Lớp học 2D (0.6): đang ngồi trong lớp thì bấm Luyện đề — đề theo lớp g, một chương ci (bỏ trống: mọi chương), n câu; làm xong quay về lớp */
+function deInfo(g){ const gs = grades(); g = gs.includes(+g) ? +g : gs.includes(DB.grade) ? DB.grade : gs.at(-1); const ks = KEYS.filter(k=> G[k].grade === g);
+  return {g, grades:gs, n:DB.deN || 10, chs:[...new Set(ks.map(k=> G[k].ci))].sort((a, b)=> a - b).map(ci=> ({ci, name:chName(g, ci), n:ks.filter(k=> G[k].ci === ci).length}))}; }
+function startDeLop(o){ o = o || {}; const g = +o.g || DB.grade, n = +o.n || 10, kinds = DB.deK || ['TN','DS','TLN'];
+  if(!paid() && freeLeft() < n){ if(freeLeft() > 0) say(`Hôm nay em còn ${freeLeft()} câu miễn phí, chưa đủ cho đề ${n} câu. Hãy chọn đề ngắn hơn hoặc mua gói học.`); else location.hash = '#/goi'; return false; }
+  const ks = KEYS.filter(k=> G[k].grade === g && (o.ci == null || o.ci === '' || G[k].ci === +o.ci) && kinds.includes(G[k].kind || 'TN')); if(!ks.length){ say('Chương này chưa có dạng thuộc hình thức đã chọn.'); return false; }
+  DB.grade = g; DB.deN = n; save(); makeDe(ks, n, '#/lophoc'); return true; }
+function finishDe(){ S.items.forEach(c=>{ c.done = true; c.ok = answered(c) ? grade(c) : false; record(c.key, c.ok); }); S.t1 = Date.now(); S.res = {n:S.items.length, ok:S.items.filter(c=> c.ok).length};
+  try{ window.dispatchEvent(new CustomEvent('ims:de', {detail:{ok:S.res.ok, n:S.res.n, back:S.back}})); }catch(e){} }   // lớp học 2D hiện điểm vừa đạt trên đầu nhân vật
 const shortOpts = q=> ['A','B','C','D'].every(L=> String(q[L] || '').replace(/\\[a-z]+|[{}$\s]/gi, '').length <= 22) && !q.hinhVe;
 /* vLam(how): how = undefined → lên đầu trang (câu mới); 'keep' → giữ chỗ đang xem (chọn đáp án); 'fb' → cuộn tới phần nhận xét, lời giải */
 function vLam(how){
@@ -325,9 +337,10 @@ function vLam(how){
   const inp = v.querySelector('input.ans:not(:disabled)'); if(inp && hoverDev() && how !== 'keep') inp.focus({preventScroll:true}); }
 function vKetQua(){
   if(!S || !S.res){ location.hash = '#/de'; return; } const r = S.res, mins = Math.max(1, Math.round((S.t1 - S.t0)/60000)), p = Math.round(100*r.ok/r.n);
-  let h = `<div class="qhead">${backBtn('#/de')}<span class="ttl">Kết quả làm đề</span></div><div class="card" style="text-align:center;padding:22px 16px"><div class="score" style="color:${p >= 80 ? 'var(--ok)' : p >= 50 ? 'var(--navy)' : 'var(--bad)'}">${r.ok}/${r.n}</div><p class="muted" style="margin:2px 0 0">Đúng ${p}% · ${mins} phút · ${p >= 80 ? 'Rất tốt!' : p >= 50 ? 'Khá — xem lại các câu sai nhé.' : 'Cần ôn thêm — xem lời giải từng câu.'}</p><div class="bar" style="max-width:320px;margin:14px auto 0"><i style="width:${p}%"></i></div></div><div class="card" style="padding:4px 16px">`;
+  const lop = S.back === '#/lophoc';
+  let h = `<div class="qhead">${backBtn(lop ? '#/lophoc' : '#/de')}<span class="ttl">Kết quả làm đề</span></div><div class="card" style="text-align:center;padding:22px 16px"><div class="score" style="color:${p >= 80 ? 'var(--ok)' : p >= 50 ? 'var(--navy)' : 'var(--bad)'}">${r.ok}/${r.n}</div><p class="muted" style="margin:2px 0 0">Đúng ${p}% · ${mins} phút · ${p >= 80 ? 'Rất tốt!' : p >= 50 ? 'Khá — xem lại các câu sai nhé.' : 'Cần ôn thêm — xem lời giải từng câu.'}</p><div class="bar" style="max-width:320px;margin:14px auto 0"><i style="width:${p}%"></i></div></div><div class="card" style="padding:4px 16px">`;
   h += S.items.map((c, i)=> `<div class="rv" onclick="IMS.review(${i})"><span class="mk ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓' : '✗'}</span><span style="flex:1;min-width:0">Câu ${i + 1}. ${esc(name(G[c.key]))}</span><span class="kind ${c.kind}">${KS[c.kind]}</span><span class="muted">›</span></div>`).join('');
-  h += `</div><div class="row"><button class="btn gold" onclick="IMS.startDe2()">Làm đề mới</button><button class="btn sec" onclick="location.hash='#/sai'">Ôn lỗi sai</button></div>`;
+  h += `</div><div class="row">${lop ? `<button class="btn gold" onclick="location.hash='#/lophoc'">Về lớp học</button>` : ''}<button class="btn ${lop ? 'sec' : 'gold'}" onclick="IMS.startDe2()">Làm đề mới</button><button class="btn sec" onclick="location.hash='#/sai'">Ôn lỗi sai</button></div>`;
   $('view').innerHTML = h; }
 function vXem(){ if(!S || !S.res){ location.hash = '#/de'; return; } const i = S.rv || 0, c = S.items[i];
   $('view').innerHTML = `<div class="qhead">${backBtn('#/ketqua')}<span class="ttl">Xem lại · câu ${i + 1}/${S.items.length}</span><span class="kind ${c.kind}">${KN[c.kind]}</span></div>${qHtml(c, i)}<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Đúng' : answered(c) ? '✗ Sai' : '✗ Chưa làm'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="actbar"><div class="row"><button class="btn sec" ${i ? '' : 'disabled'} onclick="IMS.review(${i - 1})">‹ Câu trước</button><button class="btn sec" ${i < S.items.length - 1 ? '' : 'disabled'} onclick="IMS.review(${i + 1})">Câu sau ›</button></div></div>`;
@@ -471,10 +484,11 @@ function onCloud(st){
   const r = location.hash || '';
   if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri' || r === '#/caidat'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem|chandoan|xong)$/.test(r)) route(); else topRight(); }
 let LASTR = null;
-function route(){ topRight(); kRender(); if(KIOSK.closed){ $('view').innerHTML = ''; return; } const r = (location.hash || '#/luyen').slice(2);
-  document.body.classList.toggle('focus', /^(lam|ketqua|xem|chandoan|xong)$/.test(r)); if(r !== LASTR){ LASTR = r; toTop(); }
+function route(){ topRight(); kRender(); const r = (location.hash || '#/luyen').slice(2); if(LOPM()) LOPM().route(KIOSK.closed ? '' : r); if(KIOSK.closed){ $('view').innerHTML = ''; return; }
+  document.body.classList.toggle('focus', /^(lam|ketqua|xem|chandoan|xong)$/.test(r)); document.body.classList.toggle('lop', r === 'lophoc'); if(r !== LASTR){ LASTR = r; toTop(); }
   if(C && CF.requireLogin && r !== 'taikhoan' && r !== 'caidat' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
-  ({luyen:vLuyen, lotrinh:vLoTrinh, chandoan:vChan, xong:vXong, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai}[r] || vLuyen)(); }
+  ({luyen:vLuyen, lotrinh:vLoTrinh, chandoan:vChan, xong:vXong, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai,
+    lophoc:()=>{ if(LOPM()){ setTab('lophoc'); LOPM().view($('view')); } else vLuyen(); }}[r] || vLuyen)(); }
 
 /* ---------- phím tắt khi làm bài (0.5): A–D hoặc 1–4 chọn đáp án, Enter kiểm tra / câu tiếp, ←/→ chuyển câu trong đề ---------- */
 function onKey(e){
@@ -521,6 +535,7 @@ return {
   deCi(){ DB.deSel = {g:DB.grade, cis:[...document.querySelectorAll('.deci:checked')].map(x=> +x.value)}; save(); },
   deAll(){ const all = [...document.querySelectorAll('.deci')], on = all.every(x=> x.checked); DB.deSel = {g:DB.grade, cis:on ? [] : all.map(x=> +x.value)}; save(); vDe(); },
   kEnter, kReopen,
+  ask, say, startDeLop, deInfo, sess(){ return S ? {mode:S.mode, back:S.back, done:!!S.res} : null; },   // dùng cho lớp học 2D (classroom.js)
   am(m){ AM = m; AERR = AOK = ''; vTK(); }, acct, edit(v){ EDIT = v; AERR = ''; vTK(); },
   review(i){ S.rv = i; location.hash === '#/xem' ? vXem() : (location.hash = '#/xem'); },
   install, copyLink,
