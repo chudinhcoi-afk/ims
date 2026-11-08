@@ -2,16 +2,17 @@
    Giai đoạn 1: luyện từng dạng, làm đề theo chủ đề, ôn lỗi sai, tiến độ.
    0.2: đăng nhập (email/mật khẩu hoặc Google) và lưu tiến độ lên tài khoản qua cloud.js; chưa cấu hình Firebase thì chỉ lưu trên máy.
    0.3: gói học — chưa có gói thì mỗi ngày làm miễn phí FREE câu; quản trị cấp / gia hạn gói ngay trong app (mục Quản trị).
-   0.3.1: trang cài app lên màn hình (#/caidat) — link gửi học sinh: https://chudinhcoi-afk.github.io/ims/#/caidat */
+   0.3.1: trang cài app lên màn hình (#/caidat) — link gửi học sinh: https://chudinhcoi-afk.github.io/ims/#/caidat
+   0.4: mục Lộ trình — chọn câu theo kết quả làm bài (học theo chế độ chẩn đoán của Numbas): Kiểm tra đầu vào theo chương, Luyện đến thành thạo theo chuyên đề. */
 const IMS = (()=>{
-const VER = '0.3.1';
+const VER = '0.4';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
 const KN = {TN:'Trắc nghiệm', DS:'Đúng – sai', TLN:'Trả lời ngắn', TL:'Tự luận'}, KS = {TN:'TN', DS:'Đ–S', TLN:'TLN', TL:'TL'};
 const C = typeof CLOUD !== 'undefined' ? CLOUD : null, CF = (C && C.config) || {};
 const norm = o=> Object.assign({by:{}, wrong:{}, days:{}, grade:12}, o || {});
-let LSK = LS, PACK = null, KEYS = [], DB = load(LS), S = null;   // LSK: khoá lưu trên máy (khách: ims_v1; đã đăng nhập: ims_v1_u_<uid>). S: phiên làm bài đang mở
+let LSK = LS, PACK = null, KEYS = [], KSET = new Set(), DB = load(LS), S = null;   // LSK: khoá lưu trên máy (khách: ims_v1; đã đăng nhập: ims_v1_u_<uid>). S: phiên làm bài đang mở
 function load(k){ try{ return norm(JSON.parse(localStorage.getItem(k) || '{}')); }catch(e){ return norm(); } }
 function saveLocal(){ try{ localStorage.setItem(LSK, JSON.stringify(DB)); }catch(e){} }
 function save(){ saveLocal(); if(C && LSK !== LS) C.push(DB); }
@@ -112,6 +113,81 @@ function vTienDo(){
       return `<div class="card" style="padding:10px 14px"><div class="row" style="justify-content:space-between"><span>${esc(chName(g, ci))}</span><span class="muted">${done}/${a.length} dạng thành thạo</span></div><div class="bar"><i style="width:${a.length ? Math.round(100*done/a.length) : 0}%"></i></div></div>`; }).join(''); });
   h += `<p class="muted">Một dạng được tính là thành thạo khi em làm đúng từ 80% số câu trở lên. ${C && C.state === 'in' && C.user ? `Tiến độ được lưu vào tài khoản ${esc(C.user.email || '')}.` : C && C.state !== 'off' ? `Dữ liệu đang lưu trên máy này. <a href="#/taikhoan">Đăng nhập</a> để không mất tiến độ khi đổi máy.` : 'Dữ liệu lưu trên máy này.'}</p>${standalone() ? '' : `<a class="btn sec" href="#/caidat" style="display:block;text-align:center;margin:8px 0">📲 Cài IMs lên màn hình</a>`}<p class="muted">IMs ${VER} · gói câu hỏi ${PACK && PACK.at ? new Date(PACK.at).toLocaleDateString('vi-VN') : ''} · ${KEYS.length} dạng</p>`;
   $('view').innerHTML = h; }
+/* ---------- lộ trình (0.4): chọn câu theo kết quả làm bài ----------
+   Học theo chế độ chẩn đoán của Numbas (DIAGNOSYS và Mastery). Chủ đề = chuyên đề (một buổi dạy) của MathBank, xếp theo thứ tự PPCT trong chương;
+   trong CÙNG MỘT BÀI coi chuyên đề sau cần nền tảng của chuyên đề trước; các bài khác nhau kiểm tra riêng (kết quả chỉ mang tính gợi ý).
+   • Kiểm tra đầu vào: mỗi chuyên đề hỏi tối đa 1 câu, luôn hỏi chuyên đề ở giữa đoạn chưa xác định của bài. Đúng → chuyên đề đó và các chuyên đề trước cùng bài
+     "đã nắm"; sai → chuyên đề đó và các chuyên đề sau cùng bài "chưa nắm". Hết đoạn chưa xác định thì dừng (mỗi bài khoảng log2 số chuyên đề câu). Ưu tiên câu TH/VD,
+     TLN/Đ–S để khó đoán mò.
+   • Luyện đến thành thạo: các dạng của chuyên đề xếp hàng NB → VDC, TN → TL. Đúng thì dạng ra khỏi hàng; sai thì xuống cuối hàng và ra lại với số liệu mới.
+     Hết hàng là thành thạo. Hàng đợi lưu trong DB.lt.q để làm tiếp hôm sau. */
+const LVO = {NB:0, TH:1, VD:2, VDC:3}, KO = {TN:0, DS:1, TLN:2, TL:3};
+const LT = ()=>{ const t = DB.lt || (DB.lt = {}); t.diag = t.diag || {}; t.done = t.done || {}; t.q = t.q || {}; return t; };
+let CDX = null;   // {ch:{'g|ci':[cd]}, by:{ma:cd}} — cd = {ma, ten, keys, g, ci, i}
+function cdIndex(){ if(CDX) return CDX; CDX = {ch:{}, by:{}};
+  grades().forEach(g=>{ (PPCT[g] || []).forEach((ch, ci)=>{ const out = [];
+    (ch.bai || []).forEach((_, bi)=>{ const bm = typeof baiMa === 'function' ? baiMa(g, ci, bi) : ''; let L = [];
+      try{ L = bm && typeof cdList === 'function' ? cdList(bm) : []; }catch(e){ L = []; }
+      const own = KEYS.filter(k=> G[k].grade === g && G[k].ci === ci && G[k].bi === bi);
+      if(!L.length) L = [{ma: bm ? bm + '.1' : `${g}|${ci}|${bi}`, ten: baiName(g, ci, bi), keys: own}];
+      L.forEach(c=>{ const keys = (c.keys || []).filter(k=> KSET.has(k) && G[k].grade === g && G[k].ci === ci); if(keys.length) out.push({ma:c.ma, ten:c.ten || baiName(g, ci, bi), keys}); });
+      const seen = new Set([].concat(...out.map(c=> c.keys))), rest = own.filter(k=> !seen.has(k));   // dạng chưa vào chuyên đề nào: gộp vào chuyên đề cuối của bài
+      if(rest.length && out.length) out[out.length - 1].keys.push(...rest); });
+    out.forEach((c, i)=>{ Object.assign(c, {g, ci, i}); CDX.by[c.ma] = c; }); if(out.length) CDX.ch[g + '|' + ci] = out; }); });
+  return CDX; }
+const cdsOf = (g, ci)=> cdIndex().ch[g + '|' + ci] || [];
+const cdBy = ma=> cdIndex().by[ma];
+const qOrder = ks=> ks.slice().sort((a, b)=> (LVO[G[a].mucdo] ?? 1) - (LVO[G[b].mucdo] ?? 1) || (KO[G[a].kind || 'TN'] - KO[G[b].kind || 'TN']) || (a < b ? -1 : 1));
+function diagKey(c){   // câu hỏi kiểm tra cho một chuyên đề: TH trước, rồi VD, NB; TLN, Đ–S trước TN; tránh TL (phải tự chấm)
+  const ks = c.keys.filter(k=> (G[k].kind || 'TN') !== 'TL'), pool = ks.length ? ks : c.keys;
+  const sc = k=> ({TH:0, VD:1, NB:2, VDC:3}[G[k].mucdo] ?? 2)*4 + ({TLN:0, DS:1, TN:2, TL:3}[G[k].kind || 'TN']);
+  const best = Math.min(...pool.map(sc)); const top = pool.filter(k=> sc(k) === best);
+  return top[Math.floor(Math.random()*top.length)]; }
+const baiOf = c=> String(c.ma).split('.')[0];
+const diagLen = L=>{ const n = {}; L.forEach(c=>{ n[baiOf(c)] = (n[baiOf(c)] || 0) + 1; }); return Object.values(n).reduce((s, x)=> s + Math.ceil(Math.log2(x + 1)), 0); };
+function stTag(ma){ const t = LT(), c = cdBy(ma); if(t.done[ma]) return `<span class="lt ok">✓ Thành thạo</span>`;
+  const q = t.q[ma]; if(q && q.k && c) return `<span class="lt mid">Đang luyện ${c.keys.length - q.k.length}/${c.keys.length}</span>`;
+  const d = c && t.diag[c.g + '|' + c.ci]; if(d && ma in d.r) return d.r[ma] ? `<span class="lt ok2">Đã nắm</span>` : `<span class="lt no">Chưa nắm</span>`; return ''; }
+function vLoTrinh(){
+  setTab('lotrinh'); const gs = grades(); if(!gs.includes(DB.grade)) DB.grade = gs.at(-1);
+  const g = DB.grade, cis = [...new Set(KEYS.filter(k=> G[k].grade === g).map(k=> G[k].ci))].sort((a, b)=> a - b), t = LT();
+  let h = `<h1>Lộ trình</h1><div class="chips">${gs.map(x=> `<button class="chip ${x === g ? 'on' : ''}" onclick="IMS.grade(${x},'lt')">Lớp ${x}</button>`).join('')}</div>
+    <p class="muted" style="margin-top:0"><b>Kiểm tra đầu vào</b>: vài câu để biết em đã nắm đến chuyên đề nào của chương. <b>Luyện đến thành thạo</b>: làm lần lượt các dạng của một chuyên đề, sai dạng nào thì dạng đó quay lại với số liệu mới cho tới khi đúng hết.</p>`;
+  h += cis.map(ci=>{ const L = cdsOf(g, ci); if(!L.length) return ''; const d = t.diag[g + '|' + ci], nDone = L.filter(c=> t.done[c.ma]).length, first = d ? L.find(c=> !d.r[c.ma] && !t.done[c.ma]) : null;
+    return `<details class="ch" ${d || L.some(c=> t.q[c.ma]) ? 'open' : ''}><summary>${esc(chName(g, ci))}<span class="n">${nDone}/${L.length} chuyên đề</span></summary><div class="ltbox">`
+      + `<button class="btn sec" style="width:100%" onclick="IMS.startChan(${g},${ci})">${d ? 'Kiểm tra lại' : 'Kiểm tra đầu vào'} · khoảng ${diagLen(L)} câu</button>`
+      + (d ? `<p class="muted" style="margin:8px 0 0">Kiểm tra ngày ${new Date(d.at).toLocaleDateString('vi-VN')}. ${first ? `Nên học tiếp: <b>${esc(first.ten)}</b>.` : 'Em đã nắm cả chương — luyện thành thạo từng chuyên đề để chắc chắn.'}</p>` : '')
+      + `</div>` + L.map(c=> `<div class="dang" onclick="IMS.startThao('${c.ma}')"><span class="kind TN">${esc(c.ma)}</span><span class="t">${esc(c.ten)}<br><span class="muted">${c.keys.length} dạng</span></span>${stTag(c.ma)}</div>`).join('') + `</details>`; }).join('');
+  $('view').innerHTML = h; }
+function startChan(g, ci){ const L = cdsOf(g, ci); if(!L.length || !canDo(1)) return;
+  S = {mode:'chan', g, ci, L, st:L.map(()=> null), tested:{}, items:[], i:0, back:'#/lotrinh'}; chanNext(); }
+function chanNext(){ const st = S.st, lo = st.indexOf(null); if(lo < 0) return chanEnd(); let hi = lo; while(hi + 1 < st.length && st[hi + 1] === null && baiOf(S.L[hi + 1]) === baiOf(S.L[lo])) hi++;
+  const m = Math.floor((lo + hi)/2), c = S.L[m], it = newItem(diagKey(c)); if(!it){ st[m] = 0; return chanNext(); }
+  it.cd = m; S.items.push(it); S.i = S.items.length - 1; goLam(); }
+function chanAnswer(c){ const m = c.cd, st = S.st, b = baiOf(S.L[m]); S.tested[S.L[m].ma] = c.ok ? 1 : 0;
+  if(c.ok){ for(let j = m; j >= 0 && baiOf(S.L[j]) === b; j--) if(st[j] === null) st[j] = 1; }
+  else { for(let j = m; j < st.length && baiOf(S.L[j]) === b; j++) if(st[j] === null) st[j] = 0; } }
+function chanEnd(){ const r = {}; S.L.forEach((c, j)=>{ r[c.ma] = S.st[j] ? 1 : 0; }); LT().diag[S.g + '|' + S.ci] = {at:Date.now(), r, t:S.tested}; save(); S.res = r; location.hash = '#/chandoan'; }
+function vChan(){ if(!S || S.mode !== 'chan' || !S.res){ location.hash = '#/lotrinh'; return; } setTab('lotrinh');
+  const L = S.L, first = L.find(c=> !S.res[c.ma]), nOk = L.filter(c=> S.res[c.ma]).length;
+  let h = `<div class="qhead"><a class="back" href="#/lotrinh">‹</a><span>Kết quả kiểm tra đầu vào</span></div><h1 style="margin-top:0">${esc(chName(S.g, S.ci))}</h1>
+    <div class="score">${nOk}/${L.length}</div><p class="muted" style="text-align:center">chuyên đề đã nắm · em làm ${S.items.length} câu, đúng ${S.items.filter(c=> c.ok).length} câu</p><div class="card" style="padding:4px 14px">`;
+  h += L.map(c=> `<div class="rv"><span class="mk ${S.res[c.ma] ? 'ok' : 'no'}">${S.res[c.ma] ? '✓' : '✗'}</span><span style="flex:1">${esc(c.ten)}<br><span class="muted">${c.ma in S.tested ? 'đã hỏi 1 câu' : S.res[c.ma] ? 'suy ra: em làm được chuyên đề sau cùng bài' : 'suy ra: em chưa làm được chuyên đề trước cùng bài'}</span></span></div>`).join('') + `</div>`;
+  h += first ? `<button class="btn gold" style="width:100%" onclick="IMS.startThao('${first.ma}')">Luyện đến thành thạo: ${esc(first.ten)}</button>` : `<div class="fb ok">Em đã nắm cả chương. Hãy luyện thành thạo từng chuyên đề để chắc chắn hơn.</div>`;
+  h += `<p class="muted">Mỗi chuyên đề hỏi nhiều nhất một câu; trong cùng một bài, làm được chuyên đề sau thì coi như nắm chuyên đề trước. Kết quả mang tính gợi ý để chọn chỗ bắt đầu học.</p><a class="btn sec" href="#/lotrinh" style="display:block;text-align:center">Về Lộ trình</a>`;
+  $('view').innerHTML = h; window.scrollTo(0, 0); }
+function startThao(ma){ const c = cdBy(ma); if(!c || !canDo(1)) return; const t = LT();
+  let q = t.q[ma] && Array.isArray(t.q[ma].k) ? t.q[ma].k.filter(k=> c.keys.includes(k)) : null; if(!q || !q.length) q = qOrder(c.keys);
+  t.q[ma] = {k:q, at:Date.now()}; save(); S = {mode:'thao', ma, c, items:[], i:0, back:'#/lotrinh', n:0}; thaoNext(); }
+function thaoNext(){ const q = LT().q[S.ma]; if(!q || !q.k.length) return thaoEnd();
+  let it = null; for(let tries = 0; tries < q.k.length && !it; tries++){ it = newItem(q.k[0]); if(!it){ q.k.shift(); } } if(!it) return thaoEnd();
+  S.items.push(it); S.i = S.items.length - 1; goLam(); }
+function thaoAnswer(c){ const t = LT(), q = t.q[S.ma]; if(!q) return; S.n++; const k = q.k.shift(); if(!c.ok) q.k.push(k); q.at = Date.now(); if(!q.k.length){ delete t.q[S.ma]; t.done[S.ma] = Date.now(); } save(); }
+function thaoEnd(){ const t = LT(); delete t.q[S.ma]; t.done[S.ma] = t.done[S.ma] || Date.now(); save(); location.hash = '#/xong'; }
+function vXong(){ if(!S || S.mode !== 'thao'){ location.hash = '#/lotrinh'; return; } setTab('lotrinh'); const c = S.c, nx = cdsOf(c.g, c.ci)[c.i + 1];
+  $('view').innerHTML = `<div class="qhead"><a class="back" href="#/lotrinh">‹</a><span>Luyện đến thành thạo</span></div><div class="fb ok" style="font-size:17px">✓ Em đã thành thạo chuyên đề <b>${esc(c.ten)}</b>: làm đúng cả ${c.keys.length} dạng${S.n ? ` sau ${S.n} câu` : ''}.</div>`
+    + (nx ? `<button class="btn gold" style="width:100%;margin-bottom:10px" onclick="IMS.startThao('${nx.ma}')">Chuyên đề tiếp theo: ${esc(nx.ten)}</button>` : '') + `<a class="btn sec" href="#/lotrinh" style="display:block;text-align:center">Về Lộ trình</a>`; }
+function ltAnswered(c){ if(!S || c.ltDone) return; c.ltDone = true; if(S.mode === 'chan') chanAnswer(c); else if(S.mode === 'thao') thaoAnswer(c); }
 /* ---------- phiên làm bài ---------- */
 const goLam = ()=>{ if(location.hash === '#/lam') vLam(); else location.hash = '#/lam'; };
 const backOf = d=> (location.hash && !/^#\/(lam|ketqua|xem)/.test(location.hash)) ? location.hash : d;
@@ -128,11 +204,13 @@ function startDe(){
 function vLam(){
   if(!S){ location.hash = '#/luyen'; return; } const c = S.items[S.i]; if(!c){ $('view').innerHTML = '<div class="empty">Không sinh được câu hỏi.</div>'; return; }
   const de = S.mode === 'de', g = G[c.key];
-  let h = `<div class="qhead"><a class="back" href="${S.back}">‹</a><span>${de ? `Câu ${S.i + 1}/${S.items.length}` : esc(name(g))}</span><span style="margin-left:auto" class="kind ${c.kind}">${KN[c.kind]}</span></div>${qHtml(c, S.i)}`;
+  const q = S.mode === 'thao' && LT().q[S.ma], tot = S.mode === 'thao' ? S.c.keys.length : 0, left = q ? q.k.length : 0;
+  const head = de ? `Câu ${S.i + 1}/${S.items.length}` : S.mode === 'chan' ? `Kiểm tra đầu vào · câu ${S.items.length} · ${esc(chName(S.g, S.ci))}` : S.mode === 'thao' ? `${esc(S.c.ten)} · còn ${left}/${tot} dạng` : esc(name(g));
+  let h = `<div class="qhead"><a class="back" href="${S.back}">‹</a><span>${head}</span><span style="margin-left:auto" class="kind ${c.kind}">${KN[c.kind]}</span></div>${S.mode === 'thao' ? `<div class="bar" style="margin:-2px 0 10px"><i style="width:${tot ? Math.round(100*(tot - left)/tot) : 0}%"></i></div>` : ''}${qHtml(c, S.i)}`;
   if(de){ h += `<div class="row"><button class="btn sec" ${S.i ? '' : 'disabled'} onclick="IMS.go(-1)">‹ Câu trước</button>${S.i < S.items.length - 1 ? `<button class="btn" onclick="IMS.go(1)">Câu sau ›</button>` : `<button class="btn gold" onclick="IMS.submit()">Nộp bài</button>`}</div><p class="muted" style="text-align:center">Đã làm ${S.items.filter(answered).length}/${S.items.length} câu</p>`; }
   else if(!c.done){ h += c.kind === 'TL' ? `<button class="btn" style="width:100%" onclick="IMS.check()">Xem lời giải</button>` : `<button class="btn" style="width:100%" ${answered(c) ? '' : 'disabled'} id="chk" onclick="IMS.check()">Kiểm tra</button>`; }
   else { h += c.kind === 'TL' && c.ok == null ? `<div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:10px"><button class="btn" onclick="IMS.self(true)">Em làm đúng</button><button class="btn sec" onclick="IMS.self(false)">Chưa đúng</button></div>`
-      : `<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Chính xác!' : '✗ Chưa đúng — xem lời giải bên dưới.'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px">${S.mode === 'sai' ? `<button class="btn" onclick="IMS.nextSai()">Câu tiếp ›</button>` : `<button class="btn" onclick="IMS.again()">Câu khác cùng dạng ›</button>`}</div>`; }
+      : `<div class="fb ${c.ok ? 'ok' : 'no'}">${c.ok ? '✓ Chính xác!' : '✗ Chưa đúng — xem lời giải bên dưới.'}</div><div class="lg"><b>Lời giải.</b> ${c.q.loigiai || ''}</div><div class="row" style="margin-top:12px">${S.mode === 'sai' ? `<button class="btn" onclick="IMS.nextSai()">Câu tiếp ›</button>` : S.mode === 'chan' ? `<button class="btn" onclick="IMS.nextChan()">${S.st.includes(null) ? 'Câu tiếp ›' : 'Xem kết quả ›'}</button>` : S.mode === 'thao' ? `<button class="btn" onclick="IMS.nextThao()">${LT().q[S.ma] ? (c.ok ? 'Dạng tiếp theo ›' : 'Tiếp — dạng này sẽ quay lại ›') : 'Hoàn thành ›'}</button>` : `<button class="btn" onclick="IMS.again()">Câu khác cùng dạng ›</button>`}</div>`; }
   $('view').innerHTML = h; math($('view')); window.scrollTo(0, 0); }
 function vKetQua(){
   if(!S || !S.res){ location.hash = '#/de'; return; } const r = S.res, mins = Math.max(1, Math.round((S.t1 - S.t0)/60000));
@@ -272,38 +350,39 @@ async function syncAccount(uid){   // vừa đăng nhập: gộp tiến độ tr
   if(Object.keys(guest.by).length){ db = C.merge(guest, db); try{ localStorage.setItem(LS, JSON.stringify({grade:guest.grade})); }catch(e){} }
   LSK = key; DB = norm(db); saveLocal();
   if(remote === undefined){ setTimeout(()=>{ if(curUid === uid) syncAccount(uid); }, 20000); }   // chưa đọc được máy chủ: chưa ghi đè, thử lại sau
-  else { C.ready(); C.push(DB); C.watch(r=>{ DB = norm(C.merge(DB, r)); saveLocal(); if(/^#\/(luyen|sai|tiendo)?$/.test(location.hash || '')) route(); else topRight(); }); }
+  else { C.ready(); C.push(DB); C.watch(r=>{ DB = norm(C.merge(DB, r)); saveLocal(); if(/^#\/(luyen|lotrinh|sai|tiendo)?$/.test(location.hash || '')) route(); else topRight(); }); }
   route(); }
 function onCloud(st){
   if(st === 'in' && C.user && curUid !== C.user.uid){ curUid = C.user.uid; AERR = ''; syncAccount(curUid); }
   if(st !== 'in' && curUid){ curUid = null; LSK = LS; DB = load(LS); S = null; }
   if(st === 'out' && CF.requireLogin && location.hash !== '#/taikhoan'){ location.hash = '#/taikhoan'; return; }
   const r = location.hash || '';
-  if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri' || r === '#/caidat'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem)$/.test(r)) route(); else topRight(); }
+  if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri' || r === '#/caidat'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem|chandoan|xong)$/.test(r)) route(); else topRight(); }
 function route(){ topRight(); const r = (location.hash || '#/luyen').slice(2);
   if(C && CF.requireLogin && r !== 'taikhoan' && r !== 'caidat' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
-  ({luyen:vLuyen, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai}[r] || vLuyen)(); }
+  ({luyen:vLuyen, lotrinh:vLoTrinh, chandoan:vChan, xong:vXong, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai}[r] || vLuyen)(); }
 
 /* ---------- khởi động ---------- */
 async function boot(){
   try{ const r = await fetch('pack.json', {cache:'no-cache'}); PACK = await r.json(); }catch(e){ PACK = null; }
   if(PACK && Array.isArray(PACK.keys) && PACK.keys.length) KEYS = PACK.keys.filter(k=> G[k]);
   else { PACK = {dev:true}; KEYS = Object.keys(G).filter(k=> G[k].grade >= 10); }
-  KEYS = KEYS.filter(k=> PPCT[G[k].grade] && PPCT[G[k].grade][G[k].ci]);
+  KEYS = KEYS.filter(k=> PPCT[G[k].grade] && PPCT[G[k].grade][G[k].ci]); KSET = new Set(KEYS);
   window.addEventListener('hashchange', ()=>{ if(location.hash === '#/taikhoan'){ AERR = AOK = ''; EDIT = false; FORM = {}; } route(); }); route();
   if(C){ C.on(onCloud); C.init(); }
   if('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 boot();
 return {
-  grade(g, v){ DB.grade = g; save(); v === 'de' ? vDe() : vLuyen(); },
+  grade(g, v){ DB.grade = g; save(); v === 'de' ? vDe() : v === 'lt' ? vLoTrinh() : vLuyen(); },
   startDang, startSai, startDe, startDe2(){ location.hash = '#/de'; },
   deN(n){ DB.deN = n; save(); vDe(); }, deK(k){ const a = DB.deK || ['TN','DS','TLN']; DB.deK = a.includes(k) ? (a.length > 1 ? a.filter(x=> x !== k) : a) : a.concat(k); save(); vDe(); },
   pick(i, L){ const c = S.items[i]; if(c.done) return; c.ans = L; vLam(); },
   pickDS(i, j, v){ const c = S.items[i]; if(c.done) return; c.ans = c.ans || []; c.ans[j] = v; vLam(); },
   typed(i, v){ const c = S.items[i]; c.ans = v; const b = $('chk'); if(b) b.disabled = !String(v).trim(); },
-  check(){ const c = S.items[S.i]; c.done = true; if(c.kind !== 'TL'){ c.ok = grade(c); record(c.key, c.ok); } vLam(); topRight(); },
-  self(ok){ const c = S.items[S.i]; c.ok = ok; record(c.key, ok); vLam(); topRight(); },
+  check(){ const c = S.items[S.i]; c.done = true; if(c.kind !== 'TL'){ c.ok = grade(c); record(c.key, c.ok); ltAnswered(c); } vLam(); topRight(); },
+  self(ok){ const c = S.items[S.i]; c.ok = ok; record(c.key, ok); ltAnswered(c); vLam(); topRight(); },
+  startChan, startThao, nextChan(){ if(S.st.includes(null) && !canDo(1)) return; chanNext(); }, nextThao(){ if(LT().q[S.ma] && !canDo(1)) return; thaoNext(); },
   again(){ if(!canDo(1)) return; const k = S.items[S.i].key, it = newItem(k); if(it){ S.items.push(it); S.i = S.items.length - 1; } vLam(); },
   nextSai(){ const ks = Object.keys(DB.wrong).filter(k=> G[k] && KEYS.includes(k)); if(!ks.length){ alert('Hết lỗi sai rồi. Giỏi lắm!'); location.hash = '#/sai'; return; } if(!canDo(1)) return; S.qi = ((S.qi || 0) + 1) % ks.length; const it = newItem(ks[S.qi]); S.items.push(it); S.i = S.items.length - 1; vLam(); },
   go(d){ S.i = Math.max(0, Math.min(S.items.length - 1, S.i + d)); vLam(); },

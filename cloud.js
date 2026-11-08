@@ -23,6 +23,10 @@ function merge(a, b){
     const x = ab[k], y = bb[k], useA = x && (!y || x.n > y.n || (x.n === y.n && (x.at || 0) >= (y.at || 0)));
     o.by[k] = useA ? x : y; const w = useA ? aw[k] : bw[k]; if(w) o.wrong[k] = w; }
   for(const k of new Set([...Object.keys(aw), ...Object.keys(bw)])) if(!(k in o.by)) o.wrong[k] = Math.max(aw[k] || 0, bw[k] || 0);
+  if(a.lt || b.lt){ const x = a.lt || {}, y = b.lt || {}, L = o.lt = {diag:{}, done:{}, q:{}};   // 0.4 lộ trình: lấy bản mới hơn theo thời điểm
+    for(const k of new Set([...Object.keys(x.diag || {}), ...Object.keys(y.diag || {})])){ const p = (x.diag || {})[k], r = (y.diag || {})[k]; L.diag[k] = !r || (p && (p.at || 0) >= (r.at || 0)) ? p : r; }
+    for(const k of new Set([...Object.keys(x.done || {}), ...Object.keys(y.done || {})])) L.done[k] = Math.max((x.done || {})[k] || 0, (y.done || {})[k] || 0);
+    for(const k of new Set([...Object.keys(x.q || {}), ...Object.keys(y.q || {})])){ const p = (x.q || {})[k], r = (y.q || {})[k], v = !r || (p && (p.at || 0) >= (r.at || 0)) ? p : r; if(v && !(L.done[k] > (v.at || 0))) L.q[k] = v; } }
   return o; }
 
 const VI = {

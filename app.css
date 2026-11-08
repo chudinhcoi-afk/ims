@@ -109,3 +109,7 @@ body.ims{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .step>b{flex:0 0 28px;height:28px;border-radius:50%;background:#1d2b53;color:#fff;display:flex;align-items:center;justify-content:center}
 .step .ic{display:inline-block;padding:0 4px;border:1px solid #c9d1e3;border-radius:6px}
 .btn.big{font-size:18px;padding:16px}
+/* lộ trình (0.4) */
+.ims .ltbox{padding:10px 14px 12px;border-top:1px solid var(--line)}
+.ims .lt{font-size:11px;font-weight:700;border-radius:6px;padding:2px 6px;white-space:nowrap}
+.ims .lt.ok{background:var(--okbg);color:var(--ok)}.ims .lt.ok2{background:#eef4ff;color:#2f4f9a}.ims .lt.no{background:var(--badbg);color:var(--bad)}.ims .lt.mid{background:#fcefd9;color:#a8650c}
