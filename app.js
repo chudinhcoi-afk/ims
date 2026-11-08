@@ -6,9 +6,10 @@
    0.4: mục Lộ trình — chọn câu theo kết quả làm bài (học theo chế độ chẩn đoán của Numbas): Kiểm tra đầu vào theo chương, Luyện đến thành thạo theo chuyên đề.
    0.5: chỉ dùng ở chế độ toàn màn hình (thoát ra là app tự đóng); giao diện mới: thanh bên trên máy tính, tìm dạng, luyện tiếp, đồng hồ và bảng câu khi làm đề,
         phím tắt (A–D, Enter, ←/→), biểu đồ 14 ngày, hộp thoại trong app thay cho alert/confirm của trình duyệt (để không bật ra khỏi toàn màn hình).
-   0.6: Lớp học 2D (#/lophoc, mã trong classroom.js): 48 chỗ ngồi, đi lại, vào chỗ, luyện đề ngay tại chỗ, thấy các bạn khác, nhắn riêng. */
+   0.6: Lớp học 2D (#/lophoc, mã trong classroom.js): 48 chỗ ngồi, đi lại, vào chỗ, luyện đề ngay tại chỗ, thấy các bạn khác, nhắn riêng.
+   0.6.1: tự cập nhật — có bản mới thì app tự tải lại khi đang ở màn mở đầu / màn "IMs đã đóng" (không đang làm bài), không phải tắt hẳn app rồi mở lại. */
 const IMS = (()=>{
-const VER = '0.6';
+const VER = '0.6.1';
 const G = GENLIB.GEN, LS = 'ims_v1';
 const $ = id=> document.getElementById(id);
 const esc = s=> String(s == null ? '' : s).replace(/[&<>"]/g, c=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
@@ -102,15 +103,32 @@ function kRender(){
   else h = `<div class="glogo">∞</div><h1>IMs · Infinity Maths</h1><p>Luyện Toán THPT — câu hỏi sinh mới mỗi lần, có lời giải chi tiết.</p>
       <button class="gbtn" onclick="IMS.kEnter()" autofocus>${ico('max')}Vào IMs toàn màn hình</button>
       <div class="rules"><div>IMs chỉ chạy ở chế độ toàn màn hình để em tập trung làm bài.</div><div>Thoát toàn màn hình, đổi tab hay chuyển sang ứng dụng khác thì IMs tự đóng; đề đang làm sẽ được nộp luôn.</div><div>${hoverDev() ? 'Muốn thoát IMs: nhấn giữ phím Esc.' : 'Muốn thoát IMs: vuốt hoặc bấm nút quay lại của máy.'}</div></div>`;
-  g.innerHTML = `<div class="gbox">${h}</div>`; g.hidden = false;
+  g.innerHTML = `<div class="gbox">${h}</div>`; g.hidden = false; setTimeout(tryUpd, 0);
   const b = g.querySelector('.gbtn'); if(b && hoverDev()) b.focus(); }
 ['fullscreenchange', 'webkitfullscreenchange'].forEach(ev=> document.addEventListener(ev, ()=>{
   if(!KIOSK.on) return; if(fsEl()){ if(!KIOSK.closed) kArm(); return; }
   if(KIOSK.pause) return; if(KIOSK.armed) kClose('Em đã thoát khỏi chế độ toàn màn hình.'); else kRender(); }));
 document.addEventListener('visibilitychange', ()=>{
+  if(document.visibilityState !== 'hidden'){ swCheck(); tryUpd(); }   // quay lại app: hỏi máy chủ có bản mới không (0.6.1)
   if(!KIOSK.on) return;
   if(document.visibilityState === 'hidden'){ if(KIOSK.armed && !KIOSK.pause) kClose('Em đã rời khỏi IMs (đổi tab, chuyển ứng dụng hoặc tắt màn hình).'); }
   else if(KIOSK.armed && !KIOSK.wake){ try{ navigator.wakeLock && navigator.wakeLock.request('screen').then(l=>{ KIOSK.wake = l; }).catch(()=>{}); }catch(e){} } });
+
+/* ---------- tự cập nhật (0.6.1) ----------
+   sw.js lưu app vào máy và trả bản đã lưu trước (để chạy khi mất mạng), nên bản mới chỉ hiện sau khi trang được tải lại.
+   Điện thoại hay giữ app chạy nền rất lâu (đổi app rồi quay lại không tải lại trang) → tự hỏi máy chủ có bản mới mỗi khi quay lại app;
+   bản mới cài xong (controllerchange) thì tải lại ngay nếu đang an toàn, chưa an toàn (đang dùng toàn màn hình, vừa nộp đề tự động) thì chờ lần sau. */
+let SWREG = null, SWAT = 0, NEWV = false;
+function swCheck(){ if(SWREG && Date.now() - SWAT > 60000){ SWAT = Date.now(); SWREG.update().catch(()=>{}); } }
+function updSafe(){ return KIOSK.on ? !KIOSK.armed && !KIOSK.pause && !(KIOSK.closed && KIOSK.closed.note) && !KIOSK.after : !/^#\/(lam|ketqua|xem|chandoan|xong)$/.test(location.hash || ''); }   // không bật toàn màn hình (chạy thử): chờ ra khỏi màn làm bài / kết quả
+function tryUpd(){ if(!NEWV || !updSafe()) return;
+  try{ if(Date.now() - (+sessionStorage.getItem('ims_upd') || 0) < 30000) return; sessionStorage.setItem('ims_upd', Date.now()); }catch(e){}
+  location.reload(); }
+function swInit(){
+  if(!('serviceWorker' in navigator) || location.protocol !== 'https:') return;
+  const had = !!navigator.serviceWorker.controller;   // lần đầu cài (chưa có bản cũ) thì không cần tải lại
+  navigator.serviceWorker.addEventListener('controllerchange', ()=>{ if(had){ NEWV = true; tryUpd(); } });
+  navigator.serviceWorker.register('sw.js').then(r=>{ SWREG = r; SWAT = Date.now(); }).catch(()=>{}); }
 
 /* ---------- cài app lên màn hình (0.3.1) ----------
    Android/Chrome: giữ sự kiện beforeinstallprompt để nút "Cài IMs" mở hộp cài của máy. iPhone: Apple không cho web tự cài → hướng dẫn Chia sẻ → Thêm vào MH chính.
@@ -484,7 +502,7 @@ function onCloud(st){
   const r = location.hash || '';
   if(r === '#/taikhoan' || r === '#/goi' || r === '#/quantri' || r === '#/caidat'){ route(); } else if(st === 'out' || st === 'offline' || !/^#\/(lam|ketqua|xem|chandoan|xong)$/.test(r)) route(); else topRight(); }
 let LASTR = null;
-function route(){ topRight(); kRender(); const r = (location.hash || '#/luyen').slice(2); if(LOPM()) LOPM().route(KIOSK.closed ? '' : r); if(KIOSK.closed){ $('view').innerHTML = ''; return; }
+function route(){ topRight(); kRender(); if(!KIOSK.on) setTimeout(tryUpd, 0); const r = (location.hash || '#/luyen').slice(2); if(LOPM()) LOPM().route(KIOSK.closed ? '' : r); if(KIOSK.closed){ $('view').innerHTML = ''; return; }
   document.body.classList.toggle('focus', /^(lam|ketqua|xem|chandoan|xong)$/.test(r)); document.body.classList.toggle('lop', r === 'lophoc'); if(r !== LASTR){ LASTR = r; toTop(); }
   if(C && CF.requireLogin && r !== 'taikhoan' && r !== 'caidat' && (C.state === 'out' || C.state === 'loading')){ if(C.state === 'out'){ location.hash = '#/taikhoan'; return; } $('view').innerHTML = '<div class="loading">Đang kết nối…</div>'; return; }
   ({luyen:vLuyen, lotrinh:vLoTrinh, chandoan:vChan, xong:vXong, de:vDe, sai:vSai, tiendo:vTienDo, lam:vLam, ketqua:vKetQua, xem:vXem, taikhoan:vTK, goi:vGoi, quantri:vQT, caidat:vCai,
@@ -511,7 +529,7 @@ async function boot(){
   if(C){ C.on(onCloud); C.init(); }
   setInterval(()=>{ const el = $('tmr'); if(el && S && S.t0 && !S.res) el.textContent = mmss(Date.now() - S.t0); }, 1000);
   document.addEventListener('keydown', onKey);
-  if('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(()=>{});
+  swInit();
 }
 boot();
 return {
