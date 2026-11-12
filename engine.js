@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.69 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.70 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -220,7 +220,7 @@ const CHUYEN_DE = {
   '11-07': [['Cấp số nhân: nhận biết, số hạng tổng quát, công bội; ba số lập cấp số nhân', '1,2,7,8,10,11,13,16,20-22,25,28'],
             ['Tổng n số hạng đầu của cấp số nhân; lãi kép, tăng trưởng và thực tế', '3-6,9,12,14,15,17-19,23,24,26,27,29'],
             ['Cấp số nhân trong tài chính: gửi tiết kiệm định kì, trả góp; bài toán kết hợp cấp số cộng và cấp số nhân', ''],
-            ['Tính tổng bằng khử liên tiếp (sai phân); cấp số cộng, cấp số nhân với điều kiện ẩn', '', 'hsg']],
+            ['Tính tổng bằng khử liên tiếp (sai phân); cấp số cộng, cấp số nhân với điều kiện ẩn', '30-49', 'hsg']],
   '11-08': [['Tính chất thừa nhận; cách xác định mặt phẳng', '21,66-81'],
             ['Hình chóp, tứ diện: đỉnh, cạnh, mặt', '1,20,82-97'],
             ['Đếm mặt phẳng, đếm giao tuyến', '3,4,24-30,98-113'],
@@ -260,7 +260,7 @@ const CHUYEN_DE = {
             ['Hình chóp cụt', '30-34,59,62,64,65'],
             ['Thiết diện song song với mặt phẳng: tứ diện, hình chóp', '12,13,18,19,37,54,55'],
             ['Thiết diện song song với mặt phẳng: lăng trụ, hình hộp', '21,35,36,44,52,53,56'],
-            ['Thiết diện: tính diện tích, tỉ số thể tích; cực trị diện tích thiết diện', '', 'hsg']],
+            ['Thiết diện: tính diện tích, tỉ số thể tích; cực trị diện tích thiết diện', '96-115', 'hsg']],
   '11-12': [['Phép chiếu song song: khái niệm, tính chất', '1,4'],
             ['Bảo toàn tỉ số, trung điểm, trọng tâm', '3,5'],
             ['Hình biểu diễn của một hình', '2']],
@@ -416,13 +416,13 @@ const CHUYEN_DE = {
             ['Chứng minh đẳng thức, nhận dạng tam giác bằng công thức lượng giác; GTLN, GTNN của biểu thức lượng giác', '16-35', 'hsg']],
   '11-04': [['Phương trình lượng giác cơ bản', '1-17'],
             ['Phương trình lượng giác trong thực tế (dao động, độ cao cabin vòng quay, thuỷ triều, nhiệt độ theo giờ); câu Đúng–Sai tổng hợp hàm số và phương trình lượng giác', ''],
-            ['Phương trình lượng giác nâng cao: đưa về tích, đặt ẩn phụ, đánh giá hai vế; phương trình lượng giác chứa tham số', '', 'hsg']],
+            ['Phương trình lượng giác nâng cao: đưa về tích, đặt ẩn phụ, đánh giá hai vế; phương trình lượng giác chứa tham số', '18-37', 'hsg']],
   '11-05': [['Dãy số', '1-20'],
-            ['Dãy số truy hồi: tìm số hạng tổng quát (tuyến tính cấp một, cấp hai, dãy phụ); chứng minh đơn điệu, bị chặn bằng quy nạp', '', 'hsg']],
+            ['Dãy số truy hồi: tìm số hạng tổng quát (tuyến tính cấp một, cấp hai, dãy phụ); chứng minh đơn điệu, bị chặn bằng quy nạp', '21-40', 'hsg']],
   '11-15': [['Giới hạn của dãy số', '1-20'],
-            ['Giới hạn dãy số truy hồi: chứng minh hội tụ (đơn điệu, bị chặn), tìm giới hạn; định lí kẹp', '', 'hsg']],
+            ['Giới hạn dãy số truy hồi: chứng minh hội tụ (đơn điệu, bị chặn), tìm giới hạn; định lí kẹp', '21-40', 'hsg']],
   '11-16': [['Giới hạn của hàm số', '1-17'],
-            ['Giới hạn hàm số nâng cao: dạng vô định chứa căn khác bậc (thêm bớt); giới hạn lượng giác lim sin x / x', '', 'hsg']],
+            ['Giới hạn hàm số nâng cao: dạng vô định chứa căn khác bậc (thêm bớt); giới hạn lượng giác lim sin x / x', '18-37', 'hsg']],
   '11-17': [['Hàm số liên tục', '1-8'],
             ['Chứng minh phương trình có nghiệm, có ít nhất k nghiệm bằng tính liên tục; phương trình chứa tham số', '', 'hsg']],
   '11-21': [['Phương trình, bất phương trình mũ và lôgarit', '1-12'],
@@ -628,7 +628,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.69';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.70';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -59432,6 +59432,2895 @@ GE(11,0,1,'VD','HSG (tự luận): tam giác nhọn — chứng minh tan A + tan
 
 }
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.69'; GEN[k].l1 = 'V2.69'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-04.3 HSG: phương trình lượng giác nâng cao — 16 TLN + 4 TL (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-04.3 [HSG] Phương trình lượng giác nâng cao (11|0|3), đợt 1 (5 dạng TLN): đưa về phương trình tích. Claude viết.
+// Chuỗi: tổng ba sin (côsin) góc cách đều → hạ bậc tổng ba bình phương → nhóm nhân tử chung (có sin 2x) → phương trình chứa tan, cot: điều kiện loại nghiệm
+// → a sin px + b cos px = R sin qx (đưa về sin u = sin v). Đáp số: đếm nghiệm hoặc tổng nghiệm trên một đoạn (khoảng).
+const hqOk = x=>{ if(!isFinite(x)) return null; const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9 || r === 0) return null; return String(r).length <= 4 ? r : null; };
+const hqPi = (p, q)=>{ if(q < 0){ p = -p; q = -q; } if(p === 0) return '0'; const g = gcdI(p, q); p /= g; q /= g; const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return s + (q === 1 ? n : `\\dfrac{${n}}{${q}}`); };
+const pqLcm = (a, b)=> a/gcdI(a, b)*b;
+const pqF = (op, oq, tp, tq)=>{ tp = Math.abs(tp); const g = gcdI(tp, tq); return {o:[op, oq], t:[tp/g, tq/g]}; };   // họ x = (op/oq + k·tp/tq)π
+const pqEnum = (fams, L, U, iL, iU, keep)=>{ let D = pqLcm(L[1], U[1]); fams.forEach(f=>{ D = pqLcm(D, pqLcm(f.o[1], f.t[1])); });
+  const Lv = L[0]*D/L[1], Uv = U[0]*D/U[1], S = new Set();
+  fams.forEach(f=>{ const o = f.o[0]*D/f.o[1], t = f.t[0]*D/f.t[1]; for(let k = Math.ceil((Lv - o)/t) - 1; k <= Math.floor((Uv - o)/t) + 1; k++){ const v = o + k*t;
+    if(v < Lv || v > Uv || (!iL && v === Lv) || (!iU && v === Uv)) continue; if(keep && !keep(v, D)) continue; S.add(v); } });
+  return {D, vs:[...S].sort((a, b)=> a - b)}; };
+const pqFamT = f=>{ const [r, s] = f.t, st = s === 1 ? (r === 1 ? 'k\\pi' : `k${r}\\pi`) : `k\\dfrac{${r === 1 ? '' : r}\\pi}{${s}}`, o = f.o[0] === 0 ? '' : hqPi(f.o[0], f.o[1]); return o ? `x = ${o} + ${st}` : `x = ${st}`; };
+const pqIv = (L, U, iL, iU)=> `${iL ? '[' : '('}${hqPi(L[0], L[1])}; ${hqPi(U[0], U[1])}${iU ? ']' : ')'}`;
+const pqIVS = [[[0, 1], [1, 1]], [[0, 1], [2, 1]], [[0, 1], [3, 1]], [[-1, 1], [1, 1]], [[-1, 2], [3, 2]], [[0, 1], [3, 2]], [[-1, 1], [2, 1]], [[-1, 2], [1, 1]], [[0, 1], [5, 2]], [[-2, 1], [2, 1]], [[0, 1], [4, 1]], [[-3, 2], [5, 2]]];
+const pqPickIv = R=>{ const [L, U] = R.pick(pqIVS); return {L, U, iL:R.rnd() < 0.6, iU:R.rnd() < 0.6}; };
+// nghiệm số của f trên [a; b] (kiểm tra độc lập): đổi dấu (chia đôi) và cực tiểu của |f| (nghiệm kép)
+const pqRoots = (f, a, b, N)=>{ N = N || 30000; const xs = [], h = (b - a)/N, add = x=>{ if(!xs.some(y=> Math.abs(y - x) < 1e-6)) xs.push(x); };
+  const ok = v=> isFinite(v), vals = []; for(let i = 0; i <= N; i++) vals.push(f(a + i*h));
+  for(let i = 0; i <= N; i++){ const x = a + i*h, v = vals[i]; if(ok(v) && Math.abs(v) < 1e-12) add(x);
+    if(i < N && ok(v) && ok(vals[i + 1]) && v*vals[i + 1] < 0){ let lo = x, hi = x + h, flo = v; for(let j = 0; j < 60; j++){ const m = (lo + hi)/2, fm = f(m); if(!ok(fm)) break; if(flo*fm <= 0) hi = m; else { lo = m; flo = fm; } } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-7) add(r); }
+    if(i > 0 && i < N && ok(v) && Math.abs(v) < 1e-2 && Math.abs(v) <= Math.abs(vals[i - 1]) && Math.abs(v) <= Math.abs(vals[i + 1])){ let lo = x - h, hi = x + h; for(let j = 0; j < 80; j++){ const m1 = lo + (hi - lo)/3, m2 = hi - (hi - lo)/3; if(Math.abs(f(m1)) < Math.abs(f(m2))) hi = m2; else lo = m1; } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-10) add(r); } }
+  return xs.sort((p, q)=> p - q); };
+const pqCheck = (f, I, ask, ans)=>{ const a = I.L[0]/I.L[1]*Math.PI, b = I.U[0]/I.U[1]*Math.PI; let r = pqRoots(f, a - 1e-9, b + 1e-9);
+  r = r.filter(x=> (I.iL ? x >= a - 1e-7 : x > a + 1e-7) && (I.iU ? x <= b + 1e-7 : x < b - 1e-7));
+  return ask === 'cnt' ? r.length === ans : Math.abs(r.reduce((s, x)=> s + x, 0)/Math.PI - ans) < 1e-6; };
+// đề, đáp số, câu kết của lời giải cho một tập nghiệm đã liệt kê
+const pqTail = (E, I, ask)=>{ const list = E.vs.map(v=> hqPi(v, E.D)).join('; '), n = E.vs.length, sum = E.vs.reduce((s, v)=> s + v, 0);
+  if(ask === 'cnt') return {ans:n, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Vậy có $${n}$ nghiệm.`};
+  const a = hqOk(sum/E.D); return {ans:a, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Tổng các nghiệm bằng $${hqPi(sum, E.D)}$, nên $a = ${a === null ? '' : nt(a)}$.`}; };
+const pqAsk = (I, ask)=> ask === 'cnt' ? `Tìm số nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$.`
+  : `Tổng các nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$ bằng $a\\pi$. Tìm $a$.`;
+
+/* 1. TLN VD — tổng ba sin (côsin) góc cách đều: ghép hai số hạng ngoài thành tích */
+GT(11,0,3,'VD','HSG: phương trình sin x + sin 2x + sin 3x = 0 (tổng ba sin, côsin của các góc cách đều) — ghép hai số hạng ngoài bằng công thức biến tổng thành tích, đưa về phương trình tích; đếm nghiệm, tổng nghiệm trên đoạn', R=>{
+  const T = [
+    {eq:'\\sin x + \\sin 2x + \\sin 3x = 0', st:'$\\sin x + \\sin 3x = 2\\sin 2x\\cos x$ nên phương trình $\\iff \\sin 2x(2\\cos x + 1) = 0$.', p:[['\\sin 2x = 0', [pqF(0, 1, 1, 2)]], ['\\cos x = -\\dfrac{1}{2}', [pqF(2, 3, 2, 1), pqF(-2, 3, 2, 1)]]], f:x=> Math.sin(x) + Math.sin(2*x) + Math.sin(3*x)},
+    {eq:'\\cos x + \\cos 2x + \\cos 3x = 0', st:'$\\cos x + \\cos 3x = 2\\cos 2x\\cos x$ nên phương trình $\\iff \\cos 2x(2\\cos x + 1) = 0$.', p:[['\\cos 2x = 0', [pqF(1, 4, 1, 2)]], ['\\cos x = -\\dfrac{1}{2}', [pqF(2, 3, 2, 1), pqF(-2, 3, 2, 1)]]], f:x=> Math.cos(x) + Math.cos(2*x) + Math.cos(3*x)},
+    {eq:'\\sin x - \\sin 2x + \\sin 3x = 0', st:'$\\sin x + \\sin 3x = 2\\sin 2x\\cos x$ nên phương trình $\\iff \\sin 2x(2\\cos x - 1) = 0$.', p:[['\\sin 2x = 0', [pqF(0, 1, 1, 2)]], ['\\cos x = \\dfrac{1}{2}', [pqF(1, 3, 2, 1), pqF(-1, 3, 2, 1)]]], f:x=> Math.sin(x) - Math.sin(2*x) + Math.sin(3*x)},
+    {eq:'\\cos x - \\cos 2x + \\cos 3x = 0', st:'$\\cos x + \\cos 3x = 2\\cos 2x\\cos x$ nên phương trình $\\iff \\cos 2x(2\\cos x - 1) = 0$.', p:[['\\cos 2x = 0', [pqF(1, 4, 1, 2)]], ['\\cos x = \\dfrac{1}{2}', [pqF(1, 3, 2, 1), pqF(-1, 3, 2, 1)]]], f:x=> Math.cos(x) - Math.cos(2*x) + Math.cos(3*x)},
+    {eq:'\\sin x + \\sin 3x + \\sin 5x = 0', st:'$\\sin x + \\sin 5x = 2\\sin 3x\\cos 2x$ nên phương trình $\\iff \\sin 3x(2\\cos 2x + 1) = 0$.', p:[['\\sin 3x = 0', [pqF(0, 1, 1, 3)]], ['\\cos 2x = -\\dfrac{1}{2}', [pqF(1, 3, 1, 1), pqF(-1, 3, 1, 1)]]], f:x=> Math.sin(x) + Math.sin(3*x) + Math.sin(5*x)},
+    {eq:'\\cos x + \\cos 3x + \\cos 5x = 0', st:'$\\cos x + \\cos 5x = 2\\cos 3x\\cos 2x$ nên phương trình $\\iff \\cos 3x(2\\cos 2x + 1) = 0$.', p:[['\\cos 3x = 0', [pqF(1, 6, 1, 3)]], ['\\cos 2x = -\\dfrac{1}{2}', [pqF(1, 3, 1, 1), pqF(-1, 3, 1, 1)]]], f:x=> Math.cos(x) + Math.cos(3*x) + Math.cos(5*x)}];
+  for(let g = 0; g < 80; g++){
+    const t = R.pick(T), I = pqPickIv(R), ask = R.rnd() < 0.7 ? 'cnt' : 'sum';
+    const E = pqEnum(t.p.flatMap(x=> x[1]), I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const lg = `${t.st}<br>${t.p.map(([c, fs])=> `• $${c} \\iff ${fs.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$).`).join('<br>')}<br>${tl.txt}`;
+    const o = {stem:`Cho phương trình $${t.eq}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(t.f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 2. TLN VD — sin²x + sin²2x + sin²3x = 3/2 (cos²…): hạ bậc rồi đưa về tích */
+GT(11,0,3,'VD','HSG: phương trình sin²x + sin²2x + sin²3x = 3/2, cos²x + cos²2x + cos²3x = 1 — hạ bậc đưa về cos 2x + cos 4x + cos 6x, rồi biến tổng thành tích (4cos x cos 2x cos 3x); đếm nghiệm, tổng nghiệm', R=>{
+  const A = {st:'$\\cos 2x + \\cos 4x + \\cos 6x = 0 \\iff 2\\cos 4x\\cos 2x + \\cos 4x = 0 \\iff \\cos 4x(2\\cos 2x + 1) = 0$.', p:[['\\cos 4x = 0', [pqF(1, 8, 1, 4)]], ['\\cos 2x = -\\dfrac{1}{2}', [pqF(1, 3, 1, 1), pqF(-1, 3, 1, 1)]]]};
+  const B = {st:'$\\cos 2x + \\cos 4x + \\cos 6x = -1$. Mà $1 + \\cos 6x = 2\\cos^2 3x$, $\\cos 2x + \\cos 4x = 2\\cos 3x\\cos x$ nên $1 + \\cos 2x + \\cos 4x + \\cos 6x = 2\\cos 3x(\\cos 3x + \\cos x) = 4\\cos x\\cos 2x\\cos 3x$. Phương trình $\\iff \\cos x\\cos 2x\\cos 3x = 0$.',
+    p:[['\\cos x = 0', [pqF(1, 2, 1, 1)]], ['\\cos 2x = 0', [pqF(1, 4, 1, 2)]], ['\\cos 3x = 0', [pqF(1, 6, 1, 3)]]]};
+  const T = [
+    {eq:'\\sin^2 x + \\sin^2 2x + \\sin^2 3x = \\dfrac{3}{2}', hb:'Hạ bậc ($\\sin^2 t = \\dfrac{1 - \\cos 2t}{2}$): $\\dfrac{3 - (\\cos 2x + \\cos 4x + \\cos 6x)}{2} = \\dfrac{3}{2} \\iff$ ', K:A, f:x=> Math.sin(x)**2 + Math.sin(2*x)**2 + Math.sin(3*x)**2 - 1.5},
+    {eq:'\\cos^2 x + \\cos^2 2x + \\cos^2 3x = \\dfrac{3}{2}', hb:'Hạ bậc ($\\cos^2 t = \\dfrac{1 + \\cos 2t}{2}$): $\\dfrac{3 + \\cos 2x + \\cos 4x + \\cos 6x}{2} = \\dfrac{3}{2} \\iff$ ', K:A, f:x=> Math.cos(x)**2 + Math.cos(2*x)**2 + Math.cos(3*x)**2 - 1.5},
+    {eq:'\\cos^2 x + \\cos^2 2x + \\cos^2 3x = 1', hb:'Hạ bậc ($\\cos^2 t = \\dfrac{1 + \\cos 2t}{2}$): $\\dfrac{3 + \\cos 2x + \\cos 4x + \\cos 6x}{2} = 1 \\iff$ ', K:B, f:x=> Math.cos(x)**2 + Math.cos(2*x)**2 + Math.cos(3*x)**2 - 1},
+    {eq:'\\sin^2 x + \\sin^2 2x + \\sin^2 3x = 2', hb:'Hạ bậc ($\\sin^2 t = \\dfrac{1 - \\cos 2t}{2}$): $\\dfrac{3 - (\\cos 2x + \\cos 4x + \\cos 6x)}{2} = 2 \\iff$ ', K:B, f:x=> Math.sin(x)**2 + Math.sin(2*x)**2 + Math.sin(3*x)**2 - 2}];
+  for(let g = 0; g < 80; g++){
+    const t = R.pick(T), I = pqPickIv(R), ask = R.rnd() < 0.7 ? 'cnt' : 'sum';
+    const E = pqEnum(t.K.p.flatMap(x=> x[1]), I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 18) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const lg = `${t.hb}${t.K.st}<br>${t.K.p.map(([c, fs])=> `• $${c} \\iff ${fs.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$).`).join('<br>')}<br>(Nghiệm chung của các họ chỉ đếm một lần.) ${tl.txt}`;
+    const o = {stem:`Cho phương trình $${t.eq}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(t.f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 3. TLN VD — nhóm nhân tử chung (có sin 2x = 2 sin x cos x), hằng đẳng thức */
+const pqSin = s=> ({'0':[pqF(0, 1, 1, 1)], '1':[pqF(1, 2, 2, 1)], '-1':[pqF(-1, 2, 2, 1)], '0.5':[pqF(1, 6, 2, 1), pqF(5, 6, 2, 1)], '-0.5':[pqF(-1, 6, 2, 1), pqF(7, 6, 2, 1)]})[String(s)];
+const pqCos = c=> ({'0':[pqF(1, 2, 1, 1)], '1':[pqF(0, 1, 2, 1)], '-1':[pqF(1, 1, 2, 1)], '0.5':[pqF(1, 3, 2, 1), pqF(-1, 3, 2, 1)], '-0.5':[pqF(2, 3, 2, 1), pqF(-2, 3, 2, 1)]})[String(c)];
+const pqVT = v=> v === 0.5 ? '\\dfrac{1}{2}' : v === -0.5 ? '-\\dfrac{1}{2}' : String(v);
+const pqLin = list=>{ let s = ''; list.forEach(([c, m])=>{ if(!c) return; const a = Math.abs(c), body = (a === 1 && m) ? m : a + m; s += s ? (c < 0 ? ' - ' : ' + ') + body : (c < 0 ? '-' : '') + body; }); return s || '0'; };
+GT(11,0,3,'VD','HSG: phương trình đưa về tích bằng cách nhóm nhân tử chung (sin 2x = 2 sin x cos x) hoặc dùng hằng đẳng thức (1 + sin 2x = (sin x + cos x)², cos 2x = (cos x − sin x)(cos x + sin x)); đếm nghiệm, tổng nghiệm', R=>{
+  for(let g = 0; g < 120; g++){
+    const kind = R.rnd() < 0.6 ? 'A' : R.pick(['B', 'C']), I = pqPickIv(R), ask = R.rnd() < 0.5 ? 'cnt' : 'sum';
+    let eq, st, parts, f;
+    if(kind === 'A'){ const sw = R.rnd() < 0.5, a1 = sw ? 1 : 2, c1 = sw ? 2 : 1, b1 = sw ? R.int(-1, 1) : R.int(-2, 2), d1 = sw ? R.int(-2, 2) : R.int(-1, 1); if(b1 === 0 && d1 === 0) continue;
+      const s0 = -b1/a1, c0 = -d1/c1; if(Math.abs(s0) === 1 && Math.abs(c0) === 1) continue;
+      eq = pqLin([[1, '\\sin 2x'], [a1*d1, '\\sin x'], [b1*c1, '\\cos x'], [b1*d1, '']]) + ' = 0';
+      const F1 = pqLin([[a1, '\\sin x'], [b1, '']]), F2 = pqLin([[c1, '\\cos x'], [d1, '']]);
+      const one = e=> !/[+-]/.test(e.slice(1)), pr = (A, B)=> one(A) ? A + (one(B) ? B : `(${B})`) : one(B) ? `${B}(${A})` : `(${A})(${B})`;
+      st = d1 && b1 ? `Vì $\\sin 2x = 2\\sin x\\cos x$ nên vế trái $= ${pqLin([[c1, '\\cos x']])}(${F1}) ${d1 < 0 ? '-' : '+'} ${Math.abs(d1) === 1 ? '' : Math.abs(d1)}(${F1}) = ${pr(F1, F2)}$.`
+              : `Vì $\\sin 2x = 2\\sin x\\cos x$ nên vế trái $= ${pr(F1, F2)}$.`;
+      parts = [[`\\sin x = ${pqVT(s0)}`, pqSin(s0)], [`\\cos x = ${pqVT(c0)}`, pqCos(c0)]];
+      f = x=> Math.sin(2*x) + a1*d1*Math.sin(x) + b1*c1*Math.cos(x) + b1*d1; }
+    else if(kind === 'B'){ eq = '1 + \\sin x + \\cos x + \\sin 2x + \\cos 2x = 0';
+      st = '$1 + \\sin 2x = (\\sin x + \\cos x)^2$, $\\cos 2x = (\\cos x - \\sin x)(\\cos x + \\sin x)$ nên vế trái $= (\\sin x + \\cos x)(\\sin x + \\cos x + 1 + \\cos x - \\sin x) = (\\sin x + \\cos x)(2\\cos x + 1)$.';
+      parts = [['\\sin x + \\cos x = 0 \\iff \\tan x = -1', [pqF(-1, 4, 1, 1)]], ['\\cos x = -\\dfrac{1}{2}', pqCos(-0.5)]];
+      f = x=> 1 + Math.sin(x) + Math.cos(x) + Math.sin(2*x) + Math.cos(2*x); }
+    else { eq = '\\cos 2x + (1 + 2\\cos x)(\\sin x - \\cos x) = 0';
+      st = '$\\cos 2x = (\\cos x - \\sin x)(\\cos x + \\sin x)$ nên vế trái $= (\\cos x - \\sin x)(\\cos x + \\sin x - 1 - 2\\cos x) = (\\cos x - \\sin x)(\\sin x - \\cos x - 1)$.';
+      parts = [['\\cos x - \\sin x = 0 \\iff \\tan x = 1', [pqF(1, 4, 1, 1)]], ['\\sin x - \\cos x = 1 \\iff \\sin\\left(x - \\dfrac{\\pi}{4}\\right) = \\dfrac{\\sqrt{2}}{2}', [pqF(1, 2, 2, 1), pqF(1, 1, 2, 1)]]];
+      f = x=> Math.cos(2*x) + (1 + 2*Math.cos(x))*(Math.sin(x) - Math.cos(x)); }
+    const E = pqEnum(parts.flatMap(x=> x[1]), I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const lg = `${st}<br>${parts.map(([c, fs])=> `• $${c} \\iff ${fs.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$).`).join('<br>')}<br>${tl.txt}`;
+    const o = {stem:`Cho phương trình $${eq}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 4. TLN VD — tan ax = tan bx, cot ax = cot bx, tan ax = cot bx: điều kiện xác định loại nghiệm */
+GT(11,0,3,'VD','HSG: phương trình tan ax = tan bx, cot ax = cot bx, tan ax = cot bx — giải rồi đối chiếu điều kiện xác định để loại nghiệm (bẫy hay gặp); đếm nghiệm trên đoạn', R=>{
+  const cos0 = (m, v, D)=> (((2*m*v - D) % (2*D)) + 2*D) % (2*D) === 0, sin0 = (m, v, D)=> (m*v) % D === 0;
+  const mT = (m, fn)=> `\\${fn} ${m === 1 ? '' : m}x`;
+  for(let g = 0; g < 120; g++){
+    const kind = R.pick(['tt', 'cc', 'tc']), a = R.int(1, 6), b = R.int(1, 5); if(kind !== 'tc' && a <= b) continue;
+    const I = pqPickIv(R); let fam, cond, bad, eq, f, solve;
+    if(kind === 'tt'){ const d = a - b; fam = pqF(0, 1, 1, d); bad = (v, D)=> cos0(a, v, D) || cos0(b, v, D); eq = `${mT(a, 'tan')} = ${mT(b, 'tan')}`; cond = `$\\cos ${a === 1 ? '' : a}x \\ne 0$, $\\cos ${b === 1 ? '' : b}x \\ne 0$`;
+      solve = `$${a === 1 ? '' : a}x = ${b === 1 ? '' : b}x + k\\pi \\iff ${pqFamT(fam)}$`; f = x=>{ const c1 = Math.cos(a*x), c2 = Math.cos(b*x); return Math.abs(c1) < 1e-9 || Math.abs(c2) < 1e-9 ? NaN : Math.tan(a*x) - Math.tan(b*x); }; }
+    else if(kind === 'cc'){ const d = a - b; fam = pqF(0, 1, 1, d); bad = (v, D)=> sin0(a, v, D) || sin0(b, v, D); eq = `${mT(a, 'cot')} = ${mT(b, 'cot')}`; cond = `$\\sin ${a === 1 ? '' : a}x \\ne 0$, $\\sin ${b === 1 ? '' : b}x \\ne 0$`;
+      solve = `$${a === 1 ? '' : a}x = ${b === 1 ? '' : b}x + k\\pi \\iff ${pqFamT(fam)}$`; f = x=>{ const s1 = Math.sin(a*x), s2 = Math.sin(b*x); return Math.abs(s1) < 1e-9 || Math.abs(s2) < 1e-9 ? NaN : Math.cos(a*x)/s1 - Math.cos(b*x)/s2; }; }
+    else { const s = a + b; fam = pqF(1, 2*s, 1, s); bad = (v, D)=> cos0(a, v, D) || sin0(b, v, D); eq = `${mT(a, 'tan')} = ${mT(b, 'cot')}`; cond = `$\\cos ${a === 1 ? '' : a}x \\ne 0$, $\\sin ${b === 1 ? '' : b}x \\ne 0$`;
+      solve = `$\\cot ${b === 1 ? '' : b}x = \\tan\\left(\\dfrac{\\pi}{2} - ${b === 1 ? '' : b}x\\right)$ nên $${a === 1 ? '' : a}x = \\dfrac{\\pi}{2} - ${b === 1 ? '' : b}x + k\\pi \\iff ${pqFamT(fam)}$`;
+      f = x=>{ const c1 = Math.cos(a*x), s2 = Math.sin(b*x); return Math.abs(c1) < 1e-9 || Math.abs(s2) < 1e-9 ? NaN : Math.tan(a*x) - Math.cos(b*x)/s2; }; }
+    const C = pqEnum([fam], I.L, I.U, I.iL, I.iU), E = pqEnum([fam], I.L, I.U, I.iL, I.iU, (v, D)=> !bad(v, D));
+    const rej = C.vs.filter(v=> bad(v, C.D)); if(!E.vs.length || C.vs.length > 16 || !rej.length && R.rnd() < 0.7) continue;
+    const ans = E.vs.length;
+    const lg = `Điều kiện: ${cond}.<br>${solve} ($k \\in \\mathbb{Z}$).<br>Trên $${pqIv(I.L, I.U, I.iL, I.iU)}$ các giá trị này là $${C.vs.map(v=> hqPi(v, C.D)).join('; ')}$.<br>`
+      + (rej.length ? `Loại các giá trị không thoả điều kiện: $${rej.map(v=> hqPi(v, C.D)).join('; ')}$ (bẫy: quên điều kiện sẽ đếm thừa).<br>` : 'Các giá trị này đều thoả điều kiện.<br>')
+      + `Còn lại $${E.vs.map(v=> hqPi(v, E.D)).join('; ')}$. Vậy có $${ans}$ nghiệm.`;
+    const o = {stem:`Tìm số nghiệm của phương trình $${eq}$ thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$.`, ans, lg, verify:()=> pqCheck(f, I, 'cnt', o.ans)};
+    return o; }
+  return null;
+});
+
+/* 5. TLN VD — a sin px + b cos px = R sin qx (R cos qx): đưa về sin u = sin v */
+GT(11,0,3,'VD','HSG: phương trình a sin x + b cos x dạng sin px + √3 cos px = 2 sin qx (2 cos qx) — viết vế trái thành R sin(px + φ), đưa về sin u = sin v; đếm nghiệm, tổng nghiệm trên đoạn', R=>{
+  const LH = [['\\sin #x + \\sqrt{3}\\cos #x', 2, [1, 3]], ['\\sqrt{3}\\sin #x + \\cos #x', 2, [1, 6]], ['\\sin #x - \\sqrt{3}\\cos #x', 2, [-1, 3]], ['\\sqrt{3}\\sin #x - \\cos #x', 2, [-1, 6]],
+    ['\\sin #x + \\cos #x', Math.SQRT2, [1, 4]], ['\\sin #x - \\cos #x', Math.SQRT2, [-1, 4]], ['\\sqrt{3}\\cos #x - \\sin #x', 2, [2, 3]], ['\\cos #x - \\sqrt{3}\\sin #x', 2, [5, 6]]];
+  const fa = (a, b)=>{ const n = a[0]*b[1] + b[0]*a[1], d = a[1]*b[1], g = gcdI(n, d) || 1; return [n/g, d/g]; }, fn = a=> [-a[0], a[1]];
+  for(let g = 0; g < 120; g++){
+    const [lt, Rv, ph] = R.pick(LH), p = R.int(1, 5), q = R.int(1, 5), rc = R.rnd() < 0.5 ? 'sin' : 'cos'; if(p === q) continue;
+    const ps = ph[0] < 0 ? `${hqPi(ph[0], ph[1])}` : `+ ${hqPi(ph[0], ph[1])}`;
+    const psi = rc === 'sin' ? [0, 1] : [1, 2], RT = Rv === 2 ? '2' : '\\sqrt{2}', pxT = p === 1 ? 'x' : p + 'x', qxT = q === 1 ? 'x' : q + 'x';
+    const f1o = fa(psi, fn(ph)), f2o = fa([1, 1], fn(fa(ph, psi))), d1 = p - q, s = p + q;
+    const F1 = pqF(d1 > 0 ? f1o[0] : -f1o[0], f1o[1]*Math.abs(d1), 2, Math.abs(d1)), F2 = pqF(f2o[0], f2o[1]*s, 2, s);
+    const I = pqPickIv(R), ask = R.rnd() < 0.7 ? 'cnt' : 'sum';
+    const E = pqEnum([F1, F2], I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const eq = `${lt.replace(/#x/g, pxT)} = ${RT}\\${rc} ${qxT}`;
+    const f = x=> { const P = p*x; const L = {0:Math.sin(P) + Math.sqrt(3)*Math.cos(P), 1:Math.sqrt(3)*Math.sin(P) + Math.cos(P), 2:Math.sin(P) - Math.sqrt(3)*Math.cos(P), 3:Math.sqrt(3)*Math.sin(P) - Math.cos(P), 4:Math.sin(P) + Math.cos(P), 5:Math.sin(P) - Math.cos(P), 6:Math.sqrt(3)*Math.cos(P) - Math.sin(P), 7:Math.cos(P) - Math.sqrt(3)*Math.sin(P)}[LH.findIndex(z=> z[0] === lt)]; return L - Rv*Math[rc](q*x); };
+    const lg = `Vế trái $= ${RT}\\sin\\left(${pxT} ${ps}\\right)$${rc === 'cos' ? `, vế phải $= ${RT}\\cos ${qxT} = ${RT}\\sin\\left(${qxT} + \\dfrac{\\pi}{2}\\right)$` : ''}.<br>`
+      + `Phương trình $\\iff \\sin\\left(${pxT} ${ps}\\right) = \\sin\\left(${qxT}${rc === 'cos' ? ' + \\dfrac{\\pi}{2}' : ''}\\right)$, tức là<br>`
+      + `• $${pxT} ${ps} = ${qxT}${rc === 'cos' ? ' + \\dfrac{\\pi}{2}' : ''} + k2\\pi \\iff ${pqFamT(F1)}$;<br>• $${pxT} ${ps} = \\pi - ${qxT}${rc === 'cos' ? ' - \\dfrac{\\pi}{2}' : ''} + k2\\pi \\iff ${pqFamT(F2)}$ ($k \\in \\mathbb{Z}$).<br>${tl.txt}`;
+    const o = {stem:`Cho phương trình $${eq}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-04.3 HSG: phương trình lượng giác nâng cao — 16 TLN + 4 TL (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-04.3 [HSG] Phương trình lượng giác nâng cao (11|0|3), đợt 2 (5 dạng TLN): đặt ẩn phụ, đánh giá hai vế. Claude viết.
+// Chuỗi: t = sin x ± cos x (loại |t| > √2) → t = tan x + cot x (loại |t| < 2) → đẳng cấp (xét cos x = 0) → hạ bậc sin⁴ + cos⁴, sin⁶ + cos⁶ về cos 4x → đánh giá sinᵃ + cosᵇ = 1 (chẵn lẻ).
+const hqOk = x=>{ if(!isFinite(x)) return null; const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9 || r === 0) return null; return String(r).length <= 4 ? r : null; };
+const hqPi = (p, q)=>{ if(q < 0){ p = -p; q = -q; } if(p === 0) return '0'; const g = gcdI(p, q); p /= g; q /= g; const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return s + (q === 1 ? n : `\\dfrac{${n}}{${q}}`); };
+const pqLcm = (a, b)=> a/gcdI(a, b)*b;
+const pqF = (op, oq, tp, tq)=>{ tp = Math.abs(tp); const g = gcdI(tp, tq); return {o:[op, oq], t:[tp/g, tq/g]}; };   // họ x = (op/oq + k·tp/tq)π
+const pqEnum = (fams, L, U, iL, iU, keep)=>{ let D = pqLcm(L[1], U[1]); fams.forEach(f=>{ D = pqLcm(D, pqLcm(f.o[1], f.t[1])); });
+  const Lv = L[0]*D/L[1], Uv = U[0]*D/U[1], S = new Set();
+  fams.forEach(f=>{ const o = f.o[0]*D/f.o[1], t = f.t[0]*D/f.t[1]; for(let k = Math.ceil((Lv - o)/t) - 1; k <= Math.floor((Uv - o)/t) + 1; k++){ const v = o + k*t;
+    if(v < Lv || v > Uv || (!iL && v === Lv) || (!iU && v === Uv)) continue; if(keep && !keep(v, D)) continue; S.add(v); } });
+  return {D, vs:[...S].sort((a, b)=> a - b)}; };
+const pqFamT = f=>{ const [r, s] = f.t, st = s === 1 ? (r === 1 ? 'k\\pi' : `k${r}\\pi`) : `k\\dfrac{${r === 1 ? '' : r}\\pi}{${s}}`, o = f.o[0] === 0 ? '' : hqPi(f.o[0], f.o[1]); return o ? `x = ${o} + ${st}` : `x = ${st}`; };
+const pqIv = (L, U, iL, iU)=> `${iL ? '[' : '('}${hqPi(L[0], L[1])}; ${hqPi(U[0], U[1])}${iU ? ']' : ')'}`;
+const pqIVS = [[[0, 1], [1, 1]], [[0, 1], [2, 1]], [[0, 1], [3, 1]], [[-1, 1], [1, 1]], [[-1, 2], [3, 2]], [[0, 1], [3, 2]], [[-1, 1], [2, 1]], [[-1, 2], [1, 1]], [[0, 1], [5, 2]], [[-2, 1], [2, 1]], [[0, 1], [4, 1]], [[-3, 2], [5, 2]]];
+const pqPickIv = R=>{ const [L, U] = R.pick(pqIVS); return {L, U, iL:R.rnd() < 0.6, iU:R.rnd() < 0.6}; };
+// nghiệm số của f trên [a; b] (kiểm tra độc lập): đổi dấu (chia đôi) và cực tiểu của |f| (nghiệm kép)
+const pqRoots = (f, a, b, N)=>{ N = N || 30000; const xs = [], h = (b - a)/N, add = x=>{ if(!xs.some(y=> Math.abs(y - x) < 1e-6)) xs.push(x); };
+  const ok = v=> isFinite(v), vals = []; for(let i = 0; i <= N; i++) vals.push(f(a + i*h));
+  for(let i = 0; i <= N; i++){ const x = a + i*h, v = vals[i]; if(ok(v) && Math.abs(v) < 1e-12) add(x);
+    if(i < N && ok(v) && ok(vals[i + 1]) && v*vals[i + 1] < 0){ let lo = x, hi = x + h, flo = v; for(let j = 0; j < 60; j++){ const m = (lo + hi)/2, fm = f(m); if(!ok(fm)) break; if(flo*fm <= 0) hi = m; else { lo = m; flo = fm; } } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-7) add(r); }
+    if(i > 0 && i < N && ok(v) && Math.abs(v) < 1e-2 && Math.abs(v) <= Math.abs(vals[i - 1]) && Math.abs(v) <= Math.abs(vals[i + 1])){ let lo = x - h, hi = x + h; for(let j = 0; j < 80; j++){ const m1 = lo + (hi - lo)/3, m2 = hi - (hi - lo)/3; if(Math.abs(f(m1)) < Math.abs(f(m2))) hi = m2; else lo = m1; } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-10) add(r); } }
+  return xs.sort((p, q)=> p - q); };
+const pqCheck = (f, I, ask, ans)=>{ const a = I.L[0]/I.L[1]*Math.PI, b = I.U[0]/I.U[1]*Math.PI; let r = pqRoots(f, a - 1e-9, b + 1e-9);
+  r = r.filter(x=> (I.iL ? x >= a - 1e-7 : x > a + 1e-7) && (I.iU ? x <= b + 1e-7 : x < b - 1e-7));
+  return ask === 'cnt' ? r.length === ans : Math.abs(r.reduce((s, x)=> s + x, 0)/Math.PI - ans) < 1e-6; };
+// đề, đáp số, câu kết của lời giải cho một tập nghiệm đã liệt kê
+const pqTail = (E, I, ask)=>{ const list = E.vs.map(v=> hqPi(v, E.D)).join('; '), n = E.vs.length, sum = E.vs.reduce((s, v)=> s + v, 0);
+  if(ask === 'cnt') return {ans:n, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Vậy có $${n}$ nghiệm.`};
+  const a = hqOk(sum/E.D); return {ans:a, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Tổng các nghiệm bằng $${hqPi(sum, E.D)}$, nên $a = ${a === null ? '' : nt(a)}$.`}; };
+const pqAsk = (I, ask)=> ask === 'cnt' ? `Tìm số nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$.`
+  : `Tổng các nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$ bằng $a\\pi$. Tìm $a$.`;
+const pqLin = list=>{ let s = ''; list.forEach(([c, m])=>{ if(!c) return; const a = Math.abs(c), body = (a === 1 && m) ? m : a + m; s += s ? (c < 0 ? ' - ' : ' + ') + body : (c < 0 ? '-' : '') + body; }); return s || '0'; };
+
+/* 6. TLN VD — đặt t = sin x ± cos x, loại nghiệm |t| > √2 */
+GT(11,0,3,'VD','HSG: phương trình sin 2x − S(sin x ± cos x) + c = 0 — đặt t = sin x ± cos x = √2 sin(x ± π/4), |t| ≤ √2, đưa về phương trình bậc hai của t (loại nghiệm |t| > √2); đếm nghiệm, tổng nghiệm', R=>{
+  const FAM = {'+':{1:[pqF(0, 1, 2, 1), pqF(1, 2, 2, 1)], '-1':[pqF(-1, 2, 2, 1), pqF(1, 1, 2, 1)], 0:[pqF(-1, 4, 1, 1)]}, '-':{1:[pqF(1, 2, 2, 1), pqF(1, 1, 2, 1)], '-1':[pqF(0, 1, 2, 1), pqF(3, 2, 2, 1)], 0:[pqF(1, 4, 1, 1)]}};
+  for(let g = 0; g < 120; g++){
+    const pm = R.pick(['+', '-']), t1 = R.pick([1, -1, 0]), t2 = R.pick([2, -2, 3, -3, 4, -4]), S = t1 + t2, P = t1*t2;
+    const eq = pm === '+' ? pqLin([[1, '\\sin 2x'], [-S, '(\\sin x + \\cos x)'], [1 + P, '']]) : pqLin([[1, '\\sin 2x'], [S, '(\\sin x - \\cos x)'], [-(1 + P), '']]);
+    const f = pm === '+' ? x=> Math.sin(2*x) - S*(Math.sin(x) + Math.cos(x)) + 1 + P : x=> Math.sin(2*x) + S*(Math.sin(x) - Math.cos(x)) - 1 - P;
+    const I = pqPickIv(R), ask = R.rnd() < 0.4 ? 'cnt' : 'sum', fams = FAM[pm][t1];
+    const E = pqEnum(fams, I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const tT = `\\sin x ${pm} \\cos x`, sh = pm === '+' ? '\\sin\\left(x + \\dfrac{\\pi}{4}\\right)' : '\\sin\\left(x - \\dfrac{\\pi}{4}\\right)', rr = {1:'\\dfrac{\\sqrt{2}}{2}', '-1':'-\\dfrac{\\sqrt{2}}{2}', 0:'0'}[t1];
+    const lg = `Đặt $t = ${tT} = \\sqrt{2}${sh}$, điều kiện $|t| \\le \\sqrt{2}$; khi đó $\\sin 2x = ${pm === '+' ? 't^2 - 1' : '1 - t^2'}$.<br>`
+      + `Phương trình thành $${pqLin([[1, 't^2'], [-S, 't'], [P, '']])} = 0 \\iff t = ${t1}$ hoặc $t = ${t2}$ (loại vì $|${t2}| > \\sqrt{2}$).<br>`
+      + `$t = ${t1} \\iff ${sh} = ${rr} \\iff ${fams.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$).<br>${tl.txt}`;
+    const o = {stem:`Cho phương trình $${eq} = 0$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 7. TLN VDC — đặt t = tan x + cot x = 2/sin 2x, |t| ≥ 2 */
+GT(11,0,3,'VDC','HSG: phương trình tan²x + cot²x + A(tan x + cot x) + B = 0 — đặt t = tan x + cot x = 2/sin 2x (|t| ≥ 2), tan²x + cot²x = t² − 2; loại nghiệm |t| < 2; đếm nghiệm, tổng nghiệm', R=>{
+  const FAM = {2:['1', [pqF(1, 4, 1, 1)]], '-2':['-1', [pqF(-1, 4, 1, 1)]], 4:['\\dfrac{1}{2}', [pqF(1, 12, 1, 1), pqF(5, 12, 1, 1)]], '-4':['-\\dfrac{1}{2}', [pqF(-1, 12, 1, 1), pqF(7, 12, 1, 1)]]};
+  for(let g = 0; g < 120; g++){
+    const t1 = R.pick([2, -2, 4, -4]), t2 = R.pick([-1, 0, 1]), A = -(t1 + t2), B = t1*t2 + 2;
+    const eq = pqLin([[1, '\\tan^2 x + \\cot^2 x'], [A, '(\\tan x + \\cot x)'], [B, '']]) + ' = 0';
+    const f = x=>{ const s = Math.sin(x), c = Math.cos(x); if(Math.abs(s) < 1e-9 || Math.abs(c) < 1e-9) return NaN; const t = s/c, u = c/s; return t*t + u*u + A*(t + u) + B; };
+    const I = pqPickIv(R), ask = R.rnd() < 0.6 ? 'cnt' : 'sum', [sv, fams] = FAM[t1];
+    const E = pqEnum(fams, I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const lg = `Điều kiện $\\sin 2x \\ne 0$. Đặt $t = \\tan x + \\cot x = \\dfrac{\\sin^2 x + \\cos^2 x}{\\sin x\\cos x} = \\dfrac{2}{\\sin 2x}$, nên $|t| \\ge 2$; và $\\tan^2 x + \\cot^2 x = t^2 - 2$.<br>`
+      + `Phương trình thành $${pqLin([[1, 't^2'], [A, 't'], [B - 2, '']])} = 0 \\iff t = ${t1}$ hoặc $t = ${t2}$ (loại vì $|${t2}| < 2$).<br>`
+      + `$t = ${t1} \\iff \\sin 2x = ${sv} \\iff ${fams.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$), thoả điều kiện.<br>${tl.txt}`;
+    const o = {stem:`Cho phương trình $${eq}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 8. TLN VD — phương trình đẳng cấp bậc hai: bẫy quên xét cos x = 0 */
+GT(11,0,3,'VD','HSG: phương trình đẳng cấp a sin²x + b sin x cos x + c cos²x = d — xét cos x = 0 trước (bẫy: chia ngay cho cos²x làm mất nghiệm), rồi chia cho cos²x đưa về phương trình theo tan x; đếm nghiệm trên đoạn', R=>{
+  for(let g = 0; g < 200; g++){
+    const d = R.int(-3, 3), al = R.pick([0, 0, 1, -1, 2, 3]), r1 = R.int(-3, 3), r2 = R.int(-3, 3); if(al && r1 === r2) continue;
+    const be = R.pick([1, 2, -1, -2]);
+    const a = d + al, b = al ? -al*(r1 + r2) : be, c = al ? d + al*r1*r2 : d - be*r1;
+    if(a === 0 && b === 0 && c === 0) continue;
+    const roots = al ? [r1, r2] : [r1], I = {L:R.pick([[0, 1], [-1, 1], [-2, 1], [-1, 2]]), U:R.pick([[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [5, 2], [7, 2]]), iL:R.rnd() < 0.6, iU:R.rnd() < 0.6};
+    const Lr = I.L[0]/I.L[1], Ur = I.U[0]/I.U[1];
+    const inI = x=> (I.iL ? x >= Lr - 1e-12 : x > Lr + 1e-12) && (I.iU ? x <= Ur + 1e-12 : x < Ur - 1e-12);
+    // đếm theo từng họ (đơn vị π): họ x = θ + kπ
+    const famCnt = th=>{ let n = 0; for(let k = Math.floor(Lr - th) - 1; k <= Math.ceil(Ur - th) + 1; k++) if(inI(th + k)) n++; return n; };
+    const parts = []; let ans = 0;
+    if(!al){ const n = famCnt(0.5); parts.push([`x = \\dfrac{\\pi}{2} + k\\pi`, n]); ans += n; }
+    roots.forEach(r=>{ const th = r === 0 ? 0 : r === 1 ? 0.25 : r === -1 ? -0.25 : Math.atan(r)/Math.PI, n = famCnt(th); ans += n;
+      parts.push([r === 0 ? 'x = k\\pi' : r === 1 ? 'x = \\dfrac{\\pi}{4} + k\\pi' : r === -1 ? 'x = -\\dfrac{\\pi}{4} + k\\pi' : `x = \\arctan(${r}) + k\\pi`, n]); });
+    if(!ans || ans > 16) continue;
+    const eq = pqLin([[a, '\\sin^2 x'], [b, '\\sin x\\cos x'], [c, '\\cos^2 x']]) + ` = ${d}`;
+    const f = x=> a*Math.sin(x)**2 + b*Math.sin(x)*Math.cos(x) + c*Math.cos(x)**2 - d;
+    const tq = pqLin([[a - d, 't^2'], [b, 't'], [c - d, '']]);
+    const lg = `• Xét $\\cos x = 0$ thì $\\sin^2 x = 1$: phương trình thành $${a} = ${d}$, ${al ? 'sai, nên $\\cos x = 0$ không cho nghiệm' : 'đúng, nên $x = \\dfrac{\\pi}{2} + k\\pi$ là nghiệm (bẫy: chia ngay cho $\\cos^2 x$ sẽ mất họ nghiệm này)'}.<br>`
+      + `• Xét $\\cos x \\ne 0$: chia hai vế cho $\\cos^2 x$, dùng $\\dfrac{1}{\\cos^2 x} = 1 + \\tan^2 x$, đặt $t = \\tan x$: $${pqLin([[a, 't^2'], [b, 't'], [c, '']])} = ${d === 0 ? '0' : d === 1 ? '1 + t^2' : `${d === -1 ? '-' : d}(1 + t^2)`} \\iff ${tq} = 0${tq === 't' ? '' : ` \\iff ${roots.map(r=> `t = ${r}`).join('$ hoặc $')}`}$.<br>`
+      + `Các họ nghiệm và số nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: ${parts.map(([t, n])=> `$${t}$: ${n} nghiệm`).join('; ')}.<br>Vậy có $${ans}$ nghiệm.`;
+    const o = {stem:`Tìm số nghiệm của phương trình $${eq}$ thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$.`, ans, lg, verify:()=> pqCheck(f, I, 'cnt', o.ans)};
+    return o; }
+  return null;
+});
+
+/* 9. TLN VD — sin⁴x + cos⁴x = a, sin⁶x + cos⁶x = a: hạ bậc về cos 4x */
+GT(11,0,3,'VD','HSG: phương trình sin⁴x + cos⁴x = a, sin⁶x + cos⁶x = a — hạ bậc đưa về cos 4x (sin⁴ + cos⁴ = (3 + cos 4x)/4, sin⁶ + cos⁶ = (5 + 3cos 4x)/8); đếm nghiệm, tổng nghiệm', R=>{
+  const CV = {'1':[pqF(0, 1, 1, 2)], '-1':[pqF(1, 4, 1, 2)], '0.5':[pqF(1, 12, 1, 2), pqF(-1, 12, 1, 2)], '-0.5':[pqF(1, 6, 1, 2), pqF(-1, 6, 1, 2)], '0':[pqF(1, 8, 1, 4)]};
+  for(let g = 0; g < 120; g++){
+    const pw = R.pick([4, 6]), v = R.pick([1, -1, 0.5, -0.5, 0]), aV = pw === 4 ? (3 + v)/4 : (5 + 3*v)/8, fams = CV[String(v)];
+    const I = pqPickIv(R), ask = R.rnd() < 0.6 ? 'cnt' : 'sum';
+    const E = pqEnum(fams, I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const aT = frT(Math.round(aV*16), 16), vT = {1:'1', '-1':'-1', 0.5:'\\dfrac{1}{2}', '-0.5':'-\\dfrac{1}{2}', 0:'0'}[v];
+    const red = pw === 4 ? `\\sin^4 x + \\cos^4 x = 1 - 2\\sin^2 x\\cos^2 x = 1 - \\dfrac{1}{2}\\sin^2 2x = 1 - \\dfrac{1 - \\cos 4x}{4} = \\dfrac{3 + \\cos 4x}{4}`
+                         : `\\sin^6 x + \\cos^6 x = 1 - 3\\sin^2 x\\cos^2 x = 1 - \\dfrac{3}{4}\\sin^2 2x = 1 - \\dfrac{3(1 - \\cos 4x)}{8} = \\dfrac{5 + 3\\cos 4x}{8}`;
+    const lg = `$${red}$.<br>Phương trình $\\iff ${pw === 4 ? '\\dfrac{3 + \\cos 4x}{4}' : '\\dfrac{5 + 3\\cos 4x}{8}'} = ${aT} \\iff \\cos 4x = ${vT} \\iff ${fams.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$).<br>${tl.txt}`;
+    const f = x=> Math.sin(x)**pw + Math.cos(x)**pw - aV;
+    const o = {stem:`Cho phương trình $\\sin^${pw} x + \\cos^${pw} x = ${aT}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 10. TLN VDC — sinᵃx + cosᵇx = 1 (a, b ≥ 3): đánh giá, phân biệt số mũ chẵn lẻ */
+GT(11,0,3,'VDC','HSG: phương trình sinᵃx + cosᵇx = 1 với số mũ lớn (a, b ≥ 3) — đánh giá sinᵃx ≤ sin²x, cosᵇx ≤ cos²x, dấu bằng phụ thuộc số mũ chẵn hay lẻ; đếm nghiệm, tổng nghiệm', R=>{
+  const EX = [3, 4, 5, 6, 7, 8, 2023, 2024, 2025, 2026];
+  for(let g = 0; g < 120; g++){
+    const a = R.pick(EX), b = R.pick(EX), ea = a % 2 === 0, eb = b % 2 === 0;
+    const pts = [['\\sin x = 0, \\cos x = 1', pqF(0, 1, 2, 1)], ['\\sin x = 1, \\cos x = 0', pqF(1, 2, 2, 1)]];
+    if(eb) pts.push(['\\sin x = 0, \\cos x = -1', pqF(1, 1, 2, 1)]); if(ea) pts.push(['\\sin x = -1, \\cos x = 0', pqF(-1, 2, 2, 1)]);
+    const I = pqPickIv(R), ask = R.rnd() < 0.6 ? 'cnt' : 'sum';
+    const E = pqEnum(pts.map(p=> p[1]), I.L, I.U, I.iL, I.iU); if(!E.vs.length || E.vs.length > 16) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const eqT = (n, t)=> n % 2 === 0 ? `${t} \\in \\{0; 1; -1\\}` : `${t} \\in \\{0; 1\\}`;
+    const lg = `Với $|t| \\le 1$ và $n \\ge 3$: $t^n \\le |t|^n = t^2|t|^{n - 2} \\le t^2$; dấu bằng khi $t = 0$ hoặc $|t| = 1$ và $t^n = 1$ (tức $t = 1$, hoặc $t = -1$ khi $n$ chẵn).<br>`
+      + `Nên $\\sin^{${a}} x + \\cos^{${b}} x \\le \\sin^2 x + \\cos^2 x = 1$; phương trình $\\iff \\sin^{${a}} x = \\sin^2 x$ và $\\cos^{${b}} x = \\cos^2 x$, tức là $${eqT(a, '\\sin x')}$ và $${eqT(b, '\\cos x')}$ (vì ${a} ${ea ? 'chẵn' : 'lẻ'}, ${b} ${eb ? 'chẵn' : 'lẻ'}).<br>`
+      + `Kết hợp $\\sin^2 x + \\cos^2 x = 1$: ${pts.map(([c, F])=> `$${c} \\iff ${pqFamT(F)}$`).join('; ')} ($k \\in \\mathbb{Z}$).<br>${tl.txt}`;
+    const f = x=> Math.sin(x)**a + Math.cos(x)**b - 1;
+    const o = {stem:`Cho phương trình $\\sin^{${a}} x + \\cos^{${b}} x = 1$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-04.3 HSG: phương trình lượng giác nâng cao — 16 TLN + 4 TL (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-04.3 [HSG] Phương trình lượng giác nâng cao (11|0|3), đợt 3 (6 dạng TLN): đánh giá hai vế, tham số m, tổng nghiệm. Claude viết.
+// Chuỗi: đánh giá |sin|, |cos| ≤ 1 → điều kiện có nghiệm a² + b² ≥ c² (tham số) → phân tích có nghiệm cố định, xét nghiệm chứa m trên khoảng → cô lập m = f(t) → tổng nghiệm không cần nghiệm (ghép cặp) → tích côsin gấp đôi (loại sin x = 0).
+const hqOk = x=>{ if(!isFinite(x)) return null; const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9 || r === 0) return null; return String(r).length <= 4 ? r : null; };
+const hqPi = (p, q)=>{ if(q < 0){ p = -p; q = -q; } if(p === 0) return '0'; const g = gcdI(p, q); p /= g; q /= g; const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return s + (q === 1 ? n : `\\dfrac{${n}}{${q}}`); };
+const pqLcm = (a, b)=> a/gcdI(a, b)*b;
+const pqF = (op, oq, tp, tq)=>{ tp = Math.abs(tp); const g = gcdI(tp, tq); return {o:[op, oq], t:[tp/g, tq/g]}; };   // họ x = (op/oq + k·tp/tq)π
+const pqEnum = (fams, L, U, iL, iU, keep)=>{ let D = pqLcm(L[1], U[1]); fams.forEach(f=>{ D = pqLcm(D, pqLcm(f.o[1], f.t[1])); });
+  const Lv = L[0]*D/L[1], Uv = U[0]*D/U[1], S = new Set();
+  fams.forEach(f=>{ const o = f.o[0]*D/f.o[1], t = f.t[0]*D/f.t[1]; for(let k = Math.ceil((Lv - o)/t) - 1; k <= Math.floor((Uv - o)/t) + 1; k++){ const v = o + k*t;
+    if(v < Lv || v > Uv || (!iL && v === Lv) || (!iU && v === Uv)) continue; if(keep && !keep(v, D)) continue; S.add(v); } });
+  return {D, vs:[...S].sort((a, b)=> a - b)}; };
+const pqFamT = f=>{ const [r, s] = f.t, st = s === 1 ? (r === 1 ? 'k\\pi' : `k${r}\\pi`) : `k\\dfrac{${r === 1 ? '' : r}\\pi}{${s}}`, o = f.o[0] === 0 ? '' : hqPi(f.o[0], f.o[1]); return o ? `x = ${o} + ${st}` : `x = ${st}`; };
+const pqIv = (L, U, iL, iU)=> `${iL ? '[' : '('}${hqPi(L[0], L[1])}; ${hqPi(U[0], U[1])}${iU ? ']' : ')'}`;
+const pqIVS = [[[0, 1], [1, 1]], [[0, 1], [2, 1]], [[0, 1], [3, 1]], [[-1, 1], [1, 1]], [[-1, 2], [3, 2]], [[0, 1], [3, 2]], [[-1, 1], [2, 1]], [[-1, 2], [1, 1]], [[0, 1], [5, 2]], [[-2, 1], [2, 1]], [[0, 1], [4, 1]], [[-3, 2], [5, 2]]];
+const pqPickIv = R=>{ const [L, U] = R.pick(pqIVS); return {L, U, iL:R.rnd() < 0.6, iU:R.rnd() < 0.6}; };
+// nghiệm số của f trên [a; b] (kiểm tra độc lập): đổi dấu (chia đôi) và cực tiểu của |f| (nghiệm kép)
+const pqRoots = (f, a, b, N)=>{ N = N || 30000; const xs = [], h = (b - a)/N, add = x=>{ if(!xs.some(y=> Math.abs(y - x) < 1e-6)) xs.push(x); };
+  const ok = v=> isFinite(v), vals = []; for(let i = 0; i <= N; i++) vals.push(f(a + i*h));
+  for(let i = 0; i <= N; i++){ const x = a + i*h, v = vals[i]; if(ok(v) && Math.abs(v) < 1e-12) add(x);
+    if(i < N && ok(v) && ok(vals[i + 1]) && v*vals[i + 1] < 0){ let lo = x, hi = x + h, flo = v; for(let j = 0; j < 60; j++){ const m = (lo + hi)/2, fm = f(m); if(!ok(fm)) break; if(flo*fm <= 0) hi = m; else { lo = m; flo = fm; } } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-7) add(r); }
+    if(i > 0 && i < N && ok(v) && Math.abs(v) < 1e-2 && Math.abs(v) <= Math.abs(vals[i - 1]) && Math.abs(v) <= Math.abs(vals[i + 1])){ let lo = x - h, hi = x + h; for(let j = 0; j < 80; j++){ const m1 = lo + (hi - lo)/3, m2 = hi - (hi - lo)/3; if(Math.abs(f(m1)) < Math.abs(f(m2))) hi = m2; else lo = m1; } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-10) add(r); } }
+  return xs.sort((p, q)=> p - q); };
+const pqCheck = (f, I, ask, ans)=>{ const a = I.L[0]/I.L[1]*Math.PI, b = I.U[0]/I.U[1]*Math.PI; let r = pqRoots(f, a - 1e-9, b + 1e-9);
+  r = r.filter(x=> (I.iL ? x >= a - 1e-7 : x > a + 1e-7) && (I.iU ? x <= b + 1e-7 : x < b - 1e-7));
+  return ask === 'cnt' ? r.length === ans : Math.abs(r.reduce((s, x)=> s + x, 0)/Math.PI - ans) < 1e-6; };
+// đề, đáp số, câu kết của lời giải cho một tập nghiệm đã liệt kê
+const pqTail = (E, I, ask)=>{ const list = E.vs.map(v=> hqPi(v, E.D)).join('; '), n = E.vs.length, sum = E.vs.reduce((s, v)=> s + v, 0);
+  if(ask === 'cnt') return {ans:n, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Vậy có $${n}$ nghiệm.`};
+  const a = hqOk(sum/E.D); return {ans:a, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Tổng các nghiệm bằng $${hqPi(sum, E.D)}$, nên $a = ${a === null ? '' : nt(a)}$.`}; };
+const pqAsk = (I, ask)=> ask === 'cnt' ? `Tìm số nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$.`
+  : `Tổng các nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$ bằng $a\\pi$. Tìm $a$.`;
+const pqLin = list=>{ let s = ''; list.forEach(([c, m])=>{ if(!c) return; const a = Math.abs(c), body = (a === 1 && m) ? m : a + m; s += s ? (c < 0 ? ' - ' : ' + ') + body : (c < 0 ? '-' : '') + body; }); return s || '0'; };
+
+const pqFr = v=>{ for(let q = 1; q <= 2000; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-10) return frT(p, q); } return nt(v); };
+const pqMx = (c, s)=> c === 0 ? '' : (c === 1 ? s : c === -1 ? '-' + s : c + s);   // hệ số trước biểu thức
+const pqPar = e=> /[+-]/.test(e.slice(1)) ? `(${e})` : e;
+
+/* 11. TLN VDC — đánh giá: f(ax) ± g(bx) = ±2, f(ax)·g(bx) = 1 */
+GT(11,0,3,'VDC','HSG: phương trình sin ax + cos bx = 2, cos ax + cos bx = −2, sin ax·sin bx = 1… — đánh giá |sin|, |cos| ≤ 1 nên dấu bằng buộc cả hai cùng bằng ±1, giải một điều kiện rồi thử vào điều kiện kia; đếm nghiệm', R=>{
+  const fam = (fn, m, val)=> fn === 'sin' ? (val === 1 ? pqF(1, 2*m, 2, m) : pqF(-1, 2*m, 2, m)) : (val === 1 ? pqF(0, 1, 2, m) : pqF(1, m, 2, m));
+  const hit = (fn, m, val, v, D)=>{ const r = (((m*v) % (2*D)) + 2*D) % (2*D); return fn === 'sin' ? r === (val === 1 ? D/2 : 3*D/2) : r === (val === 1 ? 0 : D); };
+  const TY = [
+    {t:(a, b)=> `\\sin ${a} + \\cos ${b} = 2`, alts:[[['sin', 1], ['cos', 1]]], ev:'Vì $\\sin u \\le 1$, $\\cos v \\le 1$ nên vế trái $\\le 2$; dấu bằng khi', f:(a, b)=> x=> Math.sin(a*x) + Math.cos(b*x) - 2},
+    {t:(a, b)=> `\\sin ${a} - \\cos ${b} = 2`, alts:[[['sin', 1], ['cos', -1]]], ev:'Vì $\\sin u \\le 1$, $-\\cos v \\le 1$ nên vế trái $\\le 2$; dấu bằng khi', f:(a, b)=> x=> Math.sin(a*x) - Math.cos(b*x) - 2},
+    {t:(a, b)=> `\\cos ${a} + \\cos ${b} = -2`, alts:[[['cos', -1], ['cos', -1]]], ev:'Vì $\\cos u \\ge -1$, $\\cos v \\ge -1$ nên vế trái $\\ge -2$; dấu bằng khi', f:(a, b)=> x=> Math.cos(a*x) + Math.cos(b*x) + 2},
+    {t:(a, b)=> `\\sin ${a} + \\sin ${b} = -2`, alts:[[['sin', -1], ['sin', -1]]], ev:'Vì $\\sin u \\ge -1$, $\\sin v \\ge -1$ nên vế trái $\\ge -2$; dấu bằng khi', f:(a, b)=> x=> Math.sin(a*x) + Math.sin(b*x) + 2},
+    {t:(a, b)=> `\\sin ${a}\\sin ${b} = 1`, alts:[[['sin', 1], ['sin', 1]], [['sin', -1], ['sin', -1]]], ev:'Vì $|\\sin u| \\le 1$, $|\\sin v| \\le 1$ nên $|\\text{vế trái}| \\le 1$; dấu bằng khi', f:(a, b)=> x=> Math.sin(a*x)*Math.sin(b*x) - 1},
+    {t:(a, b)=> `\\cos ${a}\\cos ${b} = 1`, alts:[[['cos', 1], ['cos', 1]], [['cos', -1], ['cos', -1]]], ev:'Vì $|\\cos u| \\le 1$, $|\\cos v| \\le 1$ nên $|\\text{vế trái}| \\le 1$; dấu bằng khi', f:(a, b)=> x=> Math.cos(a*x)*Math.cos(b*x) - 1}];
+  const xT = m=> m === 1 ? 'x' : m + 'x';
+  for(let g = 0; g < 200; g++){
+    const ty = R.pick(TY), a = R.int(1, 6), b = R.int(1, 6); if(a === b) continue;
+    const I = {L:R.pick([[0, 1], [-1, 1], [-2, 1], [-1, 2]]), U:R.pick([[2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 2], [9, 2]]), iL:R.rnd() < 0.6, iU:R.rnd() < 0.6}, ask = R.rnd() < 0.5 ? 'cnt' : 'sum';
+    const all = []; let D0 = 2; const rows = [];
+    ty.alts.forEach(([[f1, v1], [f2, v2]])=>{ const F = fam(f1, a, v1), C = pqEnum([F], I.L, I.U, I.iL, I.iU), D = pqLcm(C.D, 2), vs = C.vs.map(v=> v*D/C.D);
+      const ok = vs.filter(v=> hit(f2, b, v2, v, D)); rows.push({f1, v1, f2, v2, F, vs, ok, D}); ok.forEach(v=> all.push(v/D)); D0 = pqLcm(D0, D); });
+    const E = {D:D0, vs:[...new Set(all.map(r=> Math.round(r*D0)))].sort((p, q)=> p - q)};
+    if(!E.vs.length || E.vs.length > 16 || rows.some(r=> r.vs.length > 24)) continue;
+    const tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const ans = tl.ans, vt = v=> v === 1 ? '1' : '-1';
+    const lg = `${ty.ev} ${ty.alts.map(([[f1, v1], [f2, v2]])=> `$\\${f1} ${xT(a)} = ${vt(v1)}$ và $\\${f2} ${xT(b)} = ${vt(v2)}$`).join(' hoặc ')}.<br>`
+      + rows.map(r=> `• $\\${r.f1} ${xT(a)} = ${vt(r.v1)} \\iff ${pqFamT(r.F)}$; trên $${pqIv(I.L, I.U, I.iL, I.iU)}$ có ${r.vs.length} giá trị; thử vào $\\${r.f2} ${xT(b)} = ${vt(r.v2)}$ ${r.ok.length ? `chỉ nhận được $${r.ok.map(v=> hqPi(v, r.D)).join('; ')}$` : 'không nhận giá trị nào'}.`).join('<br>')
+      + `<br>${tl.txt}`;
+    const f = ty.f(a, b);
+    const o = {stem:`Cho phương trình $${ty.t(xT(a), xT(b))}$. ${pqAsk(I, ask)}`, ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 12. TLN VD — tham số m: (pm + q) sin x + (rm + s) cos x = um + v có nghiệm */
+GT(11,0,3,'VD','HSG: tìm số giá trị nguyên của tham số m để phương trình (pm + q) sin x + (rm + s) cos x = um + v có nghiệm — điều kiện có nghiệm a² + b² ≥ c², đưa về bất phương trình bậc hai ẩn m', R=>{
+  for(let g = 0; g < 400; g++){
+    const p = R.int(-2, 2), q = R.int(-3, 3), r = R.int(-2, 2), s = R.int(-3, 3), u = R.int(-2, 2), v = R.int(-4, 4);
+    if((p === 0 && q === 0) || (r === 0 && s === 0) || (u === 0 && v === 0)) continue;
+    const A = p*p + r*r - u*u, B = p*q + r*s - u*v, C = q*q + s*s - v*v; if(A === 0) continue;
+    const Dl = B*B - A*C; if(Dl <= 0) continue; const sq = Math.round(Math.sqrt(Dl)); if(sq*sq !== Dl) continue;
+    const L = R.pick([10, 15, 20, 25]); let ans = 0; for(let m = -L; m <= L; m++) if(A*m*m + 2*B*m + C >= 0) ans++;
+    if(ans === 0 || ans === 2*L + 1) continue;
+    const m1 = (-B - (A > 0 ? sq : -sq))/A, m2 = (-B + (A > 0 ? sq : -sq))/A;   // m1 < m2
+    const lo = Math.min(m1, m2), hi = Math.max(m1, m2), loT = pqFr(lo), hiT = pqFr(hi);
+    const cA = pqLin([[p, 'm'], [q, '']]), cB = pqLin([[r, 'm'], [s, '']]), cC = pqLin([[u, 'm'], [v, '']]);
+    const term = (c, fn, first)=>{ if(c === '0') return ''; if(/^-?\d+$/.test(c)){ const n = +c; return (first ? (n < 0 ? '-' : '') : (n < 0 ? ' - ' : ' + ')) + (Math.abs(n) === 1 ? '' : Math.abs(n)) + fn; } if(c === 'm' || c === '-m' || /^-?\d+m$/.test(c)) return (first ? '' : (c[0] === '-' ? ' - ' : ' + ')) + (first ? c : c.replace('-', '')) + fn; return (first ? '' : ' + ') + `(${c})` + fn; };
+    const eq = term(cA, '\\sin x', true) + term(cB, '\\cos x', !(cA !== '0')) + ` = ${cC}`;
+    const sq2 = e=> /^(\d+|m)$/.test(e) ? `${e}^2` : `(${e})^2`;
+    const setT = A > 0 ? `m \\le ${loT}$ hoặc $m \\ge ${hiT}` : `${loT} \\le m \\le ${hiT}`;
+    const lg = `Phương trình $a\\sin x + b\\cos x = c$ có nghiệm khi và chỉ khi $a^2 + b^2 \\ge c^2$.<br>`
+      + `Điều kiện: $${sq2(cA)} + ${sq2(cB)} \\ge ${sq2(cC)} \\iff ${pqLin([[A, 'm^2'], [2*B, 'm'], [C, '']])} \\ge 0 \\iff ${setT}$.<br>`
+      + `Với $m$ nguyên thuộc $[-${L}; ${L}]$ có $${ans}$ giá trị thoả mãn.`;
+    const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${L}; ${L}]$ để phương trình $${eq}$ có nghiệm?`, ans, lg,
+      verify:()=>{ let n = 0; for(let m = -L; m <= L; m++){ const a = p*m + q, b = r*m + s, c = u*m + v; let mn = Infinity, mx = -Infinity; for(let i = 0; i < 20000; i++){ const x = i*Math.PI/10000, y = a*Math.sin(x) + b*Math.cos(x) - c; if(y < mn) mn = y; if(y > mx) mx = y; } if(mn <= 1e-6 && mx >= -1e-6) n++; } return n === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 13. TLN VDC — phương trình bậc hai theo cos x (sin x) phân tích được, có nghiệm thuộc khoảng: tham số m */
+GT(11,0,3,'VDC','HSG: tìm số giá trị nguyên của tham số m để phương trình k cos 2x + (…)cos x + … = 0 có nghiệm thuộc khoảng K — phân tích thành (2cos x ∓ 1)(k cos x − m − h) = 0, nghiệm cos x = ±1/2 không thuộc K nên chỉ xét nghiệm chứa m', R=>{
+  const KC = [ {K:[[1, 2], [3, 2], false, false], lo:-1, li:true, hi:0, hn:false, f0:0.5, d:'$\\cos x \\in [-1; 0)$'}, {K:[[-1, 2], [1, 2], false, false], lo:0, li:false, hi:1, hn:true, f0:-0.5, d:'$\\cos x \\in (0; 1]$'},
+    {K:[[1, 2], [1, 1], false, false], lo:-1, li:false, hi:0, hn:false, f0:0.5, d:'$\\cos x \\in (-1; 0)$'}, {K:[[0, 1], [1, 2], false, false], lo:0, li:false, hi:1, hn:false, f0:-0.5, d:'$\\cos x \\in (0; 1)$'},
+    {K:[[0, 1], [1, 3], true, false], lo:0.5, li:false, hi:1, hn:true, f0:-0.5, d:'$\\cos x \\in \\left(\\dfrac{1}{2}; 1\\right]$'}, {K:[[2, 3], [1, 1], false, true], lo:-1, li:true, hi:-0.5, hn:false, f0:0.5, d:'$\\cos x \\in \\left[-1; -\\dfrac{1}{2}\\right)$'}];
+  const KS = [ {K:[[0, 1], [1, 1], false, false], lo:0, li:false, hi:1, hn:true, f0:-0.5, d:'$\\sin x \\in (0; 1]$'}, {K:[[1, 1], [2, 1], false, false], lo:-1, li:true, hi:0, hn:false, f0:0.5, d:'$\\sin x \\in [-1; 0)$'},
+    {K:[[1, 6], [5, 6], false, false], lo:0.5, li:false, hi:1, hn:true, f0:-0.5, d:'$\\sin x \\in \\left(\\dfrac{1}{2}; 1\\right]$'}, {K:[[0, 1], [1, 2], false, false], lo:0, li:false, hi:1, hn:false, f0:-0.5, d:'$\\sin x \\in (0; 1)$'}];
+  for(let g = 0; g < 200; g++){
+    const fn = R.pick(['cos', 'sin']), Kc = R.pick(fn === 'cos' ? KC : KS), k = R.int(1, 16), h = R.int(-4, 4), f0 = Kc.f0, I = {L:Kc.K[0], U:Kc.K[1], iL:Kc.K[2], iU:Kc.K[3]};
+    const inR = gv=> (Kc.li ? gv >= Kc.lo - 1e-12 : gv > Kc.lo + 1e-12) && (Kc.hn ? gv <= Kc.hi + 1e-12 : gv < Kc.hi - 1e-12);
+    const ms = []; for(let m = -60; m <= 60; m++) if(inR((m + h)/k)) ms.push(m); const ans = ms.length; if(!ans) continue;
+    const M = pqLin([[1, 'm'], [h, '']]);   // m + h
+    // hệ số: cos: f0 = 1/2: k cos2x − (2(m+h) + k) cos x + (m + h + k); f0 = −1/2: k cos2x + (k − 2(m+h)) cos x + (k − m − h)
+    //        sin: f0 = 1/2: k cos2x + (2(m+h) + k) sin x − (m + h + k); f0 = −1/2: k cos2x + (2(m+h) − k) sin x + (m + h − k)
+    let c1, c0; if(fn === 'cos'){ if(f0 > 0){ c1 = [-2, -(2*h + k)]; c0 = [1, h + k]; } else { c1 = [-2, k - 2*h]; c0 = [-1, k - h]; } }
+    else { if(f0 > 0){ c1 = [2, 2*h + k]; c0 = [-1, -(h + k)]; } else { c1 = [2, 2*h - k]; c0 = [1, h - k]; } }
+    const t1 = pqLin([[c1[0], 'm'], [c1[1], '']]), t0 = pqLin([[c0[0], 'm'], [c0[1], '']]);
+    const sgT = (cf, tail)=>{ const neg = cf[0] < 0, b = pqLin([[neg ? -cf[0] : cf[0], 'm'], [neg ? -cf[1] : cf[1], '']]); return (neg ? ' - ' : ' + ') + (tail ? pqPar(b) + tail : (neg ? pqPar(b) : b)); };
+    const eq = `${k === 1 ? '' : k}\\cos 2x${sgT(c1, `\\${fn} x`)}${sgT(c0, '')} = 0`;
+    const f = mm=> fn === 'cos' ? (x=> k*Math.cos(2*x) + (c1[0]*mm + c1[1])*Math.cos(x) + c0[0]*mm + c0[1]) : (x=> k*Math.cos(2*x) + (c1[0]*mm + c1[1])*Math.sin(x) + c0[0]*mm + c0[1]);
+    const Kt = pqIv(I.L, I.U, I.iL, I.iU), f0T = f0 > 0 ? '\\dfrac{1}{2}' : '-\\dfrac{1}{2}';
+    const fac = `(2\\${fn} x ${f0 > 0 ? '-' : '+'} 1)(${k === 1 ? '' : k}\\${fn} x - ${pqPar(M)})`;
+    const loM = Kc.lo*k - h, hiM = Kc.hi*k - h;
+    const lg = `Dùng $\\cos 2x = ${fn === 'cos' ? '2\\cos^2 x - 1' : '1 - 2\\sin^2 x'}$, phương trình $\\iff ${fac} = 0 \\iff \\${fn} x = ${f0T}$ hoặc $\\${fn} x = ${k === 1 ? M : `\\dfrac{${M}}{${k}}`}$.<br>`
+      + `Với $x \\in ${Kt}$ thì ${Kc.d}, nên $\\${fn} x = ${f0T}$ không có nghiệm thuộc $${Kt}$.<br>`
+      + `Phương trình có nghiệm thuộc $${Kt}$ $\\iff ${pqFr(Kc.lo)} ${Kc.li ? '\\le' : '<'} ${k === 1 ? M : `\\dfrac{${M}}{${k}}`} ${Kc.hn ? '\\le' : '<'} ${pqFr(Kc.hi)} \\iff ${pqFr(loM)} ${Kc.li ? '\\le' : '<'} m ${Kc.hn ? '\\le' : '<'} ${pqFr(hiM)}$.<br>`
+      + `Có $${ans}$ giá trị nguyên của $m$ thoả mãn.`;
+    const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ để phương trình $${eq}$ có nghiệm thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${Kt}$?`, ans, lg,
+      verify:()=>{ let n = 0; for(let m = Math.floor(-1.5*k - h) - 1; m <= Math.ceil(1.5*k - h) + 1; m++){ const ok = (()=>{ const a0 = I.L[0]/I.L[1]*Math.PI, b0 = I.U[0]/I.U[1]*Math.PI; let r = pqRoots(f(m), a0 - 1e-9, b0 + 1e-9, 6000); r = r.filter(x=> (I.iL ? x >= a0 - 1e-7 : x > a0 + 1e-7) && (I.iU ? x <= b0 + 1e-7 : x < b0 - 1e-7)); return r.length > 0; })(); if(ok) n++; } return n === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 14. TLN VD — m = f(t) với t = sin x (cos x) trên một đoạn: đếm m nguyên */
+GT(11,0,3,'VD','HSG: tìm số giá trị nguyên của tham số m để phương trình k cos 2x + a sin x + m = 0 (k cos 2x + a cos x + m = 0) có nghiệm thuộc một đoạn — đặt t, cô lập m = f(t), tìm tập giá trị của tam thức trên đoạn của t', R=>{
+  const XS = [ ['sin', [[0, 1], [1, 1]], [0, 1]], ['sin', [[-1, 2], [1, 2]], [-1, 1]], ['sin', [[-1, 6], [1, 2]], [-0.5, 1]], ['sin', [[1, 6], [5, 6]], [0.5, 1]], ['sin', [[0, 1], [7, 6]], [-0.5, 1]], ['sin', [[-1, 2], [1, 6]], [-1, 0.5]],
+    ['cos', [[0, 1], [1, 1]], [-1, 1]], ['cos', [[0, 1], [1, 2]], [0, 1]], ['cos', [[-1, 3], [1, 3]], [0.5, 1]], ['cos', [[1, 2], [1, 1]], [-1, 0]], ['cos', [[0, 1], [2, 3]], [-0.5, 1]]];
+  for(let g = 0; g < 200; g++){
+    const [fn, Iv, [t0, t1]] = R.pick(XS), k = R.pick([1, 2, 3]), a = R.nz(-8, 8), I = {L:Iv[0], U:Iv[1], iL:true, iU:true};
+    // sin: m = 2k t² − a t − k ; cos: m = −2k t² − a t + k
+    const F = t=> fn === 'sin' ? 2*k*t*t - a*t - k : -2*k*t*t - a*t + k, tv = fn === 'sin' ? a/(4*k) : -a/(4*k);
+    const cand = [t0, t1].concat(tv > t0 && tv < t1 ? [tv] : []), vals = cand.map(F), mn = Math.min(...vals), mx = Math.max(...vals);
+    const ans = Math.floor(mx + 1e-9) - Math.ceil(mn - 1e-9) + 1; if(ans < 1 || ans > 99) continue;
+    const fT = fn === 'sin' ? pqLin([[2*k, 't^2'], [-a, 't'], [-k, '']]) : pqLin([[-2*k, 't^2'], [-a, 't'], [k, '']]);
+    const inside = cand.length === 3;
+    const lg = `Đặt $t = \\${fn} x$; khi $x \\in ${pqIv(I.L, I.U, true, true)}$ thì $t \\in [${pqFr(t0)}; ${pqFr(t1)}]$ (mỗi giá trị $t$ trong đoạn này ứng với ít nhất một $x$).<br>`
+      + `$\\cos 2x = ${fn === 'sin' ? '1 - 2t^2' : '2t^2 - 1'}$ nên phương trình $\\iff m = f(t) = ${fT}$.<br>`
+      + `$f(${pqFr(t0)}) = ${pqFr(F(t0))}$, $f(${pqFr(t1)}) = ${pqFr(F(t1))}$${inside ? `, đỉnh $t = ${pqFr(tv)}$ thuộc đoạn, $f(${pqFr(tv)}) = ${pqFr(F(tv))}$` : `; đỉnh $t = ${pqFr(tv)}$ không thuộc khoảng $(${pqFr(t0)}; ${pqFr(t1)})$`}.<br>`
+      + `Tập giá trị của $f$ trên đoạn là $[${pqFr(mn)}; ${pqFr(mx)}]$; phương trình có nghiệm $\\iff ${pqFr(mn)} \\le m \\le ${pqFr(mx)}$. Có $${ans}$ giá trị nguyên của $m$.`;
+    const eq = `${k === 1 ? '' : k}\\cos 2x ${a < 0 ? '-' : '+'} ${Math.abs(a) === 1 ? '' : Math.abs(a)}\\${fn} x + m = 0`;
+    const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ để phương trình $${eq}$ có nghiệm thuộc đoạn $${pqIv(I.L, I.U, true, true)}$?`, ans, lg,
+      verify:()=>{ const a0 = I.L[0]/I.L[1]*Math.PI, b0 = I.U[0]/I.U[1]*Math.PI; let lo = Infinity, hi = -Infinity; for(let i = 0; i <= 200000; i++){ const x = a0 + (b0 - a0)*i/200000, v = -(k*Math.cos(2*x) + a*Math[fn](x)); if(v < lo) lo = v; if(v > hi) hi = v; }
+        return Math.floor(hi + 1e-7) - Math.ceil(lo - 1e-7) + 1 === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 15. TLN VDC — tổng các nghiệm trên [0; 2nπ] mà không cần biết nghiệm cụ thể (cos x = c, sin x = s với c, s không đặc biệt) */
+GT(11,0,3,'VDC','HSG: tổng các nghiệm thuộc [0; 2nπ] của phương trình p cos 2x + q cos x + r = 0 (q sin x) khi nghiệm cos x = c không phải giá trị đặc biệt — ghép cặp nghiệm đối xứng trong mỗi chu kì, không cần tính nghiệm', R=>{
+  const VAL = [[1, 3], [-1, 3], [2, 3], [-2, 3], [1, 4], [-1, 4], [3, 4], [-3, 4], [2, 5], [-2, 5], [3, 5], [-3, 5], [1, 5], [-1, 5], [4, 5], [-4, 5]], BAD = [[2, 1], [-2, 1], [3, 1], [-3, 1], [3, 2], [-3, 2], [5, 2], [-5, 2], [4, 3], [-4, 3]];
+  for(let g = 0; g < 300; g++){
+    const fn = R.pick(['cos', 'sin']), two = R.rnd() < 0.3, [n1, d1] = R.pick(VAL), [n2, d2] = two ? R.pick(VAL) : R.pick(BAD); if(n1*d2 === n2*d1) continue;
+    const lam = (d1*d2) % 2 === 0 ? 1 : 2, A2 = lam*d1*d2, Bq = -lam*(d1*n2 + d2*n1), Cc = lam*n1*n2;   // A2 c² + Bq c + Cc = 0 (c = cos x hoặc sin x)
+    let p, q, r; if(fn === 'cos'){ p = A2/2; q = Bq; r = Cc + p; } else { p = -A2/2; q = Bq; r = Cc - p; } if(q === 0 || r === 0) continue;
+    const n = R.int(1, 5), roots = two ? [n1/d1, n2/d2] : [n1/d1];
+    const per = c=> fn === 'cos' ? 2*n*n : (c > 0 ? 2*n*n - n : 2*n*n + n), ans = roots.reduce((s, c)=> s + per(c), 0); if(String(ans).length > 4) continue;
+    const eq = `${pqMx(p, '\\cos 2x')} ${q < 0 ? '-' : '+'} ${Math.abs(q) === 1 ? '' : Math.abs(q)}\\${fn} x ${r < 0 ? '-' : '+'} ${Math.abs(r)} = 0`;
+    const I = {L:[0, 1], U:[2*n, 1], iL:true, iU:true};
+    const quad = pqLin([[A2, 't^2'], [Bq, 't'], [Cc, '']]);
+    const one = c=> fn === 'cos'
+      ? `$\\cos x = ${pqFr(c)}$: đặt $\\alpha \\in (0; \\pi)$ với $\\cos\\alpha = ${pqFr(c)}$. Trên mỗi đoạn $[k2\\pi; k2\\pi + 2\\pi]$ có đúng hai nghiệm $\\alpha + k2\\pi$ và $2\\pi - \\alpha + k2\\pi$, tổng $(4k + 2)\\pi$. ${n === 1 ? 'Chỉ có $k = 0$: tổng $2\\pi$' : `Cộng với $k = 0, 1, \\ldots, ${n - 1}$: $2\\pi(${n === 2 ? '1 + 3' : `1 + 3 + \\cdots + ${2*n - 1}`}) = ${2*n*n}\\pi$`}.`
+      : c > 0 ? `$\\sin x = ${pqFr(c)}$: đặt $\\alpha \\in \\left(0; \\dfrac{\\pi}{2}\\right)$ với $\\sin\\alpha = ${pqFr(c)}$. Trên mỗi đoạn $[k2\\pi; k2\\pi + 2\\pi]$ có hai nghiệm $\\alpha + k2\\pi$ và $\\pi - \\alpha + k2\\pi$, tổng $(4k + 1)\\pi$. ${n === 1 ? 'Chỉ có $k = 0$: tổng $\\pi$' : `Cộng với $k = 0, 1, \\ldots, ${n - 1}$: $(2\\cdot ${n}^2 - ${n})\\pi = ${2*n*n - n}\\pi$`}.`
+              : `$\\sin x = ${pqFr(c)}$: đặt $\\alpha \\in \\left(-\\dfrac{\\pi}{2}; 0\\right)$ với $\\sin\\alpha = ${pqFr(c)}$. Trên mỗi đoạn $[k2\\pi; k2\\pi + 2\\pi]$ có hai nghiệm $\\pi - \\alpha + k2\\pi$ và $2\\pi + \\alpha + k2\\pi$, tổng $(4k + 3)\\pi$. ${n === 1 ? 'Chỉ có $k = 0$: tổng $3\\pi$' : `Cộng với $k = 0, 1, \\ldots, ${n - 1}$: $(2\\cdot ${n}^2 + ${n})\\pi = ${2*n*n + n}\\pi$`}.`;
+    const lg = `Đặt $t = \\${fn} x$, $|t| \\le 1$; $\\cos 2x = ${fn === 'cos' ? '2t^2 - 1' : '1 - 2t^2'}$. Phương trình thành $${quad} = 0 \\iff t = ${pqFr(n1/d1)}$ hoặc $t = ${pqFr(n2/d2)}$${two ? '' : ` (loại vì $|${pqFr(n2/d2)}| > 1$)`}.<br>`
+      + `Các giá trị này không phải giá trị lượng giác của góc đặc biệt, nên ta không tính từng nghiệm mà ghép cặp:<br>` + roots.map(c=> '• ' + one(c)).join('<br>')
+      + `<br>Vậy tổng các nghiệm bằng $${ans}\\pi$, $a = ${ans}$.`;
+    const f = fn === 'cos' ? x=> p*Math.cos(2*x) + q*Math.cos(x) + r : x=> p*Math.cos(2*x) + q*Math.sin(x) + r;
+    const o = {stem:`Tổng các nghiệm thuộc đoạn $[0; ${2*n === 1 ? '' : 2*n}\\pi]$ của phương trình $${eq}$ bằng $a\\pi$. Tìm $a$.`, ans, lg, verify:()=> pqCheck(f, I, 'sum', o.ans)};
+    return o; }
+  return null;
+});
+
+/* 16. TLN VD — cos x cos 2x … cos 2ⁿ⁻¹x = ±1/2ⁿ: nhân sin x, loại sin x = 0 */
+GT(11,0,3,'VD','HSG: phương trình cos x·cos 2x·…·cos 2ⁿ⁻¹x = ±1/2ⁿ — nhân hai vế với 2ⁿ sin x (dùng liên tiếp 2 sin t cos t = sin 2t) đưa về sin 2ⁿx = ±sin x, loại các giá trị sin x = 0 (nghiệm ngoại lai); đếm nghiệm, tổng nghiệm', R=>{
+  for(let g = 0; g < 120; g++){
+    const n = R.pick([2, 3]), eps = R.pick([1, -1]), P = 2**n, I = pqPickIv(R), ask = R.rnd() < 0.6 ? 'cnt' : 'sum';
+    const fams = eps > 0 ? [pqF(0, 1, 2, P - 1), pqF(1, P + 1, 2, P + 1)] : [pqF(0, 1, 2, P + 1), pqF(1, P - 1, 2, P - 1)];
+    const C = pqEnum(fams, I.L, I.U, I.iL, I.iU), E = pqEnum(fams, I.L, I.U, I.iL, I.iU, (v, D)=> v % D !== 0);
+    if(!E.vs.length || C.vs.length > 18) continue;
+    const rej = C.vs.filter(v=> v % C.D === 0), tl = pqTail(E, I, ask); if(tl.ans === null) continue;
+    const prod = [...Array(n)].map((_, j)=> `\\cos ${2**j === 1 ? '' : 2**j}x`).join('\\,');
+    const rhs = `${eps < 0 ? '-' : ''}\\dfrac{1}{${P}}`;
+    const lg = `Nếu $\\sin x = 0$ thì $\\cos x = \\pm 1$, $\\cos 2x = \\cdots = 1$, vế trái bằng $\\pm 1 \\ne ${rhs}$; nên mọi nghiệm có $\\sin x \\ne 0$.<br>`
+      + `Nhân hai vế với $${P}\\sin x$, dùng liên tiếp $2\\sin t\\cos t = \\sin 2t$: $\\sin ${P}x = ${eps < 0 ? '-' : ''}\\sin x${eps < 0 ? ' = \\sin(-x)' : ''}$ (với $\\sin x \\ne 0$).<br>`
+      + `$\\iff ${pqFamT(fams[0])}$ hoặc $${pqFamT(fams[1])}$ ($k \\in \\mathbb{Z}$), bỏ các giá trị có $\\sin x = 0$.<br>`
+      + (rej.length ? `Trên $${pqIv(I.L, I.U, I.iL, I.iU)}$ loại $${rej.map(v=> hqPi(v, C.D)).join('; ')}$ (bẫy: nghiệm ngoại lai do nhân thêm $\\sin x$).<br>` : '') + tl.txt;
+    const f = x=>{ let s = 1; for(let j = 0; j < n; j++) s *= Math.cos(2**j*x); return s - eps/P; };
+    const o = {stem:`Cho phương trình $${prod} = ${rhs}$. ${pqAsk(I, ask)}`, ans:tl.ans, lg, verify:()=> pqCheck(f, I, ask, o.ans)};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-04.3 HSG: phương trình lượng giác nâng cao — 16 TLN + 4 TL (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-04.3 [HSG] Phương trình lượng giác nâng cao (11|0|3), đợt 4 (4 dạng tự luận). Claude viết.
+// Chuỗi: giải phương trình tích và chọn nghiệm trên đoạn → tham số m (bẫy nghiệm trùng) → đánh giá sinᵃ + cosᵇ = 1 có chứng minh bổ đề → đặt ẩn t = tan x + cot x.
+const hqOk = x=>{ if(!isFinite(x)) return null; const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9 || r === 0) return null; return String(r).length <= 4 ? r : null; };
+const hqPi = (p, q)=>{ if(q < 0){ p = -p; q = -q; } if(p === 0) return '0'; const g = gcdI(p, q); p /= g; q /= g; const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return s + (q === 1 ? n : `\\dfrac{${n}}{${q}}`); };
+const pqLcm = (a, b)=> a/gcdI(a, b)*b;
+const pqF = (op, oq, tp, tq)=>{ tp = Math.abs(tp); const g = gcdI(tp, tq); return {o:[op, oq], t:[tp/g, tq/g]}; };   // họ x = (op/oq + k·tp/tq)π
+const pqEnum = (fams, L, U, iL, iU, keep)=>{ let D = pqLcm(L[1], U[1]); fams.forEach(f=>{ D = pqLcm(D, pqLcm(f.o[1], f.t[1])); });
+  const Lv = L[0]*D/L[1], Uv = U[0]*D/U[1], S = new Set();
+  fams.forEach(f=>{ const o = f.o[0]*D/f.o[1], t = f.t[0]*D/f.t[1]; for(let k = Math.ceil((Lv - o)/t) - 1; k <= Math.floor((Uv - o)/t) + 1; k++){ const v = o + k*t;
+    if(v < Lv || v > Uv || (!iL && v === Lv) || (!iU && v === Uv)) continue; if(keep && !keep(v, D)) continue; S.add(v); } });
+  return {D, vs:[...S].sort((a, b)=> a - b)}; };
+const pqFamT = f=>{ const [r, s] = f.t, st = s === 1 ? (r === 1 ? 'k\\pi' : `k${r}\\pi`) : `k\\dfrac{${r === 1 ? '' : r}\\pi}{${s}}`, o = f.o[0] === 0 ? '' : hqPi(f.o[0], f.o[1]); return o ? `x = ${o} + ${st}` : `x = ${st}`; };
+const pqIv = (L, U, iL, iU)=> `${iL ? '[' : '('}${hqPi(L[0], L[1])}; ${hqPi(U[0], U[1])}${iU ? ']' : ')'}`;
+const pqIVS = [[[0, 1], [1, 1]], [[0, 1], [2, 1]], [[0, 1], [3, 1]], [[-1, 1], [1, 1]], [[-1, 2], [3, 2]], [[0, 1], [3, 2]], [[-1, 1], [2, 1]], [[-1, 2], [1, 1]], [[0, 1], [5, 2]], [[-2, 1], [2, 1]], [[0, 1], [4, 1]], [[-3, 2], [5, 2]]];
+const pqPickIv = R=>{ const [L, U] = R.pick(pqIVS); return {L, U, iL:R.rnd() < 0.6, iU:R.rnd() < 0.6}; };
+// nghiệm số của f trên [a; b] (kiểm tra độc lập): đổi dấu (chia đôi) và cực tiểu của |f| (nghiệm kép)
+const pqRoots = (f, a, b, N)=>{ N = N || 30000; const xs = [], h = (b - a)/N, add = x=>{ if(!xs.some(y=> Math.abs(y - x) < 1e-6)) xs.push(x); };
+  const ok = v=> isFinite(v), vals = []; for(let i = 0; i <= N; i++) vals.push(f(a + i*h));
+  for(let i = 0; i <= N; i++){ const x = a + i*h, v = vals[i]; if(ok(v) && Math.abs(v) < 1e-12) add(x);
+    if(i < N && ok(v) && ok(vals[i + 1]) && v*vals[i + 1] < 0){ let lo = x, hi = x + h, flo = v; for(let j = 0; j < 60; j++){ const m = (lo + hi)/2, fm = f(m); if(!ok(fm)) break; if(flo*fm <= 0) hi = m; else { lo = m; flo = fm; } } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-7) add(r); }
+    if(i > 0 && i < N && ok(v) && Math.abs(v) < 1e-2 && Math.abs(v) <= Math.abs(vals[i - 1]) && Math.abs(v) <= Math.abs(vals[i + 1])){ let lo = x - h, hi = x + h; for(let j = 0; j < 80; j++){ const m1 = lo + (hi - lo)/3, m2 = hi - (hi - lo)/3; if(Math.abs(f(m1)) < Math.abs(f(m2))) hi = m2; else lo = m1; } const r = (lo + hi)/2; if(Math.abs(f(r)) < 1e-10) add(r); } }
+  return xs.sort((p, q)=> p - q); };
+const pqCheck = (f, I, ask, ans)=>{ const a = I.L[0]/I.L[1]*Math.PI, b = I.U[0]/I.U[1]*Math.PI; let r = pqRoots(f, a - 1e-9, b + 1e-9);
+  r = r.filter(x=> (I.iL ? x >= a - 1e-7 : x > a + 1e-7) && (I.iU ? x <= b + 1e-7 : x < b - 1e-7));
+  return ask === 'cnt' ? r.length === ans : Math.abs(r.reduce((s, x)=> s + x, 0)/Math.PI - ans) < 1e-6; };
+// đề, đáp số, câu kết của lời giải cho một tập nghiệm đã liệt kê
+const pqTail = (E, I, ask)=>{ const list = E.vs.map(v=> hqPi(v, E.D)).join('; '), n = E.vs.length, sum = E.vs.reduce((s, v)=> s + v, 0);
+  if(ask === 'cnt') return {ans:n, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Vậy có $${n}$ nghiệm.`};
+  const a = hqOk(sum/E.D); return {ans:a, txt:`Các nghiệm thuộc $${pqIv(I.L, I.U, I.iL, I.iU)}$: $${list}$. Tổng các nghiệm bằng $${hqPi(sum, E.D)}$, nên $a = ${a === null ? '' : nt(a)}$.`}; };
+const pqAsk = (I, ask)=> ask === 'cnt' ? `Tìm số nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$.`
+  : `Tổng các nghiệm của phương trình thuộc ${I.iL === I.iU ? (I.iL ? 'đoạn' : 'khoảng') : 'nửa khoảng'} $${pqIv(I.L, I.U, I.iL, I.iU)}$ bằng $a\\pi$. Tìm $a$.`;
+const pqLin = list=>{ let s = ''; list.forEach(([c, m])=>{ if(!c) return; const a = Math.abs(c), body = (a === 1 && m) ? m : a + m; s += s ? (c < 0 ? ' - ' : ' + ') + body : (c < 0 ? '-' : '') + body; }); return s || '0'; };
+
+const pqFr = v=>{ for(let q = 1; q <= 2000; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-10) return frT(p, q); } return nt(v); };
+const pqIn = (x, fams)=> fams.some(F=>{ const t = (x/Math.PI - F.o[0]/F.o[1])/(F.t[0]/F.t[1]); return Math.abs(t - Math.round(t)) < 1e-7; });
+const pqNear = (a, b)=> Math.abs(a - b) < 1e-7;
+// kiểm tra độc lập: mọi nghiệm số trên [0; 2π] thuộc các họ và mọi phần tử của họ là nghiệm
+const pqFamOk = (f, fams)=> pqRoots(f, -1e-9, 2*Math.PI + 1e-9).every(x=> pqIn(x, fams)) && fams.every(F=> [-2, -1, 0, 1, 2].every(k=>{ const x = (F.o[0]/F.o[1] + k*F.t[0]/F.t[1])*Math.PI; return Math.abs(f(x)) < 1e-9; }));
+const pqInI = (I, f)=>{ const a = I.L[0]/I.L[1]*Math.PI, b = I.U[0]/I.U[1]*Math.PI; return pqRoots(f, a - 1e-9, b + 1e-9).filter(x=> (I.iL ? x >= a - 1e-7 : x > a + 1e-7) && (I.iU ? x <= b + 1e-7 : x < b - 1e-7)); };
+
+/* TL1. VD — giải phương trình đưa về tích, tìm nghiệm trên đoạn, tổng nghiệm */
+GE(11,0,3,'VD','HSG (tự luận): giải phương trình lượng giác đưa về tích (ghép số hạng bằng công thức biến tổng thành tích, hằng đẳng thức), tìm các nghiệm thuộc một đoạn và tính tổng các nghiệm đó', R=>{
+  const pqC = c=> ({'0.5':[pqF(1, 3, 2, 1), pqF(-1, 3, 2, 1)], '-0.5':[pqF(2, 3, 2, 1), pqF(-2, 3, 2, 1)]})[String(c)];
+  const T = [
+    {eq:'\\sin x + \\sin 2x + \\sin 3x = 0', st:'$\\sin x + \\sin 3x = 2\\sin 2x\\cos x$ nên phương trình $\\iff \\sin 2x(2\\cos x + 1) = 0$.', p:[['\\sin 2x = 0', [pqF(0, 1, 1, 2)]], ['\\cos x = -\\dfrac{1}{2}', pqC(-0.5)]], f:x=> Math.sin(x) + Math.sin(2*x) + Math.sin(3*x)},
+    {eq:'\\cos x + \\cos 2x + \\cos 3x = 0', st:'$\\cos x + \\cos 3x = 2\\cos 2x\\cos x$ nên phương trình $\\iff \\cos 2x(2\\cos x + 1) = 0$.', p:[['\\cos 2x = 0', [pqF(1, 4, 1, 2)]], ['\\cos x = -\\dfrac{1}{2}', pqC(-0.5)]], f:x=> Math.cos(x) + Math.cos(2*x) + Math.cos(3*x)},
+    {eq:'\\sin x - \\sin 2x + \\sin 3x = 0', st:'$\\sin x + \\sin 3x = 2\\sin 2x\\cos x$ nên phương trình $\\iff \\sin 2x(2\\cos x - 1) = 0$.', p:[['\\sin 2x = 0', [pqF(0, 1, 1, 2)]], ['\\cos x = \\dfrac{1}{2}', pqC(0.5)]], f:x=> Math.sin(x) - Math.sin(2*x) + Math.sin(3*x)},
+    {eq:'\\cos x + \\cos 3x + \\cos 5x = 0', st:'$\\cos x + \\cos 5x = 2\\cos 3x\\cos 2x$ nên phương trình $\\iff \\cos 3x(2\\cos 2x + 1) = 0$.', p:[['\\cos 3x = 0', [pqF(1, 6, 1, 3)]], ['\\cos 2x = -\\dfrac{1}{2}', [pqF(1, 3, 1, 1), pqF(-1, 3, 1, 1)]]], f:x=> Math.cos(x) + Math.cos(3*x) + Math.cos(5*x)},
+    {eq:'1 + \\sin x + \\cos x + \\sin 2x + \\cos 2x = 0', st:'$1 + \\sin 2x = (\\sin x + \\cos x)^2$, $\\cos 2x = (\\cos x - \\sin x)(\\cos x + \\sin x)$ nên vế trái $= (\\sin x + \\cos x)(2\\cos x + 1)$.', p:[['\\sin x + \\cos x = 0 \\iff \\tan x = -1', [pqF(-1, 4, 1, 1)]], ['\\cos x = -\\dfrac{1}{2}', pqC(-0.5)]], f:x=> 1 + Math.sin(x) + Math.cos(x) + Math.sin(2*x) + Math.cos(2*x)},
+    {eq:'\\cos 2x + (1 + 2\\cos x)(\\sin x - \\cos x) = 0', st:'$\\cos 2x = (\\cos x - \\sin x)(\\cos x + \\sin x)$ nên vế trái $= (\\cos x - \\sin x)(\\sin x - \\cos x - 1)$.', p:[['\\tan x = 1', [pqF(1, 4, 1, 1)]], ['\\sin\\left(x - \\dfrac{\\pi}{4}\\right) = \\dfrac{\\sqrt{2}}{2}', [pqF(1, 2, 2, 1), pqF(1, 1, 2, 1)]]], f:x=> Math.cos(2*x) + (1 + 2*Math.cos(x))*(Math.sin(x) - Math.cos(x))}];
+  for(let g = 0; g < 60; g++){
+    const t = R.pick(T), [L, U] = R.pick([[[0, 1], [2, 1]], [[-1, 1], [1, 1]], [[0, 1], [1, 1]], [[-1, 2], [3, 2]], [[0, 1], [3, 2]]]), I = {L, U, iL:true, iU:true};
+    const fams = t.p.flatMap(x=> x[1]), E = pqEnum(fams, L, U, true, true); if(!E.vs.length || E.vs.length > 12) continue;
+    const sum = E.vs.reduce((s, v)=> s + v, 0), vals = E.vs.map(v=> v*Math.PI/E.D);
+    return s6Parts(`Cho phương trình $${t.eq}$.`, [
+      {q:'Giải phương trình.', a:`${t.st}<br>${t.p.map(([c, fs])=> `• $${c} \\iff ${fs.map(pqFamT).join('$ hoặc $')}$.`).join('<br>')}<br>Vậy nghiệm của phương trình là ${fams.map(F=> `$${pqFamT(F)}$`).join('; ')} ($k \\in \\mathbb{Z}$).`, chk:()=> pqFamOk(t.f, fams)},
+      {q:`Tìm các nghiệm của phương trình thuộc đoạn $${pqIv(L, U, true, true)}$.`, a:`Thay $k$ nguyên vào từng họ, giữ các giá trị thuộc đoạn (nghiệm chung của hai họ chỉ lấy một lần): $x \\in \\left\\{${E.vs.map(v=> hqPi(v, E.D)).join('; ')}\\right\\}$ (${E.vs.length} nghiệm).`,
+       chk:()=>{ const r = pqInI(I, t.f); return r.length === vals.length && r.every((x, i)=> pqNear(x, vals[i])); }},
+      {q:'Tính tổng các nghiệm tìm được ở câu b).', a:`Tổng bằng $${hqPi(sum, E.D)}$.`, chk:()=> pqNear(pqInI(I, t.f).reduce((s, x)=> s + x, 0), sum*Math.PI/E.D)}]); }
+  return null;
+});
+
+/* TL2. VDC — phương trình chứa tham số phân tích được: đúng hai nghiệm trên [0; π], có nghiệm trên (π/2; 3π/2) */
+GE(11,0,3,'VDC','HSG (tự luận): phương trình k cos 2x − (2m + c)cos x + m + d = 0 chứa tham số m — phân tích thành tích, giải với m cho trước, tìm m để có đúng hai nghiệm thuộc [0; π] (bẫy nghiệm trùng), tìm m để có nghiệm thuộc (π/2; 3π/2)', R=>{
+  for(let g = 0; g < 100; g++){
+    const k = R.int(1, 4), h = R.int(-3, 3), g0 = R.pick(k % 2 === 0 ? [0, 1, -1, -0.5] : [0, 1, -1]), m0 = k*g0 - h;
+    const cA = 2*h + k, cB = h + k, M = pqLin([[1, 'm'], [h, '']]);
+    const eqm = mm=> `${k === 1 ? '' : k}\\cos 2x - (${pqLin([[2, 'm'], [cA, '']])})\\cos x + ${pqLin([[1, 'm'], [cB, '']])} = 0`;
+    const f = mm=> x=> k*Math.cos(2*x) - (2*mm + cA)*Math.cos(x) + mm + cB;
+    const G = {'0':[pqF(1, 2, 1, 1)], '1':[pqF(0, 1, 2, 1)], '-1':[pqF(1, 1, 2, 1)], '-0.5':[pqF(2, 3, 2, 1), pqF(-2, 3, 2, 1)]}[String(g0)];
+    const fams = [pqF(1, 3, 2, 1), pqF(-1, 3, 2, 1)].concat(G), gT = {0:'0', 1:'1', '-1':'-1', '-0.5':'-\\dfrac{1}{2}'}[g0];
+    const lo = -k - h, hi = k - h, hole = k/2 - h, gq = mm=> k === 1 ? `${mm}` : `\\dfrac{${mm}}{${k}}`;
+    const m0T = String(m0), mRep = pqLin([[1, 'm'], [h, '']]).replace(/m/, `(${m0T})`);
+    return s6Parts(`Cho phương trình $${eqm()}$ ($m$ là tham số).`, [
+      {q:`Giải phương trình khi $m = ${m0}$.`,
+       a:`Dùng $\\cos 2x = 2\\cos^2 x - 1$: phương trình $\\iff ${2*k}\\cos^2 x - (${pqLin([[2, 'm'], [cA, '']])})\\cos x + ${pqLin([[1, 'm'], [h, '']])} = 0 \\iff (2\\cos x - 1)(${k === 1 ? '' : k}\\cos x - ${pqPar0(M)}) = 0$.<br>`
+         + `Với $m = ${m0}$: $\\cos x = \\dfrac{1}{2}$ hoặc $\\cos x = ${gT}$, nên ${fams.map(F=> `$${pqFamT(F)}$`).join('; ')} ($k \\in \\mathbb{Z}$).`,
+       chk:()=> pqFamOk(f(m0), fams)},
+      {q:'Tìm $m$ để phương trình có đúng hai nghiệm thuộc đoạn $[0; \\pi]$.',
+       a:`Trên $[0; \\pi]$, hàm $\\cos$ nghịch biến nên mỗi giá trị $c \\in [-1; 1]$ cho đúng một $x$ với $\\cos x = c$. Phương trình $\\cos x = \\dfrac{1}{2}$ cho đúng một nghiệm $x = \\dfrac{\\pi}{3}$.<br>`
+         + `Cần $\\cos x = ${gq(M)}$ cho thêm đúng một nghiệm khác $\\dfrac{\\pi}{3}$: $-1 \\le ${gq(M)} \\le 1$ và $${gq(M)} \\ne \\dfrac{1}{2}$ (bẫy: khi bằng $\\dfrac{1}{2}$ hai nghiệm trùng nhau), tức là $${lo} \\le m \\le ${hi}$ và $m \\ne ${pqFr(hole)}$.`,
+       chk:()=>{ const I = {L:[0, 1], U:[1, 1], iL:true, iU:true}; return [lo - 1, lo, hole, hi, hi + 1, (lo + hole)/2].every(mm=>{ const n = pqInI(I, f(mm)).length, want = mm >= lo - 1e-12 && mm <= hi + 1e-12 && Math.abs(mm - hole) > 1e-12 ? 2 : (Math.abs(mm - hole) < 1e-12 ? 1 : 1); return n === want; }); }},
+      {q:'Tìm $m$ để phương trình có nghiệm thuộc khoảng $\\left(\\dfrac{\\pi}{2}; \\dfrac{3\\pi}{2}\\right)$.',
+       a:`Với $x \\in \\left(\\dfrac{\\pi}{2}; \\dfrac{3\\pi}{2}\\right)$ thì $\\cos x \\in [-1; 0)$, nên $\\cos x = \\dfrac{1}{2}$ không cho nghiệm. Cần $-1 \\le ${gq(M)} < 0$, tức là $${lo} \\le m < ${-h}$.`,
+       chk:()=>{ const I = {L:[1, 2], U:[3, 2], iL:false, iU:false}; return [lo - 1, lo, (lo - h)/2, -h - 0.5, -h, -h + 1].every(mm=> (pqInI(I, f(mm)).length > 0) === (mm >= lo - 1e-12 && mm < -h - 1e-12)); }}]); }
+  return null;
+});
+function pqPar0(e){ return /[+-]/.test(e.slice(1)) ? `(${e})` : e; }
+
+/* TL3. VDC — sinᵃx + cosᵇx = 1: chứng minh bổ đề, giải, đếm nghiệm */
+GE(11,0,3,'VDC','HSG (tự luận): phương trình sinᵃx + cosᵇx = 1 (a, b ≥ 3) — chứng minh tⁿ ≤ t² khi |t| ≤ 1, n ≥ 3 và chỉ ra khi nào dấu bằng xảy ra (phụ thuộc n chẵn, lẻ), giải phương trình, đếm nghiệm trên đoạn', R=>{
+  const EX = [3, 4, 5, 6, 7, 8, 2023, 2024, 2025, 2026];
+  const a = R.pick(EX), b = R.pick(EX), ea = a % 2 === 0, eb = b % 2 === 0, N = R.int(2, 6);
+  const pts = [['\\sin x = 0, \\cos x = 1', pqF(0, 1, 2, 1)], ['\\sin x = 1, \\cos x = 0', pqF(1, 2, 2, 1)]];
+  if(eb) pts.push(['\\sin x = 0, \\cos x = -1', pqF(1, 1, 2, 1)]); if(ea) pts.push(['\\sin x = -1, \\cos x = 0', pqF(-1, 2, 2, 1)]);
+  const fams = pts.map(p=> p[1]), E = pqEnum(fams, [0, 1], [N, 1], true, true), f = x=> Math.sin(x)**a + Math.cos(x)**b - 1;
+  const eqT = (n, t)=> n % 2 === 0 ? `${t} \\in \\{-1; 0; 1\\}` : `${t} \\in \\{0; 1\\}`;
+  return s6Parts(`Cho phương trình $\\sin^{${a}} x + \\cos^{${b}} x = 1$.`, [
+    {q:'Chứng minh rằng với mọi $t \\in [-1; 1]$ và số nguyên $n \\ge 3$ thì $t^n \\le t^2$. Khi nào dấu bằng xảy ra?',
+     a:'$t^n \\le |t|^n = t^2\\cdot|t|^{n - 2} \\le t^2$ vì $0 \\le |t|^{n - 2} \\le 1$. Dấu bằng cần $t^n = |t|^n$ và $t^2|t|^{n - 2} = t^2$: hoặc $t = 0$, hoặc $|t| = 1$ và $t^n = 1$, tức là $t = 1$, hoặc $t = -1$ khi $n$ chẵn.',
+     chk:()=> [3, 4, 2025, 2026].every(n=> [-1, -0.7, -0.2, 0, 0.3, 0.9, 1].every(t=> t**n <= t*t + 1e-12)) && (-1)**4 === 1 && (-1)**3 === -1},
+    {q:'Giải phương trình.',
+     a:`Theo câu a): $\\sin^{${a}} x \\le \\sin^2 x$, $\\cos^{${b}} x \\le \\cos^2 x$ nên vế trái $\\le \\sin^2 x + \\cos^2 x = 1$. Phương trình $\\iff$ cả hai dấu bằng xảy ra: $${eqT(a, '\\sin x')}$ (${a} ${ea ? 'chẵn' : 'lẻ'}) và $${eqT(b, '\\cos x')}$ (${b} ${eb ? 'chẵn' : 'lẻ'}).<br>`
+       + `Kết hợp $\\sin^2 x + \\cos^2 x = 1$: ${pts.map(([c, F])=> `$${c} \\iff ${pqFamT(F)}$`).join('; ')} ($k \\in \\mathbb{Z}$).`,
+     chk:()=> pqFamOk(f, fams)},
+    {q:`Tìm số nghiệm của phương trình thuộc đoạn $[0; ${N}\\pi]$.`,
+     a:`Các nghiệm thuộc đoạn: $${E.vs.map(v=> hqPi(v, E.D)).join('; ')}$. Có ${E.vs.length} nghiệm.`,
+     chk:()=> pqInI({L:[0, 1], U:[N, 1], iL:true, iU:true}, f).length === E.vs.length}]);
+});
+
+/* TL4. VDC — đặt t = tan x + cot x */
+GE(11,0,3,'VDC','HSG (tự luận): phương trình tan²x + cot²x + A(tan x + cot x) + B = 0 — đặt t = tan x + cot x, chứng minh |t| ≥ 2, đưa về phương trình bậc hai ẩn t (loại nghiệm), giải phương trình và tính tổng các nghiệm thuộc (0; nπ)', R=>{
+  const FAM = {2:['1', [pqF(1, 4, 1, 1)]], '-2':['-1', [pqF(-1, 4, 1, 1)]], 4:['\\dfrac{1}{2}', [pqF(1, 12, 1, 1), pqF(5, 12, 1, 1)]], '-4':['-\\dfrac{1}{2}', [pqF(-1, 12, 1, 1), pqF(7, 12, 1, 1)]]};
+  const t1 = R.pick([2, -2, 4, -4]), t2 = R.pick([-1, 0, 1]), A = -(t1 + t2), B = t1*t2 + 2, n = R.int(1, 4), [sv, fams] = FAM[t1];
+  const f = x=>{ const s = Math.sin(x), c = Math.cos(x); if(Math.abs(s) < 1e-9 || Math.abs(c) < 1e-9) return NaN; return (s/c)**2 + (c/s)**2 + A*(s/c + c/s) + B; };
+  const E = pqEnum(fams, [0, 1], [n, 1], false, false), sum = E.vs.reduce((s, v)=> s + v, 0);
+  return s6Parts(`Cho phương trình $${pqLin([[1, '\\tan^2 x + \\cot^2 x'], [A, '(\\tan x + \\cot x)'], [B, '']])} = 0$.`, [
+    {q:'Đặt $t = \\tan x + \\cot x$. Chứng minh $|t| \\ge 2$ và viết phương trình theo $t$.',
+     a:`Điều kiện $\\sin 2x \\ne 0$. $t = \\dfrac{\\sin x}{\\cos x} + \\dfrac{\\cos x}{\\sin x} = \\dfrac{1}{\\sin x\\cos x} = \\dfrac{2}{\\sin 2x}$, mà $0 < |\\sin 2x| \\le 1$ nên $|t| \\ge 2$.<br>$\\tan^2 x + \\cot^2 x = (\\tan x + \\cot x)^2 - 2\\tan x\\cot x = t^2 - 2$. Phương trình thành $${pqLin([[1, 't^2'], [A, 't'], [B - 2, '']])} = 0$.`,
+     chk:()=> [0.3, 1.1, 2.0, 4.0].every(x=>{ const t = Math.tan(x) + 1/Math.tan(x); return Math.abs(t) >= 2 - 1e-12 && Math.abs(Math.tan(x)**2 + 1/Math.tan(x)**2 - (t*t - 2)) < 1e-9; })},
+    {q:'Giải phương trình.',
+     a:`$${pqLin([[1, 't^2'], [A, 't'], [B - 2, '']])} = 0 \\iff t = ${t1}$ hoặc $t = ${t2}$; loại $t = ${t2}$ vì $|${t2}| < 2$.<br>$t = ${t1} \\iff \\dfrac{2}{\\sin 2x} = ${t1} \\iff \\sin 2x = ${sv} \\iff ${fams.map(pqFamT).join('$ hoặc $')}$ ($k \\in \\mathbb{Z}$), thoả điều kiện.`,
+     chk:()=> pqRoots(f, 0.001, Math.PI - 0.001).every(x=> pqIn(x, fams)) && fams.every(F=> [0, 1].every(k=> Math.abs(f((F.o[0]/F.o[1] + k)*Math.PI)) < 1e-8))},
+    {q:`Tính tổng các nghiệm của phương trình thuộc khoảng $(0; ${n === 1 ? '' : n}\\pi)$.`,
+     a:`Các nghiệm thuộc khoảng: $${E.vs.map(v=> hqPi(v, E.D)).join('; ')}$. Tổng bằng $${hqPi(sum, E.D)}$.`,
+     chk:()=> pqNear(pqInI({L:[0, 1], U:[n, 1], iL:false, iU:false}, f).reduce((s, x)=> s + x, 0), sum*Math.PI/E.D)}]);
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-05.2 [HSG] Dãy số truy hồi: 16 TLN + 4 TL) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-05.2 [HSG] Dãy số truy hồi (11|1|0), đợt 1 (5 dạng TLN): tìm số hạng tổng quát bằng dãy phụ. Claude viết.
+// Bám khung đề HSG cấp tỉnh (câu dãy số: tìm số hạng tổng quát của dãy truy hồi).
+// Chuỗi: u_{n+1} = q·u_n + d (dãy phụ cấp số nhân) → thêm hạng tử bậc nhất αn + β → thêm hạng tử mũ C·r^n
+// → nghịch đảo thành cấp số cộng → cộng dồn (sai phân k·2^k). Đáp số: số hạng, tổng, hoặc chỉ số n.
+const dsJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + (/^\d/.test(b) ? '\\cdot ' : '') + b);
+    return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+const dsOk = v=> Number.isInteger(v) && String(v).length <= 4;
+const dsSum = arr=> arr.filter((x, i)=> i === 0 || x !== 0).map((x, i)=> i === 0 ? String(x) : (x < 0 ? ` - ${-x}` : ` + ${x}`)).join('');
+
+/* 21. TLN VD — u_{n+1} = q·u_n + d: dãy phụ v_n = u_n + d/(q − 1) */
+GT(11,1,0,'VD','HSG: dãy truy hồi u_{n+1} = q·u_n + d — đặt dãy phụ v_n = u_n + d/(q − 1) là cấp số nhân, tìm số hạng tổng quát; tính tổng các số hạng đầu hoặc tìm n nhỏ nhất để u_n vượt một số', R=>{
+  for(let g = 0; g < 200; g++){
+    const q = R.pick([2, 2, 3, 3, 4, 5]), s = R.nz(-6, 6), c = R.pick([1, 1, 2, 3, 4, 5]), d = s*(q - 1), a = c - s; if(a === 0) continue;
+    const U = n=> c*q**(n - 1) - s, gT = dsJ([[c, `${q}^{n-1}`], [-s, '']]);
+    const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $u_{n+1} = ${dsJ([[q, 'u_n'], [d, '']])}$ với mọi $n \\ge 1$.`;
+    const base = `Đặt $v_n = ${dsJ([[1, 'u_n'], [s, '']])}$. Khi đó $v_{n+1} = ${dsJ([[1, 'u_{n+1}'], [s, '']])} = ${dsJ([[q, 'u_n'], [d + s, '']])} = ${q}(${dsJ([[1, 'u_n'], [s, '']])}) = ${q}v_n$.<br>Vậy $(v_n)$ là cấp số nhân có $v_1 = ${dsJ([[1, 'u_1'], [s, '']])} = ${c}$, công bội $${q}$, nên $v_n = ${dsJ([[c, `${q}^{n-1}`]])}$ và $u_n = ${gT}$.<br>`;
+    if(R.rnd() < 0.55){
+      const k = R.int(4, 10), S = c*(q**k - 1)/(q - 1) - k*s; if(!dsOk(S)) continue;
+      const geo = q - 1 === 1 ? `(${q}^{${k}} - 1)` : `\\dfrac{${q}^{${k}} - 1}{${q - 1}}`;
+      const lg = base + `$S = ${c === 1 ? '' : c + '('}1 + ${q} + \\cdots + ${q}^{${k - 1}}${c === 1 ? '' : ')'} ${-k*s > 0 ? '+' : '-'} ${k}\\cdot ${Math.abs(s)} = ${c === 1 ? '' : c + '\\cdot '}${geo} ${-k*s > 0 ? '+' : '-'} ${Math.abs(k*s)} = ${S}$.`;
+      const o = {stem:`${head} Tính tổng $S = u_1 + u_2 + \\cdots + u_{${k}}$.`, ans:S, lg,
+        verify:()=>{ let u = a, t = 0; for(let n = 1; n <= k; n++){ t += u; u = q*u + d; } return t === o.ans; }};
+      return o; }
+    const M = R.int(2, 60)*100; let N = 1; while(U(N) <= M) N++; if(N < 3) continue;
+    const lg = base + `Vì $v_1 = ${c} > 0$ và công bội $${q} > 1$ nên $(v_n)$, do đó $(u_n)$, là dãy tăng. Ta có $u_{${N - 1}} = ${U(N - 1)} \\le ${M}$ và $u_{${N}} = ${U(N)} > ${M}$.<br>Vậy số nguyên dương $n$ nhỏ nhất cần tìm là $n = ${N}$.`;
+    const o = {stem:`${head} Tìm số nguyên dương $n$ nhỏ nhất sao cho $u_n > ${M}$.`, ans:N, lg,
+      verify:()=>{ let u = a, n = 1; while(u <= M && n < 100){ u = q*u + d; n++; } return n === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 22. TLN VD — u_{n+1} = q·u_n + αn + β: dãy phụ v_n = u_n + an + b */
+GT(11,1,0,'VD','HSG: dãy truy hồi u_{n+1} = q·u_n + αn + β — tìm a, b để v_n = u_n + an + b là cấp số nhân (đồng nhất hệ số), suy ra số hạng tổng quát; tính một số hạng hoặc tổng các số hạng đầu', R=>{
+  for(let g = 0; g < 200; g++){
+    const q = R.pick([2, 2, 3]), A = R.nz(-3, 3), B = R.int(-4, 4), c = R.int(1, 4), al = (q - 1)*A, be = (q - 1)*B - A, u1 = c - A - B;
+    const U = n=> c*q**(n - 1) - A*n - B;
+    const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = ${dsJ([[q, 'u_n'], [al, 'n'], [be, '']])}$ với mọi $n \\ge 1$.`;
+    const base = `Tìm $a$, $b$ để $v_n = u_n + an + b$ thoả mãn $v_{n+1} = ${q}v_n$: $u_{n+1} + a(n + 1) + b = ${q}(u_n + an + b) \\iff u_{n+1} = ${q}u_n + ${q - 1 === 1 ? '' : q - 1}an + ${q - 1 === 1 ? '' : q - 1}b - a$.<br>`
+      + `Đồng nhất với giả thiết: $${q - 1 === 1 ? '' : q - 1}a = ${al}$, $${q - 1 === 1 ? '' : q - 1}b - a = ${be}$ nên $a = ${A}$, $b = ${B}$, tức là $v_n = ${dsJ([[1, 'u_n'], [A, 'n'], [B, '']])}$.<br>`
+      + `$(v_n)$ là cấp số nhân có $v_1 = u_1 + a + b = ${dsSum([u1, A, B])} = ${c}$, công bội $${q}$, nên $u_n = ${dsJ([[c, `${q}^{n-1}`], [-A, 'n'], [-B, '']])}$.<br>`;
+    if(R.rnd() < 0.5){
+      const k = R.int(6, 11), v = U(k); if(!dsOk(v)) continue;
+      const lg = base + `Do đó $u_{${k}} = ${dsJ([[c, `${q}^{${k - 1}}`], [-A*k, ''], [-B, '']])} = ${v}$.`;
+      const o = {stem:`${head} Tính $u_{${k}}$.`, ans:v, lg, verify:()=>{ let u = u1; for(let n = 1; n < k; n++) u = q*u + al*n + be; return u === o.ans; }};
+      return o; }
+    const k = R.int(5, 10), S = c*(q**k - 1)/(q - 1) - A*k*(k + 1)/2 - B*k; if(!dsOk(S)) continue;
+    const geo = q - 1 === 1 ? `(${q}^{${k}} - 1)` : `\\dfrac{${q}^{${k}} - 1}{${q - 1}}`;
+    const lg = base + `$S = ${c === 1 ? '' : c + '\\cdot '}${geo} ${-A > 0 ? '+' : '-'} ${Math.abs(A) === 1 ? '' : Math.abs(A) + '\\cdot '}(1 + 2 + \\cdots + ${k})${B ? ` ${-B > 0 ? '+' : '-'} ${Math.abs(B*k)}` : ''} = ${dsJ([[c*(q**k - 1)/(q - 1), ''], [-A*k*(k + 1)/2, ''], [-B*k, '']])} = ${S}$.`;
+    const o = {stem:`${head} Tính tổng $S = u_1 + u_2 + \\cdots + u_{${k}}$.`, ans:S, lg,
+      verify:()=>{ let u = u1, t = 0; for(let n = 1; n <= k; n++){ t += u; u = q*u + al*n + be; } return t === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 23. TLN VD — u_{n+1} = q·u_n + C·r^n: dãy phụ v_n = u_n − λ·r^n */
+GT(11,1,0,'VD','HSG: dãy truy hồi u_{n+1} = q·u_n + C·r^n (r ≠ q) — tìm λ để v_n = u_n − λ·r^n là cấp số nhân công bội q, suy ra u_n = μ·q^{n−1} + λ·r^n; tính một số hạng hoặc tổng các số hạng đầu', R=>{
+  for(let g = 0; g < 300; g++){
+    const q = R.pick([2, 3, 4]), r = R.pick([2, 3, 4, 5]); if(r === q) continue;
+    const L = R.nz(-3, 3), C = L*(r - q), mu = R.int(-3, 3), u1 = mu + L*r;
+    const U = n=> mu*q**(n - 1) + L*r**n;
+    const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = ${dsJ([[q, 'u_n'], [C, `${r}^n`]])}$ với mọi $n \\ge 1$.`;
+    const base = `Tìm $\\lambda$ để $v_n = u_n - \\lambda\\cdot ${r}^n$ thoả mãn $v_{n+1} = ${q}v_n$: $u_{n+1} - \\lambda\\cdot ${r}^{n+1} = ${q}(u_n - \\lambda\\cdot ${r}^n) \\iff u_{n+1} = ${q}u_n + (${r} - ${q})\\lambda\\cdot ${r}^n$.<br>`
+      + `Đồng nhất: ${r - q === 1 ? `$\\lambda = ${C}$` : `$${dsJ([[r - q, '\\lambda']])} = ${C}$ nên $\\lambda = ${L}$`}, $v_n = ${dsJ([[1, 'u_n'], [-L, `${r}^n`]])}$.<br>`
+      + `$(v_n)$ là cấp số nhân công bội $${q}$, $v_1 = u_1 ${-L*r >= 0 ? '+' : '-'} ${Math.abs(L*r)} = ${mu}$${mu === 0 ? ' nên $v_n = 0$ với mọi $n$' : `, nên $v_n = ${dsJ([[mu, `${q}^{n-1}`]])}$`}. Suy ra $u_n = ${dsJ([[mu, `${q}^{n-1}`], [L, `${r}^n`]])}$.<br>`;
+    if(R.rnd() < 0.6){
+      const k = R.int(4, 8), v = U(k); if(!dsOk(v)) continue;
+      const lg = base + `Do đó $u_{${k}} = ${dsJ([[mu, `${q}^{${k - 1}}`], [L, `${r}^{${k}}`]])} = ${v}$.`;
+      const o = {stem:`${head} Tính $u_{${k}}$.`, ans:v, lg, verify:()=>{ let u = u1; for(let n = 1; n < k; n++) u = q*u + C*r**n; return u === o.ans; }};
+      return o; }
+    const k = R.int(3, 7), S1 = mu*(q**k - 1)/(q - 1), S2 = L*r*(r**k - 1)/(r - 1), S = S1 + S2; if(!dsOk(S)) continue;
+    const lg = base + `$S = ${mu === 0 ? '' : `${mu === 1 ? '' : mu === -1 ? '-' : mu}(1 + ${q} + \\cdots + ${q}^{${k - 1}})`}${mu === 0 ? (L === 1 ? '' : L === -1 ? '-' : L) : (L > 0 ? ' + ' + (L === 1 ? '' : L) : ' - ' + (L === -1 ? '' : -L))}(${r} + ${r}^2 + \\cdots + ${r}^{${k}}) = ${dsJ([[S1, ''], [S2, '']])} = ${S}$.`;
+    const o = {stem:`${head} Tính tổng $S = u_1 + u_2 + \\cdots + u_{${k}}$.`, ans:S, lg,
+      verify:()=>{ let u = u1, t = 0; for(let n = 1; n <= k; n++){ t += u; u = q*u + C*r**n; } return t === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 24. TLN VD — nghịch đảo thành cấp số cộng */
+GT(11,1,0,'VD','HSG: dãy u_{n+1} = u_n/(b·u_n + 1) hoặc u_{n+1} = u_n/(1 + n·u_n) — lấy nghịch đảo, (1/u_n) là cấp số cộng (hoặc cộng dồn), tìm số hạng tổng quát; tìm chỉ số n hoặc tính 1/u_k', R=>{
+  for(let g = 0; g < 200; g++){
+    const p = R.int(1, 6), u1T = p === 1 ? '1' : `\\dfrac{1}{${p}}`;
+    if(R.rnd() < 0.6){
+      const b = R.int(2, 9), W = n=> p + (n - 1)*b;
+      const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1T}$ và $u_{n+1} = \\dfrac{u_n}{${b}u_n + 1}$ với mọi $n \\ge 1$.`;
+      const base = `Bằng quy nạp, $u_n > 0$ với mọi $n$. Lấy nghịch đảo: $\\dfrac{1}{u_{n+1}} = \\dfrac{${b}u_n + 1}{u_n} = \\dfrac{1}{u_n} + ${b}$.<br>Vậy $\\left(\\dfrac{1}{u_n}\\right)$ là cấp số cộng có số hạng đầu $${p}$, công sai $${b}$: $\\dfrac{1}{u_n} = ${p} + ${b}(n - 1) = ${dsJ([[b, 'n'], [p - b, '']])}$.<br>`;
+      if(R.rnd() < 0.5){
+        const n = R.int(20, 999), N = W(n);
+        const o = {stem:`${head} Tìm số nguyên dương $n$ sao cho $u_n = \\dfrac{1}{${N}}$.`, ans:n,
+          lg: base + `$u_n = \\dfrac{1}{${N}} \\iff ${dsJ([[b, 'n'], [p - b, '']])} = ${N} \\iff n = ${n}$.`,
+          verify:()=>{ let u = 1/p; for(let i = 1; i < o.ans; i++) u = u/(b*u + 1); return Math.abs(1/u - N) < 1e-6; }};
+        return o; }
+      const k = R.pick([R.int(50, 999), 2025, 2026]), v = W(k); if(!dsOk(v)) continue;
+      const o = {stem:`${head} Tính $\\dfrac{1}{u_{${k}}}$.`, ans:v, lg: base + `Do đó $\\dfrac{1}{u_{${k}}} = ${p} + ${b}\\cdot ${k - 1} = ${v}$.`,
+        verify:()=>{ let u = 1/p; for(let i = 1; i < k; i++) u = u/(b*u + 1); return Math.abs(1/u - o.ans) < 1e-6; }};
+      return o; }
+    const W = n=> p + n*(n - 1)/2;
+    const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1T}$ và $u_{n+1} = \\dfrac{u_n}{1 + n u_n}$ với mọi $n \\ge 1$.`;
+    const base = `Bằng quy nạp, $u_n > 0$ với mọi $n$. Lấy nghịch đảo: $\\dfrac{1}{u_{n+1}} = \\dfrac{1}{u_n} + n$.<br>Cộng dồn: $\\dfrac{1}{u_n} = \\dfrac{1}{u_1} + (1 + 2 + \\cdots + (n - 1)) = ${p} + \\dfrac{n(n - 1)}{2}$.<br>`;
+    if(R.rnd() < 0.5){
+      const n = R.int(10, 140), N = W(n);
+      const o = {stem:`${head} Tìm số nguyên dương $n$ sao cho $u_n = \\dfrac{1}{${N}}$.`, ans:n,
+        lg: base + `$u_n = \\dfrac{1}{${N}} \\iff \\dfrac{n(n - 1)}{2} = ${N - p} \\iff n(n - 1) = ${2*(N - p)} = ${n}\\cdot ${n - 1}$. Vì $n(n - 1)$ tăng theo $n$ nên $n = ${n}$.`,
+        verify:()=>{ let u = 1/p; for(let i = 1; i < o.ans; i++) u = u/(1 + i*u); return Math.abs(1/u - N) < 1e-6; }};
+      return o; }
+    const k = R.int(10, 140), v = W(k); if(!dsOk(v)) continue;
+    const o = {stem:`${head} Tính $\\dfrac{1}{u_{${k}}}$.`, ans:v, lg: base + `Do đó $\\dfrac{1}{u_{${k}}} = ${p} + \\dfrac{${k}\\cdot ${k - 1}}{2} = ${v}$.`,
+      verify:()=>{ let u = 1/p; for(let i = 1; i < k; i++) u = u/(1 + i*u); return Math.abs(1/u - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 25. TLN VD — cộng dồn: u_{n+1} = u_n + αn + β; u_{n+1} = u_n + n·2^n (sai phân) */
+GT(11,1,0,'VD','HSG: dãy u_{n+1} = u_n + f(n) — cộng dồn (sai phân): f(n) = αn + β, hoặc f(n) = n·2^n viết thành (n − 1)·2^{n+1} − (n − 2)·2^n để khử liên tiếp; tính số hạng hoặc tìm chỉ số', R=>{
+  for(let g = 0; g < 200; g++){
+    const u1 = R.int(-5, 9);
+    if(R.rnd() < 0.55){
+      const al = R.nz(-4, 6), be = R.int(-5, 5); if(al === 0) continue;
+      const U = n=> u1 + al*n*(n - 1)/2 + be*(n - 1);
+      const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = ${dsJ([[1, 'u_n'], [al, 'n'], [be, '']])}$ với mọi $n \\ge 1$.`;
+      const base = `Ta có $u_{k+1} - u_k = ${dsJ([[al, 'k'], [be, '']])}$. Cộng các đẳng thức với $k = 1, 2, \\ldots, n - 1$:<br>$u_n = u_1 + ${al === 1 ? '' : al === -1 ? '-' : al}(1 + 2 + \\cdots + (n - 1))${be ? ` ${be > 0 ? '+' : '-'} ${Math.abs(be) === 1 ? '' : Math.abs(be)}(n - 1)` : ''} = ${u1} ${al > 0 ? '+' : '-'} \\dfrac{${Math.abs(al) === 1 ? '' : Math.abs(al)}n(n - 1)}{2}${be ? ` ${be > 0 ? '+' : '-'} ${Math.abs(be) === 1 ? '' : Math.abs(be)}(n - 1)` : ''}$.<br>`;
+      if(R.rnd() < 0.5){
+        const k = R.int(15, 80), v = U(k); if(!dsOk(v)) continue;
+        const o = {stem:`${head} Tính $u_{${k}}$.`, ans:v, lg: base + `Do đó $u_{${k}} = ${dsJ([[u1, ''], [al*k*(k - 1)/2, ''], [be*(k - 1), '']])} = ${v}$.`,
+          verify:()=>{ let u = u1; for(let n = 1; n < k; n++) u += al*n + be; return u === o.ans; }};
+        return o; }
+      if(al < 0) continue;
+      const n = R.int(12, 90), V = U(n); if(U(n - 1) >= V || !dsOk(V)) continue;
+      const o = {stem:`${head} Tìm số nguyên dương $n$ sao cho $u_n = ${V}$.`, ans:n,
+        lg: base + `Với $n \\ge 2$, $u_{n+1} - u_n = ${dsJ([[al, 'n'], [be, '']])} > 0$ nên $(u_n)$ tăng từ $u_2$, phương trình $u_n = ${V}$ có không quá một nghiệm $n \\ge 2$. Thử $n = ${n}$: $u_{${n}} = ${dsJ([[u1, ''], [al*n*(n - 1)/2, ''], [be*(n - 1), '']])} = ${V}$. Vậy $n = ${n}$.`,
+        verify:()=>{ let u = u1, i = 1; const hits = []; for(; i <= 200; i++){ if(u === V) hits.push(i); u += al*i + be; } return hits.length === 1 && hits[0] === o.ans; }};
+      return o; }
+    const U = n=> u1 + (n - 2)*2**n + 2, k = R.int(5, 10), v = U(k); if(!dsOk(v)) continue;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = u_n + n\\cdot 2^n$ với mọi $n \\ge 1$. Tính $u_{${k}}$.`, ans:v,
+      lg:`Nhận xét: $k\\cdot 2^k = (k - 1)2^{k+1} - (k - 2)2^k$ (vì vế phải bằng $2^k(2k - 2 - k + 2)$).<br>Cộng với $k = 1, 2, \\ldots, n - 1$, các số hạng khử liên tiếp: $u_n - u_1 = \\sum_{k=1}^{n-1} k\\cdot 2^k = (n - 2)2^n - (-1)\\cdot 2 = (n - 2)2^n + 2$.<br>Vậy $u_n = ${dsJ([[1, '(n - 2)2^n'], [u1 + 2, '']])}$ và $u_{${k}} = ${dsJ([[k - 2, `2^{${k}}`], [u1 + 2, '']])} = ${v}$.`,
+      verify:()=>{ let u = u1; for(let n = 1; n < k; n++) u += n*2**n; return u === o.ans; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-05.2 [HSG] Dãy số truy hồi: 16 TLN + 4 TL) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-05.2 [HSG] Dãy số truy hồi (11|1|0), đợt 2 (5 dạng TLN): nhân dồn, truy hồi tuyến tính cấp hai, dãy tuần hoàn, đếm bằng hệ thức truy hồi. Claude viết.
+// Chuỗi: tỉ số u_{n+1}/u_n → phương trình đặc trưng hai nghiệm phân biệt → nghiệm kép → dãy tuần hoàn (chu kì 3, 6)
+// → lập hệ thức truy hồi cho bài toán đếm (cầu thang, xâu nhị phân, lát gạch).
+const dsJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + (/^\d/.test(b) ? '\\cdot ' : '') + b);
+    return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+const dsOk = v=> Number.isInteger(v) && String(v).length <= 4;
+const dsSum = arr=> arr.filter((x, i)=> i === 0 || x !== 0).map((x, i)=> i === 0 ? String(x) : (x < 0 ? ` - ${-x}` : ` + ${x}`)).join('');
+const dsPw = (r, e)=> r < 0 ? `(${r})^{${e}}` : `${r}^{${e}}`;
+
+/* 26. TLN VD — nhân dồn: n·u_{n+1} = (n + p)·u_n; (n + p)·u_{n+1} = n·u_n */
+GT(11,1,0,'VD','HSG: dãy cho bởi n·u_{n+1} = (n + p)·u_n hoặc (n + p)·u_{n+1} = n·u_n — nhân dồn các tỉ số u_{k+1}/u_k, rút gọn tích, tìm số hạng tổng quát; tính u_k hoặc 1/u_k', R=>{
+  for(let g = 0; g < 200; g++){
+    const p = R.pick([2, 2, 3]), F = n=> p === 2 ? n*(n + 1)/2 : n*(n + 1)*(n + 2)/6, FT = p === 2 ? '\\dfrac{n(n + 1)}{2}' : '\\dfrac{n(n + 1)(n + 2)}{6}';
+    const prodT = p === 2 ? '\\dfrac{3\\cdot 4\\cdots(n + 1)}{1\\cdot 2\\cdots(n - 1)}' : '\\dfrac{4\\cdot 5\\cdots(n + 2)}{1\\cdot 2\\cdots(n - 1)}';
+    const vT = k=> p === 2 ? `\\dfrac{${k}\\cdot ${k + 1}}{2}` : `\\dfrac{${k}\\cdot ${k + 1}\\cdot ${k + 2}}{6}`;
+    if(R.rnd() < 0.5){
+      const a = R.nz(-5, 6), k = R.int(5, p === 2 ? 60 : 25), v = a*F(k); if(!dsOk(v)) continue;
+      const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $n u_{n+1} = (n + ${p})u_n$ với mọi $n \\ge 1$. Tính $u_{${k}}$.`, ans:v,
+        lg:`Bằng quy nạp $u_n \\ne 0$ và $\\dfrac{u_{k+1}}{u_k} = \\dfrac{k + ${p}}{k}$. Nhân các đẳng thức với $k = 1, 2, \\ldots, n - 1$:<br>$\\dfrac{u_n}{u_1} = ${prodT} = ${FT}$, nên $u_n = ${a === 1 ? '' : a === -1 ? '-' : a + '\\cdot '}${FT}$.<br>Do đó $u_{${k}} = ${a === 1 ? '' : a === -1 ? '-' : a + '\\cdot '}${vT(k)} = ${v}$.`,
+        verify:()=>{ let u = a; for(let n = 1; n < k; n++) u = u*(n + p)/n; return Math.abs(u - o.ans) < 1e-6; }};
+      return o; }
+    const a = R.int(1, 3), k = R.int(5, p === 2 ? 80 : 30), v = a*F(k); if(!dsOk(v)) continue;
+    const u1T = a === 1 ? '1' : `\\dfrac{1}{${a}}`;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1T}$ và $(n + ${p})u_{n+1} = n u_n$ với mọi $n \\ge 1$. Tính $\\dfrac{1}{u_{${k}}}$.`, ans:v,
+      lg:`Bằng quy nạp $u_n > 0$ và $\\dfrac{u_k}{u_{k+1}} = \\dfrac{k + ${p}}{k}$. Nhân các đẳng thức với $k = 1, 2, \\ldots, n - 1$:<br>$\\dfrac{u_1}{u_n} = ${prodT} = ${FT}$, nên $\\dfrac{1}{u_n} = \\dfrac{1}{u_1}\\cdot ${FT}${a === 1 ? '' : ` = ${a}\\cdot ${FT}`}$.<br>Do đó $\\dfrac{1}{u_{${k}}} = ${a === 1 ? '' : a + '\\cdot '}${vT(k)} = ${v}$.`,
+      verify:()=>{ let u = 1/a; for(let n = 1; n < k; n++) u = u*n/(n + p); return Math.abs(1/u - o.ans) < 1e-6*o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 27. TLN VD — u_{n+2} = s·u_{n+1} − t·u_n, phương trình đặc trưng có hai nghiệm phân biệt */
+GT(11,1,0,'VD','HSG: dãy truy hồi tuyến tính cấp hai u_{n+2} = s·u_{n+1} − t·u_n — phương trình đặc trưng x² − sx + t = 0 có hai nghiệm phân biệt, u_n = A·x₁^{n−1} + B·x₂^{n−1}; tính số hạng hoặc tổng các số hạng đầu', R=>{
+  const PR = [[1, 2], [1, 3], [2, 3], [1, -2], [-1, 2], [-1, 3], [2, -3], [1, 4], [-2, 3], [1, -3], [2, 4], [3, -1], [-2, -1], [3, 4]];
+  for(let g = 0; g < 300; g++){
+    const [x1, x2] = R.pick(PR), s = x1 + x2, t = x1*x2, A = R.nz(-4, 4), B = R.nz(-4, 4), U = n=> A*x1**(n - 1) + B*x2**(n - 1), u1 = U(1), u2 = U(2);
+    if(s === 0) continue;
+    const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$, $u_2 = ${u2}$ và $u_{n+2} = ${dsJ([[s, 'u_{n+1}'], [-t, 'u_n']])}$ với mọi $n \\ge 1$.`;
+    const gen = dsJ([[A, x1 === 1 ? '' : dsPw(x1, 'n-1')], [B, dsPw(x2, 'n-1')]]).replace(/^(-?)$/, '$1') ;
+    const base = `Phương trình đặc trưng $x^2 ${s > 0 ? '-' : '+'} ${Math.abs(s) === 1 ? '' : Math.abs(s)}x ${t > 0 ? '+' : '-'} ${Math.abs(t)} = 0$ có hai nghiệm $x = ${x1}$, $x = ${x2}$ nên $u_n = A${x1 === 1 ? '' : '\\cdot ' + dsPw(x1, 'n-1')} + B\\cdot ${dsPw(x2, 'n-1')}$.<br>`
+      + `Từ $u_1 = ${u1}$, $u_2 = ${u2}$: $A + B = ${u1}$, $${dsJ([[x1, 'A'], [x2, 'B']])} = ${u2}$, suy ra $A = ${A}$, $B = ${B}$. Vậy $u_n = ${gen}$.<br>`;
+    if(R.rnd() < 0.6){
+      const k = R.int(7, 13), v = U(k); if(!dsOk(v) || Math.abs(v) < 20) continue;
+      const o = {stem:`${head} Tính $u_{${k}}$.`, ans:v, lg: base + `Do đó $u_{${k}} = ${dsJ([[A, x1 === 1 ? '' : dsPw(x1, k - 1)], [B, dsPw(x2, k - 1)]])} = ${v}$.`,
+        verify:()=>{ let a = u1, b = u2; for(let n = 3; n <= k; n++){ const c = s*b - t*a; a = b; b = c; } return b === o.ans; }};
+      return o; }
+    if(x1 === 1 && x2 === 1) continue;
+    const k = R.int(5, 10), gs = x=> x === 1 ? k : (x**k - 1)/(x - 1), S = A*gs(x1) + B*gs(x2); if(!dsOk(S)) continue;
+    const sT = x=> x === 1 ? `${k}` : x === 2 ? `(2^{${k}} - 1)` : `\\dfrac{${dsPw(x, k)} - 1}{${x - 1}}`;
+    const o = {stem:`${head} Tính tổng $S = u_1 + u_2 + \\cdots + u_{${k}}$.`, ans:S,
+      lg: base + `Cộng theo từng cấp số nhân: $S = ${A === 1 ? '' : A === -1 ? '-' : A + '\\cdot '}${sT(x1)} ${B > 0 ? '+' : '-'} ${Math.abs(B) === 1 ? '' : Math.abs(B) + '\\cdot '}${sT(x2)} = ${dsSum([A*gs(x1), B*gs(x2)])} = ${S}$.`,
+      verify:()=>{ let a = u1, b = u2, t2 = u1 + u2; for(let n = 3; n <= k; n++){ const c = s*b - t*a; a = b; b = c; t2 += c; } return t2 === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 28. TLN VD — nghiệm kép: u_{n+2} = 2r·u_{n+1} − r²·u_n */
+GT(11,1,0,'VD','HSG: dãy truy hồi u_{n+2} = 2r·u_{n+1} − r²·u_n — phương trình đặc trưng có nghiệm kép x = r, u_n = (A + B(n − 1))·r^{n−1} (r = ±1: dãy cấp số cộng hoặc đan dấu); tính một số hạng', R=>{
+  for(let g = 0; g < 300; g++){
+    const r = R.pick([1, -1, -1, 2, -2, 3]), A = R.int(-6, 9), B = R.nz(-4, 5), U = n=> (A + B*(n - 1))*r**(n - 1), u1 = U(1), u2 = U(2);
+    const k = Math.abs(r) === 1 ? R.pick([R.int(50, 999), 2025, 2026, 2027]) : R.int(5, 9), v = U(k); if(!dsOk(v) || v === 0) continue;
+    const pw = e=> r === 1 ? '' : `\\cdot ${dsPw(r, e)}`, lin = `(${dsJ([[A, ''], [B, '(n - 1)']])})`;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$, $u_2 = ${u2}$ và $u_{n+2} = ${dsJ([[2*r, 'u_{n+1}'], [-r*r, 'u_n']])}$ với mọi $n \\ge 1$. Tính $u_{${k}}$.`, ans:v,
+      lg:`Phương trình đặc trưng $x^2 ${2*r > 0 ? '-' : '+'} ${Math.abs(2*r)}x + ${r*r} = 0 \\iff (x ${r > 0 ? '-' : '+'} ${Math.abs(r)})^2 = 0$ có nghiệm kép $x = ${r}$ nên $u_n = ${r === 1 ? 'A + B(n - 1)' : '(A + B(n - 1))'}${pw('n-1')}$.<br>`
+        + `Từ $u_1 = A = ${u1}$ và $u_2 = ${r === 1 ? 'A + B' : '(A + B)'}${r === 1 ? '' : r === -1 ? '\\cdot (-1)' : '\\cdot ' + (r < 0 ? `(${r})` : r)} = ${u2}$ suy ra $A = ${A}$, $B = ${B}$. Vậy $u_n = ${(r === 1 ? lin.slice(1, -1) : A === 0 ? dsJ([[B, '(n - 1)']]) : lin) + pw('n-1')}$.<br>`
+        + `Do đó $u_{${k}} = ${r === 1 ? dsSum([A, B*(k - 1)]) : `(${dsSum([A, B*(k - 1)])})`}${pw(k - 1)} = ${v}$.`,
+      verify:()=>{ let a = u1, b = u2; for(let n = 3; n <= k; n++){ const c = 2*r*b - r*r*a; a = b; b = c; } return b === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 29. TLN VD — dãy tuần hoàn: u_{n+2} = u_{n+1} − u_n (chu kì 6), u_{n+2} = −u_{n+1} − u_n (chu kì 3), u_{n+1} = 1/(1 − u_n) */
+GT(11,1,0,'VD','HSG: dãy tuần hoàn — u_{n+2} = u_{n+1} − u_n (chu kì 6, tổng một chu kì bằng 0), u_{n+2} = −u_{n+1} − u_n (chu kì 3), u_{n+1} = 1/(1 − u_n) (chu kì 3); tính số hạng hoặc tổng với chỉ số lớn', R=>{
+  for(let g = 0; g < 200; g++){
+    const N = R.pick([R.int(100, 3000), 2024, 2025, 2026, 2027, 2028]), ty = R.rnd();
+    if(ty < 0.15){
+      const st = R.pick([[2, -1, 0.5], [-1, 0.5, 2], [0.5, 2, -1]]), T = st.map(x=> x === 0.5 ? '\\dfrac{1}{2}' : String(x)), j = (N - 1)%3, v = st[j];
+      const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${T[0]}$ và $u_{n+1} = \\dfrac{1}{1 - u_n}$ với mọi $n \\ge 1$. Tính $u_{${N}}$.`, ans:v,
+        lg:`Ta có $u_2 = ${T[1]}$, $u_3 = ${T[2]}$, $u_4 = ${T[0]} = u_1$. Tổng quát, $u_{n+3} = \\dfrac{1}{1 - \\frac{1}{1 - u_n}} = \\dfrac{1 - u_n}{-u_n}$ và $u_{n+3} = \\dfrac{1}{1 - \\frac{u_n - 1}{u_n}} = u_n$ (đi qua $u_{n+2} = \\dfrac{u_n - 1}{u_n}$), nên dãy tuần hoàn chu kì $3$.<br>`
+          + `Vì $${N} = 3\\cdot ${Math.floor((N - 1)/3)} + ${j + 1}$ nên $u_{${N}} = u_{${j + 1}} = ${nt(v)}$.`,
+        verify:()=>{ let u = st[0]; for(let n = 1; n < N; n++) u = 1/(1 - u); return Math.abs(u - o.ans) < 1e-6; }};
+      return o; }
+    const six = ty < 0.65, P = six ? 6 : 3, a = R.int(-9, 9), b = R.int(-9, 9); if(a === 0 && b === 0 || a === b) continue;
+    const seq = [a, b]; for(let i = 2; i < P + 2; i++) seq.push(six ? seq[i - 1] - seq[i - 2] : -seq[i - 1] - seq[i - 2]);
+    const head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$, $u_2 = ${b}$ và $u_{n+2} = ${six ? 'u_{n+1} - u_n' : '-u_{n+1} - u_n'}$ với mọi $n \\ge 1$.`;
+    const per = six ? `Từ giả thiết $u_{n+3} = u_{n+2} - u_{n+1} = -u_n$, nên $u_{n+6} = -u_{n+3} = u_n$: dãy tuần hoàn chu kì $6$` : `Từ giả thiết $u_n + u_{n+1} + u_{n+2} = 0$ và $u_{n+1} + u_{n+2} + u_{n+3} = 0$ nên $u_{n+3} = u_n$: dãy tuần hoàn chu kì $3$`;
+    const list = `Sáu số hạng đầu: ${seq.slice(0, 6).map(x=> `$${x}$`).join('; ')}`.replace('Sáu', six ? 'Sáu' : 'Các');
+    const j = N%P;
+    if(R.rnd() < 0.5){
+      const idx = j === 0 ? P : j, v = seq[idx - 1]; if(v === 0) continue;
+      const o = {stem:`${head} Tính $u_{${N}}$.`, ans:v, lg:`${per}. ${six ? list + '.' : `Ba số hạng đầu: $${seq[0]}$; $${seq[1]}$; $${seq[2]}$.`}<br>Vì $${N} = ${P}\\cdot ${Math.floor((N - idx)/P)} + ${idx}$ nên $u_{${N}} = u_{${idx}} = ${v}$.`,
+        verify:()=>{ let x = a, y = b; for(let n = 2; n < N; n++){ const z = six ? y - x : -y - x; x = y; y = z; } return (N === 1 ? x : y) === o.ans; }};
+      return o; }
+    const S = seq.slice(0, j).reduce((s, x)=> s + x, 0); if(j === 0 || S === 0) continue;
+    const o = {stem:`${head} Tính tổng $S = u_1 + u_2 + \\cdots + u_{${N}}$.`, ans:S,
+      lg:`${per}. ${six ? list : `Ba số hạng đầu: $${seq[0]}$; $${seq[1]}$; $${seq[2]}$`}; tổng mỗi chu kì bằng $0$.<br>Vì $${N} = ${P}\\cdot ${Math.floor(N/P)} + ${j}$ nên $S = ${j === 1 ? 'u_1' : `u_1 + \\cdots + u_{${j}}`} = ${j === 1 ? '' : dsSum(seq.slice(0, j)) + ' = '}${S}$.`,
+      verify:()=>{ let x = a, y = b, t = a + b; for(let n = 3; n <= N; n++){ const z = six ? y - x : -y - x; x = y; y = z; t += z; } return t === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 30. TLN VD — lập hệ thức truy hồi cho bài toán đếm */
+GT(11,1,0,'VD','HSG: lập hệ thức truy hồi cho bài toán đếm — lên cầu thang mỗi bước 1, 2 (hoặc 1, 2, 3) bậc, xâu nhị phân không có hai (ba) số 1 liền nhau, xâu ba chữ cái không có hai chữ A liền nhau, lát nền 2 × n', R=>{
+  const T = [
+    {lo:8, hi:18, st:n=> `Một cầu thang có $${n}$ bậc. Mỗi bước, An bước lên $1$ bậc hoặc $2$ bậc. Hỏi An có bao nhiêu cách đi hết cầu thang?`,
+     rec:'Gọi $a_n$ là số cách đi hết $n$ bậc. Bước đầu tiên lên $1$ bậc (còn $a_{n-1}$ cách) hoặc $2$ bậc (còn $a_{n-2}$ cách) nên $a_n = a_{n-1} + a_{n-2}$, với $a_1 = 1$, $a_2 = 2$.',
+     a0:[1, 2], f:(s)=> s[s.length - 1] + s[s.length - 2], bf:n=>{ let c = 0; for(let m = 0; m < 1 << (n - 1); m++){ let last = 0, ok = true; for(let i = 1; i <= n; i++) if(i === n || (m >> (i - 1)) & 1){ if(i - last > 2){ ok = false; break; } last = i; } if(ok) c++; } return c; }},
+    {lo:6, hi:15, st:n=> `Một cầu thang có $${n}$ bậc. Mỗi bước, Bình bước lên $1$, $2$ hoặc $3$ bậc. Hỏi Bình có bao nhiêu cách đi hết cầu thang?`,
+     rec:'Gọi $a_n$ là số cách đi hết $n$ bậc. Xét bước đầu tiên ($1$, $2$ hoặc $3$ bậc): $a_n = a_{n-1} + a_{n-2} + a_{n-3}$, với $a_1 = 1$, $a_2 = 2$, $a_3 = 4$.',
+     a0:[1, 2, 4], f:(s)=> s[s.length - 1] + s[s.length - 2] + s[s.length - 3], bf:n=>{ let c = 0; for(let m = 0; m < 1 << (n - 1); m++){ let last = 0, ok = true; for(let i = 1; i <= n; i++) if(i === n || (m >> (i - 1)) & 1){ if(i - last > 3){ ok = false; break; } last = i; } if(ok) c++; } return c; }},
+    {lo:6, hi:17, st:n=> `Có bao nhiêu xâu nhị phân (gồm các kí tự $0$, $1$) có độ dài $${n}$ mà không có hai kí tự $1$ đứng liền nhau?`,
+     rec:'Gọi $a_n$ là số xâu cần đếm có độ dài $n$. Xâu kết thúc bằng $0$: bỏ kí tự cuối được xâu hợp lệ độ dài $n - 1$; kết thúc bằng $1$ thì kí tự trước đó là $0$: bỏ hai kí tự cuối được xâu hợp lệ độ dài $n - 2$. Vậy $a_n = a_{n-1} + a_{n-2}$, với $a_1 = 2$, $a_2 = 3$.',
+     a0:[2, 3], f:(s)=> s[s.length - 1] + s[s.length - 2], bf:n=>{ let c = 0; for(let m = 0; m < 1 << n; m++) if(!(m & (m >> 1))) c++; return c; }},
+    {lo:6, hi:14, st:n=> `Có bao nhiêu xâu nhị phân (gồm các kí tự $0$, $1$) có độ dài $${n}$ mà không có ba kí tự $1$ đứng liền nhau?`,
+     rec:'Gọi $a_n$ là số xâu cần đếm có độ dài $n$. Xét phần cuối của xâu: $0$, $01$ hoặc $011$; bỏ phần đó được xâu hợp lệ độ dài $n - 1$, $n - 2$, $n - 3$. Vậy $a_n = a_{n-1} + a_{n-2} + a_{n-3}$, với $a_1 = 2$, $a_2 = 4$, $a_3 = 7$.',
+     a0:[2, 4, 7], f:(s)=> s[s.length - 1] + s[s.length - 2] + s[s.length - 3], bf:n=>{ let c = 0; for(let m = 0; m < 1 << n; m++) if(!(m & (m >> 1) & (m >> 2))) c++; return c; }},
+    {lo:4, hi:9, st:n=> `Có bao nhiêu xâu độ dài $${n}$ gồm các chữ cái $A$, $B$, $C$ mà không có hai chữ $A$ đứng liền nhau?`,
+     rec:'Gọi $a_n$ là số xâu cần đếm có độ dài $n$. Xâu kết thúc bằng $B$ hoặc $C$: $2a_{n-1}$ xâu; kết thúc bằng $A$ thì chữ trước đó là $B$ hoặc $C$: $2a_{n-2}$ xâu. Vậy $a_n = 2a_{n-1} + 2a_{n-2}$, với $a_1 = 3$, $a_2 = 8$.',
+     a0:[3, 8], f:(s)=> 2*s[s.length - 1] + 2*s[s.length - 2], bf:n=>{ let c = 0; for(let m = 0; m < 3**n; m++){ let x = m, prev = -1, ok = true; for(let i = 0; i < n; i++){ const d = x%3; x = (x - d)/3; if(d === 0 && prev === 0){ ok = false; break; } prev = d; } if(ok) c++; } return c; }},
+    {lo:6, hi:18, st:n=> `Cần lát kín một lối đi hình chữ nhật kích thước $2 \\times ${n}$ (đơn vị: dm) bằng các viên gạch $1 \\times 2$ (đặt dọc hoặc nằm ngang, không cắt gạch). Hỏi có bao nhiêu cách lát?`,
+     rec:'Gọi $a_n$ là số cách lát lối $2 \\times n$. Ở đầu lối: một viên đặt dọc (còn lối $2 \\times (n - 1)$) hoặc hai viên nằm ngang chồng nhau (còn lối $2 \\times (n - 2)$). Vậy $a_n = a_{n-1} + a_{n-2}$, với $a_1 = 1$, $a_2 = 2$.',
+     a0:[1, 2], f:(s)=> s[s.length - 1] + s[s.length - 2], bf:n=>{ let c = 0; for(let m = 0; m < 1 << (n - 1); m++){ let last = 0, ok = true; for(let i = 1; i <= n; i++) if(i === n || (m >> (i - 1)) & 1){ if(i - last > 2){ ok = false; break; } last = i; } if(ok) c++; } return c; }}];
+  const t = R.pick(T), n = R.int(t.lo, t.hi), s = t.a0.slice(); while(s.length < n) s.push(t.f(s));
+  const v = s[n - 1]; if(!dsOk(v)) return null;
+  const o = {stem:t.st(n), ans:v, lg:`${t.rec}<br>Tính lần lượt: ${s.slice(0, n).map((x, i)=> `$a_{${i + 1}} = ${x}$`).join(', ')}.<br>Vậy có $${v}$ cách.`,
+    verify:()=> t.bf(n) === o.ans};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-05.2 [HSG] Dãy số truy hồi: 16 TLN + 4 TL) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-05.2 [HSG] Dãy số truy hồi (11|1|0), đợt 3 (6 dạng TLN): số dư tuần hoàn, đánh giá và phần nguyên, khử liên tiếp, bị chặn bằng quy nạp. Claude viết.
+// Bám khung đề HSG cấp tỉnh: dãy truy hồi — chứng minh bị chặn, đánh giá tổng (kiểu Σ a_k/a_{k+1} < 1), tìm số hạng tổng quát.
+// Chuỗi: dãy số dư tuần hoàn → bình phương rồi cộng dồn để đánh giá u_n (phần nguyên) → tách 1/(u_k + 1) = 1/u_k − 1/u_{k+1} (phần nguyên của tổng)
+// → S_n = n²·u_n (hiệu S_n − S_{n−1}, nhân dồn) → dãy √(a·u_n + c) bị chặn bởi điểm cố định L → dãy phụ u_n² hoặc 1/u_n² là cấp số cộng.
+const dsJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + (/^\d/.test(b) ? '\\cdot ' : '') + b);
+    return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+const dsOk = v=> Number.isInteger(v) && String(v).length <= 4;
+
+/* 31. TLN VD — dãy số dư tuần hoàn */
+GT(11,1,0,'VD','HSG: số dư của số hạng có chỉ số lớn — dãy các số dư khi chia u_n cho m tuần hoàn (truy hồi u_{n+2} = u_{n+1} + u_n hoặc u_{n+1} = c·u_n + d), tìm chu kì rồi suy ra số dư của u_N', R=>{
+  for(let g = 0; g < 300; g++){
+    const m = R.pick([3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 16, 17, 18, 19]), N = R.pick([R.int(200, 3000), 2024, 2025, 2026, 2027]);
+    const two = R.rnd() < 0.6;
+    let head, rule, step, r0;
+    if(two){ const c = R.pick([1, 1, 2, 3]), a = R.int(0, 5), b = R.int(1, 6);
+      head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$, $u_2 = ${b}$ và $u_{n+2} = ${dsJ([[c, 'u_{n+1}'], [1, 'u_n']])}$ với mọi $n \\ge 1$.`;
+      rule = `Vì $u_{n+2} = ${dsJ([[c, 'u_{n+1}'], [1, 'u_n']])}$ nên $r_{n+2}$ là số dư của $${dsJ([[c, 'r_{n+1}'], [1, 'r_n']])}$ khi chia cho $${m}$`;
+      step = s=> (c*s[s.length - 1] + s[s.length - 2])%m; r0 = [a%m, b%m]; }
+    else{ const c = R.pick([2, 3, 4, 5]), d = R.int(1, 5), a = R.int(1, 6); if(gcdI(c, m) !== 1) continue;
+      head = `Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $u_{n+1} = ${c}u_n + ${d}$ với mọi $n \\ge 1$.`;
+      rule = `Vì $u_{n+1} = ${c}u_n + ${d}$ nên $r_{n+1}$ là số dư của $${c}r_n + ${d}$ khi chia cho $${m}$`;
+      step = s=> (c*s[s.length - 1] + d)%m; r0 = [a%m]; }
+    const s = r0.slice(); let P = 0;
+    for(let i = 0; i < 40 && !P; i++){ s.push(step(s)); const L = s.length, w = r0.length; if(L - w >= 1 && s.slice(L - w).join() === r0.join() && L - w > 0) P = L - w; }
+    if(!P || P < 3 || P > 24) continue;
+    const j = (N - 1)%P + 1, v = s[j - 1];
+    const lg = `Gọi $r_n$ là số dư khi chia $u_n$ cho $${m}$. ${rule}. Tính lần lượt các số dư:<br>${s.slice(0, P + r0.length).map((x, i)=> `$r_{${i + 1}} = ${x}$`).join(', ')}.<br>`
+      + `Ta thấy ${two ? `$(r_{${P + 1}}, r_{${P + 2}}) = (r_1, r_2)$` : `$r_{${P + 1}} = r_1$`} nên dãy $(r_n)$ tuần hoàn với chu kì $${P}$.<br>Vì $${N} = ${P}\\cdot ${Math.floor((N - j)/P)} + ${j}$ nên $r_{${N}} = r_{${j}} = ${v}$. Vậy $u_{${N}}$ chia cho $${m}$ dư $${v}$.`;
+    const o = {stem:`${head} Tìm số dư khi chia $u_{${N}}$ cho $${m}$.`, ans:v, lg,
+      verify:()=>{ let x = r0.slice(); for(let n = r0.length; n < N; n++){ x.push(step(x)); x.shift(); } return x[x.length - 1] === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 32. TLN VDC — u_{n+1} = u_n + 1/u_n: bình phương, cộng dồn, đánh giá phần nguyên */
+GT(11,1,0,'VDC','HSG: dãy u_{n+1} = u_n + 1/u_n — bình phương rồi cộng dồn được u_N² = u_1² + 2(N − 1) + Σ 1/u_k², đánh giá tổng (nhóm khối 1/2^j) để kẹp u_N², tìm phần nguyên của u_N', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.pick([1, 1, 2, 3]), N = R.pick([R.int(50, 4000), 2025, 2026]), X = a*a + 2*(N - 1);
+    let t = 0; while(2**(t + 1) <= N - 1) t++; const E = t + 1, f = Math.floor(Math.sqrt(X));
+    if((f + 1)**2 < X + E || f**2 > X) continue;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $u_{n+1} = u_n + \\dfrac{1}{u_n}$ với mọi $n \\ge 1$. Tìm phần nguyên của $u_{${N}}$.`, ans:f,
+      lg:`Dãy dương. Bình phương: $u_{k+1}^2 = u_k^2 + 2 + \\dfrac{1}{u_k^2}$. Cộng với $k = 1, 2, \\ldots, ${N - 1}$:<br>$u_{${N}}^2 = ${a*a} + 2\\cdot ${N - 1} + \\sum_{k=1}^{${N - 1}}\\dfrac{1}{u_k^2} = ${X} + \\sum_{k=1}^{${N - 1}}\\dfrac{1}{u_k^2}$.<br>`
+        + `Cũng từ đẳng thức trên, $u_k^2 \\ge ${a*a} + 2(k - 1) \\ge k$, nên $0 < \\sum_{k=1}^{${N - 1}}\\dfrac{1}{u_k^2} \\le 1 + \\dfrac{1}{2} + \\cdots + \\dfrac{1}{${N - 1}}$.<br>`
+        + `Nhóm các số hạng thành các khối $\\dfrac{1}{2^j} + \\cdots + \\dfrac{1}{2^{j+1} - 1}$ (mỗi khối có tổng nhỏ hơn $1$); vì $2^{${t}} \\le ${N - 1} < 2^{${t + 1}}$ nên có $${t}$ khối, tổng trên nhỏ hơn $1 + ${t} = ${E}$.<br>`
+        + `Vậy $${X} < u_{${N}}^2 < ${X + E}$. Mà $${f}^2 = ${f*f} \\le ${X}$ và $${X + E} \\le ${f + 1}^2 = ${(f + 1)**2}$ nên $${f} < u_{${N}} < ${f + 1}$. Phần nguyên của $u_{${N}}$ là $${f}$.`,
+      verify:()=>{ let u = a; for(let n = 1; n < N; n++) u += 1/u; return Math.floor(u) === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 33. TLN VDC — u_{n+1} = u_n² + u_n: tách 1/(u_k + 1) = 1/u_k − 1/u_{k+1}, phần nguyên của tổng */
+GT(11,1,0,'VDC','HSG: dãy u_{n+1} = u_n² + u_n — tách 1/(u_k + 1) = 1/u_k − 1/u_{k+1} (hay u_k/u_{k+1}), khử liên tiếp được S = 1/u_1 − 1/u_{N+1}, đánh giá u_{N+1} để tìm phần nguyên của S', R=>{
+  for(let g = 0; g < 200; g++){
+    const half = R.rnd() < 0.4, m = half ? 2*R.int(1, 20) + 1 : R.int(2, 30), N = R.pick([R.int(1000, 3000), 2025, 2026]);
+    const u1 = half ? 2/m : 1/m, u1T = half ? `\\dfrac{2}{${m}}` : `\\dfrac{1}{${m}}`, inv = half ? `\\dfrac{${m}}{2}` : `${m}`;
+    const ans = half ? (m - 1)/2 : m - 1, need = half ? 2 : 1, low = half ? `\\dfrac{2}{${m}} + \\dfrac{${4*N}}{${m*m}}` : `\\dfrac{1}{${m}} + \\dfrac{${N}}{${m*m}}`;
+    if(u1 + N*u1*u1 <= need) continue;
+    const form = R.rnd() < 0.5, sT = form ? `\\dfrac{1}{u_1 + 1} + \\dfrac{1}{u_2 + 1} + \\cdots + \\dfrac{1}{u_{${N}} + 1}` : `\\dfrac{u_1}{u_2} + \\dfrac{u_2}{u_3} + \\cdots + \\dfrac{u_{${N}}}{u_{${N + 1}}}`;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1T}$ và $u_{n+1} = u_n^2 + u_n$ với mọi $n \\ge 1$. Tìm phần nguyên của $S = ${sT}$.`, ans,
+      lg:`Dãy dương${form ? '' : ', và $\\dfrac{u_k}{u_{k+1}} = \\dfrac{u_k}{u_k(u_k + 1)} = \\dfrac{1}{u_k + 1}$'}. Ta có $\\dfrac{1}{u_k} - \\dfrac{1}{u_{k+1}} = \\dfrac{u_{k+1} - u_k}{u_k u_{k+1}} = \\dfrac{u_k^2}{u_k\\cdot u_k(u_k + 1)} = \\dfrac{1}{u_k + 1}$.<br>`
+        + `Khử liên tiếp: $S = \\dfrac{1}{u_1} - \\dfrac{1}{u_{${N + 1}}} = ${inv} - \\dfrac{1}{u_{${N + 1}}}$.<br>`
+        + `Vì $u_{k+1} - u_k = u_k^2 > 0$ nên dãy tăng và $u_{k+1} - u_k \\ge u_1^2$, cộng lại: $u_{${N + 1}} \\ge u_1 + ${N}u_1^2 = ${low} > ${need}$.<br>`
+        + `Do đó $0 < \\dfrac{1}{u_{${N + 1}}} < ${half ? '\\dfrac{1}{2}' : '1'}$, suy ra $${ans} < S < ${inv}$. Phần nguyên của $S$ là $${ans}$.`,
+      verify:()=>{ let u = u1, s = 0, k = 1; for(; k <= N && u < 1e6; k++){ s += 1/(u + 1); u = u*u + u; } return Math.floor(s) === o.ans && s + 1/u <= o.ans + 1 + 1e-9; }};   // phần còn lại của tổng nhỏ hơn 1/u
+    return o; }
+  return null;
+});
+
+/* 34. TLN VD — S_n = n²·u_n */
+GT(11,1,0,'VD','HSG: dãy thoả u_1 + u_2 + … + u_n = n²·u_n — trừ hai đẳng thức liên tiếp được u_n/u_{n−1} = (n − 1)/(n + 1), nhân dồn ra u_n = 2u_1/(n(n + 1)); tính 1/u_k hoặc tìm chỉ số', R=>{
+  for(let g = 0; g < 200; g++){
+    const p = R.int(1, 5), u1T = p === 1 ? '1' : `\\dfrac{1}{${p}}`, W = n=> p*n*(n + 1)/2;
+    const head = `Cho dãy số $(u_n)$ có $u_1 = ${u1T}$ và $u_1 + u_2 + \\cdots + u_n = n^2 u_n$ với mọi $n \\ge 1$.`;
+    const base = `Với $n \\ge 2$: $u_n = (u_1 + \\cdots + u_n) - (u_1 + \\cdots + u_{n-1}) = n^2u_n - (n - 1)^2u_{n-1}$, nên $(n^2 - 1)u_n = (n - 1)^2u_{n-1}$, tức là $u_n = \\dfrac{n - 1}{n + 1}u_{n-1}$.<br>`
+      + `Nhân dồn: $u_n = u_1\\cdot\\dfrac{1}{3}\\cdot\\dfrac{2}{4}\\cdot\\dfrac{3}{5}\\cdots\\dfrac{n - 1}{n + 1} = u_1\\cdot\\dfrac{2}{n(n + 1)}$, nên $\\dfrac{1}{u_n} = ${p === 1 ? '' : p}\\cdot\\dfrac{n(n + 1)}{2}$.<br>`.replace('= \\cdot', '= ');
+    if(R.rnd() < 0.5){
+      const k = R.int(6, 120), v = W(k); if(!dsOk(v)) continue;
+      const o = {stem:`${head} Tính $\\dfrac{1}{u_{${k}}}$.`, ans:v, lg: base + `Do đó $\\dfrac{1}{u_{${k}}} = ${p === 1 ? '' : p + '\\cdot '}\\dfrac{${k}\\cdot ${k + 1}}{2} = ${v}$.`,
+        verify:()=>{ const u = [0, 1/p]; let S = 1/p; for(let n = 2; n <= k; n++){ const x = S/(n*n - 1); u.push(x); S += x; } return Math.abs(1/u[k] - o.ans) < 1e-6*o.ans; }};
+      return o; }
+    const n = R.int(6, 150), N = W(n);
+    const o = {stem:`${head} Tìm số nguyên dương $n$ sao cho $u_n = \\dfrac{1}{${N}}$.`, ans:n,
+      lg: base + `$u_n = \\dfrac{1}{${N}} \\iff ${p === 1 ? '' : p + '\\cdot '}\\dfrac{n(n + 1)}{2} = ${N} \\iff n(n + 1) = ${n*(n + 1)} = ${n}\\cdot ${n + 1}$. Vì $n(n + 1)$ tăng theo $n$ nên $n = ${n}$.`,
+      verify:()=>{ let S = 1/p, u = 1/p, i = 1; while(Math.abs(1/u - N) > 1e-6*N && i < 400){ i++; u = S/(i*i - 1); S += u; } return i === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 35. TLN VDC — u_{n+1} = √(a·u_n + c): bị chặn bởi điểm cố định L, chặn tốt nhất */
+GT(11,1,0,'VDC','HSG: dãy u_{n+1} = √(a·u_n + c) — chứng minh bằng quy nạp u_n < L (hoặc u_n > L) với L là nghiệm dương của L² = aL + c, đánh giá |L − u_{n+1}| ≤ (a/L)|L − u_n| để chỉ ra L là chặn nguyên tốt nhất', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.int(1, 4), L = R.int(a + 1, 20), c = L*L - a*L, up = R.rnd() < 0.55, u1 = up ? R.int(0, L - 1) : R.int(L + 1, 3*L);
+    if(c <= 0) continue;
+    const rec = `u_{n+1} = \\sqrt{${a === 1 ? '' : a}u_n + ${c}}`, s1 = up ? '<' : '>';
+    const lg = `Xét $L > 0$ thoả $L^2 = ${a === 1 ? '' : a}L + ${c}$, ta được $L = ${L}$.<br>`
+      + `Quy nạp: $u_1 = ${u1} ${s1} ${L}$; nếu $u_n ${s1} ${L}$ thì $u_{n+1} = \\sqrt{${a === 1 ? '' : a}u_n + ${c}} ${s1} \\sqrt{${a === 1 ? '' : a + '\\cdot '}${L} + ${c}} = ${L}$. Vậy $u_n ${s1} ${L}$ với mọi $n$.<br>`
+      + `Mặt khác $|${L} - u_{n+1}| = \\dfrac{|${L*L} - u_{n+1}^2|}{${L} + u_{n+1}} = \\dfrac{${a === 1 ? '' : a}|${L} - u_n|}{${L} + u_{n+1}} \\le ${frT(a, L)}|${L} - u_n|$, nên $|${L} - u_n| \\le \\left(${frT(a, L)}\\right)^{n-1}|${L} - u_1|$ nhỏ hơn $1$ khi $n$ đủ lớn.<br>`
+      + (up ? `Do đó có $u_n > ${L - 1}$: số nguyên $M = ${L - 1}$ không thoả mãn, còn $M = ${L}$ thoả mãn. Vậy $M = ${L}$.`
+            : `Do đó có $u_n < ${L + 1}$: số nguyên $m = ${L + 1}$ không thoả mãn, còn $m = ${L}$ thoả mãn. Vậy $m = ${L}$.`);
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $${rec}$ với mọi $n \\ge 1$. ${up ? 'Tìm số nguyên $M$ nhỏ nhất sao cho $u_n < M$ với mọi $n \\ge 1$.' : 'Tìm số nguyên $m$ lớn nhất sao cho $u_n > m$ với mọi $n \\ge 1$.'}`, ans:L, lg,
+      verify:()=>{ const Lq = (a + Math.sqrt(a*a + 4*c))/2; let u = u1, all = true, some = false;
+        for(let n = 1; n < 3000 && Math.abs(u - Lq) > 1e-9; n++){ if(up ? !(u < o.ans) : !(u > o.ans)) all = false; if(up ? u > o.ans - 1 : u < o.ans + 1) some = true; u = Math.sqrt(a*u + c); }
+        return Math.abs(Lq - o.ans) < 1e-9 && all && some; }};
+    return o; }
+  return null;
+});
+
+/* 36. TLN VD — dãy phụ u_n² hoặc 1/u_n² là cấp số cộng */
+GT(11,1,0,'VD','HSG: dãy u_{n+1} = √(u_n² + d) hoặc u_{n+1} = u_n/√(1 + d·u_n²) — bình phương (nghịch đảo bình phương) thành cấp số cộng, tìm số hạng tổng quát; tìm chỉ số n để u_n nhận giá trị cho trước', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.int(1, 6), d = R.int(1, 9), V = R.int(a + 1, 99), Q = V*V - a*a; if(Q%d) continue;
+    const n = Q/d + 1; if(!dsOk(n) || n < 4) continue;
+    if(R.rnd() < 0.5){
+      const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $u_{n+1} = \\sqrt{u_n^2 + ${d}}$ với mọi $n \\ge 1$. Tìm số nguyên dương $n$ sao cho $u_n = ${V}$.`, ans:n,
+        lg:`Dãy dương và $u_{n+1}^2 = u_n^2 + ${d}$: dãy $(u_n^2)$ là cấp số cộng có số hạng đầu $${a*a}$, công sai $${d}$, nên $u_n^2 = ${dsJ([[a*a, ''], [d, '(n - 1)']])}$.<br>$u_n = ${V} \\iff ${dsJ([[a*a, ''], [d, '(n - 1)']])} = ${V*V} \\iff ${d === 1 ? 'n - 1' : d + '(n - 1)'} = ${Q} \\iff n = ${n}$.`,
+        verify:()=>{ let u = a, i = 1; while(u < V - 1e-9 && i < 20000){ u = Math.sqrt(u*u + d); i++; } return Math.abs(u - V) < 1e-6 && i === o.ans; }};
+      return o; }
+    const u1T = a === 1 ? '1' : `\\dfrac{1}{${a}}`;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1T}$ và $u_{n+1} = \\dfrac{u_n}{\\sqrt{1 + ${d === 1 ? '' : d}u_n^2}}$ với mọi $n \\ge 1$. Tìm số nguyên dương $n$ sao cho $u_n = \\dfrac{1}{${V}}$.`, ans:n,
+      lg:`Dãy dương. Nghịch đảo rồi bình phương: $\\dfrac{1}{u_{n+1}^2} = \\dfrac{1 + ${d === 1 ? '' : d}u_n^2}{u_n^2} = \\dfrac{1}{u_n^2} + ${d}$: dãy $\\left(\\dfrac{1}{u_n^2}\\right)$ là cấp số cộng có số hạng đầu $${a*a}$, công sai $${d}$, nên $\\dfrac{1}{u_n^2} = ${dsJ([[a*a, ''], [d, '(n - 1)']])}$.<br>`
+        + `$u_n = \\dfrac{1}{${V}} \\iff ${dsJ([[a*a, ''], [d, '(n - 1)']])} = ${V*V} \\iff ${d === 1 ? 'n - 1' : d + '(n - 1)'} = ${Q} \\iff n = ${n}$.`,
+      verify:()=>{ let u = 1/a, i = 1; while(1/u < V - 1e-9 && i < 20000){ u = u/Math.sqrt(1 + d*u*u); i++; } return Math.abs(1/u - V) < 1e-6 && i === o.ans; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-05.2 [HSG] Dãy số truy hồi: 16 TLN + 4 TL) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-05.2 [HSG] Dãy số truy hồi (11|1|0), đợt 4 (4 dạng tự luận — chỉ bài chứng minh). Claude viết.
+// Bám khung đề HSG cấp tỉnh: chứng minh dãy tăng và bị chặn, chứng minh bất đẳng thức tổng (kiểu Σ a_k/a_{k+1} < 1), tính chất số học của dãy nguyên.
+// Chuỗi: √(a·u_n + c) bị chặn, tăng, co về L → u_{n+1} = u_n² − u_n + 1 (u_n² + u_n): khử liên tiếp, tổng bị chặn
+// → u_{n+2} = a·u_{n+1} ∓ u_n: đại lượng bất biến, nguyên tố cùng nhau, số chính phương → dãy Newton (u_n² + c)/(2u_n): Cô-si, giảm, sai số giảm một nửa.
+const dsNear = (x, y)=> Math.abs(x - y) < 1e-9*Math.max(1, Math.abs(y));
+
+/* TL1. VD — u_{n+1} = √(a·u_n + c): bị chặn trên, tăng, co về L */
+GE(11,1,0,'VD','HSG (tự luận): dãy u_{n+1} = √(a·u_n + c) với 0 ≤ u_1 < L (L² = aL + c) — chứng minh u_n < L bằng quy nạp, chứng minh dãy tăng (u_{n+1}² − u_n² = (L − u_n)(u_n + L − a)), chứng minh L − u_{n+1} ≤ (a/L)(L − u_n)', R=>{
+  for(let g = 0; g < 100; g++){
+    const a = R.int(1, 4), L = R.int(a + 1, 12), c = L*L - a*L, u1 = R.int(0, L - 1), aT = a === 1 ? '' : a;
+    const seq = [u1]; for(let i = 0; i < 40 && L - seq[i] > 1e-6; i++) seq.push(Math.sqrt(a*seq[i] + c));   // dừng khi đã sát L (sai số làm tròn)
+    return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = \\sqrt{${aT}u_n + ${c}}$ với mọi $n \\ge 1$.`, [
+      {q:`Chứng minh rằng $0 \\le u_n < ${L}$ với mọi $n \\ge 1$.`,
+       a:`Quy nạp. Với $n = 1$: $0 \\le u_1 = ${u1} < ${L}$.<br>Giả sử $0 \\le u_n < ${L}$. Khi đó $u_{n+1} = \\sqrt{${aT}u_n + ${c}} \\ge 0$ và $u_{n+1} < \\sqrt{${a === 1 ? '' : a + '\\cdot '}${L} + ${c}} = \\sqrt{${L*L}} = ${L}$.<br>Vậy $0 \\le u_n < ${L}$ với mọi $n \\ge 1$.`,
+       chk:()=> seq.every(x=> x >= 0 && x < L)},
+      {q:`Chứng minh rằng dãy số $(u_n)$ là dãy tăng.`,
+       a:`$u_{n+1}^2 - u_n^2 = ${aT}u_n + ${c} - u_n^2 = (${L} - u_n)(u_n + ${L - a})$ (vì $x^2 - ${aT}x - ${c} = (x - ${L})(x + ${L - a})$).<br>Theo câu a), $${L} - u_n > 0$ và $u_n + ${L - a} > 0$ nên $u_{n+1}^2 > u_n^2$. Hai số không âm nên $u_{n+1} > u_n$: dãy tăng.`,
+       chk:()=> seq.every((x, i)=> i === 0 || x > seq[i - 1]) && [0, 1.5, L - 0.5].every(x=> dsNear(a*x + c - x*x, (L - x)*(x + L - a)))},
+      {q:`Chứng minh rằng $${L} - u_{n+1} \\le ${frT(a, L)}(${L} - u_n)$ với mọi $n \\ge 1$.`,
+       a:`$${L} - u_{n+1} = \\dfrac{${L*L} - u_{n+1}^2}{${L} + u_{n+1}} = \\dfrac{${L*L} - ${aT}u_n - ${c}}{${L} + u_{n+1}} = \\dfrac{${aT}(${L} - u_n)}{${L} + u_{n+1}}$.<br>Vì $u_{n+1} \\ge 0$ nên $${L} + u_{n+1} \\ge ${L}$; lại có $${L} - u_n > 0$, nên $${L} - u_{n+1} \\le \\dfrac{${aT}(${L} - u_n)}{${L}} = ${frT(a, L)}(${L} - u_n)$.`,
+       chk:()=> seq.slice(0, -1).every((x, i)=> L - seq[i + 1] <= a/L*(L - x) + 1e-12)}]); }
+  return null;
+});
+
+/* TL2. VD — khử liên tiếp, chứng minh tổng bị chặn */
+GE(11,1,0,'VD','HSG (tự luận): dãy u_{n+1} = u_n² − u_n + 1 (hoặc u_{n+1} = u_n² + u_n) — chứng minh dãy tăng, chứng minh đẳng thức tách 1/u_n = 1/(u_n − 1) − 1/(u_{n+1} − 1) (hoặc u_n/u_{n+1} = 1/u_n − 1/u_{n+1}), chứng minh tổng các số hạng bị chặn', R=>{
+  if(R.rnd() < 0.5){
+    const a = R.int(2, 9), seq = [a]; for(let i = 0; i < 5 && seq[i] < 1e4; i++) seq.push(seq[i]**2 - seq[i] + 1);
+    const bT = a === 2 ? '1' : `\\dfrac{1}{${a - 1}}`;
+    return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $u_{n+1} = u_n^2 - u_n + 1$ với mọi $n \\ge 1$.`, [
+      {q:`Chứng minh rằng $u_n \\ge ${a}$ với mọi $n$ và $(u_n)$ là dãy tăng.`,
+       a:`$u_{n+1} - u_n = u_n^2 - 2u_n + 1 = (u_n - 1)^2 \\ge 0$. Quy nạp: $u_1 = ${a}$; nếu $u_n \\ge ${a}$ thì $u_{n+1} \\ge u_n \\ge ${a}$. Vậy $u_n \\ge ${a}$ với mọi $n$.<br>Khi đó $u_n - 1 \\ge ${a - 1} > 0$ nên $u_{n+1} - u_n = (u_n - 1)^2 > 0$: dãy tăng.`,
+       chk:()=> seq.every((x, i)=> x >= a && (i === 0 || x > seq[i - 1]))},
+      {q:`Chứng minh rằng $\\dfrac{1}{u_n} = \\dfrac{1}{u_n - 1} - \\dfrac{1}{u_{n+1} - 1}$ với mọi $n \\ge 1$.`,
+       a:`Từ giả thiết $u_{n+1} - 1 = u_n^2 - u_n = u_n(u_n - 1)$ (khác $0$ theo câu a). Do đó $\\dfrac{1}{u_{n+1} - 1} = \\dfrac{1}{u_n(u_n - 1)} = \\dfrac{1}{u_n - 1} - \\dfrac{1}{u_n}$, tức là $\\dfrac{1}{u_n} = \\dfrac{1}{u_n - 1} - \\dfrac{1}{u_{n+1} - 1}$.`,
+       chk:()=> seq.slice(0, -1).every((x, i)=> dsNear(1/x, 1/(x - 1) - 1/(seq[i + 1] - 1)))},
+      {q:`Chứng minh rằng $\\dfrac{1}{u_1} + \\dfrac{1}{u_2} + \\cdots + \\dfrac{1}{u_m} < ${bT}$ với mọi số nguyên dương $m$.`,
+       a:`Cộng các đẳng thức ở câu b) với $n = 1, 2, \\ldots, m$, các số hạng khử liên tiếp:<br>$\\dfrac{1}{u_1} + \\cdots + \\dfrac{1}{u_m} = \\dfrac{1}{u_1 - 1} - \\dfrac{1}{u_{m+1} - 1} = ${bT} - \\dfrac{1}{u_{m+1} - 1}$.<br>Vì $u_{m+1} - 1 > 0$ nên tổng nhỏ hơn $${bT}$.`,
+       chk:()=>{ let s = 0; return seq.every(x=>{ s += 1/x; return s < 1/(a - 1); }); }}]); }
+  const p = R.int(1, 9), u1T = p === 1 ? '1' : `\\dfrac{1}{${p}}`, seq = [1/p]; for(let i = 0; i < 12 && seq[i] < 1e5; i++) seq.push(seq[i]**2 + seq[i]);
+  return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1T}$ và $u_{n+1} = u_n^2 + u_n$ với mọi $n \\ge 1$.`, [
+    {q:`Chứng minh rằng $u_n > 0$ với mọi $n$ và $(u_n)$ là dãy tăng.`,
+     a:`Quy nạp: $u_1 > 0$; nếu $u_n > 0$ thì $u_{n+1} = u_n(u_n + 1) > 0$. Khi đó $u_{n+1} - u_n = u_n^2 > 0$: dãy tăng.`,
+     chk:()=> seq.every((x, i)=> x > 0 && (i === 0 || x > seq[i - 1]))},
+    {q:`Chứng minh rằng $\\dfrac{u_n}{u_{n+1}} = \\dfrac{1}{u_n} - \\dfrac{1}{u_{n+1}}$ với mọi $n \\ge 1$.`,
+     a:`$\\dfrac{1}{u_n} - \\dfrac{1}{u_{n+1}} = \\dfrac{u_{n+1} - u_n}{u_n u_{n+1}} = \\dfrac{u_n^2}{u_n u_{n+1}} = \\dfrac{u_n}{u_{n+1}}$.`,
+     chk:()=> seq.slice(0, -1).every((x, i)=> dsNear(x/seq[i + 1], 1/x - 1/seq[i + 1]))},
+    {q:`Chứng minh rằng $\\dfrac{u_1}{u_2} + \\dfrac{u_2}{u_3} + \\cdots + \\dfrac{u_m}{u_{m+1}} < ${p}$ với mọi số nguyên dương $m$.`,
+     a:`Cộng các đẳng thức ở câu b) với $n = 1, 2, \\ldots, m$: $\\dfrac{u_1}{u_2} + \\cdots + \\dfrac{u_m}{u_{m+1}} = \\dfrac{1}{u_1} - \\dfrac{1}{u_{m+1}} = ${p} - \\dfrac{1}{u_{m+1}} < ${p}$ (vì $u_{m+1} > 0$).`,
+     chk:()=>{ let s = 0; return seq.slice(0, -1).every((x, i)=>{ s += x/seq[i + 1]; return s < p; }); }}]);
+});
+
+/* TL3. VD — đại lượng bất biến của dãy u_{n+2} = a·u_{n+1} ∓ u_n */
+GE(11,1,0,'VD','HSG (tự luận): dãy nguyên u_1 = 1, u_2 = a, u_{n+2} = a·u_{n+1} − u_n (hoặc + u_n) — chứng minh đại lượng u_{n+1}² − a·u_n·u_{n+1} ± u_n² không đổi (đổi dấu), suy ra u_n, u_{n+1} nguyên tố cùng nhau và (a² ∓ 4)u_n² + … là số chính phương', R=>{
+  const a = R.int(3, 9), minus = R.rnd() < 0.55, seq = [1, a]; for(let i = 2; i < 8; i++) seq.push(minus ? a*seq[i - 1] - seq[i - 2] : a*seq[i - 1] + seq[i - 2]);
+  const D = n=> seq[n]**2 - a*seq[n - 1]*seq[n] + (minus ? 1 : -1)*seq[n - 1]**2;   // n: chỉ số mảng của u_{n+1}
+  if(minus) return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = 1$, $u_2 = ${a}$ và $u_{n+2} = ${a}u_{n+1} - u_n$ với mọi $n \\ge 1$.`, [
+    {q:`Chứng minh rằng $u_{n+1}^2 - ${a}u_nu_{n+1} + u_n^2 = 1$ với mọi $n \\ge 1$.`,
+     a:`Đặt $D_n = u_{n+1}^2 - ${a}u_nu_{n+1} + u_n^2$. Ta có $D_1 = ${a*a} - ${a*a} + 1 = 1$.<br>$D_{n+1} = u_{n+2}(u_{n+2} - ${a}u_{n+1}) + u_{n+1}^2 = -u_{n+2}u_n + u_{n+1}^2 = -(${a}u_{n+1} - u_n)u_n + u_{n+1}^2 = D_n$.<br>Vậy $D_n = D_1 = 1$ với mọi $n$.`,
+     chk:()=> seq.slice(1).every((_, i)=> D(i + 1) === 1)},
+    {q:`Chứng minh rằng $u_n$ và $u_{n+1}$ là hai số nguyên dương nguyên tố cùng nhau.`,
+     a:`Quy nạp, $u_n$ nguyên dương và $u_{n+1} \\ge u_n$: $u_2 = ${a} > u_1$; nếu $u_{n+1} \\ge u_n$ thì $u_{n+2} = ${a}u_{n+1} - u_n \\ge ${a - 1}u_{n+1} > u_{n+1}$.<br>Nếu $d$ là ước chung dương của $u_n$ và $u_{n+1}$ thì $d$ chia hết $u_{n+1}^2 - ${a}u_nu_{n+1} + u_n^2 = 1$, nên $d = 1$.`,
+     chk:()=> seq.every((x, i)=> x > 0 && (i === 0 || gcdI(x, seq[i - 1]) === 1))},
+    {q:`Chứng minh rằng $${a*a - 4}u_n^2 + 4$ là số chính phương với mọi $n \\ge 1$.`,
+     a:`Từ câu a): $u_{n+1}^2 - ${a}u_nu_{n+1} = 1 - u_n^2$. Do đó $(2u_{n+1} - ${a}u_n)^2 = 4(u_{n+1}^2 - ${a}u_nu_{n+1}) + ${a*a}u_n^2 = 4 - 4u_n^2 + ${a*a}u_n^2 = ${a*a - 4}u_n^2 + 4$.<br>Vì $2u_{n+1} - ${a}u_n$ là số nguyên nên $${a*a - 4}u_n^2 + 4$ là số chính phương.`,
+     chk:()=> seq.every(x=>{ const v = (a*a - 4)*x*x + 4, r = Math.round(Math.sqrt(v)); return r*r === v; })}]);
+  return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = 1$, $u_2 = ${a}$ và $u_{n+2} = ${a}u_{n+1} + u_n$ với mọi $n \\ge 1$.`, [
+    {q:`Chứng minh rằng $u_{n+1}^2 - ${a}u_nu_{n+1} - u_n^2 = (-1)^n$ với mọi $n \\ge 1$.`,
+     a:`Đặt $D_n = u_{n+1}^2 - ${a}u_nu_{n+1} - u_n^2$. Ta có $D_1 = ${a*a} - ${a*a} - 1 = -1$.<br>$D_{n+1} = u_{n+2}(u_{n+2} - ${a}u_{n+1}) - u_{n+1}^2 = u_{n+2}u_n - u_{n+1}^2 = (${a}u_{n+1} + u_n)u_n - u_{n+1}^2 = -D_n$.<br>Vậy $D_n = (-1)^{n-1}D_1 = (-1)^n$ với mọi $n$.`,
+     chk:()=> seq.slice(1).every((_, i)=> D(i + 1) === (i%2 ? 1 : -1))},
+    {q:`Chứng minh rằng $u_n$ và $u_{n+1}$ là hai số nguyên dương nguyên tố cùng nhau.`,
+     a:`Quy nạp, $u_n$ nguyên dương (tổng các số nguyên dương). Nếu $d$ là ước chung dương của $u_n$ và $u_{n+1}$ thì $d$ chia hết $u_{n+1}^2 - ${a}u_nu_{n+1} - u_n^2 = (-1)^n$, nên $d = 1$.`,
+     chk:()=> seq.every((x, i)=> x > 0 && (i === 0 || gcdI(x, seq[i - 1]) === 1))},
+    {q:`Chứng minh rằng $${a*a + 4}u_n^2 + 4\\cdot(-1)^n$ là số chính phương với mọi $n \\ge 1$.`,
+     a:`Từ câu a): $u_{n+1}^2 - ${a}u_nu_{n+1} = u_n^2 + (-1)^n$. Do đó $(2u_{n+1} - ${a}u_n)^2 = 4(u_{n+1}^2 - ${a}u_nu_{n+1}) + ${a*a}u_n^2 = ${a*a + 4}u_n^2 + 4\\cdot(-1)^n$.<br>Vì $2u_{n+1} - ${a}u_n$ là số nguyên nên đó là số chính phương.`,
+     chk:()=> seq.every((x, i)=>{ const v = (a*a + 4)*x*x + 4*((i + 1)%2 ? -1 : 1), r = Math.round(Math.sqrt(v)); return r*r === v; })}]);
+});
+
+/* TL4. VD — dãy Newton u_{n+1} = (u_n² + c)/(2u_n) */
+GE(11,1,0,'VD','HSG (tự luận): dãy u_{n+1} = (u_n² + c)/(2u_n) (tính gần đúng √c) — chứng minh u_n ≥ √c từ n = 2 (Cô-si), dãy giảm từ n = 2, và u_{n+1} − √c = (u_n − √c)²/(2u_n) ≤ (u_n − √c)/2', R=>{
+  for(let g = 0; g < 100; g++){
+    const c = R.pick([2, 3, 5, 6, 7, 8, 10, 11, 12, 13, 15, 4, 9, 16, 25]), a = R.int(1, 9), s = Math.sqrt(c); if(Math.abs(a - s) < 1e-9) continue;
+    const sT = sqT(c), seq = [a]; for(let i = 0; i < 8; i++) seq.push((seq[i]**2 + c)/(2*seq[i]));
+    return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${a}$ và $u_{n+1} = \\dfrac{u_n^2 + ${c}}{2u_n}$ với mọi $n \\ge 1$.`, [
+      {q:`Chứng minh rằng $u_n > 0$ với mọi $n$ và $u_n \\ge ${sT}$ với mọi $n \\ge 2$.`,
+       a:`Quy nạp: $u_1 > 0$; nếu $u_n > 0$ thì $u_{n+1} = \\dfrac{u_n^2 + ${c}}{2u_n} > 0$.<br>Với $n \\ge 1$, theo bất đẳng thức Cô-si: $u_{n+1} = \\dfrac{1}{2}\\left(u_n + \\dfrac{${c}}{u_n}\\right) \\ge \\sqrt{u_n\\cdot\\dfrac{${c}}{u_n}} = ${sT}$. Vậy $u_n \\ge ${sT}$ với mọi $n \\ge 2$.`,
+       chk:()=> seq.every((x, i)=> x > 0 && (i === 0 || x >= s - 1e-12))},
+      {q:`Chứng minh rằng $u_{n+1} \\le u_n$ với mọi $n \\ge 2$.`,
+       a:`$u_{n+1} - u_n = \\dfrac{u_n^2 + ${c}}{2u_n} - u_n = \\dfrac{${c} - u_n^2}{2u_n}$. Với $n \\ge 2$: $u_n \\ge ${sT} > 0$ nên $u_n^2 \\ge ${c}$, suy ra $u_{n+1} - u_n \\le 0$.`,
+       chk:()=> seq.every((x, i)=> i < 2 || x <= seq[i - 1] + 1e-12)},
+      {q:`Chứng minh rằng $0 \\le u_{n+1} - ${sT} \\le \\dfrac{1}{2}\\left(u_n - ${sT}\\right)$ với mọi $n \\ge 2$.`,
+       a:`$u_{n+1} - ${sT} = \\dfrac{u_n^2 - ${sqT(4*c)}u_n + ${c}}{2u_n} = \\dfrac{\\left(u_n - ${sT}\\right)^2}{2u_n} \\ge 0$.<br>Với $n \\ge 2$: $0 \\le u_n - ${sT} \\le u_n$ nên $\\dfrac{u_n - ${sT}}{u_n} \\le 1$, do đó $u_{n+1} - ${sT} = \\dfrac{u_n - ${sT}}{2}\\cdot\\dfrac{u_n - ${sT}}{u_n} \\le \\dfrac{1}{2}\\left(u_n - ${sT}\\right)$.`,
+       chk:()=> seq.every((x, i)=> i < 1 || i + 1 >= seq.length || (seq[i + 1] - s >= -1e-12 && seq[i + 1] - s <= (x - s)/2 + 1e-12))}]); }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-07.4 [HSG] Tính tổng bằng khử liên tiếp; cấp số cộng, cấp số nhân với điều kiện ẩn (11|1|2), đợt 1 (5 dạng TLN). Claude viết.
+// Bám khung đề HSG cấp tỉnh: cấp số cộng tăng có a1 + ap + aq cho trước và ba số a1; a2 + x; a3 + y lập cấp số nhân; ba số lập cấp số nhân biết tổng và tổng bình phương.
+// Chuỗi: hai điều kiện ẩn → phương trình bậc hai theo công sai (loại nghiệm) → hằng đẳng thức 1 + q² + q⁴ = (1 + q + q²)(1 − q + q²)
+// → tổng theo khối S_k, S_2k, S_3k → khử liên tiếp 1/(u_k·u_{k+1}) → khử liên tiếp 1/(√u_k + √u_{k+1}).
+const csJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + (/^\d/.test(b) ? '\\cdot ' : '') + b);
+    return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+const csOk = v=> Number.isInteger(v) && String(v).length <= 4;
+const csPM = v=> v < 0 ? ` - ${-v}` : ` + ${v}`;
+
+/* 30. TLN VD — cấp số cộng tăng: a1 + ap + aq = K và a1; a2 + x; a3 + y lập cấp số nhân */
+GT(11,1,2,'VD','HSG: cấp số cộng tăng có a₁ + a_p + a_q cho trước và ba số a₁; a₂ + x; a₃ + y lập cấp số nhân — lập hệ theo a₁, d, đưa về phương trình bậc hai theo d, loại nghiệm không làm dãy tăng; tính tổng n số hạng đầu', R=>{
+  for(let g = 0; g < 400; g++){
+    const a1 = R.int(1, 9), d = R.int(1, 6), r = R.int(2, 4), x = a1*r - a1 - d, y = a1*r*r - a1 - 2*d, e = y - 2*x; if(!x || !y || !e) continue;
+    const p = R.int(2, 8), q = R.int(p + 1, 12), s = p + q - 2, K = 3*a1 + s*d;
+    const B = 6*x + s*e, C = 3*x*x - K*e; if(3*d*d + B*d + C !== 0) continue;
+    const num = C, den = 3*d, d2 = num/den; if(d2 > 0) continue;
+    const n = R.int(10, 25), S = n*a1 + n*(n - 1)*d/2; if(!csOk(S)) continue;
+    const t2 = `a_2${csPM(x)}`, t3 = `a_3${csPM(y)}`;
+    const lg = `Gọi $d > 0$ là công sai. Từ $a_1 + a_{${p}} + a_{${q}} = ${K}$: $3a_1 + ${s}d = ${K}$, nên $a_1 = \\dfrac{${K} - ${s}d}{3}$.<br>`
+      + `Ba số $a_1$; $a_1 + d${csPM(x)}$; $a_1 + 2d${csPM(y)}$ lập cấp số nhân: $(a_1 + d${csPM(x)})^2 = a_1\\left(a_1 + 2d${csPM(y)}\\right)$ $\\iff ${csJ([[e, 'a_1']])} = (d${csPM(x)})^2$.<br>`
+      + `Thế $a_1$: $(${K} - ${s}d)\\cdot ${e < 0 ? `(${e})` : e} = 3(d${csPM(x)})^2 \\iff ${csJ([[3, 'd^2'], [B, 'd'], [C, '']])} = 0 \\iff d = ${d}$ hoặc $d = ${frT(num, den)}$ (loại vì dãy tăng).<br>`
+      + `Suy ra $a_1 = ${a1}$, $d = ${d}$ và $S_{${n}} = ${n}\\cdot ${a1} + \\dfrac{${n}\\cdot ${n - 1}}{2}\\cdot ${d} = ${S}$.`;
+    const o = {stem:`Cho cấp số cộng tăng $(a_n)$ thoả mãn $a_1 + a_{${p}} + a_{${q}} = ${K}$ và ba số $a_1$; $${t2}$; $${t3}$ theo thứ tự lập thành một cấp số nhân. Tính tổng $${n}$ số hạng đầu của $(a_n)$.`, ans:S, lg,
+      verify:()=>{ const sol = []; for(let dd = 1; dd <= 60; dd++) for(let aa = -200; aa <= 200; aa++){ if(3*aa + s*dd !== K) continue; const b2 = aa + dd + x, b3 = aa + 2*dd + y; if(aa !== 0 && b2*b2 === aa*b3) sol.push([aa, dd]); }
+        if(sol.length !== 1) return false; const [aa, dd] = sol[0]; let t = 0; for(let i = 0; i < n; i++) t += aa + i*dd; return t === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 31. TLN VD — ba số dương lập cấp số nhân biết tổng và tổng bình phương */
+GT(11,1,2,'VD','HSG: ba số dương lập cấp số nhân biết tổng S và tổng các bình phương Q — dùng 1 + q² + q⁴ = (1 + q + q²)(1 − q + q²) suy ra số ở giữa b = (S² − Q)/(2S), rồi giải hệ tổng – tích tìm hai số còn lại', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.int(1, 9), q = R.int(2, 4), b = a*q, c = a*q*q, S = a + b + c, Q = a*a + b*b + c*c; if(S > 400) continue;
+    const ask = R.pick(['max', 'mid', 'prod', 'min']), v = ask === 'max' ? c : ask === 'mid' ? b : ask === 'prod' ? a*b*c : a; if(!csOk(v)) continue;
+    const askT = {max:'Tìm số lớn nhất trong ba số đó.', mid:'Tìm số ở giữa (theo thứ tự lập cấp số nhân).', prod:'Tính tích của ba số đó.', min:'Tìm số nhỏ nhất trong ba số đó.'}[ask];
+    const lg = `Gọi ba số là $u$, $uq$, $uq^2$ ($u > 0$, $q > 0$). Ta có $u(1 + q + q^2) = ${S}$ và $u^2(1 + q^2 + q^4) = ${Q}$.<br>`
+      + `Vì $1 + q^2 + q^4 = (1 + q + q^2)(1 - q + q^2)$ nên chia vế theo vế: $u(1 - q + q^2) = \\dfrac{${Q}}{${S}} = ${frT(Q, S)}$.<br>`
+      + `Trừ hai đẳng thức: $2uq = ${S} - ${frT(Q, S)}$, nên số ở giữa là $uq = ${b}$. Hai số còn lại có tổng $${S} - ${b} = ${a + c}$ và tích $${b}^2 = ${b*b}$, là nghiệm của $t^2 - ${a + c}t + ${b*b} = 0$: $t = ${a}$, $t = ${c}$.<br>`
+      + `Ba số là $${a}$; $${b}$; $${c}$ (hoặc theo thứ tự ngược lại). ${ask === 'prod' ? `Tích bằng $${b}^3 = ${v}$.` : `Đáp số: $${v}$.`}`;
+    const o = {stem:`Ba số dương theo thứ tự lập thành một cấp số nhân, có tổng bằng $${S}$ và tổng các bình phương bằng $${Q}$. ${askT}`, ans:v, lg,
+      verify:()=>{ const T = []; for(let x1 = 1; x1 < S; x1++) for(let x2 = x1; x1 + x2 < S; x2++){ const x3 = S - x1 - x2; if(x3 >= x2 && x2*x2 === x1*x3 && x1*x1 + x2*x2 + x3*x3 === Q) T.push([x1, x2, x3]); }
+        if(T.length !== 1) return false; const [x1, x2, x3] = T[0]; return o.ans === (ask === 'max' ? x3 : ask === 'mid' ? x2 : ask === 'prod' ? x1*x2*x3 : x1); }};
+    return o; }
+  return null;
+});
+
+/* 32. TLN VD — tổng theo khối: S_k, S_2k − S_k, S_3k − S_2k lập cấp số cộng */
+GT(11,1,2,'VD','HSG: cấp số cộng biết S_k và S_2k — các tổng theo khối S_k, S_2k − S_k, S_3k − S_2k, … lập cấp số cộng công sai k²d, suy ra S_3k = 3(S_2k − S_k) hoặc S_4k = 6S_2k − 8S_k', R=>{
+  for(let g = 0; g < 200; g++){
+    const u1 = R.int(-20, 30), d = R.nz(-4, 5), k = R.int(4, 15), SS = n=> n*u1 + n*(n - 1)*d/2, A = SS(k), B = SS(2*k); if(A === B) continue;
+    const four = R.rnd() < 0.4, v = four ? SS(4*k) : SS(3*k); if(!csOk(v)) continue;
+    const D = B - 2*A;
+    const lg = `Chia các số hạng thành từng khối $${k}$ số hạng liên tiếp. Mỗi số hạng của khối sau lớn hơn số hạng tương ứng của khối trước $${k}d$, nên tổng các khối $S_{${k}}$, $S_{${2*k}} - S_{${k}}$, $S_{${3*k}} - S_{${2*k}}$, $\\ldots$ lập cấp số cộng (công sai $${k*k}d$).<br>`
+      + `Khối đầu bằng $${A}$, khối thứ hai bằng $${B} - ${A < 0 ? `(${A})` : A} = ${B - A}$, công sai các khối là $${D}$.<br>`
+      + (four ? `Do đó $S_{${4*k}} = ${A} + ${B - A < 0 ? `(${B - A})` : B - A} + ${B - A + D < 0 ? `(${B - A + D})` : B - A + D} + ${B - A + 2*D < 0 ? `(${B - A + 2*D})` : B - A + 2*D} = ${v}$.`
+              : `Do đó $S_{${3*k}} = ${A} + ${B - A < 0 ? `(${B - A})` : B - A} + ${B - A + D < 0 ? `(${B - A + D})` : B - A + D} = 3(S_{${2*k}} - S_{${k}}) = ${v}$.`);
+    const o = {stem:`Cho cấp số cộng $(u_n)$ có tổng $${k}$ số hạng đầu bằng $${A}$ và tổng $${2*k}$ số hạng đầu bằng $${B}$. Tính tổng $${four ? 4*k : 3*k}$ số hạng đầu của cấp số cộng đó.`, ans:v, lg,
+      verify:()=>{ const dd = (B - 2*A)/(k*k), uu = (A - k*(k - 1)*dd/2)/k; let t = 0; for(let i = 0; i < (four ? 4 : 3)*k; i++) t += uu + i*dd; return Math.abs(t - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 33. TLN VD — khử liên tiếp 1/(u_k·u_{k+1}) */
+GT(11,1,2,'VD','HSG: tổng 1/(u₁u₂) + 1/(u₂u₃) + … + 1/(u_n·u_{n+1}) với (u_n) là cấp số cộng — tách 1/(u_k·u_{k+1}) = (1/d)(1/u_k − 1/u_{k+1}), khử liên tiếp được n/(u₁·u_{n+1}); tìm n để tổng bằng phân số cho trước', R=>{
+  for(let g = 0; g < 200; g++){
+    const u1 = R.int(1, 7), d = R.int(1, 6), n = R.int(5, 300), U = k=> u1 + (k - 1)*d, P0 = n, Q0 = u1*U(n + 1), gg = gcdI(P0, Q0), p = P0/gg, qq = Q0/gg;
+    if(!csOk(n)) continue;
+    const st = `\\dfrac{1}{${U(1)}\\cdot ${U(2)}} + \\dfrac{1}{${U(2)}\\cdot ${U(3)}} + \\dfrac{1}{${U(3)}\\cdot ${U(4)}} + \\cdots`;
+    const o = {stem:`Cho tổng gồm $n$ số hạng $S_n = ${st}$, trong đó mẫu số của các số hạng là tích hai số hạng liên tiếp của cấp số cộng $${U(1)}; ${U(2)}; ${U(3)}; \\ldots$ Tìm $n$ để $S_n = ${frT(p, qq)}$.`, ans:n,
+      lg:`Cấp số cộng có $u_1 = ${u1}$, công sai $${d}$, $u_k = ${csJ([[d, 'k'], [u1 - d, '']])}$. Ta có $\\dfrac{1}{u_ku_{k+1}} = ${d === 1 ? '' : `\\dfrac{1}{${d}}`}\\left(\\dfrac{1}{u_k} - \\dfrac{1}{u_{k+1}}\\right)$.<br>`
+        + `Khử liên tiếp: $S_n = ${d === 1 ? '' : `\\dfrac{1}{${d}}`}\\left(${u1 === 1 ? '1' : `\\dfrac{1}{${u1}}`} - \\dfrac{1}{u_{n+1}}\\right) = ${u1 === 1 ? `\\dfrac{n}{u_{n+1}} = \\dfrac{n}{${csJ([[d, 'n'], [1, '']])}}` : `\\dfrac{n}{${u1}u_{n+1}} = \\dfrac{n}{${u1}(${csJ([[d, 'n'], [u1, '']])})}`}$.<br>`
+        + `$S_n = ${frT(p, qq)} \\iff ${qq}n = ${p === 1 ? '' : p}${u1 === 1 ? '' : (p === 1 ? '' : '\\cdot ') + u1}(${csJ([[d, 'n'], [u1, '']])})${qq - p*u1*d === 1 ? '' : ` \\iff ${qq - p*u1*d}n = ${p*u1*u1}`} \\iff n = ${n}$.`,
+      verify:()=>{ let s = 0; for(let k = 1; k <= 2000; k++){ s += 1/(U(k)*U(k + 1)); if(Math.abs(s - p/qq) < 1e-13) return k === o.ans; } return false; }};
+    return o; }
+  return null;
+});
+
+/* 34. TLN VD — khử liên tiếp 1/(√u_k + √u_{k+1}) */
+GT(11,1,2,'VD','HSG: tổng 1/(√u₁ + √u₂) + … + 1/(√u_n + √u_{n+1}) với (u_n) là cấp số cộng dương — nhân liên hợp được (√u_{k+1} − √u_k)/d, khử liên tiếp; tìm n để tổng bằng số nguyên cho trước', R=>{
+  for(let g = 0; g < 200; g++){
+    const s = R.int(1, 5), d = R.int(1, 8), m = R.int(1, 12), u1 = s*s, n = 2*s*m + m*m*d; if(!csOk(n) || n < 5) continue;
+    const U = k=> u1 + (k - 1)*d, W = (s + m*d)**2;
+    const o = {stem:`Cho cấp số cộng $(u_n)$ có $u_1 = ${u1}$ và công sai $d = ${d}$. Tìm số nguyên dương $n$ sao cho $\\dfrac{1}{\\sqrt{u_1} + \\sqrt{u_2}} + \\dfrac{1}{\\sqrt{u_2} + \\sqrt{u_3}} + \\cdots + \\dfrac{1}{\\sqrt{u_n} + \\sqrt{u_{n+1}}} = ${m}$.`, ans:n,
+      lg:`Nhân liên hợp: $\\dfrac{1}{\\sqrt{u_k} + \\sqrt{u_{k+1}}} = \\dfrac{\\sqrt{u_{k+1}} - \\sqrt{u_k}}{u_{k+1} - u_k} = \\dfrac{\\sqrt{u_{k+1}} - \\sqrt{u_k}}{${d}}$.<br>`
+        + `Khử liên tiếp, vế trái bằng $\\dfrac{\\sqrt{u_{n+1}} - \\sqrt{u_1}}{${d}} = \\dfrac{\\sqrt{u_{n+1}} - ${s}}{${d}}$. Phương trình $\\iff \\sqrt{u_{n+1}} = ${s} + ${m*d} = ${s + m*d} \\iff u_{n+1} = ${W}$.<br>`
+        + `Mà $u_{n+1} = ${u1} + ${d === 1 ? '' : d}n$ nên $${d === 1 ? '' : d}n = ${W - u1}$, $n = ${n}$.`.replace('$1n', '$n'),
+      verify:()=>{ let t = 0; for(let k = 1; k <= 10000; k++){ t += 1/(Math.sqrt(U(k)) + Math.sqrt(U(k + 1))); if(Math.abs(t - m) < 1e-9) return k === o.ans; if(t > m + 1) break; } return false; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-07.4 [HSG] Tính tổng bằng khử liên tiếp; cấp số cộng, cấp số nhân với điều kiện ẩn (11|1|2), đợt 2 (6 dạng TLN). Claude viết.
+// Chuỗi: sai phân k(k + 1) = [k(k + 1)(k + 2) − (k − 1)k(k + 1)]/3 → 1/(k(k + 1)(k + 2)) → tổng "cấp số cộng nhân cấp số nhân" (S − qS)
+// → (2k + 1)/(k²(k + 1)²), 1/((k + 1)√k + k√(k + 1)) → nghiệm của đa thức bậc ba lập cấp số cộng, cấp số nhân → bài toán rạp hát.
+const csJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + (/^\d/.test(b) ? '\\cdot ' : '') + b);
+    return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+const csOk = v=> Number.isInteger(v) && String(v).length <= 4;
+
+/* 35. TLN VD — sai phân: tổng k(k + 1), k(k + 1)(k + 2), (2k − 1)(2k + 1) */
+GT(11,1,2,'VD','HSG: tổng 1·2 + 2·3 + … + n(n + 1), 1·2·3 + … + n(n + 1)(n + 2), 1·3 + 3·5 + … + (2n − 1)(2n + 1) — viết mỗi số hạng thành hiệu hai tích liên tiếp (sai phân), khử liên tiếp; tính tổng', R=>{
+  const T = [
+    {lo:8, hi:30, st:n=> `S = 1\\cdot 2 + 2\\cdot 3 + 3\\cdot 4 + \\cdots + ${n}\\cdot ${n + 1}`, f:k=> k*(k + 1), F:n=> n*(n + 1)*(n + 2)/3,
+     lg:n=> `Ta có $k(k + 1) = \\dfrac{k(k + 1)(k + 2) - (k - 1)k(k + 1)}{3}$. Cộng với $k = 1, 2, \\ldots, ${n}$, các số hạng khử liên tiếp:<br>$S = \\dfrac{${n}\\cdot ${n + 1}\\cdot ${n + 2}}{3} = ${n*(n + 1)*(n + 2)/3}$.`},
+    {lo:5, hi:12, st:n=> `S = 1\\cdot 2\\cdot 3 + 2\\cdot 3\\cdot 4 + \\cdots + ${n}\\cdot ${n + 1}\\cdot ${n + 2}`, f:k=> k*(k + 1)*(k + 2), F:n=> n*(n + 1)*(n + 2)*(n + 3)/4,
+     lg:n=> `Ta có $k(k + 1)(k + 2) = \\dfrac{k(k + 1)(k + 2)(k + 3) - (k - 1)k(k + 1)(k + 2)}{4}$. Cộng với $k = 1, 2, \\ldots, ${n}$, các số hạng khử liên tiếp:<br>$S = \\dfrac{${n}\\cdot ${n + 1}\\cdot ${n + 2}\\cdot ${n + 3}}{4} = ${n*(n + 1)*(n + 2)*(n + 3)/4}$.`},
+    {lo:5, hi:18, st:n=> `S = 1\\cdot 3 + 3\\cdot 5 + 5\\cdot 7 + \\cdots + ${2*n - 1}\\cdot ${2*n + 1}`, f:k=> (2*k - 1)*(2*k + 1), F:n=> ((2*n - 1)*(2*n + 1)*(2*n + 3) + 3)/6,
+     lg:n=> `Ta có $(2k - 1)(2k + 1) = \\dfrac{(2k - 1)(2k + 1)(2k + 3) - (2k - 3)(2k - 1)(2k + 1)}{6}$. Cộng với $k = 1, 2, \\ldots, ${n}$, các số hạng khử liên tiếp (số hạng bị trừ ứng với $k = 1$ bằng $-3$):<br>$S = \\dfrac{${2*n - 1}\\cdot ${2*n + 1}\\cdot ${2*n + 3} + 3}{6} = ${((2*n - 1)*(2*n + 1)*(2*n + 3) + 3)/6}$.`}];
+  for(let g = 0; g < 50; g++){
+    const t = R.pick(T), n = R.int(t.lo, t.hi), v = t.F(n); if(!csOk(v)) continue;
+    const o = {stem:`Tính tổng $${t.st(n)}$.`, ans:v, lg:t.lg(n), verify:()=>{ let s = 0; for(let k = 1; k <= n; k++) s += t.f(k); return s === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 36. TLN VD — khử liên tiếp 1/(k(k + 1)(k + 2)) */
+GT(11,1,2,'VD','HSG: tổng 1/(1·2·3) + 1/(2·3·4) + … + 1/(n(n + 1)(n + 2)) — tách 2/(k(k + 1)(k + 2)) = 1/(k(k + 1)) − 1/((k + 1)(k + 2)), khử liên tiếp được n(n + 3)/(4(n + 1)(n + 2)); tìm n để tổng bằng phân số cho trước', R=>{
+  for(let g = 0; g < 100; g++){
+    const n = R.int(3, 150), P = n*(n + 3), Q = 4*(n + 1)*(n + 2), gg = gcdI(P, Q), p = P/gg, q = Q/gg;
+    const o = {stem:`Tìm số nguyên dương $n$ sao cho $\\dfrac{1}{1\\cdot 2\\cdot 3} + \\dfrac{1}{2\\cdot 3\\cdot 4} + \\cdots + \\dfrac{1}{n(n + 1)(n + 2)} = ${frT(p, q)}$.`, ans:n,
+      lg:`Ta có $\\dfrac{2}{k(k + 1)(k + 2)} = \\dfrac{(k + 2) - k}{k(k + 1)(k + 2)} = \\dfrac{1}{k(k + 1)} - \\dfrac{1}{(k + 1)(k + 2)}$.<br>`
+        + `Khử liên tiếp: vế trái bằng $\\dfrac{1}{2}\\left(\\dfrac{1}{2} - \\dfrac{1}{(n + 1)(n + 2)}\\right) = \\dfrac{n(n + 3)}{4(n + 1)(n + 2)}$.<br>`
+        + `Phương trình $\\iff \\dfrac{1}{(n + 1)(n + 2)} = \\dfrac{1}{2} - 2\\cdot ${frT(p, q)} = ${frT(1, (n + 1)*(n + 2))} \\iff (n + 1)(n + 2) = ${(n + 1)*(n + 2)} = ${n + 1}\\cdot ${n + 2} \\iff n = ${n}$.`,
+      verify:()=>{ let s = 0; for(let k = 1; k <= 400; k++){ s += 1/(k*(k + 1)*(k + 2)); if(Math.abs(s - p/q) < 1e-14) return k === o.ans; } return false; }};
+    return o; }
+  return null;
+});
+
+/* 37. TLN VD — tổng (αk + β)·q^{k−1}: nhân với q rồi trừ */
+GT(11,1,2,'VD','HSG: tổng S = Σ (αk + β)·q^{k−1} (hệ số là cấp số cộng, nhân với lũy thừa của q) — xét S − qS để đưa về tổng cấp số nhân; tính tổng', R=>{
+  for(let g = 0; g < 200; g++){
+    const q = R.pick([2, 2, 3]), al = R.int(1, 3), be = R.int(-1, 3), n = R.int(5, q === 2 ? 10 : 7);
+    const c = k=> al*k + be; if(c(1) <= 0) continue;
+    const S = (()=>{ let s = 0; for(let k = 1; k <= n; k++) s += c(k)*q**(k - 1); return s; })(); if(!csOk(S)) continue;
+    const terms = [1, 2, 3].map(k=> k === 1 ? `${c(1)}` : `${c(k)}\\cdot ${q}${k === 2 ? '' : `^{${k - 1}}`}`).join(' + ');
+    const G = q*(q**(n - 1) - 1)/(q - 1);
+    const o = {stem:`Tính tổng $S = ${terms} + \\cdots + ${c(n)}\\cdot ${q}^{${n - 1}}$ (các hệ số $${c(1)}, ${c(2)}, ${c(3)}, \\ldots, ${c(n)}$ lập cấp số cộng).`, ans:S,
+      lg:`Ta có $${q}S = ${c(1)}\\cdot ${q} + ${c(2)}\\cdot ${q}^2 + \\cdots + ${c(n)}\\cdot ${q}^{${n}}$. Trừ theo vế (các hệ số liên tiếp hơn kém nhau $${al}$):<br>`
+        + `$S - ${q}S = ${c(1)} + ${al === 1 ? '' : al + '('}${q} + ${q}^2 + \\cdots + ${q}^{${n - 1}}${al === 1 ? '' : ')'} - ${c(n)}\\cdot ${q}^{${n}} = ${c(1)} + ${al === 1 ? '' : al + '\\cdot '}${G} - ${c(n)*q**n} = ${c(1) + al*G - c(n)*q**n}$.<br>`
+        + `Vậy $${q === 2 ? '-S' : '-2S'} = ${c(1) + al*G - c(n)*q**n}$, $S = ${S}$.`,
+      verify:()=>{ const s = c(1) + al*G - c(n)*q**n; return s/(1 - q) === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 38. TLN VD — (2k + 1)/(k²(k + 1)²) và 1/((k + 1)√k + k√(k + 1)) */
+GT(11,1,2,'VD','HSG: tổng 3/(1²·2²) + 5/(2²·3²) + … + (2n + 1)/(n²(n + 1)²) và 1/(2√1 + 1·√2) + 1/(3√2 + 2√3) + … — tách thành 1/k² − 1/(k + 1)² hoặc 1/√k − 1/√(k + 1), khử liên tiếp; tìm n', R=>{
+  for(let g = 0; g < 100; g++){
+    if(R.rnd() < 0.5){
+      const n = R.int(4, 120), p = n*(n + 2), q = (n + 1)**2;
+      const o = {stem:`Tìm số nguyên dương $n$ sao cho $\\dfrac{3}{1^2\\cdot 2^2} + \\dfrac{5}{2^2\\cdot 3^2} + \\cdots + \\dfrac{2n + 1}{n^2(n + 1)^2} = ${frT(p, q)}$.`, ans:n,
+        lg:`Ta có $\\dfrac{2k + 1}{k^2(k + 1)^2} = \\dfrac{(k + 1)^2 - k^2}{k^2(k + 1)^2} = \\dfrac{1}{k^2} - \\dfrac{1}{(k + 1)^2}$. Khử liên tiếp, vế trái bằng $1 - \\dfrac{1}{(n + 1)^2}$.<br>`
+          + `Phương trình $\\iff \\dfrac{1}{(n + 1)^2} = 1 - ${frT(p, q)} = ${frT(1, q)} \\iff n + 1 = ${n + 1} \\iff n = ${n}$.`,
+        verify:()=>{ let s = 0; for(let k = 1; k <= 300; k++){ s += (2*k + 1)/(k*k*(k + 1)**2); if(Math.abs(s - p/q) < 1e-14) return k === o.ans; } return false; }};
+      return o; }
+    const m = R.int(3, 99), n = m*m - 1; if(!csOk(n)) continue;
+    const o = {stem:`Tìm số nguyên dương $n$ sao cho $\\dfrac{1}{2\\sqrt{1} + 1\\cdot\\sqrt{2}} + \\dfrac{1}{3\\sqrt{2} + 2\\sqrt{3}} + \\cdots + \\dfrac{1}{(n + 1)\\sqrt{n} + n\\sqrt{n + 1}} = ${frT(m - 1, m)}$.`, ans:n,
+      lg:`Ta có $(k + 1)\\sqrt{k} + k\\sqrt{k + 1} = \\sqrt{k}\\sqrt{k + 1}\\left(\\sqrt{k + 1} + \\sqrt{k}\\right)$ nên<br>$\\dfrac{1}{(k + 1)\\sqrt{k} + k\\sqrt{k + 1}} = \\dfrac{\\sqrt{k + 1} - \\sqrt{k}}{\\sqrt{k}\\sqrt{k + 1}} = \\dfrac{1}{\\sqrt{k}} - \\dfrac{1}{\\sqrt{k + 1}}$.<br>`
+        + `Khử liên tiếp, vế trái bằng $1 - \\dfrac{1}{\\sqrt{n + 1}}$. Phương trình $\\iff \\dfrac{1}{\\sqrt{n + 1}} = ${frT(1, m)} \\iff n + 1 = ${m*m} \\iff n = ${n}$.`,
+      verify:()=>{ let s = 0; for(let k = 1; k <= 10000; k++){ s += 1/((k + 1)*Math.sqrt(k) + k*Math.sqrt(k + 1)); if(Math.abs(s - (m - 1)/m) < 1e-11) return k === o.ans; } return false; }};
+    return o; }
+  return null;
+});
+
+/* 39. TLN VD — ba nghiệm của phương trình bậc ba lập cấp số cộng / cấp số nhân */
+GT(11,1,2,'VD','HSG: tìm m để phương trình bậc ba x³ + ax² + bx + m = 0 có ba nghiệm phân biệt lập cấp số cộng (nghiệm giữa bằng −a/3) hoặc lập cấp số nhân (nghiệm giữa bằng −b/a, tích ba nghiệm bằng −m); thử lại', R=>{
+  const cubeRoots = (A, B, Cc)=>{ const f = x=> x**3 + A*x*x + B*x + Cc, rs = []; let px = -60, pf = f(px);
+    for(let x = -60 + 0.005; x <= 60; x += 0.005){ const fx = f(x); if(pf === 0) rs.push(px); else if(pf*fx < 0){ let lo = px, hi = x; for(let i = 0; i < 60; i++){ const mi = (lo + hi)/2; if(f(lo)*f(mi) <= 0) hi = mi; else lo = mi; } rs.push((lo + hi)/2); } px = x; pf = fx; } return rs; };
+  for(let g = 0; g < 200; g++){
+    if(R.rnd() < 0.55){
+      const r = R.nz(-6, 6), d = R.int(1, 6), A = -3*r, B = 3*r*r - d*d, m = -r*(r*r - d*d); if(!csOk(m) || m === 0) continue;
+      const o = {stem:`Tìm $m$ để phương trình $x^3 ${csJ([[A, 'x^2'], [B, 'x']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')} + m = 0$ có ba nghiệm phân biệt lập thành một cấp số cộng.`, ans:m,
+        lg:`Giả sử ba nghiệm $x_1, x_2, x_3$ lập cấp số cộng thì $x_1 + x_3 = 2x_2$. Theo định lí Viète, $x_1 + x_2 + x_3 = ${-A}$ nên $3x_2 = ${-A}$, $x_2 = ${r}$.<br>`
+          + `Thay $x = ${r}$: $${r < 0 ? `(${r})` : r}^3 ${csJ([[A*r*r, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')} ${csJ([[B*r, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')} + m = 0 \\iff m = ${m}$.<br>`
+          + `Thử lại: với $m = ${m}$, phương trình $\\iff (x ${r > 0 ? '-' : '+'} ${Math.abs(r)})(x^2 ${csJ([[-2*r, 'x'], [r*r - d*d, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')}) = 0$ có ba nghiệm $${r - d}$; $${r}$; $${r + d}$ lập cấp số cộng (công sai $${d}$). Vậy $m = ${m}$.`.replace(/ \+ 0\)/, ')'),
+        verify:()=>{ const rs = cubeRoots(A, B, o.ans); return rs.length === 3 && Math.abs(rs[0] + rs[2] - 2*rs[1]) < 1e-6; }};
+      return o; }
+    const a = R.nz(-4, 4), q = R.pick([2, 3, -2]), x1 = a, x2 = a*q, x3 = a*q*q, A = -(x1 + x2 + x3), B = x1*x2 + x2*x3 + x3*x1, m = -x1*x2*x3;
+    if(!csOk(m) || A === 0) continue;
+    const t = x2;
+    const o = {stem:`Tìm $m$ để phương trình $x^3 ${csJ([[A, 'x^2'], [B, 'x']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')} + m = 0$ có ba nghiệm phân biệt lập thành một cấp số nhân.`, ans:m,
+      lg:`Giả sử ba nghiệm $x_1, x_2, x_3$ lập cấp số nhân thì $x_1 x_3 = x_2^2$. Theo định lí Viète: $x_1 + x_2 + x_3 = ${-A}$, $x_1 x_2 + x_2x_3 + x_3x_1 = ${B}$, $x_1 x_2x_3 = -m$.<br>`
+        + `Ta có $x_1 x_2 + x_2x_3 + x_3x_1 = x_2(x_1 + x_3) + x_2^2 = x_2(x_1 + x_2 + x_3)$, nên $${-A < 0 ? `(${-A})` : -A}x_2 = ${B}$, $x_2 = ${t}$. Khi đó $-m = x_1 x_2x_3 = x_2^3 = ${t**3}$, $m = ${m}$.<br>`
+        + `Thử lại: với $m = ${m}$, phương trình có ba nghiệm $${x1}$; $${x2}$; $${x3}$ lập cấp số nhân (công bội $${q}$). Vậy $m = ${m}$.`,
+      verify:()=>{ const rs = cubeRoots(A, B, o.ans); if(rs.length !== 3) return false; const [p1, p2, p3] = rs; return Math.abs(p1*p3 - p2*p2) < 1e-5 || Math.abs(p1*p2 - p3*p3) < 1e-5 || Math.abs(p2*p3 - p1*p1) < 1e-5; }};
+    return o; }
+  return null;
+});
+
+/* 40. TLN VD — bài toán thực tế: rạp hát, xếp hộp (cấp số cộng) */
+GT(11,1,2,'VD','HSG: bài toán thực tế cấp số cộng — rạp hát có hàng đầu a ghế, mỗi hàng sau nhiều hơn d ghế, biết tổng số ghế; xếp hộp thành tháp mỗi tầng ít hơn tầng dưới d hộp — lập phương trình bậc hai theo số hàng (số tầng)', R=>{
+  for(let g = 0; g < 200; g++){
+    const ty = R.pick(['rap', 'rap', 'thap']), a = ty === 'rap' ? R.int(10, 30) : R.int(1, 4), d = R.int(1, ty === 'rap' ? 5 : 3), n = R.int(ty === 'rap' ? 10 : 6, ty === 'rap' ? 40 : 30);
+    const T = n*a + n*(n - 1)*d/2; if(T > 9999) continue;
+    const ask = R.rnd() < 0.6 ? 'n' : 'last', v = ask === 'n' ? n : a + (n - 1)*d;
+    const st = ty === 'rap'
+      ? `Một rạp hát có $${T}$ ghế, xếp thành các hàng. Hàng thứ nhất có $${a}$ ghế, mỗi hàng sau nhiều hơn hàng ngay trước $${d}$ ghế. ${ask === 'n' ? 'Hỏi rạp có bao nhiêu hàng ghế?' : 'Hỏi hàng ghế cuối cùng có bao nhiêu ghế?'}`
+      : `Người ta xếp $${T}$ hộp thành một tháp nhiều tầng: tầng trên cùng có $${a}$ hộp, mỗi tầng phía dưới nhiều hơn tầng ngay trên nó $${d}$ hộp. ${ask === 'n' ? 'Hỏi tháp có bao nhiêu tầng?' : 'Hỏi tầng dưới cùng có bao nhiêu hộp?'}`;
+    const A2 = d, B2 = 2*a - d, C2 = -2*T;
+    const o = {stem:st, ans:v,
+      lg:`Số ${ty === 'rap' ? 'ghế các hàng' : 'hộp các tầng (từ trên xuống)'} lập cấp số cộng với $u_1 = ${a}$, công sai $${d}$. Gọi $n$ là số ${ty === 'rap' ? 'hàng' : 'tầng'}: $S_n = ${n === 0 ? '' : ''}\\dfrac{n\\left(2\\cdot ${a} + (n - 1)\\cdot ${d}\\right)}{2} = ${T}$<br>`
+        + `$\\iff ${csJ([[A2, 'n^2'], [B2, 'n'], [C2, '']])} = 0 \\iff n = ${n}$ (nghiệm còn lại âm, loại).${ask === 'n' ? '' : `<br>${ty === 'rap' ? 'Hàng cuối' : 'Tầng dưới cùng'} có $u_{${n}} = ${a} + ${n - 1}\\cdot ${d} = ${v}$ ${ty === 'rap' ? 'ghế' : 'hộp'}.`}`,
+      verify:()=>{ let s = 0, k = 0, last = 0; while(s < T){ k++; last = a + (k - 1)*d; s += last; } return s === T && (ask === 'n' ? k : last) === o.ans; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-07.4 [HSG] Tính tổng bằng khử liên tiếp; cấp số cộng, cấp số nhân với điều kiện ẩn (11|1|2), đợt 3 (5 dạng TLN). Claude viết.
+// Chuỗi: tổng lớn nhất của cấp số cộng giảm, tích lớn nhất của cấp số nhân → đếm bộ số lập cấp số cộng (chẵn lẻ) → S_n = an² + bn + c (bẫy u_1)
+// → tổng các số chia hết cho p nhưng không chia hết cho q → S_m = n, S_n = m thì S_{m+n} = −(m + n).
+const csJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + (/^\d/.test(b) ? '\\cdot ' : '') + b);
+    return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+const csOk = v=> Number.isInteger(v) && String(v).length <= 4;
+const csC2 = n=> n*(n - 1)/2;
+const csLcm = (a, b)=> a*b/gcdI(a, b);
+const csD = c=> c === 1 ? 'd' : c === -1 ? '-d' : c + 'd';
+const csMul = (L, M)=> M === 1 ? `${L}` : M === 2 ? `${L}, ${2*L}` : M === 3 ? `${L}, ${2*L}, ${3*L}` : `${L}, ${2*L}, \\ldots, ${L*M}`;
+
+/* 41. TLN VD — tổng lớn nhất của cấp số cộng giảm; tích lớn nhất của cấp số nhân */
+GT(11,1,2,'VD','HSG: giá trị lớn nhất — tổng S_n của cấp số cộng có u₁ > 0, d < 0 lớn nhất khi cộng đến số hạng không âm cuối cùng; tích P_n = u₁u₂…u_n của cấp số nhân dương công bội q < 1 lớn nhất khi các số hạng còn lớn hơn 1', R=>{
+  for(let g = 0; g < 200; g++){
+    if(R.rnd() < 0.6){
+      const u1 = R.int(20, 99), d = -R.int(2, 7), N = Math.floor(u1/(-d)) + 1, uN = u1 + (N - 1)*d, S = N*(u1 + uN)/2; if(!csOk(S)) continue;
+      const o = {stem:`Cho cấp số cộng $(u_n)$ có $u_1 = ${u1}$ và công sai $d = ${d}$. Gọi $S_n$ là tổng $n$ số hạng đầu. Tìm giá trị lớn nhất của $S_n$.`, ans:S,
+        lg:`$u_n = ${u1} - ${-d}(n - 1) \\ge 0 \\iff n \\le 1 + ${frT(u1, -d)}$, nên $u_1, u_2, \\ldots, u_{${N}}$ không âm còn $u_n < 0$ với mọi $n > ${N}$ ($u_{${N}} = ${uN}$, $u_{${N + 1}} = ${uN + d}$).<br>`
+          + `Do đó $S_n$ không giảm khi $n \\le ${N}$ và giảm khi $n \\ge ${N}$: $S_n$ lớn nhất bằng $S_{${N}} = \\dfrac{${N}(${u1} + ${uN})}{2} = ${S}$.`,
+        verify:()=>{ let s = 0, best = -Infinity; for(let k = 1; k <= 200; k++){ s += u1 + (k - 1)*d; if(s > best) best = s; } return best === o.ans; }};
+      return o; }
+    const r = R.pick([2, 3]), c = R.int(50, 9999); let e = 0; while(r**(e + 1) <= c) e++; if(r**e === c) continue;
+    const n = e + 1;
+    const o = {stem:`Cho cấp số nhân $(u_n)$ có $u_1 = ${c}$ và công bội $q = \\dfrac{1}{${r}}$. Đặt $P_n = u_1 u_2\\cdots u_n$. Tìm số nguyên dương $n$ để $P_n$ lớn nhất.`, ans:n,
+      lg:`$u_n = \\dfrac{${c}}{${r}^{n-1}} > 0$ và $\\dfrac{P_{n+1}}{P_n} = u_{n+1}$. Do đó $P_{n+1} > P_n \\iff u_{n+1} > 1 \\iff ${r}^{n} < ${c}$.<br>`
+        + `Vì $${r}^{${e}} = ${r**e} < ${c} < ${r}^{${e + 1}} = ${r**(e + 1)}$ nên $P_1 < P_2 < \\cdots < P_{${n}}$ và $P_{${n}} > P_{${n + 1}} > P_{${n + 2}} > \\cdots$. Vậy $P_n$ lớn nhất khi $n = ${n}$.`,
+      verify:()=>{ let L = 0, best = -Infinity, at = 0; for(let k = 1; k <= 60; k++){ L += Math.log(c) - (k - 1)*Math.log(r); if(L > best + 1e-12){ best = L; at = k; } } return at === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 42. TLN VD — đếm các bộ số lập cấp số cộng */
+GT(11,1,2,'VD','HSG: đếm số cách chọn 3 số (4 số) phân biệt từ {1; 2; …; N} lập thành cấp số cộng — ba số: a + c = 2b nên a, c cùng tính chẵn lẻ; bốn số: đếm theo công sai d, có N − 3d cách chọn số hạng đầu', R=>{
+  for(let g = 0; g < 100; g++){
+    if(R.rnd() < 0.6){
+      const N = R.int(10, 120), od = Math.ceil(N/2), ev = Math.floor(N/2), v = csC2(od) + csC2(ev); if(!csOk(v)) continue;
+      const o = {stem:`Có bao nhiêu cách chọn ra ba số phân biệt từ tập hợp $\\{1; 2; 3; \\ldots; ${N}\\}$ (không kể thứ tự) sao cho ba số đó lập thành một cấp số cộng?`, ans:v,
+        lg:`Ba số $a < b < c$ lập cấp số cộng $\\iff a + c = 2b$. Với mỗi cặp $a < c$ cùng tính chẵn lẻ, $b = \\dfrac{a + c}{2}$ là số nguyên nằm giữa $a$ và $c$, xác định duy nhất; cặp khác tính chẵn lẻ thì không có $b$.<br>`
+          + `Tập có $${od}$ số lẻ và $${ev}$ số chẵn, nên số cách chọn là $C_{${od}}^2 + C_{${ev}}^2 = ${csC2(od)} + ${csC2(ev)} = ${v}$.`,
+        verify:()=>{ let t = 0; for(let a = 1; a <= N; a++) for(let b = a + 1; b <= N; b++) for(let c = b + 1; c <= N; c++) if(a + c === 2*b) t++; return t === o.ans; }};
+      return o; }
+    const N = R.int(12, 150), D = Math.floor((N - 1)/3), v = D*N - 3*D*(D + 1)/2; if(!csOk(v)) continue;
+    const o = {stem:`Có bao nhiêu cách chọn ra bốn số phân biệt từ tập hợp $\\{1; 2; 3; \\ldots; ${N}\\}$ (không kể thứ tự) sao cho bốn số đó lập thành một cấp số cộng?`, ans:v,
+      lg:`Bốn số xếp tăng dần là $a$, $a + d$, $a + 2d$, $a + 3d$ với $d \\ge 1$, $a \\ge 1$, $a + 3d \\le ${N}$. Với mỗi $d$ có $${N} - 3d$ cách chọn $a$; cần $${N} - 3d \\ge 1$ nên $1 \\le d \\le ${D}$.<br>`
+        + `Số cách là $\\sum_{d=1}^{${D}}(${N} - 3d) = ${D}\\cdot ${N} - 3\\cdot\\dfrac{${D}\\cdot ${D + 1}}{2} = ${v}$.`,
+      verify:()=>{ let t = 0; for(let a = 1; a <= N; a++) for(let b = a + 1; b <= N; b++){ const d = b - a; if(a + 3*d <= N) t++; } return t === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 43. TLN VD — S_n = an² + bn + c: bẫy số hạng đầu */
+GT(11,1,2,'VD','HSG: dãy có tổng n số hạng đầu S_n = an² + bn + c — u₁ = S₁, u_n = S_n − S_{n−1} = a(2n − 1) + b với n ≥ 2 (bẫy: khi c ≠ 0 công thức không đúng với n = 1, dãy chỉ là cấp số cộng từ u₂); tính u₁ + u_k hoặc u_k − u₁', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.nz(-4, 5), b = R.int(-6, 6), c = R.rnd() < 0.8 ? R.nz(-6, 6) : 0, k = R.int(8, 60), plus = R.rnd() < 0.5;
+    const u1 = a + b + c, uk = a*(2*k - 1) + b, v = plus ? u1 + uk : uk - u1; if(!csOk(v)) continue;
+    const ST = csJ([[a, 'n^2'], [b, 'n'], [c, '']]);
+    const o = {stem:`Cho dãy số $(u_n)$ có tổng $n$ số hạng đầu là $S_n = ${ST}$ với mọi $n \\ge 1$. Tính $${plus ? `u_1 + u_{${k}}` : `u_{${k}} - u_1`}$.`, ans:v,
+      lg:`$u_1 = S_1 = ${csJ([[a, ''], [b, ''], [c, '']]).replace(/^0$/, '0')} = ${u1}$.<br>Với $n \\ge 2$: $u_n = S_n - S_{n-1} = ${csJ([[a, '(n^2 - (n - 1)^2)']])}${b ? (b > 0 ? ' + ' : ' - ') + Math.abs(b) : ''} = ${csJ([[a, '(2n - 1)']])}${b ? (b > 0 ? ' + ' : ' - ') + Math.abs(b) : ''}$${c ? ` (công thức này cho $n = 1$ được $${a + b}$, khác $u_1$ vì $c = ${c} \\ne 0$)` : ''}.<br>`
+        + `Do đó $u_{${k}} = ${a === 1 ? '' : a === -1 ? '-' : a + '\\cdot '}${2*k - 1}${b ? (b > 0 ? ' + ' : ' - ') + Math.abs(b) : ''} = ${uk}$ và $${plus ? `u_1 + u_{${k}} = ${u1} + ${uk < 0 ? `(${uk})` : uk}` : `u_{${k}} - u_1 = ${uk} - ${u1 < 0 ? `(${u1})` : u1}`} = ${v}$.`,
+      verify:()=>{ const S = n=> a*n*n + b*n + c, U = n=> n === 1 ? S(1) : S(n) - S(n - 1); return (plus ? U(1) + U(k) : U(k) - U(1)) === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 44. TLN VD — tổng các số chia hết cho p nhưng không chia hết cho q; tổng các số chia cho p dư r */
+GT(11,1,2,'VD','HSG: tổng các số nguyên dương nhỏ hơn N chia hết cho p nhưng không chia hết cho q (bỏ các bội của BCNN(p, q)), tổng các số chia cho p dư r — nhận ra cấp số cộng, đếm số số hạng', R=>{
+  for(let g = 0; g < 300; g++){
+    const N = R.int(60, 300);
+    if(R.rnd() < 0.55){
+      const p = R.int(2, 9), q = R.int(2, 9); if(p === q || q%p === 0) continue;
+      const L = csLcm(p, q); if(L >= N) continue;
+      const M = Math.floor((N - 1)/p), M2 = Math.floor((N - 1)/L), S1 = p*M*(M + 1)/2, S2 = L*M2*(M2 + 1)/2, v = S1 - S2; if(!csOk(v)) continue;
+      const o = {stem:`Tính tổng tất cả các số nguyên dương nhỏ hơn $${N}$, chia hết cho $${p}$ nhưng không chia hết cho $${q}$.`, ans:v,
+        lg:`Các số nhỏ hơn $${N}$ chia hết cho $${p}$ là $${p}, ${2*p}, \\ldots, ${p*M}$ (cấp số cộng $${M}$ số hạng), tổng $${p}\\cdot\\dfrac{${M}\\cdot ${M + 1}}{2} = ${S1}$.<br>`
+          + `Trong đó các số chia hết cho cả $${q}$ là bội của $\\text{BCNN}(${p}, ${q}) = ${L}$: $${csMul(L, M2)}$ (${M2} số), tổng $${L}\\cdot\\dfrac{${M2}\\cdot ${M2 + 1}}{2} = ${S2}$.<br>Tổng cần tìm: $${S1} - ${S2} = ${v}$.`,
+        verify:()=>{ let t = 0; for(let x = 1; x < N; x++) if(x%p === 0 && x%q !== 0) t += x; return t === o.ans; }};
+      return o; }
+    const p = R.int(3, 13), r = R.int(1, p - 1), M = Math.floor((N - 1 - r)/p) + 1, last = r + (M - 1)*p, v = M*(r + last)/2; if(!csOk(v)) continue;
+    const o = {stem:`Tính tổng tất cả các số nguyên dương nhỏ hơn $${N}$ mà chia cho $${p}$ dư $${r}$.`, ans:v,
+      lg:`Các số đó là $${r}, ${r + p}, ${r + 2*p}, \\ldots, ${last}$, lập cấp số cộng công sai $${p}$; số cuối $${last}$ ($${last + p} \\ge ${N}$). Số số hạng: $\\dfrac{${last} - ${r}}{${p}} + 1 = ${M}$.<br>Tổng: $\\dfrac{${M}(${r} + ${last})}{2} = ${v}$.`,
+      verify:()=>{ let t = 0; for(let x = 1; x < N; x++) if(x%p === r) t += x; return t === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 45. TLN VD — S_m = n, S_n = m thì S_{m+n} = −(m + n); tổng quát: S_k/k là hàm bậc nhất của k */
+GT(11,1,2,'VD','HSG: cấp số cộng biết S_m và S_n — dùng S_k/k = u₁ + (k − 1)d/2 (bậc nhất theo k): S_m = n, S_n = m (m ≠ n) thì S_{m+n} = −(m + n); tính S_p với p cho trước', R=>{
+  for(let g = 0; g < 200; g++){
+    if(R.rnd() < 0.5){
+      const m = R.int(2, 30), n = R.int(2, 30); if(m === n) continue;
+      const v = -(m + n);
+      const o = {stem:`Cho cấp số cộng $(u_n)$ có tổng $${m}$ số hạng đầu bằng $${n}$ và tổng $${n}$ số hạng đầu bằng $${m}$. Tính tổng $${m + n}$ số hạng đầu.`, ans:v,
+        lg:`Ta có $\\dfrac{S_k}{k} = u_1 + \\dfrac{(k - 1)d}{2}$. Từ giả thiết: $u_1 + \\dfrac{${csD(m - 1)}}{2} = ${frT(n, m)}$ và $u_1 + \\dfrac{${csD(n - 1)}}{2} = ${frT(m, n)}$.<br>`
+          + `Trừ theo vế: $\\dfrac{${csD(m - n)}}{2} = ${frT(n, m)} - ${frT(m, n)} = ${frT(n*n - m*m, m*n)}$, nên $\\dfrac{d}{2} = ${frT(-(m + n), m*n)}$.<br>`
+          + `Khi đó $\\dfrac{S_{${m + n}}}{${m + n}} = u_1 + \\dfrac{${csD(m + n - 1)}}{2} = ${frT(n, m)} + ${n}\\cdot\\dfrac{d}{2} = ${frT(n, m)} - ${frT(m + n, m)} = -1$, nên $S_{${m + n}} = ${v}$.`,
+        verify:()=>{ const dd = 2*(n/m - m/n)/(m - n), uu = n/m - (m - 1)*dd/2; let t = 0; for(let i = 0; i < m + n; i++) t += uu + i*dd; return Math.abs(t - o.ans) < 1e-6; }};
+      return o; }
+    const u1 = R.int(-30, 40), d = R.nz(-5, 6), m = R.int(3, 15), n = R.int(m + 2, 30), P = R.int(n + 1, 60), SS = k=> k*u1 + k*(k - 1)*d/2, A = SS(m), B = SS(n), v = SS(P); if(!csOk(v)) continue;
+    const o = {stem:`Cho cấp số cộng $(u_n)$ có tổng $${m}$ số hạng đầu bằng $${A}$ và tổng $${n}$ số hạng đầu bằng $${B}$. Tính tổng $${P}$ số hạng đầu.`, ans:v,
+      lg:`Ta có $\\dfrac{S_k}{k} = u_1 + \\dfrac{(k - 1)d}{2}$. Từ giả thiết: $u_1 + \\dfrac{${csD(m - 1)}}{2} = ${frT(A, m)}$ và $u_1 + \\dfrac{${csD(n - 1)}}{2} = ${frT(B, n)}$.<br>`
+        + `Trừ theo vế: $\\dfrac{${csD(n - m)}}{2} = ${frT(B*m - A*n, m*n)}$, nên $d = ${d}$, $u_1 = ${u1}$.<br>Vậy $S_{${P}} = ${P}\\cdot ${u1 < 0 ? `(${u1})` : u1} + \\dfrac{${P}\\cdot ${P - 1}}{2}\\cdot ${d < 0 ? `(${d})` : d} = ${v}$.`,
+      verify:()=>{ const dd = 2*(B/n - A/m)/(n - m), uu = A/m - (m - 1)*dd/2; let t = 0; for(let i = 0; i < P; i++) t += uu + i*dd; return Math.abs(t - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-07.4 [HSG] Tính tổng bằng khử liên tiếp; cấp số cộng, cấp số nhân với điều kiện ẩn (11|1|2), đợt 4 (4 dạng tự luận — chỉ bài chứng minh). Claude viết.
+// Chuỗi: chứng minh công thức khử liên tiếp cho cấp số cộng rồi đánh giá tổng → hệ thức giữa ba số lập cấp số cộng
+// → hệ thức giữa ba số lập cấp số nhân → bất đẳng thức tổng 1/k², 1/√k, 1/(k√k) bằng cách chặn từng số hạng bởi một hiệu.
+const csNear = (x, y)=> Math.abs(x - y) < 1e-9*Math.max(1, Math.abs(x), Math.abs(y));
+
+/* TL1. VD — khử liên tiếp cho cấp số cộng */
+GE(11,1,2,'VD','HSG (tự luận): cấp số cộng công sai d ≠ 0 — chứng minh 1/(u₁u₂) + … + 1/(u_n·u_{n+1}) = n/(u₁·u_{n+1}), áp dụng chứng minh một tổng cụ thể nhỏ hơn hằng số, chứng minh 1/(√u₁ + √u₂) + … + 1/(√u_n + √u_{n+1}) = n/(√u₁ + √u_{n+1})', R=>{
+  const p = R.int(2, 7), q = R.int(1 - p, 6), U = k=> p*k + q, B = p*(p + q);
+  const firsts = [1, 2].map(k=> `\\dfrac{1}{${U(k)}\\cdot ${U(k + 1)}}`).join(' + ');
+  return s6Parts(`Cho cấp số cộng $(u_n)$ có công sai $d \\ne 0$.`, [
+    {q:`Giả sử $u_n \\ne 0$ với mọi $n$. Chứng minh rằng $\\dfrac{1}{u_1 u_2} + \\dfrac{1}{u_2u_3} + \\cdots + \\dfrac{1}{u_nu_{n+1}} = \\dfrac{n}{u_1 u_{n+1}}$ với mọi $n \\ge 1$.`,
+     a:`Với mỗi $k$: $\\dfrac{1}{u_ku_{k+1}} = \\dfrac{1}{d}\\cdot\\dfrac{u_{k+1} - u_k}{u_ku_{k+1}} = \\dfrac{1}{d}\\left(\\dfrac{1}{u_k} - \\dfrac{1}{u_{k+1}}\\right)$.<br>Cộng với $k = 1, \\ldots, n$, các số hạng khử liên tiếp: vế trái $= \\dfrac{1}{d}\\left(\\dfrac{1}{u_1} - \\dfrac{1}{u_{n+1}}\\right) = \\dfrac{u_{n+1} - u_1}{d\\,u_1 u_{n+1}} = \\dfrac{nd}{d\\,u_1 u_{n+1}} = \\dfrac{n}{u_1 u_{n+1}}$.`,
+     chk:()=> [1, 5, 20].every(n=>{ let s = 0; for(let k = 1; k <= n; k++) s += 1/(U(k)*U(k + 1)); return csNear(s, n/(U(1)*U(n + 1))); })},
+    {q:`Chứng minh rằng $${firsts} + \\cdots + \\dfrac{1}{(${p}n ${q < 0 ? '-' : '+'} ${Math.abs(q)})(${p}n + ${p + q})} < ${frT(1, B)}$ với mọi số nguyên dương $n$.`.replace(' + 0)', ')'),
+     a:`Các số $${U(1)}, ${U(2)}, ${U(3)}, \\ldots$ lập cấp số cộng $u_k = ${p}k ${q < 0 ? '-' : '+'} ${Math.abs(q)}$ với $u_1 = ${U(1)} > 0$, công sai $${p}$. Theo câu a), vế trái bằng $\\dfrac{n}{${U(1) === 1 ? `${p}n + ${p + q}` : `${U(1)}(${p}n + ${p + q})`}} = ${frT(1, B)}\\cdot\\dfrac{${p}n}{${p}n + ${p + q}}$.<br>Vì $${p + q} > 0$ nên $\\dfrac{${p}n}{${p}n + ${p + q}} < 1$, suy ra điều phải chứng minh.`.replace(' + 0', ''),
+     chk:()=> [1, 3, 50, 500].every(n=>{ let s = 0; for(let k = 1; k <= n; k++) s += 1/(U(k)*U(k + 1)); return s < 1/B; }) && U(1) > 0},
+    {q:`Giả sử $u_n > 0$ với mọi $n$. Chứng minh rằng $\\dfrac{1}{\\sqrt{u_1} + \\sqrt{u_2}} + \\cdots + \\dfrac{1}{\\sqrt{u_n} + \\sqrt{u_{n+1}}} = \\dfrac{n}{\\sqrt{u_1} + \\sqrt{u_{n+1}}}$.`,
+     a:`Nhân liên hợp: $\\dfrac{1}{\\sqrt{u_k} + \\sqrt{u_{k+1}}} = \\dfrac{\\sqrt{u_{k+1}} - \\sqrt{u_k}}{u_{k+1} - u_k} = \\dfrac{\\sqrt{u_{k+1}} - \\sqrt{u_k}}{d}$.<br>Cộng với $k = 1, \\ldots, n$: vế trái $= \\dfrac{\\sqrt{u_{n+1}} - \\sqrt{u_1}}{d} = \\dfrac{u_{n+1} - u_1}{d\\left(\\sqrt{u_{n+1}} + \\sqrt{u_1}\\right)} = \\dfrac{nd}{d\\left(\\sqrt{u_1} + \\sqrt{u_{n+1}}\\right)} = \\dfrac{n}{\\sqrt{u_1} + \\sqrt{u_{n+1}}}$.`,
+     chk:()=> [1, 4, 30].every(n=>{ let s = 0; for(let k = 1; k <= n; k++) s += 1/(Math.sqrt(U(k)) + Math.sqrt(U(k + 1))); return csNear(s, n/(Math.sqrt(U(1)) + Math.sqrt(U(n + 1)))); })}]);
+});
+
+/* TL2. VD — hệ thức giữa ba số lập cấp số cộng */
+GE(11,1,2,'VD','HSG (tự luận): ba số a, b, c lập cấp số cộng — chứng minh các hệ thức: a² − bc, b² − ca, c² − ab lập cấp số cộng; a² + 8bc = (2b + c)²; 1/(√b + √c), 1/(√c + √a), 1/(√a + √b) lập cấp số cộng; a² + ab + b², a² + ac + c², b² + bc + c² lập cấp số cộng; nếu còn lập cấp số nhân thì a = b = c', R=>{
+  const rnd = ()=>{ const b = 1 + 5*Math.random(), d = 2*Math.random() - 1; return [b - d, b, b + d]; };
+  const P = [
+    {q:`Chứng minh rằng ba số $a^2 - bc$, $b^2 - ca$, $c^2 - ab$ theo thứ tự cũng lập thành một cấp số cộng.`,
+     a:`Gọi $d$ là công sai: $a = b - d$, $c = b + d$. Khi đó $a^2 - bc = b^2 - 2bd + d^2 - b^2 - bd = d^2 - 3bd$, $b^2 - ca = b^2 - (b^2 - d^2) = d^2$, $c^2 - ab = b^2 + 2bd + d^2 - b^2 + bd = d^2 + 3bd$.<br>Ba số $d^2 - 3bd$, $d^2$, $d^2 + 3bd$ lập cấp số cộng (công sai $3bd$).`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear((a*a - b*c) + (c*c - a*b), 2*(b*b - c*a)); })},
+    {q:`Chứng minh rằng $a^2 + 8bc = (2b + c)^2$.`,
+     a:`Vì $a, b, c$ lập cấp số cộng nên $a + c = 2b$, tức là $a = 2b - c$.<br>Do đó $a^2 + 8bc = (2b - c)^2 + 8bc = 4b^2 - 4bc + c^2 + 8bc = 4b^2 + 4bc + c^2 = (2b + c)^2$.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear(a*a + 8*b*c, (2*b + c)**2); })},
+    {q:`Giả sử $a, b, c$ dương. Chứng minh rằng $\\dfrac{1}{\\sqrt{b} + \\sqrt{c}}$, $\\dfrac{1}{\\sqrt{c} + \\sqrt{a}}$, $\\dfrac{1}{\\sqrt{a} + \\sqrt{b}}$ theo thứ tự lập thành một cấp số cộng.`,
+     a:`Gọi $d$ là công sai. Nếu $d = 0$ thì ba số bằng nhau, hiển nhiên đúng. Nếu $d \\ne 0$: $\\dfrac{1}{\\sqrt{b} + \\sqrt{c}} = \\dfrac{\\sqrt{c} - \\sqrt{b}}{c - b} = \\dfrac{\\sqrt{c} - \\sqrt{b}}{d}$, $\\dfrac{1}{\\sqrt{a} + \\sqrt{b}} = \\dfrac{\\sqrt{b} - \\sqrt{a}}{d}$.<br>`
+       + `Cộng lại được $\\dfrac{\\sqrt{c} - \\sqrt{a}}{d}$. Mặt khác $\\dfrac{2}{\\sqrt{c} + \\sqrt{a}} = \\dfrac{2(\\sqrt{c} - \\sqrt{a})}{c - a} = \\dfrac{2(\\sqrt{c} - \\sqrt{a})}{2d} = \\dfrac{\\sqrt{c} - \\sqrt{a}}{d}$. Vậy số hạng giữa bằng trung bình cộng hai số hạng kia.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear(1/(Math.sqrt(b) + Math.sqrt(c)) + 1/(Math.sqrt(a) + Math.sqrt(b)), 2/(Math.sqrt(c) + Math.sqrt(a))); })},
+    {q:`Chứng minh rằng ba số $a^2 + ab + b^2$, $a^2 + ac + c^2$, $b^2 + bc + c^2$ theo thứ tự lập thành một cấp số cộng.`,
+     a:`Xét $(a^2 + ab + b^2) + (b^2 + bc + c^2) - 2(a^2 + ac + c^2) = -a^2 - c^2 - 2ac + 2b^2 + b(a + c)$.<br>Vì $a + c = 2b$ nên $b(a + c) = 2b^2$ và $a^2 + 2ac + c^2 = (a + c)^2 = 4b^2$. Biểu thức bằng $-4b^2 + 2b^2 + 2b^2 = 0$, nên số giữa bằng trung bình cộng hai số kia: ba số lập cấp số cộng.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear((a*a + a*b + b*b) + (b*b + b*c + c*c), 2*(a*a + a*c + c*c)); })},
+    {q:`Giả sử $a, b, c$ còn lập thành một cấp số nhân. Chứng minh rằng $a = b = c$.`,
+     a:`Ta có $a + c = 2b$ và $b^2 = ac$. Suy ra $(a + c)^2 = 4b^2 = 4ac$, tức là $(a - c)^2 = 0$, $a = c$. Khi đó $2b = 2a$, $b = a$. Vậy $a = b = c$.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, , c] = rnd(); return (a + c)**2 - 4*a*c >= -1e-12; })}];
+  const pick = R.shuffle(P.slice()).slice(0, 3);
+  return s6Parts(`Cho ba số thực $a, b, c$ theo thứ tự lập thành một cấp số cộng.`, pick.map(x=> ({q:x.q, a:x.a, chk:x.chk})));
+});
+
+/* TL3. VD — hệ thức giữa ba số lập cấp số nhân */
+GE(11,1,2,'VD','HSG (tự luận): ba số khác 0 a, b, c lập cấp số nhân (b² = ac) — chứng minh các hệ thức (a + b + c)(a − b + c) = a² + b² + c²; (ab + bc + ca)³ = abc(a + b + c)³; a²b²c²(1/a³ + 1/b³ + 1/c³) = a³ + b³ + c³; (a² + b²)(b² + c²) = (ab + bc)²', R=>{
+  const rnd = ()=>{ const a = (Math.random() < 0.5 ? -1 : 1)*(0.5 + 3*Math.random()), q = (Math.random() < 0.3 ? -1 : 1)*(0.3 + 2*Math.random()); return [a, a*q, a*q*q]; };
+  const P = [
+    {q:`Chứng minh rằng $(a + b + c)(a - b + c) = a^2 + b^2 + c^2$.`,
+     a:`$(a + b + c)(a - b + c) = (a + c)^2 - b^2 = a^2 + 2ac + c^2 - b^2$. Vì $b^2 = ac$ nên $2ac - b^2 = 2b^2 - b^2 = b^2$. Vậy biểu thức bằng $a^2 + b^2 + c^2$.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear((a + b + c)*(a - b + c), a*a + b*b + c*c); })},
+    {q:`Chứng minh rằng $(ab + bc + ca)^3 = abc(a + b + c)^3$.`,
+     a:`Vì $ca = b^2$ nên $ab + bc + ca = ab + bc + b^2 = b(a + b + c)$. Do đó $(ab + bc + ca)^3 = b^3(a + b + c)^3$.<br>Mà $b^3 = b\\cdot b^2 = b\\cdot ac = abc$. Vậy $(ab + bc + ca)^3 = abc(a + b + c)^3$.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear((a*b + b*c + c*a)**3, a*b*c*(a + b + c)**3); })},
+    {q:`Chứng minh rằng $a^2b^2c^2\\left(\\dfrac{1}{a^3} + \\dfrac{1}{b^3} + \\dfrac{1}{c^3}\\right) = a^3 + b^3 + c^3$.`,
+     a:`Ta có $abc = b^3$ (vì $ac = b^2$), nên $a^2b^2c^2 = b^6 = (ac)^3$.<br>Vế trái $= \\dfrac{b^6}{a^3} + \\dfrac{b^6}{b^3} + \\dfrac{b^6}{c^3} = \\dfrac{a^3c^3}{a^3} + b^3 + \\dfrac{a^3c^3}{c^3} = c^3 + b^3 + a^3$.`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear(a*a*b*b*c*c*(1/a**3 + 1/b**3 + 1/c**3), a**3 + b**3 + c**3); })},
+    {q:`Chứng minh rằng $(a^2 + b^2)(b^2 + c^2) = (ab + bc)^2$.`,
+     a:`Khai triển: $(a^2 + b^2)(b^2 + c^2) - (ab + bc)^2 = a^2b^2 + a^2c^2 + b^4 + b^2c^2 - a^2b^2 - 2ab^2c - b^2c^2 = a^2c^2 - 2ac\\cdot b^2 + b^4 = (ac - b^2)^2 = 0$ (vì $b^2 = ac$).`,
+     chk:()=> [0, 1, 2].every(()=>{ const [a, b, c] = rnd(); return csNear((a*a + b*b)*(b*b + c*c), (a*b + b*c)**2); })}];
+  const pick = R.shuffle(P.slice()).slice(0, 3);
+  return s6Parts(`Cho ba số thực khác $0$ là $a, b, c$ theo thứ tự lập thành một cấp số nhân.`, pick.map(x=> ({q:x.q, a:x.a, chk:x.chk})));
+});
+
+/* TL4. VD — chặn từng số hạng bởi một hiệu rồi khử liên tiếp */
+GE(11,1,2,'VD','HSG (tự luận): bất đẳng thức tổng bằng cách chặn mỗi số hạng bởi một hiệu rồi khử liên tiếp — 1 + 1/2² + … + 1/n² < 2 − 1/n và < 5/3; 2(√(n + 1) − 1) < 1 + 1/√2 + … + 1/√n < 2√n − 1; tổng 1/(k√k) < 3 và 1/((k + 1)√k) < 2', R=>{
+  const th = R.int(0, 2);
+  const sum = (f, n)=>{ let s = 0; for(let k = 1; k <= n; k++) s += f(k); return s; };
+  if(th === 0) return s6Parts(`Xét tổng $S_n = 1 + \\dfrac{1}{2^2} + \\dfrac{1}{3^2} + \\cdots + \\dfrac{1}{n^2}$ với $n$ nguyên dương.`, [
+    {q:`Chứng minh rằng $\\dfrac{1}{k^2} < \\dfrac{1}{k - 1} - \\dfrac{1}{k}$ với mọi số nguyên $k \\ge 2$.`,
+     a:`$\\dfrac{1}{k - 1} - \\dfrac{1}{k} = \\dfrac{1}{k(k - 1)} > \\dfrac{1}{k\\cdot k} = \\dfrac{1}{k^2}$ vì $0 < k(k - 1) < k^2$.`, chk:()=> [2, 3, 10].every(k=> 1/(k*k) < 1/(k - 1) - 1/k)},
+    {q:`Chứng minh rằng $S_n < 2 - \\dfrac{1}{n}$ với mọi $n \\ge 2$.`,
+     a:`Cộng các bất đẳng thức ở câu a) với $k = 2, \\ldots, n$: $\\dfrac{1}{2^2} + \\cdots + \\dfrac{1}{n^2} < 1 - \\dfrac{1}{n}$ (khử liên tiếp). Cộng thêm $1$: $S_n < 2 - \\dfrac{1}{n}$.`,
+     chk:()=> [2, 5, 100].every(n=> sum(k=> 1/(k*k), n) < 2 - 1/n)},
+    {q:`Chứng minh rằng $S_n < \\dfrac{5}{3}$ với mọi $n \\ge 1$.`,
+     a:`Với $k \\ge 2$: $\\dfrac{1}{k^2} < \\dfrac{4}{4k^2 - 1} = \\dfrac{2}{2k - 1} - \\dfrac{2}{2k + 1}$. Cộng với $k = 2, \\ldots, n$: $\\dfrac{1}{2^2} + \\cdots + \\dfrac{1}{n^2} < \\dfrac{2}{3} - \\dfrac{2}{2n + 1} < \\dfrac{2}{3}$.<br>Do đó $S_n < 1 + \\dfrac{2}{3} = \\dfrac{5}{3}$ (với $n = 1$: $S_1 = 1 < \\dfrac{5}{3}$).`,
+     chk:()=> [1, 2, 1000].every(n=> sum(k=> 1/(k*k), n) < 5/3) && [2, 7].every(k=> csNear(4/(4*k*k - 1), 2/(2*k - 1) - 2/(2*k + 1)))}]);
+  if(th === 1) return s6Parts(`Xét tổng $T_n = 1 + \\dfrac{1}{\\sqrt{2}} + \\dfrac{1}{\\sqrt{3}} + \\cdots + \\dfrac{1}{\\sqrt{n}}$ với $n$ nguyên dương.`, [
+    {q:`Chứng minh rằng $2\\left(\\sqrt{k + 1} - \\sqrt{k}\\right) < \\dfrac{1}{\\sqrt{k}} < 2\\left(\\sqrt{k} - \\sqrt{k - 1}\\right)$ với mọi số nguyên $k \\ge 1$.`,
+     a:`$2\\left(\\sqrt{k + 1} - \\sqrt{k}\\right) = \\dfrac{2}{\\sqrt{k + 1} + \\sqrt{k}} < \\dfrac{2}{2\\sqrt{k}} = \\dfrac{1}{\\sqrt{k}}$ và $2\\left(\\sqrt{k} - \\sqrt{k - 1}\\right) = \\dfrac{2}{\\sqrt{k} + \\sqrt{k - 1}} > \\dfrac{2}{2\\sqrt{k}} = \\dfrac{1}{\\sqrt{k}}$.`,
+     chk:()=> [1, 2, 9].every(k=> 2*(Math.sqrt(k + 1) - Math.sqrt(k)) < 1/Math.sqrt(k) && 1/Math.sqrt(k) < 2*(Math.sqrt(k) - Math.sqrt(k - 1)))},
+    {q:`Chứng minh rằng $T_n > 2\\left(\\sqrt{n + 1} - 1\\right)$ với mọi $n \\ge 1$.`,
+     a:`Cộng các bất đẳng thức $\\dfrac{1}{\\sqrt{k}} > 2\\left(\\sqrt{k + 1} - \\sqrt{k}\\right)$ với $k = 1, \\ldots, n$, khử liên tiếp: $T_n > 2\\left(\\sqrt{n + 1} - 1\\right)$.`,
+     chk:()=> [1, 10, 500].every(n=> sum(k=> 1/Math.sqrt(k), n) > 2*(Math.sqrt(n + 1) - 1))},
+    {q:`Chứng minh rằng $T_n < 2\\sqrt{n} - 1$ với mọi $n \\ge 2$.`,
+     a:`Cộng các bất đẳng thức $\\dfrac{1}{\\sqrt{k}} < 2\\left(\\sqrt{k} - \\sqrt{k - 1}\\right)$ với $k = 2, \\ldots, n$: $\\dfrac{1}{\\sqrt{2}} + \\cdots + \\dfrac{1}{\\sqrt{n}} < 2\\left(\\sqrt{n} - 1\\right)$. Cộng thêm $1$: $T_n < 2\\sqrt{n} - 1$.`,
+     chk:()=> [2, 10, 500].every(n=> sum(k=> 1/Math.sqrt(k), n) < 2*Math.sqrt(n) - 1)}]);
+  return s6Parts(`Xét các tổng $A_n = 1 + \\dfrac{1}{2\\sqrt{2}} + \\dfrac{1}{3\\sqrt{3}} + \\cdots + \\dfrac{1}{n\\sqrt{n}}$ và $B_n = \\dfrac{1}{2\\sqrt{1}} + \\dfrac{1}{3\\sqrt{2}} + \\cdots + \\dfrac{1}{(n + 1)\\sqrt{n}}$.`, [
+    {q:`Chứng minh rằng $\\dfrac{1}{k\\sqrt{k}} < 2\\left(\\dfrac{1}{\\sqrt{k - 1}} - \\dfrac{1}{\\sqrt{k}}\\right)$ với mọi số nguyên $k \\ge 2$.`,
+     a:`$2\\left(\\dfrac{1}{\\sqrt{k - 1}} - \\dfrac{1}{\\sqrt{k}}\\right) = \\dfrac{2\\left(\\sqrt{k} - \\sqrt{k - 1}\\right)}{\\sqrt{k}\\sqrt{k - 1}} = \\dfrac{2}{\\sqrt{k}\\sqrt{k - 1}\\left(\\sqrt{k} + \\sqrt{k - 1}\\right)}$.<br>Vì $\\sqrt{k - 1} < \\sqrt{k}$ nên mẫu số nhỏ hơn $\\sqrt{k}\\cdot\\sqrt{k}\\cdot 2\\sqrt{k} = 2k\\sqrt{k}$, do đó biểu thức lớn hơn $\\dfrac{2}{2k\\sqrt{k}} = \\dfrac{1}{k\\sqrt{k}}$.`,
+     chk:()=> [2, 3, 50].every(k=> 1/(k*Math.sqrt(k)) < 2*(1/Math.sqrt(k - 1) - 1/Math.sqrt(k)))},
+    {q:`Chứng minh rằng $A_n < 3 - \\dfrac{2}{\\sqrt{n}}$ với mọi $n \\ge 2$.`,
+     a:`Cộng các bất đẳng thức ở câu a) với $k = 2, \\ldots, n$, khử liên tiếp: $A_n - 1 < 2\\left(1 - \\dfrac{1}{\\sqrt{n}}\\right)$, tức là $A_n < 3 - \\dfrac{2}{\\sqrt{n}}$.`,
+     chk:()=> [2, 10, 2000].every(n=> sum(k=> 1/(k*Math.sqrt(k)), n) < 3 - 2/Math.sqrt(n))},
+    {q:`Chứng minh rằng $B_n < 2$ với mọi $n \\ge 1$.`,
+     a:`Với $k \\ge 1$: $2\\left(\\dfrac{1}{\\sqrt{k}} - \\dfrac{1}{\\sqrt{k + 1}}\\right) = \\dfrac{2}{\\sqrt{k}\\sqrt{k + 1}\\left(\\sqrt{k + 1} + \\sqrt{k}\\right)} > \\dfrac{2}{\\sqrt{k}\\sqrt{k + 1}\\cdot 2\\sqrt{k + 1}} = \\dfrac{1}{(k + 1)\\sqrt{k}}$.<br>Cộng với $k = 1, \\ldots, n$: $B_n < 2\\left(1 - \\dfrac{1}{\\sqrt{n + 1}}\\right) < 2$.`,
+     chk:()=> [1, 10, 2000].every(n=> sum(k=> 1/((k + 1)*Math.sqrt(k)), n) < 2)}]);
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích; cực trị diện tích thiết diện (11|3|0), đợt 1 (5 dạng TLN). Claude viết.
+// Bám khung đề HSG cấp tỉnh: mặt phẳng song song hai cạnh đối của tứ diện, mặt phẳng song song đáy, mặt phẳng qua một cạnh đáy, hệ thức tỉ số trên các cạnh bên.
+// Không vẽ hình (mô tả bằng lời); verify dựng toạ độ không gian rồi tính lại bằng giao tuyến, diện tích đa giác, thể tích tứ diện.
+const tdSub = (a, b)=> [a[0] - b[0], a[1] - b[1], a[2] - b[2]], tdAdd = (a, b)=> [a[0] + b[0], a[1] + b[1], a[2] + b[2]], tdMul = (a, k)=> [a[0]*k, a[1]*k, a[2]*k];
+const tdX = (a, b)=> [a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]], tdDot = (a, b)=> a[0]*b[0] + a[1]*b[1] + a[2]*b[2], tdLen = a=> Math.sqrt(tdDot(a, a));
+const tdLerp = (A, B, s)=> tdAdd(A, tdMul(tdSub(B, A), s));
+const tdCut = (P0, n, A, B)=>{ const den = tdDot(tdSub(B, A), n); if(Math.abs(den) < 1e-12) return null; const s = tdDot(tdSub(P0, A), n)/den; return s >= -1e-9 && s <= 1 + 1e-9 ? tdLerp(A, B, s) : null; };
+const tdArea = P=>{ let s = [0, 0, 0]; for(let i = 1; i + 1 < P.length; i++) s = tdAdd(s, tdX(tdSub(P[i], P[0]), tdSub(P[i + 1], P[0]))); return tdLen(s)/2; };
+const tdTet = (A, B, C, D)=> Math.abs(tdDot(tdX(tdSub(B, A), tdSub(C, A)), tdSub(D, A)))/6;
+const tdOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tdN = v=> nt(Math.round(v*10)/10);
+const tdFr = (p, q)=> frT(p, q);
+const tdRatios = [[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [1, 5], [2, 5], [3, 5], [4, 5], [1, 6], [5, 6]];
+
+/* 96. TLN VD — mặt phẳng song song hai cạnh đối AC, BD của tứ diện */
+GT(11,3,0,'VD','HSG: tứ diện có AC = a, BD = b, góc giữa AC và BD bằng φ; mặt phẳng qua M ∈ AB song song với AC và BD cắt tứ diện theo hình bình hành có cạnh (1 − t)a, tb (t = AM/AB) — tính diện tích thiết diện, diện tích lớn nhất (Cô-si: t(1 − t) ≤ 1/4)', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.int(3, 16), b = R.int(3, 16), ph = R.pick([30, 90, 90, 150]), sn = ph === 90 ? 1 : 0.5, mx = R.rnd() < 0.4;
+    const [p, q] = R.pick(tdRatios), t = p/q, S = mx ? a*b*sn/4 : t*(1 - t)*a*b*sn; if(!tdOk(S)) continue;
+    const phT = `${ph}^\\circ`;
+    const head = `Cho tứ diện $ABCD$ có $AC = ${a}$, $BD = ${b}$ và góc giữa hai đường thẳng $AC$, $BD$ bằng $${ph === 150 ? '30' : ph}^\\circ$.`;
+    const ask = mx ? `Mặt phẳng $(\\alpha)$ đi qua điểm $M$ thay đổi trên cạnh $AB$ ($M \\ne A, B$) và song song với $AC$, $BD$. Tìm giá trị lớn nhất của diện tích thiết diện của tứ diện cắt bởi $(\\alpha)$.`
+      : `Gọi $M$ là điểm trên cạnh $AB$ sao cho $AM = ${tdFr(p, q)}AB$. Mặt phẳng $(\\alpha)$ qua $M$ song song với $AC$ và $BD$. Tính diện tích thiết diện của tứ diện cắt bởi $(\\alpha)$.`;
+    const base = `$(\\alpha)$ cắt $BC$, $CD$, $DA$ lần lượt tại $N$, $P$, $Q$ với $MN \\parallel PQ \\parallel AC$, $MQ \\parallel NP \\parallel BD$: thiết diện $MNPQ$ là hình bình hành, góc giữa hai cạnh bằng góc giữa $AC$ và $BD$.<br>`
+      + `Đặt $t = \\dfrac{AM}{AB}$. Theo định lí Thalès: $MN = \\dfrac{BM}{BA}\\cdot AC = ${a}(1 - t)$, $MQ = \\dfrac{AM}{AB}\\cdot BD = ${b}t$.<br>`
+      + `$S_{MNPQ} = MN\\cdot MQ\\cdot\\sin${ph === 150 ? '30' : ph}^\\circ = ${ph === 90 ? '' : '\\dfrac{1}{2}\\cdot '}${a*b}t(1 - t)$.<br>`;
+    const lg = mx ? base + `Theo bất đẳng thức Cô-si, $t(1 - t) \\le \\left(\\dfrac{t + 1 - t}{2}\\right)^2 = \\dfrac{1}{4}$, dấu bằng khi $t = \\dfrac{1}{2}$ ($M$ là trung điểm $AB$).<br>Vậy diện tích lớn nhất bằng $${ph === 90 ? '' : '\\dfrac{1}{2}\\cdot '}\\dfrac{${a*b}}{4} = ${tdN(S)}$.`
+      : base + `Với $t = ${tdFr(p, q)}$: $S_{MNPQ} = ${ph === 90 ? '' : '\\dfrac{1}{2}\\cdot '}${a*b}\\cdot ${tdFr(p, q)}\\cdot ${tdFr(q - p, q)} = ${tdN(S)}$.`;
+    const o = {stem:`${head} ${ask}`, ans:Math.round(S*10)/10, lg,
+      verify:()=>{ const rd = ph*Math.PI/180, A = [0, 0, 0], C = [a, 0, 0], B = [1.3, 2.1, 2.7], D = tdAdd(B, [b*Math.cos(rd), b*Math.sin(rd), 0]), n = tdX(tdSub(C, A), tdSub(D, B));
+        const sec = tt=>{ const M = tdLerp(A, B, tt), P = [tdCut(M, n, B, C), tdCut(M, n, C, D), tdCut(M, n, D, A)]; if(P.some(x=> !x)) return NaN; return tdArea([M, ...P]); };
+        if(mx){ let best = 0; for(let i = 1; i < 2000; i++) best = Math.max(best, sec(i/2000)); return Math.abs(best - o.ans) < 1e-6; }
+        return Math.abs(sec(t) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 97. TLN TH — mặt phẳng song song với đáy hình chóp: diện tích k²·S, thể tích hai phần */
+GT(11,3,0,'TH','HSG: mặt phẳng qua M ∈ SA song song với đáy cắt hình chóp — thiết diện đồng dạng với đáy tỉ số k = SM/SA nên diện tích bằng k²·S_đáy; khối chóp nhỏ có thể tích bằng k³ lần, phần còn lại gấp (1 − k³)/k³ lần', R=>{
+  for(let g = 0; g < 200; g++){
+    if(R.rnd() < 0.5){
+      const [p, q] = R.pick(tdRatios), S0 = q*q*R.int(1, 12), v = S0*p*p/(q*q), n = R.pick([3, 4, 5]), nm = {3:'ABC', 4:'ABCD', 5:'ABCDE'}[n];
+      const o = {stem:`Cho hình chóp $S.${nm}$ có đáy là đa giác diện tích bằng $${S0}$. Gọi $M$ là điểm trên cạnh $SA$ sao cho $SM = ${tdFr(p, q)}SA$. Mặt phẳng qua $M$ song song với mặt đáy cắt hình chóp theo một thiết diện. Tính diện tích thiết diện đó.`, ans:v,
+        lg:`Mặt phẳng song song với đáy cắt các cạnh bên tại các điểm chia cạnh bên theo cùng tỉ số $${tdFr(p, q)}$ (định lí Thalès), nên mỗi cạnh của thiết diện song song và bằng $${tdFr(p, q)}$ cạnh tương ứng của đáy: thiết diện đồng dạng với đáy tỉ số $k = ${tdFr(p, q)}$.<br>Diện tích thiết diện: $k^2\\cdot ${S0} = ${tdFr(p*p, q*q)}\\cdot ${S0} = ${v}$.`,
+        verify:()=>{ const S = [0.4, 0.7, 5], base = [[0, 0, 0], [4, 0.3, 0], [4.6, 3.2, 0], [1.5, 4.4, 0], [-0.8, 2.1, 0]].slice(0, n); const sec = base.map(X=> tdLerp(S, X, p/q)); return Math.abs(tdArea(sec)/tdArea(base)*S0 - o.ans) < 1e-6; }};
+      return o; }
+    const m = R.int(2, 21), v = m**3 - 1; if(!tdOk(v)) continue;
+    const o = {stem:`Cho hình chóp $S.ABCD$. Mặt phẳng song song với đáy cắt cạnh $SA$ tại $M$ sao cho $SA = ${m}SM$, chia khối chóp thành hai phần. Hỏi thể tích phần chứa đáy gấp bao nhiêu lần thể tích phần chứa đỉnh $S$?`, ans:v,
+      lg:`Phần chứa đỉnh $S$ là khối chóp đồng dạng với khối chóp ban đầu tỉ số $k = \\dfrac{SM}{SA} = ${tdFr(1, m)}$ (đáy đồng dạng tỉ số $k$, chiều cao bằng $k$ lần), nên có thể tích bằng $k^3V = \\dfrac{V}{${m**3}}$.<br>Phần chứa đáy có thể tích $V - \\dfrac{V}{${m**3}} = \\dfrac{${m**3 - 1}V}{${m**3}}$, gấp $${v}$ lần phần chứa đỉnh.`,
+      verify:()=>{ const S = [0.4, 0.7, 5], B = [[0, 0, 0], [4, 0.3, 0], [4.6, 3.2, 0], [1.5, 4.4, 0]], vol = P=> tdTet(S, P[0], P[1], P[2]) + tdTet(S, P[0], P[2], P[3]);
+        const V = vol(B), small = tdTet(S, ...[0, 1, 2].map(i=> tdLerp(S, B[i], 1/m))) + tdTet(S, ...[0, 2, 3].map(i=> tdLerp(S, B[i], 1/m))); return Math.abs((V - small)/small - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 98. TLN VD — mặt phẳng (ABM) với M ∈ SC, đáy hình bình hành: V_{S.ABMN} = (k + k²)V/2 */
+GT(11,3,0,'VD','HSG: hình chóp đáy hình bình hành, M ∈ SC với SM = k·SC; mặt phẳng (ABM) cắt SD tại N (MN ∥ CD, SN = k·SD) — chia khối S.ABMN thành S.ABM và S.AMN, V_{S.ABMN} = (k + k²)V/2; tính thể tích một trong hai phần', R=>{
+  for(let g = 0; g < 200; g++){
+    const [p, q] = R.pick(tdRatios), k = p/q, V = 2*q*q*R.int(1, 20), up = V*(k + k*k)/2, low = V - up, top = R.rnd() < 0.5, v = top ? up : low; if(!tdOk(v)) continue;
+    const o = {stem:`Cho hình chóp $S.ABCD$ có đáy là hình bình hành và thể tích bằng $${V}$. Gọi $M$ là điểm trên cạnh $SC$ sao cho $SM = ${tdFr(p, q)}SC$. Mặt phẳng $(ABM)$ chia khối chóp thành hai phần. Tính thể tích phần ${top ? 'chứa đỉnh $S$' : 'chứa đáy $ABCD$'}.`, ans:v,
+      lg:`Vì $AB \\parallel CD$ nên $(ABM)$ cắt $(SCD)$ theo giao tuyến $MN \\parallel CD$ ($N \\in SD$), suy ra $\\dfrac{SN}{SD} = \\dfrac{SM}{SC} = ${tdFr(p, q)}$. Phần chứa $S$ là khối $S.ABMN$.<br>`
+        + `$V_{S.ABC} = V_{S.ACD} = \\dfrac{V}{2} = ${V/2}$. Ta có $V_{S.ABM} = \\dfrac{SM}{SC}V_{S.ABC} = ${tdN(k*V/2)}$, $V_{S.AMN} = \\dfrac{SM}{SC}\\cdot\\dfrac{SN}{SD}V_{S.ACD} = ${tdN(k*k*V/2)}$.<br>`
+        + `Nên $V_{S.ABMN} = ${tdN(up)}$${top ? '' : ` và phần chứa đáy có thể tích $${V} - ${tdN(up)} = ${tdN(low)}$`}.`,
+      verify:()=>{ const S = [1, 0.6, 4], A = [0, 0, 0], B = [5, 0, 0], D = [1.2, 3, 0], C = tdAdd(B, tdSub(D, A)), M = tdLerp(S, C, k), n = tdX(tdSub(B, A), tdSub(M, A)), N = tdCut(A, n, S, D);
+        const Vc = tdTet(S, A, B, C) + tdTet(S, A, C, D), Vu = tdTet(S, A, B, M) + tdTet(S, A, M, N); return Math.abs((top ? Vu : Vc - Vu)/Vc*V - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 99. TLN VD — mặt phẳng cắt bốn cạnh bên của hình chóp đáy hình bình hành: SA/SA' + SC/SC' = SB/SB' + SD/SD' */
+GT(11,3,0,'VD','HSG: hình chóp đáy hình bình hành, mặt phẳng qua A cắt SB, SC, SD tại B\', M, D\' — hệ thức SA/SA\' + SC/SC\' = SB/SB\' + SD/SD\' (= 2SO/SI, chứng minh bằng tỉ số diện tích); tính tỉ số SD/SD\' hoặc thể tích khối chóp bị cắt', R=>{
+  for(let g = 0; g < 300; g++){
+    const c = R.pick([2, 3, 4, 3/2, 5/2]), b = R.pick([2, 3, 3/2, 4/3, 5/4, 5/3]), d = 1 + c - b;   // c = SC/SM, b = SB/SB', d = SD/SD'
+    if(d <= 1 || !tdOk(d)) continue;
+    const fT = x=> Number.isInteger(x) ? String(x) : (()=>{ for(let qq = 2; qq <= 6; qq++) if(Number.isInteger(x*qq)) return frT(Math.round(x*qq), qq); return nt(x); })();
+    const head = `Cho hình chóp $S.ABCD$ có đáy là hình bình hành. Một mặt phẳng đi qua $A$ cắt các cạnh $SB$, $SC$, $SD$ lần lượt tại $B'$, $C'$, $D'$ với $\\dfrac{SB}{SB'} = ${fT(b)}$, $\\dfrac{SC}{SC'} = ${fT(c)}$.`;
+    const base = `Gọi $O = AC \\cap BD$, $I = AC' \\cap SO$ thì $I$ thuộc mặt phẳng đã cho, nên $B'$, $I$, $D'$ thẳng hàng.<br>`
+      + `Trong tam giác $SBD$ ($O$ là trung điểm $BD$), từ $S_{SB'D'} = S_{SB'I} + S_{SID'}$ chia cho $S_{SBD}$: $\\dfrac{SB'}{SB}\\cdot\\dfrac{SD'}{SD} = \\dfrac{1}{2}\\cdot\\dfrac{SB'}{SB}\\cdot\\dfrac{SI}{SO} + \\dfrac{1}{2}\\cdot\\dfrac{SI}{SO}\\cdot\\dfrac{SD'}{SD}$, tức là $\\dfrac{SB}{SB'} + \\dfrac{SD}{SD'} = \\dfrac{2SO}{SI}$. Tương tự trong tam giác $SAC$ (mặt phẳng đi qua $A$): $1 + \\dfrac{SC}{SC'} = \\dfrac{2SO}{SI}$.<br>`
+      + `Do đó $1 + ${fT(c)} = ${fT(b)} + \\dfrac{SD}{SD'}$, suy ra $\\dfrac{SD}{SD'} = ${fT(d)}${Number.isInteger(d) ? '' : ' = ' + tdN(d)}$.`;
+    if(R.rnd() < 0.5){
+      const o = {stem:`${head} Tính tỉ số $\\dfrac{SD}{SD'}$.`, ans:Math.round(d*10)/10, lg: base,
+        verify:()=>{ const S = [0.8, 1.1, 4.5], A = [0, 0, 0], B = [5, 0.4, 0], D = [1.4, 3.6, 0], C = tdAdd(B, tdSub(D, A)), B1 = tdLerp(S, B, 1/b), C1 = tdLerp(S, C, 1/c), n = tdX(tdSub(B1, A), tdSub(C1, A)), D1 = tdCut(A, n, S, D);
+          return D1 && Math.abs(tdLen(tdSub(D, S))/tdLen(tdSub(D1, S)) - o.ans) < 1e-6; }};
+      return o; }
+    const x = 1/b, y = 1/c, z = 1/d, r = (x*y + y*z)/2;   // V_{S.AB'C'D'}/V = (xy + yz)/2 (chia theo AC')
+    const V = R.int(1, 40)*120, v = V*r; if(!tdOk(v) || v === 0) continue;
+    const o = {stem:`${head} Biết thể tích khối chóp $S.ABCD$ bằng $${V}$, tính thể tích khối chóp $S.AB'C'D'$.`, ans:Math.round(v*10)/10,
+      lg: base + `<br>$V_{S.AB'C'} = \\dfrac{SB'}{SB}\\cdot\\dfrac{SC'}{SC}\\cdot\\dfrac{V}{2}$, $V_{S.AC'D'} = \\dfrac{SC'}{SC}\\cdot\\dfrac{SD'}{SD}\\cdot\\dfrac{V}{2}$. Vậy $V_{S.AB'C'D'} = \\left(${fT(x)}\\cdot ${fT(y)} + ${fT(y)}\\cdot ${fT(z)}\\right)\\cdot ${V/2} = ${tdN(v)}$.`,
+      verify:()=>{ const S = [0.8, 1.1, 4.5], A = [0, 0, 0], B = [5, 0.4, 0], D = [1.4, 3.6, 0], C = tdAdd(B, tdSub(D, A)), B1 = tdLerp(S, B, 1/b), C1 = tdLerp(S, C, 1/c), n = tdX(tdSub(B1, A), tdSub(C1, A)), D1 = tdCut(A, n, S, D);
+        const Vc = tdTet(S, A, B, C) + tdTet(S, A, C, D), Vs = tdTet(S, A, B1, C1) + tdTet(S, A, C1, D1); return Math.abs(Vs/Vc*V - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 100. TLN VD — Menelaus trong không gian: mặt phẳng cắt bốn cạnh AB, BC, CD, DA của tứ diện */
+GT(11,3,0,'VD','HSG: mặt phẳng (MNP) với M ∈ AB, N ∈ BC, P ∈ CD cắt AD tại Q — định lí Menelaus trong không gian (AM/MB)·(BN/NC)·(CP/PD)·(DQ/QA) = 1 (chứng minh qua giao điểm của MP với mặt phẳng (ABD) hoặc chiếu song song); tính AQ/QD', R=>{
+  const RS = [[1, 2], [1, 3], [2, 3], [3, 2], [2, 1], [3, 1], [3, 4], [4, 3], [1, 4], [4, 1], [5, 2], [2, 5]];
+  for(let g = 0; g < 300; g++){
+    const r1 = R.pick(RS), r2 = R.pick(RS), r3 = R.pick(RS), v = r1[0]*r2[0]*r3[0]/(r1[1]*r2[1]*r3[1]); if(!tdOk(v) || v === 1 || r1[0]*r2[0] === r1[1]*r2[1]) continue;
+    const rT = r=> frT(r[0], r[1]);
+    const o = {stem:`Cho tứ diện $ABCD$. Các điểm $M$, $N$, $P$ lần lượt thuộc các cạnh $AB$, $BC$, $CD$ sao cho $\\dfrac{AM}{MB} = ${rT(r1)}$, $\\dfrac{BN}{NC} = ${rT(r2)}$, $\\dfrac{CP}{PD} = ${rT(r3)}$. Mặt phẳng $(MNP)$ cắt cạnh $AD$ tại $Q$. Tính tỉ số $\\dfrac{AQ}{QD}$.`, ans:Math.round(v*10)/10,
+      lg:`Vì $\\dfrac{AM}{MB} \\ne \\dfrac{CN}{NB}$ nên $MN$ cắt đường thẳng $AC$ tại $I$ (trong mặt phẳng $(ABC)$). Khi đó $Q = IP \\cap AD$ (trong mặt phẳng $(ACD)$).<br>`
+        + `Menelaus cho tam giác $ABC$ với cát tuyến $M, N, I$: $\\dfrac{AM}{MB}\\cdot\\dfrac{BN}{NC}\\cdot\\dfrac{CI}{IA} = 1$; cho tam giác $ACD$ với cát tuyến $I, P, Q$: $\\dfrac{AI}{IC}\\cdot\\dfrac{CP}{PD}\\cdot\\dfrac{DQ}{QA} = 1$.<br>`
+        + `Nhân hai đẳng thức: $\\dfrac{AM}{MB}\\cdot\\dfrac{BN}{NC}\\cdot\\dfrac{CP}{PD}\\cdot\\dfrac{DQ}{QA} = 1$, nên $\\dfrac{AQ}{QD} = ${rT(r1)}\\cdot ${rT(r2)}\\cdot ${rT(r3)} = ${tdN(v)}$.`,
+      verify:()=>{ const A = [0, 0, 0], B = [5, 0.3, 0.2], C = [1.6, 4.1, 0.4], D = [1.2, 1.4, 3.9], M = tdLerp(A, B, r1[0]/(r1[0] + r1[1])), N = tdLerp(B, C, r2[0]/(r2[0] + r2[1])), P = tdLerp(C, D, r3[0]/(r3[0] + r3[1]));
+        const n = tdX(tdSub(N, M), tdSub(P, M)), Q = tdCut(M, n, A, D); if(!Q) return false; return Math.abs(tdLen(tdSub(Q, A))/tdLen(tdSub(D, Q)) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích; cực trị diện tích thiết diện (11|3|0), đợt 2 (5 dạng TLN). Claude viết.
+// Chuỗi: thiết diện song song hai cạnh đối là hình thoi (hình vuông) → tam giác (ACB') trong hình hộp chữ nhật (Heron)
+// → lăng trụ tam giác bị cắt: V = V_lăng trụ·(x + y + z)/3 → hình hộp bị cắt: x + z = y + w, V = V_hộp·(x + z)/2 → mặt phẳng qua trọng tâm song song với một mặt.
+const tdSub = (a, b)=> [a[0] - b[0], a[1] - b[1], a[2] - b[2]], tdAdd = (a, b)=> [a[0] + b[0], a[1] + b[1], a[2] + b[2]], tdMul = (a, k)=> [a[0]*k, a[1]*k, a[2]*k];
+const tdX = (a, b)=> [a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]], tdDot = (a, b)=> a[0]*b[0] + a[1]*b[1] + a[2]*b[2], tdLen = a=> Math.sqrt(tdDot(a, a));
+const tdLerp = (A, B, s)=> tdAdd(A, tdMul(tdSub(B, A), s));
+const tdCut = (P0, n, A, B)=>{ const den = tdDot(tdSub(B, A), n); if(Math.abs(den) < 1e-12) return null; const s = tdDot(tdSub(P0, A), n)/den; return s >= -1e-9 && s <= 1 + 1e-9 ? tdLerp(A, B, s) : null; };
+const tdArea = P=>{ let s = [0, 0, 0]; for(let i = 1; i + 1 < P.length; i++) s = tdAdd(s, tdX(tdSub(P[i], P[0]), tdSub(P[i + 1], P[0]))); return tdLen(s)/2; };
+const tdTet = (A, B, C, D)=> Math.abs(tdDot(tdX(tdSub(B, A), tdSub(C, A)), tdSub(D, A)))/6;
+const tdOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tdN = v=> nt(Math.round(v*10)/10);
+const tdQ = x=>{ for(let q = 1; q <= 360; q++) if(Math.abs(x*q - Math.round(x*q)) < 1e-9) return frT(Math.round(x*q), q); return nt(x); };
+const tdPrism = (A, B, C, M, N, P)=> tdTet(A, B, C, M) + tdTet(B, C, M, N) + tdTet(C, M, N, P);
+const tdBoxT = (()=>{ const L = []; for(let a = 1; a <= 15; a++) for(let b = 1; b <= 15; b++) for(let c = 1; c <= 15; c++){ const s = a*a*b*b + b*b*c*c + c*c*a*a, r = Math.round(Math.sqrt(s)); if(r*r === s && r/2 <= 999) L.push([a, b, c, r]); } return L; })();
+
+/* 101. TLN VD — thiết diện song song hai cạnh đối là hình thoi (hình vuông) */
+GT(11,3,0,'VD','HSG: tứ diện có AB = a, CD = b; mặt phẳng qua M ∈ AC song song với AB và CD cắt tứ diện theo hình bình hành cạnh (1 − t)a, tb — tìm vị trí để thiết diện là hình thoi (t = a/(a + b)), tính cạnh ab/(a + b); khi AB ⊥ CD thiết diện là hình vuông, tính diện tích', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.int(2, 30), b = R.int(2, 30); if(a === b) continue;
+    const s = a*b/(a + b), sq = R.rnd() < 0.4, v = sq ? s*s : s; if(!tdOk(v)) continue;
+    const o = {stem:`Cho tứ diện $ABCD$ có $AB = ${a}$, $CD = ${b}$${sq ? ' và $AB \\perp CD$' : ''}. Mặt phẳng $(\\alpha)$ đi qua điểm $M$ thay đổi trên cạnh $AC$ và song song với $AB$, $CD$. Khi thiết diện của tứ diện cắt bởi $(\\alpha)$ là ${sq ? 'hình vuông, tính diện tích hình vuông đó' : 'hình thoi, tính độ dài cạnh hình thoi đó'}.`, ans:Math.round(v*10)/10,
+      lg:`$(\\alpha)$ cắt $BC$, $BD$, $AD$ lần lượt tại $N$, $P$, $Q$ với $MN \\parallel PQ \\parallel AB$, $MQ \\parallel NP \\parallel CD$: thiết diện $MNPQ$ là hình bình hành. Đặt $t = \\dfrac{AM}{AC}$:<br>`
+        + `$MN = \\dfrac{CM}{CA}\\cdot AB = ${a}(1 - t)$, $MQ = \\dfrac{AM}{AC}\\cdot CD = ${b}t$.<br>`
+        + `Hình bình hành là hình thoi $\\iff ${a}(1 - t) = ${b}t \\iff t = ${frT(a, a + b)}$; khi đó cạnh bằng $${b}\\cdot ${frT(a, a + b)} = ${tdQ(s)}${!sq && !Number.isInteger(s) ? ' = ' + tdN(s) : ''}$.`
+        + (sq ? `<br>Vì $AB \\perp CD$ nên $MN \\perp MQ$: hình thoi đó là hình vuông, diện tích bằng $${Number.isInteger(s) ? s : `\\left(${tdQ(s)}\\right)`}^2 = ${tdN(v)}$.` : ''),
+      verify:()=>{ const A = [0, 0, 0], B = [a, 0, 0], C = [0.7, 2.3, 1.9], D = tdAdd(C, sq ? [0, b*0.6, b*0.8] : [b*0.6, b*0.48, b*0.64]), n = tdX(tdSub(B, A), tdSub(D, C));
+        const f = tt=>{ const M = tdLerp(A, C, tt), N = tdCut(M, n, B, C), Q = tdCut(M, n, A, D); return [tdLen(tdSub(N, M)), tdLen(tdSub(Q, M)), M, N, Q]; };
+        let lo = 1e-6, hi = 1 - 1e-6; for(let i = 0; i < 80; i++){ const mi = (lo + hi)/2, [x1, x2] = f(mi); if(x1 > x2) lo = mi; else hi = mi; }
+        const [x1, , M, N, Q] = f(lo), P = tdCut(M, n, B, D), area = tdArea([M, N, P, Q]); return Math.abs((sq ? area : x1) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 102. TLN VD — thiết diện (ACB') của hình hộp chữ nhật */
+GT(11,3,0,'VD','HSG: hình hộp chữ nhật ABCD.A\'B\'C\'D\' có AB = a, AD = b, AA\' = c — thiết diện cắt bởi mặt phẳng (ACB\') là tam giác có ba cạnh √(a² + b²), √(a² + c²), √(b² + c²); dùng 16S² = 4x²y² − (x² + y² − z²)² được S = ½√(a²b² + b²c² + c²a²)', R=>{
+  const [a, b, c, r] = R.pick(tdBoxT), S = r/2; if(!tdOk(S)) return null;
+  const x2 = a*a + b*b, y2 = a*a + c*c, z2 = b*b + c*c;
+  const o = {stem:`Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB = ${a}$, $AD = ${b}$, $AA' = ${c}$. Tính diện tích thiết diện của hình hộp cắt bởi mặt phẳng $(ACB')$.`, ans:S,
+    lg:`Mặt phẳng $(ACB')$ cắt hình hộp theo tam giác $ACB'$ với $AC^2 = ${a*a} + ${b*b} = ${x2}$, $AB'^2 = ${a*a} + ${c*c} = ${y2}$, $CB'^2 = ${b*b} + ${c*c} = ${z2}$.<br>`
+      + `Công thức Heron viết theo bình phương cạnh: $16S^2 = 4\\cdot AC^2\\cdot AB'^2 - \\left(AC^2 + AB'^2 - CB'^2\\right)^2 = 4\\cdot ${x2}\\cdot ${y2} - ${2*a*a}^2 = ${4*x2*y2 - 4*a**4}$.<br>`
+      + `Suy ra $S^2 = ${(4*x2*y2 - 4*a**4)/16}$${Number.isInteger((4*x2*y2 - 4*a**4)/16) ? '' : ''}, $S = ${tdN(S)}$ (tổng quát $S = \\dfrac{1}{2}\\sqrt{a^2b^2 + b^2c^2 + c^2a^2}$).`.replace(/S\^2 = ([0-9.]+)\./, (m, x)=> `S^2 = ${nt(+x)}.`),
+    verify:()=>{ const A = [0, 0, 0], C = [a, b, 0], B1 = [a, 0, c]; return Math.abs(tdArea([A, C, B1]) - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 103. TLN VD — lăng trụ tam giác bị cắt bởi mặt phẳng qua ba điểm trên ba cạnh bên */
+GT(11,3,0,'VD','HSG: lăng trụ tam giác ABC.A\'B\'C\' thể tích V, mặt phẳng cắt AA\', BB\', CC\' tại M, N, P với AM/AA\' = x, BN/BB\' = y, CP/CC\' = z — chia khối ABC.MNP thành M.ABC và M.BCPN, được V_{ABC.MNP} = V(x + y + z)/3; tính thể tích một phần', R=>{
+  const FR = [[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [1, 6], [5, 6], [1, 1]];
+  for(let g = 0; g < 300; g++){
+    const fx = R.pick(FR), fy = R.pick(FR), fz = R.pick(FR); if(fx[0] === fx[1] && fy[0] === fy[1] && fz[0] === fz[1]) continue;
+    const x = fx[0]/fx[1], y = fy[0]/fy[1], z = fz[0]/fz[1], V = 36*R.int(1, 30), low = V*(x + y + z)/3, top = R.rnd() < 0.4, v = top ? V - low : low; if(!tdOk(v)) continue;
+    const fT = f=> f[0] === f[1] ? '1' : frT(f[0], f[1]);
+    const desc = (P, E, f)=> f[0] === f[1] ? `$${P}$ trùng $${E}'$` : `$${E}${P} = ${fT(f)}${E}${E}'$`;
+    const o = {stem:`Cho khối lăng trụ $ABC.A'B'C'$ có thể tích bằng $${V}$. Các điểm $M$, $N$, $P$ lần lượt thuộc các cạnh $AA'$, $BB'$, $CC'$ sao cho ${desc('M', 'A', fx)}, ${desc('N', 'B', fy)}, ${desc('P', 'C', fz)}. Mặt phẳng $(MNP)$ chia khối lăng trụ thành hai phần. Tính thể tích phần ${top ? 'không chứa mặt đáy $ABC$' : 'chứa mặt đáy $ABC$'}.`, ans:Math.round(v*10)/10,
+      lg:`Gọi $h$, $S$ là chiều cao và diện tích đáy lăng trụ ($V = Sh$). Chia khối $ABC.MNP$ thành hai khối chóp $M.ABC$ và $M.BCPN$.<br>`
+        + `$V_{M.ABC} = \\dfrac{1}{3}\\cdot ${fx[0] === fx[1] ? '' : fT(fx) + '\\cdot '}V$ (chiều cao từ $M$ bằng $${fx[0] === fx[1] ? '' : fT(fx)}h$).<br>`
+        + `Vì $AA' \\parallel (BCC'B')$ nên khoảng cách từ $M$ đến $(BCC'B')$ bằng khoảng cách từ $A$; hình thang $BCPN$ có diện tích bằng $\\dfrac{${fT(fy)} + ${fT(fz)}}{2}S_{BCC'B'}$, mà $V_{A.BCC'B'} = \\dfrac{2}{3}V$, nên $V_{M.BCPN} = \\dfrac{${fT(fy)} + ${fT(fz)}}{2}\\cdot\\dfrac{2}{3}V$.<br>`
+        + `Do đó $V_{ABC.MNP} = \\dfrac{x + y + z}{3}V = \\dfrac{1}{3}\\left(${fT(fx)} + ${fT(fy)} + ${fT(fz)}\\right)\\cdot ${V} = ${tdN(low)}$${top ? `; phần còn lại có thể tích $${V} - ${tdN(low)} = ${tdN(v)}$` : ''}.`.replace('\\dfrac{1}{3}S\\cdot AM\\text{-}\\text{tỉ lệ} = ', ''),
+      verify:()=>{ const A = [0, 0, 0], B = [4, 0.5, 0], C = [1.2, 3.3, 0], u = [0.9, 0.4, 3], A1 = tdAdd(A, u), B1 = tdAdd(B, u), C1 = tdAdd(C, u);
+        const Vc = tdPrism(A, B, C, A1, B1, C1), Vl = tdPrism(A, B, C, tdLerp(A, A1, x), tdLerp(B, B1, y), tdLerp(C, C1, z)); return Math.abs((top ? Vc - Vl : Vl)/Vc*V - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 104. TLN VD — hình hộp bị cắt bởi mặt phẳng cắt bốn cạnh bên */
+GT(11,3,0,'VD','HSG: hình hộp ABCD.A\'B\'C\'D\', mặt phẳng cắt AA\', BB\', CC\', DD\' tại M, N, P, Q — thiết diện là hình bình hành nên AM + CP = BN + DQ (tâm thiết diện nằm trên đường nối tâm hai đáy); thể tích phần dưới bằng V(x + z)/2; tính DQ/DD\' hoặc thể tích', R=>{
+  const FR = [[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [1, 5], [2, 5], [3, 5], [4, 5], [1, 6], [5, 6]];
+  for(let g = 0; g < 300; g++){
+    const fx = R.pick(FR), fy = R.pick(FR), fz = R.pick(FR), x = fx[0]/fx[1], y = fy[0]/fy[1], z = fz[0]/fz[1], w = x + z - y; if(w <= 0.05 || w >= 0.999) continue;
+    const head = `Cho hình hộp $ABCD.A'B'C'D'$. Một mặt phẳng cắt các cạnh $AA'$, $BB'$, $CC'$, $DD'$ lần lượt tại $M$, $N$, $P$, $Q$ với $AM = ${frT(fx[0], fx[1])}AA'$, $BN = ${frT(fy[0], fy[1])}BB'$, $CP = ${frT(fz[0], fz[1])}CC'$.`;
+    const base = `Hai mặt $(ABB'A')$, $(DCC'D')$ song song nên $MN \\parallel QP$; tương tự $MQ \\parallel NP$: $MNPQ$ là hình bình hành. Gọi $O$, $O'$ là tâm hai đáy, $I$ là tâm của $MNPQ$; trong các hình thang $ACPM$, $BDQN$, đường trung bình qua $I$ song song với cạnh bên, nằm trên $OO'$:<br>`
+      + `$\\dfrac{AM + CP}{2} = OI = \\dfrac{BN + DQ}{2}$, nên $\\dfrac{DQ}{DD'} = ${frT(fx[0], fx[1])} + ${frT(fz[0], fz[1])} - ${frT(fy[0], fy[1])} = ${tdQ(w)}${tdOk(w) && tdQ(w).includes('dfrac') ? ' = ' + tdN(w) : ''}$.`;
+    if(R.rnd() < 0.5){ if(!tdOk(w)) continue;
+      const o = {stem:`${head} Tính tỉ số $\\dfrac{DQ}{DD'}$.`, ans:Math.round(w*10)/10, lg: base,
+        verify:()=>{ const A = [0, 0, 0], B = [4, 0.4, 0], D = [1, 3, 0], C = tdAdd(B, tdSub(D, A)), u = [0.7, 0.5, 3.2], M = tdLerp(A, tdAdd(A, u), x), N = tdLerp(B, tdAdd(B, u), y), P = tdLerp(C, tdAdd(C, u), z), n = tdX(tdSub(N, M), tdSub(P, M)), Q = tdCut(M, n, D, tdAdd(D, u)); return Q && Math.abs(tdLen(tdSub(Q, D))/tdLen(u) - o.ans) < 1e-6; }};
+      return o; }
+    const V = 60*R.int(1, 40), v = V*(x + z)/2; if(!tdOk(v)) continue;
+    const o = {stem:`${head} Biết thể tích khối hộp bằng $${V}$, tính thể tích phần khối hộp nằm giữa mặt phẳng $(MNPQ)$ và mặt đáy $ABCD$.`, ans:Math.round(v*10)/10,
+      lg: base + `<br>Mặt phẳng $(ACC'A')$ chia phần cần tìm thành hai khối lăng trụ bị cắt $ABC.MNP$ và $ACD.MPQ$, mỗi lăng trụ tam giác đầy đủ có thể tích $\\dfrac{V}{2}$. Áp dụng $V_{ABC.MNP} = \\dfrac{V}{2}\\cdot\\dfrac{x + y + z}{3}$ (với $x, y, z$ là tỉ số trên ba cạnh bên):<br>`
+        + `$V_{cần\\ tìm} = \\dfrac{V}{2}\\cdot\\dfrac{(x + y + z) + (x + z + w)}{3} = \\dfrac{V}{2}\\cdot\\dfrac{3(x + z)}{3} = \\dfrac{V(x + z)}{2} = \\dfrac{${V}}{2}\\left(${frT(fx[0], fx[1])} + ${frT(fz[0], fz[1])}\\right) = ${tdN(v)}$ (vì $y + w = x + z$).`.replace('V_{cần\\ tìm}', 'V_1').replace('Mặt phẳng $(ACC\'A\')$ chia phần cần tìm', 'Gọi $V_1$ là thể tích cần tìm. Mặt phẳng $(ACC\'A\')$ chia phần đó'),
+      verify:()=>{ const A = [0, 0, 0], B = [4, 0.4, 0], D = [1, 3, 0], C = tdAdd(B, tdSub(D, A)), u = [0.7, 0.5, 3.2], M = tdLerp(A, tdAdd(A, u), x), N = tdLerp(B, tdAdd(B, u), y), P = tdLerp(C, tdAdd(C, u), z), n = tdX(tdSub(N, M), tdSub(P, M)), Q = tdCut(M, n, D, tdAdd(D, u));
+        const Vbox = tdPrism(A, B, C, ...[A, B, C].map(X=> tdAdd(X, u))) + tdPrism(A, C, D, ...[A, C, D].map(X=> tdAdd(X, u))), Vl = tdPrism(A, B, C, M, N, P) + tdPrism(A, C, D, M, P, Q); return Math.abs(Vl/Vbox*V - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 105. TLN TH — mặt phẳng qua trọng tâm song song với một mặt của tứ diện */
+GT(11,3,0,'TH','HSG: mặt phẳng qua trọng tâm G của tứ diện (hoặc trọng tâm của mặt ACD) song song với mặt (BCD) — G chia đoạn nối A với trọng tâm tam giác BCD theo tỉ số 3/4 (trọng tâm mặt ACD: 2/3), thiết diện đồng dạng tỉ số k, diện tích k²·S, tứ diện nhỏ có thể tích k³·V', R=>{
+  for(let g = 0; g < 200; g++){
+    const cen = R.rnd() < 0.55, k = cen ? 3/4 : 2/3, area = R.rnd() < 0.55, X = area ? (cen ? 16 : 9)*R.int(1, 60) : (cen ? 64 : 27)*R.int(1, 40), v = area ? X*k*k : X*k**3; if(!tdOk(v)) continue;
+    const pt = cen ? 'trọng tâm $G$ của tứ diện' : 'trọng tâm $G$ của tam giác $ACD$';
+    const o = {stem:`Cho tứ diện $ABCD$ có ${area ? `diện tích tam giác $BCD$ bằng $${X}$` : `thể tích bằng $${X}$`}. Mặt phẳng $(\\alpha)$ đi qua ${pt} và song song với mặt phẳng $(BCD)$, cắt $AB$, $AC$, $AD$ lần lượt tại $M$, $N$, $P$. ${area ? 'Tính diện tích tam giác $MNP$.' : 'Tính thể tích khối tứ diện $AMNP$.'}`, ans:Math.round(v*10)/10,
+      lg:(cen ? `Gọi $G_1$ là trọng tâm tam giác $BCD$; trọng tâm $G$ của tứ diện nằm trên $AG_1$ với $AG = \\dfrac{3}{4}AG_1$.` : `Gọi $K$ là trung điểm $CD$ ($K \\in (BCD)$); trọng tâm $G$ của tam giác $ACD$ nằm trên $AK$ với $AG = \\dfrac{2}{3}AK$.`)
+        + `<br>Vì $(\\alpha) \\parallel (BCD)$, theo định lí Thalès: $\\dfrac{AM}{AB} = \\dfrac{AN}{AC} = \\dfrac{AP}{AD} = \\dfrac{AG}{A${cen ? 'G_1' : 'K'}} = ${cen ? '\\dfrac{3}{4}' : '\\dfrac{2}{3}'}$, nên tam giác $MNP$ đồng dạng với $BCD$ tỉ số $k = ${cen ? '\\dfrac{3}{4}' : '\\dfrac{2}{3}'}$.<br>`
+        + (area ? `$S_{MNP} = k^2S_{BCD} = ${cen ? '\\dfrac{9}{16}' : '\\dfrac{4}{9}'}\\cdot ${X} = ${tdN(v)}$.` : `$V_{AMNP} = \\dfrac{AM}{AB}\\cdot\\dfrac{AN}{AC}\\cdot\\dfrac{AP}{AD}V = k^3V = ${cen ? '\\dfrac{27}{64}' : '\\dfrac{8}{27}'}\\cdot ${X} = ${tdN(v)}$.`),
+      verify:()=>{ const A = [0.5, 0.8, 4], B = [0, 0, 0], C = [4.2, 0.3, 0], D = [1.1, 3.6, 0], G = cen ? tdMul(tdAdd(tdAdd(A, B), tdAdd(C, D)), 1/4) : tdMul(tdAdd(A, tdAdd(C, D)), 1/3), n = [0, 0, 1];
+        const M = tdCut(G, n, A, B), N = tdCut(G, n, A, C), P = tdCut(G, n, A, D); return Math.abs((area ? tdArea([M, N, P])/tdArea([B, C, D]) : tdTet(A, M, N, P)/tdTet(A, B, C, D))*X - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích; cực trị diện tích thiết diện (11|3|0), đợt 3 (6 dạng TLN). Claude viết.
+// Chuỗi: thiết diện qua một cạnh đáy hình thang (MN ∥ AB, điều kiện hình bình hành) → cực trị diện tích thiết diện song song (SAD) (Cô-si)
+// → tỉ số thể tích chóp tam giác → hình hộp cắt góc → Menelaus trên mặt bên → bài toán ngược: biết tỉ số thể tích, tìm vị trí điểm.
+const tdSub = (a, b)=> [a[0] - b[0], a[1] - b[1], a[2] - b[2]], tdAdd = (a, b)=> [a[0] + b[0], a[1] + b[1], a[2] + b[2]], tdMul = (a, k)=> [a[0]*k, a[1]*k, a[2]*k];
+const tdX = (a, b)=> [a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]], tdDot = (a, b)=> a[0]*b[0] + a[1]*b[1] + a[2]*b[2], tdLen = a=> Math.sqrt(tdDot(a, a));
+const tdLerp = (A, B, s)=> tdAdd(A, tdMul(tdSub(B, A), s));
+const tdCut = (P0, n, A, B)=>{ const den = tdDot(tdSub(B, A), n); if(Math.abs(den) < 1e-12) return null; const s = tdDot(tdSub(P0, A), n)/den; return s >= -1e-9 && s <= 1 + 1e-9 ? tdLerp(A, B, s) : null; };
+const tdArea = P=>{ let s = [0, 0, 0]; for(let i = 1; i + 1 < P.length; i++) s = tdAdd(s, tdX(tdSub(P[i], P[0]), tdSub(P[i + 1], P[0]))); return tdLen(s)/2; };
+const tdTet = (A, B, C, D)=> Math.abs(tdDot(tdX(tdSub(B, A), tdSub(C, A)), tdSub(D, A)))/6;
+const tdOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tdN = v=> nt(Math.round(v*10)/10);
+const tdRatios = [[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [1, 5], [2, 5], [3, 5], [4, 5], [1, 6], [5, 6]];
+
+/* 106. TLN VD — thiết diện qua cạnh đáy CD của hình chóp đáy hình thang */
+GT(11,3,0,'VD','HSG: hình chóp đáy là hình thang AB ∥ CD, M ∈ SA; mặt phẳng (MCD) cắt SB tại N với MN ∥ AB, MN = (SM/SA)·AB, thiết diện MNCD là hình thang — tính MN hoặc tìm vị trí M để thiết diện là hình bình hành (MN = CD)', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.int(6, 24), b = R.int(2, a - 1);
+    if(R.rnd() < 0.5){
+      const [p, q] = R.pick(tdRatios), v = a*p/q; if(!tdOk(v)) continue;
+      const o = {stem:`Cho hình chóp $S.ABCD$ có đáy là hình thang, $AB \\parallel CD$, $AB = ${a}$, $CD = ${b}$. Gọi $M$ là điểm trên cạnh $SA$ sao cho $SM = ${frT(p, q)}SA$. Mặt phẳng $(MCD)$ cắt $SB$ tại $N$. Tính độ dài đoạn $MN$.`, ans:Math.round(v*10)/10,
+        lg:`Vì $CD \\parallel AB$ nên $CD \\parallel (SAB)$; mặt phẳng $(MCD)$ chứa $CD$ cắt $(SAB)$ theo giao tuyến qua $M$ song song với $AB$, cắt $SB$ tại $N$. Thiết diện $MNCD$ là hình thang.<br>Trong tam giác $SAB$: $\\dfrac{MN}{AB} = \\dfrac{SM}{SA} = ${frT(p, q)}$, nên $MN = ${frT(p, q)}\\cdot ${a} = ${tdN(v)}$.`,
+        verify:()=>{ const A = [0, 0, 0], B = [a, 0, 0], D = [1.3, 3.1, 0], C = tdAdd(D, [b, 0, 0]), S = [2.2, 1.4, 4.6], M = tdLerp(S, A, p/q), n = tdX(tdSub(C, D), tdSub(M, D)), N = tdCut(M, n, S, B); return N && Math.abs(tdLen(tdSub(N, M)) - o.ans) < 1e-6; }};
+      return o; }
+    const L = R.int(2, 40), v = L*b/a; if(!tdOk(v)) continue;
+    const o = {stem:`Cho hình chóp $S.ABCD$ có đáy là hình thang, $AB \\parallel CD$, $AB = ${a}$, $CD = ${b}$, cạnh bên $SA = ${L}$. Điểm $M$ thay đổi trên cạnh $SA$, mặt phẳng $(MCD)$ cắt $SB$ tại $N$. Tính độ dài $SM$ để thiết diện $MNCD$ là hình bình hành.`, ans:Math.round(v*10)/10,
+      lg:`Vì $CD \\parallel AB$ nên $(MCD)$ cắt $(SAB)$ theo giao tuyến $MN \\parallel AB$ ($N \\in SB$), thiết diện $MNCD$ là hình thang với $MN \\parallel CD$.<br>`
+        + `$MNCD$ là hình bình hành $\\iff MN = CD = ${b}$. Mà $MN = \\dfrac{SM}{SA}\\cdot AB = \\dfrac{SM}{${L}}\\cdot ${a}$, nên $SM = \\dfrac{${b}\\cdot ${L}}{${a}} = ${tdN(v)}$.`,
+      verify:()=>{ const A = [0, 0, 0], B = [a, 0, 0], D = [1.3, 3.1, 0], C = tdAdd(D, [b, 0, 0]), S0 = [2.2, 1.4, 4.6], S = tdAdd(A, tdMul(tdSub(S0, A), L/tdLen(tdSub(S0, A))));
+        const f = k=>{ const M = tdLerp(S, A, k), n = tdX(tdSub(C, D), tdSub(M, D)), N = tdCut(M, n, S, B); return [tdLen(tdSub(N, M)) - b, M]; };
+        let lo = 1e-6, hi = 1 - 1e-6; for(let i = 0; i < 80; i++){ const mi = (lo + hi)/2; if(f(mi)[0] < 0) lo = mi; else hi = mi; } return Math.abs(tdLen(tdSub(f(lo)[1], S)) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 107. TLN VDC — cực trị diện tích thiết diện song song với mặt bên (SAD) */
+GT(11,3,0,'VDC','HSG: hình chóp đáy hình thang AD ∥ BC (AD = a < BC = b), tam giác SAD có diện tích S₀; mặt phẳng qua M ∈ AB song song với (SAD) cắt hình chóp theo hình thang MNPQ — biểu diễn diện tích theo t = AM/AB: (S₀/a)(a + (2b − a)t)(1 − t), dùng Cô-si tìm giá trị lớn nhất S₀b²/(a(2b − a))', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.int(2, 8), b = R.int(a + 1, 16), c = 2*b - a, S0 = R.int(1, 30)*R.pick([1, 2, 3, 5]), v = S0*b*b/(a*c); if(!tdOk(v) || v > 999) continue;
+    const o = {stem:`Cho hình chóp $S.ABCD$ có đáy là hình thang, $AD \\parallel BC$, $AD = ${a}$, $BC = ${b}$; tam giác $SAD$ có diện tích bằng $${S0}$. Mặt phẳng $(\\alpha)$ đi qua điểm $M$ thay đổi trên cạnh $AB$ và song song với mặt phẳng $(SAD)$. Tìm giá trị lớn nhất của diện tích thiết diện của hình chóp cắt bởi $(\\alpha)$.`, ans:Math.round(v*10)/10,
+      lg:`$(\\alpha)$ cắt $CD$, $SC$, $SB$ lần lượt tại $N$, $P$, $Q$ với $MN \\parallel AD$, $NP \\parallel SD$, $MQ \\parallel SA$, $PQ \\parallel BC$: thiết diện $MNPQ$ là hình thang ($MN \\parallel PQ$). Đặt $t = \\dfrac{AM}{AB}$ ($0 < t < 1$).<br>`
+        + `$MN = AD + t(BC - AD) = ${a} + ${b - a === 1 ? '' : b - a}t$; $\\dfrac{SQ}{SB} = \\dfrac{AM}{AB} = t$ nên $PQ = t\\cdot BC = ${b}t$; $MQ = \\dfrac{BM}{BA}\\cdot SA = (1 - t)SA$.<br>`
+        + `Hai cạnh $MN$, $MQ$ lần lượt song song với $AD$, $SA$ nên chiều cao hình thang bằng $MQ\\sin\\widehat{SAD} = (1 - t)h$, với $h = \\dfrac{2\\cdot ${S0}}{${a}}$ là đường cao kẻ từ $S$ của tam giác $SAD$.<br>`
+        + `$S_{MNPQ} = \\dfrac{(MN + PQ)(1 - t)h}{2} = ${S0 === a ? '' : frT(S0, a)}(${a} + ${c}t)(1 - t) = ${S0 === a*c ? '' : frT(S0, a*c)}(${a} + ${c}t)(${c} - ${c}t)$.<br>`
+        + `Theo Cô-si: $(${a} + ${c}t)(${c} - ${c}t) \\le \\left(\\dfrac{${a} + ${c}}{2}\\right)^2 = ${b*b}$, dấu bằng khi $t = ${frT(b - a, c)}$.<br>Vậy diện tích lớn nhất bằng $${S0 === a*c ? '' : frT(S0, a*c) + '\\cdot '}${b*b}${S0 === a*c ? '' : ' = ' + tdN(v)}$.`.replace(/\(1 \+ /g, '(1 + ').replace('= 1(', '= ('),
+      verify:()=>{ const hS = 2*S0/a, A = [0, 0, 0], D = [a, 0, 0], B = [0.9, 2.7, 0], C = tdAdd(B, [b, 0, 0]), S = [1.1, hS*0.6, hS*0.8], n = tdX(tdSub(D, A), tdSub(S, A));
+        const area = t=>{ const M = tdLerp(A, B, t), N = tdCut(M, n, D, C), P = tdCut(M, n, S, C), Q = tdCut(M, n, S, B); return tdArea([M, N, P, Q]); };
+        let lo = 1e-6, hi = 1 - 1e-6; for(let i = 0; i < 200; i++){ const m1 = lo + (hi - lo)/3, m2 = hi - (hi - lo)/3; if(area(m1) < area(m2)) lo = m1; else hi = m2; } return Math.abs(area(lo) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 108. TLN TH — tỉ số thể tích khối chóp tam giác */
+GT(11,3,0,'TH','HSG: khối chóp S.ABC thể tích V, các điểm M, N, P trên SA, SB, SC — V_{S.MNP}/V_{S.ABC} = (SM/SA)·(SN/SB)·(SP/SC) (so sánh diện tích đáy SNP với SBC và chiều cao từ M, A); tính thể tích khối S.MNP hoặc khối đa diện ABC.MNP', R=>{
+  const FR = [[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [2, 5], [3, 5], [4, 5], [5, 6]];
+  for(let g = 0; g < 200; g++){
+    const f1 = R.pick(FR), f2 = R.pick(FR), f3 = R.pick(FR), r = f1[0]*f2[0]*f3[0]/(f1[1]*f2[1]*f3[1]), V = f1[1]*f2[1]*f3[1]*R.int(1, 8), small = R.rnd() < 0.5, v = small ? V*r : V*(1 - r); if(!tdOk(v)) continue;
+    const o = {stem:`Cho khối chóp $S.ABC$ có thể tích bằng $${V}$. Các điểm $M$, $N$, $P$ lần lượt thuộc các cạnh $SA$, $SB$, $SC$ sao cho $SM = ${frT(...f1)}SA$, $SN = ${frT(...f2)}SB$, $SP = ${frT(...f3)}SC$. Tính thể tích ${small ? 'khối chóp $S.MNP$' : 'khối đa diện $ABC.MNP$ (phần còn lại sau khi cắt bỏ khối chóp $S.MNP$)'}.`, ans:Math.round(v*10)/10,
+      lg:`$\\dfrac{S_{SNP}}{S_{SBC}} = \\dfrac{SN}{SB}\\cdot\\dfrac{SP}{SC}$ và tỉ số khoảng cách từ $M$, $A$ đến $(SBC)$ bằng $\\dfrac{SM}{SA}$, nên $\\dfrac{V_{S.MNP}}{V_{S.ABC}} = \\dfrac{SM}{SA}\\cdot\\dfrac{SN}{SB}\\cdot\\dfrac{SP}{SC} = ${frT(...f1)}\\cdot ${frT(...f2)}\\cdot ${frT(...f3)} = ${frT(f1[0]*f2[0]*f3[0], f1[1]*f2[1]*f3[1])}$.<br>`
+        + `$V_{S.MNP} = ${frT(f1[0]*f2[0]*f3[0], f1[1]*f2[1]*f3[1])}\\cdot ${V} = ${tdN(V*r)}$${small ? '' : `; thể tích phần còn lại: $${V} - ${tdN(V*r)} = ${tdN(v)}$`}.`,
+      verify:()=>{ const S = [0.3, 0.9, 4], A = [0, 0, 0], B = [4.4, 0.2, 0], C = [1.5, 3.8, 0], Vc = tdTet(S, A, B, C), Vs = tdTet(S, tdLerp(S, A, f1[0]/f1[1]), tdLerp(S, B, f2[0]/f2[1]), tdLerp(S, C, f3[0]/f3[1])); return Math.abs((small ? Vs : Vc - Vs)/Vc*V - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 109. TLN VD — hình hộp cắt bỏ các góc */
+GT(11,3,0,'VD','HSG: khối hộp thể tích V — cắt bỏ tám góc bởi các mặt phẳng qua ba điểm chia ba cạnh tại mỗi đỉnh theo tỉ số k (mỗi góc là tứ diện thể tích k³V/6) còn V(1 − 4k³/3); cắt bỏ bốn góc B, D, A\', C\' còn tứ diện ACB\'D\' thể tích V/3', R=>{
+  for(let g = 0; g < 200; g++){
+    if(R.rnd() < 0.35){
+      const V = 3*R.int(2, 300), v = V/3;
+      const o = {stem:`Cho khối hộp $ABCD.A'B'C'D'$ có thể tích bằng $${V}$. Tính thể tích khối tứ diện $ACB'D'$.`, ans:v,
+        lg:`Khối tứ diện $ACB'D'$ nhận được khi cắt bỏ khỏi khối hộp bốn khối tứ diện $B.ACB'$, $D.ACD'$, $A'.AB'D'$, $C'.CB'D'$.<br>Mỗi khối, chẳng hạn $B.ACB'$ có đáy là nửa mặt đáy $ABCD$ và chiều cao bằng chiều cao khối hộp, nên có thể tích $\\dfrac{1}{3}\\cdot\\dfrac{1}{2}V = \\dfrac{V}{6}$.<br>Vậy $V_{ACB'D'} = V - 4\\cdot\\dfrac{V}{6} = \\dfrac{V}{3} = ${v}$.`,
+        verify:()=>{ const A = [0, 0, 0], B = [4, 0.6, 0], D = [1.2, 3, 0], u = [0.8, 0.5, 3.4], C = tdAdd(B, tdSub(D, A)), B1 = tdAdd(B, u), D1 = tdAdd(D, u); const Vb = Math.abs(tdDot(tdX(tdSub(B, A), tdSub(D, A)), u)); return Math.abs(tdTet(A, C, B1, D1)/Vb*V - o.ans) < 1e-6; }};
+      return o; }
+    const [kp, kq, den] = R.pick([[1, 2, 6], [1, 3, 81], [1, 4, 48]]), k = kp/kq, V = den*R.int(1, 99), v = V*(1 - 4*k**3/3); if(!tdOk(v)) continue;
+    const o = {stem:`Cho khối hộp $ABCD.A'B'C'D'$ có thể tích bằng $${V}$. Tại mỗi đỉnh của hình hộp, người ta cắt bỏ một khối tứ diện bằng mặt phẳng đi qua ba điểm nằm trên ba cạnh xuất phát từ đỉnh đó, mỗi điểm cách đỉnh một đoạn bằng $${frT(kp, kq)}$ độ dài cạnh chứa nó. Tính thể tích phần còn lại.`, ans:Math.round(v*10)/10,
+      lg:`Xét góc tại $A$: ba điểm $M \\in AB$, $N \\in AD$, $P \\in AA'$ với $\\dfrac{AM}{AB} = \\dfrac{AN}{AD} = \\dfrac{AP}{AA'} = ${frT(kp, kq)}$. Khối tứ diện $A.BDA'$ có thể tích $\\dfrac{V}{6}$, nên $V_{A.MNP} = \\left(${frT(kp, kq)}\\right)^3\\cdot\\dfrac{V}{6} = ${frT(1, kq**3*6)}V$.<br>`
+        + `Vì $${frT(kp, kq)} \\le \\dfrac{1}{2}$ nên tám khối bị cắt không chồng lên nhau. Thể tích còn lại: $V - 8\\cdot ${frT(1, kq**3*6)}V = ${frT(den - 4*den/(3*kq**3)*1, den)}\\cdot ${V} = ${tdN(v)}$.`,
+      verify:()=>{ const A = [0, 0, 0], B = [4, 0.6, 0], D = [1.2, 3, 0], u = [0.8, 0.5, 3.4], Vb = Math.abs(tdDot(tdX(tdSub(B, A), tdSub(D, A)), u)), corner = tdTet(A, tdMul(B, k), tdMul(D, k), tdMul(u, k)); return Math.abs((Vb - 8*corner)/Vb*V - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 110. TLN VD — mặt phẳng qua trung điểm hai cạnh đáy và một điểm trên cạnh bên: Menelaus */
+GT(11,3,0,'VD','HSG: hình chóp đáy hình bình hành, M, N là trung điểm AB, AD, điểm P trên SC; mặt phẳng (MNP) cắt SB tại E — kéo dài MN cắt BC tại I với IB = BC/2, Menelaus trong tam giác SBC: (IB/IC)·(CP/PS)·(SE/EB) = 1; tính EB/ES', R=>{
+  for(let g = 0; g < 100; g++){
+    const r = R.int(1, 19)/2, k = 1/(3*r + 1), kT = frT(2, 6*r + 2);
+    const o = {stem:`Cho hình chóp $S.ABCD$ có đáy là hình bình hành. Gọi $M$, $N$ lần lượt là trung điểm của $AB$, $AD$ và $P$ là điểm trên cạnh $SC$ sao cho $SP = ${kT}SC$. Mặt phẳng $(MNP)$ cắt cạnh $SB$ tại $E$. Tính tỉ số $\\dfrac{EB}{ES}$.`, ans:r,
+      lg:`Trong mặt phẳng đáy, đường thẳng $MN$ cắt đường thẳng $BC$ tại $I$. Hai tam giác $IBM$ và $NAM$ có $BI \\parallel AN$, $MB = MA$, hai góc đỉnh $M$ đối đỉnh nên bằng nhau, suy ra $BI = AN = \\dfrac{BC}{2}$ và $I$ nằm ngoài đoạn $BC$ về phía $B$; do đó $\\dfrac{IB}{IC} = \\dfrac{1}{3}$.<br>`
+        + `$E = IP \\cap SB$ (trong mặt phẳng $(SBC)$). Menelaus cho tam giác $SBC$ với cát tuyến $I, E, P$: $\\dfrac{IB}{IC}\\cdot\\dfrac{CP}{PS}\\cdot\\dfrac{SE}{EB} = 1$.<br>`
+        + `Với $\\dfrac{CP}{PS} = ${frT(6*r, 2)}$: $\\dfrac{1}{3}\\cdot ${frT(6*r, 2)}\\cdot\\dfrac{SE}{EB} = 1$, nên $\\dfrac{EB}{ES} = ${frT(2*r, 2)}${Number.isInteger(r) ? '' : ' = ' + nt(r)}$.`.replace('$BI = MN$-tương ứng: tam giác', 'tam giác'),
+      verify:()=>{ const A = [0, 0, 0], B = [4, 0.5, 0], D = [1.3, 3.2, 0], C = tdAdd(B, tdSub(D, A)), S = [1.7, 1.4, 4.1], M = tdLerp(A, B, 0.5), N = tdLerp(A, D, 0.5), P = tdLerp(S, C, k), n = tdX(tdSub(N, M), tdSub(P, M)), E = tdCut(M, n, S, B); return E && Math.abs(tdLen(tdSub(B, E))/tdLen(tdSub(S, E)) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 111. TLN VD — bài toán ngược: biết tỉ số thể tích, tìm vị trí điểm M trên SC */
+GT(11,3,0,'VD','HSG: hình chóp đáy hình bình hành, mặt phẳng (ABM) với M ∈ SC chia khối chóp sao cho phần chứa đỉnh có thể tích bằng r lần khối chóp — từ (k + k²)/2 = r (k = SM/SC) giải phương trình bậc hai, tính SM khi biết SC', R=>{
+  for(let g = 0; g < 200; g++){
+    const [p, q] = R.pick(tdRatios), k = p/q, rN = p*q + p*p, rD = 2*q*q, gg = gcdI(rN, rD), L = q*R.int(1, 20), v = k*L; if(!tdOk(v)) continue;
+    const o = {stem:`Cho hình chóp $S.ABCD$ có đáy là hình bình hành, cạnh bên $SC = ${L}$. Điểm $M$ thuộc cạnh $SC$ sao cho mặt phẳng $(ABM)$ chia khối chóp thành hai phần, trong đó phần chứa đỉnh $S$ có thể tích bằng $${frT(rN/gg, rD/gg)}$ thể tích khối chóp. Tính độ dài $SM$.`, ans:Math.round(v*10)/10,
+      lg:`Đặt $k = \\dfrac{SM}{SC}$. $(ABM)$ cắt $SD$ tại $N$ với $MN \\parallel CD$, $\\dfrac{SN}{SD} = k$. Như đã biết: $V_{S.ABMN} = V_{S.ABM} + V_{S.AMN} = k\\cdot\\dfrac{V}{2} + k^2\\cdot\\dfrac{V}{2}$.<br>`
+        + `Giả thiết cho $\\dfrac{k + k^2}{2} = ${frT(rN/gg, rD/gg)} \\iff k^2 + k - ${frT(2*rN/gg, rD/gg)} = 0$, nghiệm dương $k = ${frT(p, q)}$ (nghiệm còn lại âm).<br>Vậy $SM = ${frT(p, q)}\\cdot ${L} = ${tdN(v)}$.`,
+      verify:()=>{ const S = [1, 0.6, 4], A = [0, 0, 0], B = [5, 0, 0], D = [1.2, 3, 0], C = tdAdd(B, tdSub(D, A)), Vc = tdTet(S, A, B, C) + tdTet(S, A, C, D);
+        const f = kk=>{ const M = tdLerp(S, C, kk), n = tdX(tdSub(B, A), tdSub(M, A)), N = tdCut(A, n, S, D); return (tdTet(S, A, B, M) + tdTet(S, A, M, N))/Vc; };
+        let lo = 1e-6, hi = 1; for(let i = 0; i < 80; i++){ const mi = (lo + hi)/2; if(f(mi) < rN/rD) lo = mi; else hi = mi; } return Math.abs(lo*L - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích; cực trị diện tích thiết diện (11|3|0), đợt 4 (4 dạng tự luận — chỉ bài chứng minh). Claude viết.
+// Chuỗi: thiết diện song song hai cạnh đối (hình bình hành, đại lượng không đổi, vị trí cho diện tích lớn nhất) → hệ thức tỉ số trên bốn cạnh bên
+// → thiết diện của hình hộp (tâm thiết diện thuộc OO', AM + CP = BN + DQ) → thiết diện song song mặt bên, giao điểm chạy trên đường thẳng cố định.
+const tdSub = (a, b)=> [a[0] - b[0], a[1] - b[1], a[2] - b[2]], tdAdd = (a, b)=> [a[0] + b[0], a[1] + b[1], a[2] + b[2]], tdMul = (a, k)=> [a[0]*k, a[1]*k, a[2]*k];
+const tdX = (a, b)=> [a[1]*b[2] - a[2]*b[1], a[2]*b[0] - a[0]*b[2], a[0]*b[1] - a[1]*b[0]], tdDot = (a, b)=> a[0]*b[0] + a[1]*b[1] + a[2]*b[2], tdLen = a=> Math.sqrt(tdDot(a, a));
+const tdLerp = (A, B, s)=> tdAdd(A, tdMul(tdSub(B, A), s));
+const tdCut = (P0, n, A, B)=>{ const den = tdDot(tdSub(B, A), n); if(Math.abs(den) < 1e-12) return null; const s = tdDot(tdSub(P0, A), n)/den; return tdLerp(A, B, s); };
+const tdNear = (x, y)=> Math.abs(x - y) < 1e-7*Math.max(1, Math.abs(x), Math.abs(y));
+const tdPar = (u, v)=> tdLen(tdX(u, v)) < 1e-7*tdLen(u)*tdLen(v);
+
+/* TL1. VD — thiết diện song song hai cạnh đối của tứ diện */
+GE(11,3,0,'VD','HSG (tự luận): tứ diện ABCD, mặt phẳng qua M ∈ AB song song với AC và BD — chứng minh thiết diện là hình bình hành và MN/AC + MQ/BD = 1; khi AC = BD chứng minh chu vi thiết diện không đổi; chứng minh diện tích thiết diện lớn nhất khi M là trung điểm AB', R=>{
+  const a = R.int(3, 20), A = [0, 0, 0], C = [a, 0, 0], B = [1.2, 2.4, 2.2], D = tdAdd(B, [a*0.28, a*0.96, 0]), n = tdX(tdSub(C, A), tdSub(D, B));
+  const sec = t=>{ const M = tdLerp(A, B, t); return [M, tdCut(M, n, B, C), tdCut(M, n, C, D), tdCut(M, n, D, A)]; };
+  const per = t=>{ const P = sec(t); return P.reduce((s, X, i)=> s + tdLen(tdSub(P[(i + 1)%4], X)), 0); }, area = t=>{ const [M, N, P, Q] = sec(t); return tdLen(tdX(tdSub(N, M), tdSub(Q, M))); };
+  return s6Parts(`Cho tứ diện $ABCD$ có $AC = BD = ${a}$. Điểm $M$ thay đổi trên cạnh $AB$ ($M \\ne A, B$), mặt phẳng $(\\alpha)$ đi qua $M$ và song song với $AC$, $BD$.`, [
+    {q:`Chứng minh rằng thiết diện của tứ diện cắt bởi $(\\alpha)$ là hình bình hành $MNPQ$ ($N \\in BC$, $P \\in CD$, $Q \\in DA$) và $\\dfrac{MN}{AC} + \\dfrac{MQ}{BD} = 1$.`,
+     a:`$(\\alpha) \\parallel AC$ nên $(\\alpha)$ cắt $(ABC)$, $(ACD)$ theo các giao tuyến $MN$, $PQ$ cùng song song với $AC$; $(\\alpha) \\parallel BD$ nên cắt $(ABD)$, $(BCD)$ theo $MQ$, $NP$ cùng song song với $BD$. Vậy $MNPQ$ có các cặp cạnh đối song song: là hình bình hành.<br>`
+       + `Theo định lí Thalès trong các tam giác $ABC$, $ABD$: $\\dfrac{MN}{AC} = \\dfrac{BM}{BA}$, $\\dfrac{MQ}{BD} = \\dfrac{AM}{AB}$. Cộng lại: $\\dfrac{MN}{AC} + \\dfrac{MQ}{BD} = \\dfrac{BM + AM}{AB} = 1$.`,
+     chk:()=> [0.2, 0.5, 0.8].every(t=>{ const [M, N, P, Q] = sec(t); return tdPar(tdSub(N, M), tdSub(P, Q)) && tdPar(tdSub(Q, M), tdSub(P, N)) && tdNear(tdLen(tdSub(N, M))/a + tdLen(tdSub(Q, M))/a, 1); })},
+    {q:`Chứng minh rằng chu vi của thiết diện không phụ thuộc vào vị trí của $M$.`,
+     a:`Từ câu a) và $AC = BD = ${a}$: $MN + MQ = ${a}\\left(\\dfrac{MN}{AC} + \\dfrac{MQ}{BD}\\right) = ${a}$. Chu vi hình bình hành $MNPQ$ bằng $2(MN + MQ) = ${2*a}$, không đổi.`,
+     chk:()=> [0.15, 0.4, 0.9].every(t=> tdNear(per(t), 2*a))},
+    {q:`Chứng minh rằng diện tích thiết diện lớn nhất khi $M$ là trung điểm của $AB$.`,
+     a:`Gọi $\\varphi$ là góc giữa $AC$ và $BD$; góc giữa hai cạnh $MN$, $MQ$ của hình bình hành bằng $\\varphi$ (hoặc $180^\\circ - \\varphi$). Với $t = \\dfrac{AM}{AB}$: $MN = ${a}(1 - t)$, $MQ = ${a}t$, nên $S_{MNPQ} = MN\\cdot MQ\\cdot\\sin\\varphi = ${a*a}\\sin\\varphi\\cdot t(1 - t)$.<br>`
+       + `Theo Cô-si, $t(1 - t) \\le \\dfrac{1}{4}$, dấu bằng khi $t = \\dfrac{1}{2}$. Vậy diện tích lớn nhất khi $M$ là trung điểm của $AB$.`,
+     chk:()=> [0.1, 0.3, 0.45, 0.55, 0.7].every(t=> area(t) <= area(0.5) + 1e-9)}]);
+});
+
+/* TL2. VD — hệ thức tỉ số trên bốn cạnh bên của hình chóp đáy hình bình hành */
+GE(11,3,0,'VD','HSG (tự luận): hình chóp đáy hình bình hành tâm O, mặt phẳng (P) cắt SA, SB, SC, SD tại A\', B\', C\', D\' và cắt SO tại I — chứng minh SB/SB\' + SD/SD\' = 2SO/SI (tỉ số diện tích), suy ra SA/SA\' + SC/SC\' = SB/SB\' + SD/SD\', khi (P) qua điểm cố định K trên SO thì tổng bốn tỉ số không đổi', R=>{
+  const [p, q] = R.pick([[1, 2], [2, 3], [3, 4], [3, 5], [4, 5], [1, 3], [2, 5]]), S = [1.1, 0.9, 4.5], A = [0, 0, 0], B = [5, 0.6, 0], D = [1.5, 3.4, 0], C = tdAdd(B, tdSub(D, A)), O = tdMul(tdAdd(A, C), 0.5), K = tdLerp(S, O, p/q);
+  const cut = nv=>{ const r = X=> tdLen(tdSub(X, S))/tdLen(tdSub(tdCut(K, nv, S, X), S)); return {a:r(A), b:r(B), c:r(C), d:r(D)}; };
+  const planes = [[0.1, 0.2, 1], [-0.15, 0.1, 1], [0.05, -0.2, 1]];
+  return s6Parts(`Cho hình chóp $S.ABCD$ có đáy là hình bình hành tâm $O$. Một mặt phẳng $(P)$ không đi qua $S$ cắt các cạnh $SA$, $SB$, $SC$, $SD$ lần lượt tại $A'$, $B'$, $C'$, $D'$ và cắt $SO$ tại $I$.`, [
+    {q:`Chứng minh rằng $\\dfrac{SB}{SB'} + \\dfrac{SD}{SD'} = \\dfrac{2SO}{SI}$.`,
+     a:`$B'$, $I$, $D'$ cùng thuộc $(P)$ và $(SBD)$ nên thẳng hàng. Trong tam giác $SBD$ có $O$ là trung điểm $BD$ nên $S_{SBO} = S_{SDO} = \\dfrac{1}{2}S_{SBD}$.<br>`
+       + `Ta có $S_{SB'D'} = S_{SB'I} + S_{SID'}$. Dùng $\\dfrac{S_{SXY}}{S_{SUV}} = \\dfrac{SX}{SU}\\cdot\\dfrac{SY}{SV}$ (chung góc ở đỉnh $S$): $\\dfrac{SB'}{SB}\\cdot\\dfrac{SD'}{SD}S_{SBD} = \\dfrac{SB'}{SB}\\cdot\\dfrac{SI}{SO}\\cdot\\dfrac{S_{SBD}}{2} + \\dfrac{SI}{SO}\\cdot\\dfrac{SD'}{SD}\\cdot\\dfrac{S_{SBD}}{2}$.<br>`
+       + `Chia hai vế cho $\\dfrac{SB'}{SB}\\cdot\\dfrac{SD'}{SD}\\cdot\\dfrac{SI}{SO}\\cdot\\dfrac{S_{SBD}}{2}$ được $\\dfrac{2SO}{SI} = \\dfrac{SD}{SD'} + \\dfrac{SB}{SB'}$.`,
+     chk:()=> planes.every(nv=>{ const r = cut(nv), I = tdCut(K, nv, S, O); return tdNear(r.b + r.d, 2*tdLen(tdSub(O, S))/tdLen(tdSub(I, S))); })},
+    {q:`Chứng minh rằng $\\dfrac{SA}{SA'} + \\dfrac{SC}{SC'} = \\dfrac{SB}{SB'} + \\dfrac{SD}{SD'}$.`,
+     a:`Lập luận tương tự câu a) trong tam giác $SAC$ ($O$ là trung điểm $AC$, $A'$, $I$, $C'$ thẳng hàng): $\\dfrac{SA}{SA'} + \\dfrac{SC}{SC'} = \\dfrac{2SO}{SI}$. So sánh với câu a) được điều phải chứng minh.`,
+     chk:()=> planes.every(nv=>{ const r = cut(nv); return tdNear(r.a + r.c, r.b + r.d); })},
+    {q:`Giả sử $(P)$ luôn đi qua điểm $K$ cố định trên đoạn $SO$ với $SK = ${frT(p, q)}SO$. Chứng minh rằng $\\dfrac{SA}{SA'} + \\dfrac{SB}{SB'} + \\dfrac{SC}{SC'} + \\dfrac{SD}{SD'} = ${frT(4*q, p)}$.`,
+     a:`Khi đó $I \\equiv K$, $\\dfrac{SO}{SI} = ${frT(q, p)}$. Theo các câu a), b): tổng bốn tỉ số bằng $2\\cdot\\dfrac{2SO}{SI} = 4\\cdot ${frT(q, p)} = ${frT(4*q, p)}$, không phụ thuộc vị trí của $(P)$.`,
+     chk:()=> planes.every(nv=>{ const r = cut(nv); return tdNear(r.a + r.b + r.c + r.d, 4*q/p); })}]);
+});
+
+/* TL3. VD — thiết diện của hình hộp cắt bốn cạnh bên */
+GE(11,3,0,'VD','HSG (tự luận): hình hộp ABCD.A\'B\'C\'D\', mặt phẳng cắt AA\', BB\', CC\', DD\' tại M, N, P, Q — chứng minh MNPQ là hình bình hành, tâm I của thiết diện nằm trên đường thẳng nối tâm O, O\' của hai đáy (đường trung bình của hình thang AMPC, BNQD), suy ra AM + CP = BN + DQ', R=>{
+  const A = [0, 0, 0], B = [4, 0.5, 0], D = [1.2, 3.1, 0], C = tdAdd(B, tdSub(D, A)), u = [0.8, 0.4, 3.6];
+  const tri = [[0.2, 0.5, 0.6], [0.7, 0.4, 0.3], [0.5, 0.45, 0.55]].map(([x, y, z])=>{ const M = tdLerp(A, tdAdd(A, u), x), N = tdLerp(B, tdAdd(B, u), y), P = tdLerp(C, tdAdd(C, u), z), Q = tdCut(M, tdX(tdSub(N, M), tdSub(P, M)), D, tdAdd(D, u)); return [M, N, P, Q]; });
+  const O = tdMul(tdAdd(A, C), 0.5);
+  return s6Parts(`Cho hình hộp $ABCD.A'B'C'D'$. Gọi $O$, $O'$ lần lượt là tâm của hai đáy $ABCD$, $A'B'C'D'$. Một mặt phẳng cắt các cạnh $AA'$, $BB'$, $CC'$, $DD'$ lần lượt tại $M$, $N$, $P$, $Q$.`, [
+    {q:`Chứng minh rằng $MNPQ$ là hình bình hành.`,
+     a:`Hai mặt $(ABB'A')$ và $(DCC'D')$ song song, bị mặt phẳng $(MNPQ)$ cắt theo hai giao tuyến $MN$, $QP$ nên $MN \\parallel QP$. Tương tự, $(ADD'A') \\parallel (BCC'B')$ cho $MQ \\parallel NP$. Vậy $MNPQ$ là hình bình hành.`,
+     chk:()=> tri.every(([M, N, P, Q])=> tdPar(tdSub(N, M), tdSub(P, Q)) && tdPar(tdSub(Q, M), tdSub(P, N)))},
+    {q:`Gọi $I$ là giao điểm của $MP$ và $NQ$. Chứng minh rằng $I$ nằm trên đường thẳng $OO'$.`,
+     a:`$I$ là trung điểm của $MP$ và của $NQ$. Tứ giác $AMPC$ có $AM \\parallel CP$ (cùng song song $AA'$) nên là hình thang (hoặc hình bình hành), $O$ và $I$ là trung điểm hai cạnh $AC$, $MP$, nên $OI$ là đường trung bình: $OI \\parallel AA'$.<br>Đường thẳng qua $O$ song song với $AA'$ là $OO'$. Vậy $I \\in OO'$.`,
+     chk:()=> tri.every(([M, , P])=>{ const I = tdMul(tdAdd(M, P), 0.5); return tdPar(tdSub(I, O), u); })},
+    {q:`Chứng minh rằng $AM + CP = BN + DQ$.`,
+     a:`Theo câu b), $OI$ là đường trung bình của hình thang $AMPC$ nên $OI = \\dfrac{AM + CP}{2}$. Tương tự, $O$ là trung điểm $BD$, $I$ là trung điểm $NQ$, $OI$ là đường trung bình của hình thang $BNQD$ nên $OI = \\dfrac{BN + DQ}{2}$.<br>Do đó $AM + CP = BN + DQ$.`,
+     chk:()=> tri.every(([M, N, P, Q])=> tdNear(tdLen(tdSub(M, A)) + tdLen(tdSub(P, C)), tdLen(tdSub(N, B)) + tdLen(tdSub(Q, D))))}]);
+});
+
+/* TL4. VD — thiết diện song song với một mặt bên; giao điểm chạy trên đường thẳng cố định */
+GE(11,3,0,'VD','HSG (tự luận): hình chóp đáy hình bình hành, M thay đổi trên SA, mặt phẳng qua M song song với (SCD) — chứng minh thiết diện là hình thang MNPQ (MQ ∥ NP), MQ/NP = SM/SA, giao điểm của hai cạnh bên MN, PQ luôn nằm trên một đường thẳng cố định', R=>{
+  const S = [1.3, 1.0, 4.2], A = [0, 0, 0], B = [4.5, 0.4, 0], D = [1.1, 3.3, 0], C = tdAdd(B, tdSub(D, A)), n = tdX(tdSub(C, S), tdSub(D, S));
+  const sec = t=>{ const M = tdLerp(S, A, t); return [M, tdCut(M, n, A, D), tdCut(M, n, B, C), tdCut(M, n, S, B)]; };
+  const meet = ([M, N, P, Q])=>{ const d1 = tdSub(N, M), d2 = tdSub(Q, P), w = tdSub(P, M), c = tdX(d1, d2), s = tdDot(tdX(w, d2), c)/tdDot(c, c); return tdAdd(M, tdMul(d1, s)); };
+  const ts = [0.25, 0.5, 0.75];
+  return s6Parts(`Cho hình chóp $S.ABCD$ có đáy là hình bình hành. Điểm $M$ thay đổi trên cạnh $SA$ ($M \\ne S, A$). Mặt phẳng $(\\alpha)$ đi qua $M$ và song song với mặt phẳng $(SCD)$.`, [
+    {q:`Chứng minh rằng $(\\alpha)$ cắt hình chóp theo thiết diện là hình thang $MNPQ$ với $N \\in AD$, $P \\in BC$, $Q \\in SB$ và $MQ \\parallel NP$.`,
+     a:`$(\\alpha) \\parallel (SCD)$ nên giao tuyến của $(\\alpha)$ với một mặt phẳng song song với giao tuyến của mặt phẳng đó với $(SCD)$:<br>`
+       + `• $(\\alpha) \\cap (SAD) = MN \\parallel SD$ ($N \\in AD$); $(\\alpha) \\cap (ABCD) = NP \\parallel CD$ ($P \\in BC$); $(\\alpha) \\cap (SBC) = PQ \\parallel SC$ ($Q \\in SB$).<br>`
+       + `• $(SAB) \\cap (SCD)$ là đường thẳng qua $S$ song song với $AB$ (vì $AB \\parallel CD$), nên $(\\alpha) \\cap (SAB) = MQ \\parallel AB$.<br>Do đó $MQ \\parallel AB \\parallel CD \\parallel NP$: thiết diện $MNPQ$ là hình thang.`,
+     chk:()=> ts.every(t=>{ const [M, N, P, Q] = sec(t); return tdPar(tdSub(Q, M), tdSub(P, N)) && tdPar(tdSub(N, M), tdSub(D, S)) && tdPar(tdSub(Q, P), tdSub(C, S)); })},
+    {q:`Chứng minh rằng $\\dfrac{MQ}{NP} = \\dfrac{SM}{SA}$.`,
+     a:`Tứ giác $ABPN$ có $AB \\parallel NP$, $AN \\parallel BP$ nên là hình bình hành, $NP = AB$. Trong tam giác $SAB$, $MQ \\parallel AB$ nên $\\dfrac{MQ}{AB} = \\dfrac{SM}{SA}$. Vậy $\\dfrac{MQ}{NP} = \\dfrac{SM}{SA}$.`,
+     chk:()=> ts.every(t=>{ const [M, N, P, Q] = sec(t); return tdNear(tdLen(tdSub(Q, M))/tdLen(tdSub(P, N)), t); })},
+    {q:`Gọi $I$ là giao điểm của $MN$ và $PQ$. Chứng minh rằng $I$ luôn nằm trên một đường thẳng cố định khi $M$ thay đổi.`,
+     a:`$MN$, $PQ$ là hai cạnh bên của hình thang nên cắt nhau tại $I$. $I \\in MN \\subset (SAD)$ và $I \\in PQ \\subset (SBC)$, nên $I$ thuộc giao tuyến $\\Delta$ của $(SAD)$ và $(SBC)$.<br>Vì $AD \\parallel BC$ nên $\\Delta$ là đường thẳng đi qua $S$ và song song với $AD$; $\\Delta$ cố định. Vậy $I$ luôn nằm trên $\\Delta$.`,
+     chk:()=> ts.every(t=>{ const I = meet(sec(t)); return tdPar(tdSub(I, S), tdSub(D, A)); })}]);
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-15.2 [HSG] Giới hạn dãy số truy hồi: chứng minh hội tụ, tìm giới hạn; định lí kẹp (11|5|0), đợt 1 (5 dạng TLN). Claude viết.
+// Bám khung đề HSG cấp tỉnh: dãy truy hồi đơn điệu, bị chặn; giới hạn dãy truy hồi tuyến tính, dãy nghịch đảo, tổng khử liên tiếp.
+// Chuỗi: dãy √(a·u_n + c) và dãy Newton (đơn điệu + bị chặn, giải phương trình điểm bất động) → u_{n+1} = q·u_n + d, |q| < 1
+// → dãy cộng dồn: lim u_n/n² → dãy nghịch đảo: lim n·u_n → giới hạn tổng khử liên tiếp.
+const ghOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const ghN = v=> nt(Math.round(v*10)/10);
+const ghR = v=> Math.round(v*10)/10;
+const ghJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + b); return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+
+/* 21. TLN VD — dãy √(a·u_n + c) và dãy Newton: đơn điệu, bị chặn, giới hạn là điểm bất động */
+GT(11,5,0,'VD','HSG: giới hạn của dãy u_{n+1} = √(a·u_n + c) (đơn điệu và bị chặn bởi L, L là nghiệm dương của L² = aL + c) và của dãy u_{n+1} = (u_n² + s²)/(2u_n) (Cô-si: u_n ≥ s, dãy giảm) — tìm lim u_n', R=>{
+  for(let g = 0; g < 100; g++){
+    if(R.rnd() < 0.55){
+      const a = R.int(1, 5), L = R.int(a + 1, 25), c = L*L - a*L, u1 = R.pick([R.int(0, L - 1), R.int(L + 1, 3*L)]), aT = a === 1 ? '' : a;
+      const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = \\sqrt{${aT}u_n + ${c}}$ với mọi $n \\ge 1$. Biết dãy số có giới hạn hữu hạn, tìm $\\lim u_n$.`, ans:L,
+        lg:`Xét $L > 0$ thoả $L^2 = ${aT}L + ${c}$, tức $L = ${L}$. Vì $u_1 ${u1 < L ? '<' : '>'} ${L}$, bằng quy nạp $u_n ${u1 < L ? '<' : '>'} ${L}$ với mọi $n$ và $u_{n+1}^2 - u_n^2 = (${L} - u_n)(u_n + ${L - a}) ${u1 < L ? '> 0' : '< 0'}$, nên dãy ${u1 < L ? 'tăng, bị chặn trên' : 'giảm, bị chặn dưới'}, có giới hạn $\\ell \\ge 0$.<br>`
+          + `Chuyển qua giới hạn: $\\ell = \\sqrt{${aT}\\ell + ${c}} \\iff \\ell^2 - ${aT}\\ell - ${c} = 0 \\iff \\ell = ${L}$ (loại nghiệm âm $${a - L}$). Vậy $\\lim u_n = ${L}$.`,
+        verify:()=>{ let u = u1; for(let i = 0; i < 3000; i++) u = Math.sqrt(a*u + c); return Math.abs(u - o.ans) < 1e-9; }};
+      return o; }
+    const s = R.int(2, 40), u1 = R.int(1, 60); if(u1 === s) continue;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = \\dfrac{u_n^2 + ${s*s}}{2u_n}$ với mọi $n \\ge 1$. Tìm $\\lim u_n$.`, ans:s,
+      lg:`Dãy dương. Theo Cô-si, $u_{n+1} = \\dfrac{1}{2}\\left(u_n + \\dfrac{${s*s}}{u_n}\\right) \\ge \\sqrt{${s*s}} = ${s}$ với mọi $n \\ge 1$, nên $u_n \\ge ${s}$ khi $n \\ge 2$.<br>`
+        + `Khi đó $u_{n+1} - u_n = \\dfrac{${s*s} - u_n^2}{2u_n} \\le 0$: dãy giảm từ $u_2$, bị chặn dưới bởi $${s}$, có giới hạn $\\ell \\ge ${s}$.<br>Chuyển qua giới hạn: $\\ell = \\dfrac{\\ell^2 + ${s*s}}{2\\ell} \\iff \\ell^2 = ${s*s} \\iff \\ell = ${s}$. Vậy $\\lim u_n = ${s}$.`,
+      verify:()=>{ let u = u1; for(let i = 0; i < 200; i++) u = (u*u + s*s)/(2*u); return Math.abs(u - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 22. TLN VD — u_{n+1} = q·u_n + d với |q| < 1 */
+GT(11,5,0,'VD','HSG: giới hạn của dãy u_{n+1} = q·u_n + d với |q| < 1 — dãy phụ v_n = u_n − d/(1 − q) là cấp số nhân công bội q nên dần tới 0, suy ra lim u_n = d/(1 − q)', R=>{
+  const QS = [[1, 2], [1, 3], [2, 3], [-1, 2], [1, 4], [3, 4], [1, 5], [2, 5], [-1, 3], [-2, 3], [3, 5], [4, 5]];
+  for(let g = 0; g < 200; g++){
+    const [p, q] = R.pick(QS), d = R.nz(-20, 30), L = d*q/(q - p); if(!ghOk(L)) continue;
+    const u1 = R.int(-10, 20), qT = `${p < 0 ? '-' : ''}\\dfrac{${Math.abs(p) === 1 ? '' : Math.abs(p)}u_n}{${q}}`;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = ${qT} ${d > 0 ? '+' : '-'} ${Math.abs(d)}$ với mọi $n \\ge 1$. Tìm $\\lim u_n$.`, ans:ghR(L),
+      lg:`Số $L$ thoả $L = ${frT(p, q)}L ${d > 0 ? '+' : '-'} ${Math.abs(d)}$ là $L = ${frT(d*q, q - p)}${Number.isInteger(L) ? '' : ' = ' + ghN(L)}$. Đặt $v_n = u_n - L$ thì $v_{n+1} = ${frT(p, q)}v_n$: $(v_n)$ là cấp số nhân công bội $${frT(p, q)}$.<br>`
+        + `Do $\\left|${frT(p, q)}\\right| < 1$ nên $v_n = v_1\\left(${frT(p, q)}\\right)^{n-1} \\to 0$. Vậy $\\lim u_n = L = ${ghN(L)}$.`,
+      verify:()=>{ let u = u1; for(let i = 0; i < 400; i++) u = p*u/q + d; return Math.abs(u - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 23. TLN VD — dãy cộng dồn: lim u_n/(p·n²) */
+GT(11,5,0,'VD','HSG: dãy u_{n+1} = u_n + αn + β — cộng dồn được u_n = u₁ + α·n(n − 1)/2 + β(n − 1) (bậc hai theo n), suy ra lim u_n/(p·n² + q) = α/(2p)', R=>{
+  for(let g = 0; g < 200; g++){
+    const al = R.int(1, 24), be = R.int(-9, 9), u1 = R.int(-9, 9), p = R.pick([1, 1, 2, 3, 4, 5]), qq = R.int(0, 9), L = al/(2*p); if(!ghOk(L)) continue;
+    const den = ghJ([[p, 'n^2'], [qq, '']]);
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = ${ghJ([[1, 'u_n'], [al, 'n'], [be, '']])}$ với mọi $n \\ge 1$. Tìm $\\lim\\dfrac{u_n}{${den}}$.`, ans:ghR(L),
+      lg:`Cộng các đẳng thức $u_{k+1} - u_k = ${ghJ([[al, 'k'], [be, '']])}$ với $k = 1, \\ldots, n - 1$: $u_n = ${u1} + ${al === 1 ? '' : al}\\cdot\\dfrac{n(n - 1)}{2}${be ? ` ${be > 0 ? '+' : '-'} ${Math.abs(be) === 1 ? '' : Math.abs(be)}(n - 1)` : ''}$.<br>`
+        + `Chia tử và mẫu cho $n^2$: $\\lim\\dfrac{u_n}{${den}} = \\dfrac{${al}}{${2*p}} = ${ghN(L)}$.`,
+      verify:()=>{ let u = u1; const N = 200000; for(let k = 1; k < N; k++) u += al*k + be; return Math.abs(u/(p*N*N + qq) - o.ans) < 1e-3; }};
+    return o; }
+  return null;
+});
+
+/* 24. TLN VD — dãy nghịch đảo thành cấp số cộng: lim n·u_n */
+GT(11,5,0,'VD','HSG: dãy u_{n+1} = q·u_n/(q + p·u_n) — nghịch đảo được 1/u_{n+1} = 1/u_n + p/q (cấp số cộng), nên 1/u_n ~ (p/q)·n và lim n·u_n = q/p (dù u_n → 0)', R=>{
+  for(let g = 0; g < 200; g++){
+    const p = R.pick([1, 2, 5, 10, 4]), q = R.int(1, 40), gg = gcdI(p, q); if(gg !== 1) continue;
+    const L = q/p; if(!ghOk(L)) continue; const u1 = R.int(1, 9);
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = \\dfrac{${q === 1 ? '' : q}u_n}{${q} + ${p === 1 ? '' : p}u_n}$ với mọi $n \\ge 1$. Tìm $\\lim (n u_n)$.`, ans:ghR(L),
+      lg:`Dãy dương. Nghịch đảo: $\\dfrac{1}{u_{n+1}} = \\dfrac{${q} + ${p === 1 ? '' : p}u_n}{${q === 1 ? '' : q}u_n} = \\dfrac{1}{u_n} + ${frT(p, q)}$, nên $\\left(\\dfrac{1}{u_n}\\right)$ là cấp số cộng công sai $${frT(p, q)}$: $\\dfrac{1}{u_n} = ${frT(1, u1)} + ${frT(p, q)}(n - 1)$.<br>`
+        + `Do đó $n u_n = \\dfrac{n}{${frT(1, u1)} + ${frT(p, q)}(n - 1)} \\to \\dfrac{1}{${frT(p, q)}} = ${frT(q, p)}${Number.isInteger(L) ? '' : ' = ' + ghN(L)}$.`,
+      verify:()=>{ let u = u1; const N = 1000000; for(let k = 1; k < N; k++) u = q*u/(q + p*u); return Math.abs(N*u - o.ans) < 1e-3*Math.max(1, o.ans); }};
+    return o; }
+  return null;
+});
+
+/* 25. TLN VD — giới hạn của tổng khử liên tiếp */
+GT(11,5,0,'VD','HSG: giới hạn của tổng c/((m + 1)(m + 2)) + c/((m + 2)(m + 3)) + … (hoặc mẫu cách nhau 2) — tách thành hiệu, khử liên tiếp được c/(m + 1) − c/(n + m + 1) (hoặc tổng hai phân số), chuyển qua giới hạn', R=>{
+  for(let g = 0; g < 300; g++){
+    const m = R.int(0, 6), c = R.int(1, 60), two = R.rnd() < 0.4, L = two ? c*(1/(m + 1) + 1/(m + 2))/2 : c/(m + 1); if(!ghOk(L) || L === 0) continue;
+    const k1 = m + 1, gap = two ? 2 : 1;
+    const terms = [0, 1].map(i=> `\\dfrac{${c}}{${k1 + i}\\cdot ${k1 + i + gap}}`).join(' + ');
+    const last = `\\dfrac{${c}}{${m ? `(n + ${m})` : 'n'}(n + ${m + gap})}`;
+    const o = {stem:`Tìm giới hạn của dãy $S_n = ${terms} + \\cdots + ${last}$.`, ans:ghR(L),
+      lg: two ? `Ta có $\\dfrac{${c}}{k(k + 2)} = ${frT(c, 2)}\\left(\\dfrac{1}{k} - \\dfrac{1}{k + 2}\\right)$. Cộng với $k = ${k1}, \\ldots, n${m ? ' + ' + m : ''}$, khử liên tiếp (còn lại hai số hạng đầu và hai số hạng cuối):<br>`
+          + `$S_n = ${frT(c, 2)}\\left(${frT(1, k1)} + ${frT(1, k1 + 1)} - \\dfrac{1}{n + ${m + 1}} - \\dfrac{1}{n + ${m + 2}}\\right) \\to ${frT(c, 2)}\\cdot ${frT(2*m + 3, (m + 1)*(m + 2))} = ${ghN(L)}$.`
+        : `Ta có $\\dfrac{${c}}{k(k + 1)} = ${c === 1 ? '' : c}\\left(\\dfrac{1}{k} - \\dfrac{1}{k + 1}\\right)$. Cộng với $k = ${k1}, \\ldots, n${m ? ' + ' + m : ''}$, khử liên tiếp: $S_n = ${c === 1 ? '' : c}\\left(${frT(1, k1)} - \\dfrac{1}{n + ${m + 1}}\\right)$.<br>Vậy $\\lim S_n = ${k1 === 1 ? ghN(L) : `${c === 1 ? '' : c + '\\cdot '}${frT(1, k1)} = ${ghN(L)}`}$.`,
+      verify:()=>{ let s = 0; const N = 2000000; for(let k = k1; k <= N + m; k++) s += c/(k*(k + gap)); return Math.abs(s - o.ans) < 1e-4*Math.max(1, c); }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-15.2 [HSG] Giới hạn dãy số truy hồi: chứng minh hội tụ, tìm giới hạn; định lí kẹp (11|5|0), đợt 2 (5 dạng TLN). Claude viết.
+// Chuỗi: định lí kẹp cho tổng n số hạng (mẫu n² + k, √(n² + k)) → dãy phân tuyến tính u_{n+1} = (a·u_n + b)/(u_n + d): dãy phụ (u_n − α)/(u_n − β) là cấp số nhân
+// → truy hồi tuyến tính cấp hai: lim u_n/r^n → giới hạn dạng ∞ − ∞ (nhân liên hợp) → cấp số nhân lùi vô hạn (số thập phân vô hạn tuần hoàn, biết tổng và tổng bình phương).
+const ghOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const ghN = v=> nt(Math.round(v*10)/10);
+const ghR = v=> Math.round(v*10)/10;
+const ghJ = ts=>{ const a = ts.filter(([c])=> c !== 0); if(!a.length) return '0';
+  return a.map(([c, b], i)=>{ const m = Math.abs(c), sg = c < 0 ? '-' : '+', body = b === '' ? String(m) : (m === 1 ? b : m + b); return i === 0 ? (c < 0 ? '-' : '') + body : ` ${sg} ${body}`; }).join(''); };
+
+/* 26. TLN VD — định lí kẹp cho tổng */
+GT(11,5,0,'VD','HSG: định lí kẹp cho tổng n số hạng — S_n = Σ (ak + b)/(n² + k) kẹp giữa Σ(ak + b)/(n² + n) và Σ(ak + b)/(n² + 1) nên lim S_n = a/2; S_n = Σ c·n/(n² + k), Σ c/√(n² + k) có giới hạn c', R=>{
+  for(let g = 0; g < 100; g++){
+    const ty = R.int(0, 2);
+    if(ty === 0){
+      const a = R.int(1, 30), b = R.int(0, 9), L = a/2, num = k=> ghJ([[a, k], [b, '']]);
+      const o = {stem:`Tìm giới hạn của dãy $S_n = \\dfrac{${num('')}}{n^2 + 1} + \\dfrac{${num('\\cdot 2').replace(/^\\cdot /, '')}}{n^2 + 2} + \\cdots + \\dfrac{${num('n')}}{n^2 + n}$ (số hạng thứ $k$ là $\\dfrac{${num('k')}}{n^2 + k}$).`.replace(`\\dfrac{${num('')}}`, `\\dfrac{${a + b}}`).replace(`\\dfrac{${num('\\cdot 2').replace(/^\\cdot /, '')}}`, `\\dfrac{${2*a + b}}`), ans:ghR(L),
+        lg:`Với $1 \\le k \\le n$: $\\dfrac{${num('k')}}{n^2 + n} \\le \\dfrac{${num('k')}}{n^2 + k} \\le \\dfrac{${num('k')}}{n^2 + 1}$. Cộng lại, với $T_n = \\sum_{k=1}^{n}(${num('k')}) = ${a === 1 ? '' : a}\\cdot\\dfrac{n(n + 1)}{2}${b ? ` + ${b}n` : ''}$:<br>`
+          + `$\\dfrac{T_n}{n^2 + n} \\le S_n \\le \\dfrac{T_n}{n^2 + 1}$. Hai dãy hai bên đều có giới hạn $\\dfrac{${a}}{2}$ (chia tử và mẫu cho $n^2$). Theo định lí kẹp, $\\lim S_n = ${ghN(L)}$.`.replace('{1\\cdot', '{').replace('= \\cdot\\dfrac', '= \\dfrac'),
+        verify:()=>{ const n = 40000; let s = 0; for(let k = 1; k <= n; k++) s += (a*k + b)/(n*n + k); return Math.abs(s - o.ans) < 2e-3; }};
+      return o; }
+    const c = R.int(1, 60), rt = ty === 2;
+    const term = k=> rt ? `\\dfrac{${c}}{\\sqrt{n^2 + ${k}}}` : `\\dfrac{${c === 1 ? '' : c}n}{n^2 + ${k}}`;
+    const o = {stem:`Tìm giới hạn của dãy $S_n = ${term(1)} + ${term(2)} + \\cdots + ${rt ? `\\dfrac{${c}}{\\sqrt{n^2 + n}}` : `\\dfrac{${c === 1 ? '' : c}n}{n^2 + n}`}$.`, ans:c,
+      lg:`Mỗi số hạng (với $1 \\le k \\le n$) nằm giữa ${rt ? `$\\dfrac{${c}}{\\sqrt{n^2 + n}}$ và $\\dfrac{${c}}{\\sqrt{n^2 + 1}}$` : `$\\dfrac{${c === 1 ? '' : c}n}{n^2 + n}$ và $\\dfrac{${c === 1 ? '' : c}n}{n^2 + 1}$`}. Cộng $n$ số hạng:<br>`
+        + (rt ? `$\\dfrac{${c}n}{\\sqrt{n^2 + n}} \\le S_n \\le \\dfrac{${c}n}{\\sqrt{n^2 + 1}}$, hai vế đều dần tới $${c}$` : `$\\dfrac{${c === 1 ? '' : c}n^2}{n^2 + n} \\le S_n \\le \\dfrac{${c === 1 ? '' : c}n^2}{n^2 + 1}$, hai vế đều dần tới $${c}$`) + `. Theo định lí kẹp, $\\lim S_n = ${c}$.`,
+      verify:()=>{ const n = 40000; let s = 0; for(let k = 1; k <= n; k++) s += rt ? c/Math.sqrt(n*n + k) : c*n/(n*n + k); return Math.abs(s - o.ans) < 2e-3; }};
+    return o; }
+  return null;
+});
+
+/* 27. TLN VD — dãy phân tuyến tính */
+GT(11,5,0,'VD','HSG: dãy u_{n+1} = (a·u_n + b)/(u_n + d) có hai điểm bất động α, β (nghiệm của x² + (d − a)x − b = 0) — dãy phụ v_n = (u_n − α)/(u_n − β) là cấp số nhân công bội (d + β)/(d + α); |công bội| < 1 nên v_n → 0, lim u_n = α', R=>{
+  for(let g = 0; g < 400; g++){
+    const al = R.int(-6, 12), be = R.int(-8, 8), d = R.int(1, 9); if(al === be) continue;
+    const a = d + al + be, b = -al*be, K = (d + be)/(d + al); if(!(Math.abs(K) < 0.9) || a*d - b === 0) continue;
+    const u1 = R.int(0, 15); if(u1 === be || u1 + d === 0) continue;
+    let u = u1, ok = true; for(let i = 0; i < 400; i++){ if(Math.abs(u + d) < 1e-6){ ok = false; break; } u = (a*u + b)/(u + d); } if(!ok || Math.abs(u - al) > 1e-9) continue;
+    const num = ghJ([[a, 'u_n'], [b, '']]);
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = \\dfrac{${num}}{u_n + ${d}}$ với mọi $n \\ge 1$. Biết các số hạng của dãy đều xác định, tìm $\\lim u_n$.`, ans:al,
+      lg:`Điểm bất động: $x = \\dfrac{${ghJ([[a, 'x'], [b, '']])}}{x + ${d}} \\iff x^2 ${ghJ([[d - a, 'x'], [-b, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')} = 0 \\iff x = ${al}$ hoặc $x = ${be}$.<br>`
+        + `Ta có $u_{n+1} - ${al < 0 ? `(${al})` : al} = \\dfrac{${a - al === 1 ? `u_n ${al < 0 ? '+' : '-'} ${Math.abs(al)}` : `${a - al === -1 ? '-' : a - al}(u_n ${al < 0 ? '+' : '-'} ${Math.abs(al)})`}}{u_n + ${d}}$, $u_{n+1} - ${be < 0 ? `(${be})` : be} = \\dfrac{${a - be === 1 ? `u_n ${be < 0 ? '+' : '-'} ${Math.abs(be)}` : `${a - be === -1 ? '-' : a - be}(u_n ${be < 0 ? '+' : '-'} ${Math.abs(be)})`}}{u_n + ${d}}$, nên $v_n = \\dfrac{u_n ${al < 0 ? '+' : '-'} ${Math.abs(al)}}{u_n ${be < 0 ? '+' : '-'} ${Math.abs(be)}}$ thoả $v_{n+1} = ${frT(a - al, a - be)}v_n$.<br>`
+        + `Vì $\\left|${frT(a - al, a - be)}\\right| < 1$ nên $v_n \\to 0$, suy ra $\\lim u_n = ${al}$.`.replace(/\(u_n - 0\)/g, 'u_n').replace(/u_n - 0/g, 'u_n'),
+      verify:()=>{ let x = u1; for(let i = 0; i < 2000; i++) x = (a*x + b)/(x + d); return Math.abs(x - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 28. TLN VD — truy hồi tuyến tính cấp hai: lim u_n / r^n */
+GT(11,5,0,'VD','HSG: dãy u_{n+2} = (r + s)·u_{n+1} − rs·u_n (r > |s|) — u_n = A·r^n + B·s^n nên u_n/r^n = A + B(s/r)^n → A; tìm lim u_n/r^n (hoặc lim u_n/r^{n+1})', R=>{
+  const PR = [[2, 1], [3, 1], [3, 2], [4, 1], [4, 3], [2, -1], [3, -2], [4, -3], [3, -1], [5, 2], [5, -3], [4, 2]];
+  for(let g = 0; g < 300; g++){
+    const [r, s] = R.pick(PR), A = R.nz(-9, 9), B = R.nz(-9, 9), sh = R.rnd() < 0.35, v = sh ? A/r : A; if(!ghOk(v)) continue;
+    const u1 = A*r + B*s, u2 = A*r*r + B*s*s;
+    const o = {stem:`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$, $u_2 = ${u2}$ và $u_{n+2} = ${ghJ([[r + s, 'u_{n+1}'], [-r*s, 'u_n']])}$ với mọi $n \\ge 1$. Tìm $\\lim\\dfrac{u_n}{${r}^{${sh ? 'n+1' : 'n'}}}$.`, ans:ghR(v),
+      lg:`Phương trình đặc trưng $x^2 ${ghJ([[-(r + s), 'x'], [r*s, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')} = 0$ có hai nghiệm $${r}$, $${s}$ nên $u_n = A\\cdot ${r}^n + B\\cdot ${s < 0 ? `(${s})` : s}^n$.<br>`
+        + `Từ $u_1$, $u_2$: $${r}A ${s < 0 ? '-' : '+'} ${Math.abs(s) === 1 ? '' : Math.abs(s)}B = ${u1}$, $${r*r}A + ${s*s === 1 ? '' : s*s}B = ${u2}$, suy ra $A = ${A}$, $B = ${B}$.<br>`
+        + `$\\dfrac{u_n}{${r}^{${sh ? 'n+1' : 'n'}}} = ${sh ? `\\dfrac{1}{${r}}\\left(${A} + ${B < 0 ? `(${B})` : B}\\left(${frT(s, r)}\\right)^n\\right)` : `${A} + ${B < 0 ? `(${B})` : B}\\left(${frT(s, r)}\\right)^n`}$, mà $\\left(${frT(s, r)}\\right)^n \\to 0$. Vậy giới hạn bằng $${sh ? frT(A, r) + (Number.isInteger(v) ? '' : ' = ' + ghN(v)) : A}$.`,
+      verify:()=>{ let x = u1, y = u2; for(let n = 3; n <= 60; n++){ const z = (r + s)*y - r*s*x; x = y; y = z; } return Math.abs(y/r**(sh ? 61 : 60) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 29. TLN TH — giới hạn dạng ∞ − ∞: nhân liên hợp */
+GT(11,5,0,'TH','HSG: giới hạn dãy dạng ∞ − ∞ — lim(√(n² + an + b) − n) = a/2, lim(√(n² + an) − √(n² + bn)) = (a − b)/2, lim(∛(n³ + an²) − n) = a/3; nhân liên hợp (hằng đẳng thức hiệu hai lập phương)', R=>{
+  for(let g = 0; g < 200; g++){
+    const ty = R.int(0, 2);
+    if(ty === 0){ const a = R.nz(-30, 30), b = R.int(-9, 9), L = a/2;
+      const o = {stem:`Tìm $\\lim\\left(\\sqrt{n^2 ${ghJ([[a, 'n'], [b, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')}} - n\\right)$.`, ans:ghR(L),
+        lg:`Nhân liên hợp: $\\sqrt{n^2 ${ghJ([[a, 'n'], [b, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')}} - n = \\dfrac{${ghJ([[a, 'n'], [b, '']])}}{\\sqrt{n^2 ${ghJ([[a, 'n'], [b, '']]).replace(/^(?!-)/, '+ ').replace(/^-/, '- ')}} + n}$. Chia tử và mẫu cho $n$: giới hạn bằng $\\dfrac{${a}}{1 + 1} = ${ghN(L)}$.`,
+        verify:()=>{ const n = 1e6; return Math.abs(Math.sqrt(n*n + a*n + b) - n - o.ans) < 1e-3; }};
+      return o; }
+    if(ty === 1){ const a = R.int(1, 40), b = R.int(0, 40); if(a === b) continue; const L = (a - b)/2;
+      const o = {stem:`Tìm $\\lim\\left(\\sqrt{n^2 + ${a === 1 ? '' : a}n} - \\sqrt{n^2${b ? ` + ${b === 1 ? '' : b}n` : ''}}\\right)$.`.replace('\\sqrt{n^2}', 'n'), ans:ghR(L),
+        lg:`Nhân liên hợp: biểu thức bằng $\\dfrac{(n^2 + ${a === 1 ? '' : a}n) - (n^2${b ? ` + ${b === 1 ? '' : b}n` : ''})}{\\sqrt{n^2 + ${a === 1 ? '' : a}n} + \\sqrt{n^2${b ? ` + ${b === 1 ? '' : b}n` : ''}}} = \\dfrac{${a - b === 1 ? '' : a - b === -1 ? '-' : a - b}n}{\\sqrt{n^2 + ${a === 1 ? '' : a}n} + \\sqrt{n^2${b ? ` + ${b === 1 ? '' : b}n` : ''}}}$. Chia tử và mẫu cho $n$: giới hạn bằng $\\dfrac{${a - b}}{2} = ${ghN(L)}$.`,
+        verify:()=>{ const n = 1e6; return Math.abs(Math.sqrt(n*n + a*n) - Math.sqrt(n*n + b*n) - o.ans) < 1e-3; }};
+      return o; }
+    const a = 3*R.nz(-15, 15), L = a/3;
+    const o = {stem:`Tìm $\\lim\\left(\\sqrt[3]{n^3 ${a > 0 ? '+' : '-'} ${Math.abs(a)}n^2} - n\\right)$.`, ans:L,
+      lg:`Đặt $x = \\sqrt[3]{n^3 ${a > 0 ? '+' : '-'} ${Math.abs(a)}n^2}$. Ta có $x - n = \\dfrac{x^3 - n^3}{x^2 + xn + n^2} = \\dfrac{${a}n^2}{x^2 + xn + n^2}$.<br>Chia tử và mẫu cho $n^2$, với $\\dfrac{x}{n} = \\sqrt[3]{1 ${a > 0 ? '+' : '-'} \\dfrac{${Math.abs(a)}}{n}} \\to 1$: giới hạn bằng $\\dfrac{${a}}{1 + 1 + 1} = ${L}$.`,
+      verify:()=>{ const n = 1e7; return Math.abs(Math.cbrt(n**3 + a*n*n) - n - o.ans) < 1e-3; }};
+    return o; }
+  return null;
+});
+
+/* 30. TLN VD — cấp số nhân lùi vô hạn */
+GT(11,5,0,'VD','HSG: cấp số nhân lùi vô hạn — số thập phân vô hạn tuần hoàn viết thành phân số tối giản p/q (tổng cấp số nhân lùi vô hạn), tìm p + q; cấp số nhân lùi vô hạn biết tổng S và tổng các bình phương Q: u₁/(1 − q) = S, u₁²/(1 − q²) = Q', R=>{
+  for(let g = 0; g < 300; g++){
+    if(R.rnd() < 0.5){
+      const two = R.rnd() < 0.6, I = R.int(0, 9), blk = two ? R.int(1, 98) : R.int(1, 8); if(two && blk%11 === 0) continue;
+      const den = two ? 99 : 9, P = I*den + blk, gg = gcdI(P, den), p = P/gg, q = den/gg, v = p + q; if(q === 1 || !ghOk(v)) continue;
+      const bT = two ? String(blk).padStart(2, '0') : String(blk);
+      const o = {stem:`Số thập phân vô hạn tuần hoàn $x = ${I}{,}(${bT})$ (chu kì $${bT}$ lặp lại mãi) được viết dưới dạng phân số tối giản $\\dfrac{p}{q}$ với $p$, $q$ nguyên dương. Tính $p + q$.`, ans:v,
+        lg:`$x = ${I} + \\dfrac{${blk}}{${two ? 100 : 10}} + \\dfrac{${blk}}{${two ? 100 : 10}^2} + \\cdots$; phần sau là tổng cấp số nhân lùi vô hạn có $u_1 = \\dfrac{${blk}}{${two ? 100 : 10}}$, công bội $\\dfrac{1}{${two ? 100 : 10}}$, bằng $\\dfrac{${blk}/${two ? 100 : 10}}{1 - 1/${two ? 100 : 10}} = \\dfrac{${blk}}{${den}}$.<br>`.replace(`\\dfrac{${blk}/${two ? 100 : 10}}{1 - 1/${two ? 100 : 10}}`, `\\dfrac{${blk}}{${two ? 100 : 10}}\\cdot\\dfrac{${two ? 100 : 10}}{${den}}`)
+          + `Do đó $x = ${I} + \\dfrac{${blk}}{${den}} = \\dfrac{${P}}{${den}}${gg === 1 ? '' : ' = ' + frT(p, q)}$, $p + q = ${p} + ${q} = ${v}$.`.replace(`${I} + `, I ? `${I} + ` : ''),
+        verify:()=>{ let s = I, t = blk/(two ? 100 : 10); for(let i = 0; i < 30; i++){ s += t; t /= (two ? 100 : 10); } return Math.abs(s - p/q) < 1e-12 && gcdI(p, q) === 1 && p + q === o.ans; }};
+      return o; }
+    const [qp, qq] = R.pick([[1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [-1, 2], [-1, 3], [1, 5], [2, 5]]), q = qp/qq, u1 = R.int(1, 30), S = u1/(1 - q), Q = u1*u1/(1 - q*q);
+    if(!ghOk(S) || !ghOk(Q)) continue;
+    const ask = R.rnd() < 0.6 ? 'u1' : 'q', v = ask === 'u1' ? u1 : q; if(!ghOk(v)) continue;
+    const o = {stem:`Một cấp số nhân lùi vô hạn có tổng các số hạng bằng $${ghN(S)}$ và tổng các bình phương của các số hạng bằng $${ghN(Q)}$. Tìm ${ask === 'u1' ? 'số hạng đầu' : 'công bội'} của cấp số nhân đó.`, ans:ghR(v),
+      lg:`Gọi $u_1$, $q$ ($|q| < 1$) là số hạng đầu và công bội; các bình phương lập cấp số nhân lùi vô hạn công bội $q^2$. Ta có $\\dfrac{u_1}{1 - q} = ${ghN(S)}$ và $\\dfrac{u_1^2}{1 - q^2} = ${ghN(Q)}$.<br>`
+        + `Chia vế theo vế: $\\dfrac{u_1}{1 + q} = \\dfrac{${ghN(Q)}}{${ghN(S)}} = ${frT(Math.round(Q*10*1), Math.round(S*10))}$. Kết hợp $u_1 = ${ghN(S)}(1 - q)$: $${ghN(S)}(1 - q) = ${frT(Math.round(Q*10), Math.round(S*10))}(1 + q)$, giải được $q = ${frT(qp, qq)}$, $u_1 = ${u1}$.<br>Đáp số: $${ask === 'u1' ? u1 : ghN(q)}$.`,
+      verify:()=>{ let lo = -0.999999, hi = 0.999999; const f = x=> S*S*(1 - x)/(1 + x) - Q; for(let i = 0; i < 100; i++){ const mi = (lo + hi)/2; if(f(mi) > 0) lo = mi; else hi = mi; } const qq2 = lo, uu = S*(1 - qq2); return Math.abs((ask === 'u1' ? uu : qq2) - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-15.2 [HSG] Giới hạn dãy số truy hồi: chứng minh hội tụ, tìm giới hạn; định lí kẹp (11|5|0), đợt 3 (6 dạng TLN). Claude viết.
+// Chuỗi: tổng cấp số nhân lùi vô hạn trong thực tế (bóng nảy, hình lồng nhau) → kẹp ⁿ√(aⁿ + bⁿ + cⁿ) giữa max và ⁿ√3·max
+// → dãy trung bình có trọng số x_{n+2} = (p·x_{n+1} + q·x_n)/(p + q): đại lượng bất biến → kẹp với sin, cos, (−1)ⁿ → bông tuyết Koch.
+const ghOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const ghN = v=> nt(Math.round(v*10)/10);
+const ghR = v=> Math.round(v*10)/10;
+
+/* 31. TLN VD — quả bóng nảy */
+GT(11,5,0,'VD','HSG: quả bóng thả từ độ cao h, mỗi lần chạm đất nảy lên bằng r lần độ cao vừa rơi — quãng đường gồm h và hai lần tổng cấp số nhân lùi vô hạn hr + hr² + …, tổng quãng đường h(1 + r)/(1 − r)', R=>{
+  for(let g = 0; g < 200; g++){
+    const [p, q] = R.pick([[1, 2], [1, 3], [2, 3], [3, 4], [1, 4], [3, 5], [2, 5], [4, 5], [1, 5], [9, 10], [7, 10]]), r = p/q, h = R.int(1, 60), D = h*(1 + r)/(1 - r); if(!ghOk(D)) continue;
+    const o = {stem:`Một quả bóng được thả rơi tự do từ độ cao $${h}$ m. Mỗi lần chạm đất, quả bóng nảy lên theo phương thẳng đứng một độ cao bằng $${frT(p, q)}$ độ cao vừa rơi xuống. Giả sử quả bóng nảy lên và rơi xuống mãi, tính tổng quãng đường (đơn vị: mét) quả bóng di chuyển.`, ans:ghR(D),
+      lg:`Các độ cao nảy lên lần lượt là $${h}\\cdot ${frT(p, q)}$, $${h}\\cdot\\left(${frT(p, q)}\\right)^2$, $\\ldots$: cấp số nhân lùi vô hạn có tổng $\\dfrac{${h}\\cdot ${frT(p, q)}}{1 - ${frT(p, q)}} = ${frT(h*p, q - p)}$.<br>`
+        + `Mỗi độ cao đó quả bóng đi hai lần (lên và xuống), cộng với lần rơi đầu $${h}$ m: tổng quãng đường $${h} + 2\\cdot ${frT(h*p, q - p)} = ${ghN(D)}$ m.`,
+      verify:()=>{ let s = h, t = h; for(let i = 0; i < 3000; i++){ t *= r; s += 2*t; } return Math.abs(s - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 32. TLN VD — hình lồng nhau vô hạn */
+GT(11,5,0,'VD','HSG: dãy hình lồng nhau vô hạn — hình vuông nối trung điểm các cạnh (diện tích giảm một nửa), tam giác nối trung điểm (giảm 4 lần), hình vuông có đỉnh chia cạnh theo tỉ số 1 : 3 (diện tích nhân 5/8); tổng diện tích là tổng cấp số nhân lùi vô hạn', R=>{
+  for(let g = 0; g < 200; g++){
+    const ty = R.int(0, 2);
+    if(ty === 0){ const a = R.int(1, 30), v = 2*a*a; if(!ghOk(v)) continue;
+      const o = {stem:`Cho hình vuông $C_1$ có cạnh bằng $${a}$. Hình vuông $C_2$ có các đỉnh là trung điểm các cạnh của $C_1$, hình vuông $C_3$ có các đỉnh là trung điểm các cạnh của $C_2$, cứ tiếp tục như vậy. Tính tổng diện tích của tất cả các hình vuông $C_1, C_2, C_3, \\ldots$`, ans:v,
+        lg:`Cạnh của $C_{k+1}$ bằng $\\dfrac{\\sqrt{2}}{2}$ cạnh của $C_k$ (nửa đường chéo hình vuông), nên diện tích giảm một nửa: các diện tích lập cấp số nhân lùi vô hạn $u_1 = ${a*a}$, công bội $\\dfrac{1}{2}$.<br>Tổng diện tích: $\\dfrac{${a*a}}{1 - \\frac{1}{2}} = ${v}$.`,
+        verify:()=>{ let s = 0, t = a*a; for(let i = 0; i < 200; i++){ s += t; t /= 2; } return Math.abs(s - o.ans) < 1e-6; }};
+      return o; }
+    if(ty === 1){ const S = 3*R.int(1, 300), v = 4*S/3;
+      const o = {stem:`Cho tam giác $T_1$ có diện tích bằng $${S}$. Tam giác $T_2$ có các đỉnh là trung điểm các cạnh của $T_1$, tam giác $T_3$ có các đỉnh là trung điểm các cạnh của $T_2$, cứ tiếp tục như vậy. Tính tổng diện tích của tất cả các tam giác $T_1, T_2, T_3, \\ldots$`, ans:v,
+        lg:`Tam giác nối trung điểm ba cạnh đồng dạng với tam giác ban đầu tỉ số $\\dfrac{1}{2}$, diện tích bằng $\\dfrac{1}{4}$. Các diện tích lập cấp số nhân lùi vô hạn $u_1 = ${S}$, công bội $\\dfrac{1}{4}$.<br>Tổng diện tích: $\\dfrac{${S}}{1 - \\frac{1}{4}} = \\dfrac{4\\cdot ${S}}{3} = ${v}$.`,
+        verify:()=>{ let s = 0, t = S; for(let i = 0; i < 200; i++){ s += t; t /= 4; } return Math.abs(s - o.ans) < 1e-6; }};
+      return o; }
+    const a = 4*R.int(1, 8), v = 8*a*a/3; if(!ghOk(v)) continue;
+    const o = {stem:`Cho hình vuông $C_1$ có cạnh bằng $${a}$. Trên mỗi cạnh của $C_1$ lấy điểm chia cạnh theo tỉ số $1 : 3$ (theo cùng một chiều đi quanh hình vuông), bốn điểm đó là đỉnh của hình vuông $C_2$; làm tương tự với $C_2$ được $C_3$, và cứ tiếp tục như vậy. Tính tổng diện tích của tất cả các hình vuông $C_1, C_2, C_3, \\ldots$`, ans:ghR(v),
+      lg:`Nếu hình vuông có cạnh $x$ thì cạnh hình vuông mới là cạnh huyền của tam giác vuông có hai cạnh góc vuông $\\dfrac{x}{4}$, $\\dfrac{3x}{4}$: bình phương bằng $\\dfrac{x^2}{16} + \\dfrac{9x^2}{16} = \\dfrac{5}{8}x^2$. Diện tích nhân với $\\dfrac{5}{8}$ sau mỗi bước.<br>`
+        + `Tổng diện tích: $\\dfrac{${a*a}}{1 - \\frac{5}{8}} = \\dfrac{8\\cdot ${a*a}}{3} = ${ghN(v)}$.`,
+      verify:()=>{ let s = 0, t = a*a; for(let i = 0; i < 400; i++){ s += t; t *= 5/8; } return Math.abs(s - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+/* 33. TLN VD — kẹp: lim ⁿ√(aⁿ + bⁿ + cⁿ) = max */
+GT(11,5,0,'VD','HSG: định lí kẹp — với M = max{a, b, c}: M ≤ ⁿ√(aⁿ + bⁿ + cⁿ) ≤ ⁿ√3·M và ⁿ√3 → 1 nên lim ⁿ√(aⁿ + bⁿ + cⁿ) = M; tương tự lim (a^{n+1} + b^{n+1})/(aⁿ + bⁿ) = max{a, b}', R=>{
+  for(let g = 0; g < 100; g++){
+    const two = R.rnd() < 0.4, xs = R.shuffle([R.int(2, 40), R.int(2, 40), R.int(2, 40)]).slice(0, two ? 2 : 3); if(new Set(xs).size !== xs.length) continue;
+    const M = Math.max(...xs), mid = R.rnd() < 0.5 && two;
+    const stem = mid ? `Tìm $\\lim\\dfrac{${xs[0]}^{n+1} + ${xs[1]}^{n+1}}{${xs[0]}^n + ${xs[1]}^n}$.` : `Tìm $\\lim\\sqrt[n]{${xs.map(x=> `${x}^n`).join(' + ')}}$.`;
+    const lg = mid ? `Chia tử và mẫu cho $${M}^n$: biểu thức bằng $\\dfrac{${M} + ${Math.min(...xs)}\\left(${frT(Math.min(...xs), M)}\\right)^n}{1 + \\left(${frT(Math.min(...xs), M)}\\right)^n}$. Vì $0 < ${frT(Math.min(...xs), M)} < 1$ nên $\\left(${frT(Math.min(...xs), M)}\\right)^n \\to 0$. Vậy giới hạn bằng $${M}$.`
+      : `Số lớn nhất là $${M}$. Ta có $${M}^n \\le ${xs.map(x=> `${x}^n`).join(' + ')} \\le ${xs.length}\\cdot ${M}^n$, nên $${M} \\le \\sqrt[n]{${xs.map(x=> `${x}^n`).join(' + ')}} \\le \\sqrt[n]{${xs.length}}\\cdot ${M}$.<br>Vì $\\lim\\sqrt[n]{${xs.length}} = 1$, theo định lí kẹp giới hạn bằng $${M}$.`;
+    const o = {stem, ans:M, lg,
+      verify:()=>{ const n = 100000; if(mid){ const r = Math.min(...xs)/M; return Math.abs((M + Math.min(...xs)*r**n)/(1 + r**n) - o.ans) < 1e-9; } const s = xs.reduce((t, x)=> t + (x/M)**n, 0); return Math.abs(M*Math.pow(s, 1/n) - o.ans) < 1e-2; }};
+    return o; }
+  return null;
+});
+
+/* 34. TLN VD — dãy trung bình có trọng số: đại lượng bất biến */
+GT(11,5,0,'VD','HSG: dãy x_{n+2} = (p·x_{n+1} + q·x_n)/(p + q) — đại lượng x_{n+1} + q/(p + q)·x_n không đổi, hiệu x_{n+1} − x_n là cấp số nhân công bội −q/(p + q) → 0; lim x_n = ((p + q)x₂ + q·x₁)/(p + 2q)', R=>{
+  for(let g = 0; g < 300; g++){
+    const p = R.int(1, 4), q = R.int(1, 4), x1 = R.int(-20, 40), x2 = R.int(-20, 40); if(x1 === x2) continue;
+    const L = ((p + q)*x2 + q*x1)/(p + 2*q); if(!ghOk(L)) continue;
+    const rec = p === q ? `\\dfrac{x_{n+1} + x_n}{2}` : `\\dfrac{${p === 1 ? '' : p}x_{n+1} + ${q === 1 ? '' : q}x_n}{${p + q}}`;
+    const o = {stem:`Cho dãy số $(x_n)$ xác định bởi $x_1 = ${x1}$, $x_2 = ${x2}$ và $x_{n+2} = ${rec}$ với mọi $n \\ge 1$. Tìm $\\lim x_n$.`, ans:ghR(L),
+      lg:`Từ giả thiết: $x_{n+2} + ${frT(q, p + q)}x_{n+1} = x_{n+1} + ${frT(q, p + q)}x_n$, nên $x_{n+1} + ${frT(q, p + q)}x_n$ không đổi, bằng $x_2 + ${frT(q, p + q)}x_1 = ${frT((p + q)*x2 + q*x1, p + q)}$.<br>`
+        + `Mặt khác $x_{n+2} - x_{n+1} = -${frT(q, p + q)}(x_{n+1} - x_n)$ nên $x_{n+1} - x_n \\to 0$; dãy có giới hạn $\\ell$ (là tổng của chuỗi hiệu, chuỗi cấp số nhân lùi vô hạn). Chuyển qua giới hạn: $\\ell\\left(1 + ${frT(q, p + q)}\\right) = ${frT((p + q)*x2 + q*x1, p + q)}$, $\\ell = ${frT((p + q)*x2 + q*x1, p + 2*q)}${Number.isInteger(L) ? '' : ' = ' + ghN(L)}$.`,
+      verify:()=>{ let a = x1, b = x2; for(let i = 0; i < 400; i++){ const c = (p*b + q*a)/(p + q); a = b; b = c; } return Math.abs(b - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 35. TLN TH — kẹp với sin, cos, (−1)ⁿ */
+GT(11,5,0,'TH','HSG: định lí kẹp với hàm bị chặn — |sin n|, |cos n|, |(−1)ⁿ| ≤ 1 nên sin n/n → 0; lim (an + c·sin n)/(bn + cos n) = a/b, lim (an² + (−1)ⁿn)/(bn² + 1) = a/b', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.nz(-30, 40), b = R.int(1, 20), c = R.int(1, 9), L = a/b; if(!ghOk(L)) continue;
+    const ty = R.int(0, 2);
+    const stem = ty === 0 ? `Tìm $\\lim\\dfrac{${a}n + ${c === 1 ? '' : c}\\sin n}{${b === 1 ? '' : b}n + \\cos n}$.` : ty === 1 ? `Tìm $\\lim\\dfrac{${a}n^2 + (-1)^n n}{${b === 1 ? '' : b}n^2 + 1}$.` : `Tìm $\\lim\\dfrac{${a}n - ${c === 1 ? '' : c}\\cos(n^2)}{${b === 1 ? '' : b}n + 2\\sin n}$.`;
+    const fn = ty === 0 ? n=> (a*n + c*Math.sin(n))/(b*n + Math.cos(n)) : ty === 1 ? n=> (a*n*n + (n%2 ? -n : n))/(b*n*n + 1) : n=> (a*n - c*Math.cos(n*n))/(b*n + 2*Math.sin(n));
+    const o = {stem:stem.replace(/\{1n/g, '{n').replace(/ 1n/g, ' n').replace('{-1n', '{-n'), ans:ghR(L),
+      lg:`Chia tử và mẫu cho $${ty === 1 ? 'n^2' : 'n'}$. Vì ${ty === 1 ? '$\\left|\\dfrac{(-1)^n n}{n^2}\\right| = \\dfrac{1}{n} \\to 0$ và $\\dfrac{1}{n^2} \\to 0$' : ty === 0 ? '$\\left|\\dfrac{\\sin n}{n}\\right| \\le \\dfrac{1}{n}$, $\\left|\\dfrac{\\cos n}{n}\\right| \\le \\dfrac{1}{n}$' : '$\\left|\\dfrac{\\cos(n^2)}{n}\\right| \\le \\dfrac{1}{n}$, $\\left|\\dfrac{\\sin n}{n}\\right| \\le \\dfrac{1}{n}$'} nên các số hạng đó dần tới $0$ (định lí kẹp).<br>Vậy giới hạn bằng $\\dfrac{${a}}{${b}}${b === 1 ? '' : ' = ' + ghN(L)}$.`.replace(`\\dfrac{${a}}{1}`, `${a}`),
+      verify:()=>{ const n = 1e7; return Math.abs(fn(n) - o.ans) < 1e-4; }};
+    return o; }
+  return null;
+});
+
+/* 36. TLN VD — bông tuyết Koch */
+GT(11,5,0,'VD','HSG: bông tuyết Koch dựng từ tam giác đều diện tích S₀ — bước thứ k thêm 3·4^{k−1} tam giác đều nhỏ, mỗi tam giác có diện tích S₀/9^k; tổng diện tích là S₀ + (S₀/3)(1 + 4/9 + (4/9)² + …) = 8S₀/5; chu vi sau mỗi bước nhân 4/3', R=>{
+  for(let g = 0; g < 100; g++){
+    if(R.rnd() < 0.6){
+      const S0 = 5*R.int(1, 400), v = 8*S0/5; if(!ghOk(v)) continue;
+      const o = {stem:`Từ tam giác đều có diện tích $${S0}$, người ta dựng "bông tuyết Koch": ở mỗi bước, chia mỗi cạnh của hình hiện có thành ba đoạn bằng nhau rồi dựng ra phía ngoài một tam giác đều nhận đoạn giữa làm cạnh (sau đó bỏ đoạn giữa). Tiếp tục mãi mãi, tính diện tích giới hạn của hình nhận được.`, ans:v,
+        lg:`Sau bước $k - 1$ hình có $3\\cdot 4^{k-1}$ cạnh, mỗi cạnh dài bằng $\\dfrac{1}{3^{k-1}}$ cạnh ban đầu. Ở bước $k$ thêm $3\\cdot 4^{k-1}$ tam giác đều, mỗi tam giác có cạnh bằng $\\dfrac{1}{3^k}$ cạnh ban đầu nên diện tích $\\dfrac{${S0}}{9^k}$.<br>`
+          + `Tổng diện tích thêm: $\\sum_{k\\ge 1} 3\\cdot 4^{k-1}\\cdot\\dfrac{${S0}}{9^k} = \\dfrac{${S0}}{3}\\left(1 + \\dfrac{4}{9} + \\left(\\dfrac{4}{9}\\right)^2 + \\cdots\\right) = \\dfrac{${S0}}{3}\\cdot\\dfrac{9}{5} = ${3*S0/5}$.<br>Diện tích giới hạn: $${S0} + ${3*S0/5} = ${v}$.`,
+        verify:()=>{ let s = S0, add = 0; for(let k = 1; k < 200; k++) add += 3*4**(k - 1)*S0/9**k; return Math.abs(s + add - o.ans) < 1e-6; }};
+      return o; }
+    const k = R.int(1, 4), P0 = 3**k*R.int(1, 30), v = P0*(4/3)**k; if(!ghOk(v)) continue;
+    const o = {stem:`Từ tam giác đều có chu vi $${P0}$, người ta dựng "bông tuyết Koch": ở mỗi bước, chia mỗi cạnh của hình hiện có thành ba đoạn bằng nhau rồi dựng ra phía ngoài một tam giác đều nhận đoạn giữa làm cạnh (sau đó bỏ đoạn giữa). Tính chu vi của hình sau bước thứ $${k}$.`, ans:ghR(v),
+      lg:`Mỗi bước, mỗi cạnh được thay bằng $4$ đoạn, mỗi đoạn bằng $\\dfrac{1}{3}$ cạnh đó, nên chu vi nhân với $\\dfrac{4}{3}$: chu vi lập cấp số nhân công bội $\\dfrac{4}{3}$ (dần tới vô cực).<br>Sau bước thứ $${k}$: $${P0}\\cdot\\left(\\dfrac{4}{3}\\right)^{${k}} = ${ghN(v)}$.`,
+      verify:()=>{ let sides = 3, len = P0/3; for(let i = 0; i < k; i++){ sides *= 4; len /= 3; } return Math.abs(sides*len - o.ans) < 1e-6; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-15.2 [HSG] Giới hạn dãy số truy hồi: chứng minh hội tụ, tìm giới hạn; định lí kẹp (11|5|0), đợt 4 (4 dạng tự luận — chỉ bài chứng minh). Claude viết.
+// Chuỗi: dãy u_{n+1} = u_n − u_n² (đơn điệu, đánh giá u_n ≤ 1/(n + m − 1), kẹp về 0) → dãy phân tuyến tính (dương, dãy phụ cấp số nhân, giới hạn)
+// → định lí kẹp cho tổng → dãy trung bình cộng hai số hạng trước (hiệu là cấp số nhân, đại lượng bất biến, giới hạn).
+const ghNear = (x, y)=> Math.abs(x - y) < 1e-9*Math.max(1, Math.abs(x), Math.abs(y));
+
+/* TL1. VD — u_{n+1} = u_n − u_n² */
+GE(11,5,0,'VD','HSG (tự luận): dãy u₁ = 1/m, u_{n+1} = u_n − u_n² — chứng minh 0 < u_n < 1 và dãy giảm, chứng minh u_n ≤ 1/(n + m − 1) bằng quy nạp (hàm x − x² đồng biến trên [0; 1/2]), suy ra lim u_n = 0 theo định lí kẹp', R=>{
+  const m = R.int(2, 9), seq = [1/m]; for(let i = 0; i < 60; i++) seq.push(seq[i] - seq[i]**2);
+  return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = \\dfrac{1}{${m}}$ và $u_{n+1} = u_n - u_n^2$ với mọi $n \\ge 1$.`, [
+    {q:`Chứng minh rằng $0 < u_n < 1$ với mọi $n$ và $(u_n)$ là dãy giảm.`,
+     a:`Quy nạp: $0 < u_1 < 1$; nếu $0 < u_n < 1$ thì $u_{n+1} = u_n(1 - u_n) > 0$ và $u_{n+1} < u_n < 1$.<br>Khi đó $u_{n+1} - u_n = -u_n^2 < 0$: dãy giảm.`,
+     chk:()=> seq.every((x, i)=> x > 0 && x < 1 && (i === 0 || x < seq[i - 1]))},
+    {q:`Chứng minh rằng $u_n \\le \\dfrac{1}{n + ${m - 1}}$ với mọi $n \\ge 1$.`,
+     a:`Với $n = 1$: $u_1 = \\dfrac{1}{${m}}$, đúng. Giả sử $u_n \\le \\dfrac{1}{n + ${m - 1}} \\le \\dfrac{1}{2}$. Hàm $f(x) = x - x^2$ đồng biến trên $\\left[0; \\dfrac{1}{2}\\right]$ nên<br>`
+       + `$u_{n+1} = f(u_n) \\le f\\left(\\dfrac{1}{n + ${m - 1}}\\right) = \\dfrac{n + ${m - 2}}{(n + ${m - 1})^2} < \\dfrac{1}{n + ${m}}$ (vì $(n + ${m - 2})(n + ${m}) = (n + ${m - 1})^2 - 1$).<br>Vậy bất đẳng thức đúng với mọi $n$.`.replace(/n \+ 0/g, 'n'),
+     chk:()=> seq.every((x, i)=> x <= 1/(i + 1 + m - 1) + 1e-15)},
+    {q:`Chứng minh rằng $\\lim u_n = 0$.`,
+     a:`Từ các câu a), b): $0 < u_n \\le \\dfrac{1}{n + ${m - 1}}$ với mọi $n$, mà $\\lim\\dfrac{1}{n + ${m - 1}} = 0$. Theo định lí kẹp, $\\lim u_n = 0$.`,
+     chk:()=> seq[60] < 1/(61 + m - 1) && seq[60] > 0}]);
+});
+
+/* TL2. VD — dãy phân tuyến tính dương */
+GE(11,5,0,'VD','HSG (tự luận): dãy u_{n+1} = (a·u_n + b)/(u_n + d) với u₁ > 0, a, b, d > 0 — chứng minh u_n > 0, chứng minh v_n = (u_n − α)/(u_n − β) là cấp số nhân (α, β là điểm bất động), chứng minh lim u_n = α', R=>{
+  for(let g = 0; g < 400; g++){
+    const al = R.int(1, 9), be = -R.int(1, 9), d = R.int(1, 12), a = d + al + be, b = -al*be, K = (d + be)/(d + al); if(a <= 0 || !(K > 0 && K < 1)) continue;
+    const u1 = R.int(1, 15), seq = [u1]; for(let i = 0; i < 300; i++) seq.push((a*seq[i] + b)/(seq[i] + d));
+    const v = x=> (x - al)/(x - be);
+    return s6Parts(`Cho dãy số $(u_n)$ xác định bởi $u_1 = ${u1}$ và $u_{n+1} = \\dfrac{${a === 1 ? '' : a}u_n + ${b}}{u_n + ${d}}$ với mọi $n \\ge 1$.`, [
+      {q:`Chứng minh rằng $u_n > 0$ với mọi $n \\ge 1$.`,
+       a:`Quy nạp: $u_1 = ${u1} > 0$; nếu $u_n > 0$ thì tử $${a === 1 ? '' : a}u_n + ${b} > 0$ và mẫu $u_n + ${d} > 0$ nên $u_{n+1} > 0$.`,
+       chk:()=> seq.every(x=> x > 0)},
+      {q:`Chứng minh rằng dãy $v_n = \\dfrac{u_n - ${al}}{u_n + ${-be}}$ là một cấp số nhân.`,
+       a:`$u_{n+1} - ${al} = \\dfrac{${a === 1 ? '' : a}u_n + ${b} - ${al === 1 ? "" : al}u_n - ${al*d}}{u_n + ${d}} = \\dfrac{${a - al === 1 ? '' : a - al}(u_n - ${al})}{u_n + ${d}}$ và $u_{n+1} + ${-be} = \\dfrac{${a === 1 ? '' : a}u_n + ${b} + ${be === -1 ? "" : -be}u_n + ${-be*d}}{u_n + ${d}} = \\dfrac{${a - be === 1 ? '' : a - be}(u_n + ${-be})}{u_n + ${d}}$.<br>`
+         + `Chia vế theo vế (với $u_n + ${-be} > 0$): $v_{n+1} = ${frT(a - al, a - be)}v_n$. Vậy $(v_n)$ là cấp số nhân công bội $${frT(a - al, a - be)}$.`,
+       chk:()=> seq.slice(0, 15).every((x, i)=> ghNear(v(seq[i + 1]), K*v(x)))},
+      {q:`Chứng minh rằng $\\lim u_n = ${al}$.`,
+       a:`Vì $0 < ${frT(a - al, a - be)} < 1$ nên $v_n = v_1\\left(${frT(a - al, a - be)}\\right)^{n-1} \\to 0$. Từ $v_n = \\dfrac{u_n - ${al}}{u_n + ${-be}}$ suy ra $u_n = \\dfrac{${al} + ${be === -1 ? "" : -be}v_n}{1 - v_n}$ (với $n$ đủ lớn $v_n \\ne 1$), nên $\\lim u_n = \\dfrac{${al} + 0}{1 - 0} = ${al}$.`,
+       chk:()=> Math.abs(seq[300] - al) < 1e-3 && K > 0}]); }
+  return null;
+});
+
+/* TL3. VD — định lí kẹp cho tổng */
+GE(11,5,0,'VD','HSG (tự luận): định lí kẹp — chứng minh c·n/√(n² + n) ≤ Σ c/√(n² + k) ≤ c·n/√(n² + 1), suy ra giới hạn bằng c; chứng minh lim Σ c·k/(n² + k) = c/2', R=>{
+  const c = R.int(1, 30), S1 = n=>{ let s = 0; for(let k = 1; k <= n; k++) s += c/Math.sqrt(n*n + k); return s; }, S2 = n=>{ let s = 0; for(let k = 1; k <= n; k++) s += c*k/(n*n + k); return s; };
+  const cT = c === 1 ? '' : c;
+  return s6Parts(`Cho hai dãy số $S_n = \\dfrac{${c}}{\\sqrt{n^2 + 1}} + \\dfrac{${c}}{\\sqrt{n^2 + 2}} + \\cdots + \\dfrac{${c}}{\\sqrt{n^2 + n}}$ và $T_n = \\dfrac{${cT}1}{n^2 + 1} + \\dfrac{${cT}\\cdot 2}{n^2 + 2} + \\cdots + \\dfrac{${cT}n}{n^2 + n}$.`.replace('{1}{n^2 + 1}', '{1}{n^2 + 1}').replace(`\\dfrac{${cT}1}`, `\\dfrac{${c}}`).replace(`\\dfrac{\\cdot 2}`, '\\dfrac{2}'), [
+    {q:`Chứng minh rằng $\\dfrac{${cT}n}{\\sqrt{n^2 + n}} \\le S_n \\le \\dfrac{${cT}n}{\\sqrt{n^2 + 1}}$ với mọi $n \\ge 1$.`,
+     a:`Với $1 \\le k \\le n$: $\\sqrt{n^2 + 1} \\le \\sqrt{n^2 + k} \\le \\sqrt{n^2 + n}$ nên $\\dfrac{${c}}{\\sqrt{n^2 + n}} \\le \\dfrac{${c}}{\\sqrt{n^2 + k}} \\le \\dfrac{${c}}{\\sqrt{n^2 + 1}}$. Cộng $n$ bất đẳng thức (với $k = 1, \\ldots, n$) được điều phải chứng minh.`,
+     chk:()=> [1, 5, 50].every(n=> c*n/Math.sqrt(n*n + n) <= S1(n) + 1e-12 && S1(n) <= c*n/Math.sqrt(n*n + 1) + 1e-12)},
+    {q:`Chứng minh rằng $\\lim S_n = ${c}$.`,
+     a:`$\\dfrac{${cT}n}{\\sqrt{n^2 + n}} = \\dfrac{${c}}{\\sqrt{1 + \\frac{1}{n}}} \\to ${c}$ và $\\dfrac{${cT}n}{\\sqrt{n^2 + 1}} = \\dfrac{${c}}{\\sqrt{1 + \\frac{1}{n^2}}} \\to ${c}$. Theo câu a) và định lí kẹp, $\\lim S_n = ${c}$.`,
+     chk:()=> Math.abs(S1(20000) - c) < 1e-3*c},
+    {q:`Chứng minh rằng $\\lim T_n = ${frT(c, 2)}$.`,
+     a:`Với $1 \\le k \\le n$: $\\dfrac{${cT}k}{n^2 + n} \\le \\dfrac{${cT}k}{n^2 + k} \\le \\dfrac{${cT}k}{n^2 + 1}$. Cộng lại, với $1 + 2 + \\cdots + n = \\dfrac{n(n + 1)}{2}$:<br>`
+       + `$\\dfrac{${cT}n(n + 1)}{2(n^2 + n)} \\le T_n \\le \\dfrac{${cT}n(n + 1)}{2(n^2 + 1)}$. Vế trái bằng $${frT(c, 2)}$, vế phải dần tới $${frT(c, 2)}$. Theo định lí kẹp, $\\lim T_n = ${frT(c, 2)}$.`,
+     chk:()=> [1, 7, 100].every(n=> c/2 - 1e-12 <= S2(n) && S2(n) <= c*n*(n + 1)/(2*(n*n + 1)) + 1e-12) && Math.abs(S2(20000) - c/2) < 1e-3*c}]);
+});
+
+/* TL4. VD — dãy trung bình cộng hai số hạng trước */
+GE(11,5,0,'VD','HSG (tự luận): dãy x_{n+2} = (x_{n+1} + x_n)/2 — chứng minh x_{n+1} − x_n = (−1/2)^{n−1}(x₂ − x₁), chứng minh x_{n+1} + x_n/2 không đổi, chứng minh lim x_n = (x₁ + 2x₂)/3', R=>{
+  for(let g = 0; g < 100; g++){
+    const x1 = R.int(-20, 30), x2 = R.int(-20, 30); if(x1 === x2) continue;
+    const seq = [x1, x2]; for(let i = 2; i < 60; i++) seq.push((seq[i - 1] + seq[i - 2])/2);
+    const L = frT(x1 + 2*x2, 3), C = frT(x1 + 2*x2, 2);
+    return s6Parts(`Cho dãy số $(x_n)$ xác định bởi $x_1 = ${x1}$, $x_2 = ${x2}$ và $x_{n+2} = \\dfrac{x_{n+1} + x_n}{2}$ với mọi $n \\ge 1$.`, [
+      {q:`Chứng minh rằng $x_{n+1} - x_n = \\left(-\\dfrac{1}{2}\\right)^{n-1}\\cdot ${x2 - x1 < 0 ? `(${x2 - x1})` : x2 - x1}$ với mọi $n \\ge 1$.`,
+       a:`Từ giả thiết: $x_{n+2} - x_{n+1} = \\dfrac{x_n - x_{n+1}}{2} = -\\dfrac{1}{2}(x_{n+1} - x_n)$. Vậy dãy $d_n = x_{n+1} - x_n$ là cấp số nhân công bội $-\\dfrac{1}{2}$, $d_1 = x_2 - x_1 = ${x2 - x1}$, nên $d_n = \\left(-\\dfrac{1}{2}\\right)^{n-1}\\cdot ${x2 - x1 < 0 ? `(${x2 - x1})` : x2 - x1}$.`,
+       chk:()=> seq.slice(0, 20).every((x, i)=> ghNear(seq[i + 1] - x, (-0.5)**i*(x2 - x1)))},
+      {q:`Chứng minh rằng $x_{n+1} + \\dfrac{x_n}{2} = ${C}$ với mọi $n \\ge 1$.`,
+       a:`Ta có $x_{n+2} + \\dfrac{x_{n+1}}{2} = \\dfrac{x_{n+1} + x_n}{2} + \\dfrac{x_{n+1}}{2} = x_{n+1} + \\dfrac{x_n}{2}$, nên đại lượng $x_{n+1} + \\dfrac{x_n}{2}$ không đổi, bằng $x_2 + \\dfrac{x_1}{2} = ${x2} + ${frT(x1, 2).startsWith('-') ? `\\left(${frT(x1, 2)}\\right)` : frT(x1, 2)} = ${C}$.`,
+       chk:()=> seq.slice(0, 30).every((x, i)=> ghNear(seq[i + 1] + x/2, (x1 + 2*x2)/2))},
+      {q:`Chứng minh rằng $\\lim x_n = ${L}$.`,
+       a:`Theo câu a), $x_n = x_1 + d_1 + d_2 + \\cdots + d_{n-1}$ là tổng của cấp số nhân công bội $-\\dfrac{1}{2}$, $|q| < 1$, nên dãy $(x_n)$ có giới hạn hữu hạn $\\ell$.<br>Chuyển qua giới hạn đẳng thức ở câu b): $\\ell + \\dfrac{\\ell}{2} = ${C}$, suy ra $\\ell = ${L}$.`,
+       chk:()=> Math.abs(seq[59] - (x1 + 2*x2)/3) < 1e-9}]); }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-16.2 [HSG] Giới hạn hàm số nâng cao: căn khác bậc (thêm bớt), giới hạn lượng giác (11|5|1), đợt 1 (5 dạng TLN). Claude viết.
+// Bám khung đề HSG cấp tỉnh (giới hạn dạng 0/0 chứa căn bậc hai và căn bậc ba, xét liên tục tại một điểm).
+// Chuỗi: (√(1 + ax) − ∛(1 + bx))/x thêm bớt 1 → (√(1 + ax)·∛(1 + bx) − 1)/x thêm bớt √(1 + ax) → x → x₀ thêm bớt hằng số c
+// → (1 − cos ax)/x² → tỉ số sin, tan.
+const gsOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4 && Math.round(v*10) !== 0;
+const gsN = v=> nt(Math.round(v*10)/10);
+const gsR = v=> Math.round(v*10)/10;
+const gsL = (A, x)=> `${A < 0 ? '1 - ' : '1 + '}${Math.abs(A) === 1 ? '' : Math.abs(A)}${x}`;   // 1 + Ax
+const gsF = (p, q)=> frT(p, q);
+const gsLim = (f, x0 = 0, h = 1e-5)=> (f(x0 + h) + f(x0 - h))/2;
+
+/* 18. TLN VD — (√(1 + ax) − ∛(1 + bx))/x */
+GT(11,5,1,'VD','HSG: giới hạn dạng 0/0 chứa căn khác bậc lim (√(1 + ax) − ∛(1 + bx))/x — thêm bớt 1 tách thành hai giới hạn, nhân liên hợp (bậc hai và bậc ba) được a/2 − b/3', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.nz(-14, 14), b = 3*R.nz(-5, 5), v = a/2 - b/3; if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{\\sqrt{${gsL(a, 'x')}} - \\sqrt[3]{${gsL(b, 'x')}}}{x}$.`, ans:gsR(v),
+      lg:`Thêm bớt $1$: biểu thức $= \\dfrac{\\sqrt{${gsL(a, 'x')}} - 1}{x} - \\dfrac{\\sqrt[3]{${gsL(b, 'x')}} - 1}{x}$.<br>`
+        + `$\\dfrac{\\sqrt{${gsL(a, 'x')}} - 1}{x} = \\dfrac{${a}}{\\sqrt{${gsL(a, 'x')}} + 1} \\to ${gsF(a, 2)}$; $\\dfrac{\\sqrt[3]{${gsL(b, 'x')}} - 1}{x} = \\dfrac{${b}}{\\sqrt[3]{(${gsL(b, 'x')})^2} + \\sqrt[3]{${gsL(b, 'x')}} + 1} \\to ${gsF(b, 3)}$.<br>`
+        + `Vậy giới hạn bằng $${gsF(a, 2)} - ${b < 0 ? `\\left(${gsF(b, 3)}\\right)` : gsF(b, 3)} = ${gsN(v)}$.`,
+      verify:()=> Math.abs(gsLim(x=> (Math.sqrt(1 + a*x) - Math.cbrt(1 + b*x))/x) - o.ans) < 1e-6};
+    return o; }
+  return null;
+});
+
+/* 19. TLN VD — (√(1 + ax)·∛(1 + bx) − 1)/x */
+GT(11,5,1,'VD','HSG: giới hạn lim (√(1 + ax)·∛(1 + bx) − 1)/x — thêm bớt √(1 + ax): √(1 + ax)(∛(1 + bx) − 1)/x + (√(1 + ax) − 1)/x, được a/2 + b/3', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.nz(-14, 14), b = 3*R.nz(-5, 5), v = a/2 + b/3; if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{\\sqrt{${gsL(a, 'x')}}\\cdot\\sqrt[3]{${gsL(b, 'x')}} - 1}{x}$.`, ans:gsR(v),
+      lg:`Thêm bớt $\\sqrt{${gsL(a, 'x')}}$: biểu thức $= \\sqrt{${gsL(a, 'x')}}\\cdot\\dfrac{\\sqrt[3]{${gsL(b, 'x')}} - 1}{x} + \\dfrac{\\sqrt{${gsL(a, 'x')}} - 1}{x}$.<br>`
+        + `Khi $x \\to 0$: $\\sqrt{${gsL(a, 'x')}} \\to 1$, $\\dfrac{\\sqrt[3]{${gsL(b, 'x')}} - 1}{x} \\to ${gsF(b, 3)}$ (nhân liên hợp bậc ba), $\\dfrac{\\sqrt{${gsL(a, 'x')}} - 1}{x} \\to ${gsF(a, 2)}$.<br>`
+        + `Vậy giới hạn bằng $${gsF(b, 3)} + ${a < 0 ? `\\left(${gsF(a, 2)}\\right)` : gsF(a, 2)} = ${gsN(v)}$.`,
+      verify:()=> Math.abs(gsLim(x=> (Math.sqrt(1 + a*x)*Math.cbrt(1 + b*x) - 1)/x) - o.ans) < 1e-6};
+    return o; }
+  return null;
+});
+
+/* 20. TLN VD — x → x₀: thêm bớt hằng số c */
+GT(11,5,1,'VD','HSG: giới hạn lim_{x→x₀} (√(px + q) − ∛(rx + s))/(x − x₀) với √(px₀ + q) = ∛(rx₀ + s) = c — thêm bớt c, nhân liên hợp được p/(2c) − r/(3c²)', R=>{
+  for(let g = 0; g < 400; g++){
+    const x0 = R.pick([1, 2, -1, 3, -2]), c = R.pick([2, 3]), p = R.nz(-9, 12), r = R.nz(-12, 15), q = c*c - p*x0, s = c**3 - r*x0, v = p/(2*c) - r/(3*c*c); if(!gsOk(v)) continue;
+    const sq = `\\sqrt{${p === 1 ? '' : p === -1 ? '-' : p}x ${q < 0 ? '-' : '+'} ${Math.abs(q)}}`.replace(' + 0}', '}').replace(' - 0}', '}'), cb = `\\sqrt[3]{${r === 1 ? '' : r === -1 ? '-' : r}x ${s < 0 ? '-' : '+'} ${Math.abs(s)}}`.replace(' + 0}', '}').replace(' - 0}', '}');
+    const xm = `x ${x0 < 0 ? '+' : '-'} ${Math.abs(x0)}`;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to ${x0}}\\dfrac{${sq} - ${cb}}{${xm}}$.`, ans:gsR(v),
+      lg:`Tại $x = ${x0}$ hai căn đều bằng $${c}$. Thêm bớt $${c}$: biểu thức $= \\dfrac{${sq} - ${c}}{${xm}} - \\dfrac{${cb} - ${c}}{${xm}}$.<br>`
+        + `$\\dfrac{${sq} - ${c}}{${xm}} = \\dfrac{${p}}{${sq} + ${c}} \\to ${gsF(p, 2*c)}$; $\\dfrac{${cb} - ${c}}{${xm}} = \\dfrac{${r}}{\\left(${cb}\\right)^2 + ${c}${cb} + ${c*c}} \\to ${gsF(r, 3*c*c)}$.<br>`
+        + `Vậy giới hạn bằng $${gsF(p, 2*c)} - ${r < 0 ? `\\left(${gsF(r, 3*c*c)}\\right)` : gsF(r, 3*c*c)} = ${gsN(v)}$.`,
+      verify:()=> Math.abs(gsLim(x=> (Math.sqrt(p*x + q) - Math.cbrt(r*x + s))/(x - x0), x0) - o.ans) < 1e-5};
+    return o; }
+  return null;
+});
+
+/* 21. TLN VD — (1 − cos ax)/x² và các biến thể */
+GT(11,5,1,'VD','HSG: giới hạn lượng giác dạng 0/0 — 1 − cos ax = 2sin²(ax/2), dùng lim sin t/t = 1: lim (1 − cos ax)/x² = a²/2, lim (1 − cos ax)/(x·sin bx) = a²/(2b), lim (1 − cos ax)/tan²(bx) = a²/(2b²)', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.int(1, 12), b = R.int(1, 6), ty = R.int(0, 2), v = ty === 0 ? a*a/2 : ty === 1 ? a*a/(2*b) : a*a/(2*b*b); if(!gsOk(v)) continue;
+    const ax = a === 1 ? 'x' : a + 'x', bx = b === 1 ? 'x' : b + 'x';
+    const den = ty === 0 ? 'x^2' : ty === 1 ? `x\\sin ${bx}` : `\\tan^2 ${bx}`, fn = ty === 0 ? x=> x*x : ty === 1 ? x=> x*Math.sin(b*x) : x=> Math.tan(b*x)**2;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{1 - \\cos ${ax}}{${den}}$.`, ans:gsR(v),
+      lg:`Ta có $1 - \\cos ${ax} = 2\\sin^2\\dfrac{${ax}}{2}$ nên $\\dfrac{1 - \\cos ${ax}}{x^2} = \\dfrac{${a*a}}{2}\\left(\\dfrac{\\sin\\frac{${ax}}{2}}{\\frac{${ax}}{2}}\\right)^2 \\to ${gsF(a*a, 2)}$.<br>`
+        + (ty === 0 ? `Vậy giới hạn bằng $${gsN(v)}$.` : ty === 1 ? `Mặt khác $\\dfrac{x\\sin ${bx}}{x^2} = \\dfrac{\\sin ${bx}}{x} \\to ${b}$. Vậy giới hạn bằng $${b === 1 ? '' : `\\dfrac{${gsF(a*a, 2)}}{${b}} = `}${gsN(v)}$.` : `Mặt khác $\\dfrac{\\tan^2 ${bx}}{x^2} = \\left(\\dfrac{\\tan ${bx}}{x}\\right)^2 \\to ${b*b}$. Vậy giới hạn bằng $${b === 1 ? '' : `\\dfrac{${gsF(a*a, 2)}}{${b*b}} = `}${gsN(v)}$.`),
+      verify:()=> Math.abs(gsLim(x=> (1 - Math.cos(a*x))/fn(x), 0, 1e-4) - o.ans) < 1e-5*Math.max(1, o.ans)};
+    return o; }
+  return null;
+});
+
+/* 22. TLN VD — tỉ số sin, tan */
+GT(11,5,1,'VD','HSG: giới hạn lượng giác — lim sin ax/tan bx = a/b, lim (sin ax·sin bx)/x² = ab, lim (sin ax·tan bx)/(1 − cos cx) = 2ab/c² (dùng lim sin t/t = lim tan t/t = 1)', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.int(1, 15), b = R.int(1, 12), c = R.int(1, 6), ty = R.int(0, 2); if(ty === 0 && a === b) continue;
+    const v = ty === 0 ? a/b : ty === 1 ? a*b : 2*a*b/(c*c); if(!gsOk(v)) continue;
+    const ax = a === 1 ? 'x' : a + 'x', bx = b === 1 ? 'x' : b + 'x', cx = c === 1 ? 'x' : c + 'x';
+    const st = ty === 0 ? `\\dfrac{\\sin ${ax}}{\\tan ${bx}}` : ty === 1 ? `\\dfrac{${a === b ? `\\sin^2 ${ax}` : `\\sin ${ax}\\sin ${bx}`}}{x^2}` : `\\dfrac{\\sin ${ax}\\tan ${bx}}{1 - \\cos ${cx}}`;
+    const fn = ty === 0 ? x=> Math.sin(a*x)/Math.tan(b*x) : ty === 1 ? x=> Math.sin(a*x)*Math.sin(b*x)/(x*x) : x=> Math.sin(a*x)*Math.tan(b*x)/(1 - Math.cos(c*x));
+    const lg = ty === 0 ? `$\\dfrac{\\sin ${ax}}{\\tan ${bx}} = \\dfrac{\\sin ${ax}}{${ax}}\\cdot\\dfrac{${bx}}{\\tan ${bx}}\\cdot ${gsF(a, b)}$. Vì $\\dfrac{\\sin t}{t} \\to 1$, $\\dfrac{t}{\\tan t} \\to 1$ khi $t \\to 0$ nên giới hạn bằng $${gsF(a, b)}${Number.isInteger(v) ? '' : ' = ' + gsN(v)}$.`
+      : ty === 1 ? `$\\dfrac{${a === b ? `\\sin^2 ${ax}` : `\\sin ${ax}\\sin ${bx}`}}{x^2} = ${a*b}\\cdot\\dfrac{\\sin ${ax}}{${ax}}\\cdot\\dfrac{\\sin ${bx}}{${bx}} \\to ${a*b}$.`
+      : `Chia tử và mẫu cho $x^2$: $\\dfrac{\\sin ${ax}\\tan ${bx}}{x^2} \\to ${a*b}$ và $\\dfrac{1 - \\cos ${cx}}{x^2} = \\dfrac{2\\sin^2\\frac{${cx}}{2}}{x^2} \\to ${gsF(c*c, 2)}$.<br>Vậy giới hạn bằng $\\dfrac{${a*b}}{${gsF(c*c, 2)}} = ${gsN(v)}$.`;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}${st}$.`, ans:gsR(v), lg:lg.replace(/\\dfrac\{x\}\{x\}\\cdot |\\cdot\\dfrac\{x\}\{\\tan x\}/g, m=> m),
+      verify:()=> Math.abs(gsLim(fn, 0, 1e-4) - o.ans) < 1e-5*Math.max(1, o.ans)};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-16.2 [HSG] Giới hạn hàm số nâng cao: căn khác bậc (thêm bớt), giới hạn lượng giác (11|5|1), đợt 2 (5 dạng TLN). Claude viết.
+// Chuỗi: tích hai côsin (thêm bớt cos ax) → tích ba côsin → (căn − 1)/sin, tan → (ⁿ√(1 + ax) − 1)/x (hằng đẳng thức aⁿ − 1) → đổi biến t = x − π, x − π/2.
+const gsOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4 && Math.round(v*10) !== 0;
+const gsN = v=> nt(Math.round(v*10)/10);
+const gsR = v=> Math.round(v*10)/10;
+const gsF = (p, q)=> frT(p, q);
+const gsK = (k, s = 'x')=> k === 1 ? s : k + s;
+const gsLim = (f, x0 = 0, h = 1e-4)=> (f(x0 + h) + f(x0 - h))/2;
+
+/* 23. TLN VD — (1 − cos ax·cos bx)/x² */
+GT(11,5,1,'VD','HSG: giới hạn lim (1 − cos ax·cos bx)/x² — thêm bớt cos ax: 1 − cos ax·cos bx = (1 − cos ax) + cos ax(1 − cos bx), được (a² + b²)/2', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.int(1, 12), b = R.int(1, 12); if(a === b) continue; const v = (a*a + b*b)/2; if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{1 - \\cos ${gsK(a)}\\cos ${gsK(b)}}{x^2}$.`, ans:gsR(v),
+      lg:`Thêm bớt $\\cos ${gsK(a)}$: $1 - \\cos ${gsK(a)}\\cos ${gsK(b)} = (1 - \\cos ${gsK(a)}) + \\cos ${gsK(a)}(1 - \\cos ${gsK(b)})$.<br>`
+        + `Dùng $\\lim\\limits_{x \\to 0}\\dfrac{1 - \\cos kx}{x^2} = \\lim\\limits_{x \\to 0}\\dfrac{2\\sin^2\\frac{kx}{2}}{x^2} = \\dfrac{k^2}{2}$ và $\\cos ${gsK(a)} \\to 1$: giới hạn bằng $${gsF(a*a, 2)} + ${gsF(b*b, 2)} = ${gsN(v)}$.`,
+      verify:()=> Math.abs(gsLim(x=> (1 - Math.cos(a*x)*Math.cos(b*x))/(x*x)) - o.ans) < 1e-4*o.ans};
+    return o; }
+  return null;
+});
+
+/* 24. TLN VD — tích ba côsin */
+GT(11,5,1,'VD','HSG: giới hạn lim (1 − cos ax·cos bx·cos cx)/x² — thêm bớt hai lần: 1 − cos ax cos bx cos cx = (1 − cos ax) + cos ax(1 − cos bx) + cos ax cos bx(1 − cos cx), được (a² + b² + c²)/2', R=>{
+  for(let g = 0; g < 200; g++){
+    const [a, b, c] = [R.int(1, 9), R.int(1, 9), R.int(1, 9)]; if(new Set([a, b, c]).size < 3) continue; const v = (a*a + b*b + c*c)/2; if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{1 - \\cos ${gsK(a)}\\cos ${gsK(b)}\\cos ${gsK(c)}}{x^2}$.`, ans:gsR(v),
+      lg:`Ta có $1 - \\cos ${gsK(a)}\\cos ${gsK(b)}\\cos ${gsK(c)} = (1 - \\cos ${gsK(a)}) + \\cos ${gsK(a)}(1 - \\cos ${gsK(b)}) + \\cos ${gsK(a)}\\cos ${gsK(b)}(1 - \\cos ${gsK(c)})$.<br>`
+        + `Với $\\lim\\limits_{x \\to 0}\\dfrac{1 - \\cos kx}{x^2} = \\dfrac{k^2}{2}$ và các côsin dần tới $1$: giới hạn bằng $\\dfrac{${a*a} + ${b*b} + ${c*c}}{2} = ${gsN(v)}$.`,
+      verify:()=> Math.abs(gsLim(x=> (1 - Math.cos(a*x)*Math.cos(b*x)*Math.cos(c*x))/(x*x)) - o.ans) < 1e-4*o.ans};
+    return o; }
+  return null;
+});
+
+/* 25. TLN VD — (√(1 + ax) − 1)/sin bx, (∛(1 + ax) − 1)/tan bx */
+GT(11,5,1,'VD','HSG: giới hạn kết hợp căn và lượng giác — (√(1 + ax) − 1)/sin bx = [(√(1 + ax) − 1)/x]·[x/sin bx] → a/(2b); (∛(1 + ax) − 1)/tan bx → a/(3b)', R=>{
+  for(let g = 0; g < 200; g++){
+    const cube = R.rnd() < 0.45, n = cube ? 3 : 2, a = R.nz(-30, 30), b = R.int(1, 9), v = a/(n*b); if(!gsOk(v)) continue;
+    const rt = `${cube ? '\\sqrt[3]' : '\\sqrt'}{1 ${a < 0 ? '-' : '+'} ${Math.abs(a) === 1 ? '' : Math.abs(a)}x}`, tr = cube ? '\\tan' : '\\sin';
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{${rt} - 1}{${tr} ${gsK(b)}}$.`, ans:gsR(v),
+      lg:`Viết $\\dfrac{${rt} - 1}{${tr} ${gsK(b)}} = \\dfrac{${rt} - 1}{x}\\cdot\\dfrac{x}{${tr} ${gsK(b)}}$.<br>`
+        + `Nhân liên hợp: $\\dfrac{${rt} - 1}{x} \\to ${gsF(a, n)}$; còn $\\dfrac{x}{${tr} ${gsK(b)}} \\to ${gsF(1, b)}$. Vậy giới hạn bằng $${gsF(a, n)}\\cdot ${gsF(1, b)} = ${gsN(v)}$.`.replace('\\cdot 1 =', ' ='),
+      verify:()=> Math.abs(gsLim(x=> ((cube ? Math.cbrt(1 + a*x) : Math.sqrt(1 + a*x)) - 1)/(cube ? Math.tan(b*x) : Math.sin(b*x)), 0, 1e-6) - o.ans) < 1e-5*Math.max(1, Math.abs(o.ans))};
+    return o; }
+  return null;
+});
+
+/* 26. TLN VD — (ⁿ√(1 + ax) − 1)/x */
+GT(11,5,1,'VD','HSG: giới hạn lim (ⁿ√(1 + ax) − 1)/x — đặt t = ⁿ√(1 + ax), dùng tⁿ − 1 = (t − 1)(tⁿ⁻¹ + … + t + 1), được a/n', R=>{
+  for(let g = 0; g < 200; g++){
+    const n = R.int(2, 6), a = R.nz(-40, 40), v = a/n; if(!gsOk(v)) continue;
+    const rt = `${n === 2 ? '\\sqrt' : `\\sqrt[${n}]`}{1 ${a < 0 ? '-' : '+'} ${Math.abs(a) === 1 ? '' : Math.abs(a)}x}`;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{${rt} - 1}{x}$.`, ans:gsR(v),
+      lg:`Đặt $t = ${rt}$ thì $t \\to 1$ và $t^{${n}} - 1 = ${a}x$. Mà $t^{${n}} - 1 = (t - 1)(t^{${n - 1}} + \\cdots + t + 1)$ (gồm $${n}$ số hạng trong ngoặc).<br>`
+        + `Do đó $\\dfrac{t - 1}{x} = \\dfrac{${a}}{t^{${n - 1}} + \\cdots + t + 1} \\to \\dfrac{${a}}{${n}} = ${gsN(v)}$.`.replace('t^{1} + \\cdots + t + 1', 't + 1'),
+      verify:()=> Math.abs(gsLim(x=> (Math.pow(1 + a*x, 1/n) - 1)/x, 0, 1e-6) - o.ans) < 1e-4};
+    return o; }
+  return null;
+});
+
+/* 27. TLN VD — đổi biến t = x − π (x − π/2) */
+GT(11,5,1,'VD','HSG: giới hạn lượng giác tại x₀ ≠ 0 — đổi biến t = x − π (hoặc t = x − π/2): lim_{x→π} sin kx/(x − π) = (−1)^k·k, lim_{x→π} (1 + cos kx)/(x − π)² = k²/2 (k lẻ), lim_{x→π/2} cos kx/(x − π/2) (k lẻ)', R=>{
+  for(let g = 0; g < 200; g++){
+    const ty = R.int(0, 2), k = ty === 0 ? R.int(1, 30) : 2*R.int(0, 12) + 1, m = R.int(1, 9);
+    let v, st, lg, fn, x0;
+    if(ty === 0){ v = m*(k%2 ? -k : k); x0 = Math.PI; fn = x=> m*Math.sin(k*x)/(x - Math.PI);
+      st = `\\lim\\limits_{x \\to \\pi}\\dfrac{${m === 1 ? '' : m}\\sin ${gsK(k)}}{x - \\pi}`;
+      lg = `Đặt $t = x - \\pi$, $t \\to 0$: $\\sin ${gsK(k)} = \\sin(${k}\\pi + ${gsK(k, 't')}) = ${k%2 ? '-' : ''}\\sin ${gsK(k, 't')}$.<br>Giới hạn bằng $\\lim\\limits_{t \\to 0}\\dfrac{${k%2 ? '-' : ''}${m === 1 ? '' : m}\\sin ${gsK(k, 't')}}{t} = ${v}$.`; }
+    else if(ty === 1){ v = m*k*k/2; x0 = Math.PI; fn = x=> m*(1 + Math.cos(k*x))/(x - Math.PI)**2;
+      st = `\\lim\\limits_{x \\to \\pi}\\dfrac{${m === 1 ? '' : m + '('}1 + \\cos ${gsK(k)}${m === 1 ? '' : ')'}}{(x - \\pi)^2}`;
+      lg = `Đặt $t = x - \\pi$, $t \\to 0$: vì $${k}$ lẻ nên $\\cos ${gsK(k)} = \\cos(${k}\\pi + ${gsK(k, 't')}) = -\\cos ${gsK(k, 't')}$.<br>Giới hạn bằng $\\lim\\limits_{t \\to 0}\\dfrac{${m === 1 ? '' : m + '('}1 - \\cos ${gsK(k, 't')}${m === 1 ? '' : ')'}}{t^2} = ${m === 1 ? '' : m + '\\cdot '}${gsF(k*k, 2)} = ${gsN(v)}$.`; }
+    else { const sg = ((k - 1)/2)%2 ? 1 : -1; v = m*sg*k; x0 = Math.PI/2; fn = x=> m*Math.cos(k*x)/(x - Math.PI/2);   // cos(kπ/2 + kt) = −sin(kπ/2)·sin kt
+      st = `\\lim\\limits_{x \\to \\frac{\\pi}{2}}\\dfrac{${m === 1 ? '' : m}\\cos ${gsK(k)}}{x - \\frac{\\pi}{2}}`;
+      lg = `Đặt $t = x - \\dfrac{\\pi}{2}$, $t \\to 0$: $\\cos ${gsK(k)} = \\cos\\left(\\dfrac{${k}\\pi}{2} + ${gsK(k, 't')}\\right) = -\\sin\\dfrac{${k}\\pi}{2}\\sin ${gsK(k, 't')} = ${sg < 0 ? '-' : ''}\\sin ${gsK(k, 't')}$ (vì $\\sin\\dfrac{${k}\\pi}{2} = ${-sg}$).<br>Giới hạn bằng $\\lim\\limits_{t \\to 0}\\dfrac{${sg < 0 ? '-' : ''}${m === 1 ? '' : m}\\sin ${gsK(k, 't')}}{t} = ${v}$.`.replace('\\dfrac{1\\pi}{2}', '\\dfrac{\\pi}{2}'); }
+    if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $${st}$.`, ans:gsR(v), lg, verify:()=> Math.abs(gsLim(fn, x0, 1e-5) - o.ans) < 1e-4*Math.max(1, Math.abs(o.ans))};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-16.2 [HSG] Giới hạn hàm số nâng cao: căn khác bậc (thêm bớt), giới hạn lượng giác (11|5|1), đợt 3 (6 dạng TLN). Claude viết.
+// Chuỗi: căn khác bậc tại vô cực (thêm bớt x) → (1 − ⁿ√cos ax)/x² → bài toán ngược tìm tham số để giới hạn hữu hạn
+// → (tan ax − sin ax)/x³ → (√(1 + ax) − 1 − ax/2)/x² (thêm bớt bậc hai) → (∛(1 + ax) − √(1 + bx))/sin cx.
+const gsOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4 && Math.round(v*10) !== 0;
+const gsN = v=> nt(Math.round(v*10)/10);
+const gsR = v=> Math.round(v*10)/10;
+const gsF = (p, q)=> frT(p, q);
+const gsK = (k, s = 'x')=> k === 1 ? s : k + s;
+const gsS = (a, s = 'x')=> `${a < 0 ? '-' : '+'} ${Math.abs(a) === 1 ? '' : Math.abs(a)}${s}`;
+const gsLim = (f, x0 = 0, h = 1e-4)=> (f(x0 + h) + f(x0 - h))/2;
+
+/* 28. TLN VD — căn khác bậc tại vô cực */
+GT(11,5,1,'VD','HSG: giới hạn tại vô cực dạng ∞ − ∞ chứa căn khác bậc lim_{x→+∞}(√(x² + ax) − ∛(x³ + bx²)) — thêm bớt x, nhân liên hợp bậc hai và bậc ba, được a/2 − b/3', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = R.nz(-20, 20), b = 3*R.nz(-8, 8), v = a/2 - b/3; if(!gsOk(v)) continue;
+    const sq = `\\sqrt{x^2 ${gsS(a)}}`, cb = `\\sqrt[3]{x^3 ${gsS(b, 'x^2')}}`;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to +\\infty}\\left(${sq} - ${cb}\\right)$.`, ans:gsR(v),
+      lg:`Thêm bớt $x$: biểu thức $= \\left(${sq} - x\\right) - \\left(${cb} - x\\right)$.<br>`
+        + `$${sq} - x = \\dfrac{${a}x}{${sq} + x} \\to ${gsF(a, 2)}$; $${cb} - x = \\dfrac{${b}x^2}{\\left(${cb}\\right)^2 + x${cb} + x^2} \\to ${gsF(b, 3)}$ (chia tử và mẫu cho $x$, $x^2$).<br>`
+        + `Vậy giới hạn bằng $${gsF(a, 2)} - ${b < 0 ? `\\left(${gsF(b, 3)}\\right)` : gsF(b, 3)} = ${gsN(v)}$.`,
+      verify:()=>{ const x = 1e6; return Math.abs(Math.sqrt(x*x + a*x) - Math.cbrt(x**3 + b*x*x) - o.ans) < 1e-3; }};
+    return o; }
+  return null;
+});
+
+/* 29. TLN VD — (1 − ⁿ√cos ax)/x² */
+GT(11,5,1,'VD','HSG: giới hạn lim (1 − ⁿ√(cos ax))/x² (n = 2, 3) — nhân liên hợp được (1 − cos ax)/[x²(1 + ⁿ√cos ax + …)], tử dần tới a²/2, mẫu (không kể x²) dần tới n; giới hạn a²/(2n)', R=>{
+  for(let g = 0; g < 200; g++){
+    const n = R.pick([2, 3]), a = R.int(1, 20), v = a*a/(2*n); if(!gsOk(v)) continue;
+    const rt = n === 2 ? `\\sqrt{\\cos ${gsK(a)}}` : `\\sqrt[3]{\\cos ${gsK(a)}}`;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{1 - ${rt}}{x^2}$.`, ans:gsR(v),
+      lg:`Đặt $t = ${rt}$, $t \\to 1$. Ta có $1 - \\cos ${gsK(a)} = 1 - t^{${n}} = (1 - t)(${n === 2 ? '1 + t' : '1 + t + t^2'})$, nên $\\dfrac{1 - t}{x^2} = \\dfrac{1 - \\cos ${gsK(a)}}{x^2}\\cdot\\dfrac{1}{${n === 2 ? '1 + t' : '1 + t + t^2'}}$.<br>`
+        + `Vì $\\dfrac{1 - \\cos ${gsK(a)}}{x^2} \\to ${gsF(a*a, 2)}$ và $${n === 2 ? '1 + t' : '1 + t + t^2'} \\to ${n}$, giới hạn bằng $${gsF(a*a, 2*n)} = ${gsN(v)}$.`.replace(`$${gsF(a*a, 2*n)} = ${gsN(v)}$`, Number.isInteger(v) ? `$${gsN(v)}$` : `$${gsF(a*a, 2*n)} = ${gsN(v)}$`),
+      verify:()=> Math.abs(gsLim(x=> (1 - Math.pow(Math.cos(a*x), 1/n))/(x*x), 0, 1e-4) - o.ans) < 1e-4*o.ans};
+    return o; }
+  return null;
+});
+
+/* 30. TLN VD — bài toán ngược: tìm a, b để giới hạn bằng L */
+GT(11,5,1,'VD','HSG: bài toán ngược — tìm a, b để lim_{x→x₀}(√(ax + b) − c)/(x − x₀) = L: giới hạn hữu hạn nên tử triệt tiêu tại x₀ (ax₀ + b = c²), nhân liên hợp được a/(2c) = L; tính a + b', R=>{
+  for(let g = 0; g < 300; g++){
+    const c = R.int(1, 6), x0 = R.nz(-4, 5), L = R.nz(-8, 10)/R.pick([1, 2]), a = 2*c*L; if(!Number.isInteger(a) || a === 0) continue;
+    const b = c*c - a*x0, v = a + b; if(!gsOk(v)) continue;
+    const xm = `x ${x0 < 0 ? '+' : '-'} ${Math.abs(x0)}`;
+    const o = {stem:`Cho hai số thực $a$, $b$ thoả mãn $\\lim\\limits_{x \\to ${x0}}\\dfrac{\\sqrt{ax + b} - ${c}}{${xm}} = ${nt(L)}$. Tính $a + b$.`, ans:v,
+      lg:`Mẫu dần tới $0$ mà giới hạn hữu hạn nên tử cũng dần tới $0$: $\\sqrt{${a < 0 && false ? '' : ''}a\\cdot ${x0 < 0 ? `(${x0})` : x0} + b} = ${c}$, tức $${x0 === 1 ? '' : x0 === -1 ? '-' : x0}a + b = ${c*c}$.<br>`
+        + `Khi đó $\\sqrt{ax + b} - ${c} = \\dfrac{ax + b - ${c*c}}{\\sqrt{ax + b} + ${c}} = \\dfrac{a(${xm})}{\\sqrt{ax + b} + ${c}}$, nên giới hạn bằng $\\dfrac{a}{${2*c}}$.<br>`
+        + `Từ $\\dfrac{a}{${2*c}} = ${nt(L)}$ được $a = ${a}$, $b = ${c*c} - ${x0 === 1 ? '' : (x0 < 0 ? `(${x0})` : x0) + '\\cdot '}${a < 0 ? `(${a})` : a} = ${b}$. Vậy $a + b = ${v}$.`,
+      verify:()=> Math.abs(gsLim(x=> (Math.sqrt(a*x + b) - c)/(x - x0), x0, 1e-6) - L) < 1e-4 && Math.abs(Math.sqrt(a*x0 + b) - c) < 1e-12 && a + b === o.ans};
+    return o; }
+  return null;
+});
+
+/* 31. TLN VD — (tan ax − sin ax)/x³ */
+GT(11,5,1,'VD','HSG: giới hạn lim (tan ax − sin ax)/x³ — tan ax − sin ax = tan ax·(1 − cos ax), tách thành [tan ax/x]·[(1 − cos ax)/x²] → a·a²/2 = a³/2', R=>{
+  for(let g = 0; g < 100; g++){
+    const a = R.int(1, 12), m = R.pick([1, 1, 2, 3]), v = m*a**3/2; if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{${m === 1 ? '' : m + '('}\\tan ${gsK(a)} - \\sin ${gsK(a)}${m === 1 ? '' : ')'}}{x^3}$.`, ans:gsR(v),
+      lg:`$\\tan ${gsK(a)} - \\sin ${gsK(a)} = \\tan ${gsK(a)}\\,(1 - \\cos ${gsK(a)})$, nên $\\dfrac{\\tan ${gsK(a)} - \\sin ${gsK(a)}}{x^3} = \\dfrac{\\tan ${gsK(a)}}{x}\\cdot\\dfrac{1 - \\cos ${gsK(a)}}{x^2} \\to ${a}\\cdot ${gsF(a*a, 2)} = ${gsF(a**3, 2)}$.<br>`
+        + `Vậy giới hạn bằng $${m === 1 ? '' : m + '\\cdot '}${gsF(a**3, 2)}${m === 1 && Number.isInteger(a**3/2) ? ' = ' + gsN(v) : ' = ' + gsN(v)}$.`.replace(/\\to 1\\cdot /, '\\to '),
+      verify:()=> Math.abs(gsLim(x=> m*(Math.tan(a*x) - Math.sin(a*x))/x**3, 0, 2e-4) - o.ans) < 1e-3*o.ans};
+    return o; }
+  return null;
+});
+
+/* 32. TLN VDC — (√(1 + ax) − 1 − ax/2)/x²: thêm bớt bậc hai */
+GT(11,5,1,'VDC','HSG: giới hạn lim (√(1 + ax) − 1 − ax/2)/x² — đặt s = √(1 + ax) thì ax = s² − 1 và tử bằng −(s − 1)²/2, giới hạn −(1/2)·(a/2)² = −a²/8', R=>{
+  for(let g = 0; g < 200; g++){
+    const a = 2*R.nz(-9, 9), m = R.int(1, 8), v = -m*a*a/8; if(!gsOk(v)) continue;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{${m === 1 ? '' : m + '\\left('}\\sqrt{1 ${gsS(a)}} - 1 ${a/2 > 0 ? '-' : '+'} ${Math.abs(a/2) === 1 ? '' : Math.abs(a/2)}x${m === 1 ? '' : '\\right)'}}{x^2}$.`, ans:gsR(v),
+      lg:`Đặt $s = \\sqrt{1 ${gsS(a)}}$ thì $${a}x = s^2 - 1$ và $${a/2}x = \\dfrac{s^2 - 1}{2}$. Tử số bằng $s - 1 - \\dfrac{s^2 - 1}{2} = -\\dfrac{(s - 1)^2}{2}$.<br>`
+        + `Do đó biểu thức $= -\\dfrac{1}{2}\\left(\\dfrac{s - 1}{x}\\right)^2$, mà $\\dfrac{s - 1}{x} = \\dfrac{${a}}{s + 1} \\to ${a/2}$. Vậy giới hạn bằng $-${m === 1 ? '' : m + '\\cdot '}\\dfrac{1}{2}\\cdot ${(a/2)**2} = ${gsN(v)}$.`.replace(`$${a/2}x = `, `$${a/2 === 1 ? '' : a/2 === -1 ? '-' : a/2}x = `),
+      verify:()=> Math.abs(gsLim(x=> m*(Math.sqrt(1 + a*x) - 1 - a*x/2)/(x*x), 0, 1e-4) - o.ans) < 1e-3*Math.abs(o.ans)};
+    return o; }
+  return null;
+});
+
+/* 33. TLN VD — (∛(1 + ax) − √(1 + bx))/sin cx */
+GT(11,5,1,'VD','HSG: giới hạn lim (∛(1 + ax) − √(1 + bx))/sin cx (kiểu xét liên tục tại 0) — thêm bớt 1 ở tử, chia cho x ở cả tử và mẫu, được (a/3 − b/2)/c', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = 3*R.nz(-6, 6), b = R.nz(-16, 16), c = R.int(1, 6), v = (a/3 - b/2)/c; if(!gsOk(v)) continue;
+    const cb = `\\sqrt[3]{1 ${gsS(a)}}`, sq = `\\sqrt{1 ${gsS(b)}}`;
+    const o = {stem:`Tìm $\\lim\\limits_{x \\to 0}\\dfrac{${cb} - ${sq}}{\\sin ${gsK(c)}}$.`, ans:gsR(v),
+      lg:`Chia tử và mẫu cho $x$. Tử: $\\dfrac{${cb} - 1}{x} - \\dfrac{${sq} - 1}{x} \\to ${gsF(a, 3)} - ${b < 0 ? `\\left(${gsF(b, 2)}\\right)` : gsF(b, 2)} = ${gsF(2*a - 3*b, 6)}$ (nhân liên hợp). Mẫu: $\\dfrac{\\sin ${gsK(c)}}{x} \\to ${c}$.<br>`
+        + `Vậy giới hạn bằng $${c === 1 ? '' : `\\dfrac{${gsF(2*a - 3*b, 6)}}{${c}} = `}${gsN(v)}$.`,
+      verify:()=> Math.abs(gsLim(x=> (Math.cbrt(1 + a*x) - Math.sqrt(1 + b*x))/Math.sin(c*x), 0, 1e-6) - o.ans) < 1e-4*Math.max(1, Math.abs(o.ans))};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
+})();
+
+// ---------- V2.70: dạng thay số bổ sung (11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 11 — 11-16.2 [HSG] Giới hạn hàm số nâng cao: căn khác bậc (thêm bớt), giới hạn lượng giác (11|5|1), đợt 4 (4 dạng tự luận — chỉ bài chứng minh). Claude viết.
+// Chuỗi: chứng minh giới hạn cơ bản lim sin x/x = 1 (so sánh diện tích, kẹp) → giới hạn ⁿ√(1 + x) với n tổng quát
+// → giới hạn không tồn tại (dùng hai dãy) và kẹp với x·sin(1/x) → quy nạp: lim (1 − cos x cos 2x … cos nx)/x² = n(n + 1)(2n + 1)/12.
+const gsNear = (x, y, e = 1e-4)=> Math.abs(x - y) < e*Math.max(1, Math.abs(y));
+const gsLim = (f, h = 1e-4)=> (f(h) + f(-h))/2;
+
+/* TL1. VD — lim sin x/x = 1 */
+GE(11,5,1,'VD','HSG (tự luận): chứng minh sin x < x < tan x với 0 < x < π/2 (so sánh diện tích tam giác, hình quạt), suy ra cos x < sin x/x < 1, chứng minh lim_{x→0} sin x/x = 1 bằng định lí kẹp và áp dụng cho sin ax/x', R=>{
+  const a = R.int(2, 15);
+  return s6Parts(`Trong mặt phẳng, xét đường tròn tâm $O$ bán kính $1$ và góc lượng giác có số đo $x$ (rađian), $0 < x < \\dfrac{\\pi}{2}$.`, [
+    {q:`Chứng minh rằng $\\sin x < x < \\tan x$ với mọi $0 < x < \\dfrac{\\pi}{2}$.`,
+     a:`Lấy $A$, $M$ trên đường tròn với $\\widehat{AOM} = x$; tiếp tuyến tại $A$ cắt tia $OM$ tại $T$. Khi đó $S_{\\triangle OAM} = \\dfrac{1}{2}\\sin x$, diện tích hình quạt $OAM$ bằng $\\dfrac{1}{2}x$, $S_{\\triangle OAT} = \\dfrac{1}{2}AT = \\dfrac{1}{2}\\tan x$.<br>`
+       + `Tam giác $OAM$ nằm trong hình quạt, hình quạt nằm trong tam giác $OAT$ nên $\\dfrac{1}{2}\\sin x < \\dfrac{1}{2}x < \\dfrac{1}{2}\\tan x$, tức là $\\sin x < x < \\tan x$.`,
+     chk:()=> [0.1, 0.7, 1.5].every(x=> Math.sin(x) < x && x < Math.tan(x))},
+    {q:`Chứng minh rằng $\\cos x < \\dfrac{\\sin x}{x} < 1$ với mọi $x \\ne 0$, $-\\dfrac{\\pi}{2} < x < \\dfrac{\\pi}{2}$, và suy ra $\\lim\\limits_{x \\to 0}\\dfrac{\\sin x}{x} = 1$.`,
+     a:`Với $0 < x < \\dfrac{\\pi}{2}$: chia $\\sin x < x < \\tan x$ cho $\\sin x > 0$ được $1 < \\dfrac{x}{\\sin x} < \\dfrac{1}{\\cos x}$, tức $\\cos x < \\dfrac{\\sin x}{x} < 1$. Hai vế là hàm chẵn của $x$ nên bất đẳng thức cũng đúng với $-\\dfrac{\\pi}{2} < x < 0$.<br>`
+       + `Vì $\\lim\\limits_{x \\to 0}\\cos x = 1$, theo định lí kẹp $\\lim\\limits_{x \\to 0}\\dfrac{\\sin x}{x} = 1$.`,
+     chk:()=> [-1.2, -0.3, 0.2, 1.4].every(x=> Math.cos(x) < Math.sin(x)/x && Math.sin(x)/x < 1)},
+    {q:`Chứng minh rằng $\\lim\\limits_{x \\to 0}\\dfrac{\\sin ${a}x}{x} = ${a}$ và $\\lim\\limits_{x \\to 0}\\dfrac{\\tan ${a}x}{x} = ${a}$.`,
+     a:`Đặt $t = ${a}x$, $t \\to 0$ khi $x \\to 0$: $\\dfrac{\\sin ${a}x}{x} = ${a}\\cdot\\dfrac{\\sin t}{t} \\to ${a}$.<br>$\\dfrac{\\tan ${a}x}{x} = \\dfrac{\\sin ${a}x}{x}\\cdot\\dfrac{1}{\\cos ${a}x} \\to ${a}\\cdot 1 = ${a}$.`.replace(`${a}\\cdot 1 = ${a}`, `${a}`),
+     chk:()=> gsNear(gsLim(x=> Math.sin(a*x)/x), a) && gsNear(gsLim(x=> Math.tan(a*x)/x), a)}]);
+});
+
+/* TL2. VD — giới hạn căn bậc n tổng quát */
+GE(11,5,1,'VD','HSG (tự luận): chứng minh lim_{x→0}(ⁿ√(1 + x) − 1)/x = 1/n với n nguyên dương tùy ý (hằng đẳng thức tⁿ − 1), mở rộng lim (ⁿ√(1 + ax) − 1)/x = a/n và chứng minh giới hạn của hiệu hai căn khác bậc', R=>{
+  for(let g = 0; g < 50; g++){
+    const n = R.int(2, 5), m = R.int(2, 5), a = R.nz(-6, 6), b = R.nz(-6, 6); if(n === m) continue;
+    const rt = (k, c)=> `${k === 2 ? '\\sqrt' : `\\sqrt[${k}]`}{1 ${c < 0 ? '-' : '+'} ${Math.abs(c) === 1 ? '' : Math.abs(c)}x}`;
+    const val = a/n - b/m, vT = frT(a*m - b*n, n*m);
+    return s6Parts(`Cho $n$ là số nguyên dương, $n \\ge 2$.`, [
+      {q:`Chứng minh rằng $\\lim\\limits_{x \\to 0}\\dfrac{\\sqrt[n]{1 + x} - 1}{x} = \\dfrac{1}{n}$.`,
+       a:`Đặt $t = \\sqrt[n]{1 + x}$ thì $t \\to 1$ khi $x \\to 0$ và $x = t^n - 1 = (t - 1)(t^{n-1} + t^{n-2} + \\cdots + t + 1)$.<br>`
+         + `Do đó $\\dfrac{\\sqrt[n]{1 + x} - 1}{x} = \\dfrac{1}{t^{n-1} + t^{n-2} + \\cdots + 1}$. Mẫu gồm $n$ số hạng, mỗi số hạng dần tới $1$, nên giới hạn bằng $\\dfrac{1}{n}$.`,
+       chk:()=> [2, 3, 5, 7].every(k=> gsNear(gsLim(x=> (Math.pow(1 + x, 1/k) - 1)/x, 1e-6), 1/k))},
+      {q:`Chứng minh rằng với mọi số thực $a \\ne 0$: $\\lim\\limits_{x \\to 0}\\dfrac{\\sqrt[n]{1 + ax} - 1}{x} = \\dfrac{a}{n}$.`,
+       a:`Đặt $u = ax$, $u \\to 0$ khi $x \\to 0$: $\\dfrac{\\sqrt[n]{1 + ax} - 1}{x} = a\\cdot\\dfrac{\\sqrt[n]{1 + u} - 1}{u} \\to a\\cdot\\dfrac{1}{n} = \\dfrac{a}{n}$ (theo câu a).`,
+       chk:()=> [[3, 4], [2, -5], [5, 3]].every(([k, c])=> gsNear(gsLim(x=> (Math.pow(1 + c*x, 1/k) - 1)/x, 1e-6), c/k))},
+      {q:`Chứng minh rằng $\\lim\\limits_{x \\to 0}\\dfrac{${rt(n, a)} - ${rt(m, b)}}{x} = ${vT}$.`,
+       a:`Thêm bớt $1$: biểu thức $= \\dfrac{${rt(n, a)} - 1}{x} - \\dfrac{${rt(m, b)} - 1}{x}$. Theo câu b), hai phân thức lần lượt dần tới $${frT(a, n)}$ và $${frT(b, m)}$.<br>Vậy giới hạn bằng $${frT(a, n)} - ${b < 0 ? `\\left(${frT(b, m)}\\right)` : frT(b, m)} = ${vT}$.`,
+       chk:()=> gsNear(gsLim(x=> (Math.pow(1 + a*x, 1/n) - Math.pow(1 + b*x, 1/m))/x, 1e-6), val)}]); }
+  return null;
+});
+
+/* TL3. VD — kẹp và giới hạn không tồn tại */
+GE(11,5,1,'VD','HSG (tự luận): chứng minh lim_{x→0} c·x·sin(1/x) = 0 (kẹp), chứng minh không tồn tại lim_{x→0} sin(k/x) (chọn hai dãy x_n → 0 cho hai giới hạn khác nhau), chứng minh không tồn tại lim_{x→+∞} cos x', R=>{
+  const c = R.int(1, 9), k = R.int(1, 6), cT = c === 1 ? '' : c;
+  return s6Parts(`Xét các hàm số $f(x) = ${cT}x\\sin\\dfrac{1}{x}$ và $g(x) = \\sin\\dfrac{${k}}{x}$ với $x \\ne 0$.`, [
+    {q:`Chứng minh rằng $\\lim\\limits_{x \\to 0}f(x) = 0$.`,
+     a:`Với mọi $x \\ne 0$: $|f(x)| = ${cT}|x|\\left|\\sin\\dfrac{1}{x}\\right| \\le ${cT}|x|$, tức $-${cT}|x| \\le f(x) \\le ${cT}|x|$. Mà $\\lim\\limits_{x \\to 0}${cT}|x| = 0$; theo định lí kẹp, $\\lim\\limits_{x \\to 0}f(x) = 0$.`,
+     chk:()=> [1e-3, -1e-4, 1e-6].every(x=> Math.abs(c*x*Math.sin(1/x)) <= c*Math.abs(x))},
+    {q:`Chứng minh rằng không tồn tại $\\lim\\limits_{x \\to 0}g(x)$.`,
+     a:`Xét $x_n = \\dfrac{${k}}{n\\pi}$ và $y_n = \\dfrac{${k}}{\\frac{\\pi}{2} + 2n\\pi}$; cả hai dãy dần tới $0$ và khác $0$.<br>`
+       + `Ta có $g(x_n) = \\sin(n\\pi) = 0 \\to 0$, còn $g(y_n) = \\sin\\left(\\dfrac{\\pi}{2} + 2n\\pi\\right) = 1 \\to 1$. Hai giới hạn khác nhau nên $g(x)$ không có giới hạn khi $x \\to 0$.`,
+     chk:()=> [5, 50].every(n=> Math.abs(Math.sin(k/(k/(n*Math.PI)))) < 1e-9 && Math.abs(Math.sin(k/(k/(Math.PI/2 + 2*n*Math.PI))) - 1) < 1e-9)},
+    {q:`Chứng minh rằng không tồn tại $\\lim\\limits_{x \\to +\\infty}\\cos x$.`,
+     a:`Xét $x_n = 2n\\pi \\to +\\infty$ và $y_n = \\pi + 2n\\pi \\to +\\infty$: $\\cos x_n = 1 \\to 1$, $\\cos y_n = -1 \\to -1$. Hai giới hạn khác nhau nên không tồn tại $\\lim\\limits_{x \\to +\\infty}\\cos x$.`,
+     chk:()=> [3, 30].every(n=> Math.abs(Math.cos(2*n*Math.PI) - 1) < 1e-9 && Math.abs(Math.cos(Math.PI + 2*n*Math.PI) + 1) < 1e-9)}]);
+});
+
+/* TL4. VD — quy nạp: lim (1 − cos x cos 2x … cos nx)/x² */
+GE(11,5,1,'VD','HSG (tự luận): chứng minh lim (1 − cos kx)/x² = k²/2, đẳng thức thêm bớt 1 − P_n = (1 − P_{n−1}) + P_{n−1}(1 − cos nx) với P_n = cos x cos 2x … cos nx, chứng minh bằng quy nạp lim (1 − P_n)/x² = n(n + 1)(2n + 1)/12', R=>{
+  const N = R.int(3, 9), P = (n, x)=>{ let p = 1; for(let k = 1; k <= n; k++) p *= Math.cos(k*x); return p; };
+  return s6Parts(`Với mỗi số nguyên dương $n$, đặt $P_n(x) = \\cos x\\cos 2x\\cdots\\cos nx$.`, [
+    {q:`Chứng minh rằng $\\lim\\limits_{x \\to 0}\\dfrac{1 - \\cos kx}{x^2} = \\dfrac{k^2}{2}$ với mọi số nguyên dương $k$.`,
+     a:`$1 - \\cos kx = 2\\sin^2\\dfrac{kx}{2}$ nên $\\dfrac{1 - \\cos kx}{x^2} = \\dfrac{k^2}{2}\\left(\\dfrac{\\sin\\frac{kx}{2}}{\\frac{kx}{2}}\\right)^2 \\to \\dfrac{k^2}{2}$ (vì $\\lim\\limits_{t \\to 0}\\dfrac{\\sin t}{t} = 1$).`,
+     chk:()=> [1, 4, 9].every(k=> gsNear(gsLim(x=> (1 - Math.cos(k*x))/(x*x)), k*k/2))},
+    {q:`Chứng minh rằng $1 - P_n(x) = \\left(1 - P_{n-1}(x)\\right) + P_{n-1}(x)\\left(1 - \\cos nx\\right)$ với mọi $n \\ge 2$.`,
+     a:`Vì $P_n(x) = P_{n-1}(x)\\cos nx$ nên vế phải bằng $1 - P_{n-1}(x) + P_{n-1}(x) - P_{n-1}(x)\\cos nx = 1 - P_n(x)$.`,
+     chk:()=> [2, 5, 8].every(n=> [0.3, 1.1].every(x=> Math.abs((1 - P(n - 1, x)) + P(n - 1, x)*(1 - Math.cos(n*x)) - (1 - P(n, x))) < 1e-12))},
+    {q:`Chứng minh rằng $\\lim\\limits_{x \\to 0}\\dfrac{1 - P_n(x)}{x^2} = \\dfrac{n(n + 1)(2n + 1)}{12}$ với mọi số nguyên dương $n$; chẳng hạn với $n = ${N}$ giới hạn bằng $${frT(N*(N + 1)*(2*N + 1), 12)}$.`,
+     a:`Quy nạp theo $n$. Với $n = 1$: theo câu a) giới hạn bằng $\\dfrac{1}{2} = \\dfrac{1\\cdot 2\\cdot 3}{12}$.<br>`
+       + `Giả sử đúng với $n - 1$. Theo câu b): $\\dfrac{1 - P_n}{x^2} = \\dfrac{1 - P_{n-1}}{x^2} + P_{n-1}\\cdot\\dfrac{1 - \\cos nx}{x^2}$. Khi $x \\to 0$: $P_{n-1} \\to 1$, nên giới hạn bằng $\\dfrac{(n - 1)n(2n - 1)}{12} + \\dfrac{n^2}{2} = \\dfrac{n\\left[(n - 1)(2n - 1) + 6n\\right]}{12} = \\dfrac{n(2n^2 + 3n + 1)}{12} = \\dfrac{n(n + 1)(2n + 1)}{12}$.<br>`
+       + `Vậy đẳng thức đúng với mọi $n$; với $n = ${N}$ được $\\dfrac{${N}\\cdot ${N + 1}\\cdot ${2*N + 1}}{12} = ${frT(N*(N + 1)*(2*N + 1), 12)}$.`,
+     chk:()=> [1, 3, N].every(n=> gsNear(gsLim(x=> (1 - P(n, x))/(x*x)), n*(n + 1)*(2*n + 1)/12, 1e-3))}]);
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.70'; GEN[k].l1 = 'V2.70'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
