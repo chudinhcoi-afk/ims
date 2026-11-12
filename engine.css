@@ -399,7 +399,8 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 .pr-gengrp{font-weight:700; font-size:12px; color:var(--ink-soft); margin:5px 0 2px; break-after:avoid}
 .ws-hdr{display:flex;gap:12px;align-items:stretch;margin-bottom:6px}
 .ws-mk{flex:0 0 auto;align-self:flex-start;width:0;height:0;border:2.25mm solid #000;margin:.5mm 0 0;-webkit-print-color-adjust:exact;print-color-adjust:exact}   /* V2.13: mốc đầu dòng họ tên — MBP Chấm bài dò mốc này để ảnh gửi phụ huynh luôn có họ tên, mã bài (vẽ bằng viền để in được cả khi tắt in màu nền) */
-.ws-name{flex:1;display:flex;flex-direction:column;gap:9px;justify-content:center}
+.ws-name{flex:1;min-width:0;display:flex;flex-direction:column;gap:9px;justify-content:center}
+.ws-name span{white-space:nowrap;flex:0 0 auto}   /* V2.71: nhãn Họ và tên / Lớp / SBD / Ngày không bẻ dòng */
 .ws-name > div{display:flex;align-items:flex-end;gap:6px}
 .ws-name i{flex:1;border-bottom:1px dotted #000;height:1em}
 .ws-score{flex:0 0 32mm;border:1.3px solid #000;border-radius:4px;min-height:24mm;text-align:center;padding-top:2px}
@@ -477,8 +478,9 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 #pdfBody .ws-ecos .ws-cols > div:first-child .ws-ladj{right:auto;left:-7.6mm}
 #pdfBody .ws-ecos .ws-cols > div + div .ws-ladj{right:-7.6mm}   /* V1.45: trang xem trước cắt phần tràn ra ngoài tờ giấy → nút ✕ / chỉnh dòng đặt trong lề 8 mm của chế độ tiết kiệm giấy */
 #pdfBody .ws-ecos .ws-hdr{margin-bottom:2px}
-#pdfBody .ws-ecos .ws-name{flex-direction:row;gap:12px;align-items:flex-end}
-#pdfBody .ws-ecos .ws-name > div{flex:1}
+#pdfBody .ws-ecos .ws-name{flex-direction:row;flex-wrap:wrap;gap:6px 12px;align-items:flex-end}
+#pdfBody .ws-ecos .ws-name > div{flex:1 1 auto}   /* V2.71: phiếu in sẵn tên HS — tên dài thì Lớp, SBD xuống dòng thay vì đẩy ô Điểm ra ngoài tờ */
+#pdfBody .ws-ecos .ws-name > div > i:last-child{min-width:18mm}
 #pdfBody .ws-ecos .ws-score{min-height:18mm;flex-basis:28mm}
 #pdfBody .ws-ecos .ws-title{font-size:1.1em;margin-top:2px}
 #pdfBody .ws-ecos .ws-sub{margin-bottom:4px;font-size:.92em}
