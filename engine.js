@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.80 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.81 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -398,8 +398,8 @@ const CHUYEN_DE = {
             ['Cực trị hình học trong Oxyz', '53-64,68,70,71'],
             ['Câu Đúng–Sai tổng hợp mặt cầu, mặt phẳng, đường thẳng theo cấu trúc đề tốt nghiệp; vị trí tương đối của hai mặt cầu', '']],
   // V2.66: lớp 10–12 thêm chuyên đề chưa có dạng: ôn thi tốt nghiệp THPT (Đúng–Sai tổng hợp, thực tế, phần đề hay hỏi mà bài chưa có) và, lớp 10–11, ôn học sinh giỏi cấp tỉnh — phần tử thứ ba 'hsg' (mã, tên màu xanh, nhãn HSG). Chỉ nối vào CUỐI mỗi bài: mã chuyên đề cũ không đổi.
-  '10-17': [['Dấu của tam thức bậc hai', '1-11'],
-            ['Bất phương trình bậc hai trong thực tế (lợi nhuận, chiều cao vật ném, diện tích); câu Đúng–Sai tổng hợp hàm số bậc hai – dấu tam thức', ''],
+  '10-17': [['Dấu của tam thức bậc hai', '1-11,32-52'],
+            ['Bất phương trình bậc hai trong thực tế (lợi nhuận, chiều cao vật ném, diện tích); câu Đúng–Sai tổng hợp hàm số bậc hai – dấu tam thức', '53-82'],
             ['Bất đẳng thức AM–GM, Cauchy–Schwarz; tìm GTLN, GTNN của biểu thức nhiều biến', '12-31', 'hsg']],
   '10-18': [['Phương trình quy về phương trình bậc hai', '1-8,49-70'],
             ['Phương trình vô tỉ: đặt ẩn phụ, nhân liên hợp, đánh giá; bất phương trình vô tỉ', '9-28', 'hsg'],
@@ -632,7 +632,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.80';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.81';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -71610,6 +71610,980 @@ GT(10,6,0,'VD','Thực tế: tàu xuất phát từ P chạy thẳng đều vớ
 
 }
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.80'; GEN[k].l1 = 'V2.80'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.1 Dấu của tam thức bậc hai (10|5|2), đợt 1 (dạng 32–38: 4 TN, 3 Đ–S). Claude viết.
+// Chuỗi: tập xác định của hàm chứa căn tam thức (≥ 0 hay > 0) → bất phương trình phải biến đổi về dạng chuẩn
+// → hệ bất phương trình bậc hai (giao tập nghiệm) → tam thức có hệ số a chứa m luôn âm (xét riêng a = 0)
+// → Đ–S: loại Δ và dấu; tham số m (Δ' theo m); hệ bất phương trình và nghiệm nguyên.
+// verify kiểm bằng thử điểm / định nghĩa (không dùng biến đổi của lời giải).
+const tqF = (n, d)=> ({v:n/d, t:frT(n, d)});
+// tập hợp là danh sách khoảng {lo, hi, lc, hc}
+const tqSet = (k, r1, r2, rel)=>{ const strict = rel === '>' || rel === '<', pos = rel === '>' || rel === '\\geq', c = !strict;
+  return ((k > 0) === pos) ? [{lo:-Infinity, hi:r1, lc:false, hc:c}, {lo:r2, hi:Infinity, lc:c, hc:false}] : [{lo:r1, hi:r2, lc:c, hc:c}]; };
+const tqCap = (A, B)=>{ const out = []; for(const I of A) for(const J of B){
+  let lo, lc, hi, hc; if(I.lo > J.lo){ lo = I.lo; lc = I.lc; } else if(J.lo > I.lo){ lo = J.lo; lc = J.lc; } else { lo = I.lo; lc = I.lc && J.lc; }
+  if(I.hi < J.hi){ hi = I.hi; hc = I.hc; } else if(J.hi < I.hi){ hi = J.hi; hc = J.hc; } else { hi = I.hi; hc = I.hc && J.hc; }
+  if(lo < hi || (lo === hi && lc && hc)) out.push({lo, hi, lc, hc}); } return out.sort((p, q)=> p.lo - q.lo); };
+const tqHas = (S, x)=> S.some(I=> (x > I.lo || (x === I.lo && I.lc)) && (x < I.hi || (x === I.hi && I.hc)));
+const tqTex = (S, fmt)=>{ if(!S.length) return '\\varnothing'; if(S.length === 1 && S[0].lo === -Infinity && S[0].hi === Infinity) return '\\mathbb{R}';
+  return S.map(I=> I.lo === I.hi ? `\\{${fmt(I.lo)}\\}` : `${I.lo === -Infinity ? '(-\\infty' : (I.lc ? '[' : '(') + fmt(I.lo)}; ${I.hi === Infinity ? '+\\infty)' : fmt(I.hi) + (I.hc ? ']' : ')')}`).join(' \\cup '); };
+const tqFmt = list=> v=>{ const f = list.find(z=> Math.abs(z.v - v) < 1e-12); return f ? f.t : nt(v); };
+const tqKey = S=> S.map(I=> `${I.lo}${I.lc ? 'c' : 'o'}${I.hi}${I.hc ? 'c' : 'o'}`).join('|') || 'rong';
+const tqPts = list=>{ const P = []; for(const z of list){ P.push(z.v, z.v - 0.01, z.v + 0.01, z.v - 1.3, z.v + 1.3); } for(let x = -15; x <= 15; x += 0.25) P.push(x); return P; };
+const tqSame = (S, test, pts)=> pts.every(x=> tqHas(S, x) === test(x));
+const tqRel = r=> ({'>':'>', '<':'<', '\\geq':'\\geq', '\\leq':'\\leq'})[r];
+const tqNeg = r=> ({'>':'\\leq', '<':'\\geq', '\\geq':'<', '\\leq':'>'})[r];
+const tqCmp = (v, r)=> r === '>' ? v > 1e-12 : r === '<' ? v < -1e-12 : r === '\\geq' ? v >= -1e-12 : v <= 1e-12;
+// tam thức k(px − u)(qx − v): hệ số và hai nghiệm (phân số)
+const tqMake = (R, ps)=>{ const p = R.pick(ps), q = R.pick(ps), u = R.int(-7, 7), v = R.int(-7, 7), k = R.pick([1, -1]);
+  const A = tqF(u, p), B = tqF(v, q); if(Math.abs(A.v - B.v) < 1e-9 || gcdI(u, p) !== 1 || gcdI(v, q) !== 1) return null;
+  const [r1, r2] = A.v < B.v ? [A, B] : [B, A]; return {k, co:[k*p*q, -k*(p*v + q*u), k*u*v], r1, r2, f:x=> k*(p*x - u)*(q*x - v)}; };
+
+/* 32. TN TH — tập xác định của hàm số chứa căn tam thức */
+G(10,5,2,'TH','Tập xác định của hàm số y = √(ax² + bx + c) hoặc y = 1/√(ax² + bx + c) — giải bất phương trình bậc hai ≥ 0 hay > 0, chú ý lấy hay bỏ đầu mút', R=>{
+  for(let t = 0; t < 300; t++){
+    const T = tqMake(R, [1, 1, 1, 2, 3]); if(!T) continue; const mau = R.rnd() < 0.4, rel = mau ? '>' : '\\geq';
+    const fmt = tqFmt([T.r1, T.r2]), S = tqSet(T.k, T.r1.v, T.r2.v, rel), Sx = tqSet(T.k, T.r1.v, T.r2.v, mau ? '\\geq' : '>'), Sc = tqSet(-T.k, T.r1.v, T.r2.v, rel), Sd = tqSet(-T.k, T.r1.v, T.r2.v, mau ? '\\geq' : '>');
+    const sets = [S, Sx, Sc, Sd], keys = sets.map(tqKey); if(new Set(keys).size !== 4) continue;
+    const ft = polyT(T.co), y = mau ? `\\dfrac{1}{\\sqrt{${ft}}}` : `\\sqrt{${ft}}`;
+    const o = {stem:`Tập xác định của hàm số $y = ${y}$ là`, ans:{t:`$D = ${tqTex(S, fmt)}$`, v:1}, wrong:[2, 3, 4].map(i=> ({t:`$D = ${tqTex(sets[i - 1], fmt)}$`, v:i})),
+      lg:`Hàm số xác định khi $${ft} ${rel} 0$. Tam thức có hai nghiệm $x = ${T.r1.t}$, $x = ${T.r2.t}$ và hệ số $a = ${T.co[0]} ${T.co[0] > 0 ? '> 0' : '< 0'}$, nên tam thức ${T.k > 0 ? 'dương ngoài khoảng hai nghiệm, âm giữa hai nghiệm' : 'âm ngoài khoảng hai nghiệm, dương giữa hai nghiệm'}.<br>`
+        + `${mau ? 'Biểu thức dưới căn nằm ở mẫu nên phải dương (bỏ hai nghiệm).' : 'Biểu thức dưới căn chỉ cần không âm (lấy cả hai nghiệm).'} Vậy $D = ${tqTex(S, fmt)}$.`,
+      verify:()=>{ const Z = sets[o.ans.v - 1]; return !!Z && tqSame(Z, x=> tqCmp(T.f(x), rel), tqPts([T.r1, T.r2])); }};
+    return o; }
+  return null;
+});
+
+/* 33. TN TH — bất phương trình phải biến đổi về dạng chuẩn */
+G(10,5,2,'TH','Bất phương trình (x + s)(x + t) so sánh với mx + n — chuyển vế, rút gọn về ax² + bx + c so sánh với 0 rồi dùng định lí về dấu', R=>{
+  for(let g = 0; g < 300; g++){
+    const u = R.int(-7, 7), v = R.int(-7, 7), s = R.nz(-6, 6), t = R.nz(-6, 6); if(u === v || s === t) continue;
+    const r1 = Math.min(u, v), r2 = Math.max(u, v), m = s + t + u + v, n = s*t - u*v, rel = R.pick(['>', '<', '\\geq', '\\leq']); if(m === 0 && n === 0) continue;
+    const fmt = nt, S = tqSet(1, r1, r2, rel), S2 = tqSet(1, r1, r2, tqNeg(rel)), S3 = tqSet(1, r1, r2, rel === '>' ? '\\geq' : rel === '\\geq' ? '>' : rel === '<' ? '\\leq' : '<');
+    const S4 = tqSet(1, -r2, -r1, rel), sets = [S, S2, S3, S4], keys = sets.map(tqKey); if(new Set(keys).size !== 4) continue;
+    const L = `(x ${s > 0 ? '+' : '-'} ${Math.abs(s)})(x ${t > 0 ? '+' : '-'} ${Math.abs(t)})`, Rr = termsT([[m, 'x'], [n, '']]);
+    const F = x=> (x + s)*(x + t) - (m*x + n);
+    const o = {stem:`Tập nghiệm của bất phương trình $${L} ${rel} ${Rr}$ là`, ans:{t:`$S = ${tqTex(S, fmt)}$`, v:1}, wrong:[2, 3, 4].map(i=> ({t:`$S = ${tqTex(sets[i - 1], fmt)}$`, v:i})),
+      lg:`Khai triển và chuyển vế: $${polyT([1, s + t, s*t])} - (${Rr}) ${rel} 0 \\Leftrightarrow ${polyT([1, -(u + v), u*v])} ${rel} 0$.<br>Tam thức $${polyT([1, -(u + v), u*v])}$ có hai nghiệm $x = ${r1}$, $x = ${r2}$, hệ số $a = 1 > 0$ nên tam thức dương khi $x < ${r1}$ hoặc $x > ${r2}$, âm khi $${r1} < x < ${r2}$ và bằng $0$ tại hai nghiệm.<br>Vậy $S = ${tqTex(S, fmt)}$.`,
+      verify:()=>{ const Z = sets[o.ans.v - 1]; return !!Z && tqSame(Z, x=> tqCmp(F(x), rel), tqPts([{v:r1}, {v:r2}])); }};
+    return o; }
+  return null;
+});
+
+/* 34. TN VD — hệ bất phương trình bậc hai */
+G(10,5,2,'VD','Tập nghiệm của hệ gồm hai bất phương trình bậc hai — giải từng bất phương trình bằng định lí về dấu rồi lấy giao (chú ý đầu mút)', R=>{
+  for(let g = 0; g < 400; g++){
+    const T1 = tqMake(R, [1, 1, 1, 2]), T2 = tqMake(R, [1, 1, 1, 2]); if(!T1 || !T2) continue;
+    const rel1 = R.pick(['\\leq', '<', '\\geq']), rel2 = R.pick(['>', '\\geq', '<']), A = tqSet(T1.k, T1.r1.v, T1.r2.v, rel1), B = tqSet(T2.k, T2.r1.v, T2.r2.v, rel2), S = tqCap(A, B); if(!S.length) continue;
+    const fmt = tqFmt([T1.r1, T1.r2, T2.r1, T2.r2]);
+    const W = [A, B, tqCap(A, tqSet(T2.k, T2.r1.v, T2.r2.v, tqNeg(rel2))), tqCap(tqSet(T1.k, T1.r1.v, T1.r2.v, tqNeg(rel1)), B)].filter(Z=> Z.length && tqKey(Z) !== tqKey(S));
+    const ws = []; W.forEach(Z=>{ if(!ws.some(z=> tqKey(z) === tqKey(Z))) ws.push(Z); }); if(ws.length < 3) continue;
+    const sets = [S, ...ws.slice(0, 3)];
+    const f1 = polyT(T1.co), f2 = polyT(T2.co);
+    const o = {stem:`Tập nghiệm của hệ bất phương trình $\\begin{cases} ${f1} ${rel1} 0 \\\\ ${f2} ${rel2} 0 \\end{cases}$ là`, ans:{t:`$S = ${tqTex(S, fmt)}$`, v:1}, wrong:[2, 3, 4].map(i=> ({t:`$S = ${tqTex(sets[i - 1], fmt)}$`, v:i})),
+      lg:`$${f1} ${rel1} 0 \\Leftrightarrow x \\in ${tqTex(A, fmt)}$ (hai nghiệm $${T1.r1.t}$, $${T1.r2.t}$, $a = ${T1.co[0]}$).<br>$${f2} ${rel2} 0 \\Leftrightarrow x \\in ${tqTex(B, fmt)}$ (hai nghiệm $${T2.r1.t}$, $${T2.r2.t}$, $a = ${T2.co[0]}$).<br>Lấy giao: $S = ${tqTex(S, fmt)}$.`,
+      verify:()=>{ const Z = sets[o.ans.v - 1]; return !!Z && tqSame(Z, x=> tqCmp(T1.f(x), rel1) && tqCmp(T2.f(x), rel2), tqPts([T1.r1, T1.r2, T2.r1, T2.r2])); }};
+    return o; }
+  return null;
+});
+
+/* 35. TN VD — tam thức có hệ số a chứa m luôn âm */
+G(10,5,2,'VD','Tìm m để f(x) = (m − a)x² + 2(m − a)x + 2m + c < 0 với mọi x — xét riêng m = a (f là hằng số), m ≠ a cần hệ số âm và Δ′ < 0', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.int(-6, 6), c = R.int(-10, 10), A1 = a, A2 = -a - c; const aT = a === 0 ? 'm' : `m ${a > 0 ? '-' : '+'} ${Math.abs(a)}`; if(A1 === A2 || Math.abs(A2) > 12) continue;
+    const I = (lo, hi, lc, hc)=> [{lo, hi, lc, hc}];
+    let S, W; if(A1 < A2){ S = I(-Infinity, a, false, true); W = [I(-Infinity, a, false, false), I(-Infinity, A2, false, false), I(a, A2, false, false)]; }
+    else { S = I(-Infinity, A2, false, false); W = [I(-Infinity, A2, false, true), I(-Infinity, a, false, false), I(A2, a, false, false)]; }
+    const sets = [S, ...W], fmt = nt;
+    const f = `(m ${a > 0 ? '-' : '+'} ${Math.abs(a)})x^2 + 2(m ${a > 0 ? '-' : '+'} ${Math.abs(a)})x + ${termsT([[2, 'm'], [c, '']])}`.replace(/\(m \+ 0\)|\(m - 0\)/g, 'm');
+    const ok = m=> m === a ? 2*a + c < 0 : (m - a < 0 && (m - a)**2 - (m - a)*(2*m + c) < 0);
+    const o = {stem:`Cho $f(x) = ${f}$ ($m$ là tham số). Tập hợp các giá trị của $m$ để $f(x) < 0$ với mọi $x \\in \\mathbb{R}$ là`, ans:{t:`$${tqTex(S, fmt)}$`, v:1}, wrong:[2, 3, 4].map(i=> ({t:`$${tqTex(sets[i - 1], fmt)}$`, v:i})),
+      lg:`• $m = ${a}$: $f(x) = ${2*a + c} ${2*a + c < 0 ? '< 0$ với mọi $x$: nhận' : '\\geq 0$: loại'}.<br>• $m \\neq ${a}$: cần $\\begin{cases} ${aT} < 0 \\\\ \\Delta' = (${aT})^2 - (${aT})(${termsT([[2, 'm'], [c, '']])}) < 0 \\end{cases}$. `
+        + `Ta có $\\Delta' = (${aT})(${termsT([[-1, 'm'], [-a - c, '']])})$; vì $${aT} < 0$ nên cần $${termsT([[-1, 'm'], [-a - c, '']])} > 0 \\Leftrightarrow m < ${A2}$. Kết hợp: $m < ${Math.min(A1, A2)}$.<br>`
+        + `Vậy tập hợp cần tìm là $${tqTex(S, fmt)}$.`,
+      verify:()=>{ const Z = sets[o.ans.v - 1]; if(!Z) return false; for(let m = -30; m <= 30; m += 0.5) if(tqHas(Z, m) !== ok(m)) return false; return true; }};
+    return o; }
+  return null;
+});
+
+/* 36. Đ–S TH — loại Δ và dấu của tam thức */
+GD(10,5,2,'TH','Tam thức bậc hai f(x) = ax² + bx + c (Δ < 0, Δ = 0 hoặc Δ > 0): giá trị Δ, f(x) > 0 với mọi x?, f(x) ≥ 0 với mọi x?, tập nghiệm của f(x) ≤ 0', R=>{
+  for(let g = 0; g < 400; g++){
+    const kind = R.pick(['am', 'khong', 'duong']), a = R.pick([1, 2, 3, -1, -2]), h = R.int(-5, 5);
+    let co; if(kind === 'am'){ const K = R.int(1, 9); co = [a, -2*a*h, a*h*h + Math.sign(a)*K]; } else if(kind === 'khong'){ co = [a, -2*a*h, a*h*h]; } else { const u = R.int(-6, 6), v = R.int(-6, 6); if(u === v) continue; co = [a, -a*(u + v), a*u*v]; }
+    const [A, B, C] = co, D = B*B - 4*A*C, f = x=> A*x*x + B*x + C, ft = polyT(co);
+    const pts = []; for(let x = -20; x <= 20; x += 0.125) pts.push(x);
+    const allPos = pts.every(x=> f(x) > 0) && D < 0, allNN = pts.every(x=> f(x) >= 0);
+    // tập nghiệm của f(x) ≤ 0
+    let S; if(D < 0) S = A > 0 ? [] : [{lo:-Infinity, hi:Infinity, lc:false, hc:false}]; else if(D === 0){ const x0 = -B/(2*A); S = A > 0 ? [{lo:x0, hi:x0, lc:true, hc:true}] : [{lo:-Infinity, hi:Infinity, lc:false, hc:false}]; }
+    else { const r = [(-B - Math.sqrt(D))/(2*A), (-B + Math.sqrt(D))/(2*A)].sort((p, q)=> p - q); S = tqSet(A, r[0], r[1], '\\leq'); }
+    const Sw = S.length && S[0].lo === -Infinity && S[0].hi === Infinity ? [] : (D <= 0 && A > 0 ? [{lo:-Infinity, hi:Infinity, lc:false, hc:false}] : tqSet(-A, ...((()=>{ const r = [(-B - Math.sqrt(Math.max(D, 0)))/(2*A), (-B + Math.sqrt(Math.max(D, 0)))/(2*A)].sort((p, q)=> p - q); return r; })()), '\\leq'));
+    if(tqKey(S) === tqKey(Sw)) continue;
+    const showS = R.rnd() < 0.5 ? S : Sw, pts2 = pts.concat([-B/(2*A)]);
+    const Dw = B*B + 4*A*C === D ? D + 4 : B*B + 4*A*C;
+    const items = [
+      claimN(R, z=> `Biệt thức của $f(x)$ là $\\Delta = ${z}$`, D, String(D), Dw, String(Dw), ()=> B*B - 4*A*C),
+      {t:`$f(x) > 0$ với mọi $x \\in \\mathbb{R}$`, ok:allPos, chk:()=> pts2.every(x=> f(x) > 0)},
+      {t:`$f(x) \\geq 0$ với mọi $x \\in \\mathbb{R}$`, ok:allNN, chk:()=> pts2.every(x=> f(x) >= 0)},
+      {t:`Tập nghiệm của bất phương trình $f(x) \\leq 0$ là $${tqTex(showS, nt)}$`, ok:showS === S, chk:()=> pts2.every(x=> tqHas(showS, x) === (f(x) <= 1e-12))}];
+    if(items[1].ok === items[2].ok && R.rnd() < 0.3) continue;
+    return {stem:`Cho tam thức bậc hai $f(x) = ${ft}$.`, items,
+      lg:`a) $\\Delta = ${B < 0 ? `(${B})` : B}^2 - 4\\cdot ${A === 1 ? '' : `${A < 0 ? `(${A})` : A}\\cdot `}${C < 0 ? `(${C})` : C} = ${D}$.<br>`
+        + (D < 0 ? `$\\Delta < 0$ nên $f(x)$ cùng dấu với $a = ${A}$: $f(x) ${A > 0 ? '>' : '<'} 0$ với mọi $x$.` : D === 0 ? `$\\Delta = 0$ nên $f(x)$ cùng dấu với $a = ${A}$ với mọi $x \\neq ${nt(-B/(2*A))}$ và $f(${nt(-B/(2*A))}) = 0$.` : `$\\Delta > 0$, $f(x)$ có hai nghiệm phân biệt nên đổi dấu.`)
+        + `<br>b) ${allPos ? 'Đúng' : 'Sai'}. c) ${allNN ? 'Đúng' : 'Sai'}${D === 0 && A > 0 ? ` (f bằng $0$ tại $x = ${nt(-B/(2*A))}$, không dương tại đó nhưng vẫn không âm)` : ''}.<br>d) Tập nghiệm của $f(x) \\leq 0$ là $${tqTex(S, nt)}$.`}; }
+  return null;
+});
+
+/* 37. Đ–S VD — tam thức chứa tham số m luôn dương */
+GD(10,5,2,'VD','Tam thức f(x) = x² − 2(m + p)x + qm + r: biểu thức Δ′ theo m, xét một giá trị m cụ thể, điều kiện f(x) > 0 với mọi x, số giá trị nguyên của m', R=>{
+  for(let g = 0; g < 400; g++){
+    const m1 = R.int(-6, 5), m2 = R.int(m1 + 2, 8), p = R.int(-3, 3), q = 2*p + m1 + m2, r = p*p - m1*m2; if(q === 0) continue;
+    const Dp = m=> (m + p)**2 - (q*m + r), DpT = polyT([1, 2*p - q, p*p - r], 'm'), DpW = polyT([1, 2*p + q, p*p - r], 'm'); if(DpT === DpW) continue;
+    const m0 = R.int(m1 - 3, m2 + 3), ok0 = Dp(m0) < 0, nInt = m2 - m1 - 1;
+    const mw1 = m1 - 1, mw2 = m2 + 1;
+    const ft = `x^2 - 2(m ${p >= 0 ? '+' : '-'} ${Math.abs(p)})x ${q > 0 ? '+' : '-'} ${Math.abs(q) === 1 ? '' : Math.abs(q)}m ${r >= 0 ? '+' : '-'} ${Math.abs(r)}`.replace('(m + 0)', 'm').replace(' + 0', '').replace(' - 0', '');
+    const allPos = m=>{ const xv = m + p; return xv*xv - 2*(m + p)*xv + q*m + r > 0; };   // giá trị nhỏ nhất của f đạt tại đỉnh x = m + p
+    const items = [
+      claim(R, `$\\Delta' = ${DpT}$`, `$\\Delta' = ${DpW}$`, ()=> [-2, 0, 3].every(m=> Dp(m) === m*m + (2*p - q)*m + p*p - r), ()=> [-2, 0, 3].every(m=> Dp(m) === m*m + (2*p + q)*m + p*p - r)),
+      {t:`Khi $m = ${m0}$ thì $f(x) > 0$ với mọi $x \\in \\mathbb{R}$`, ok:ok0, chk:()=> allPos(m0)},
+      claim(R, `$f(x) > 0$ với mọi $x \\in \\mathbb{R}$ khi và chỉ khi $${m1} < m < ${m2}$`, `$f(x) > 0$ với mọi $x \\in \\mathbb{R}$ khi và chỉ khi $${mw1} \\leq m \\leq ${mw2}$`, ()=> [m1 - 1, m1, m1 + 0.5, m2 - 0.5, m2, m2 + 1].every(m=> allPos(m) === (m > m1 && m < m2)), ()=> [mw1, mw1 + 0.5, mw2].every(m=> allPos(m) === (m >= mw1 && m <= mw2))),
+      claimN(R, z=> `Có đúng $${z}$ giá trị nguyên của $m$ để $f(x) > 0$ với mọi $x \\in \\mathbb{R}$`, nInt, String(nInt), nInt + 2, String(nInt + 2), ()=>{ let n = 0; for(let m = -20; m <= 20; m++) if(allPos(m)) n++; return n; })];
+    return {stem:`Cho tam thức bậc hai $f(x) = ${ft}$ ($m$ là tham số).`, items,
+      lg:`a) $\\Delta' = (m ${p >= 0 ? '+' : '-'} ${Math.abs(p)})^2 - (${termsT([[q, 'm'], [r, '']])}) = ${DpT}$.<br>Vì $a = 1 > 0$: $f(x) > 0$ với mọi $x$ $\\Leftrightarrow \\Delta' < 0 \\Leftrightarrow ${DpT} < 0 \\Leftrightarrow ${m1} < m < ${m2}$.<br>`
+        + `b) $m = ${m0}$: $\\Delta' = ${Dp(m0)} ${ok0 ? '< 0$ nên đúng' : '\\geq 0$ nên sai'}.<br>c) Điều kiện đúng là $${m1} < m < ${m2}$.<br>d) Các giá trị nguyên: từ $${m1 + 1}$ đến $${m2 - 1}$, có $${nInt}$ giá trị.`}; }
+  return null;
+});
+
+/* 38. Đ–S VD — hệ bất phương trình bậc hai và nghiệm nguyên */
+GD(10,5,2,'VD','Hệ hai bất phương trình bậc hai: tập nghiệm từng bất phương trình, tập nghiệm của hệ, số nghiệm nguyên của hệ', R=>{
+  for(let g = 0; g < 400; g++){
+    const T1 = tqMake(R, [1]), T2 = tqMake(R, [1]); if(!T1 || !T2) continue;
+    const rel1 = R.pick(['\\leq', '<']), rel2 = R.pick(['>', '\\geq']); if(T1.k < 0 || T2.k < 0) continue;
+    const A = tqSet(1, T1.r1.v, T1.r2.v, rel1), B = tqSet(1, T2.r1.v, T2.r2.v, rel2), S = tqCap(A, B); if(!S.length) continue;
+    const ints = []; for(let x = -20; x <= 20; x++) if(tqHas(S, x)) ints.push(x); if(!ints.length) continue;
+    const Aw = tqSet(1, T1.r1.v, T1.r2.v, tqNeg(rel1)), Bw = tqSet(1, T2.r1.v, T2.r2.v, rel2 === '>' ? '\\geq' : '>'), Sw = tqCap(A, tqSet(1, T2.r1.v, T2.r2.v, tqNeg(rel2)));
+    if(tqKey(B) === tqKey(Bw) || tqKey(S) === tqKey(Sw) || !Sw.length) continue;
+    const f1 = polyT(T1.co), f2 = polyT(T2.co), F1 = x=> tqCmp(T1.f(x), rel1), F2 = x=> tqCmp(T2.f(x), rel2), pts = tqPts([T1.r1, T1.r2, T2.r1, T2.r2]);
+    const nW = ints.length + R.pick([1, -1]) || ints.length + 1;
+    const items = [
+      claim(R, `Tập nghiệm của $${f1} ${rel1} 0$ là $${tqTex(A, nt)}$`, `Tập nghiệm của $${f1} ${rel1} 0$ là $${tqTex(Aw, nt)}$`, ()=> tqSame(A, F1, pts), ()=> tqSame(Aw, F1, pts)),
+      claim(R, `Tập nghiệm của $${f2} ${rel2} 0$ là $${tqTex(B, nt)}$`, `Tập nghiệm của $${f2} ${rel2} 0$ là $${tqTex(Bw, nt)}$`, ()=> tqSame(B, F2, pts), ()=> tqSame(Bw, F2, pts)),
+      claim(R, `Tập nghiệm của hệ là $${tqTex(S, nt)}$`, `Tập nghiệm của hệ là $${tqTex(Sw, nt)}$`, ()=> tqSame(S, x=> F1(x) && F2(x), pts), ()=> tqSame(Sw, x=> F1(x) && F2(x), pts)),
+      claimN(R, z=> `Hệ có đúng $${z}$ nghiệm nguyên`, ints.length, String(ints.length), nW, String(nW), ()=>{ let n = 0; for(let x = -40; x <= 40; x++) if(F1(x) && F2(x)) n++; return n; })];
+    return {stem:`Cho hệ bất phương trình $\\begin{cases} ${f1} ${rel1} 0 \\\\ ${f2} ${rel2} 0 \\end{cases}$.`, items,
+      lg:`a) $${f1}$ có hai nghiệm $${T1.r1.t}$, $${T1.r2.t}$, $a = 1 > 0$ nên $${f1} ${rel1} 0 \\Leftrightarrow x \\in ${tqTex(A, nt)}$.<br>b) $${f2}$ có hai nghiệm $${T2.r1.t}$, $${T2.r2.t}$, $a = 1 > 0$ nên $${f2} ${rel2} 0 \\Leftrightarrow x \\in ${tqTex(B, nt)}$.<br>`
+        + `c) Giao hai tập: $S = ${tqTex(S, nt)}$.<br>d) Các nghiệm nguyên: $${ints.join('; ')}$ — có $${ints.length}$ nghiệm.`}; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.1 Dấu của tam thức bậc hai (10|5|2), đợt 2 (dạng 39–45: 7 TLN). Claude viết.
+// Chuỗi: tập nghiệm là một đoạn/khoảng — độ dài, tổng đầu mút (39) → nghiệm nguyên gần biên của tập nghiệm dạng hợp hai khoảng (40)
+// → bất phương trình phải biến đổi, đếm nghiệm nguyên (41) → tập xác định có thêm điều kiện (42) → hệ, đếm nghiệm nguyên (43)
+// → ngược lại: biết tập nghiệm, tìm hệ số (Vi-ét) (44) → biết khoảng dương và một giá trị, dựng lại tam thức (45).
+const tqF = (n, d)=> ({v:n/d, t:frT(n, d)});
+const tqSet = (k, r1, r2, rel)=>{ const strict = rel === '>' || rel === '<', pos = rel === '>' || rel === '\\geq', c = !strict;
+  return ((k > 0) === pos) ? [{lo:-Infinity, hi:r1, lc:false, hc:c}, {lo:r2, hi:Infinity, lc:c, hc:false}] : [{lo:r1, hi:r2, lc:c, hc:c}]; };
+const tqCap = (A, B)=>{ const out = []; for(const I of A) for(const J of B){
+  let lo, lc, hi, hc; if(I.lo > J.lo){ lo = I.lo; lc = I.lc; } else if(J.lo > I.lo){ lo = J.lo; lc = J.lc; } else { lo = I.lo; lc = I.lc && J.lc; }
+  if(I.hi < J.hi){ hi = I.hi; hc = I.hc; } else if(J.hi < I.hi){ hi = J.hi; hc = J.hc; } else { hi = I.hi; hc = I.hc && J.hc; }
+  if(lo < hi || (lo === hi && lc && hc)) out.push({lo, hi, lc, hc}); } return out.sort((p, q)=> p.lo - q.lo); };
+const tqHas = (S, x)=> S.some(I=> (x > I.lo || (x === I.lo && I.lc)) && (x < I.hi || (x === I.hi && I.hc)));
+const tqTex = (S, fmt)=>{ if(!S.length) return '\\varnothing'; if(S.length === 1 && S[0].lo === -Infinity && S[0].hi === Infinity) return '\\mathbb{R}';
+  return S.map(I=> I.lo === I.hi ? `\\{${fmt(I.lo)}\\}` : `${I.lo === -Infinity ? '(-\\infty' : (I.lc ? '[' : '(') + fmt(I.lo)}; ${I.hi === Infinity ? '+\\infty)' : fmt(I.hi) + (I.hc ? ']' : ')')}`).join(' \\cup '); };
+const tqFmt = list=> v=>{ const f = list.find(z=> Math.abs(z.v - v) < 1e-12); return f ? f.t : nt(v); };
+const tqCmp = (v, r)=> r === '>' ? v > 1e-12 : r === '<' ? v < -1e-12 : r === '\\geq' ? v >= -1e-12 : v <= 1e-12;
+const tqOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tqMake = (R, ps)=>{ const p = R.pick(ps), q = R.pick(ps), u = R.int(-7, 7), v = R.int(-7, 7), k = R.pick([1, -1]);
+  const A = tqF(u, p), B = tqF(v, q); if(Math.abs(A.v - B.v) < 1e-9 || gcdI(u, p) !== 1 || gcdI(v, q) !== 1) return null;
+  const [r1, r2] = A.v < B.v ? [A, B] : [B, A]; return {k, co:[k*p*q, -k*(p*v + q*u), k*u*v], r1, r2, f:x=> k*(p*x - u)*(q*x - v)}; };
+const tqInts = (test, lo, hi)=>{ const L = []; for(let x = lo; x <= hi; x++) if(test(x)) L.push(x); return L; };
+// tích các thừa số: bỏ thừa số 1, số âm đặt trong ngoặc (thừa số đầu là chữ hoặc chuỗi số)
+const tqMul = fs=>{ const [h, ...r] = fs; const rest = r.filter(x=> x !== 1).map(x=> x < 0 ? `(${x})` : String(x)); return [h, ...rest].join('\\cdot '); };
+const tqDau = (T)=> `Tam thức có hai nghiệm $x = ${T.r1.t}$, $x = ${T.r2.t}$ và $a = ${T.co[0]} ${T.co[0] > 0 ? '> 0' : '< 0'}$`;
+
+/* 39. TLN TH — tập nghiệm là một đoạn (khoảng): độ dài, tổng hai đầu mút */
+GT(10,5,2,'TH','Bất phương trình bậc hai có tập nghiệm là một đoạn hoặc khoảng [α; β] — xác định hai đầu mút bằng định lí về dấu; tính β − α hoặc α + 2β', R=>{
+  for(let g = 0; g < 400; g++){
+    const T = tqMake(R, [1, 1, 2, 2, 3]); if(!T) continue; const rel = R.pick(T.k > 0 ? ['<', '\\leq'] : ['>', '\\geq']);
+    const al = T.r1.v, be = T.r2.v, ask = R.pick(['dai', 'tong']), v = ask === 'dai' ? be - al : al + 2*be; if(!tqOk1(v)) continue;
+    const S = tqSet(T.k, al, be, rel), fmt = tqFmt([T.r1, T.r2]), ft = polyT(T.co);
+    const o = {stem:`Tập nghiệm của bất phương trình $${ft} ${rel} 0$ có dạng ${rel === '<' || rel === '>' ? '$(\\alpha; \\beta)$' : '$[\\alpha; \\beta]$'}. Tính $${ask === 'dai' ? '\\beta - \\alpha' : '\\alpha + 2\\beta'}$ (kết quả viết dưới dạng số thập phân nếu cần).`, ans:v,
+      lg:`${tqDau(T)}, nên tam thức ${T.k > 0 ? 'âm' : 'dương'} giữa hai nghiệm.<br>Tập nghiệm là $${tqTex(S, fmt)}$, tức $\\alpha = ${T.r1.t}$, $\\beta = ${T.r2.t}$.<br>Vậy $${ask === 'dai' ? `\\beta - \\alpha = ${nt(v)}` : `\\alpha + 2\\beta = ${nt(v)}`}$.`,
+      verify:()=>{ let lo = null, hi = null; for(let x = -20; x <= 20; x += 0.0625) if(tqCmp(T.f(x), rel)){ if(lo === null) lo = x; hi = x; } if(lo === null) return false;
+        const vv = ask === 'dai' ? hi - lo : lo + 2*hi; return Math.abs(vv - o.ans) < 0.2 && tqCmp(T.f(al + 1e-6), rel) && !tqCmp(T.f(al - 1e-3), rel) && !tqCmp(T.f(be + 1e-3), rel); }};
+    return o; }
+  return null;
+});
+
+/* 40. TLN TH — nghiệm nguyên gần biên */
+GT(10,5,2,'TH','Bất phương trình bậc hai có tập nghiệm là hợp hai nửa khoảng (−∞; α) ∪ (β; +∞) — tìm nghiệm nguyên âm lớn nhất hoặc nghiệm nguyên dương nhỏ nhất (chú ý đầu mút lấy hay bỏ)', R=>{
+  for(let g = 0; g < 400; g++){
+    const T = tqMake(R, [1, 2, 2, 3, 3]); if(!T) continue; const rel = R.pick(T.k > 0 ? ['>', '\\geq'] : ['<', '\\leq']);
+    const al = T.r1.v, be = T.r2.v; if(!(al < 0 && be > 0)) continue;
+    const S = tqSet(T.k, al, be, rel), test = x=> tqHas(S, x), ask = R.pick(['am', 'duong']);
+    const v = ask === 'am' ? Math.max(...tqInts(x=> x < 0 && test(x), -40, -1)) : Math.min(...tqInts(x=> x > 0 && test(x), 1, 40)); if(!isFinite(v)) continue;
+    if(ask === 'am' && v === -1) continue; if(ask === 'duong' && v === 1) continue;
+    const fmt = tqFmt([T.r1, T.r2]), ft = polyT(T.co);
+    const o = {stem:`Tìm nghiệm nguyên ${ask === 'am' ? 'âm lớn nhất' : 'dương nhỏ nhất'} của bất phương trình $${ft} ${rel} 0$.`, ans:v,
+      lg:`${tqDau(T)}, nên tam thức ${T.k > 0 ? 'dương' : 'âm'} ngoài đoạn hai nghiệm. Tập nghiệm: $S = ${tqTex(S, fmt)}$.<br>`
+        + (ask === 'am' ? `Các nghiệm âm thuộc $${tqTex([S[0]], fmt)}$; số nguyên lớn nhất trong đó là $${v}$${Number.isInteger(al) ? '' : ` (vì $${T.r1.t} \\approx ${nt(Math.round(al*100)/100)}$)`}.` : `Các nghiệm dương thuộc $${tqTex([S[1]], fmt)}$; số nguyên nhỏ nhất trong đó là $${v}$${Number.isInteger(be) ? '' : ` (vì $${T.r2.t} \\approx ${nt(Math.round(be*100)/100)}$)`}.`)
+        + `<br>Đáp số: $${v}$.`,
+      verify:()=>{ const c = x=> tqCmp(T.f(x), rel); if(!c(o.ans)) return false; return ask === 'am' ? o.ans < 0 && tqInts(x=> x > o.ans && x < 0 && c(x), o.ans + 1, -1).length === 0 : o.ans > 0 && tqInts(x=> x < o.ans && x > 0 && c(x), 1, o.ans - 1).length === 0; }};
+    return o; }
+  return null;
+});
+
+/* 41. TLN TH — bất phương trình phải biến đổi, đếm nghiệm nguyên */
+GT(10,5,2,'TH','Bất phương trình (2x + s)(x + t) so sánh với (x + m)² + n — khai triển, chuyển vế được tam thức bậc hai; đếm nghiệm nguyên (thuộc đoạn [−10; 10] khi tập nghiệm vô hạn)', R=>{
+  for(let g = 0; g < 400; g++){
+    const u = R.int(-8, 8), v = R.int(-8, 8), t = R.nz(-5, 5), m = R.nz(-5, 5); if(u === v) continue;
+    const s = -(u + v) - 2*t + 2*m, n = s*t - m*m - u*v; if(s === 0 || Math.abs(n) > 40) continue;
+    const r1 = Math.min(u, v), r2 = Math.max(u, v), rel = R.pick(['>', '<', '\\geq', '\\leq']), S = tqSet(1, r1, r2, rel), inside = rel === '<' || rel === '\\leq';
+    const F = x=> (2*x + s)*(x + t) - (x + m)**2 - n, cnt = tqInts(x=> tqCmp(F(x), rel), -10, 10).length; if(!cnt) continue;
+    const L = `(2x ${s > 0 ? '+' : '-'} ${Math.abs(s)})(x ${t > 0 ? '+' : '-'} ${Math.abs(t)})`, Rr = `(x ${m > 0 ? '+' : '-'} ${Math.abs(m)})^2 ${n >= 0 ? '+' : '-'} ${Math.abs(n)}`.replace(' + 0', '');
+    const o = {stem:`Có bao nhiêu số nguyên ${inside ? '' : 'thuộc đoạn $[-10; 10]$ '}là nghiệm của bất phương trình $${L} ${rel} ${Rr}$?`, ans:cnt,
+      lg:`Khai triển: $${polyT([2, s + 2*t, s*t])} ${rel} ${polyT([1, 2*m, m*m + n])} \\Leftrightarrow ${polyT([1, -(u + v), u*v])} ${rel} 0$.<br>Tam thức $${polyT([1, -(u + v), u*v])}$ có hai nghiệm $${r1}$, $${r2}$, $a = 1 > 0$, nên tập nghiệm là $${tqTex(S, nt)}$.<br>`
+        + `Số nghiệm nguyên${inside ? '' : ' thuộc $[-10; 10]$'}: $${cnt}$.`,
+      verify:()=> tqInts(x=> tqCmp(F(x), rel), -10, 10).length === o.ans && (!inside || tqInts(x=> tqCmp(F(x), rel), -60, 60).length === o.ans)};
+    return o; }
+  return null;
+});
+
+/* 42. TLN TH — tập xác định có thêm điều kiện, đếm số nguyên */
+GT(10,5,2,'TH','Tập xác định của hàm số y = √(ax² + bx + c) + 1/(x − e) hoặc y = √(ax² + bx + c) + √(x − e) (a < 0) — giao của tập nghiệm bất phương trình bậc hai với điều kiện còn lại; đếm số nguyên thuộc tập xác định', R=>{
+  for(let g = 0; g < 400; g++){
+    const T = tqMake(R, [1, 1, 2]); if(!T || T.k > 0) continue;
+    const kieu = R.pick(['mau', 'can']), e = R.int(Math.ceil(T.r1.v), Math.floor(T.r2.v)); if(e < T.r1.v || e > T.r2.v) continue;
+    const S = tqSet(-1, T.r1.v, T.r2.v, '\\geq'), test = x=> tqHas(S, x) && (kieu === 'mau' ? x !== e : x >= e);
+    const ints = tqInts(test, -30, 30); if(ints.length < 2) continue;
+    const ask = R.pick(['dem', 'tong']), val = ask === 'dem' ? ints.length : ints.reduce((s, x)=> s + x, 0);
+    const ft = polyT(T.co), y = kieu === 'mau' ? `\\sqrt{${ft}} + \\dfrac{1}{x ${e > 0 ? '-' : '+'} ${Math.abs(e)}}` : `\\sqrt{${ft}} + \\sqrt{x ${e > 0 ? '-' : '+'} ${Math.abs(e)}}`;
+    const yT = y.replace('x + 0', 'x').replace('x - 0', 'x'), fmt = tqFmt([T.r1, T.r2]);
+    const o = {stem:`${ask === 'dem' ? 'Có bao nhiêu số nguyên' : 'Tính tổng các số nguyên'} thuộc tập xác định của hàm số $y = ${yT}$${ask === 'dem' ? '?' : '.'}`, ans:val,
+      lg:`Điều kiện: $${ft} \\geq 0$ và ${kieu === 'mau' ? `$x \\neq ${e}$` : `$x \\geq ${e}$`}.<br>${tqDau(T)}, nên $${ft} \\geq 0 \\Leftrightarrow x \\in ${tqTex(S, fmt)}$.<br>`
+        + `Tập xác định: ${kieu === 'mau' ? `$D = ${tqTex(S, fmt)} \\setminus \\{${e}\\}$` : `$D = ${tqTex(tqCap(S, [{lo:e, hi:Infinity, lc:true, hc:false}]), fmt)}$`}. Các số nguyên thuộc $D$: $${ints.join('; ')}$ — ${ask === 'dem' ? `có $${val}$ số` : `tổng bằng $${val}$`}.`,
+      verify:()=>{ const L = tqInts(x=> T.f(x) >= 0 && (kieu === 'mau' ? x - e !== 0 : x - e >= 0), -60, 60); return (ask === 'dem' ? L.length : L.reduce((s, x)=> s + x, 0)) === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 43. TLN VD — hệ bất phương trình bậc hai, đếm nghiệm nguyên */
+GT(10,5,2,'VD','Hệ gồm một bất phương trình bậc hai có tập nghiệm bị chặn và một bất phương trình bậc hai có tập nghiệm là hợp hai khoảng — lấy giao, đếm nghiệm nguyên (chú ý nghiệm phân số và đầu mút)', R=>{
+  for(let g = 0; g < 400; g++){
+    const T1 = tqMake(R, [1, 2, 2, 3]), T2 = tqMake(R, [1, 1, 2]); if(!T1 || !T2) continue;
+    const rel1 = R.pick(T1.k > 0 ? ['<', '\\leq'] : ['>', '\\geq']), rel2 = R.pick(T2.k > 0 ? ['>', '\\geq'] : ['<', '\\leq']);
+    const A = tqSet(T1.k, T1.r1.v, T1.r2.v, rel1), B = tqSet(T2.k, T2.r1.v, T2.r2.v, rel2), S = tqCap(A, B), ints = tqInts(x=> tqHas(S, x), -30, 30); const ask = R.pick(['dem', 'tong']), val = ask === 'dem' ? ints.length : ints.reduce((s, x)=> s + x, 0);
+    if(ints.length < 1 || S.length !== 2 && R.rnd() < 0.5) continue;
+    const fmt = tqFmt([T1.r1, T1.r2, T2.r1, T2.r2]), f1 = polyT(T1.co), f2 = polyT(T2.co);
+    const o = {stem:`Hệ bất phương trình $\\begin{cases} ${f1} ${rel1} 0 \\\\ ${f2} ${rel2} 0 \\end{cases}$${ask === 'dem' ? ' có bao nhiêu nghiệm nguyên?' : '. Tính tổng các nghiệm nguyên của hệ.'}`, ans:val,
+      lg:`$${f1} ${rel1} 0 \\Leftrightarrow x \\in ${tqTex(A, fmt)}$; $${f2} ${rel2} 0 \\Leftrightarrow x \\in ${tqTex(B, fmt)}$.<br>Tập nghiệm của hệ: $S = ${tqTex(S, fmt)}$.<br>Các nghiệm nguyên: $${ints.join('; ')}$ — ${ask === 'dem' ? `có $${val}$ nghiệm` : `tổng bằng $${val}$`}.`,
+      verify:()=>{ const L = tqInts(x=> tqCmp(T1.f(x), rel1) && tqCmp(T2.f(x), rel2), -80, 80); return (ask === 'dem' ? L.length : L.reduce((s, x)=> s + x, 0)) === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 44. TLN TH — biết tập nghiệm, tìm hệ số (Vi-ét) */
+GT(10,5,2,'TH','Biết bất phương trình x² + bx + c < 0 (hoặc ≥ 0) có tập nghiệm cho trước — hai đầu mút là hai nghiệm của tam thức, dùng Vi-ét tìm b, c; tính b + c hoặc 2b − c', R=>{
+  for(let g = 0; g < 300; g++){
+    const p = R.int(-9, 8), q = R.int(p + 1, 10), rel = R.pick(['<', '\\leq', '>', '\\geq']), b = -(p + q), c = p*q, ask = R.pick(['tong', 'hieu']), v = ask === 'tong' ? b + c : 2*b - c;
+    if(String(v).length > 4) continue;
+    const S = tqSet(1, p, q, rel);
+    const o = {stem:`Biết bất phương trình $x^2 + bx + c ${rel} 0$ có tập nghiệm là $${tqTex(S, nt)}$. Tính $${ask === 'tong' ? 'b + c' : '2b - c'}$.`, ans:v,
+      lg:`Tam thức $x^2 + bx + c$ có $a = 1 > 0$; tập nghiệm có hai đầu mút $${p}$ và $${q}$ nên $${p}$, $${q}$ là hai nghiệm của $x^2 + bx + c = 0$.<br>Theo Vi-ét: $-b = ${p} + ${q < 0 ? `(${q})` : q} = ${p + q}$, $c = ${p}\\cdot ${q < 0 ? `(${q})` : q} = ${c}$, nên $b = ${b}$, $c = ${c}$.<br>`
+        + `Vậy $${ask === 'tong' ? `b + c = ${v}` : `2b - c = ${v}`}$.`,
+      verify:()=>{ for(let bb = -25; bb <= 25; bb++) for(let cc = -100; cc <= 100; cc++){ if(bb*p > 1000) continue;
+          if(p*p + bb*p + cc === 0 && q*q + bb*q + cc === 0) return Math.abs((ask === 'tong' ? bb + cc : 2*bb - cc) - o.ans) < 1e-9 && [p - 0.5, (p + q)/2, q + 0.5].every(x=> tqHas(S, x) === tqCmp(x*x + bb*x + cc, rel)); }
+        return false; }};
+    return o; }
+  return null;
+});
+
+/* 45. TLN VD — biết khoảng dương và một giá trị, dựng lại tam thức */
+GT(10,5,2,'VD','Tam thức f(x) = ax² + bx + c có f(x) > 0 khi và chỉ khi x ∈ (p; q) và f(x₀) = k cho trước — viết f(x) = a(x − p)(x − q) với a < 0, tìm a từ f(x₀); tính f(x₁) hoặc a + b + c', R=>{
+  for(let g = 0; g < 400; g++){
+    const p = R.int(-6, 4), q = R.int(p + 2, 8), x0 = R.int(p + 1, q - 1), a = -R.pick([1, 2, 3, 0.5]), k = a*(x0 - p)*(x0 - q); if(k <= 0) continue;
+    const ask = R.pick(['abc', 'fx']), x1 = ask === 'abc' ? 1 : R.int(p - 3, q + 3), v = a*(x1 - p)*(x1 - q); if(!tqOk1(v) || x1 === x0) continue;
+    const B = -a*(p + q), C = a*p*q;
+    const o = {stem:`Cho tam thức bậc hai $f(x) = ax^2 + bx + c$. Biết $f(x) > 0$ khi và chỉ khi $x \\in (${p}; ${q})$, và $f(${x0}) = ${nt(k)}$. ${ask === 'abc' ? 'Tính $a + b + c$' : `Tính $f(${x1})$`} (kết quả viết dưới dạng số thập phân nếu cần).`, ans:v,
+      lg:`$f(x) > 0 \\Leftrightarrow x \\in (${p}; ${q})$ nên $f$ có hai nghiệm $${p}$, $${q}$ và $a < 0$: $f(x) = a(x ${p > 0 ? '-' : '+'} ${Math.abs(p)})(x ${q > 0 ? '-' : '+'} ${Math.abs(q)})`.replace('(x + 0)', 'x').replace('(x - 0)', 'x') + `$.<br>`
+        + `$f(${x0}) = ${tqMul(['a', x0 - p, x0 - q])} = ${nt(k)} \\Rightarrow a = ${nt(a)}$ (thoả $a < 0$).<br>`
+        + (ask === 'abc' ? `$a + b + c = f(1) = ${tqMul([nt(a), 1 - p, 1 - q])} = ${nt(v)}$.` : `$f(${x1}) = ${tqMul([nt(a), x1 - p, x1 - q])} = ${nt(v)}$.`),
+      verify:()=>{ const f = x=> a*x*x + B*x + C; const ok = [p - 0.5, p + 0.5, q - 0.5, q + 0.5].every(x=> (f(x) > 0) === (x > p && x < q)) && Math.abs(f(x0) - k) < 1e-9; return ok && Math.abs((ask === 'abc' ? a + B + C : f(x1)) - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.1 Dấu của tam thức bậc hai (10|5|2), đợt 3 (dạng 46–52: 7 TLN) — tham số m. Claude viết.
+// Chuỗi: a chứa m, f(x) ≥ 0 với mọi x (xét a = 0) (46) → phương trình có hai nghiệm phân biệt: Δ′(m) > 0 (47)
+// → hai nghiệm trái dấu: ac < 0 là bất phương trình bậc hai ẩn m (48) → độ dài tập nghiệm cho trước (49)
+// → hàm số xác định trên ℝ: Δ′ ≤ 0 (đoạn, khác 47) (50) → dấu của tích hai tam thức (51) → bất phương trình có nghiệm duy nhất: Δ′ = 0 (52).
+const tqOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tqInts = (test, lo, hi)=>{ const L = []; for(let x = lo; x <= hi; x++) if(test(x)) L.push(x); return L; };
+const tqP = v=> v < 0 ? `(${v})` : `${v}`;
+const tqMm = (a, s)=> a === 0 ? s : `${s} ${a > 0 ? '-' : '+'} ${Math.abs(a)}`;   // "m − a"
+
+/* 46. TLN VD — hệ số a chứa m, f(x) ≥ 0 với mọi x */
+GT(10,5,2,'VD','Đếm số giá trị nguyên của m ∈ [−10; 10] để f(x) = (m − a)x² + 2(m − a)x + 3m + c ≥ 0 với mọi x — xét m = a (f là hằng số); m ≠ a cần m − a > 0 và Δ′ ≤ 0', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.int(-6, 6), c = R.int(-12, 12), B = -(a + c)/2; if(Math.abs(B) > 9) continue;
+    const ok = m=> m === a ? 3*a + c >= 0 : (m - a > 0 && (m - a)*(m - a) - (m - a)*(3*m + c) <= 0);
+    const ints = tqInts(ok, -10, 10); if(ints.length < 2 || ints.length > 20) continue; const ask = R.pick(['dem', 'tong']), val = ask === 'dem' ? ints.length : ints.reduce((s, x)=> s + x, 0);
+    const aT = tqMm(a, 'm'), lo = 3*a + c >= 0 ? a : Math.ceil(B);
+    const o = {stem:`Cho $f(x) = (${aT})x^2 + 2(${aT})x + ${termsT([[3, 'm'], [c, '']])}$ ($m$ là tham số). ${ask === 'dem' ? 'Có bao nhiêu' : 'Tính tổng các'} giá trị nguyên của $m$ thuộc đoạn $[-10; 10]$ để $f(x) \\geq 0$ với mọi $x \\in \\mathbb{R}$${ask === 'dem' ? '?' : '.'}`, ans:val,
+      lg:`• $m = ${a}$: $f(x) = ${3*a + c} ${3*a + c >= 0 ? '\\geq 0$ với mọi $x$: nhận' : '< 0$: loại'}.<br>• $m \\neq ${a}$: cần $${aT} > 0$ và $\\Delta' = (${aT})^2 - (${aT})(${termsT([[3, 'm'], [c, '']])}) = (${aT})(${termsT([[-2, 'm'], [-a - c, '']])}) \\leq 0$.<br>`
+        + `Vì $${aT} > 0$ nên cần $${termsT([[-2, 'm'], [-a - c, '']])} \\leq 0 \\Leftrightarrow m \\geq ${nt(B)}$. Kết hợp: $m > ${a}$ và $m \\geq ${nt(B)}$.<br>`
+        + `Tập các giá trị của $m$: $m \\geq ${lo === a ? a : nt(B)}$${3*a + c >= 0 ? '' : ''}. Các số nguyên thuộc $[-10; 10]$: từ $${ints[0]}$ đến $${ints[ints.length - 1]}$, ${ask === 'dem' ? `có $${val}$ giá trị` : `tổng bằng $${val}$`}.`,
+      verify:()=>{ const good = m=>{ const A = m - a, Bc = 2*(m - a), C = 3*m + c; if(A === 0) return C >= 0; if(A < 0) return false; const xv = -Bc/(2*A); return A*xv*xv + Bc*xv + C >= -1e-9; };
+        const L = tqInts(good, -10, 10); return (ask === 'dem' ? L.length : L.reduce((s, x)=> s + x, 0)) === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 47. TLN VD — phương trình bậc hai có hai nghiệm phân biệt */
+GT(10,5,2,'VD','Phương trình x² − 2(m + p)x + qm + r = 0 có hai nghiệm phân biệt — Δ′ là tam thức bậc hai ẩn m, giải Δ′ > 0 (hợp hai khoảng); đếm giá trị nguyên của m thuộc [−10; 10]', R=>{
+  for(let g = 0; g < 300; g++){
+    const m1 = R.int(-7, 5), m2 = R.int(m1 + 1, 8), p = R.int(-3, 3), q = 2*p + m1 + m2, r = p*p - m1*m2; if(q === 0) continue;
+    const Dp = m=> (m + p)**2 - (q*m + r), ints = tqInts(m=> Dp(m) > 0, -10, 10);
+    const eq = `x^2 - 2(${tqMm(-p, 'm')})x ${q > 0 ? '+' : '-'} ${Math.abs(q) === 1 ? '' : Math.abs(q)}m ${r >= 0 ? '+' : '-'} ${Math.abs(r)} = 0`.replace(' + 0 = 0', ' = 0').replace(' - 0 = 0', ' = 0').replace('2(m)x', '2mx');
+    const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-10; 10]$ để phương trình $${eq}$ có hai nghiệm phân biệt?`, ans:ints.length,
+      lg:`Phương trình có hai nghiệm phân biệt $\\Leftrightarrow \\Delta' > 0$. Ta có $\\Delta' = (${tqMm(-p, 'm')})^2 - (${termsT([[q, 'm'], [r, '']])}) = ${polyT([1, 2*p - q, p*p - r], 'm')}$.<br>`
+        + `Tam thức $${polyT([1, 2*p - q, p*p - r], 'm')}$ có hai nghiệm $m = ${m1}$, $m = ${m2}$, hệ số $1 > 0$, nên $\\Delta' > 0 \\Leftrightarrow m < ${m1}$ hoặc $m > ${m2}$.<br>`
+        + `Số nguyên thuộc $[-10; 10]$: $${m1 + 10}$ số nhỏ hơn $${m1}$ và $${10 - m2}$ số lớn hơn $${m2}$, tổng cộng $${ints.length}$.`,
+      verify:()=> tqInts(m=>{ const B = -2*(m + p), C = q*m + r; return B*B - 4*C > 0; }, -10, 10).length === o.ans};
+    return o; }
+  return null;
+});
+
+/* 48. TLN VD — hai nghiệm trái dấu */
+GT(10,5,2,'VD','Phương trình (m − u)x² + bx + (m − v) = 0 có hai nghiệm trái dấu ⇔ a·c < 0 ⇔ (m − u)(m − v) < 0 — giải bất phương trình bậc hai ẩn m; đếm hoặc tính tổng các giá trị nguyên của m', R=>{
+  for(let g = 0; g < 300; g++){
+    const u = R.int(-8, 6), v = R.int(u + 2, 10), b = R.nz(-5, 5), sw = R.rnd() < 0.5, ask = R.pick(['dem', 'tong']);
+    const ints = tqInts(m=> (m - u)*(m - v) < 0, -30, 30), val = ask === 'dem' ? ints.length : ints.reduce((s, x)=> s + x, 0); if(String(val).length > 4) continue;
+    const A = tqMm(u, 'm'), Cc = tqMm(v, 'm'), [aT, cT, aV, cV] = sw ? [Cc, A, v, u] : [A, Cc, u, v];
+    const o = {stem:`${ask === 'dem' ? 'Có bao nhiêu giá trị nguyên của tham số $m$' : 'Tính tổng các giá trị nguyên của tham số $m$'} để phương trình $(${aT})x^2 ${b > 0 ? '+' : '-'} ${Math.abs(b) === 1 ? '' : Math.abs(b)}x + ${cT.startsWith('m') ? `(${cT})` : cT} = 0$ có hai nghiệm trái dấu${ask === 'dem' ? '?' : '.'}`.replace('+ (m)', '+ m'), ans:val,
+      lg:`Phương trình có hai nghiệm trái dấu $\\Leftrightarrow a\\cdot c < 0 \\Leftrightarrow (${aT})(${cT}) < 0$ (khi đó $a \\neq 0$ và $\\Delta > 0$ tự thoả).<br>`
+        + `Tam thức ẩn $m$ có hai nghiệm $${u}$, $${v}$, hệ số $1 > 0$, nên âm khi $${u} < m < ${v}$.<br>Các giá trị nguyên: $${ints.join('; ')}$; ${ask === 'dem' ? `có $${val}$ giá trị` : `tổng bằng $${val}$`}.`,
+      verify:()=>{ const L = tqInts(m=>{ const a2 = m - aV, c2 = m - cV; if(a2 === 0) return false; const D = b*b - 4*a2*c2; if(D <= 0) return false; const x1 = (-b - Math.sqrt(D))/(2*a2), x2 = (-b + Math.sqrt(D))/(2*a2); return x1*x2 < 0; }, -40, 40);
+        return Math.abs((ask === 'dem' ? L.length : L.reduce((s, x)=> s + x, 0)) - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 49. TLN VD — tập nghiệm là đoạn có độ dài cho trước */
+GT(10,5,2,'VD','Tìm m để bất phương trình x² − 2hx + m ≤ 0 có tập nghiệm là một đoạn có độ dài L — hai nghiệm h ± √(h² − m), độ dài 2√(h² − m) = L', R=>{
+  for(let g = 0; g < 300; g++){
+    const h = R.int(-6, 6), L = R.int(1, 10), m = h*h - L*L/4; if(!tqOk1(m)) continue;
+    const eq = `x^2 ${h === 0 ? '' : `${h > 0 ? '-' : '+'} ${Math.abs(2*h)}x `}+ m \\leq 0`;
+    const o = {stem:`Tìm giá trị của tham số $m$ để bất phương trình $${eq}$ có tập nghiệm là một đoạn có độ dài bằng $${L}$ (kết quả viết dưới dạng số thập phân nếu cần).`, ans:m,
+      lg:`Tập nghiệm là một đoạn có độ dài dương khi tam thức có hai nghiệm phân biệt: $\\Delta' = ${h*h} - m > 0$; khi đó hai nghiệm là $x = ${h} \\pm \\sqrt{${h*h} - m}$ và tập nghiệm là đoạn giữa hai nghiệm, có độ dài $2\\sqrt{${h*h} - m}$.<br>`
+        + `$2\\sqrt{${h*h} - m} = ${L} \\Leftrightarrow ${h*h} - m = ${nt(L*L/4)} \\Leftrightarrow m = ${nt(m)}$ (thoả $\\Delta' > 0$).`,
+      verify:()=>{ const D = 4*h*h - 4*o.ans; if(D <= 0) return false; return Math.abs(Math.sqrt(D) - L) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 50. TLN VD — hàm số xác định trên ℝ */
+GT(10,5,2,'VD','Hàm số y = √(x² − 2(m + p)x + qm + r) xác định với mọi x ∈ ℝ ⇔ Δ′ ≤ 0 — giải bất phương trình bậc hai ẩn m (lấy cả hai đầu mút); đếm hoặc tính tổng các giá trị nguyên của m', R=>{
+  for(let g = 0; g < 300; g++){
+    const m1 = R.int(-8, 5), m2 = R.int(m1 + 1, 9), p = R.int(-3, 3), q = 2*p + m1 + m2, r = p*p - m1*m2; if(q === 0) continue;
+    const ask = R.pick(['dem', 'tong']), ints = tqInts(m=> (m + p)**2 - (q*m + r) <= 0, -30, 30), val = ask === 'dem' ? ints.length : ints.reduce((s, x)=> s + x, 0);
+    const fx = `x^2 - 2(${tqMm(-p, 'm')})x ${q > 0 ? '+' : '-'} ${Math.abs(q) === 1 ? '' : Math.abs(q)}m ${r >= 0 ? '+' : '-'} ${Math.abs(r)}`.replace(/ [+-] 0$/, '').replace('2(m)x', '2mx');
+    const o = {stem:`${ask === 'dem' ? 'Có bao nhiêu giá trị nguyên của tham số $m$' : 'Tính tổng các giá trị nguyên của tham số $m$'} để hàm số $y = \\sqrt{${fx}}$ xác định với mọi $x \\in \\mathbb{R}$${ask === 'dem' ? '?' : '.'}`, ans:val,
+      lg:`Hàm số xác định với mọi $x$ $\\Leftrightarrow ${fx} \\geq 0$ với mọi $x$ $\\Leftrightarrow \\Delta' \\leq 0$ (vì $a = 1 > 0$).<br>$\\Delta' = (${tqMm(-p, 'm')})^2 - (${termsT([[q, 'm'], [r, '']])}) = ${polyT([1, 2*p - q, p*p - r], 'm')} \\leq 0 \\Leftrightarrow ${m1} \\leq m \\leq ${m2}$.<br>`
+        + `Các giá trị nguyên: $${ints.join('; ')}$; ${ask === 'dem' ? `có $${val}$ giá trị` : `tổng bằng $${val}$`}.`,
+      verify:()=>{ const L = tqInts(m=>{ const xv = m + p; return xv*xv - 2*(m + p)*xv + q*m + r >= -1e-9; }, -40, 40); return Math.abs((ask === 'dem' ? L.length : L.reduce((s, x)=> s + x, 0)) - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+/* 51. TLN VD — dấu của tích hai tam thức */
+GT(10,5,2,'VD','Bất phương trình (x² + b₁x + c₁)(x² + b₂x + c₂) < 0 (hoặc ≤ 0) — lập bảng xét dấu hai tam thức trên cùng trục số, lấy các khoảng tích âm; đếm nghiệm nguyên', R=>{
+  for(let g = 0; g < 300; g++){
+    const r = [R.int(-8, 8), R.int(-8, 8), R.int(-8, 8), R.int(-8, 8)]; if(new Set(r).size < 4) continue;
+    const rel = R.pick(['<', '\\leq']), F = x=> (x - r[0])*(x - r[1])*(x - r[2])*(x - r[3]), ints = tqInts(x=> rel === '<' ? F(x) < 0 : F(x) <= 0, -30, 30); if(!ints.length) continue;
+    const f1 = polyT([1, -(r[0] + r[1]), r[0]*r[1]]), f2 = polyT([1, -(r[2] + r[3]), r[2]*r[3]]), s = r.slice().sort((p, q)=> p - q);
+    const o = {stem:`Bất phương trình $(${f1})(${f2}) ${rel} 0$ có bao nhiêu nghiệm nguyên?`, ans:ints.length,
+      lg:`$${f1}$ có hai nghiệm $${Math.min(r[0], r[1])}$, $${Math.max(r[0], r[1])}$; $${f2}$ có hai nghiệm $${Math.min(r[2], r[3])}$, $${Math.max(r[2], r[3])}$ (cả hai có hệ số $a = 1 > 0$).<br>`
+        + `Xét dấu trên trục số, tích dương khi $x < ${s[0]}$, âm trên $(${s[0]}; ${s[1]})$, dương trên $(${s[1]}; ${s[2]})$, âm trên $(${s[2]}; ${s[3]})$, dương khi $x > ${s[3]}$.<br>`
+        + `Tập nghiệm: $${rel === '<' ? `(${s[0]}; ${s[1]}) \\cup (${s[2]}; ${s[3]})` : `[${s[0]}; ${s[1]}] \\cup [${s[2]}; ${s[3]}]`}$. Các nghiệm nguyên: $${ints.join('; ')}$ — có $${ints.length}$ nghiệm.`,
+      verify:()=> tqInts(x=>{ const a = x*x - (r[0] + r[1])*x + r[0]*r[1], b = x*x - (r[2] + r[3])*x + r[2]*r[3]; return rel === '<' ? a*b < 0 : a*b <= 0; }, -80, 80).length === o.ans};
+    return o; }
+  return null;
+});
+
+/* 52. TLN VD — bất phương trình có nghiệm duy nhất */
+GT(10,5,2,'VD','Tìm m để bất phương trình x² − 2(m + p)x + qm + r ≤ 0 có nghiệm duy nhất — vì a > 0 nên điều kiện là Δ′ = 0 (tập nghiệm chỉ gồm đỉnh); tổng hoặc tích các giá trị của m (Vi-ét)', R=>{
+  for(let g = 0; g < 300; g++){
+    const m1 = R.int(-8, 7), m2 = R.int(-8, 8), p = R.int(-3, 3), q = 2*p + m1 + m2, r = p*p - m1*m2; if(m1 === m2 || q === 0) continue;
+    const ask = R.pick(['tong', 'tich']), v = ask === 'tong' ? m1 + m2 : m1*m2;
+    const fx = `x^2 - 2(${tqMm(-p, 'm')})x ${q > 0 ? '+' : '-'} ${Math.abs(q) === 1 ? '' : Math.abs(q)}m ${r >= 0 ? '+' : '-'} ${Math.abs(r)}`.replace(/ [+-] 0$/, '').replace('2(m)x', '2mx');
+    const o = {stem:`Có hai giá trị của tham số $m$ để bất phương trình $${fx} \\leq 0$ có đúng một nghiệm. Tính ${ask === 'tong' ? 'tổng' : 'tích'} hai giá trị đó.`, ans:v,
+      lg:`Tam thức có $a = 1 > 0$: nếu $\\Delta' < 0$ thì bất phương trình vô nghiệm; nếu $\\Delta' > 0$ thì tập nghiệm là một đoạn (vô số nghiệm); nếu $\\Delta' = 0$ thì tập nghiệm chỉ gồm một điểm. Vậy cần $\\Delta' = 0$.<br>`
+        + `$\\Delta' = (${tqMm(-p, 'm')})^2 - (${termsT([[q, 'm'], [r, '']])}) = ${polyT([1, 2*p - q, p*p - r], 'm')} = 0 \\Leftrightarrow m = ${Math.min(m1, m2)}$ hoặc $m = ${Math.max(m1, m2)}$.<br>`
+        + `${ask === 'tong' ? 'Tổng' : 'Tích'} hai giá trị bằng $${v}$ (cũng có thể dùng Vi-ét).`,
+      verify:()=>{ const L = []; for(let m = -40; m <= 40; m++){ let n = 0; for(let x = -100; x <= 100; x += 0.5) if(x*x - 2*(m + p)*x + q*m + r <= 1e-12) n++; if(n === 1) L.push(m); }
+        return L.length === 2 && Math.abs((ask === 'tong' ? L[0] + L[1] : L[0]*L[1]) - o.ans) < 1e-9; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.2 Bất phương trình bậc hai trong thực tế (10|5|2), đợt 4 (dạng 53–60: 8 TN). Claude viết.
+// Chuỗi: vật ném — khoảng thời gian ở trên độ cao H (53) → lợi nhuận theo giá bán (54) → lập bất phương trình mô tả diện tích (55)
+// → rào ba cạnh dựa tường (56) → quãng đường phanh, tốc độ tối đa (57) → cổng parabol, bề rộng xe tối đa (58)
+// → nồng độ thuốc, thời gian có hiệu quả (59) → giá vé và doanh thu (60).
+// Số liệu sinh mới; verify thử trực tiếp trên mô hình (không dùng biến đổi của lời giải).
+const tqP = v=> v < 0 ? `(${nt(v)})` : nt(v);
+const tqOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tqC = v=> Math.round(v*1000)/1000;
+const tqIv = (a, b, l, r)=> `${l ? '[' : '('}${nt(a)}; ${nt(b)}${r ? ']' : ')'}`;
+const tqTest = (fnOk, a, b, l, r, pts)=> pts.every(x=> fnOk(x) === ((x > a || (l && Math.abs(x - a) < 1e-12)) && (x < b || (r && Math.abs(x - b) < 1e-12))));
+const tqGrid = (lo, hi, st, extra)=>{ const P = extra.slice(); for(let x = lo; x <= hi + 1e-9; x += st) P.push(tqC(x)); return P; };
+
+/* 53. TN TH — vật ném: khoảng thời gian ở trên độ cao H */
+G(10,5,2,'TH','Thực tế: vật ném lên theo h(t) = −5t² + vt + h₀ — giải −5t² + vt + h₀ > H tìm khoảng thời gian vật ở độ cao lớn hơn H (khoảng mở)', R=>{
+  for(let g = 0; g < 400; g++){
+    const t1 = R.pick([0.5, 1, 1.5, 2]), t2 = tqC(t1 + R.pick([1, 1.5, 2, 2.5, 3])), h0 = R.pick([0, 1, 1.5, 2]), v = tqC(5*(t1 + t2)), H = tqC(h0 + 5*t1*t2); if(v > 35 || H > 60 || !tqOk1(H)) continue;
+    const h = t=> -5*t*t + v*t + h0, ctx = h0 === 0 ? `từ mặt đất` : `từ độ cao $${nt(h0)}$ m`;
+    const W = [[t1, t2, true, true], [0, t2, false, false], [t1, tqC(t1 + t2), false, false]], cand = [[t1, t2, false, false], ...W];
+    if(new Set(cand.map(z=> tqIv(...z))).size !== 4) continue;
+    const o = {stem:`Một quả bóng được ném thẳng đứng lên trên ${ctx} với vận tốc ban đầu $${nt(v)}$ m/s. Độ cao $h$ (mét) của quả bóng sau $t$ giây là $h(t) = ${termsT([[-5, 't^2'], [v, 't'], [h0, '']])}$. Quả bóng ở độ cao lớn hơn $${nt(H)}$ m khi $t$ thuộc khoảng nào sau đây?`,
+      ans:{t:`$${tqIv(t1, t2, false, false)}$`, v:1}, wrong:W.map((z, i)=> ({t:`$${tqIv(...z)}$`, v:i + 2})),
+      lg:`$h(t) > ${nt(H)} \\Leftrightarrow ${termsT([[-5, 't^2'], [v, 't'], [tqC(h0 - H), '']])} > 0 \\Leftrightarrow ${termsT([[1, 't^2'], [tqC(-v/5), 't'], [tqC(t1*t2), '']])} < 0$.<br>Tam thức $${termsT([[1, 't^2'], [tqC(-v/5), 't'], [tqC(t1*t2), '']])}$ có hai nghiệm $t = ${nt(t1)}$, $t = ${nt(t2)}$, hệ số $1 > 0$, nên âm khi $${nt(t1)} < t < ${nt(t2)}$.<br>`
+        + `Vậy quả bóng ở độ cao lớn hơn $${nt(H)}$ m khi $t \\in ${tqIv(t1, t2, false, false)}$ (tại hai đầu mút bóng ở đúng độ cao $${nt(H)}$ m).`,
+      verify:()=>{ const z = cand[o.ans.v - 1]; return !!z && tqTest(t=> h(t) > H + 1e-9, ...z, tqGrid(0, t2 + 2, 0.05, [t1, t2])); }};
+    return o; }
+  return null;
+});
+
+/* 54. TN TH — lợi nhuận theo giá bán */
+G(10,5,2,'TH','Thực tế: nhập hàng giá c, bán giá x thì mỗi ngày bán được (Q − x) sản phẩm — lợi nhuận (x − c)(Q − x) ≥ L, giải bất phương trình bậc hai tìm khoảng giá bán', R=>{
+  for(let g = 0; g < 400; g++){
+    const c = R.pick([20, 25, 30, 40, 50, 60, 80]), D = R.pick([20, 25, 30, 40, 50]), e = R.pick([5, 10, 15, 20, 25]); if(e >= D) continue;
+    const Q = c + 2*D, mid = c + D, x1 = mid - e, x2 = mid + e, L = (x1 - c)*(Q - x1), item = R.pick(['chiếc áo phông', 'cốc trà sữa', 'chiếc mũ', 'hộp bánh', 'cuốn sổ']);
+    const W = [[x1, x2, false, false], [c, x1, true, true], [x1, Q, true, true]], cand = [[x1, x2, true, true], ...W];
+    const P = x=> (x - c)*(Q - x);
+    const o = {stem:`Một cửa hàng nhập ${item} với giá $${c}$ nghìn đồng mỗi sản phẩm. Nếu bán với giá $x$ nghìn đồng mỗi sản phẩm ($${c} \\leq x \\leq ${Q}$) thì mỗi ngày bán được $(${Q} - x)$ sản phẩm. Cửa hàng cần đặt giá bán $x$ trong khoảng nào để lợi nhuận mỗi ngày không dưới $${L}$ nghìn đồng?`,
+      ans:{t:`$x \\in ${tqIv(x1, x2, true, true)}$`, v:1}, wrong:W.map((z, i)=> ({t:`$x \\in ${tqIv(...z)}$`, v:i + 2})),
+      lg:`Lợi nhuận mỗi ngày: $P(x) = (x - ${c})(${Q} - x)$ (nghìn đồng).<br>$P(x) \\geq ${L} \\Leftrightarrow ${polyT([-1, c + Q, -c*Q])} \\geq ${L} \\Leftrightarrow ${polyT([1, -(c + Q), c*Q + L])} \\leq 0$.<br>`
+        + `Tam thức $${polyT([1, -(c + Q), c*Q + L])}$ có hai nghiệm $x = ${x1}$, $x = ${x2}$, hệ số $1 > 0$, nên $\\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$ (thoả $${c} \\leq x \\leq ${Q}$).<br>Vậy giá bán $x \\in ${tqIv(x1, x2, true, true)}$.`,
+      verify:()=>{ const z = cand[o.ans.v - 1]; return !!z && tqTest(x=> P(x) >= L, ...z, tqGrid(c, Q, 0.5, [x1, x2])); }};
+    return o; }
+  return null;
+});
+
+/* 55. TN TH — lập bất phương trình mô tả bài toán diện tích */
+G(10,5,2,'TH','Thực tế: dùng P mét lưới rào kín một mảnh vườn hình chữ nhật có diện tích ít nhất S — gọi x là chiều rộng, chọn bất phương trình đúng x(P/2 − x) ≥ S (nhiễu: dùng P thay nửa chu vi, rào ba cạnh, sai chiều)', R=>{
+  for(let g = 0; g < 300; g++){
+    const P = R.pick([20, 24, 30, 36, 40, 48, 50, 60, 64, 80]), S = R.int(4, Math.floor(P*P/16) - 1), h = P/2;
+    const opts = [`x(${h} - x) \\geq ${S}`, `x(${P} - x) \\geq ${S}`, `x(${P} - 2x) \\geq ${S}`, `x(${h} - x) \\leq ${S}`];
+    const area = x=> x*(P - 2*x)/2;   // nửa chu vi trừ chiều rộng, nhân chiều rộng
+    const lhs = [x=> x*(h - x), x=> x*(P - x), x=> x*(P - 2*x), x=> x*(h - x)], rel = ['g', 'g', 'g', 'l'];
+    const o = {stem:`Một người dùng $${P}$ m lưới để rào kín xung quanh một mảnh vườn hình chữ nhật sao cho diện tích mảnh vườn ít nhất là $${S}$ m². Gọi $x$ (m) là chiều rộng của mảnh vườn. Bất phương trình nào sau đây mô tả đúng điều kiện về diện tích?`,
+      ans:{t:`$${opts[0]}$`, v:1}, wrong:[2, 3, 4].map(i=> ({t:`$${opts[i - 1]}$`, v:i})),
+      lg:`Chu vi mảnh vườn là $${P}$ m nên nửa chu vi là $${h}$ m; chiều rộng $x$ thì chiều dài là $${h} - x$ (m).<br>Diện tích $x(${h} - x)$ phải ít nhất $${S}$ m²: $${opts[0]}$.<br>(Dùng $${P} - x$ là quên chia đôi chu vi; $x(${P} - 2x)$ ứng với rào ba cạnh; dấu $\\leq$ là sai chiều.)`,
+      verify:()=>{ const i = o.ans.v - 1; if(i < 0 || i > 3) return false; return [1, 2.5, h/3, h/2].every(x=> Math.abs(lhs[i](x) - area(x)) < 1e-9) && rel[i] === 'g'; }};
+    return o; }
+  return null;
+});
+
+/* 56. TN VD — rào ba cạnh dựa tường */
+G(10,5,2,'VD','Thực tế: rào ba cạnh một mảnh đất hình chữ nhật dựa vào bức tường bằng L mét lưới, cạnh vuông góc với tường dài x — diện tích x(L − 2x) ≥ S, tìm khoảng của x', R=>{
+  for(let g = 0; g < 400; g++){
+    const x1 = R.int(1, 10), x2 = R.int(x1 + 1, 14), L = 2*(x1 + x2), S = 2*x1*x2; if(L > 60) continue;
+    const A = x=> x*(L - 2*x), W = [[x1, x2, false, false], [0, x1, false, true], [x2, L/2, true, false]], cand = [[x1, x2, true, true], ...W];
+    if(new Set(cand.map(z=> tqIv(...z))).size !== 4) continue;
+    const o = {stem:`Bác Nam dùng $${L}$ m lưới rào ba cạnh của một mảnh đất hình chữ nhật, cạnh thứ tư là bức tường có sẵn (đủ dài). Gọi $x$ (m) là độ dài mỗi cạnh vuông góc với tường. Để diện tích mảnh đất không nhỏ hơn $${S}$ m² thì $x$ phải thuộc khoảng nào?`,
+      ans:{t:`$${tqIv(x1, x2, true, true)}$`, v:1}, wrong:W.map((z, i)=> ({t:`$${tqIv(...z)}$`, v:i + 2})),
+      lg:`Cạnh song song với tường dài $${L} - 2x$ (m), điều kiện $0 < x < ${L/2}$. Diện tích $x(${L} - 2x)$.<br>$x(${L} - 2x) \\geq ${S} \\Leftrightarrow ${polyT([2, -L, S])} \\leq 0 \\Leftrightarrow ${polyT([1, -L/2, S/2])} \\leq 0$.<br>`
+        + `Tam thức có hai nghiệm $x = ${x1}$, $x = ${x2}$, hệ số dương nên $\\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$ (thoả $0 < x < ${L/2}$). Vậy $x \\in ${tqIv(x1, x2, true, true)}$.`,
+      verify:()=>{ const z = cand[o.ans.v - 1]; return !!z && tqTest(x=> A(x) >= S, ...z, tqGrid(0.25, L/2 - 0.25, 0.25, [x1, x2])); }};
+    return o; }
+  return null;
+});
+
+/* 57. TN VD — quãng đường phanh, tốc độ tối đa */
+G(10,5,2,'VD','Thực tế: quãng đường phanh d(v) = av² + bv (mét, v km/h) — giải av² + bv ≤ D với v > 0 tìm tốc độ tối đa để dừng kịp', R=>{
+  for(let g = 0; g < 300; g++){
+    const a = R.pick([0.01, 0.005, 0.02]), b = R.pick([0.1, 0.2, 0.3, 0.4]), v0 = 5*R.int(6, 20), D = tqC(a*v0*v0 + b*v0); if(Math.abs(D*100 - Math.round(D*100)) > 1e-6 || D > 150) continue;
+    const vN = tqC(-b/a - v0), w = [v0 + 10, v0 - 10, Math.round(Math.sqrt(D/a))].filter((x, i, A)=> x !== v0 && x > 0 && A.indexOf(x) === i); if(w.length < 3) continue;
+    const d = v=> a*v*v + b*v;
+    const o = {stem:`Quãng đường phanh (từ lúc đạp phanh đến khi dừng hẳn) của một ô tô trên đường khô được ước tính bởi $d(v) = ${nt(a)}v^2 + ${nt(b)}v$ (mét), trong đó $v$ (km/h) là tốc độ lúc bắt đầu phanh. Để quãng đường phanh không vượt quá $${nt(D)}$ m thì tốc độ của ô tô lớn nhất là bao nhiêu km/h?`,
+      ans:{t:`$${v0}$ km/h`, v:v0}, wrong:w.map(x=> ({t:`$${x}$ km/h`, v:x})),
+      lg:`$d(v) \\leq ${nt(D)} \\Leftrightarrow ${nt(a)}v^2 + ${nt(b)}v - ${nt(D)} \\leq 0 \\Leftrightarrow ${polyT([1, tqC(b/a), tqC(-D/a)], 'v')} \\leq 0$ (nhân hai vế với $${nt(tqC(1/a))}$).<br>Tam thức có hai nghiệm $v = ${nt(vN)}$, $v = ${v0}$, hệ số dương nên $\\leq 0 \\Leftrightarrow ${nt(vN)} \\leq v \\leq ${v0}$. Kết hợp $v > 0$: $0 < v \\leq ${v0}$.<br>Vậy tốc độ lớn nhất là $${v0}$ km/h.`,
+      verify:()=>{ const V = o.ans.v; return d(V) <= D + 1e-9 && d(V + 0.01) > D; }};
+    return o; }
+  return null;
+});
+
+/* 58. TN VD — cổng parabol, bề rộng xe tối đa */
+G(10,5,2,'VD','Thực tế: cổng hình parabol rộng W, cao H; xe tải cao h muốn đi qua (thùng xe là hình hộp, đi chính giữa) — đặt hệ trục, y = H − 4Hx²/W² ≥ h giải ra |x| ≤ …, bề rộng xe tối đa', R=>{
+  for(let g = 0; g < 400; g++){
+    const W = R.int(8, 24)/2, H = R.int(7, 16)/2, r = R.int(2, 9)/10, h = tqC(H*(1 - r*r)), w = tqC(r*W); if(w < 1.6 || w > 3 || Math.abs(h*100 - Math.round(h*100)) > 1e-6) continue;
+    if(Math.abs(w*50 - Math.round(w*50)) > 1e-6 || h < 2 || h > 4.5 || H > W) continue;
+    const ws = [tqC(W - w), tqC(w/2), tqC(W*(1 - h/H))].filter((x, i, A)=> x > 0 && Math.abs(x - w) > 1e-9 && A.indexOf(x) === i); if(ws.length < 3) continue;
+    const y = x=> H - 4*H*x*x/(W*W);
+    const o = {stem:`Một cổng có dạng parabol, khoảng cách giữa hai chân cổng là $${nt(W)}$ m, chiều cao của cổng (điểm cao nhất so với mặt đường) là $${nt(H)}$ m. Một xe tải có thùng hình hộp chữ nhật cao $${nt(h)}$ m đi vào chính giữa cổng. Bề rộng lớn nhất của thùng xe để xe đi qua được cổng (coi như được chạm sát) là`,
+      ans:{t:`$${nt(w)}$ m`, v:w}, wrong:ws.map(x=> ({t:`$${nt(x)}$ m`, v:x})),
+      lg:`Chọn hệ trục với gốc ở trung điểm hai chân cổng, trục $Oy$ đi qua đỉnh: parabol đi qua $(${nt(-W/2)}; 0)$, $(${nt(W/2)}; 0)$, $(0; ${nt(H)})$ nên $y = ${nt(H)} - ${frT(Math.round(160*H), Math.round(40*W*W))}x^2$.<br>`
+        + `Thùng xe rộng $w$ đi chính giữa thì hai mép thùng ở $x = \\pm \\dfrac{w}{2}$; xe qua được khi $y \\geq ${nt(h)}$ tại đó: $${nt(H)} - ${frT(Math.round(160*H), Math.round(40*W*W))}x^2 \\geq ${nt(h)} \\Leftrightarrow x^2 \\leq ${nt((H - h)*W*W/(4*H))} \\Leftrightarrow -${nt(w/2)} \\leq x \\leq ${nt(w/2)}$.<br>Vậy bề rộng lớn nhất là $2\\cdot ${nt(w/2)} = ${nt(w)}$ m.`,
+      verify:()=>{ const wv = o.ans.v; return y(wv/2) >= h - 1e-9 && y(wv/2 + 0.01) < h; }};
+    return o; }
+  return null;
+});
+
+/* 59. TN TH — nồng độ thuốc trong máu */
+G(10,5,2,'TH','Thực tế: nồng độ thuốc C(t) = at(T − t) (mg/L) sau t giờ, thuốc có hiệu quả khi C(t) ≥ M — giải bất phương trình bậc hai, thời gian thuốc phát huy tác dụng là t₂ − t₁', R=>{
+  for(let g = 0; g < 300; g++){
+    const T = R.pick([6, 7, 8, 9, 10, 12]), a = R.pick([0.5, 1, 1.5, 2]), t1 = R.pick([1, 1.5, 2, 2.5, 3]), t2 = T - t1; if(t2 - t1 < 1) continue;
+    const M = tqC(a*t1*(T - t1)); if(!tqOk1(M)) continue;
+    const dur = t2 - t1, ask = R.pick(['dur', 't1', 't2']), v = ask === 'dur' ? dur : ask === 't1' ? t1 : t2;
+    const ws = [dur, t1, t2, T, T/2].map(tqC).filter((x, i, A)=> Math.abs(x - v) > 1e-9 && A.indexOf(x) === i).slice(0, 3); if(ws.length < 3) continue;
+    const C = t=> a*t*(T - t);
+    const hoi = ask === 'dur' ? 'Khoảng thời gian thuốc phát huy tác dụng kéo dài bao lâu?' : ask === 't1' ? 'Sau bao lâu kể từ khi uống thì thuốc bắt đầu phát huy tác dụng?' : 'Sau bao lâu kể từ khi uống thì thuốc hết tác dụng?';
+    const o = {stem:`Nồng độ một loại thuốc trong máu bệnh nhân sau $t$ giờ kể từ khi uống ($0 \\leq t \\leq ${T}$) là $C(t) = ${termsT([[-a, 't^2'], [a*T, 't']])}$ (mg/L). Thuốc phát huy tác dụng khi nồng độ không dưới $${nt(M)}$ mg/L. ${hoi}`,
+      ans:{t:`$${nt(v)}$ giờ`, v}, wrong:ws.map(x=> ({t:`$${nt(x)}$ giờ`, v:x})),
+      lg:`$C(t) \\geq ${nt(M)} \\Leftrightarrow ${termsT([[-a, 't^2'], [a*T, 't'], [-M, '']])} \\geq 0 \\Leftrightarrow ${polyT([1, -T, tqC(M/a)], 't')} \\leq 0 \\Leftrightarrow ${nt(t1)} \\leq t \\leq ${nt(t2)}$.<br>Thuốc phát huy tác dụng từ giờ thứ $${nt(t1)}$ đến giờ thứ $${nt(t2)}$${ask === 'dur' ? `, kéo dài $${nt(t2)} - ${nt(t1)} = ${nt(dur)}$ giờ` : ''}.<br>Đáp số: $${nt(v)}$ giờ.`,
+      verify:()=>{ let lo = null, hi = null; for(let t = 0; t <= T + 1e-9; t += 0.01){ if(C(t) >= M - 1e-9){ if(lo === null) lo = t; hi = t; } } if(lo === null) return false; const val = ask === 'dur' ? hi - lo : ask === 't1' ? lo : hi; return Math.abs(val - o.ans.v) < 0.03; }};
+    return o; }
+  return null;
+});
+
+/* 60. TN VD — giá vé và doanh thu */
+G(10,5,2,'VD','Thực tế: giá vé x nghìn đồng thì bán được N − kx vé — doanh thu x(N − kx) ≥ R₀, giải bất phương trình bậc hai, chọn giá vé cao nhất (hoặc thấp nhất)', R=>{
+  for(let g = 0; g < 400; g++){
+    const k = R.pick([2, 4, 5, 10]), x1 = R.pick([15, 20, 25, 30, 35, 40, 45, 50, 60]), x2 = x1 + R.pick([15, 20, 25, 30, 40, 50, 60]), N = k*(x1 + x2), R0 = k*x1*x2; if(N > 2000 || R0 > 60000) continue;
+    const ask = R.pick(['max', 'min']), v = ask === 'max' ? x2 : x1, ws = [ask === 'max' ? x1 : x2, (x1 + x2)/2, N/k].filter((x, i, A)=> x !== v && A.indexOf(x) === i); if(ws.length < 3) continue;
+    const Rv = x=> x*(N - k*x);
+    const o = {stem:`Một rạp chiếu phim ước tính: nếu giá vé là $x$ nghìn đồng thì mỗi suất chiếu bán được $${N} - ${k}x$ vé. Để doanh thu mỗi suất chiếu không dưới $${R0}$ nghìn đồng, giá vé ${ask === 'max' ? 'cao nhất' : 'thấp nhất'} có thể đặt là`,
+      ans:{t:`$${v}$ nghìn đồng`, v}, wrong:ws.map(x=> ({t:`$${nt(x)}$ nghìn đồng`, v:x})),
+      lg:`Doanh thu: $x(${N} - ${k}x)$ (nghìn đồng). $x(${N} - ${k}x) \\geq ${R0} \\Leftrightarrow ${polyT([k, -N, R0])} \\leq 0 \\Leftrightarrow ${polyT([1, -N/k, R0/k])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$.<br>Vậy giá vé ${ask === 'max' ? 'cao nhất' : 'thấp nhất'} là $${v}$ nghìn đồng.`,
+      verify:()=>{ const V = o.ans.v; return Rv(V) >= R0 && (ask === 'max' ? Rv(V + 0.5) < R0 : Rv(V - 0.5) < R0); }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.2 Bất phương trình bậc hai trong thực tế; Đ–S tổng hợp hàm số bậc hai – dấu tam thức (10|5|2), đợt 5 (dạng 61–68: 4 Đ–S, 4 TLN). Claude viết.
+// Chuỗi Đ–S: vật ném (61) → lợi nhuận (62) → hàm số bậc hai tổng hợp: trục đối xứng, đồng biến, dấu, giá trị lớn nhất/nhỏ nhất (63) → rào vườn (64)
+// → TLN: thời gian vật ở trên độ cao H (65) → thời điểm chạm đất (66) → giá bán thấp nhất (67) → sản lượng có lãi (68).
+const tqOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tqC = v=> Math.round(v*1000)/1000;
+const tqIv = (a, b, l, r)=> `${l ? '[' : '('}${nt(a)}; ${nt(b)}${r ? ']' : ')'}`;
+const tqTest = (fnOk, a, b, l, r, pts)=> pts.every(x=> fnOk(x) === ((x > a || (l && Math.abs(x - a) < 1e-12)) && (x < b || (r && Math.abs(x - b) < 1e-12))));
+const tqGrid = (lo, hi, st, extra)=>{ const P = extra.slice(); for(let x = lo; x <= hi + 1e-9; x += st) P.push(tqC(x)); return P; };
+const tqHt = (v, h0)=> termsT([[-5, 't^2'], [v, 't'], [h0, '']]);
+
+/* 61. Đ–S VD — vật ném */
+GD(10,5,2,'VD','Thực tế: vật ném lên theo h(t) = −5t² + vt + h₀ — độ cao ban đầu, độ cao lớn nhất, khoảng thời gian ở trên độ cao H, thời gian ở trên độ cao H', R=>{
+  for(let g = 0; g < 400; g++){
+    const t1 = R.pick([0.5, 1, 1.5, 2]), t2 = tqC(t1 + R.pick([1, 1.5, 2, 2.5, 3])), h0 = R.pick([1, 1.5, 2, 2.5]), v = tqC(5*(t1 + t2)), H = tqC(h0 + 5*t1*t2); if(v > 35 || H > 60 || !tqOk1(H)) continue;
+    const h = t=> -5*t*t + v*t + h0, tv = v/10, hmax = tqC(h0 + v*v/20); if(!tqOk1(hmax) && Math.abs(hmax*100 - Math.round(hmax*100)) > 1e-6) continue;
+    const hw = tqC(v*v/20), dur = tqC(t2 - t1), durW = tqC(t2), pts = tqGrid(0, t2 + 2, 0.05, [t1, t2]);
+    const items = [
+      claim(R, `Quả bóng được ném từ độ cao $${nt(h0)}$ m`, `Quả bóng được ném từ mặt đất`, ()=> Math.abs(h(0) - h0) < 1e-9, ()=> Math.abs(h(0)) < 1e-9),
+      claimN(R, z=> `Độ cao lớn nhất của quả bóng là $${z}$ m`, hmax, nt(hmax), hw, nt(hw), ()=>{ let m = -1e9; for(let t = 0; t <= 8; t += 0.0005) m = Math.max(m, h(t)); return Math.round(m*1000)/1000; }),
+      claim(R, `Quả bóng ở độ cao trên $${nt(H)}$ m khi và chỉ khi $t \\in ${tqIv(t1, t2, false, false)}$`, `Quả bóng ở độ cao trên $${nt(H)}$ m khi và chỉ khi $t \\in ${tqIv(0, t2, false, false)}$`, ()=> tqTest(t=> h(t) > H + 1e-9, t1, t2, false, false, pts), ()=> tqTest(t=> h(t) > H + 1e-9, 0, t2, false, false, pts)),
+      claimN(R, z=> `Thời gian quả bóng ở độ cao trên $${nt(H)}$ m là $${z}$ giây`, dur, nt(dur), durW, nt(durW), ()=>{ let lo = null, hi = null; for(let t = 0; t <= t2 + 2; t += 0.0005) if(h(t) > H){ if(lo === null) lo = t; hi = t; } return Math.round((hi - lo)*100)/100; })];
+    return {stem:`Một quả bóng được ném thẳng đứng lên trên; độ cao $h$ (mét) của quả bóng sau $t$ giây là $h(t) = ${tqHt(v, h0)}$.`, items,
+      lg:`a) $h(0) = ${nt(h0)}$ nên bóng được ném từ độ cao $${nt(h0)}$ m.<br>b) $h(t)$ là hàm số bậc hai có $a = -5 < 0$, đạt giá trị lớn nhất tại $t = \\dfrac{${nt(v)}}{10} = ${nt(tv)}$: $h(${nt(tv)}) = ${nt(hmax)}$ (m).<br>`
+        + `c) $h(t) > ${nt(H)} \\Leftrightarrow ${polyT([1, tqC(-v/5), tqC(t1*t2)], 't')} < 0 \\Leftrightarrow ${nt(t1)} < t < ${nt(t2)}$.<br>d) Thời gian ở trên độ cao $${nt(H)}$ m là $${nt(t2)} - ${nt(t1)} = ${nt(dur)}$ giây.`}; }
+  return null;
+});
+
+/* 62. Đ–S VD — lợi nhuận theo giá bán */
+GD(10,5,2,'VD','Thực tế: lợi nhuận P(x) = (x − c)(Q − x) theo giá bán x — biểu thức lợi nhuận, tập giá bán để lợi nhuận ≥ L, thử một mức giá, giá bán cho lợi nhuận lớn nhất', R=>{
+  for(let g = 0; g < 400; g++){
+    const c = R.pick([20, 30, 40, 50, 60]), D = R.pick([20, 30, 40, 50]), e = R.pick([10, 15, 20, 25]); if(e >= D) continue;
+    const Q = c + 2*D, mid = c + D, x1 = mid - e, x2 = mid + e, L = (x1 - c)*(Q - x1), P = x=> (x - c)*(Q - x);
+    const xs = R.pick([x1 - 5, x2 + 5, mid]), okS = P(xs) >= L, x1w = x1 - 5;
+    const items = [
+      claim(R, `Lợi nhuận mỗi ngày khi bán với giá $x$ là $(x - ${c})(${Q} - x)$ nghìn đồng`, `Lợi nhuận mỗi ngày khi bán với giá $x$ là $x(${Q} - x)$ nghìn đồng`, ()=> [c + 3, mid, Q - 2].every(x=> P(x) === (x - c)*(Q - x)), ()=> [c + 3, mid].every(x=> P(x) === x*(Q - x))),
+      claim(R, `Lợi nhuận mỗi ngày không dưới $${L}$ nghìn đồng khi và chỉ khi $${x1} \\leq x \\leq ${x2}$`, `Lợi nhuận mỗi ngày không dưới $${L}$ nghìn đồng khi và chỉ khi $${x1w} \\leq x \\leq ${x2}$`, ()=> tqTest(x=> P(x) >= L, x1, x2, true, true, tqGrid(c, Q, 0.5, [x1, x2])), ()=> tqTest(x=> P(x) >= L, x1w, x2, true, true, tqGrid(c, Q, 0.5, [x1w, x2]))),
+      {t:`Nếu bán với giá $${xs}$ nghìn đồng thì lợi nhuận mỗi ngày không dưới $${L}$ nghìn đồng`, ok:okS, chk:()=> (xs - c)*(Q - xs) >= L},
+      claim(R, `Lợi nhuận mỗi ngày lớn nhất khi giá bán là $${mid}$ nghìn đồng`, `Lợi nhuận mỗi ngày lớn nhất khi giá bán là $${Q}$ nghìn đồng`, ()=>{ let b = c, m = -1; for(let x = c; x <= Q; x += 0.5) if(P(x) > m){ m = P(x); b = x; } return b === mid; }, ()=>{ let b = c, m = -1; for(let x = c; x <= Q; x += 0.5) if(P(x) > m){ m = P(x); b = x; } return b === Q; })];
+    return {stem:`Một cửa hàng nhập một loại sản phẩm với giá $${c}$ nghìn đồng mỗi chiếc. Nếu bán với giá $x$ nghìn đồng mỗi chiếc ($${c} \\leq x \\leq ${Q}$) thì mỗi ngày bán được $(${Q} - x)$ chiếc.`, items,
+      lg:`a) Mỗi chiếc lãi $x - ${c}$ (nghìn đồng), bán được $${Q} - x$ chiếc nên lợi nhuận $P(x) = (x - ${c})(${Q} - x)$.<br>`
+        + `b) $P(x) \\geq ${L} \\Leftrightarrow ${polyT([1, -(c + Q), c*Q + L])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$.<br>c) $P(${xs}) = ${P(xs)} ${okS ? `\\geq ${L}$: đúng` : `< ${L}$: sai`}.<br>d) $P(x) = ${polyT([-1, c + Q, -c*Q])}$ có $a = -1 < 0$, lớn nhất tại $x = \\dfrac{${c + Q}}{2} = ${mid}$.`.replace('$P(' + xs + ') = ' + P(xs) + ' ', `$P(${xs}) = ${P(xs)} `)}; }
+  return null;
+});
+
+/* 63. Đ–S TH — hàm số bậc hai tổng hợp: trục đối xứng, đồng biến, dấu, giá trị lớn nhất/nhỏ nhất */
+GD(10,5,2,'TH','Đ–S tổng hợp hàm số bậc hai – dấu tam thức: y = ax² + bx + c — trục đối xứng, khoảng đồng biến, tập nghiệm của y > 0, giá trị nhỏ nhất (lớn nhất)', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.pick([1, -1, 2, -2]), u = R.int(-6, 6), v = R.int(-6, 6); if(u === v || (u + v) % 2 !== 0) continue;
+    const B = -a*(u + v), C = a*u*v, h = (u + v)/2, k = a*(h - u)*(h - v), f = x=> a*x*x + B*x + C, r1 = Math.min(u, v), r2 = Math.max(u, v);
+    const pts = []; for(let x = -15; x <= 15; x += 0.25) pts.push(x);
+    const dbT = a > 0 ? `(${h}; +\\infty)` : `(-\\infty; ${h})`, dbW = a > 0 ? `(-\\infty; ${h})` : `(${h}; +\\infty)`;
+    const inc = (lo, hi)=>{ for(let x = lo; x < hi; x += 0.25) if(f(x + 0.25) <= f(x)) return false; return true; };
+    const posIn = a < 0, posT = posIn ? `(${r1}; ${r2})` : `(-\\infty; ${r1}) \\cup (${r2}; +\\infty)`, posW = posIn ? `(-\\infty; ${r1}) \\cup (${r2}; +\\infty)` : `(${r1}; ${r2})`;
+    const testPos = (inside)=> pts.every(x=> (f(x) > 0) === (inside ? (x > r1 && x < r2) : (x < r1 || x > r2)));
+    const ext = a > 0 ? 'nhỏ nhất' : 'lớn nhất', kw = tqC(k + (a > 0 ? -1 : 1)*Math.abs(a));
+    const items = [
+      claim(R, `Đồ thị hàm số có trục đối xứng là đường thẳng $x = ${h}$`, `Đồ thị hàm số có trục đối xứng là đường thẳng $x = ${-h}$`, ()=> [1, 2.5, 4].every(d=> Math.abs(f(h + d) - f(h - d)) < 1e-9), ()=> [1, 2.5, 4].every(d=> Math.abs(f(-h + d) - f(-h - d)) < 1e-9)),
+      claim(R, `Hàm số đồng biến trên khoảng $${dbT}$`, `Hàm số đồng biến trên khoảng $${dbW}$`, ()=> a > 0 ? inc(h, h + 12) : inc(h - 12, h), ()=> a > 0 ? inc(h - 12, h) : inc(h, h + 12)),
+      claim(R, `$y > 0$ khi và chỉ khi $x \\in ${posT}$`, `$y > 0$ khi và chỉ khi $x \\in ${posW}$`, ()=> testPos(posIn), ()=> testPos(!posIn)),
+      claimN(R, z=> `Giá trị ${ext} của hàm số là $${z}$`, k, nt(k), kw, nt(kw), ()=>{ let m = f(-20); for(let x = -20; x <= 20; x += 0.5) m = a > 0 ? Math.min(m, f(x)) : Math.max(m, f(x)); return m; })];
+    if(h === 0) continue;
+    return {stem:`Cho hàm số bậc hai $y = ${polyT([a, B, C])}$.`, items,
+      lg:`a) Trục đối xứng $x = -\\dfrac{b}{2a} = ${h}$.<br>b) $a = ${a} ${a > 0 ? '> 0' : '< 0'}$ nên hàm số ${a > 0 ? `nghịch biến trên $(-\\infty; ${h})$, đồng biến trên $(${h}; +\\infty)$` : `đồng biến trên $(-\\infty; ${h})$, nghịch biến trên $(${h}; +\\infty)$`}.<br>`
+        + `c) $y = 0 \\Leftrightarrow x = ${r1}$ hoặc $x = ${r2}$; $a ${a > 0 ? '> 0' : '< 0'}$ nên $y > 0 \\Leftrightarrow x \\in ${posT}$.<br>d) Giá trị ${ext} là $y(${h}) = ${nt(k)}$.`}; }
+  return null;
+});
+
+/* 64. Đ–S VD — rào vườn hình chữ nhật */
+GD(10,5,2,'VD','Thực tế: P mét lưới rào kín vườn hình chữ nhật, chiều rộng x — chiều dài theo x, diện tích S(x), điều kiện S(x) ≥ S₀ (kết hợp chiều rộng không lớn hơn chiều dài), diện tích lớn nhất', R=>{
+  for(let g = 0; g < 400; g++){
+    const x1 = R.int(2, 12), x2 = R.int(x1 + 2, 24), h = x1 + x2, P = 2*h, S0 = x1*x2; if(P > 80) continue;
+    const Smax = h*h/4; if(!tqOk1(Smax)) continue;
+    const S = x=> x*(h - x), lw = tqC(h/2), pts = tqGrid(0.25, lw, 0.25, [x1, lw]);
+    const items = [
+      claim(R, `Chiều dài của vườn là $${h} - x$ (m)`, `Chiều dài của vườn là $${P} - x$ (m)`, ()=> [1, 3].every(x=> 2*(x + (h - x)) === P), ()=> [1, 3].every(x=> 2*(x + (P - x)) === P)),
+      claim(R, `Diện tích vườn là $S(x) = ${polyT([-1, h, 0])}$ (m²)`, `Diện tích vườn là $S(x) = ${polyT([-1, P, 0])}$ (m²)`, ()=> [1, 2.5, 4].every(x=> Math.abs(S(x) - (-x*x + h*x)) < 1e-9), ()=> [1, 2.5, 4].every(x=> Math.abs(S(x) - (-x*x + P*x)) < 1e-9)),
+      claim(R, `Với chiều rộng không lớn hơn chiều dài, diện tích vườn ít nhất $${S0}$ m² khi và chỉ khi $${x1} \\leq x \\leq ${nt(lw)}$`, `Với chiều rộng không lớn hơn chiều dài, diện tích vườn ít nhất $${S0}$ m² khi và chỉ khi $${x1} \\leq x \\leq ${x2}$`, ()=> tqTest(x=> S(x) >= S0, x1, lw, true, true, pts), ()=> tqTest(x=> S(x) >= S0 && x <= h - x, x1, x2, true, true, tqGrid(0.25, x2 + 1, 0.25, [x1, x2]))),
+      claimN(R, z=> `Diện tích lớn nhất của vườn là $${z}$ m²`, Smax, nt(Smax), tqC(P*P/4), nt(tqC(P*P/4)), ()=>{ let m = 0; for(let x = 0; x <= h; x += 0.25) m = Math.max(m, S(x)); return m; })];
+    return {stem:`Bác An dùng $${P}$ m lưới để rào kín một mảnh vườn hình chữ nhật. Gọi $x$ (m) là chiều rộng của mảnh vườn (chiều rộng không lớn hơn chiều dài).`, items,
+      lg:`a) Nửa chu vi $${h}$ m nên chiều dài là $${h} - x$ (m), với $0 < x \\leq ${nt(lw)}$.<br>b) $S(x) = x(${h} - x) = ${polyT([-1, h, 0])}$.<br>`
+        + `c) $S(x) \\geq ${S0} \\Leftrightarrow ${polyT([1, -h, S0])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$; kết hợp $x \\leq ${nt(lw)}$ được $${x1} \\leq x \\leq ${nt(lw)}$.<br>d) $S(x)$ lớn nhất khi $x = ${nt(lw)}$ (vườn hình vuông): $S = ${nt(lw)}^2 = ${nt(Smax)}$ m².`}; }
+  return null;
+});
+
+/* 65. TLN TH — thời gian vật ở trên độ cao H */
+GT(10,5,2,'TH','Thực tế: vật ném lên theo h(t) = −5t² + vt + h₀ — giải h(t) ≥ H được đoạn [t₁; t₂], tính thời gian vật ở độ cao không thấp hơn H', R=>{
+  for(let g = 0; g < 400; g++){
+    const t1 = R.int(2, 30)/10, d = R.int(5, 40)/10, t2 = tqC(t1 + d), h0 = R.pick([0, 1, 1.2, 1.5, 2]), v = tqC(5*(t1 + t2)), H = tqC(h0 + 5*t1*t2); if(v > 40 || H > 80 || Math.abs(H*100 - Math.round(H*100)) > 1e-6) continue;
+    const h = t=> -5*t*t + v*t + h0, ask = R.pick(['dur', 'dur', 'start', 'end']), val = ask === 'dur' ? d : ask === 'start' ? t1 : t2;
+    const hoi = ask === 'dur' ? `Trong bao nhiêu giây vật ở độ cao không thấp hơn $${nt(H)}$ m` : ask === 'start' ? `Sau bao nhiêu giây kể từ lúc ném thì vật bắt đầu đạt độ cao $${nt(H)}$ m` : `Sau bao nhiêu giây kể từ lúc ném thì vật rơi xuống dưới độ cao $${nt(H)}$ m`;
+    const o = {stem:`Một vật được ném thẳng đứng lên trên; độ cao $h$ (mét) của vật sau $t$ giây là $h(t) = ${tqHt(v, h0)}$. ${hoi} (kết quả viết dưới dạng số thập phân nếu cần)?`, ans:val,
+      lg:`$h(t) \\geq ${nt(H)} \\Leftrightarrow ${termsT([[-5, 't^2'], [v, 't'], [tqC(h0 - H), '']])} \\geq 0 \\Leftrightarrow ${polyT([1, tqC(-v/5), tqC(t1*t2)], 't')} \\leq 0 \\Leftrightarrow ${nt(t1)} \\leq t \\leq ${nt(t2)}$.<br>`
+        + (ask === 'dur' ? `Thời gian vật ở độ cao không thấp hơn $${nt(H)}$ m là $${nt(t2)} - ${nt(t1)} = ${nt(d)}$ giây.` : ask === 'start' ? `Vật bắt đầu đạt độ cao $${nt(H)}$ m tại $t = ${nt(t1)}$ giây.` : `Sau $t = ${nt(t2)}$ giây vật xuống dưới độ cao $${nt(H)}$ m.`),
+      verify:()=>{ let lo = null, hi = null; for(let t = 0; t <= t2 + 2; t += 0.001) if(h(t) >= H - 1e-9){ if(lo === null) lo = t; hi = t; } if(lo === null) return false; return Math.abs((ask === 'dur' ? hi - lo : ask === 'start' ? lo : hi) - o.ans) < 0.005; }};
+    return o; }
+  return null;
+});
+
+/* 66. TLN VD — thời điểm vật chạm đất */
+GT(10,5,2,'VD','Thực tế: vật ném lên từ độ cao h₀ theo h(t) = −5t² + vt + h₀ — vật còn ở trên mặt đất khi h(t) > 0, giải bất phương trình bậc hai (nghiệm âm loại) để tìm thời điểm chạm đất', R=>{
+  for(let g = 0; g < 400; g++){
+    const tg = R.int(3, 16)/2, s = R.pick([0.2, 0.4, 0.5, 0.6, 0.8, 1]), v = tqC(5*(tg - s)), h0 = tqC(5*tg*s); if(v <= 0 || h0 > 30 || !tqOk1(v) || !tqOk1(h0)) continue;
+    const h = t=> -5*t*t + v*t + h0;
+    const o = {stem:`Từ độ cao $${nt(h0)}$ m, một quả bóng được ném thẳng đứng lên trên; độ cao $h$ (mét) của bóng sau $t$ giây là $h(t) = ${tqHt(v, h0)}$. Sau bao nhiêu giây quả bóng chạm đất (kết quả viết dưới dạng số thập phân nếu cần)?`, ans:tg,
+      lg:`Bóng còn ở trên mặt đất khi $h(t) > 0 \\Leftrightarrow ${polyT([1, tqC(-v/5), tqC(-h0/5)], 't')} < 0 \\Leftrightarrow ${nt(-s)} < t < ${nt(tg)}$.<br>Kết hợp $t \\geq 0$: bóng ở trên mặt đất khi $0 \\leq t < ${nt(tg)}$ và chạm đất tại $t = ${nt(tg)}$ (nghiệm $t = ${nt(-s)} < 0$ bị loại).<br>Đáp số: $${nt(tg)}$ giây.`,
+      verify:()=> Math.abs(h(o.ans)) < 1e-9 && h(o.ans - 0.01) > 0 && o.ans > 0};
+    return o; }
+  return null;
+});
+
+/* 67. TLN TH — giá bán thấp nhất để đạt lợi nhuận */
+GT(10,5,2,'TH','Thực tế: lợi nhuận mỗi ngày (x − c)(Q − x) theo giá bán x — giải (x − c)(Q − x) ≥ L, giá bán thấp nhất (hoặc cao nhất) để lợi nhuận đạt yêu cầu', R=>{
+  for(let g = 0; g < 400; g++){
+    const c = R.pick([15, 20, 25, 30, 35, 40, 45, 50, 60]), D = R.pick([15, 20, 25, 30, 35, 40, 45, 50]), e = R.pick([5, 10, 15, 20, 25, 30]); if(e >= D) continue;
+    const Q = c + 2*D, x1 = c + D - e, x2 = c + D + e, L = (x1 - c)*(Q - x1), ask = R.pick(['min', 'max']), v = ask === 'min' ? x1 : x2, P = x=> (x - c)*(Q - x);
+    const item = R.pick(['chiếc bánh', 'cốc nước ép', 'chậu cây cảnh', 'đôi tất', 'quyển truyện']);
+    const o = {stem:`Một cửa hàng nhập ${item} với giá $${c}$ nghìn đồng mỗi sản phẩm và ước tính: nếu bán với giá $x$ nghìn đồng mỗi sản phẩm ($${c} \\leq x \\leq ${Q}$) thì mỗi ngày bán được $${Q} - x$ sản phẩm. Để lợi nhuận mỗi ngày đạt ít nhất $${L}$ nghìn đồng, giá bán ${ask === 'min' ? 'thấp nhất' : 'cao nhất'} là bao nhiêu nghìn đồng?`, ans:v,
+      lg:`Lợi nhuận: $(x - ${c})(${Q} - x) \\geq ${L} \\Leftrightarrow ${polyT([1, -(c + Q), c*Q + L])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$.<br>Giá bán ${ask === 'min' ? 'thấp nhất' : 'cao nhất'} là $${v}$ nghìn đồng.`,
+      verify:()=> P(o.ans) >= L && (ask === 'min' ? P(o.ans - 0.5) < L : P(o.ans + 0.5) < L)};
+    return o; }
+  return null;
+});
+
+/* 68. TLN VD — sản lượng để có lãi */
+GT(10,5,2,'VD','Thực tế: doanh nghiệp sản xuất x trăm sản phẩm, lợi nhuận P(x) = −x² + bx − c (triệu đồng) — giải P(x) ≥ L (hoặc P(x) > 0) tìm khoảng sản lượng; số trăm sản phẩm lớn nhất / nhỏ nhất hoặc độ rộng khoảng', R=>{
+  for(let g = 0; g < 400; g++){
+    const x1 = R.int(1, 12), x2 = R.int(x1 + 2, 30), L = R.pick([0, 0, 10, 20, 50, 100]), b = x1 + x2, c = x1*x2 - L; if(c <= 0 || c > 400) continue;
+    const ask = R.pick(['min', 'max', 'rong']), v = ask === 'min' ? x1 : ask === 'max' ? x2 : x2 - x1, P = x=> -x*x + b*x - c;
+    const dk = L === 0 ? 'có lãi (lợi nhuận dương)' : `lợi nhuận không dưới $${L}$ triệu đồng`, rel = L === 0 ? '>' : '\\geq';
+    const hoi = ask === 'min' ? 'Số sản phẩm (tính theo trăm) ít nhất cần sản xuất là bao nhiêu' : ask === 'max' ? 'Số sản phẩm (tính theo trăm) nhiều nhất có thể sản xuất là bao nhiêu' : 'Khoảng sản lượng thoả mãn có độ dài bằng bao nhiêu (tính theo trăm sản phẩm)';
+    const o = {stem:`Một xưởng sản xuất $x$ trăm sản phẩm mỗi tháng ($x > 0$) thì lợi nhuận là $P(x) = ${polyT([-1, b, -c])}$ (triệu đồng). Xưởng muốn ${dk}. ${hoi}${L === 0 && ask !== 'rong' ? ' (coi sản lượng thay đổi liên tục; ghi giá trị đầu mút của khoảng)' : ''}?`, ans:v,
+      lg:`$P(x) ${rel} ${L} \\Leftrightarrow ${polyT([1, -b, c + L])} ${L === 0 ? '<' : '\\leq'} 0 \\Leftrightarrow ${x1} ${L === 0 ? '<' : '\\leq'} x ${L === 0 ? '<' : '\\leq'} ${x2}$.<br>`
+        + (ask === 'rong' ? `Độ dài khoảng: $${x2} - ${x1} = ${v}$.` : `Đáp số: $${v}$ (trăm sản phẩm).`),
+      verify:()=>{ const ok = x=> L === 0 ? P(x) > 0 : P(x) >= L; let lo = null, hi = null; for(let x = 0; x <= 60; x += 0.01){ if(ok(x)){ if(lo === null) lo = x; hi = x; } } if(lo === null) return false;
+        const val = ask === 'min' ? lo : ask === 'max' ? hi : hi - lo; return Math.abs(val - o.ans) < 0.03; }};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.2 Bất phương trình bậc hai trong thực tế (10|5|2), đợt 6 (dạng 69–76: 8 TLN). Claude viết.
+// Chuỗi diện tích: chiều rộng nhỏ nhất (69) → rào ba cạnh dựa tường, cạnh song song tường dài nhất (70) → lối đi quanh vườn (71)
+// → cắt góc tấm bìa làm hộp (72) → quãng đường phanh (73) → cổng parabol, xe cao nhất (74) → nồng độ thuốc (75) → giá vé (76).
+const tqOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tqC = v=> Math.round(v*1000)/1000;
+
+/* 69. TLN TH — chiều rộng nhỏ nhất */
+GT(10,5,2,'TH','Thực tế: P mét lưới rào kín vườn hình chữ nhật có diện tích ít nhất S — giải x(P/2 − x) ≥ S, chiều rộng nhỏ nhất có thể', R=>{
+  for(let g = 0; g < 400; g++){
+    const x1 = R.int(2, 20), x2 = R.int(x1 + 2, 40), h = x1 + x2, P = 2*h, S = x1*x2; if(P > 120) continue;
+    const A = x=> x*(h - x);
+    const o = {stem:`Người ta dùng $${P}$ m lưới để rào kín một mảnh vườn hình chữ nhật có diện tích ít nhất $${S}$ m². Chiều rộng nhỏ nhất của mảnh vườn là bao nhiêu mét?`, ans:x1,
+      lg:`Gọi $x$ (m) là chiều rộng thì chiều dài là $${h} - x$ (m). Diện tích $x(${h} - x) \\geq ${S} \\Leftrightarrow ${polyT([1, -h, S])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$.<br>Khi $x = ${x2}$ thì chiều dài là $${x1}$, tức đổi vai trò hai cạnh; vì chiều rộng không lớn hơn chiều dài nên $${x1} \\leq x \\leq ${nt(h/2)}$.<br>Chiều rộng nhỏ nhất là $${x1}$ m.`,
+      verify:()=> A(o.ans) >= S && A(o.ans - 0.1) < S && o.ans <= h - o.ans};
+    return o; }
+  return null;
+});
+
+/* 70. TLN VD — rào ba cạnh, cạnh song song với tường dài nhất */
+GT(10,5,2,'VD','Thực tế: rào ba cạnh dựa tường bằng L mét lưới, diện tích không nhỏ hơn S — giải x(L − 2x) ≥ S với x là cạnh vuông góc tường; cạnh song song với tường dài nhất là L − 2x₁', R=>{
+  for(let g = 0; g < 400; g++){
+    const x1 = R.int(1, 10), x2 = R.int(x1 + 1, 15), L = 2*(x1 + x2), S = 2*x1*x2, v = L - 2*x1; if(L > 60) continue;
+    const ask = R.pick(['song', 'vuong']), val = ask === 'song' ? v : x2;
+    const o = {stem:`Dùng $${L}$ m lưới rào ba cạnh của một khu đất hình chữ nhật, cạnh còn lại là bức tường. Biết diện tích khu đất không nhỏ hơn $${S}$ m². ${ask === 'song' ? 'Cạnh song song với bức tường dài nhất là bao nhiêu mét?' : 'Mỗi cạnh vuông góc với bức tường dài nhất là bao nhiêu mét?'}`, ans:val,
+      lg:`Gọi $x$ (m) là độ dài mỗi cạnh vuông góc với tường ($0 < x < ${L/2}$), cạnh song song với tường dài $${L} - 2x$.<br>$x(${L} - 2x) \\geq ${S} \\Leftrightarrow ${polyT([1, -L/2, S/2])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$.<br>`
+        + (ask === 'song' ? `Cạnh song song với tường $${L} - 2x$ dài nhất khi $x$ nhỏ nhất, $x = ${x1}$: $${L} - ${2*x1} = ${v}$ m.` : `Cạnh vuông góc với tường dài nhất là $${x2}$ m.`),
+      verify:()=>{ let best = null; for(let x = 0.01; x < L/2; x += 0.01){ if(x*(L - 2*x) >= S - 1e-9){ const q = ask === 'song' ? L - 2*x : x; if(best === null || q > best) best = q; } } return best !== null && Math.abs(best - o.ans) < 0.03; }};
+    return o; }
+  return null;
+});
+
+/* 71. TLN VD — lối đi quanh vườn */
+GT(10,5,2,'VD','Thực tế: vườn hình chữ nhật a × b, làm lối đi rộng x bao quanh với diện tích lối đi không vượt quá S — (a + 2x)(b + 2x) − ab ≤ S ⇔ 4x² + 2(a + b)x − S ≤ 0; chiều rộng lối đi lớn nhất', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.int(6, 30), b = R.int(4, a), x0 = R.int(5, 40)/10, S = tqC(4*x0*x0 + 2*(a + b)*x0); if(S > 400 || Math.abs(S*100 - Math.round(S*100)) > 1e-6) continue;
+    const Ar = x=> (a + 2*x)*(b + 2*x) - a*b, xn = tqC(-(a + b)/2 - x0);
+    const o = {stem:`Một mảnh vườn hình chữ nhật có kích thước $${a}$ m $\\times$ $${b}$ m. Người ta làm một lối đi có chiều rộng $x$ (m) bao quanh mảnh vườn (phía ngoài). Biết diện tích lối đi không vượt quá $${nt(S)}$ m². Chiều rộng lớn nhất của lối đi là bao nhiêu mét?`, ans:x0,
+      lg:`Diện tích lối đi: $(${a} + 2x)(${b} + 2x) - ${a*b} = 4x^2 + ${2*(a + b)}x$ (m²).<br>$4x^2 + ${2*(a + b)}x \\leq ${nt(S)} \\Leftrightarrow 4x^2 + ${2*(a + b)}x - ${nt(S)} \\leq 0$; tam thức có hai nghiệm $x = ${nt(xn)}$, $x = ${nt(x0)}$ nên $${nt(xn)} \\leq x \\leq ${nt(x0)}$.<br>Kết hợp $x > 0$: $0 < x \\leq ${nt(x0)}$. Chiều rộng lớn nhất là $${nt(x0)}$ m.`,
+      verify:()=> Ar(o.ans) <= S + 1e-9 && Ar(o.ans + 0.01) > S};
+    return o; }
+  return null;
+});
+
+/* 72. TLN VD — cắt góc tấm bìa làm hộp */
+GT(10,5,2,'VD','Thực tế: tấm bìa hình chữ nhật a × b, cắt bỏ ở bốn góc bốn hình vuông cạnh x rồi gấp thành hộp không nắp; diện tích đáy hộp không nhỏ hơn S — (a − 2x)(b − 2x) ≥ S với 0 < x < b/2; cạnh hình vuông cắt bỏ lớn nhất', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.int(10, 60), b = R.int(8, a), x0 = R.int(2, 16)/2; if(2*x0 >= b - 2) continue;
+    const S = (a - 2*x0)*(b - 2*x0), D = x=> (a - 2*x)*(b - 2*x), xo = tqC((a + b)/2 - x0);
+    const o = {stem:`Từ một tấm bìa hình chữ nhật kích thước $${a}$ cm $\\times$ $${b}$ cm, người ta cắt bỏ ở bốn góc bốn hình vuông bằng nhau cạnh $x$ (cm) rồi gấp lại thành một chiếc hộp không nắp. Để đáy hộp có diện tích không nhỏ hơn $${S}$ cm², cạnh hình vuông cắt bỏ lớn nhất là bao nhiêu xentimét?`, ans:x0,
+      lg:`Đáy hộp là hình chữ nhật $(${a} - 2x) \\times (${b} - 2x)$ với $0 < x < ${nt(b/2)}$.<br>$(${a} - 2x)(${b} - 2x) \\geq ${S} \\Leftrightarrow 4x^2 - ${2*(a + b)}x + ${a*b - S} \\geq 0 \\Leftrightarrow ${polyT([1, -(a + b)/2, (a*b - S)/4])} \\geq 0 \\Leftrightarrow x \\leq ${nt(x0)}$ hoặc $x \\geq ${nt(xo)}$.<br>`
+        + `Vì $0 < x < ${nt(b/2)}$ và $${nt(xo)} \\geq ${nt(b/2)}$ nên chỉ nhận $0 < x \\leq ${nt(x0)}$. Cạnh lớn nhất là $${nt(x0)}$ cm.`,
+      verify:()=> o.ans < b/2 && D(o.ans) >= S - 1e-9 && D(o.ans + 0.01) < S};
+    return o; }
+  return null;
+});
+
+/* 73. TLN VD — quãng đường phanh */
+GT(10,5,2,'VD','Thực tế: quãng đường phanh d(v) = av² + bv (mét, v km/h) — giải av² + bv ≤ D với v > 0, tốc độ tối đa để dừng trước vật cản', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.pick([0.01, 0.02, 0.005]), b = R.pick([0.1, 0.2, 0.3, 0.4]), v0 = 5*R.int(6, 24), D = tqC(a*v0*v0 + b*v0); if(Math.abs(D*100 - Math.round(D*100)) > 1e-6 || D > 200) continue;
+    const d = v=> a*v*v + b*v, vN = tqC(-b/a - v0);
+    const o = {stem:`Quãng đường phanh của một xe ô tô được ước tính bởi $d(v) = ${nt(a)}v^2 + ${nt(b)}v$ (mét), với $v$ (km/h) là tốc độ lúc bắt đầu phanh. Một chướng ngại vật xuất hiện cách xe $${nt(D)}$ m. Tốc độ lớn nhất (km/h) của xe lúc bắt đầu phanh để xe dừng lại kịp, không đâm vào chướng ngại vật là bao nhiêu?`, ans:v0,
+      lg:`Cần $d(v) \\leq ${nt(D)} \\Leftrightarrow ${polyT([1, tqC(b/a), tqC(-D/a)], 'v')} \\leq 0$ (nhân hai vế với $${nt(tqC(1/a))}$) $\\Leftrightarrow ${nt(vN)} \\leq v \\leq ${v0}$.<br>Kết hợp $v > 0$: $0 < v \\leq ${v0}$. Tốc độ lớn nhất là $${v0}$ km/h.`,
+      verify:()=> d(o.ans) <= D + 1e-9 && d(o.ans + 0.01) > D};
+    return o; }
+  return null;
+});
+
+/* 74. TLN VD — cổng parabol, xe cao nhất */
+GT(10,5,2,'VD','Thực tế: cổng parabol rộng W, cao H; xe có thùng rộng w đi chính giữa — chiều cao lớn nhất của thùng xe là giá trị y = H − 4Hx²/W² tại x = w/2 (từ bất phương trình y(x) ≥ h với mọi |x| ≤ w/2)', R=>{
+  for(let g = 0; g < 400; g++){
+    const W = R.int(8, 24)/2, H = R.int(30, 90)/10, r = R.int(2, 9)/10, w = tqC(r*W), h = tqC(H*(1 - r*r)); if(Math.abs(h*100 - Math.round(h*100)) > 1e-6 || !tqOk1(w) || h < 2 || h > 4.5 || w < 1.6 || w > 3 || H > W) continue;
+    const y = x=> H - 4*H*x*x/(W*W), hc = Math.round(h*100);
+    const o = {stem:`Một cổng hình parabol có khoảng cách giữa hai chân cổng là $${nt(W)}$ m và chiều cao (từ mặt đường đến đỉnh cổng) là $${nt(H)}$ m. Một xe tải có thùng hình hộp chữ nhật rộng $${nt(w)}$ m đi vào chính giữa cổng. Thùng xe cao tối đa bao nhiêu xentimét thì xe đi qua được cổng (coi như được chạm sát)?`, ans:hc,
+      lg:`Chọn hệ trục với gốc ở trung điểm hai chân cổng: $y = ${nt(H)} - ${frT(Math.round(160*H), Math.round(40*W*W))}x^2$.<br>Xe cao $h$ đi qua khi $y(x) \\geq h$ với mọi $|x| \\leq ${nt(w/2)}$; vì $y$ giảm khi $|x|$ tăng nên điều kiện là $y(${nt(w/2)}) \\geq h$.<br>`
+        + `$y(${nt(w/2)}) = ${nt(H)} - ${frT(Math.round(160*H), Math.round(40*W*W))}\\cdot ${nt(w*w/4)} = ${nt(h)}$. Vậy thùng xe cao tối đa $${nt(h)}$ m, tức $${hc}$ cm.`,
+      verify:()=>{ let m = Infinity; for(let x = -w/2; x <= w/2 + 1e-9; x += w/200) m = Math.min(m, y(x)); return Math.abs(m*100 - o.ans) < 1e-4; }};
+    return o; }
+  return null;
+});
+
+/* 75. TLN VD — nồng độ thuốc */
+GT(10,5,2,'VD','Thực tế: nồng độ thuốc C(t) = −at² + bt (mg/L), thuốc có hiệu quả khi C(t) ≥ M — giải bất phương trình bậc hai, thời gian có hiệu quả (giờ) hoặc thời điểm hết hiệu quả', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.pick([0.5, 1, 2, 2.5, 4, 5]), t1 = R.pick([0.5, 1, 1.5, 2, 2.5, 3]), t2 = tqC(t1 + R.int(2, 14)/2), b = tqC(a*(t1 + t2)), M = tqC(a*t1*t2);
+    if(!tqOk1(M) || !tqOk1(b)) continue;
+    const ask = R.pick(['dur', 'end', 'start']), v = ask === 'dur' ? tqC(t2 - t1) : ask === 'end' ? t2 : t1, C = t=> -a*t*t + b*t;
+    const o = {stem:`Nồng độ của một loại thuốc trong máu sau $t$ giờ kể từ khi tiêm là $C(t) = ${termsT([[-a, 't^2'], [b, 't']])}$ (mg/L). Thuốc có hiệu quả khi nồng độ không dưới $${nt(M)}$ mg/L. ${ask === 'dur' ? 'Thuốc có hiệu quả trong bao nhiêu giờ' : ask === 'end' ? 'Sau bao nhiêu giờ kể từ khi tiêm thì thuốc hết hiệu quả' : 'Sau bao nhiêu giờ kể từ khi tiêm thì thuốc bắt đầu có hiệu quả'} (kết quả viết dưới dạng số thập phân nếu cần)?`, ans:v,
+      lg:`$C(t) \\geq ${nt(M)} \\Leftrightarrow ${termsT([[a, 't^2'], [-b, 't'], [M, '']])} \\leq 0 \\Leftrightarrow ${polyT([1, tqC(-b/a), tqC(M/a)], 't')} \\leq 0 \\Leftrightarrow ${nt(t1)} \\leq t \\leq ${nt(t2)}$.<br>`
+        + (ask === 'dur' ? `Thời gian có hiệu quả: $${nt(t2)} - ${nt(t1)} = ${nt(v)}$ giờ.` : ask === 'end' ? `Thuốc hết hiệu quả sau $${nt(t2)}$ giờ.` : `Thuốc bắt đầu có hiệu quả sau $${nt(t1)}$ giờ.`),
+      verify:()=>{ let lo = null, hi = null; for(let t = 0; t <= 20; t += 0.001) if(C(t) >= M - 1e-9){ if(lo === null) lo = t; hi = t; } if(lo === null) return false; return Math.abs((ask === 'dur' ? hi - lo : ask === 'end' ? hi : lo) - o.ans) < 0.005; }};
+    return o; }
+  return null;
+});
+
+/* 76. TLN VD — giá vé và doanh thu */
+GT(10,5,2,'VD','Thực tế: giá vé tăng thì lượng khách giảm tuyến tính — số khách N − k(x − x₀), doanh thu x·(số khách) ≥ R, giải bất phương trình bậc hai; giá vé cao nhất / thấp nhất', R=>{
+  for(let g = 0; g < 400; g++){
+    const k = R.pick([2, 4, 5, 10]), x1 = R.pick([20, 25, 30, 35, 40, 45, 50]), x2 = x1 + R.pick([10, 15, 20, 25, 30, 40]), x0 = R.pick([20, 25, 30]); if(x1 < x0) continue;
+    const N0 = k*(x1 + x2) - k*x0, R0 = k*x1*x2; if(N0 <= 0 || N0 > 1500 || R0 > 50000) continue;
+    const ask = R.pick(['max', 'min']), v = ask === 'max' ? x2 : x1, Rv = x=> x*(N0 - k*(x - x0));
+    const o = {stem:`Một nhà văn hoá bán vé xem ca nhạc với giá $${x0}$ nghìn đồng thì có $${N0}$ khán giả. Khảo sát cho thấy cứ tăng giá vé thêm $1$ nghìn đồng thì mất $${k}$ khán giả. Gọi $x$ (nghìn đồng) là giá vé ($x \\geq ${x0}$). Để doanh thu không dưới $${R0}$ nghìn đồng, giá vé ${ask === 'max' ? 'cao nhất' : 'thấp nhất'} là bao nhiêu nghìn đồng?`, ans:v,
+      lg:`Số khán giả: $${N0} - ${k}(x - ${x0}) = ${termsT([[N0 + k*x0, ''], [-k, 'x']])}$. Doanh thu $x(${termsT([[N0 + k*x0, ''], [-k, 'x']])})$.<br>$x(${termsT([[N0 + k*x0, ''], [-k, 'x']])}) \\geq ${R0} \\Leftrightarrow ${polyT([1, -(x1 + x2), x1*x2])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$ (thoả $x \\geq ${x0}$).<br>Giá vé ${ask === 'max' ? 'cao nhất' : 'thấp nhất'} là $${v}$ nghìn đồng.`,
+      verify:()=> Rv(o.ans) >= R0 && (ask === 'max' ? Rv(o.ans + 0.5) < R0 : Rv(o.ans - 0.5) < R0)};
+    return o; }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.81: dạng thay số bổ sung (10-17.1 (21 dạng) và 10-17.2 (30 dạng, có 2 TL thang điểm)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-17.2 Bất phương trình bậc hai trong thực tế (10|5|2), đợt 7 (dạng 77–82: 4 TLN, 2 TL). Claude viết.
+// Chuỗi: hai tàu trong phạm vi liên lạc (bình phương khoảng cách là tam thức theo t) (77) → vận tốc ném tối thiểu để đạt độ cao H (Δ ≥ 0) (78)
+// → lợi nhuận kết hợp giá trần, đếm mức giá nguyên (79) → quỹ đạo bóng qua hàng rào (80)
+// → tự luận trọn vẹn có thang điểm: lợi nhuận theo giá bán (81), vật ném lên (82).
+const tqOk1 = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const tqC = v=> Math.round(v*1000)/1000;
+const tqHt = (v, h0)=> termsT([[-5, 't^2'], [v, 't'], [h0, '']]);
+
+/* 77. TLN VD — hai tàu trong phạm vi liên lạc */
+const tqShips = (()=>{ const L = []; for(let v1 = 5; v1 <= 30; v1++) for(let v2 = 5; v2 <= 30; v2++)
+  for(let t1 = 0.5; t1 <= 4; t1 += 0.5) for(let t2 = t1 + 0.5; t2 <= 6; t2 += 0.5){ const K = v1*v1 + v2*v2, s = K*(t1 + t2)/(2*v2), D2 = s*s - K*t1*t2; if(D2 <= 0) continue;
+    const D = Math.sqrt(D2); if(Math.abs(D*10 - Math.round(D*10)) > 1e-9 || Math.abs(s*10 - Math.round(s*10)) > 1e-9 || s > 200 || D < 5 || t2 > s/v2) continue; L.push({v1, v2, s:tqC(s), D:tqC(D), t1, t2, K}); } return L; })();
+GT(10,5,2,'VD','Thực tế: hai tàu chạy theo hai hướng vuông góc — bình phương khoảng cách d²(t) = (v₁t)² + (s − v₂t)² là tam thức bậc hai theo t; hai tàu liên lạc được khi d(t) ≤ D, giải bất phương trình bậc hai, thời gian liên lạc', R=>{
+  for(let g = 0; g < 200; g++){
+    const C = R.pick(tqShips), ask = R.pick(['dur', 'phut', 'start', 'end']), v = ask === 'dur' ? tqC(C.t2 - C.t1) : ask === 'phut' ? tqC(60*(C.t2 - C.t1)) : ask === 'start' ? C.t1 : C.t2; if(!tqOk1(v)) continue;
+    const d2 = t=> (C.v1*t)**2 + (C.s - C.v2*t)**2;
+    const o = {stem:`Lúc $7$ giờ sáng, tàu $A$ ở cảng $O$ và bắt đầu chạy về phía đông với vận tốc $${C.v1}$ km/h; cùng lúc đó tàu $B$ ở vị trí cách $O$ $${nt(C.s)}$ km về phía bắc và chạy thẳng về phía nam (hướng về $O$) với vận tốc $${C.v2}$ km/h. Hai tàu liên lạc được bằng bộ đàm khi khoảng cách giữa chúng không quá $${nt(C.D)}$ km. ${ask === 'dur' ? 'Hai tàu liên lạc được với nhau trong bao nhiêu giờ' : ask === 'phut' ? 'Hai tàu liên lạc được với nhau trong bao nhiêu phút' : ask === 'start' ? 'Sau bao nhiêu giờ kể từ $7$ giờ thì hai tàu bắt đầu liên lạc được với nhau' : 'Sau bao nhiêu giờ kể từ $7$ giờ thì hai tàu mất liên lạc với nhau'} (kết quả viết dưới dạng số thập phân nếu cần)?`, ans:v,
+      lg:`Chọn hệ trục với $O$ là gốc, $Ox$ hướng đông, $Oy$ hướng bắc. Sau $t$ giờ: $A(${C.v1}t; 0)$, $B(0; ${nt(C.s)} - ${C.v2}t)$.<br>`
+        + `$AB^2 = ${C.v1*C.v1}t^2 + (${nt(C.s)} - ${C.v2}t)^2 = ${polyT([C.K, tqC(-2*C.s*C.v2), tqC(C.s*C.s)], 't')}$.<br>$AB \\leq ${nt(C.D)} \\Leftrightarrow ${polyT([C.K, tqC(-2*C.s*C.v2), tqC(C.s*C.s - C.D*C.D)], 't')} \\leq 0 \\Leftrightarrow ${polyT([1, tqC(-(C.t1 + C.t2)), tqC(C.t1*C.t2)], 't')} \\leq 0 \\Leftrightarrow ${nt(C.t1)} \\leq t \\leq ${nt(C.t2)}$.<br>`
+        + (ask === 'dur' || ask === 'phut' ? `Thời gian liên lạc được: $${nt(C.t2)} - ${nt(C.t1)} = ${nt(tqC(C.t2 - C.t1))}$ giờ${ask === 'phut' ? `, tức $${nt(v)}$ phút` : ''}.` : ask === 'start' ? `Hai tàu bắt đầu liên lạc được sau $${nt(C.t1)}$ giờ.` : `Hai tàu mất liên lạc sau $${nt(C.t2)}$ giờ.`),
+      verify:()=>{ let lo = null, hi = null; for(let t = 0; t <= 8; t += 0.001) if(d2(t) <= C.D*C.D + 1e-6){ if(lo === null) lo = t; hi = t; } if(lo === null) return false; return Math.abs((ask === 'dur' ? hi - lo : ask === 'phut' ? 60*(hi - lo) : ask === 'start' ? lo : hi) - o.ans) < (ask === 'phut' ? 0.3 : 0.005) && C.t2 <= C.s/C.v2 + 1e-9; }};
+    if(C.t2 > C.s/C.v2 + 1e-9) continue;
+    return o; }
+  return null;
+});
+
+/* 78. TLN VD — vận tốc ném tối thiểu */
+GT(10,5,2,'VD','Thực tế: ném vật thẳng đứng lên từ độ cao h₀ với vận tốc v, h(t) = −5t² + vt + h₀ — vật đạt độ cao H khi phương trình h(t) = H có nghiệm ⇔ Δ = v² − 20(H − h₀) ≥ 0; vận tốc ban đầu nhỏ nhất', R=>{
+  for(let g = 0; g < 400; g++){
+    const v0 = R.int(8, 30), h0 = R.pick([0, 1, 1.2, 1.5, 1.6, 2]), H = tqC(h0 + v0*v0/20); if(!tqOk1(H) || H > 60) continue;
+    const reach = v=>{ for(let t = 0; t <= 10; t += 0.0005) if(-5*t*t + v*t + h0 >= H - 1e-9) return true; return false; };
+    const o = {stem:`Từ độ cao $${nt(h0)}$ m, một vật được ném thẳng đứng lên trên với vận tốc ban đầu $v$ (m/s); độ cao của vật sau $t$ giây là $h(t) = -5t^2 + vt${h0 ? ' + ' + nt(h0) : ''}$ (mét). Để vật lên tới độ cao $${nt(H)}$ m thì vận tốc ban đầu nhỏ nhất là bao nhiêu m/s?`.replace('độ cao $0$ m', 'mặt đất'), ans:v0,
+      lg:`Vật lên tới độ cao $${nt(H)}$ m khi phương trình $-5t^2 + vt${h0 ? ' + ' + nt(h0) : ''} = ${nt(H)}$ có nghiệm, tức $5t^2 - vt + ${nt(tqC(H - h0))} = 0$ có nghiệm:<br>$\\Delta = v^2 - 20\\cdot ${nt(tqC(H - h0))} \\geq 0 \\Leftrightarrow v^2 - ${nt(tqC(20*(H - h0)))} \\geq 0 \\Leftrightarrow v \\leq -${v0}$ hoặc $v \\geq ${v0}$.<br>Vì $v > 0$ nên $v \\geq ${v0}$. Vận tốc nhỏ nhất là $${v0}$ m/s.`,
+      verify:()=> reach(o.ans) && !reach(o.ans - 0.05)};
+    return o; }
+  return null;
+});
+
+/* 79. TLN VD — lợi nhuận kết hợp giá trần */
+GT(10,5,2,'VD','Thực tế: lợi nhuận (x − c)(Q − x) ≥ L kết hợp quy định giá bán không vượt quá giá trần T — giao hai điều kiện, đếm số mức giá nguyên (nghìn đồng) thoả mãn', R=>{
+  for(let g = 0; g < 400; g++){
+    const c = R.pick([20, 30, 40, 50]), D = R.pick([20, 30, 40, 50]), e = R.pick([10, 15, 20, 25]); if(e >= D) continue;
+    const Q = c + 2*D, x1 = c + D - e, x2 = c + D + e, L = (x1 - c)*(Q - x1), T = R.int(x1 + 1, x2 - 1), cnt = T - x1 + 1, P = x=> (x - c)*(Q - x);
+    const o = {stem:`Một cửa hàng nhập một loại sản phẩm với giá $${c}$ nghìn đồng; nếu bán với giá $x$ nghìn đồng ($${c} \\leq x \\leq ${Q}$) thì mỗi ngày bán được $${Q} - x$ sản phẩm. Theo quy định, giá bán không được vượt quá $${T}$ nghìn đồng. Có bao nhiêu mức giá bán là số nguyên (nghìn đồng) để lợi nhuận mỗi ngày không dưới $${L}$ nghìn đồng?`, ans:cnt,
+      lg:`$(x - ${c})(${Q} - x) \\geq ${L} \\Leftrightarrow ${polyT([1, -(c + Q), c*Q + L])} \\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$.<br>Kết hợp $x \\leq ${T}$: $${x1} \\leq x \\leq ${T}$. Số mức giá nguyên: $${T} - ${x1} + 1 = ${cnt}$.`,
+      verify:()=>{ let n = 0; for(let x = c; x <= Q; x++) if(x <= T && P(x) >= L) n++; return n === o.ans; }};
+    return o; }
+  return null;
+});
+
+/* 80. TLN VD — quỹ đạo bóng qua hàng rào */
+GT(10,5,2,'VD','Thực tế: quỹ đạo quả bóng y = −ax² + bx (mét), hàng rào cao H — bóng qua được khi y(d) ≥ H, giải bất phương trình bậc hai theo d; hàng rào đặt xa nhất (gần nhất) cách chỗ đá', R=>{
+  for(let g = 0; g < 400; g++){
+    const a = R.pick([0.02, 0.025, 0.04, 0.05, 0.1]), x1 = R.int(1, 8), x2 = R.int(x1 + 4, 30), H = tqC(a*x1*x2), b = tqC(a*(x1 + x2)); if(H < 1 || H > 3 || !tqOk1(H) || Math.abs(b*100 - Math.round(b*100)) > 1e-6) continue;
+    const ask = R.pick(['max', 'min']), v = ask === 'max' ? x2 : x1, y = x=> -a*x*x + b*x;
+    const o = {stem:`Sau một cú đá, quả bóng bay theo quỹ đạo là một phần parabol $y = -${nt(a)}x^2 + ${nt(b)}x$, trong đó $x$ (m) là khoảng cách theo phương ngang tính từ chỗ đá, $y$ (m) là độ cao của bóng. Phía trước có một hàng rào cao $${nt(H)}$ m đặt vuông góc với hướng bay của bóng. Để bóng bay qua hàng rào (độ cao của bóng tại vị trí hàng rào không thấp hơn $${nt(H)}$ m), hàng rào phải đặt cách chỗ đá ${ask === 'max' ? 'nhiều nhất' : 'ít nhất'} bao nhiêu mét?`, ans:v,
+      lg:`Hàng rào cách chỗ đá $d$ (m), cần $y(d) \\geq ${nt(H)} \\Leftrightarrow -${nt(a)}d^2 + ${nt(b)}d - ${nt(H)} \\geq 0 \\Leftrightarrow ${polyT([1, -(x1 + x2), x1*x2], 'd')} \\leq 0$ (chia hai vế cho $-${nt(a)}$) $\\Leftrightarrow ${x1} \\leq d \\leq ${x2}$.<br>Vậy hàng rào phải đặt cách chỗ đá ${ask === 'max' ? 'nhiều nhất' : 'ít nhất'} $${v}$ m.`,
+      verify:()=> y(o.ans) >= H - 1e-9 && (ask === 'max' ? y(o.ans + 0.01) < H : y(o.ans - 0.01) < H)};
+    return o; }
+  return null;
+});
+
+/* 81. TL VD — lợi nhuận theo giá bán (thang điểm 1,0) */
+GE(10,5,2,'VD','Tự luận thực tế (có thang điểm): nhập hàng giá c, bán giá x thì bán được (Q − x) sản phẩm mỗi ngày — a) lập biểu thức lợi nhuận; b) giải bất phương trình bậc hai tìm khoảng giá bán để lợi nhuận không dưới L; c) đếm mức giá nguyên thoả mãn', R=>{
+  for(let g = 0; g < 300; g++){
+    const c = R.pick([20, 25, 30, 40, 50, 60]), D = R.pick([20, 25, 30, 40, 50]), e = R.pick([5, 10, 15, 20, 25]); if(e >= D) continue;
+    const Q = c + 2*D, x1 = c + D - e, x2 = c + D + e, L = (x1 - c)*(Q - x1), P = x=> (x - c)*(Q - x), item = R.pick(['chiếc áo phông', 'hộp bánh', 'chậu hoa', 'chiếc mũ bảo hiểm']);
+    return Object.assign(s6Parts(`Một cửa hàng nhập ${item} với giá $${c}$ nghìn đồng mỗi sản phẩm. Khảo sát cho thấy nếu bán với giá $x$ nghìn đồng mỗi sản phẩm ($${c} \\leq x \\leq ${Q}$) thì mỗi ngày bán được $${Q} - x$ sản phẩm.`, [
+      {q:'Viết biểu thức $P(x)$ biểu thị lợi nhuận (nghìn đồng) mỗi ngày của cửa hàng.',
+       a:`Mỗi sản phẩm lãi $x - ${c}$ (nghìn đồng), mỗi ngày bán $${Q} - x$ sản phẩm nên $P(x) = (x - ${c})(${Q} - x) = ${polyT([-1, c + Q, -c*Q])}$. <b>(0,25 điểm)</b>`,
+       chk:()=> [c, c + 7, Q].every(x=> P(x) === -x*x + (c + Q)*x - c*Q)},
+      {q:`Cửa hàng cần đặt giá bán trong khoảng nào để lợi nhuận mỗi ngày không dưới $${L}$ nghìn đồng?`,
+       a:`$P(x) \\geq ${L} \\Leftrightarrow ${polyT([-1, c + Q, -c*Q])} \\geq ${L} \\Leftrightarrow ${polyT([1, -(c + Q), c*Q + L])} \\leq 0$. <b>(0,25 điểm)</b><br>Tam thức $${polyT([1, -(c + Q), c*Q + L])}$ có hai nghiệm $x = ${x1}$, $x = ${x2}$ và hệ số $1 > 0$ nên $\\leq 0 \\Leftrightarrow ${x1} \\leq x \\leq ${x2}$. Đối chiếu $${c} \\leq x \\leq ${Q}$: giá bán từ $${x1}$ đến $${x2}$ nghìn đồng. <b>(0,25 điểm)</b>`,
+       chk:()=>{ for(let x = c; x <= Q; x += 0.5) if((P(x) >= L) !== (x >= x1 && x <= x2)) return false; return true; }},
+      {q:'Nếu giá bán là số nguyên (nghìn đồng) thì cửa hàng có bao nhiêu cách đặt giá thoả mãn yêu cầu ở câu b?',
+       a:`Các giá nguyên từ $${x1}$ đến $${x2}$: có $${x2} - ${x1} + 1 = ${x2 - x1 + 1}$ cách. <b>(0,25 điểm)</b>`,
+       chk:()=>{ let n = 0; for(let x = c; x <= Q; x++) if(P(x) >= L) n++; return n === x2 - x1 + 1; }}]), {});
+  }
+  return null;
+});
+
+/* 82. TL VD — vật ném lên (thang điểm 1,0) */
+GE(10,5,2,'VD','Tự luận thực tế (có thang điểm): vật ném lên theo h(t) = −5t² + vt + h₀ — a) độ cao ban đầu; b) giải bất phương trình bậc hai tìm khoảng thời gian vật ở độ cao lớn hơn H; c) thời điểm vật chạm đất (loại nghiệm âm)', R=>{
+  for(let g = 0; g < 600; g++){
+    const t1 = R.pick([0.5, 1, 1.5, 2]), t2 = tqC(t1 + R.pick([0.5, 1, 1.5, 2, 2.5])), s = R.pick([0.2, 0.4, 0.5, 0.6, 0.8, 1]), tg = tqC(t1 + t2 + s);
+    const v = tqC(5*(t1 + t2)), h0 = tqC(5*tg*s), H = tqC(h0 + 5*t1*t2); if(!tqOk1(h0) || !tqOk1(H) || h0 > 25 || v > 35) continue;
+    const h = t=> -5*t*t + v*t + h0;
+    return s6Parts(`Một quả bóng được ném thẳng đứng lên trên; độ cao $h$ (mét) của quả bóng sau $t$ giây kể từ lúc ném là $h(t) = ${tqHt(v, h0)}$.`, [
+      {q:'Quả bóng được ném từ độ cao bao nhiêu mét?', a:`$h(0) = ${nt(h0)}$, quả bóng được ném từ độ cao $${nt(h0)}$ m. <b>(0,25 điểm)</b>`, chk:()=> Math.abs(h(0) - h0) < 1e-9},
+      {q:`Trong khoảng thời gian nào quả bóng ở độ cao lớn hơn $${nt(H)}$ m?`,
+       a:`$h(t) > ${nt(H)} \\Leftrightarrow ${termsT([[-5, 't^2'], [v, 't'], [tqC(h0 - H), '']])} > 0 \\Leftrightarrow ${polyT([1, tqC(-v/5), tqC(t1*t2)], 't')} < 0$. <b>(0,25 điểm)</b><br>Tam thức có hai nghiệm $t = ${nt(t1)}$, $t = ${nt(t2)}$, hệ số dương nên âm khi $${nt(t1)} < t < ${nt(t2)}$. Quả bóng ở độ cao lớn hơn $${nt(H)}$ m khi $t \\in (${nt(t1)}; ${nt(t2)})$. <b>(0,25 điểm)</b>`,
+       chk:()=>{ for(let t = 0; t <= tg; t += 0.05){ const T = tqC(t); if((h(T) > H + 1e-9) !== (T > t1 + 1e-9 && T < t2 - 1e-9)) return false; } return true; }},
+      {q:'Sau bao nhiêu giây thì quả bóng chạm đất?',
+       a:`Quả bóng chạm đất khi $h(t) = 0 \\Leftrightarrow ${polyT([1, tqC(-v/5), tqC(-h0/5)], 't')} = 0 \\Leftrightarrow t = ${nt(tg)}$ hoặc $t = ${nt(-s)}$ (loại vì $t \\geq 0$). Vậy bóng chạm đất sau $${nt(tg)}$ giây. <b>(0,25 điểm)</b>`,
+       chk:()=> Math.abs(h(tg)) < 1e-9 && h(tg - 0.01) > 0 && [...Array(100)].every((_, i)=> h(i*tg/100) > -1e-9)}]);
+  }
+  return null;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
