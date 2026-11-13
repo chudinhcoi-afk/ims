@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.75 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.76 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -212,8 +212,12 @@ const CHUYEN_DE = {
             ['Giá trị nhỏ nhất của tích vô hướng; tập hợp điểm', '30,35,36,109-125'],
             ['Ứng dụng vật lí: công của lực, hợp lực', '6,17-20,126-140'],
             ['Chứng minh vuông góc, đẳng thức độ dài bằng tích vô hướng; bất đẳng thức vectơ và cực trị hình học', '141-160', 'hsg']],
-  '10-16': [['Đồ thị hàm số bậc hai: đỉnh, trục đối xứng, đơn điệu, GTLN–GTNN, giao điểm', '1-5,10-13,18,19'],
-            ['Xác định hàm số bậc hai; ứng dụng thực tế', '6-8,14-17,20-23'],
+  '10-15': [['Khái niệm hàm số; tập xác định, tập giá trị; hàm số cho bằng bảng, công thức, nhiều công thức', '1,2,4,5,7-9,11-33'],
+            ['Đồ thị hàm số; đọc đồ thị; hàm số đồng biến, nghịch biến', '3,6,10,34-60']],
+  '10-16': [['Đồ thị hàm số bậc hai: đỉnh, trục đối xứng, nhận dạng đồ thị, giao điểm', '1,2,5,10,18,19,44-67'],
+            ['Sự biến thiên; giá trị lớn nhất, nhỏ nhất của hàm số bậc hai', '3,4,11-13,68-93'],
+            ['Xác định hàm số bậc hai', '6,14-17,94-118'],
+            ['Ứng dụng thực tế của hàm số bậc hai: quỹ đạo, cổng parabol, doanh thu, diện tích', '7,8,20-23,119-142'],
             ['Hàm số bậc hai chứa tham số: GTLN, GTNN trên đoạn phụ thuộc tham số; đồ thị hàm chứa dấu giá trị tuyệt đối', '24-43', 'hsg']],
   '11-06': [['Cấp số cộng: nhận biết, số hạng tổng quát, công sai; ba số lập cấp số cộng', '2,3,7,9-12,14,18,20,21,27,28'],
             ['Tổng n số hạng đầu của cấp số cộng; bài toán thực tế', '1,4-6,8,13,15-17,19,22-26']],
@@ -628,7 +632,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.75';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.76';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -66390,6 +66394,2753 @@ GE(10,5,2,'VDC','HSG (tự luận): bất đẳng thức Nesbitt a/(b + c) + b/(
 
 }
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.75'; GEN[k].l1 = 'V2.75'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.1 Khái niệm hàm số; tập xác định, tập giá trị; hàm số cho bằng bảng, công thức, nhiều công thức (10|5|0), đợt 1 (5 dạng TN). Claude viết.
+// Chuỗi: nhận biết tương ứng là hàm số (bẫy: y lặp lại vẫn là hàm số) → hàm nhiều công thức trong thực tế (cước taxi)
+// → tập giá trị trên một tập cho trước → tập xác định của hàm nhiều công thức → tìm m để hàm số xác định trên một khoảng/đoạn.
+const hfF = v=>{ if(!isFinite(v)) return v > 0 ? '+\\infty' : '-\\infty'; for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hfIv = I=> `${I.lc && isFinite(I.lo) ? '[' : '('}${hfF(I.lo)}; ${hfF(I.hi)}${I.rc && isFinite(I.hi) ? ']' : ')'}`;
+const hfLin = (p, q)=> termsT([[p, 'x'], [q, '']]);
+const hfPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v))){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+
+/* 1. TN NB — tương ứng nào là hàm số */
+G(10,5,0,'NB','Nhận biết tương ứng là hàm số: mỗi giá trị của x cho đúng một giá trị của y', R=>{
+  const xs = R.distinct(4, -4, 6); if(xs.length < 4) return null;
+  const isFn = P=>{ const m = {}; return P.every(([x, y])=> (m[x] === undefined || m[x] === y) && ((m[x] = y), true)); };
+  const T = P=> `$\\{${P.map(([x, y])=> ptT(x, y)).join(', ')}\\}$`;
+  // đúng: x khác nhau, có hai giá trị y bằng nhau (bẫy)
+  const yv = xs.map(()=> R.int(-5, 7)); const i0 = R.int(0, 2); yv[i0 + 1] = yv[i0];
+  const good = xs.map((x, i)=> [x, yv[i]]).sort((p, q)=> p[0] - q[0]);
+  const bad = ()=>{ const P = xs.map(x=> [x, R.int(-5, 7)]); const j = R.int(0, 3); let k = R.int(0, 3); if(k === j) k = (j + 1) % 4; P[k] = [P[j][0], P[j][1] + R.nz(-3, 3)]; return P.sort((p, q)=> p[0] - q[0] || p[1] - q[1]); };
+  const W = [bad(), bad(), bad()]; if(W.some(P=> isFn(P)) || !isFn(good)) return null;
+  const opt = P=> ({t:T(P), v:JSON.stringify(P), P});
+  const ans = opt(good), wrong = W.map(opt); if(new Set([ans, ...wrong].map(o=> o.v)).size < 4) return null;
+  const o = {stem:`Mỗi tập hợp dưới đây gồm các cặp số $(x; y)$ cho biết sự tương ứng giữa $x$ và $y$. Trường hợp nào $y$ là hàm số của $x$?`, ans, wrong,
+    lg:`$y$ là hàm số của $x$ khi mỗi giá trị của $x$ tương ứng với đúng một giá trị của $y$ (hai giá trị $x$ khác nhau có thể cho cùng một giá trị $y$).<br>`
+      + `Trong ${ans.t}, các giá trị $x$ đều khác nhau nên $y$ là hàm số của $x$ (việc $y = ${good.find((p, i)=> good.some((q, j)=> j !== i && q[1] === p[1]))[1]}$ lặp lại không ảnh hưởng).<br>`
+      + `Ở mỗi trường hợp còn lại có một giá trị $x$ tương ứng với hai giá trị $y$ khác nhau nên $y$ không là hàm số của $x$.`,
+    verify:()=> isFn(JSON.parse(o.ans.v)) && o.wrong.every(w=> !isFn(JSON.parse(w.v)))};
+  return o;
+});
+
+/* 2. TN TH — cước taxi: hàm số cho bằng nhiều công thức */
+G(10,5,0,'TH','Hàm số cho bằng nhiều công thức trong thực tế: tính cước taxi theo quãng đường', R=>{
+  const a = R.int(10, 15), b = R.int(14, 18), c = R.int(10, b - 2), far = R.rnd() < 0.5, d = far ? R.int(32, 60) : R.int(4, 29);
+  const f = x=> x <= 1 ? a : x <= 30 ? a + b*(x - 1) : a + 29*b + c*(x - 30), v = f(d);
+  const O = x=> ({t:`$${nt(x)}$ nghìn đồng`, v:x});
+  const cands = [a + b*d, b*d, a + c*(d - 1), a + 29*b + c*d, far ? a + b*(d - 1) : a + b*(d - 2), far ? a + 30*b + c*(d - 30) : b*(d - 1)].map(O);
+  const wrong = hfPick3(R, O(v), cands); if(!wrong) return null;
+  const o = {stem:`Một hãng taxi tính giá cước như sau: ki-lô-mét đầu tiên giá $${a}$ nghìn đồng; từ trên $1$ km đến $30$ km giá $${b}$ nghìn đồng mỗi ki-lô-mét; từ trên $30$ km giá $${c}$ nghìn đồng mỗi ki-lô-mét. Gọi $f(x)$ (nghìn đồng) là số tiền phải trả khi đi $x$ km. Một khách đi $${d}$ km thì phải trả bao nhiêu tiền?`,
+    ans:O(v), wrong,
+    lg:`Hàm số cho bằng nhiều công thức: $f(x) = \\begin{cases} ${a} & \\text{khi } 0 < x \\le 1 \\\\ ${a} + ${b}(x - 1) & \\text{khi } 1 < x \\le 30 \\\\ ${a} + ${b}\\cdot 29 + ${c}(x - 30) & \\text{khi } x > 30 \\end{cases}$<br>`
+      + (far ? `Vì $${d} > 30$ nên $f(${d}) = ${a} + ${b}\\cdot 29 + ${c}\\cdot ${d - 30} = ${a} + ${29*b} + ${c*(d - 30)} = ${v}$ (nghìn đồng).`
+             : `Vì $1 < ${d} \\le 30$ nên $f(${d}) = ${a} + ${b}\\cdot ${d - 1} = ${a} + ${b*(d - 1)} = ${v}$ (nghìn đồng).`),
+    verify:()=>{ let s = 0; for(let k = 1; k <= d; k++) s += k === 1 ? a : k <= 30 ? b : c; return s === o.ans.v; }};
+  return o;
+});
+
+/* 3. TN TH — tập giá trị */
+G(10,5,0,'TH','Tập giá trị của hàm số trên tập xác định hoặc trên một đoạn', R=>{
+  const kind = R.int(0, 3); let ex, stemD, f, xs, I, cands, lgs;
+  if(kind === 0){ const p = R.nz(-3, 3), q = R.int(-5, 5), a = R.int(-4, 1), b = a + R.int(2, 5); f = x=> p*x + q; const u = f(a), w = f(b), lo = Math.min(u, w), hi = Math.max(u, w);
+    ex = hfLin(p, q); stemD = `với $x \\in [${a}; ${b}]$`; xs = gridPts(a, b, 0.05); I = {lo, hi, lc:1, rc:1};
+    cands = [{lo, hi, lc:0, rc:0}, {lo, hi:Infinity, lc:1}, {lo:a, hi:b, lc:1, rc:1}, {lo:-Infinity, hi, rc:1}];
+    lgs = `Hàm số bậc nhất ${p > 0 ? 'đồng biến' : 'nghịch biến'} trên $[${a}; ${b}]$ (hệ số $${p} ${p > 0 ? '>' : '<'} 0$), $f(${a}) = ${u}$, $f(${b}) = ${w}$. Tập giá trị là $[${lo}; ${hi}]$.`; }
+  else if(kind === 1){ const a = R.int(-4, 4), c = R.int(-4, 4), n = R.int(2, 4); f = x=> c + Math.sqrt(x - a);
+    ex = `${c === 0 ? '' : c + ' + '}\\sqrt{${hfLin(1, -a)}}`; stemD = `với $x \\in [${a}; ${a + n*n}]$`; xs = gridPts(a, a + n*n, 0.05); I = {lo:c, hi:c + n, lc:1, rc:1};
+    cands = [{lo:c, hi:Infinity, lc:1}, {lo:a, hi:a + n*n, lc:1, rc:1}, {lo:c, hi:c + n, lc:0, rc:1}, {lo:c, hi:c + n*n, lc:1, rc:1}];
+    lgs = `Khi $${a} \\le x \\le ${a + n*n}$ thì $0 \\le x ${a > 0 ? '-' : '+'} ${Math.abs(a)} \\le ${n*n}$ nên $0 \\le \\sqrt{${hfLin(1, -a)}} \\le ${n}$, suy ra $${c} \\le y \\le ${c + n}$; $y = ${c}$ tại $x = ${a}$, $y = ${c + n}$ tại $x = ${a + n*n}$. Tập giá trị là $[${c}; ${c + n}]$.`; }
+  else if(kind === 2){ const a = R.nz(-5, 5), c = R.int(-5, 6); f = x=> c - Math.abs(x - a);
+    ex = `${c} - |${hfLin(1, -a)}|`; stemD = ''; xs = gridPts(a - 400, a + 400, 0.5); I = {lo:-Infinity, hi:c, rc:1};
+    cands = [{lo:c, hi:Infinity, lc:1}, {lo:-Infinity, hi:c, rc:0}, {lo:-Infinity, hi:Infinity}, {lo:-Infinity, hi:a, rc:1}];
+    lgs = `Tập xác định $D = \\mathbb{R}$. Vì $|${hfLin(1, -a)}| \\ge 0$ nên $y \\le ${c}$, dấu bằng khi $x = ${a}$; với mọi $t \\le ${c}$, chọn $x = ${a} + (${c} - t)$ thì $y = t$. Tập giá trị là $(-\\infty; ${c}]$.`; }
+  else { const r = R.int(2, 7); f = x=> Math.sqrt(r*r - x*x);
+    ex = `\\sqrt{${r*r} - x^2}`; stemD = ''; xs = gridPts(-r, r, 0.05); I = {lo:0, hi:r, lc:1, rc:1};
+    cands = [{lo:-r, hi:r, lc:1, rc:1}, {lo:0, hi:r*r, lc:1, rc:1}, {lo:0, hi:Infinity, lc:1}, {lo:0, hi:r, lc:0, rc:1}];
+    lgs = `Tập xác định $D = [-${r}; ${r}]$. Với $x \\in D$: $0 \\le ${r*r} - x^2 \\le ${r*r}$ nên $0 \\le y \\le ${r}$; $y = 0$ tại $x = \\pm ${r}$, $y = ${r}$ tại $x = 0$. Tập giá trị là $[0; ${r}]$.`; }
+  const O = J=> ({t:`$${hfIv(J)}$`, v:hfIv(J)});
+  const wrong = hfPick3(R, O(I), cands.map(O)); if(!wrong) return null;
+  const o = {stem:`Tập giá trị của hàm số $y = ${ex}$${stemD ? ' ' + stemD : ''} là`, ans:O(I), wrong, lg:lgs,
+    verify:()=>{ const ys = xs.map(f).filter(isFinite), mn = Math.min(...ys), mx = Math.max(...ys);
+      const J = {lo:mn < -100 ? -Infinity : Math.round(mn*1e6)/1e6, hi:mx > 100 ? Infinity : Math.round(mx*1e6)/1e6, lc:1, rc:1}; return O(J).v === o.ans.v; }};
+  return o;
+});
+
+/* 4. TN TH — tập xác định của hàm số cho bằng hai công thức */
+G(10,5,0,'TH','Tập xác định của hàm số cho bằng hai công thức (phân thức và căn thức)', R=>{
+  const b = R.int(-3, 3), cIn = R.rnd() < 0.5, dIn = R.rnd() < 0.5;
+  const c = cIn ? b - R.int(1, 4) : b + R.int(0, 4), d = dIn ? b - R.int(0, 4) : b + R.int(1, 4), e = R.int(-5, 5); if(e === -c) return null;
+  const f = x=> x < b ? (x + e)/(x - c) : Math.sqrt(x - d);
+  const S = {R:{t:'\\mathbb{R}', m:x=> true}, Rc:{t:`\\mathbb{R} \\setminus \\{${c}\\}`, m:x=> x !== c}, Rd:{t:`\\mathbb{R} \\setminus \\{${d}\\}`, m:x=> x !== d},
+    gap:{t:`(-\\infty; ${b}) \\cup [${d}; +\\infty)`, m:x=> x < b || x >= d}, gapc:{t:`(-\\infty; ${b}) \\cup [${d}; +\\infty) \\setminus \\{${c}\\}`, m:x=> (x < b && x !== c) || x >= d},
+    hd:{t:`[${d}; +\\infty)`, m:x=> x >= d}, hb:{t:`[${b}; +\\infty)`, m:x=> x >= b}, Rbc:{t:`\\mathbb{R} \\setminus \\{${b}; ${c}\\}`, m:x=> x !== b && x !== c}};
+  const k = cIn ? (dIn ? 'Rc' : null) : (dIn ? 'R' : 'gap'); if(!k) return null;
+  const pool = ['R', 'Rc', 'gap', 'gapc', 'hd', 'hb', 'Rd', 'Rbc'].filter(z=> z !== k && !(z === 'Rd' && d === c) && !(z === 'Rbc' && b === c) && !((z === 'gap' || z === 'gapc') && dIn) && !(z === 'gapc' && !cIn && k === 'gap') && !(z === 'hb' && d === b) && !(z === 'hd' && d === b));
+  const O = z=> ({t:`$${S[z].t}$`, v:z}); const wrong = hfPick3(R, O(k), pool.map(O)); if(!wrong) return null;
+  const xs = gridPts(Math.min(b, c, d) - 6, Math.max(b, c, d) + 6, 0.25);
+  const o = {stem:`Tập xác định của hàm số $f(x) = \\begin{cases} \\dfrac{${hfLin(1, e)}}{${hfLin(1, -c)}} & \\text{khi } x < ${b} \\\\ \\sqrt{${hfLin(1, -d)}} & \\text{khi } x \\ge ${b} \\end{cases}$ là`, ans:O(k), wrong,
+    lg:`• Với $x < ${b}$: cần $x \\ne ${c}$; ${cIn ? `vì $${c} < ${b}$ nên loại $x = ${c}$` : `vì $${c} \\ge ${b}$ nên mọi $x < ${b}$ đều thoả mãn`}.<br>`
+      + `• Với $x \\ge ${b}$: cần $x \\ge ${d}$; ${dIn ? `vì $${d} \\le ${b}$ nên mọi $x \\ge ${b}$ đều thoả mãn` : `vì $${d} > ${b}$ nên chỉ nhận $x \\ge ${d}$, các giá trị $${b} \\le x < ${d}$ bị loại`}.<br>`
+      + `Vậy $D = ${S[k].t}$.`,
+    verify:()=> xs.every(x=> isFinite(f(x)) === S[o.ans.v].m(x)) && o.wrong.every(w=> xs.some(x=> isFinite(f(x)) !== S[w.v].m(x)))};
+  return o;
+});
+
+/* 5. TN VD — tìm m để hàm số xác định trên một khoảng / một đoạn */
+G(10,5,0,'VD','Tìm m để hàm số chứa căn thức xác định trên một khoảng hoặc một đoạn cho trước', R=>{
+  const v2 = R.rnd() < 0.5, closed = R.rnd() < 0.5, k = R.int(-4, 6), a = R.int(-3, 3), b = a + R.int(1, 5);
+  // v2 = false: y = √(x − m) + 1/√(2m + k − x), xác định khi m ≤ x < 2m + k
+  // v2 = true : y = √(m + k − x) + 1/√(x − 2m), xác định khi 2m < x ≤ m + k
+  const ok = (m, x)=> v2 ? (2*m < x && x <= m + k) : (m <= x && x < 2*m + k);
+  let I; if(!v2) I = {lo:(b - k)/2, hi:a, lc:closed ? 0 : 1, rc:1}; else I = {lo:b - k, hi:a/2, lc:1, rc:closed ? 0 : 1};
+  if(!(I.lo < I.hi)) return null; if(I.hi - I.lo > 8) return null;
+  const fmt = J=> isFinite(J.lo) && isFinite(J.hi) ? `${hfF(J.lo)} ${J.lc ? '\\le' : '<'} m ${J.rc ? '\\le' : '<'} ${hfF(J.hi)}` : isFinite(J.hi) ? `m ${J.rc ? '\\le' : '<'} ${hfF(J.hi)}` : `m ${J.lc ? '\\ge' : '>'} ${hfF(J.lo)}`;
+  const O = J=> ({t:`$${fmt(J)}$`, v:fmt(J), J});
+  const cands = [{lo:I.lo, hi:I.hi, lc:1, rc:1}, {lo:I.lo, hi:I.hi, lc:0, rc:1}, {lo:I.lo, hi:I.hi, lc:1, rc:0}, {lo:I.lo, hi:I.hi, lc:0, rc:0}, {lo:-Infinity, hi:I.hi, rc:I.rc}, {lo:I.lo, hi:Infinity, lc:I.lc}].map(O);
+  const wrong = hfPick3(R, O(I), cands); if(!wrong) return null;
+  const ex = v2 ? `\\sqrt{${termsT([[1, 'm'], [k, ''], [-1, 'x']])}} + \\dfrac{1}{\\sqrt{x - 2m}}` : `\\sqrt{x - m} + \\dfrac{1}{\\sqrt{${termsT([[2, 'm'], [k, ''], [-1, 'x']])}}}`;
+  const tap = closed ? `[${a}; ${b}]` : `(${a}; ${b})`;
+  const o = {stem:`Tìm tất cả các giá trị của tham số $m$ để hàm số $y = ${ex}$ xác định trên ${closed ? 'đoạn' : 'khoảng'} $${tap}$.`, ans:O(I), wrong,
+    lg: (v2 ? `Hàm số xác định khi $\\begin{cases} ${termsT([[1, 'm'], [k, ''], [-1, 'x']])} \\ge 0 \\\\ x - 2m > 0 \\end{cases} \\iff 2m < x \\le ${termsT([[1, 'm'], [k, '']])}$.<br>`
+             + `Hàm số xác định trên $${tap}$ khi $${tap} \\subset (2m; ${termsT([[1, 'm'], [k, '']])}]$, tức là $\\begin{cases} 2m ${closed ? '<' : '\\le'} ${a} \\\\ ${termsT([[1, 'm'], [k, '']])} \\ge ${b} \\end{cases} \\iff ${fmt(I)}$.`
+            : `Hàm số xác định khi $\\begin{cases} x - m \\ge 0 \\\\ ${termsT([[2, 'm'], [k, ''], [-1, 'x']])} > 0 \\end{cases} \\iff m \\le x < ${termsT([[2, 'm'], [k, '']])}$.<br>`
+             + `Hàm số xác định trên $${tap}$ khi $${tap} \\subset [m; ${termsT([[2, 'm'], [k, '']])})$, tức là $\\begin{cases} m \\le ${a} \\\\ ${termsT([[2, 'm'], [k, '']])} ${closed ? '>' : '\\ge'} ${b} \\end{cases} \\iff ${fmt(I)}$.`)
+      + (closed ? `<br>Lưu ý: với đoạn, đầu mút $x = ${v2 ? a : b}$ cũng phải thuộc tập xác định nên dấu bất đẳng thức là dấu chặt.` : ''),
+    verify:()=>{ const xs = closed ? gridPts(a, b, 0.125) : gridPts(a, b, 0.125).slice(1, -1).concat([a + 1e-7, b - 1e-7]);
+      const good = m=> xs.every(x=> ok(m, x)), J = o.ans.J, inJ = m=> (J.lc ? m >= J.lo - 1e-12 : m > J.lo + 1e-12) && (J.rc ? m <= J.hi + 1e-12 : m < J.hi - 1e-12);
+      return gridPts(I.lo - 3, I.hi + 3, 0.25).concat([I.lo, I.hi]).every(m=> good(m) === inJ(m)); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.1 (10|5|0), đợt 2 (3 Đ–S + 2 TLN). Claude viết.
+// Chuỗi: hàm số cho bằng bảng (tập xác định rời rạc, tập giá trị, tương ứng ngược) → hàm bậc thang tiền nước (đọc đúng bậc)
+// → tập xác định chứa tham số (khác rỗng, một điểm, độ dài, chứa một đoạn) → cước taxi ngược (biết tiền tìm quãng đường) → tiền điện 6 bậc.
+const hgF = v=>{ for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hgTab = (h1, h2, xs, ys)=> `$\\begin{array}{|c|${'c|'.repeat(xs.length)}}\\hline ${h1} & ${xs.join(' & ')} \\\\ \\hline ${h2} & ${ys.map(nt).join(' & ')} \\\\ \\hline \\end{array}$`;
+
+/* 1. ĐS TH — hàm số cho bằng bảng */
+GD(10,5,0,'TH','Hàm số cho bằng bảng: tập xác định, giá trị, tập giá trị và tương ứng ngược', R=>{
+  const s = R.pick([1, 4, 7]), xs = [0, 1, 2, 3, 4, 5].map(i=> s + i);
+  const base = s === 1 ? [16, 17, 20, 24, 27, 29] : s === 4 ? [24, 27, 29, 29, 28, 27] : [29, 29, 27, 25, 21, 18];
+  const ys = base.map(t=> t + R.int(-1, 1)); if(R.rnd() < 0.5){ const i = R.int(0, 4); ys[i + 1] = ys[i]; }
+  const dis = new Set(ys).size, inj = dis === 6, i0 = R.int(0, 5), x0 = xs[i0], v0 = ys[i0], vw = ys[i0 === 5 ? 4 : i0 + 1] !== v0 ? ys[i0 === 5 ? 4 : i0 + 1] : v0 + 1;
+  const tab = hgTab('\\text{Tháng } x', '\\text{Nhiệt độ } y \\text{ (°C)}', xs, ys);
+  const items = [
+    claim(R, `Tập xác định của hàm số là $D = \\{${xs.join('; ')}\\}$`, `Tập xác định của hàm số là $D = [${xs[0]}; ${xs[5]}]$`, ()=> xs.length === 6 && xs.every((x, i)=> x === s + i), ()=> xs.includes(s + 0.5)),
+    claimN(R, v=> `$f(${x0}) = ${v}$`, v0, nt(v0), vw, nt(vw), ()=> ys[xs.indexOf(x0)]),
+    claimN(R, v=> `Tập giá trị của hàm số có đúng $${v}$ phần tử`, dis, String(dis), inj ? 5 : 6, String(inj ? 5 : 6), ()=> new Set(ys).size),
+    claim(R, inj ? `Tương ứng mỗi giá trị $y$ trong bảng với tháng $x$ có nhiệt độ bằng $y$ cho ta $x$ là hàm số của $y$` : `Tương ứng mỗi giá trị $y$ trong bảng với tháng $x$ có nhiệt độ bằng $y$ không cho ta $x$ là hàm số của $y$`,
+             inj ? `Tương ứng mỗi giá trị $y$ trong bảng với tháng $x$ có nhiệt độ bằng $y$ không cho ta $x$ là hàm số của $y$` : `Tương ứng mỗi giá trị $y$ trong bảng với tháng $x$ có nhiệt độ bằng $y$ cho ta $x$ là hàm số của $y$`,
+             ()=> (new Set(ys).size === xs.length) === inj, ()=> (new Set(ys).size === xs.length) !== inj)];
+  const rep = inj ? '' : ys.find((y, i)=> ys.indexOf(y) !== i);
+  return {stem:`Nhiệt độ trung bình $y$ (°C) của một địa phương trong các tháng $x$ được cho trong bảng sau:<br>${tab}<br>Bảng trên xác định hàm số $y = f(x)$.`, items,
+    lg:`a) Hàm số cho bằng bảng chỉ xác định tại các giá trị $x$ có trong bảng: $D = \\{${xs.join('; ')}\\}$ (không phải cả đoạn $[${xs[0]}; ${xs[5]}]$).<br>`
+      + `b) Đọc bảng: $f(${x0}) = ${v0}$.<br>`
+      + `c) Tập giá trị gồm các giá trị khác nhau của $y$: $\\{${[...new Set(ys)].sort((p, q)=> p - q).join('; ')}\\}$, có $${dis}$ phần tử.<br>`
+      + (inj ? `d) Sáu giá trị $y$ đều khác nhau, mỗi $y$ ứng với đúng một tháng nên $x$ là hàm số của $y$.`
+             : `d) Nhiệt độ $${rep}$ °C ứng với hai tháng khác nhau nên $x$ không là hàm số của $y$.`)};
+});
+
+/* 2. ĐS TH — tiền nước bậc thang */
+GD(10,5,0,'TH','Hàm số bậc thang trong thực tế: tiền nước sinh hoạt theo lượng nước sử dụng', R=>{
+  const p1 = R.int(55, 85), p2 = p1 + R.int(8, 20), p3 = p2 + R.int(30, 60), p4 = p3 + R.int(60, 120);   // phần mười nghìn đồng / m³
+  const f10 = x=> x <= 10 ? x*p1 : x <= 20 ? 10*p1 + (x - 10)*p2 : x <= 30 ? 10*p1 + 10*p2 + (x - 20)*p3 : 10*p1 + 10*p2 + 10*p3 + (x - 30)*p4;
+  const step = x=>{ let s = 0; for(let k = 1; k <= x; k++) s += k <= 10 ? p1 : k <= 20 ? p2 : k <= 30 ? p3 : p4; return s; };
+  const u = R.int(3, 9), w = R.int(22, 29), z = R.int(12, 19), T = f10(z), e = R.int(32, 40);
+  const N = x=> nt(x/10);
+  const items = [
+    claimN(R, v=> `Hộ dùng $${u}$ m³ phải trả $${v}$ nghìn đồng`, f10(u)/10, N(f10(u)), u*p2/10, N(u*p2), ()=> step(u)/10),
+    claimN(R, v=> `Hộ dùng $${w}$ m³ phải trả $${v}$ nghìn đồng`, f10(w)/10, N(f10(w)), w*p3/10, N(w*p3), ()=> step(w)/10),
+    claimN(R, v=> `Một hộ trả $${N(T)}$ nghìn đồng thì hộ đó đã dùng $${v}$ m³ nước`, z, String(z), z + 1, String(z + 1), ()=>{ for(let x = 0; x <= 60; x++) if(step(x) === T) return x; return -1; }),
+    claimN(R, v=> `Hộ dùng $${e}$ m³ phải trả nhiều hơn hộ dùng $30$ m³ là $${v}$ nghìn đồng`, (e - 30)*p4/10, N((e - 30)*p4), (e - 30)*p3/10, N((e - 30)*p3), ()=> (step(e) - step(30))/10)];
+  const tab = `$\\begin{array}{|c|c|c|c|c|}\\hline \\text{Lượng nước (m}^3\\text{)} & 0 \\text{ – } 10 & \\text{trên } 10 \\text{ – } 20 & \\text{trên } 20 \\text{ – } 30 & \\text{trên } 30 \\\\ \\hline \\text{Giá (nghìn đồng/m}^3\\text{)} & ${N(p1)} & ${N(p2)} & ${N(p3)} & ${N(p4)} \\\\ \\hline \\end{array}$`;
+  return {stem:`Giá nước sinh hoạt (chưa tính thuế, phí) của một công ty cấp nước được tính theo bậc thang: mỗi mét khối thuộc bậc nào thì tính theo giá của bậc đó.<br>${tab}<br>Gọi $f(x)$ (nghìn đồng) là số tiền một hộ phải trả khi dùng $x$ m³ nước trong tháng.`, items,
+    lg:`$f(x) = \\begin{cases} ${N(p1)}x & \\text{khi } 0 \\le x \\le 10 \\\\ ${N(10*p1)} + ${N(p2)}(x - 10) & \\text{khi } 10 < x \\le 20 \\\\ ${N(10*p1 + 10*p2)} + ${N(p3)}(x - 20) & \\text{khi } 20 < x \\le 30 \\\\ ${N(10*p1 + 10*p2 + 10*p3)} + ${N(p4)}(x - 30) & \\text{khi } x > 30 \\end{cases}$<br>`
+      + `a) $f(${u}) = ${N(p1)}\\cdot ${u} = ${N(f10(u))}$.<br>`
+      + `b) $f(${w}) = ${N(10*p1 + 10*p2)} + ${N(p3)}\\cdot ${w - 20} = ${N(f10(w))}$ (không tính cả $${w}$ m³ theo giá $${N(p3)}$).<br>`
+      + `c) Vì $f(10) = ${N(10*p1)} < ${N(T)} \\le f(20) = ${N(10*p1 + 10*p2)}$ nên $10 < x \\le 20$: $${N(10*p1)} + ${N(p2)}(x - 10) = ${N(T)} \\iff x = ${z}$.<br>`
+      + `d) Phần vượt $30$ m³ tính theo giá bậc 4: $f(${e}) - f(30) = ${N(p4)}\\cdot ${e - 30} = ${N((e - 30)*p4)}$.`};
+});
+
+/* 3. ĐS VD — tập xác định chứa tham số */
+GD(10,5,0,'VD','Tập xác định của hàm số chứa tham số: khác rỗng, là một điểm, có độ dài cho trước, chứa một đoạn', R=>{
+  const p = R.int(-3, 3), r = R.int(-2, 5), m0 = p - r + R.int(1, 4), a = R.int(-2, 3), b = a + R.int(1, 4), L = R.int(2, 7);
+  const dom = (m, x)=> x - m - p >= 0 && 2*m + r - x >= 0, ex = `\\sqrt{${termsT([[1, 'x'], [-1, 'm'], [-p, '']])}} + \\sqrt{${termsT([[2, 'm'], [r, ''], [-1, 'x']])}}`;
+  const lo = Math.ceil((b - r)/2 - 1e-9), hi = a - p, cnt = Math.max(0, hi - lo + 1); if(cnt < 1 || cnt > 9) return null;
+  const pt = p - r, mL = L - r + p, mLw = L + r - p !== mL ? L + r - p : L + 1;
+  const A = m0 + p, B = 2*m0 + r;
+  const brute = (m, xs)=> xs.every(x=> dom(m, x)), gx = gridPts(a, b, 0.125);
+  const items = [
+    claim(R, `Khi $m = ${m0}$, tập xác định của hàm số là $[${A}; ${B}]$`, `Khi $m = ${m0}$, tập xác định của hàm số là $(${A}; ${B})$`, ()=> dom(m0, A) && dom(m0, B) && !dom(m0, A - 0.01) && !dom(m0, B + 0.01), ()=> !dom(m0, A)),
+    claimN(R, v=> `Tập xác định của hàm số có đúng một phần tử khi $m = ${v}$`, pt, nt(pt), pt === r - p ? p + r : r - p, nt(pt === r - p ? p + r : r - p), ()=>{ for(let m = -20; m <= 20; m += 0.5){ const k = gridPts(-60, 60, 0.5).filter(x=> dom(m, x)).length; if(k === 1) return m; } return NaN; }),
+    claimN(R, v=> `Có đúng $${v}$ giá trị nguyên của $m$ để hàm số xác định trên đoạn $[${a}; ${b}]$`, cnt, String(cnt), cnt + 1, String(cnt + 1), ()=>{ let c = 0; for(let m = -40; m <= 40; m++) if(brute(m, gx)) c++; return c; }),
+    claimN(R, v=> `Tập xác định của hàm số là một đoạn có độ dài bằng $${L}$ khi $m = ${v}$`, mL, nt(mL), mLw, nt(mLw), ()=>{ for(let m = -30; m <= 30; m++){ const xs = gridPts(-80, 80, 0.5).filter(x=> dom(m, x)); if(xs.length && near(xs[xs.length - 1] - xs[0], L)) return m; } return NaN; })];
+  return {stem:`Cho hàm số $y = ${ex}$ ($m$ là tham số).`, items,
+    lg:`Hàm số xác định khi $\\begin{cases} ${termsT([[1, 'x'], [-1, 'm'], [-p, '']])} \\ge 0 \\\\ ${termsT([[2, 'm'], [r, ''], [-1, 'x']])} \\ge 0 \\end{cases} \\iff ${termsT([[1, 'm'], [p, '']])} \\le x \\le ${termsT([[2, 'm'], [r, '']])}$.<br>`
+      + `a) $m = ${m0}$: $D = [${A}; ${B}]$ (cả hai đầu mút đều làm biểu thức dưới căn bằng $0$ nên thuộc $D$).<br>`
+      + `b) $D$ có đúng một phần tử khi $${termsT([[1, 'm'], [p, '']])} = ${termsT([[2, 'm'], [r, '']])} \\iff m = ${pt}$.<br>`
+      + `c) Hàm số xác định trên $[${a}; ${b}]$ khi $\\begin{cases} ${termsT([[1, 'm'], [p, '']])} \\le ${a} \\\\ ${termsT([[2, 'm'], [r, '']])} \\ge ${b} \\end{cases} \\iff ${hgF((b - r)/2)} \\le m \\le ${hi}$, có $${cnt}$ giá trị nguyên.<br>`
+      + `d) Độ dài của $D$ là $(${termsT([[2, 'm'], [r, '']])}) - ${p === 0 ? 'm' : `(${termsT([[1, 'm'], [p, '']])})`} = ${termsT([[1, 'm'], [r - p, '']])} = ${L} \\iff m = ${mL}$.`};
+});
+
+/* 4. TLN VD — cước taxi: biết số tiền, tìm quãng đường */
+GT(10,5,0,'VD','Hàm số nhiều công thức trong thực tế: biết số tiền cước taxi, tìm quãng đường đã đi', R=>{
+  const a = R.int(10, 15), b = R.int(14, 18), c = R.int(10, b - 2), far = R.rnd() < 0.5, d = (far ? R.int(64, 120) : R.int(6, 59))/2;
+  const f = x=> x <= 1 ? a : x <= 30 ? a + b*(x - 1) : a + 29*b + c*(x - 30), T = f(d); if(!Number.isInteger(T*1)) return null;
+  const o = {stem:`Một hãng taxi tính giá cước như sau: ki-lô-mét đầu tiên giá $${a}$ nghìn đồng; từ trên $1$ km đến $30$ km giá $${b}$ nghìn đồng mỗi ki-lô-mét; từ trên $30$ km giá $${c}$ nghìn đồng mỗi ki-lô-mét. Một khách trả $${nt(T)}$ nghìn đồng. Hỏi khách đó đã đi bao nhiêu ki-lô-mét?`, ans:d,
+    lg:`Gọi $x$ (km) là quãng đường, số tiền là $f(x) = \\begin{cases} ${a} & \\text{khi } 0 < x \\le 1 \\\\ ${a} + ${b}(x - 1) & \\text{khi } 1 < x \\le 30 \\\\ ${a + 29*b} + ${c}(x - 30) & \\text{khi } x > 30 \\end{cases}$<br>`
+      + `Ta có $f(30) = ${a} + ${b}\\cdot 29 = ${a + 29*b}$.<br>`
+      + (far ? `Vì $${nt(T)} > ${a + 29*b}$ nên $x > 30$: $${a + 29*b} + ${c}(x - 30) = ${nt(T)} \\iff x - 30 = ${nt(d - 30)} \\iff x = ${nt(d)}$.`
+             : `Vì $${a} < ${nt(T)} \\le ${a + 29*b}$ nên $1 < x \\le 30$: $${a} + ${b}(x - 1) = ${nt(T)} \\iff x - 1 = ${nt(d - 1)} \\iff x = ${nt(d)}$.`)
+      + `<br>Vậy khách đi $${nt(d)}$ km.`,
+    verify:()=>{ const sol = gridPts(0.5, 80, 0.5).filter(x=> near(f(x), T)); return sol.length === 1 && near(sol[0], o.ans); }};
+  return o;
+});
+
+/* 5. TLN VD — tiền điện sinh hoạt 6 bậc */
+GT(10,5,0,'VD','Hàm số nhiều công thức trong thực tế: tiền điện sinh hoạt bậc thang 6 bậc', R=>{
+  const P = R.pick([[1806, 1866, 2167, 2729, 3050, 3151], [1893, 1956, 2271, 2860, 3197, 3302], [1984, 2050, 2380, 2998, 3350, 3460]]), cut = [50, 100, 200, 300, 400];
+  const x = R.int(120, 460), cost = n=>{ let s = 0; for(let k = 1; k <= n; k++) s += P[k <= 50 ? 0 : k <= 100 ? 1 : k <= 200 ? 2 : k <= 300 ? 3 : k <= 400 ? 4 : 5]; return s; };
+  const parts = [], bounds = [0, ...cut, Infinity]; for(let i = 0; i < 6; i++){ const q = Math.min(x, bounds[i + 1]) - bounds[i]; if(q > 0) parts.push([q, P[i]]); }
+  const tot = parts.reduce((s, [q, g])=> s + q*g, 0); if(tot % 1000 === 500) return null; const v = Math.round(tot/1000); if(String(v).length > 4) return null;
+  const fmt = n=> String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,');
+  const tab = `$\\begin{array}{|c|c|c|c|c|c|c|}\\hline \\text{Bậc} & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline \\text{Mức (kWh)} & 0 \\text{ – } 50 & 51 \\text{ – } 100 & 101 \\text{ – } 200 & 201 \\text{ – } 300 & 301 \\text{ – } 400 & \\text{từ } 401 \\\\ \\hline \\text{Giá (đồng/kWh)} & ${P.map(fmt).join(' & ')} \\\\ \\hline \\end{array}$`;
+  const o = {stem:`Giá bán lẻ điện sinh hoạt (chưa gồm thuế giá trị gia tăng) được tính theo bậc thang như bảng sau:<br>${tab}<br>Tháng này một hộ gia đình dùng hết $${x}$ kWh điện. Tính số tiền điện (chưa gồm thuế) hộ đó phải trả, đơn vị nghìn đồng, làm tròn đến hàng đơn vị.`, ans:v,
+    lg:`Chia $${x}$ kWh theo các bậc: ${parts.map(([q, g])=> `$${q}\\cdot ${fmt(g)}$`).join(' + ')} $= ${fmt(tot)}$ (đồng).<br>Vậy số tiền khoảng $${v}$ nghìn đồng.`,
+    verify:()=> Math.round(cost(x)/1000) === o.ans};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.1 (10|5|0), đợt 3 (5 TLN). Claude viết.
+// Chuỗi: giá trị hàm hợp f(f(x₀)) của hàm hai công thức → số giá trị nguyên của tập giá trị → điểm hoà vốn (lãi khi L(x) > 0)
+// → thuế thu nhập luỹ tiến từng phần → đếm m để hàm số (phân thức + căn) xác định trên một khoảng.
+const hhF = v=>{ for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hhPar = v=> v < 0 ? `(${nt(v)})` : nt(v);
+
+/* 1. TLN TH — f(f(x0)) với hàm hai công thức */
+GT(10,5,0,'TH','Giá trị của hàm hợp f(f(x₀)) với hàm số cho bằng hai công thức', R=>{
+  const c = R.int(-1, 2), a1 = R.nz(-3, 3), b1 = R.int(-6, 6), a2 = R.pick([-1, 1]), b2 = R.int(-5, 5), x0 = R.int(-4, 5);
+  const f = x=> x >= c ? a1*x + b1 : a2*x*x + b2, u = f(x0), v = f(u);
+  if((x0 >= c) === (u >= c) && R.rnd() < 0.7) return null; if(Math.abs(v) > 999) return null;
+  const tail = k=> k === 0 ? '' : ` ${k < 0 ? '-' : '+'} ${Math.abs(k)}`;
+  const br = x=> x >= c ? `${x} \\ge ${c}$ nên $f(${x}) = ${a1 === 1 ? '' : a1 === -1 ? '-' : a1 + '\\cdot '}${hhPar(x)}${tail(b1)}` : `${x} < ${c}$ nên $f(${x}) = ${a2 === -1 ? '-' : ''}${hhPar(x)}^2${tail(b2)}`;
+  const o = {stem:`Cho hàm số $f(x) = \\begin{cases} ${termsT([[a1, 'x'], [b1, '']])} & \\text{khi } x \\ge ${c} \\\\ ${termsT([[a2, 'x^2'], [b2, '']])} & \\text{khi } x < ${c} \\end{cases}$. Tính $f\\big(f(${x0})\\big)$.`, ans:v,
+    lg:`Vì $${br(x0)} = ${u}$.<br>Vì $${br(u)} = ${v}$.<br>Vậy $f\\big(f(${x0})\\big) = f(${u}) = ${v}$.`,
+    verify:()=>{ const g = t=> t < c ? a2*t*t + b2 : a1*t + b1; return g(g(x0)) === o.ans; }};
+  return o;
+});
+
+/* 2. TLN TH — số giá trị nguyên của tập giá trị */
+GT(10,5,0,'TH','Số giá trị nguyên thuộc tập giá trị của hàm số chứa căn hoặc giá trị tuyệt đối trên một đoạn', R=>{
+  const kind = R.pick([0, 0, 1, 2]); let ex, dom, f, lo, hi, lg;
+  if(kind === 0){ const a = R.int(-3, 3), c = R.nz(-5, 5), k = R.int(1, 3), p = a - R.int(1, 5), q = a + R.int(1, 6), M = Math.max(a - p, q - a); f = x=> k*Math.abs(x - a) + c; lo = c; hi = c + k*M;
+    ex = `${k === 1 ? '' : k}|${termsT([[1, 'x'], [-a, '']])}| ${c < 0 ? '-' : '+'} ${Math.abs(c)}`; dom = [p, q];
+    lg = `Với $x \\in [${p}; ${q}]$: $|${termsT([[1, 'x'], [-a, '']])}|$ nhỏ nhất bằng $0$ tại $x = ${a}$, lớn nhất bằng $\\max\\{${a - p}; ${q - a}\\} = ${M}$ tại đầu mút xa $${a}$ hơn. Do đó $${c} \\le y \\le ${k === 1 ? '' : k + '\\cdot '}${M} ${c < 0 ? '-' : '+'} ${Math.abs(c)} = ${hi}$. Tập giá trị là $[${lo}; ${hi}]$.`; }
+  else if(kind === 1){ const a = R.int(-3, 4), c = R.int(-4, 8), k = R.int(2, 4), n = R.int(2, 5); f = x=> c - k*Math.sqrt(x - a); lo = c - k*n; hi = c;
+    ex = `${c} - ${k}\\sqrt{${termsT([[1, 'x'], [-a, '']])}}`; dom = [a, a + n*n];
+    lg = `Với $x \\in [${a}; ${a + n*n}]$: $0 \\le \\sqrt{${termsT([[1, 'x'], [-a, '']])}} \\le ${n}$ nên $${c} - ${k*n} \\le y \\le ${c}$. Tập giá trị là $[${lo}; ${hi}]$.`; }
+  else { const r = R.pick([3, 4, 5, 6]), c = R.int(-4, 4), k = R.pick([1, 2]), p = -R.int(0, r), q = R.int(1, r); f = x=> k*Math.sqrt(r*r - x*x) + c;
+    const m1 = Math.min(f(p), f(q)); lo = m1; hi = c + k*r; if(p === 0 && q === 0) return null;
+    ex = `${k === 1 ? '' : k}\\sqrt{${r*r} - x^2} ${c < 0 ? '-' : '+'} ${Math.abs(c)}`.replace(/ \+ 0$/, ''); dom = [p, q];
+    lg = `Với $x \\in [${p}; ${q}]$ thì $0 \\le x^2 \\le ${Math.max(p*p, q*q)}$ (nhỏ nhất tại $x = 0$, lớn nhất tại $x = ${p*p >= q*q ? p : q}$), nên $${r*r - Math.max(p*p, q*q)} \\le ${r*r} - x^2 \\le ${r*r}$, suy ra $${hhF(lo)} \\le y \\le ${hi}$.`;
+    if(!Number.isInteger(Math.sqrt(r*r - Math.max(p*p, q*q)))) return null; }
+  const v = Math.floor(hi + 1e-9) - Math.ceil(lo - 1e-9) + 1; if(v < 2 || v > 40) return null;
+  const o = {stem:`Tập giá trị của hàm số $y = ${ex}$ với $x \\in [${dom[0]}; ${dom[1]}]$ chứa bao nhiêu số nguyên?`, ans:v,
+    lg:`${lg}<br>Các số nguyên thuộc tập giá trị là $${Math.ceil(lo - 1e-9)}, ${Math.ceil(lo - 1e-9) + 1}, \\dots, ${Math.floor(hi + 1e-9)}$, có $${v}$ số.`,
+    verify:()=>{ const ys = gridPts(dom[0], dom[1], 0.001).map(f), mn = Math.min(...ys), mx = Math.max(...ys); let k = 0; for(let t = -80; t <= 80; t++) if(t >= mn - 1e-7 && t <= mx + 1e-7) k++; return k === o.ans; }};
+  return o;
+});
+
+/* 3. TLN TH — điểm hoà vốn */
+GT(10,5,0,'TH','Hàm số bậc nhất trong kinh doanh: số sản phẩm tối thiểu để có lãi (vượt điểm hoà vốn)', R=>{
+  const ctx = R.pick([{sp:'cốc trà sữa', F:[12, 30], v:[12, 18], p:[25, 35]}, {sp:'ổ bánh mì', F:[5, 12], v:[7, 11], p:[15, 22]}, {sp:'suất cơm văn phòng', F:[10, 25], v:[18, 24], p:[30, 40]}, {sp:'cốc cà phê', F:[8, 20], v:[8, 12], p:[20, 30]}]);
+  const F = R.int(...ctx.F), v = R.int(...ctx.v), p = R.int(...ctx.p), d = p - v; if(d < 6) return null;
+  const T = F*1000, x0 = Math.floor(T/d) + 1; if(String(x0).length > 4) return null; if(T % d !== 0 && R.rnd() < 0.5) return null;
+  const o = {stem:`Một cửa hàng bán ${ctx.sp} có chi phí cố định mỗi tháng (mặt bằng, điện nước, khấu hao) là $${F}$ triệu đồng; chi phí nguyên liệu cho mỗi ${ctx.sp} là $${v}$ nghìn đồng và giá bán mỗi ${ctx.sp} là $${p}$ nghìn đồng. Trong một tháng, cửa hàng phải bán ít nhất bao nhiêu ${ctx.sp} để có lãi?`, ans:x0,
+    lg:`Gọi $x$ là số ${ctx.sp} bán được trong tháng. Lợi nhuận (nghìn đồng): $L(x) = ${p}x - ${v}x - ${T} = ${d}x - ${T}$.<br>`
+      + `Có lãi khi $L(x) > 0 \\iff x > \\dfrac{${T}}{${d}}${T % d === 0 ? ` = ${T/d}` : ` \\approx ${nt(Math.round(T/d*100)/100)}`}$.<br>`
+      + (T % d === 0 ? `Khi $x = ${T/d}$ thì $L = 0$ (hoà vốn, chưa có lãi). ` : '') + `Số nguyên nhỏ nhất thoả mãn là $x = ${x0}$.`,
+    verify:()=>{ let x = 0; while(d*x - T <= 0) x++; return x === o.ans; }};
+  return o;
+});
+
+/* 4. TLN VD — thuế thu nhập luỹ tiến từng phần */
+GT(10,5,0,'VD','Hàm số nhiều công thức trong thực tế: thuế thu nhập luỹ tiến từng phần', R=>{
+  const B = [[10, 5], [30, 10], [60, 20], [100, 30], [Infinity, 35]], X = 2*R.int(6, 49);
+  let rest = X, lo = 0; const parts = []; for(const [hi, t] of B){ const q = Math.min(X, hi) - lo; if(q > 0) parts.push([q, t]); lo = hi; if(X <= hi) break; }
+  const tax10 = parts.reduce((s, [q, t])=> s + q*t, 0)/10;   // phần mười triệu
+  if(!Number.isInteger(tax10)) return null; const v = tax10/10; if(String(v).length > 4) return null;
+  const tab = `$\\begin{array}{|c|c|}\\hline \\text{Phần thu nhập tính thuế/tháng} & \\text{Thuế suất} \\\\ \\hline \\text{Đến } 10 \\text{ triệu đồng} & 5\\% \\\\ \\hline \\text{Trên } 10 \\text{ đến } 30 \\text{ triệu đồng} & 10\\% \\\\ \\hline \\text{Trên } 30 \\text{ đến } 60 \\text{ triệu đồng} & 20\\% \\\\ \\hline \\text{Trên } 60 \\text{ đến } 100 \\text{ triệu đồng} & 30\\% \\\\ \\hline \\text{Trên } 100 \\text{ triệu đồng} & 35\\% \\\\ \\hline \\end{array}$`;
+  const o = {stem:`Thuế thu nhập cá nhân được tính luỹ tiến từng phần: thu nhập tính thuế được chia thành các phần theo biểu dưới đây, mỗi phần chịu thuế suất của phần đó.<br>${tab}<br>Một người có thu nhập tính thuế $${X}$ triệu đồng trong một tháng. Số thuế người đó phải nộp trong tháng là bao nhiêu triệu đồng?`, ans:v,
+    lg:`Chia $${X}$ triệu đồng theo các phần: ${parts.map(([q, t])=> `$${q}\\cdot ${t}\\%$`).join(' + ')}<br>$= ${parts.map(([q, t])=> nt(q*t/100)).join(' + ')} = ${nt(v)}$ (triệu đồng).<br>`
+      + `Lưu ý: không lấy cả $${X}$ triệu nhân với thuế suất $${parts[parts.length - 1][1]}\\%$ của phần cao nhất.`,
+    verify:()=>{ let s = 0; for(let k = 0; k < X*10; k++){ const m = (k + 0.5)/10; s += (m <= 10 ? 5 : m <= 30 ? 10 : m <= 60 ? 20 : m <= 100 ? 30 : 35)/1000; } return near(s, o.ans, 1e-6); }};
+  return o;
+});
+
+/* 5. TLN VD — đếm m để hàm số (phân thức + căn) xác định trên một khoảng */
+GT(10,5,0,'VD','Số giá trị nguyên của m để hàm số chứa phân thức và căn thức xác định trên một khoảng', R=>{
+  const s = R.int(-3, 3), t = R.int(-2, 4), e = R.int(-5, 5), a = R.int(-3, 3), b = a + R.int(2, 6), N = R.pick([10, 15, 20]);
+  const f = (m, x)=> (x + e)/(x - 2*m + s) + Math.sqrt(x - m + t);
+  const ok = m=> m - t <= a && (2*m - s <= a || 2*m - s >= b);
+  let v = 0; const ms = []; for(let m = -N; m <= N; m++) if(ok(m)){ v++; ms.push(m); } if(v < 2 || v > 40) return null;
+  const k1 = Math.floor((a + s)/2), k2 = Math.ceil((b + s)/2), top = a + t;   // 2m − s ≤ a ⇔ m ≤ (a+s)/2; 2m − s ≥ b ⇔ m ≥ (b+s)/2
+  const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${N}; ${N}]$ để hàm số $y = \\dfrac{${termsT([[1, 'x'], [e, '']])}}{${termsT([[1, 'x'], [-2, 'm'], [s, '']])}} + \\sqrt{${termsT([[1, 'x'], [-1, 'm'], [t, '']])}}$ xác định trên khoảng $(${a}; ${b})$?`, ans:v,
+    lg:`Hàm số xác định khi $x \\ge ${termsT([[1, 'm'], [-t, '']])}$ và $x \\ne ${termsT([[2, 'm'], [-s, '']])}$.<br>`
+      + `Hàm số xác định trên $(${a}; ${b})$ khi:<br>• $(${a}; ${b}) \\subset [${termsT([[1, 'm'], [-t, '']])}; +\\infty) \\iff ${termsT([[1, 'm'], [-t, '']])} \\le ${a}${t === 0 ? '' : ` \\iff m \\le ${top}`}$;<br>`
+      + `• $${termsT([[2, 'm'], [-s, '']])} \\notin (${a}; ${b}) \\iff ${termsT([[2, 'm'], [-s, '']])} \\le ${a}$ hoặc $${termsT([[2, 'm'], [-s, '']])} \\ge ${b} \\iff m \\le ${hhF((a + s)/2)}$ hoặc $m \\ge ${hhF((b + s)/2)}$.<br>`
+      + `Kết hợp với $m$ nguyên, $m \\in [-${N}; ${N}]$: ${ms.length > 8 ? `$m \\in \\{-${N}; \\dots; ${Math.min(k1, top)}\\}$` : `$m \\in \\{${ms.filter(m=> m <= Math.min(k1, top)).join('; ')}\\}$`}`
+      + (ms.some(m=> m > k1) ? ` hoặc $m \\in \\{${ms.filter(m=> m > k1).join('; ')}\\}$` : '') + `. Có $${v}$ giá trị.`,
+    verify:()=>{ let c = 0; for(let m = -N; m <= N; m++){ const xs = gridPts(a + 0.5, b - 0.5, 0.5).concat([a + 1e-6, b - 1e-6]); if(xs.every(x=> isFinite(f(m, x)))) c++; } return c === o.ans; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.1 (10|5|0), đợt 4 (5 TLN). Claude viết.
+// Chuỗi: hàm bậc nhất trong vật lí, địa lí (biết f(x), tìm x) → phương trình f(x) = k với hàm hai công thức (đối chiếu điều kiện từng nhánh)
+// → xác định hệ số của hàm hai công thức từ hai giá trị → tổng số nguyên thuộc tập xác định (căn chứa |x|, phân thức) → tìm f(t) từ f(kx + p).
+const hiF = v=>{ for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hiOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const hiPar = v=> v < 0 ? `(${nt(v)})` : nt(v);
+const hiTail = k=> k === 0 ? '' : ` ${k < 0 ? '-' : '+'} ${nt(Math.abs(k))}`;
+
+/* 1. TLN TH — hàm số bậc nhất trong thực tế: biết giá trị hàm, tìm biến */
+GT(10,5,0,'TH','Hàm số bậc nhất trong vật lí, địa lí: biết giá trị của hàm số, tìm giá trị của biến', R=>{
+  const kind = R.int(0, 2); let stem, ans, lg, chk;
+  if(kind === 0){ const C = 5*R.int(-6, 9), F = 1.8*C + 32;
+    stem = `Nhiệt độ $F$ theo thang Fahrenheit (°F) là hàm số của nhiệt độ $C$ theo thang Celsius (°C): $F = 1{,}8C + 32$. Một nhiệt kế chỉ $${nt(F)}$ °F. Nhiệt độ đó bằng bao nhiêu độ Celsius?`;
+    ans = C; lg = `$1{,}8C + 32 = ${nt(F)} \\iff 1{,}8C = ${nt(F - 32)} \\iff C = ${C}$.<br>Vậy nhiệt độ là $${C}$ °C.`; chk = v=> near(1.8*v + 32, F); }
+  else if(kind === 1){ const h = R.int(4, 60)/2, p = 1 + h/10; if(!hiOk(p)) return null;
+    stem = `Áp suất $p$ (atm) mà một thợ lặn chịu ở độ sâu $h$ (m) dưới mặt nước biển xấp xỉ bằng $p = 1 + \\dfrac{h}{10}$. Khi đồng hồ đo áp suất chỉ $${nt(p)}$ atm thì thợ lặn đang ở độ sâu bao nhiêu mét?`;
+    ans = h; lg = `$1 + \\dfrac{h}{10} = ${nt(p)} \\iff \\dfrac{h}{10} = ${nt(p - 1)} \\iff h = ${nt(h)}$.<br>Vậy thợ lặn ở độ sâu $${nt(h)}$ m.`; chk = v=> near(1 + v/10, p); }
+  else { const T0 = R.int(24, 34), h = R.int(5, 30)/10, T = T0 - 6*h; if(!hiOk(T)) return null;
+    stem = `Càng lên cao không khí càng lạnh: trung bình cứ lên cao $1$ km thì nhiệt độ giảm $6$ °C. Nhiệt độ ở chân núi (độ cao $0$ km) là $${T0}$ °C. Gọi $T(h)$ (°C) là nhiệt độ ở độ cao $h$ (km). Ở độ cao bao nhiêu ki-lô-mét thì nhiệt độ là $${nt(T)}$ °C?`;
+    ans = h; lg = `$T(h) = ${T0} - 6h$. Giải $${T0} - 6h = ${nt(T)} \\iff 6h = ${nt(T0 - T)} \\iff h = ${nt(h)}$.<br>Vậy ở độ cao $${nt(h)}$ km.`; chk = v=> near(T0 - 6*v, T); }
+  if(!hiOk(ans)) return null;
+  const o = {stem, ans, lg, verify:()=> chk(o.ans)}; return o;
+});
+
+/* 2. TLN VD — tổng các nghiệm của f(x) = k với hàm hai công thức */
+GT(10,5,0,'VD','Phương trình f(x) = k với hàm số cho bằng hai công thức: đối chiếu điều kiện của từng nhánh, tính tổng các nghiệm', R=>{
+  const c = R.int(-2, 2), p = R.int(-5, 5), a = R.nz(-4, 4), b = R.int(-6, 6), s = R.int(1, 5), k = s*s + p;
+  const f = x=> x < c ? x*x + p : a*x + b;
+  const r1 = [-s, s].filter(x=> x < c), x2 = (k - b)/a, r2 = x2 >= c ? [x2] : [];
+  const sols = [...r1, ...r2]; if(!sols.length) return null; if(r1.length === 2 && R.rnd() < 0.5) return null; if(!r2.length && R.rnd() < 0.4) return null;
+  const v = sols.reduce((t, x)=> t + x, 0); if(!hiOk(v)) return null;
+  const o = {stem:`Cho hàm số $f(x) = \\begin{cases} ${termsT([[1, 'x^2'], [p, '']])} & \\text{khi } x < ${c} \\\\ ${termsT([[a, 'x'], [b, '']])} & \\text{khi } x \\ge ${c} \\end{cases}$. Tính tổng tất cả các nghiệm của phương trình $f(x) = ${k}$.`, ans:Math.round(v*10)/10,
+    lg:`• Với $x < ${c}$: $${termsT([[1, 'x^2'], [p, '']])} = ${k} \\iff x^2 = ${s*s} \\iff x = \\pm ${s}$; ${r1.length ? 'nhận ' + r1.map(x=> `$x = ${x}$`).join(', ') : 'cả hai giá trị đều không thoả mãn'} (điều kiện $x < ${c}$).<br>`
+      + `• Với $x \\ge ${c}$: $${termsT([[a, 'x'], [b, '']])} = ${k} \\iff x = ${hiF(x2)}$; ${r2.length ? 'thoả mãn' : `loại vì $${hiF(x2)} < ${c}$`}.<br>`
+      + `Các nghiệm: ${sols.map(x=> `$${hiF(x)}$`).join('; ')}. Tổng bằng $${hiF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=>{ const rs = []; for(let i = -4000; i <= 4000; i++){ const x = i/100; if(near(f(x), k, 1e-9)) rs.push(x); } return near(rs.reduce((t, x)=> t + x, 0), o.ans, 1e-6); }};
+  if(!sols.every(x=> Number.isInteger(x*100))) return null;
+  return o;
+});
+
+/* 3. TLN TH — xác định hệ số của hàm hai công thức */
+GT(10,5,0,'TH','Xác định hệ số của hàm số cho bằng hai công thức từ hai giá trị đã biết, rồi tính giá trị của hàm số', R=>{
+  const c = R.int(-1, 2), b = R.int(-6, 6), a = R.nz(-4, 4), u = c + R.int(1, 4), w = c - R.int(1, 4), t = c + R.int(0, 6);
+  const f = x=> x >= c ? a*x + b : x*x - b, p = f(u), q = f(w), v = f(t); if(t === u) return null; if(Math.abs(v) > 999) return null;
+  const o = {stem:`Cho hàm số $f(x) = \\begin{cases} ax + b & \\text{khi } x \\ge ${c} \\\\ x^2 - b & \\text{khi } x < ${c} \\end{cases}$ ($a, b$ là hằng số). Biết $f(${w}) = ${q}$ và $f(${u}) = ${p}$. Tính $f(${t})$.`, ans:v,
+    lg:`Vì $${w} < ${c}$ nên $f(${w}) = ${hiPar(w)}^2 - b = ${q} \\iff b = ${w*w} - ${hiPar(q)} = ${b}$.<br>`
+      + `Vì $${u} \\ge ${c}$ nên $f(${u}) = ${u}a + b = ${p} \\iff ${u}a = ${p} - ${hiPar(b)} = ${p - b} \\iff a = ${a}$.<br>`
+      + `Vì $${t} \\ge ${c}$ nên $f(${t}) = ${hiPar(a)}\\cdot ${hiPar(t)}${hiTail(b)} = ${v}$.`,
+    verify:()=>{ for(let B = -60; B <= 60; B++){ if(w*w - B !== q) continue; for(let A = -60; A <= 60; A++) if(A*u + B === p) return A*t + B === o.ans; } return false; }};
+  if(u === 0 || u === 1) return null;
+  return o;
+});
+
+/* 4. TLN VD — tổng các số nguyên thuộc tập xác định */
+GT(10,5,0,'VD','Tổng các số nguyên thuộc tập xác định của hàm số chứa căn của biểu thức có dấu giá trị tuyệt đối và phân thức', R=>{
+  const a = R.int(-3, 3), k = R.int(2, 6), d = R.int(1, 5), useB = R.rnd() < 0.5, bb = R.int(-6, 6);
+  const f = x=> Math.sqrt(k - Math.abs(x - a)) + (useB ? 1/(x - bb) : 1/(x*x - d*d));
+  const ins = []; for(let x = a - k; x <= a + k; x++) ins.push(x);
+  const ex = useB ? [bb] : [d, -d]; const out = ins.filter(x=> !ex.includes(x)); const v = out.reduce((s, x)=> s + x, 0);
+  if(ex.filter(e=> ins.includes(e)).length === 0 && R.rnd() < 0.7) return null; if(String(v).length > 4) return null;
+  const dk = useB ? `x \\ne ${bb}` : `x^2 \\ne ${d*d} \\iff x \\ne \\pm ${d}`;
+  const o = {stem:`Tính tổng tất cả các số nguyên thuộc tập xác định của hàm số $y = \\sqrt{${k} - |${termsT([[1, 'x'], [-a, '']])}|} + \\dfrac{1}{${useB ? termsT([[1, 'x'], [-bb, '']]) : `x^2 - ${d*d}`}}$.`, ans:v,
+    lg:`Điều kiện: $${k} - |${termsT([[1, 'x'], [-a, '']])}| \\ge 0 \\iff |${termsT([[1, 'x'], [-a, '']])}| \\le ${k} \\iff ${a - k} \\le x \\le ${a + k}$ và $${dk}$.<br>`
+      + `Các số nguyên từ $${a - k}$ đến $${a + k}$ có tổng $${2*k + 1}\\cdot ${hiPar(a)} = ${(2*k + 1)*a}$ (ghép cặp đối xứng qua $${a}$).<br>`
+      + (ex.some(e=> ins.includes(e)) ? `Bỏ ${ex.filter(e=> ins.includes(e)).map(e=> `$${e}$`).join(' và ')} (không thuộc tập xác định): tổng còn $${v}$.` : `Các giá trị bị loại ${ex.map(e=> `$${e}$`).join(', ')} không nằm trong đoạn trên nên tổng là $${v}$.`),
+    verify:()=>{ let s = 0; for(let x = -40; x <= 40; x++) if(isFinite(f(x))) s += x; return s === o.ans; }};
+  return o;
+});
+
+/* 5. TLN TH — tìm f(t) khi biết f(kx + p) */
+GT(10,5,0,'TH','Tính giá trị của hàm số khi biết biểu thức của f(kx + p) theo x (đặt ẩn phụ)', R=>{
+  const quad = R.rnd() < 0.4, t0 = R.int(-5, 6);
+  if(!quad){ const k = R.pick([2, 3, -1, -2]), p = R.int(-4, 4), q = R.nz(-6, 6), r = R.int(-7, 7);
+    const x0 = (t0 - p)/k, v = q*x0 + r; if(!hiOk(v) || !hiOk(x0)) return null;
+    const inner = termsT([[k, 'x'], [p, '']]);
+    const o = {stem:`Cho hàm số $f(x)$ thoả mãn $f(${inner}) = ${termsT([[q, 'x'], [r, '']])}$ với mọi số thực $x$. Tính $f(${t0})$.`, ans:Math.round(v*10)/10,
+      lg:`Cần chọn $x$ sao cho $${inner} = ${t0} \\iff x = ${hiF(x0)}$.<br>Khi đó $f(${t0}) = ${q}\\cdot ${x0 < 0 ? `\\left(${hiF(x0)}\\right)` : hiF(x0)}${hiTail(r)} = ${hiF(v)}$.`
+        + `<br>(Cách khác: đặt $t = ${inner}$ thì $x = \\dfrac{t ${p < 0 ? '+' : '-'} ${Math.abs(p)}}{${k}}$, suy ra $f(t)$ rồi thay $t = ${t0}$.)`.replace(/t \+ 0|t - 0/, 't'),
+      verify:()=>{ for(let i = -2000; i <= 2000; i++){ const x = i/20; if(k*x + p === t0) return near(q*x + r, o.ans); } return false; }};
+    return o; }
+  const h = R.nz(-3, 3), B = R.int(-5, 5), C = R.int(-6, 6), x0 = t0 - h, v = x0*x0 + B*x0 + C; if(Math.abs(v) > 999) return null;
+  const o = {stem:`Cho hàm số $f(x)$ thoả mãn $f(${termsT([[1, 'x'], [h, '']])}) = ${termsT([[1, 'x^2'], [B, 'x'], [C, '']])}$ với mọi số thực $x$. Tính $f(${t0})$.`, ans:v,
+    lg:`Chọn $x$ sao cho $${termsT([[1, 'x'], [h, '']])} = ${t0} \\iff x = ${x0}$.<br>Khi đó $f(${t0}) = ${hiPar(x0)}^2${B === 0 ? '' : ` ${B < 0 ? '-' : '+'} ${Math.abs(B) === 1 ? '' : Math.abs(B) + '\\cdot '}${hiPar(x0)}`}${hiTail(C)} = ${v}$.`,
+    verify:()=>{ for(let x = -40; x <= 40; x++) if(x + h === t0) return x*x + B*x + C === o.ans; return false; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.1 (10|5|0), đợt 5 (3 TLN). Claude viết.
+// Chuỗi: tìm f từ hệ thức a·f(x) + b·f(−x) (thay x bởi −x, giải hệ) → hàm bậc thang cước bưu kiện (phần lẻ làm tròn lên)
+// → tổng giá trị của hàm số có tính chất "triệt tiêu liên tiếp" (trục căn thức ở mẫu).
+const hjF = v=>{ for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hjOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const hjPar = v=> v < 0 ? `(${nt(v)})` : nt(v);
+
+/* 1. TLN VD — a·f(x) + b·f(−x) = px + q */
+GT(10,5,0,'VD','Tìm hàm số f từ hệ thức a·f(x) + b·f(−x) = px + q (thay x bởi −x rồi giải hệ), tính giá trị của f', R=>{
+  const [a, b] = R.pick([[2, 1], [3, 1], [1, 2], [3, 2], [2, -1], [3, -1], [1, 3], [4, 1]]), p = R.nz(-9, 9), q = R.int(-9, 9), t = R.nz(-5, 5);
+  const A = p/(a - b), B = q/(a + b), v = A*t + B; if(!hjOk(v) || !hjOk(A) && !Number.isInteger(A*(a - b))) return null;
+  const fa = k=> k === 1 ? '' : k === -1 ? '-' : String(k);
+  const L = `${fa(a)}f(x) ${b < 0 ? '-' : '+'} ${fa(Math.abs(b))}f(-x)`, L2 = `${b < 0 ? '-' : ''}${fa(Math.abs(b))}f(x) + ${fa(a)}f(-x)`;
+  const fT = `${A < 0 ? '-' : ''}${Math.abs(A) === 1 ? '' : hjF(Math.abs(A))}x${B === 0 ? '' : ` ${B < 0 ? '-' : '+'} ${hjF(Math.abs(B))}`}`;
+  const o = {stem:`Cho hàm số $f(x)$ xác định trên $\\mathbb{R}$ thoả mãn $${L} = ${termsT([[p, 'x'], [q, '']])}$ với mọi $x \\in \\mathbb{R}$. Tính $f(${t})$.`, ans:Math.round(v*10)/10,
+    lg:`Thay $x$ bởi $-x$ ta được $${L2} = ${termsT([[-p, 'x'], [q, '']])}$. Ta có hệ<br>`
+      + `$\\begin{cases} ${L} = ${termsT([[p, 'x'], [q, '']])} \\\\ ${L2} = ${termsT([[-p, 'x'], [q, '']])} \\end{cases}$<br>`
+      + `Nhân phương trình đầu với $${a}$, phương trình sau với $${hjPar(b)}$ rồi trừ vế theo vế (khử $f(-x)$):<br>$${a*a - b*b}f(x) = ${termsT([[(a + b)*p, 'x'], [(a - b)*q, '']])} \\Rightarrow f(x) = ${fT}$.<br>`
+      + `Vậy $f(${t}) = ${hjF(A)}\\cdot ${hjPar(t)}${B === 0 ? '' : ` ${B < 0 ? '-' : '+'} ${hjF(Math.abs(B))}`} = ${hjF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=>{ const r1 = p*t + q, r2 = -p*t + q, det = a*a - b*b, u = (r1*a - b*r2)/det; return near(u, o.ans, 1e-9); }};
+  return o;
+});
+
+/* 2. TLN TH — cước bưu kiện bậc thang (phần lẻ làm tròn lên) */
+GT(10,5,0,'TH','Hàm số bậc thang trong thực tế: cước gửi bưu kiện theo khối lượng, phần lẻ chưa đủ một nấc tính tròn một nấc', R=>{
+  const c0 = R.int(18, 32), c1 = R.int(5, 12), inv = R.rnd() < 0.4;
+  const cost = M=> M <= 500 ? c0 : c0 + c1*Math.ceil((M - 500)/500);
+  const head = `Một đơn vị chuyển phát tính cước gửi bưu kiện như sau: khối lượng đến $500$ g giá $${c0}$ nghìn đồng; mỗi $500$ g tiếp theo giá $${c1}$ nghìn đồng (phần lẻ chưa đủ $500$ g được tính là $500$ g).`;
+  if(!inv){ const M = 50*R.int(12, 100); if(M % 500 === 0 && R.rnd() < 0.6) return null; const n = Math.ceil((M - 500)/500), v = c0 + c1*n;
+    const o = {stem:`${head} Tính cước gửi một bưu kiện nặng $${nt(M/1000)}$ kg (đơn vị: nghìn đồng).`, ans:v,
+      lg:`$${nt(M/1000)}$ kg $= ${M}$ g. Phần vượt $500$ g là $${M - 500}$ g $= ${nt((M - 500)/500)}$ lần $500$ g${(M - 500) % 500 ? `, phần lẻ tính tròn thành $${n}$ nấc` : ` (đúng $${n}$ nấc)`}.<br>Cước: $${c0} + ${c1}\\cdot ${n} = ${v}$ (nghìn đồng).`,
+      verify:()=> cost(M) === o.ans};
+    return o; }
+  const T = R.int(60, 160); const n = Math.floor((T - c0)/c1); if(n < 1) return null; const Mmax = 500 + 500*n; if(String(Mmax).length > 4) return null;
+  const o = {stem:`${head} Với số tiền $${T}$ nghìn đồng, có thể gửi một bưu kiện nặng tối đa bao nhiêu gam?`, ans:Mmax,
+    lg:`Gọi $n$ là số nấc $500$ g tính thêm sau $500$ g đầu. Cần $${c0} + ${c1}n \\le ${T} \\iff n \\le ${hjF((T - c0)/c1)}$, nên $n$ lớn nhất là $${n}$.<br>Khối lượng tối đa: $500 + 500\\cdot ${n} = ${Mmax}$ (g).`,
+    verify:()=>{ let best = 0; for(let M = 1; M <= 20000; M++) if(cost(M) <= T) best = M; return best === o.ans; }};
+  return o;
+});
+
+/* 3. TLN VD — tổng giá trị triệt tiêu liên tiếp */
+GT(10,5,0,'VD','Tổng các giá trị f(a) + f(a + d) + … của hàm số f(x) = 1/(√x + √(x + d)): trục căn thức ở mẫu, các số hạng triệt tiêu liên tiếp', R=>{
+  const d = R.int(1, 4), s = R.int(1, 4), t = s + R.int(2, 14); if((t*t - s*s) % d) return null; const n = (t*t - s*s)/d; if(n < 4 || n > 120) return null;
+  const v = (t - s)/d; if(!hjOk(v)) return null; const a = s*s, Lx = a + (n - 1)*d;
+  const den = d === 1 ? '' : `{${d}}`;
+  const o = {stem:`Cho hàm số $f(x) = \\dfrac{1}{\\sqrt{x} + \\sqrt{x + ${d}}}$ với $x \\ge 0$. Tính $S = f(${a}) + f(${a + d}) + f(${a + 2*d}) + \\dots + f(${Lx})$.`, ans:Math.round(v*10)/10,
+    lg:`Trục căn thức ở mẫu: $f(x) = \\dfrac{\\sqrt{x + ${d}} - \\sqrt{x}}{(x + ${d}) - x} = ${d === 1 ? '' : `\\dfrac{1}{${d}}\\left(`}\\sqrt{x + ${d}} - \\sqrt{x}${d === 1 ? '' : '\\right)'}$.<br>`
+      + `Do đó $${d === 1 ? '' : d}S = (\\sqrt{${a + d}} - \\sqrt{${a}}) + (\\sqrt{${a + 2*d}} - \\sqrt{${a + d}}) + \\dots + (\\sqrt{${Lx + d}} - \\sqrt{${Lx}}) = \\sqrt{${Lx + d}} - \\sqrt{${a}} = ${t} - ${s} = ${t - s}$.<br>`
+      + (d === 1 ? `Vậy $S = ${t - s}$.` : `Vậy $S = \\dfrac{${t - s}}${den} = ${hjF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(v)}$`}.`),
+    verify:()=>{ let S = 0; for(let x = a; x <= Lx + 1e-9; x += d) S += 1/(Math.sqrt(x) + Math.sqrt(x + d)); return near(S, o.ans, 1e-6); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.2 Đồ thị hàm số; đọc đồ thị; hàm số đồng biến, nghịch biến (10|5|0), đợt 6 (2 TN + 1 Đ–S + 2 TLN). Claude viết.
+// Chuỗi (đồ thị là đường gấp khúc trên một đoạn, đọc trên lưới): khoảng đồng biến (bẫy: lấy khoảng trên trục tung) → tập giá trị đọc từ đồ thị
+// → Đ–S tổng hợp (giá trị, chiều biến thiên, số nghiệm f(x) = m, GTLN) → f(f(x₀)) đọc hai lần (nội suy trên đoạn thẳng) → số giá trị m để f(x) = m có đúng 2 nghiệm.
+const hkF = v=>{ for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hkOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+// đường gấp khúc ngẫu nhiên: đỉnh nguyên, hai đoạn liền nhau đổi chiều ít nhất 2 lần, không có đoạn nằm ngang
+const hkGen = (R, nMin = 4, nMax = 5, ylo = -3, yhi = 4)=>{ for(let g = 0; g < 200; g++){ const n = R.int(nMin, nMax), xs = [R.int(-4, -2)]; for(let i = 0; i < n; i++) xs.push(xs[i] + R.int(1, 3)); if(xs[n] > 6 || xs[n] < 2) continue;
+    const ys = xs.map(()=> R.int(ylo, yhi)); let ok = true, turns = 0; for(let i = 0; i < n; i++){ if(ys[i] === ys[i + 1]) ok = false; if(i && (ys[i] - ys[i - 1])*(ys[i + 1] - ys[i]) < 0) turns++; }
+    if(!ok || turns < 2) continue; return {xs, ys}; } return null; };
+const hkVal = (G, x)=>{ const {xs, ys} = G; if(x < xs[0] - 1e-12 || x > xs[xs.length - 1] + 1e-12) return NaN; for(let i = 0; i + 1 < xs.length; i++) if(x <= xs[i + 1] + 1e-12) return ys[i] + (ys[i + 1] - ys[i])*(x - xs[i])/(xs[i + 1] - xs[i]); return NaN; };
+const hkHv = G=>{ const {xs, ys} = G, n = xs.length - 1, sl = []; for(let i = 0; i < n; i++) sl.push((ys[i + 1] - ys[i])/(xs[i + 1] - xs[i]));
+  let fs = `${ys[0]}+(${sl[0]})*(x-(${xs[0]}))`; for(let i = 1; i < n; i++){ const dd = sl[i] - sl[i - 1]; if(dd) fs += `+(${dd/2})*(abs(x-(${xs[i]}))+x-(${xs[i]}))`; }
+  fs += `+0*sqrt((x-(${xs[0]}))*((${xs[n]})-x))`;
+  return {loai:'dothi', hamSo:fs, luoi:true, ghiCucTri:false, gk:1, khung:{xmin:Math.min(-1, xs[0]) - 0.6, xmax:Math.max(1, xs[n]) + 0.6, ymin:Math.min(0, ...ys) - 0.6, ymax:Math.max(0, ...ys) + 0.6}}; };
+const hkRoots = (G, m)=>{ const {xs, ys} = G, out = []; for(let i = 0; i < xs.length; i++){ if(ys[i] === m) out.push(xs[i]); if(i + 1 < xs.length && (ys[i] - m)*(ys[i + 1] - m) < 0) out.push(xs[i] + (m - ys[i])*(xs[i + 1] - xs[i])/(ys[i + 1] - ys[i])); }
+  return [...new Set(out.map(x=> Math.round(x*1e9)/1e9))].sort((a, b)=> a - b); };
+const hkPts = G=> G.xs.map((x, i)=> `$(${x}; ${G.ys[i]})$`).join(', ');
+const hkStem = G=> `Cho hàm số $y = f(x)$ xác định trên đoạn $[${G.xs[0]}; ${G.xs[G.xs.length - 1]}]$, có đồ thị là đường gấp khúc như hình vẽ (mỗi ô lưới là $1$ đơn vị).`;
+// các khoảng đơn điệu cực đại [x_i; x_j]
+const hkRuns = G=>{ const {xs, ys} = G, runs = []; let s = 0; for(let i = 1; i < xs.length; i++){ const up = ys[i] > ys[i - 1]; if(i + 1 === xs.length || (ys[i + 1] > ys[i]) !== up){ runs.push({a:xs[s], b:xs[i], up}); s = i; } } return runs; };
+const hkMono = (G, a, b)=>{ const xs = gridPts(a, b, 0.05), v = xs.map(x=> hkVal(G, x)); let inc = true, dec = true; for(let i = 1; i < v.length; i++){ if(!(v[i] > v[i - 1])) inc = false; if(!(v[i] < v[i - 1])) dec = false; } return inc ? 1 : dec ? -1 : 0; };
+
+/* 1. TN NB — khoảng đồng biến (nghịch biến) đọc từ đồ thị */
+G(10,5,0,'NB','Đọc đồ thị: khoảng đồng biến, nghịch biến của hàm số có đồ thị là đường gấp khúc', R=>{
+  const G = hkGen(R); if(!G) return null; const up = R.rnd() < 0.5, runs = hkRuns(G), good = runs.filter(r=> r.up === up), bad = runs.filter(r=> r.up !== up); if(!good.length || !bad.length) return null;
+  const c = R.pick(good), w1 = R.pick(bad), lo = Math.min(...G.ys), hi = Math.max(...G.ys);
+  const spans = []; for(let i = 0; i + 1 < runs.length; i++) spans.push({a:runs[i].a, b:runs[i + 1].b});
+  const O = (a, b)=> ({t:`$(${a}; ${b})$`, v:`${a},${b}`, a, b});
+  const cand = [O(w1.a, w1.b), ...spans.map(s=> O(s.a, s.b)), O(hkVal(G, c.a), hkVal(G, c.b)) /* bẫy: đọc trên trục tung */, O(lo, hi)].filter(o=> o.a < o.b && !(o.a === c.a && o.b === c.b));
+  const isWrong = o=> o.a < G.xs[0] || o.b > G.xs[G.xs.length - 1] || hkMono(G, o.a, o.b) !== (up ? 1 : -1);
+  const seen = new Set([`${c.a},${c.b}`]), wrong = []; R.shuffle(cand).forEach(o=>{ if(wrong.length < 3 && !seen.has(o.v) && isWrong(o)){ seen.add(o.v); wrong.push(o); } });
+  if(wrong.length < 3) return null; const hv = hkHv(G);
+  const o = {stem:`${hkStem(G)} Hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng nào dưới đây?`, ans:O(c.a, c.b), wrong, hv,
+    lg:`Trên khoảng $(${c.a}; ${c.b})$, đồ thị đi ${up ? 'lên' : 'xuống'} từ trái sang phải (từ điểm $(${c.a}; ${hkVal(G, c.a)})$ đến điểm $(${c.b}; ${hkVal(G, c.b)})$) nên hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng đó.<br>`
+      + `Các khoảng còn lại hoặc chứa đoạn đồ thị đi ${up ? 'xuống' : 'lên'}, hoặc không nằm trong tập xác định. Lưu ý: khoảng đơn điệu đọc trên trục hoành (giá trị của $x$), không đọc trên trục tung.`,
+    verify:()=> hkMono(G, o.ans.a, o.ans.b) === (up ? 1 : -1) && o.wrong.every(w=> w.a < G.xs[0] || w.b > G.xs[G.xs.length - 1] || hkMono(G, w.a, w.b) !== (up ? 1 : -1))};
+  return o;
+});
+
+/* 2. TN TH — tập giá trị, GTLN, GTNN đọc từ đồ thị */
+G(10,5,0,'TH','Đọc đồ thị: tập giá trị của hàm số trên một đoạn con của tập xác định', R=>{
+  const G = hkGen(R); if(!G) return null; const {xs} = G, n = xs.length - 1;
+  const i = R.int(0, n - 2), j = R.int(i + 2, n), p = xs[i], q = xs[j]; const vals = gridPts(p, q, 0.01).map(x=> hkVal(G, x)), lo = Math.round(Math.min(...vals)*1e6)/1e6, hi = Math.round(Math.max(...vals)*1e6)/1e6;
+  const all = xs.map((x, k)=> G.ys[k]), Lo = Math.min(...all), Hi = Math.max(...all);
+  const O = (a, b)=> ({t:`$[${hkF(a)}; ${hkF(b)}]$`, v:`${a},${b}`, a, b});
+  const f1 = hkVal(G, p), f2 = hkVal(G, q);
+  const cand = [O(p, q), O(Math.min(f1, f2), Math.max(f1, f2)), O(Lo, Hi), O(lo, hi + 1), O(lo - 1, hi)].filter(o=> o.a < o.b);
+  const seen = new Set([`${lo},${hi}`]), wrong = []; R.shuffle(cand).forEach(o=>{ if(wrong.length < 3 && !seen.has(o.v)){ seen.add(o.v); wrong.push(o); } }); if(wrong.length < 3) return null;
+  const o = {stem:`${hkStem(G)} Tập giá trị của hàm số $y = f(x)$ khi $x$ chạy trên đoạn $[${p}; ${q}]$ là`, ans:O(lo, hi), wrong, hv:hkHv(G),
+    lg:`Xét phần đồ thị ứng với $${p} \\le x \\le ${q}$: điểm thấp nhất có tung độ $${hkF(lo)}$, điểm cao nhất có tung độ $${hkF(hi)}$, và đồ thị liền nét nên $f(x)$ nhận mọi giá trị từ $${hkF(lo)}$ đến $${hkF(hi)}$.<br>Vậy tập giá trị là $[${hkF(lo)}; ${hkF(hi)}]$ (giá trị lớn nhất $${hkF(hi)}$, giá trị nhỏ nhất $${hkF(lo)}$). Không nhầm với $[${p}; ${q}]$ là đoạn trên trục hoành.`,
+    verify:()=>{ const v = gridPts(o.ans.a - 2, o.ans.b + 2, 0.5); const ys = gridPts(p, q, 0.001).map(x=> hkVal(G, x)), mn = Math.min(...ys), mx = Math.max(...ys); return near(mn, o.ans.a, 1e-6) && near(mx, o.ans.b, 1e-6) && v.length > 0; }};
+  return o;
+});
+
+/* 3. ĐS TH — đọc đồ thị tổng hợp */
+GD(10,5,0,'TH','Đọc đồ thị đường gấp khúc: giá trị của hàm số, chiều biến thiên, số nghiệm của f(x) = m, giá trị lớn nhất', R=>{
+  const G = hkGen(R); if(!G) return null; const {xs, ys} = G, n = xs.length - 1, runs = hkRuns(G);
+  const k = R.int(0, n), xk = xs[k], yk = ys[k], yw = k < n ? ys[k + 1] : ys[k - 1];
+  const r = R.pick(runs), dirT = r.up ? 'đồng biến' : 'nghịch biến', dirF = r.up ? 'nghịch biến' : 'đồng biến';
+  const m = R.int(Math.min(...ys), Math.max(...ys)), cnt = hkRoots(G, m).length, cw = cnt + R.pick([-1, 1]) < 0 ? cnt + 1 : cnt + R.pick([-1, 1]);
+  const Mx = Math.max(...ys), Mw = Math.max(...ys.filter(y=> y !== Mx)), ylast = ys[n];
+  const items = [
+    claimN(R, v=> `$f(${xk}) = ${v}$`, yk, String(yk), yw === yk ? yk + 1 : yw, String(yw === yk ? yk + 1 : yw), ()=> hkVal(G, xk)),
+    claim(R, `Hàm số ${dirT} trên khoảng $(${r.a}; ${r.b})$`, `Hàm số ${dirF} trên khoảng $(${r.a}; ${r.b})$`, ()=> hkMono(G, r.a, r.b) === (r.up ? 1 : -1), ()=> hkMono(G, r.a, r.b) === (r.up ? -1 : 1)),
+    claimN(R, v=> `Phương trình $f(x) = ${m}$ có đúng $${v}$ nghiệm`, cnt, String(cnt), cw, String(cw), ()=>{ let c = 0; const gx = gridPts(xs[0], xs[n], 0.001); for(let i = 0; i < gx.length; i++){ const v = hkVal(G, gx[i]) - m; if(Math.abs(v) < 1e-9) c++; else if(i + 1 < gx.length){ const w = hkVal(G, gx[i + 1]) - m; if(v*w < 0 && Math.abs(w) > 1e-9) c++; } } return c; }),
+    claimN(R, v=> `Giá trị lớn nhất của hàm số trên đoạn $[${xs[0]}; ${xs[n]}]$ bằng $${v}$`, Mx, String(Mx), Mw, String(Mw), ()=> Math.max(...gridPts(xs[0], xs[n], 0.01).map(x=> hkVal(G, x))))];
+  return {stem:hkStem(G), items, hv:hkHv(G),
+    lg:`Đồ thị là đường gấp khúc nối các điểm ${hkPts(G)}.<br>a) Điểm của đồ thị có hoành độ $${xk}$ là $(${xk}; ${yk})$ nên $f(${xk}) = ${yk}$.<br>`
+      + `b) Trên $(${r.a}; ${r.b})$ đồ thị đi ${r.up ? 'lên' : 'xuống'} nên hàm số ${dirT} trên khoảng này.<br>`
+      + `c) Đường thẳng $y = ${m}$ cắt đồ thị tại $${cnt}$ điểm (hoành độ ${hkRoots(G, m).map(x=> `$${hkF(x)}$`).join('; ')}) nên phương trình có $${cnt}$ nghiệm.<br>`
+      + `d) Điểm cao nhất của đồ thị có tung độ $${Mx}$ nên giá trị lớn nhất bằng $${Mx}$.`};
+});
+
+/* 4. TLN TH — f(f(x0)) đọc từ đồ thị */
+GT(10,5,0,'TH','Đọc đồ thị đường gấp khúc hai lần: tính f(f(x₀)) (nội suy trên một đoạn thẳng)', R=>{
+  const G = hkGen(R, 4, 6, -4, 6); if(!G) return null; const {xs, ys} = G, n = xs.length - 1;
+  const cand = []; for(let x = xs[0]; x <= xs[n]; x++){ const u = hkVal(G, x); if(Number.isInteger(u) && u >= xs[0] && u <= xs[n]){ const v = hkVal(G, u); if(hkOk(v)) cand.push([x, u, v]); } }
+  if(!cand.length) return null; const [x0, u, v] = R.pick(cand); if(!xs.includes(u) && R.rnd() < 0.3) return null;
+  const seg = i=> `đoạn thẳng nối $(${xs[i]}; ${ys[i]})$ và $(${xs[i + 1]}; ${ys[i + 1]})$`, segOf = x=>{ for(let i = 0; i < n; i++) if(x >= xs[i] && x <= xs[i + 1]) return i; return n - 1; };
+  const rd = (x, y)=> xs.includes(x) ? `$f(${x}) = ${hkF(y)}$ (đỉnh của đường gấp khúc)` : `$f(${x}) = ${hkF(y)}$ (điểm trên ${seg(segOf(x))})`;
+  const o = {stem:`${hkStem(G)} Tính $f\\big(f(${x0})\\big)$.`, ans:Math.round(v*10)/10, hv:hkHv(G),
+    lg:`Đọc đồ thị: ${rd(x0, u)}.<br>Tiếp theo: ${rd(u, v)}.<br>Vậy $f\\big(f(${x0})\\big) = f(${u}) = ${hkF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=> near(hkVal(G, hkVal(G, x0)), o.ans, 1e-9)};
+  return o;
+});
+
+/* 5. TLN VD — số giá trị nguyên m để f(x) = m có đúng 2 nghiệm */
+GT(10,5,0,'VD','Đọc đồ thị: tổng các giá trị nguyên của m để phương trình f(x) = m có đúng k nghiệm phân biệt', R=>{
+  const G = hkGen(R, 4, 6); if(!G) return null; const {xs, ys} = G, k = R.pick([1, 2, 2, 3]);
+  const ms = []; for(let m = -10; m <= 10; m++) if(hkRoots(G, m).length === k) ms.push(m); if(ms.length < 2) return null; const v = ms.reduce((s, m)=> s + m, 0);
+  const o = {stem:`${hkStem(G)} Tính tổng tất cả các giá trị nguyên của tham số $m$ để phương trình $f(x) = m$ có đúng $${k}$ nghiệm phân biệt.`, ans:v, hv:hkHv(G),
+    lg:`Số nghiệm của phương trình $f(x) = m$ bằng số giao điểm của đồ thị với đường thẳng nằm ngang $y = m$.<br>`
+      + `Đồ thị nối các điểm ${hkPts(G)}. Cho đường thẳng $y = m$ dịch chuyển, chú ý các mức tung độ của các đỉnh (tại đó số giao điểm thay đổi) và hai đầu mút của đồ thị.<br>`
+      + `Với $m$ nguyên, đường thẳng $y = m$ cắt đồ thị tại đúng $${k}$ điểm khi $m \\in \\{${ms.join('; ')}\\}$. Tổng các giá trị đó bằng $${v}$.`,
+    verify:()=>{ let c = 0; for(let m = -15; m <= 15; m++){ let cnt = 0; const gx = gridPts(xs[0], xs[xs.length - 1], 0.002); for(let i = 0; i < gx.length; i++){ const a = hkVal(G, gx[i]) - m; if(Math.abs(a) < 1e-9) cnt++; else if(i + 1 < gx.length){ const b = hkVal(G, gx[i + 1]) - m; if(a*b < 0 && Math.abs(b) > 1e-9) cnt++; } } if(cnt === k) c += m; } return c === o.ans; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.2 (10|5|0), đợt 7 (5 TN). Claude viết.
+// Chuỗi: hàm bậc nhất đồng biến/nghịch biến theo tham số (kèm điều kiện cắt trục tung) → khoảng đơn điệu của y = k/(x − a) (bẫy: không đơn điệu trên ℝ \ {a})
+// → nhận biết hàm đồng biến trên (0; +∞) → dùng tính đơn điệu để so sánh f(u), f(v) → giải bất phương trình f(x) > f(x₀) nhờ tính đơn điệu.
+const hlF = v=>{ if(!isFinite(v)) return v > 0 ? '+\\infty' : '-\\infty'; for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hlPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v))){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+const hlMono = (f, a, b)=>{ const xs = []; for(let i = 1; i < 400; i++) xs.push(a + (b - a)*i/400); const v = xs.map(f); if(v.some(t=> !isFinite(t))) return 0; let inc = true, dec = true; for(let i = 1; i < v.length; i++){ if(!(v[i] > v[i - 1])) inc = false; if(!(v[i] < v[i - 1])) dec = false; } return inc ? 1 : dec ? -1 : 0; };
+
+/* 1. TN TH — hàm bậc nhất chứa tham số đồng biến / nghịch biến (kèm cắt trục tung) */
+G(10,5,0,'TH','Tìm m để hàm số bậc nhất y = (pm + q)x + rm + s đồng biến (nghịch biến) trên ℝ, có thể kèm điều kiện đồ thị cắt trục tung tại điểm có tung độ dương', R=>{
+  const p = R.nz(-3, 3), q = R.int(-6, 6), r = R.nz(-3, 3), s = R.int(-6, 6), up = R.rnd() < 0.5, both = R.rnd() < 0.5;
+  const m1 = -q/p, m2 = -s/r; if(both && Math.abs(m1 - m2) < 1e-9) return null;
+  // điều kiện 1: (pm + q) > 0 (đồng biến) / < 0 (nghịch biến); điều kiện 2: rm + s > 0
+  const c1 = m=> up ? p*m + q > 0 : p*m + q < 0, c2 = m=> r*m + s > 0;
+  const I1 = (p > 0) === up ? {lo:m1, hi:Infinity} : {lo:-Infinity, hi:m1}, I2 = r > 0 ? {lo:m2, hi:Infinity} : {lo:-Infinity, hi:m2};
+  const I = both ? {lo:Math.max(I1.lo, I2.lo), hi:Math.min(I1.hi, I2.hi)} : I1; if(!(I.lo < I.hi)) return null;
+  const fmt = J=> isFinite(J.lo) && isFinite(J.hi) ? `${hlF(J.lo)} < m < ${hlF(J.hi)}` : isFinite(J.lo) ? `m > ${hlF(J.lo)}` : `m < ${hlF(J.hi)}`;
+  const O = J=> ({t:`$${fmt(J)}$`, v:fmt(J), J});
+  const cands = [{lo:-Infinity, hi:m1}, {lo:m1, hi:Infinity}, {lo:q/p, hi:Infinity}, {lo:-Infinity, hi:q/p}, I2, {lo:I.lo, hi:Infinity}, {lo:-Infinity, hi:I.hi}].filter(J=> J.lo < J.hi && isFinite(J.lo) + isFinite(J.hi) >= 1).map(O);
+  const wrong = hlPick3(R, O(I), cands); if(!wrong) return null;
+  const A = termsT([[p, 'm'], [q, '']]), B = termsT([[r, 'm'], [s, '']]);
+  const y = `y = ${/ [+-] /.test(A) ? `(${A})` : A}x ${B.startsWith('-') ? '- ' + B.slice(1) : '+ ' + B}`;
+  const o = {stem:`Tìm tất cả các giá trị của tham số $m$ để hàm số $${y}$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$${both ? ' và đồ thị của nó cắt trục tung tại điểm có tung độ dương' : ''}.`, ans:O(I), wrong,
+    lg:`Hàm số bậc nhất $y = ax + b$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$ khi và chỉ khi $a ${up ? '>' : '<'} 0$: $${termsT([[p, 'm'], [q, '']])} ${up ? '>' : '<'} 0 \\iff ${fmt(I1)}$.`
+      + (both ? `<br>Đồ thị cắt trục tung tại điểm $(0; ${termsT([[r, 'm'], [s, '']])})$; tung độ dương khi $${termsT([[r, 'm'], [s, '']])} > 0 \\iff ${fmt(I2)}$.<br>Kết hợp: $${fmt(I)}$.` : ''),
+    verify:()=>{ const J = o.ans.J, inJ = m=> m > J.lo && m < J.hi; return gridPts(-12, 12, 1/24).every(m=> (c1(m) && (!both || c2(m))) === inJ(m)); }};
+  return o;
+});
+
+/* 2. TN TH — khoảng đơn điệu của y = k/(x − a) + c */
+G(10,5,0,'TH','Khoảng đồng biến, nghịch biến của hàm số y = k/(x − a) + c (không đơn điệu trên cả tập xác định)', R=>{
+  const a = R.int(-4, 4), k = R.nz(-6, 6), c = R.int(-4, 4), right = R.rnd() < 0.5, up = k < 0, f = x=> k/(x - a) + c;
+  const ex = `${k < 0 ? '-' : ''}\\dfrac{${Math.abs(k)}}{${termsT([[1, 'x'], [-a, '']])}}${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`}`;
+  const O = (lo, hi, t)=> ({t:t || `$(${hlF(lo)}; ${hlF(hi)})$`, v:`${lo},${hi},${t || ''}`, lo, hi});
+  const ans = right ? O(a, Infinity) : O(-Infinity, a);
+  const cands = [O(-Infinity, Infinity, '$\\mathbb{R}$'), O(a - 1, Infinity), O(-Infinity, a + 1), O(a - 2, a + 2), O(-Infinity, Infinity, `$\\mathbb{R} \\setminus \\{${a}\\}$`)];
+  const wrong = hlPick3(R, ans, cands); if(!wrong) return null;
+  const o = {stem:`Hàm số $y = ${ex}$ ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng nào dưới đây?`, ans, wrong,
+    lg:`Tập xác định $D = \\mathbb{R} \\setminus \\{${a}\\}$. Với $x_1 \\ne x_2$ cùng thuộc $(${a}; +\\infty)$ hoặc cùng thuộc $(-\\infty; ${a})$:<br>`
+      + `$\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{${-k}}{(x_1 ${a < 0 ? '+' : '-'} ${Math.abs(a)})(x_2 ${a < 0 ? '+' : '-'} ${Math.abs(a)})}$`.replace(/ [+-] 0\)/g, ')')
+      + `, mà $(x_1 ${a < 0 ? '+' : '-'} ${Math.abs(a)})(x_2 ${a < 0 ? '+' : '-'} ${Math.abs(a)}) > 0$`.replace(/ [+-] 0\)/g, ')') + ` nên tỉ số ${up ? 'dương' : 'âm'}.<br>`
+      + `Vậy hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên mỗi khoảng $(-\\infty; ${a})$ và $(${a}; +\\infty)$. Hàm số không ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R} \\setminus \\{${a}\\}$ (chẳng hạn $f(${a - 1}) = ${hlF(f(a - 1))}$ và $f(${a + 1}) = ${hlF(f(a + 1))}$), cũng không xác định trên các khoảng chứa $${a}$.`,
+    verify:()=>{ const tgt = up ? 1 : -1, ok = w=> w.t === '$\\mathbb{R}$' || w.t.includes('setminus') ? false : !(w.lo < a && w.hi > a) && hlMono(f, Math.max(w.lo, -60), Math.min(w.hi, 60)) === tgt;
+      return ok(o.ans) && o.wrong.every(w=> !ok(w)); }};
+  return o;
+});
+
+/* 3. TN TH — hàm số nào đồng biến (nghịch biến) trên (0; +∞) */
+G(10,5,0,'TH','Nhận biết hàm số đồng biến hoặc nghịch biến trên khoảng (0; +∞) trong các hàm số quen thuộc', R=>{
+  const up = R.rnd() < 0.5, a = R.int(2, 5), b = R.int(-5, 5), k = R.int(1, 6);
+  const pool = [
+    {t:`y = ${termsT([[a, 'x'], [b, '']])}`, f:x=> a*x + b}, {t:`y = ${termsT([[-a, 'x'], [b, '']])}`, f:x=> -a*x + b},
+    {t:`y = \\dfrac{${k}}{x}`, f:x=> k/x}, {t:`y = -\\dfrac{${k}}{x}`, f:x=> -k/x},
+    {t:`y = ${a === 1 ? '' : a}x^2`, f:x=> a*x*x}, {t:`y = -${a === 1 ? '' : a}x^2`, f:x=> -a*x*x},
+    {t:`y = \\sqrt{x}${b === 0 ? '' : ` ${b < 0 ? '-' : '+'} ${Math.abs(b)}`}`, f:x=> Math.sqrt(x) + b}, {t:`y = ${b} - \\sqrt{x}`, f:x=> b - Math.sqrt(x)},
+    {t:`y = |x - ${a}|`, f:x=> Math.abs(x - a)}, {t:`y = ${b === 0 ? '-' : b + ' - '}|x - ${a}|`, f:x=> b - Math.abs(x - a)}];
+  const good = pool.filter(P=> hlMono(P.f, 0, 40) === (up ? 1 : -1)), bad = pool.filter(P=> hlMono(P.f, 0, 40) !== (up ? 1 : -1));
+  const g = R.pick(good), W = R.shuffle(bad).slice(0, 3); if(W.length < 3) return null;
+  const O = P=> ({t:`$${P.t}$`, v:P.t, f:P.f});
+  const why = P=> hlMono(P.f, 0, 40) === 1 ? 'đồng biến' : hlMono(P.f, 0, 40) === -1 ? 'nghịch biến' : hlMono(P.f, 0, a) === -1 ? `nghịch biến trên $(0; ${a})$, đồng biến trên $(${a}; +\\infty)$ nên không đơn điệu` : `đồng biến trên $(0; ${a})$, nghịch biến trên $(${a}; +\\infty)$ nên không đơn điệu`;
+  const o = {stem:`Hàm số nào dưới đây ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(0; +\\infty)$?`, ans:O(g), wrong:W.map(O),
+    lg:`Xét trên $(0; +\\infty)$:<br>${[g, ...W].map(P=> `• $${P.t}$: ${why(P)} trên $(0; +\\infty)$.`).join('<br>')}<br>Vậy chọn $${g.t}$.`,
+    verify:()=> hlMono(o.ans.f, 0, 40) === (up ? 1 : -1) && o.wrong.every(w=> hlMono(w.f, 0, 40) !== (up ? 1 : -1))};
+  return o;
+});
+
+/* 4. TN VD — so sánh f(u), f(v) nhờ tính đơn điệu */
+G(10,5,0,'VD','Dùng tính đồng biến, nghịch biến để so sánh hai giá trị của hàm số tại các số gần nhau (căn thức, phân số, số thập phân)', R=>{
+  const up = R.rnd() < 0.5, pairs = [];
+  for(let g = 0; g < 40 && pairs.length < 6; g++){ const t = R.int(0, 1);
+    if(t === 0){ const n = R.pick([2, 3, 5, 6, 7, 8, 10, 11, 12, 13, 15, 17, 19, 20]), s = Math.sqrt(n), d = (Math.floor(s*10) + R.pick([0, 1]))/10; pairs.push([{t:`\\sqrt{${n}}`, v:s}, {t:nt(d), v:d}]); }
+    else { const b = R.int(3, 9), d = R.int(3, 9), a = R.int(1, 2*b), c = Math.round(a*d/b) + R.pick([-1, 1]); if(c < 1 || a*d === b*c || a % b === 0 || c % d === 0) continue; pairs.push([{t:frT(a, b), v:a/b}, {t:frT(c, d), v:c/d}]); } }
+  if(pairs.length < 4) return null;
+  // mệnh đề "f(u) < f(v)" đúng khi (u < v) === up
+  const S = ([u, v], lt)=> ({t:`$f\\left(${u.t}\\right) ${lt ? '<' : '>'} f\\left(${v.t}\\right)$`, v:`${u.t}|${v.t}|${lt}`, ok:lt === ((u.v < v.v) === up), u, w:v, lt});
+  const P = R.shuffle(pairs).slice(0, 4); if(P.some(([u, v])=> Math.abs(u.v - v.v) < 1e-9)) return null;
+  const ans = (()=>{ const [u, v] = P[0]; return S([u, v], (u.v < v.v) === up); })(), wrong = P.slice(1).map(([u, v])=> S([u, v], (u.v < v.v) !== up));
+  const ap = u=> /dfrac|sqrt/.test(u.t) ? `$${u.t} \\approx ${nt(Math.round(u.v*1000)/1000)}$` : '';
+  const cmp = (u, v)=>{ const why = [ap(u), ap(v)].filter(Boolean); return `$${u.t} ${u.v < v.v ? '<' : '>'} ${v.t}$${why.length ? ` (vì ${why.join(', ')})` : ''}`; };
+  const o = {stem:`Cho hàm số $y = f(x)$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$. Mệnh đề nào dưới đây đúng?`, ans, wrong,
+    lg:`Hàm số ${up ? 'đồng biến' : 'nghịch biến'}: $x_1 < x_2 \\Rightarrow f(x_1) ${up ? '<' : '>'} f(x_2)$.<br>${[ans, ...wrong].map(s=> `• ${cmp(s.u, s.w)} nên $f\\left(${s.u.t}\\right) ${(s.u.v < s.w.v) === up ? '<' : '>'} f\\left(${s.w.t}\\right)$.`).join('<br>')}<br>Vậy mệnh đề đúng là ${ans.t}.`,
+    verify:()=>{ const f = x=> up ? 2*x + 1 : 3 - x*x*x; const tv = s=> s.lt ? f(s.u.v) < f(s.w.v) : f(s.u.v) > f(s.w.v); return tv(o.ans) && o.wrong.every(w=> !tv(w)); }};
+  return o;
+});
+
+/* 5. TN TH — giải bất phương trình nhờ tính đơn điệu */
+G(10,5,0,'TH','Dùng tính đơn điệu giải bất phương trình f(px + q) > c khi biết f đồng biến (nghịch biến) trên ℝ và f(x₀) = c', R=>{
+  const up = R.rnd() < 0.5, x0 = R.int(-4, 5), c = R.int(-5, 5), p = R.pick([1, 1, 2, -1, 3]), q = R.int(-4, 4), gt = R.rnd() < 0.5;
+  // f(px + q) > c = f(x0) ⇔ px + q > x0 (đồng biến) / < x0 (nghịch biến)
+  const inner = termsT([[p, 'x'], [q, '']]), cmpGt = gt === up, t = (x0 - q)/p, xGt = cmpGt === (p > 0);
+  const I = xGt ? {lo:t, hi:Infinity} : {lo:-Infinity, hi:t};
+  const iv = J=> isFinite(J.lo) ? `(${hlF(J.lo)}; +\\infty)` : `(-\\infty; ${hlF(J.hi)})`;
+  const O = J=> ({t:`$${iv(J)}$`, v:iv(J), J});
+  const cands = [{lo:-Infinity, hi:t}, {lo:t, hi:Infinity}, {lo:x0, hi:Infinity}, {lo:-Infinity, hi:x0}, {lo:(x0 + q)/p, hi:Infinity}, {lo:-Infinity, hi:(x0 + q)/p}].map(O);
+  const wrong = hlPick3(R, O(I), cands); if(!wrong) return null;
+  const o = {stem:`Cho hàm số $y = f(x)$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$ và $f(${x0}) = ${c}$. Tập nghiệm của bất phương trình $f(${inner}) ${gt ? '>' : '<'} ${c}$ là`, ans:O(I), wrong,
+    lg:`Ta có $f(${inner}) ${gt ? '>' : '<'} ${c} \\iff f(${inner}) ${gt ? '>' : '<'} f(${x0})$.<br>Vì $f$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$ nên ${up ? 'giữ nguyên' : 'đổi'} chiều: $${inner} ${cmpGt ? '>' : '<'} ${x0} \\iff ${p === 1 ? '' : `${termsT([[p, 'x']])} ${cmpGt ? '>' : '<'} ${x0 - q} \\iff `}x ${xGt ? '>' : '<'} ${hlF(t)}$${p < 0 ? ' (chia cho số âm, đổi chiều)' : ''}.<br>Tập nghiệm: $${iv(I)}$.`,
+    verify:()=>{ const f = up ? (x=> 2*(x - x0) + c) : (x=> -(x - x0)*(x - x0)*(x - x0) - (x - x0) + c); const sol = x=> gt ? f(p*x + q) > c : f(p*x + q) < c, J = o.ans.J, inJ = x=> x > J.lo && x < J.hi;
+      return gridPts(-20, 20, 0.125).every(x=> Math.abs(x - t) < 1e-9 || sol(x) === inJ(x)); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.2 (10|5|0), đợt 8 (3 Đ–S + 2 TLN). Claude viết.
+// Chuỗi: đồ thị hàm bậc nhất qua hai điểm (hệ số, chiều biến thiên, giao trục, điểm thuộc) → đồ thị quãng đường – thời gian (đọc vận tốc, thời gian nghỉ)
+// → xét đơn điệu y = k/(x − a) + c bằng tỉ số (bẫy so sánh hai nhánh) → giá trị tại một điểm của hàm bậc nhất qua hai điểm → diện tích tam giác tạo bởi đồ thị và hai trục.
+const hmF = v=>{ for(let q = 1; q <= 12; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hmOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const hmPar = v=> v < 0 ? `(${nt(v)})` : nt(v);
+const hmPF = v=> v < 0 ? `\\left(${hmF(v)}\\right)` : hmF(v);
+const hmLin = (a, b)=>{ const A = a === 1 ? '' : a === -1 ? '-' : hmF(a); const s = `${A}x`; return b === 0 ? s : `${s} ${b < 0 ? '-' : '+'} ${hmF(Math.abs(b))}`; };
+
+/* 1. ĐS TH — đồ thị hàm bậc nhất qua hai điểm */
+GD(10,5,0,'TH','Hàm số bậc nhất có đồ thị đi qua hai điểm: hệ số, chiều biến thiên, giao điểm với trục hoành, điểm thuộc đồ thị', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3, 0.5, -0.5, 1.5, -1.5]), b = R.int(-5, 5), x1 = R.int(-4, 0), x2 = x1 + R.pick([2, 4]), y1 = a*x1 + b, y2 = a*x2 + b;
+  if(!Number.isInteger(y1) || !Number.isInteger(y2) || b === 0) return null;
+  const x0 = -b/a, x0w = b/a, aw = (x2 - x1)/(y2 - y1) !== a ? (x2 - x1)/(y2 - y1) : -a;
+  const x3 = R.nz(-5, 5); if(x3 === x1 || x3 === x2) return null; const y3 = a*x3 + b; if(!Number.isInteger(y3*2)) return null; const y3w = y3 + R.pick([-1, 1]);
+  const f = x=> a*x + b;
+  const items = [
+    claimN(R, v=> `Hệ số góc của đồ thị (hệ số $a$) bằng $${v}$`, a, hmF(a), aw, hmF(aw), ()=> (f(x2) - f(x1))/(x2 - x1)),
+    claim(R, `Hàm số ${a > 0 ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$`, `Hàm số ${a > 0 ? 'nghịch biến' : 'đồng biến'} trên $\\mathbb{R}$`, ()=> (f(1) > f(0)) === (a > 0), ()=> (f(1) > f(0)) !== (a > 0)),
+    claimN(R, v=> `Đồ thị cắt trục hoành tại điểm có hoành độ $${v}$`, x0, hmF(x0), x0w, hmF(x0w), ()=>{ let L = -100, H = 100; const sL = Math.sign(f(L)); for(let i = 0; i < 200; i++){ const M = (L + H)/2; if(Math.sign(f(M)) === sL) L = M; else H = M; } return (L + H)/2; }),
+    claim(R, `Điểm $M(${x3}; ${hmF(y3)})$ thuộc đồ thị`, `Điểm $M(${x3}; ${hmF(y3w)})$ thuộc đồ thị`, ()=> near(f(x3), y3), ()=> near(f(x3), y3w))];
+  if(near(aw, a) || near(x0, x0w)) return null;
+  return {stem:`Cho hàm số bậc nhất $y = f(x) = ax + b$ có đồ thị đi qua hai điểm $A(${x1}; ${y1})$ và $B(${x2}; ${y2})$.`, items,
+    lg:`Thay toạ độ $A, B$: $\\begin{cases} ${hmPar(x1)}\\cdot a + b = ${y1} \\\\ ${hmPar(x2)}\\cdot a + b = ${y2} \\end{cases} \\Rightarrow a = \\dfrac{${y2} - ${hmPar(y1)}}{${x2} - ${hmPar(x1)}} = ${hmF(a)}$, $b = ${b}$. Vậy $y = ${hmLin(a, b)}$.<br>`
+      + `a) $a = ${hmF(a)}$ (không nhầm thành $\\dfrac{x_B - x_A}{y_B - y_A}$).<br>b) $a ${a > 0 ? '>' : '<'} 0$ nên hàm số ${a > 0 ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$.<br>`
+      + `c) $y = 0 \\iff ${hmLin(a, b)} = 0 \\iff x = ${hmF(x0)}$.<br>d) $f(${x3}) = ${hmF(y3)}$ nên điểm $(${x3}; ${hmF(y3)})$ thuộc đồ thị, điểm $(${x3}; ${hmF(y3w)})$ không thuộc.`};
+});
+
+/* 2. ĐS VD — đồ thị quãng đường – thời gian */
+GD(10,5,0,'VD','Đọc đồ thị quãng đường – thời gian (đường gấp khúc): vận tốc từng chặng, thời gian nghỉ, quãng đường tại một thời điểm', R=>{
+  const t1 = R.pick([1, 1.5, 2]), v1 = R.pick([30, 36, 40, 45, 50]), r = R.pick([0.5, 1]), t2 = R.pick([1, 1.5, 2]), v2 = R.pick([30, 40, 50, 60]);
+  const s1 = v1*t1, T1 = t1 + r, T = T1 + t2, S = s1 + v2*t2; if(!Number.isInteger(s1) || !Number.isInteger(S)) return null; if(S > 220) return null;
+  const s = t=> t <= t1 ? v1*t : t <= T1 ? s1 : s1 + v2*(t - T1);
+  const tq = R.rnd() < 0.5 ? t1/2 : T1 + t2/2, sq = s(tq); if(!Number.isInteger(sq*2)) return null;
+  const fs = `(${v1})*x+(${-v1/2})*(abs(x-(${t1}))+x-(${t1}))+(${v2/2})*(abs(x-(${T1}))+x-(${T1}))+0*sqrt(x*((${T})-x))`;
+  const hv = {loai:'dothi', hamSo:fs, luoi:false, ghiCucTri:false, gk:1, diem:[t1, T1, T], khung:{xmin:-0.4, xmax:T + 0.5, ymin:-0.1*S, ymax:1.18*S}};
+  const items = [
+    claimN(R, v=> `Trong chặng đầu (từ $t = 0$ đến $t = ${nt(t1)}$), người đó đi với vận tốc $${v}$ km/h`, v1, String(v1), s1, String(s1), ()=> (s(t1) - s(0))/t1),
+    claimN(R, v=> `Người đó dừng nghỉ $${v}$ giờ`, r, nt(r), T1, nt(T1), ()=>{ let c = 0; for(let i = 0; i < T*1000; i++){ const t = (i + 0.5)/1000; if(Math.abs(s(t + 0.0005) - s(t - 0.0005)) < 1e-9) c++; } return c/1000; }),
+    claimN(R, v=> `Vận tốc ở chặng sau bằng $${v}$ km/h`, v2, String(v2), Math.round(S/T*10)/10 !== v2 ? Math.round(S/T*10)/10 : v2 + 10, nt(Math.round(S/T*10)/10 !== v2 ? Math.round(S/T*10)/10 : v2 + 10), ()=> (s(T) - s(T1))/t2),
+    claimN(R, v=> `Tại thời điểm $t = ${nt(tq)}$ giờ, người đó cách điểm xuất phát $${v}$ km`, sq, nt(sq), tq < t1 ? s1 : S, String(tq < t1 ? s1 : S), ()=> s(tq))];
+  return {stem:`Một người đi xe máy từ $A$ đến $B$. Hình vẽ là đồ thị của hàm số $s(t)$ biểu thị quãng đường $s$ (km) người đó đi được sau $t$ giờ kể từ lúc xuất phát (trục hoành biểu diễn $t$, trục tung biểu diễn $s$); đồ thị là đường gấp khúc qua các điểm $(0; 0)$, $(${nt(t1)}; ${s1})$, $(${nt(T1)}; ${s1})$, $(${nt(T)}; ${S})$.`, items, hv,
+    lg:`a) Chặng đầu đi được $${s1}$ km trong $${nt(t1)}$ giờ nên vận tốc là $${s1} : ${nt(t1)} = ${v1}$ (km/h).<br>`
+      + `b) Từ $t = ${nt(t1)}$ đến $t = ${nt(T1)}$ đồ thị nằm ngang ($s$ không đổi) nên người đó nghỉ $${nt(T1)} - ${nt(t1)} = ${nt(r)}$ giờ.<br>`
+      + `c) Chặng sau đi $${S} - ${s1} = ${S - s1}$ km trong $${nt(T)} - ${nt(T1)} = ${nt(t2)}$ giờ nên vận tốc là $${v2}$ km/h (không lấy cả quãng đường chia cả thời gian).<br>`
+      + `d) $${tq < t1 ? `s(${nt(tq)}) = ${v1}\\cdot ${nt(tq)} = ${nt(sq)}` : `s(${nt(tq)}) = ${s1} + ${v2}\\cdot (${nt(tq)} - ${nt(T1)}) = ${nt(sq)}`}$ (km).`};
+});
+
+/* 3. ĐS VD — đơn điệu của y = k/(x − a) + c bằng tỉ số */
+GD(10,5,0,'VD','Xét tính đồng biến, nghịch biến của hàm số y = k/(x − a) + c bằng tỉ số (f(x₂) − f(x₁))/(x₂ − x₁); bẫy so sánh hai giá trị ở hai nhánh', R=>{
+  const a = R.nz(-4, 4), k = R.nz(-6, 6), c = R.int(-3, 3), f = x=> k/(x - a) + c, up = k < 0;
+  const ex = `${k < 0 ? '-' : ''}\\dfrac{${Math.abs(k)}}{${termsT([[1, 'x'], [-a, '']])}}${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`}`;
+  const xa = v=> termsT([[1, v], [-a, '']]), u = a - R.int(1, 3), w = a + R.int(1, 3);
+  const bigger = f(u) < f(w);
+  const items = [
+    claim(R, `Tập xác định của hàm số là $D = \\mathbb{R} \\setminus \\{${a}\\}$`, `Tập xác định của hàm số là $D = \\mathbb{R} \\setminus \\{${-a}\\}$`, ()=> !isFinite(f(a)) && isFinite(f(-a)), ()=> !isFinite(f(-a))),
+    claim(R, `Với $x_1 \\ne x_2$ thuộc tập xác định, $\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{${-k}}{(${xa('x_1')})(${xa('x_2')})}$`, `Với $x_1 \\ne x_2$ thuộc tập xác định, $\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{${k}}{(${xa('x_1')})(${xa('x_2')})}$`,
+      ()=> [[a + 1, a + 2.5], [a - 3, a + 0.5]].every(([p, q])=> near((f(q) - f(p))/(q - p), -k/((p - a)*(q - a)))), ()=> near((f(a + 2.5) - f(a + 1))/1.5, k/(1*2.5))),
+    claim(R, `Hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(${a}; +\\infty)$`, `Hàm số ${up ? 'nghịch biến' : 'đồng biến'} trên khoảng $(${a}; +\\infty)$`, ()=> gridPts(a + 0.1, a + 20, 0.1).every((x, i, A)=> !i || (up ? f(x) > f(A[i - 1]) : f(x) < f(A[i - 1]))), ()=> gridPts(a + 0.1, a + 20, 0.1).every((x, i, A)=> !i || (up ? f(x) < f(A[i - 1]) : f(x) > f(A[i - 1])))),
+    claim(R, `$f(${u}) ${bigger ? '<' : '>'} f(${w})$`, `$f(${u}) ${bigger ? '>' : '<'} f(${w})$`, ()=> bigger ? f(u) < f(w) : f(u) > f(w), ()=> bigger ? f(u) > f(w) : f(u) < f(w))];
+  return {stem:`Cho hàm số $y = f(x) = ${ex}$.`, items,
+    lg:`a) Hàm số xác định khi $${xa('x')} \\ne 0 \\iff x \\ne ${a}$: $D = \\mathbb{R} \\setminus \\{${a}\\}$.<br>`
+      + `b) $f(x_2) - f(x_1) = ${k === 1 ? '' : k === -1 ? '-' : k}\\left(\\dfrac{1}{${xa('x_2')}} - \\dfrac{1}{${xa('x_1')}}\\right) = \\dfrac{${k === 1 ? '' : k === -1 ? '-' : k}(x_1 - x_2)}{(${xa('x_1')})(${xa('x_2')})}$ nên $\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{${-k}}{(${xa('x_1')})(${xa('x_2')})}$.<br>`
+      + `c) Với $x_1, x_2 > ${a}$: $(${xa('x_1')})(${xa('x_2')}) > 0$ nên tỉ số ${up ? 'dương' : 'âm'}, hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên $(${a}; +\\infty)$.<br>`
+      + `d) $${u}$ và $${w}$ nằm ở hai khoảng khác nhau nên không dùng được tính đơn điệu; tính trực tiếp: $f(${u}) = ${hmF(f(u))}$, $f(${w}) = ${hmF(f(w))}$, do đó $f(${u}) ${bigger ? '<' : '>'} f(${w})$.`};
+});
+
+/* 4. TLN TH — giá trị của hàm bậc nhất qua hai điểm */
+GT(10,5,0,'TH','Xác định hàm số bậc nhất có đồ thị đi qua hai điểm rồi tính giá trị của hàm số tại một điểm', R=>{
+  const a = R.pick([-3, -2, -1.5, -1, -0.5, 0.5, 1, 1.5, 2, 3, 2.5]), b = R.int(-6, 6), x1 = R.int(-5, 1), x2 = x1 + R.int(1, 5), y1 = a*x1 + b, y2 = a*x2 + b, x3 = R.int(-8, 9);
+  if(!hmOk(y1) || !hmOk(y2) || x3 === x1 || x3 === x2) return null; const v = a*x3 + b; if(!hmOk(v)) return null;
+  const o = {stem:`Đồ thị của hàm số bậc nhất $y = f(x)$ đi qua hai điểm $A(${x1}; ${nt(y1)})$ và $B(${x2}; ${nt(y2)})$. Tính $f(${x3})$.`, ans:Math.round(v*10)/10,
+    lg:`Gọi $f(x) = ax + b$. Ta có $a = \\dfrac{${nt(y2)} - ${hmPar(y1)}}{${x2} - ${hmPar(x1)}} = ${hmF(a)}$ và $b = ${nt(y1)} - ${hmPF(a)}\\cdot ${hmPar(x1)} = ${b}$.<br>Vậy $f(x) = ${hmLin(a, b)}$ và $f(${x3}) = ${hmF(a)}\\cdot ${hmPar(x3)}${b === 0 ? '' : ` ${b < 0 ? '-' : '+'} ${Math.abs(b)}`} = ${nt(v)}$.`,
+    verify:()=>{ const A = (y2 - y1)/(x2 - x1), B = y1 - A*x1; return near(A*x3 + B, o.ans); }};
+  return o;
+});
+
+/* 5. TLN VD — diện tích tam giác tạo bởi đồ thị và hai trục */
+GT(10,5,0,'VD','Diện tích tam giác tạo bởi đồ thị hàm số bậc nhất (đi qua hai điểm cho trước) và hai trục toạ độ', R=>{
+  const a = R.pick([-3, -2, -1.5, -1, -0.5, 0.5, 1, 1.5, 2, 3, 4]), b = R.nz(-8, 8), x1 = R.int(-4, 2), x2 = x1 + R.int(1, 4), y1 = a*x1 + b, y2 = a*x2 + b;
+  if(!Number.isInteger(y1) || !Number.isInteger(y2)) return null; const x0 = -b/a, S = Math.abs(b*x0)/2; if(!hmOk(S) || S < 1 || Math.abs(x0) === 1 || Math.abs(b) === 1) return null;
+  const o = {stem:`Đồ thị của hàm số bậc nhất $y = f(x)$ đi qua hai điểm $M(${x1}; ${y1})$ và $N(${x2}; ${y2})$, cắt trục hoành tại $A$ và cắt trục tung tại $B$. Tính diện tích tam giác $OAB$ ($O$ là gốc toạ độ).`, ans:Math.round(S*10)/10,
+    lg:`Gọi $f(x) = ax + b$: $a = \\dfrac{${y2} - ${hmPar(y1)}}{${x2} - ${hmPar(x1)}} = ${hmF(a)}$, $b = ${y1} - ${hmPF(a)}\\cdot ${hmPar(x1)} = ${b}$, nên $y = ${hmLin(a, b)}$.<br>`
+      + `$A$: $y = 0 \\Rightarrow x = ${hmF(x0)}$, $A\\left(${hmF(x0)}; 0\\right)$; $B$: $x = 0 \\Rightarrow y = ${b}$, $B(0; ${b})$.<br>`
+      + `Tam giác $OAB$ vuông tại $O$: $S = \\dfrac{1}{2}\\cdot OA\\cdot OB = \\dfrac{1}{2}\\cdot ${hmF(Math.abs(x0))}\\cdot ${Math.abs(b)} = ${hmF(S)}$${Number.isInteger(S) ? '' : ` $= ${nt(S)}$`}.`,
+    verify:()=>{ const A = (y2 - y1)/(x2 - x1), B = y1 - A*x1, P = [[0, 0], [-B/A, 0], [0, B]]; const s = Math.abs((P[1][0] - P[0][0])*(P[2][1] - P[0][1]) - (P[2][0] - P[0][0])*(P[1][1] - P[0][1]))/2; return near(s, o.ans); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.2 (10|5|0), đợt 9 (5 TLN). Claude viết.
+// Chuỗi: đồ thị hàm bậc nhất không đi qua một góc phần tư (dấu của a và b) → điểm cố định của họ đường thẳng
+// → hai xe chuyển động: giao điểm hai đồ thị bậc nhất → đơn điệu của y = (m − p)/(x − q) kết hợp hàm bậc nhất → dùng tính đơn điệu so sánh f(px + q) và f(rx + s).
+const hnF = v=>{ for(let q = 1; q <= 120; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hnOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const hnPar = v=> v < 0 ? `(${nt(v)})` : nt(v);
+const hnLinM = (p, q, r, s)=>{ const A = termsT([[p, 'm'], [q, '']]), B = termsT([[r, 'm'], [s, '']]); return `y = ${/ [+-] /.test(A) ? `(${A})` : A}x ${B.startsWith('-') ? '- ' + B.slice(1) : '+ ' + B}`; };
+
+/* 1. TLN VD — đồ thị không đi qua một góc phần tư */
+GT(10,5,0,'VD','Số giá trị nguyên của m để đồ thị hàm số bậc nhất chứa tham số không đi qua một góc phần tư cho trước (xét dấu hệ số a và b)', R=>{
+  const p = R.nz(-3, 3), q = R.int(-8, 8), r = R.nz(-3, 3), s = R.int(-8, 8), Q = R.int(1, 4), N = R.pick([10, 20]);
+  // không qua góc I (x>0,y>0): a<0, b≤0; II (x<0,y>0): a>0, b≤0; III (x<0,y<0): a<0, b≥0; IV (x>0,y<0): a>0, b≥0
+  const sa = Q === 2 || Q === 4 ? 1 : -1, sb = Q === 1 || Q === 2 ? -1 : 1;
+  const ok = m=>{ const a = p*m + q, b = r*m + s; return a !== 0 && (sa > 0 ? a > 0 : a < 0) && (sb > 0 ? b >= 0 : b <= 0); };
+  const ms = []; for(let m = -N; m <= N; m++) if(ok(m)) ms.push(m); if(ms.length < 2 || ms.length === 2*N + 1) return null; const v = ms.length;
+  const gocT = ['', 'thứ nhất', 'thứ hai', 'thứ ba', 'thứ tư'][Q], dk = {1:'x > 0, y > 0', 2:'x < 0, y > 0', 3:'x < 0, y < 0', 4:'x > 0, y < 0'}[Q];
+  const A = termsT([[p, 'm'], [q, '']]), B = termsT([[r, 'm'], [s, '']]);
+  const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${N}; ${N}]$ để hàm số $${hnLinM(p, q, r, s)}$ là hàm số bậc nhất có đồ thị không đi qua góc phần tư ${gocT} (gồm các điểm có $${dk}$)?`, ans:v,
+    lg:`Đồ thị $y = ax + b$ ($a \\ne 0$) là đường thẳng cắt trục tung tại $(0; b)$. Nó không đi qua góc phần tư ${gocT} khi và chỉ khi $a ${sa > 0 ? '>' : '<'} 0$ và $b ${sb > 0 ? '\\ge' : '\\le'} 0$ (vẽ phác các trường hợp dấu của $a$, $b$ để thấy).<br>`
+      + `• $a = ${A} ${sa > 0 ? '>' : '<'} 0 \\iff m ${(p > 0) === (sa > 0) ? '>' : '<'} ${hnF(-q/p)}$;<br>• $b = ${B} ${sb > 0 ? '\\ge' : '\\le'} 0 \\iff m ${(r > 0) === (sb > 0) ? '\\ge' : '\\le'} ${hnF(-s/r)}$.<br>`
+      + `Kết hợp, $m$ nguyên thuộc $[-${N}; ${N}]$: $m \\in \\{${ms.length > 8 ? `${ms[0]}; ${ms[1]}; \\dots; ${ms[ms.length - 1]}` : ms.join('; ')}\\}$, có $${v}$ giá trị.`,
+    verify:()=>{ let c = 0; for(let m = -N; m <= N; m++){ const a = p*m + q, b = r*m + s; if(a === 0) continue;
+        // trên x > 0 (hoặc x < 0) đường thẳng nhận mọi giá trị giữa b và ±∞ theo dấu của a: lấy cận trên / cận dưới
+        const supR = a > 0 ? Infinity : b, infR = a > 0 ? b : -Infinity, supL = a > 0 ? b : Infinity, infL = a > 0 ? -Infinity : b;
+        const hit = Q === 1 ? supR > 0 : Q === 2 ? supL > 0 : Q === 3 ? infL < 0 : infR < 0; if(!hit) c++; } return c === o.ans; }};
+  return o;
+});
+
+/* 2. TLN VD — điểm cố định của họ đường thẳng */
+GT(10,5,0,'VD','Điểm cố định mà đồ thị hàm số bậc nhất chứa tham số luôn đi qua với mọi m', R=>{
+  const p = R.nz(-3, 3), x0 = R.nz(-4, 4), r = -p*x0, q = R.nz(-4, 4), s = R.int(-6, 6), y0 = q*x0 + s, ask = R.int(0, 2);
+  const v = ask === 0 ? x0 + y0 : ask === 1 ? x0*y0 : x0*x0 + y0*y0; if(String(v).length > 4) return null;
+  const askT = ['x_0 + y_0', 'x_0\\cdot y_0', 'x_0^2 + y_0^2'][ask];
+  const o = {stem:`Đồ thị của hàm số $${hnLinM(p, q, r, s)}$ luôn đi qua một điểm cố định $M(x_0; y_0)$ với mọi giá trị của tham số $m$. Tính $${askT}$.`, ans:v,
+    lg:`$M(x_0; y_0)$ thuộc đồ thị với mọi $m$ $\\iff y_0 = (${termsT([[p, 'm'], [q, '']])})x_0 ${termsT([[r, 'm'], [s, '']]).startsWith('-') ? '- ' + termsT([[r, 'm'], [s, '']]).slice(1) : '+ ' + termsT([[r, 'm'], [s, '']])}$ với mọi $m$<br>`
+      + `$\\iff m(${termsT([[p, 'x_0'], [r, '']])}) + (${termsT([[q, 'x_0'], [s, ''], [-1, 'y_0']])}) = 0$ với mọi $m$ $\\iff \\begin{cases} ${termsT([[p, 'x_0'], [r, '']])} = 0 \\\\ y_0 = ${termsT([[q, 'x_0'], [s, '']])} \\end{cases} \\iff \\begin{cases} x_0 = ${x0} \\\\ y_0 = ${y0} \\end{cases}$<br>`
+      + `Vậy $M(${x0}; ${y0})$ và $${askT} = ${v}$.`,
+    verify:()=>{ const L = m=> [p*m + q, r*m + s]; const [a1, b1] = L(1), [a2, b2] = L(5); const X = (b2 - b1)/(a1 - a2), Y = a1*X + b1; const val = ask === 0 ? X + Y : ask === 1 ? X*Y : X*X + Y*Y; return near(val, o.ans) && near(L(-7)[0]*X + L(-7)[1], Y); }};
+  return o;
+});
+
+/* 3. TLN VD — hai xe chuyển động: giao điểm hai đồ thị bậc nhất */
+GT(10,5,0,'VD','Hai xe chuyển động thẳng đều: lập hàm số vị trí theo thời gian (bậc nhất), tìm thời điểm gặp nhau bằng giao điểm hai đồ thị', R=>{
+  const same = R.rnd() < 0.5, v1 = R.pick([40, 45, 50, 60]), v2 = R.pick([30, 35, 40, 45, 50, 60]), d = R.pick([0, 0.5, 1]);
+  let D, t, X, stem, lg;
+  if(!same){ D = R.int(6, 30)*10; t = (D + v2*d)/(v1 + v2); X = v1*t; if(!hnOk(t*60) || t*60 > 9999) return null;
+    stem = `Hai thành phố $A$ và $B$ cách nhau $${D}$ km. Lúc $7$ giờ, một ô tô đi từ $A$ về $B$ với vận tốc $${v1}$ km/h; ${d ? `lúc ${d === 0.5 ? '$7$ giờ $30$ phút' : '$8$ giờ'}, ` : 'cùng lúc đó, '}một ô tô khác đi từ $B$ về $A$ với vận tốc $${v2}$ km/h. Hỏi sau bao nhiêu phút kể từ $7$ giờ thì hai xe gặp nhau?`;
+    lg = `Chọn gốc toạ độ tại $A$, chiều dương từ $A$ đến $B$, gốc thời gian lúc $7$ giờ ($t$ tính bằng giờ). Vị trí hai xe: $x_A(t) = ${v1}t$; $x_B(t) = ${D} - ${v2}${d ? `(t - ${nt(d)})` : 't'}$ (với $t \\ge ${nt(d)}$).<br>`
+       + `Hai xe gặp nhau khi $x_A(t) = x_B(t) \\iff ${v1}t = ${D} - ${v2}${d ? `(t - ${nt(d)})` : 't'} \\iff ${v1 + v2}t = ${nt(D + v2*d)} \\iff t = ${hnF(t)}$ (giờ).<br>`
+       + `Đổi ra phút: $${hnF(t)}\\cdot 60 = ${nt(t*60)}$ phút.`; }
+  else { if(v1 <= v2) return null; D = R.int(2, 12)*10; t = (D - v2*0)/(v1 - v2); if(d) return null; X = v1*t; if(!hnOk(t*60) || t*60 > 9999 || t > 8) return null;
+    stem = `Lúc $7$ giờ, một xe máy đi từ $A$ với vận tốc $${v2}$ km/h về phía $B$. Cùng lúc đó, một ô tô xuất phát tại điểm $C$ nằm phía sau $A$, cách $A$ $${D}$ km, đi cùng chiều với vận tốc $${v1}$ km/h. Hỏi sau bao nhiêu phút ô tô đuổi kịp xe máy?`;
+    lg = `Chọn gốc toạ độ tại $C$, chiều dương theo chiều chuyển động, gốc thời gian lúc $7$ giờ. Vị trí: ô tô $x_A(t) = ${v1}t$; xe máy $x_B(t) = ${D} + ${v2}t$.<br>`
+       + `Đuổi kịp khi $x_A(t) = x_B(t) \\iff ${v1 - v2}t = ${D} \\iff t = ${hnF(t)}$ (giờ) $= ${nt(t*60)}$ phút.`; }
+  const v = Math.round(t*600)/10; if(!hnOk(v)) return null;
+  const o = {stem, ans:v, lg, verify:()=>{ let tt = 0; const x1 = u=> v1*u, x2 = same ? (u=> D + v2*u) : (u=> u < d ? D : D - v2*(u - d)); for(let i = 0; i < 1e6; i++){ tt = i/6000; if((same ? x1(tt) >= x2(tt) - 1e-9 : x1(tt) >= x2(tt) - 1e-9)) break; } return Math.abs(tt*60 - o.ans) < 0.02; }};
+  return o;
+});
+
+/* 4. TLN TH — y = (m − p)/(x − q) đơn điệu kết hợp hàm bậc nhất */
+GT(10,5,0,'TH','Số giá trị nguyên của m để hàm số y = (m − p)/(x − q) nghịch biến (đồng biến) trên (q; +∞) và hàm số bậc nhất chứa m đồng biến (nghịch biến) trên ℝ', R=>{
+  const p = R.int(-6, 6), q = R.nz(-3, 3), r = R.int(-6, 6), N = R.pick([10, 15, 20]), dec1 = R.rnd() < 0.5, up2 = R.rnd() < 0.5;
+  const ok = m=> (dec1 ? m - p > 0 : m - p < 0) && (up2 ? m + r > 0 : m + r < 0);
+  const ms = []; for(let m = -N; m <= N; m++) if(ok(m)) ms.push(m); if(ms.length < 2) return null; const v = ms.length;
+  const f1 = `y = \\dfrac{${termsT([[1, 'm'], [-p, '']])}}{${termsT([[1, 'x'], [-q, '']])}}`, f2 = `y = (${termsT([[1, 'm'], [r, '']])})x + 2`.replace('(m)x', 'mx');
+  const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${N}; ${N}]$ để hàm số $${f1}$ ${dec1 ? 'nghịch biến' : 'đồng biến'} trên khoảng $(${q}; +\\infty)$ và hàm số $${f2}$ ${up2 ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$?`, ans:v,
+    lg:`• Với $x_1 \\ne x_2$ thuộc $(${q}; +\\infty)$: $\\dfrac{f(x_2) - f(x_1)}{x_2 - x_1} = \\dfrac{-(${termsT([[1, 'm'], [-p, '']])})}{(${termsT([[1, 'x_1'], [-q, '']])})(${termsT([[1, 'x_2'], [-q, '']])})}$, mẫu dương, nên hàm số ${dec1 ? 'nghịch biến' : 'đồng biến'} khi $${termsT([[1, 'm'], [-p, '']])} ${dec1 ? '>' : '<'} 0 \\iff m ${dec1 ? '>' : '<'} ${p}$ (khi $m = ${p}$ hàm số là hằng số).<br>`
+      + `• Hàm bậc nhất ${up2 ? 'đồng biến' : 'nghịch biến'} khi $${termsT([[1, 'm'], [r, '']])} ${up2 ? '>' : '<'} 0 \\iff m ${up2 ? '>' : '<'} ${-r}$.<br>`
+      + `Kết hợp với $m$ nguyên thuộc $[-${N}; ${N}]$: $m \\in \\{${ms.length > 8 ? `${ms[0]}; ${ms[1]}; \\dots; ${ms[ms.length - 1]}` : ms.join('; ')}\\}$, có $${v}$ giá trị.`,
+    verify:()=>{ let c = 0; for(let m = -N; m <= N; m++){ const f = x=> (m - p)/(x - q), xs = gridPts(q + 0.25, q + 30, 0.25); const d1 = xs.every((x, i)=> !i || (dec1 ? f(x) < f(xs[i - 1]) : f(x) > f(xs[i - 1]))); const d2 = up2 ? (m + r) > 0 : (m + r) < 0; if(d1 && d2) c++; } return c === o.ans; }};
+  return o;
+});
+
+/* 5. TLN VD — so sánh f(px + q) và f(rx + s) nhờ tính đơn điệu */
+GT(10,5,0,'VD','Hàm số đồng biến (nghịch biến) trên ℝ: đếm số nguyên x thoả f(px + q) > f(rx + s)', R=>{
+  const up = R.rnd() < 0.5, p = R.int(-3, 4), r = R.int(-3, 4), q = R.int(-9, 9), s = R.int(-9, 9), N = R.pick([10, 15, 20]); if(p === r) return null;
+  const ok = x=> up ? p*x + q > r*x + s : p*x + q < r*x + s;
+  const xs = []; for(let x = -N; x <= N; x++) if(ok(x)) xs.push(x); if(xs.length < 2 || xs.length === 2*N + 1) return null; const v = xs.length;
+  const A = termsT([[p, 'x'], [q, '']]), B = termsT([[r, 'x'], [s, '']]), k = p - r, t = (s - q)/k, gt = up === (k > 0);
+  const o = {stem:`Cho hàm số $y = f(x)$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$. Có bao nhiêu số nguyên $x$ thuộc đoạn $[-${N}; ${N}]$ thoả mãn $f(${A}) > f(${B})$?`, ans:v,
+    lg:`Vì $f$ ${up ? 'đồng biến' : 'nghịch biến'} trên $\\mathbb{R}$ nên $f(${A}) > f(${B}) \\iff ${A} ${up ? '>' : '<'} ${B} \\iff ${termsT([[k, 'x']])} ${up ? '>' : '<'} ${s - q} \\iff x ${gt ? '>' : '<'} ${hnF(t)}$${k < 0 ? ' (chia cho số âm, đổi chiều)' : ''}.<br>`
+      + `Các số nguyên thuộc $[-${N}; ${N}]$ thoả mãn: $x \\in \\{${xs.length > 8 ? `${xs[0]}; ${xs[1]}; \\dots; ${xs[xs.length - 1]}` : xs.join('; ')}\\}$, có $${v}$ số.`,
+    verify:()=>{ const f = up ? (u=> u*u*u + u) : (u=> -2*u + 5); let c = 0; for(let x = -N; x <= N; x++) if(f(p*x + q) > f(r*x + s)) c++; return c === o.ans; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.2 (10|5|0), đợt 10 (5 TLN). Claude viết.
+// Chuỗi: đồ thị nhiệt độ trong ngày (khoảng thời gian nhiệt độ không thấp hơn một mức) → tổng các nghiệm của f(x) = m đọc từ đồ thị gấp khúc
+// → số giá trị nguyên m để f(x) = m có nghiệm trên một đoạn → đồ thị y = a√x + b qua hai điểm → số điểm có toạ độ nguyên trên đồ thị y = (ax + b)/(x − c).
+const hoF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hoOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const hoGen = (R, nMin = 4, nMax = 5)=>{ for(let g = 0; g < 200; g++){ const n = R.int(nMin, nMax), xs = [R.int(-4, -2)]; for(let i = 0; i < n; i++) xs.push(xs[i] + R.int(1, 3)); if(xs[n] > 6 || xs[n] < 2) continue;
+    const ys = xs.map(()=> R.int(-3, 4)); let ok = true, turns = 0; for(let i = 0; i < n; i++){ if(ys[i] === ys[i + 1]) ok = false; if(i && (ys[i] - ys[i - 1])*(ys[i + 1] - ys[i]) < 0) turns++; }
+    if(!ok || turns < 2) continue; return {xs, ys}; } return null; };
+const hoVal = (G, x)=>{ const {xs, ys} = G; if(x < xs[0] - 1e-12 || x > xs[xs.length - 1] + 1e-12) return NaN; for(let i = 0; i + 1 < xs.length; i++) if(x <= xs[i + 1] + 1e-12) return ys[i] + (ys[i + 1] - ys[i])*(x - xs[i])/(xs[i + 1] - xs[i]); return NaN; };
+const hoFs = G=>{ const {xs, ys} = G, n = xs.length - 1, sl = []; for(let i = 0; i < n; i++) sl.push((ys[i + 1] - ys[i])/(xs[i + 1] - xs[i]));
+  let fs = `${ys[0]}+(${sl[0]})*(x-(${xs[0]}))`; for(let i = 1; i < n; i++){ const dd = sl[i] - sl[i - 1]; if(dd) fs += `+(${dd/2})*(abs(x-(${xs[i]}))+x-(${xs[i]}))`; } return fs + `+0*sqrt((x-(${xs[0]}))*((${xs[n]})-x))`; };
+const hoHv = G=>{ const {xs, ys} = G, n = xs.length - 1; return {loai:'dothi', hamSo:hoFs(G), luoi:true, ghiCucTri:false, gk:1, khung:{xmin:Math.min(-1, xs[0]) - 0.6, xmax:Math.max(1, xs[n]) + 0.6, ymin:Math.min(0, ...ys) - 0.6, ymax:Math.max(0, ...ys) + 0.6}}; };
+const hoRoots = (G, m)=>{ const {xs, ys} = G, out = []; for(let i = 0; i < xs.length; i++){ if(ys[i] === m) out.push(xs[i]); if(i + 1 < xs.length && (ys[i] - m)*(ys[i + 1] - m) < 0) out.push(xs[i] + (m - ys[i])*(xs[i + 1] - xs[i])/(ys[i + 1] - ys[i])); }
+  return [...new Set(out.map(x=> Math.round(x*1e9)/1e9))].sort((a, b)=> a - b); };
+const hoPts = G=> G.xs.map((x, i)=> `$(${x}; ${G.ys[i]})$`).join(', ');
+const hoStem = G=> `Cho hàm số $y = f(x)$ xác định trên đoạn $[${G.xs[0]}; ${G.xs[G.xs.length - 1]}]$, có đồ thị là đường gấp khúc như hình vẽ (mỗi ô lưới là $1$ đơn vị).`;
+
+/* 1. TLN VD — đồ thị nhiệt độ trong ngày */
+GT(10,5,0,'VD','Đọc đồ thị nhiệt độ trong ngày (đường gấp khúc): tính khoảng thời gian nhiệt độ không thấp hơn một mức cho trước', R=>{
+  for(let g = 0; g < 60; g++){
+    const h1 = R.int(4, 6), h2 = R.int(13, 15), T0 = R.int(23, 27), Tm = R.int(19, 22), TM = R.int(31, 36), T24 = R.int(23, 27), L = R.int(Math.max(T0, T24) + 1, TM - 1);
+    const xa = h1 + (L - Tm)*(h2 - h1)/(TM - Tm), xb = h2 + (L - TM)*(24 - h2)/(T24 - TM), d = xb - xa; if(!hoOk(xa) || !hoOk(xb) || !hoOk(d)) continue;
+    const xs = [0, h1, h2, 24], ys = [T0, Tm, TM, T24], G = {xs, ys};
+    const fs = hoFs(G).replace(/\+0\*sqrt\(\(x-\(0\)\)\*\(\(24\)-x\)\)$/, '+0*sqrt(x*(24-x))');
+    const hv = {loai:'dothi', hamSo:fs, luoi:false, ghiCucTri:false, gk:1, diem:[0, h1, h2, 24], khung:{xmin:-1, xmax:25.5, ymin:-2, ymax:TM + 4}};
+    const o = {stem:`Nhiệt độ $T$ (°C) ở một địa phương trong một ngày được biểu diễn bởi hàm số $T = f(t)$, với $t$ (giờ) là thời điểm trong ngày, $0 \\le t \\le 24$. Đồ thị của hàm số là đường gấp khúc như hình vẽ (trục hoành biểu diễn $t$, trục tung biểu diễn $T$), đi qua các điểm $(0; ${T0})$, $(${h1}; ${Tm})$, $(${h2}; ${TM})$, $(24; ${T24})$. Trong ngày đó, tổng thời gian nhiệt độ không thấp hơn $${L}$ °C là bao nhiêu giờ?`, ans:Math.round(d*10)/10, hv,
+      lg:`Nhiệt độ $\\ge ${L}$ °C chỉ xảy ra quanh đỉnh $(${h2}; ${TM})$ vì $f(0) = ${T0}$, $f(${h1}) = ${Tm}$, $f(24) = ${T24}$ đều nhỏ hơn $${L}$.<br>`
+        + `• Trên $[${h1}; ${h2}]$: $f(t) = ${Tm} + ${frT(TM - Tm, h2 - h1) === '1' ? '' : frT(TM - Tm, h2 - h1)}(t - ${h1})$; $f(t) = ${L} \\iff t = ${h1} + ${frT((L - Tm)*(h2 - h1), TM - Tm)} = ${hoF(xa)}$.<br>`
+        + `• Trên $[${h2}; 24]$: $f(t) = ${TM} - ${frT(TM - T24, 24 - h2) === '1' ? '' : frT(TM - T24, 24 - h2)}(t - ${h2})$; $f(t) = ${L} \\iff t = ${h2} + ${frT((TM - L)*(24 - h2), TM - T24)} = ${hoF(xb)}$.<br>`
+        + `Nhiệt độ không thấp hơn $${L}$ °C khi $${hoF(xa)} \\le t \\le ${hoF(xb)}$, tổng cộng $${hoF(xb)} - ${hoF(xa)} = ${nt(Math.round(d*10)/10)}$ giờ.`,
+      verify:()=>{ let c = 0; const N = 240000; for(let i = 0; i < N; i++){ const t = (i + 0.5)*24/N; if(hoVal(G, t) >= L) c++; } return Math.abs(c*24/N - o.ans) < 1e-3; }};
+    return o; }
+  return null;
+});
+
+/* 2. TLN VD — tổng các nghiệm của f(x) = m đọc từ đồ thị */
+GT(10,5,0,'VD','Đọc đồ thị đường gấp khúc: tính tổng các nghiệm của phương trình f(x) = m (nội suy trên từng đoạn thẳng)', R=>{
+  const G = hoGen(R); if(!G) return null; const {ys} = G, m = R.int(Math.min(...ys), Math.max(...ys)), rs = hoRoots(G, m); if(rs.length < 2) return null;
+  const v = rs.reduce((s, x)=> s + x, 0); if(!hoOk(v)) return null;
+  const o = {stem:`${hoStem(G)} Tính tổng tất cả các nghiệm của phương trình $f(x) = ${m}$.`, ans:Math.round(v*10)/10, hv:hoHv(G),
+    lg:`Đồ thị nối các điểm ${hoPts(G)}. Nghiệm của phương trình là hoành độ giao điểm của đồ thị với đường thẳng $y = ${m}$.<br>`
+      + `Trên mỗi đoạn thẳng nối $(x_1; y_1)$, $(x_2; y_2)$ mà $${m}$ nằm giữa $y_1$ và $y_2$, giao điểm có hoành độ $x = x_1 + \\dfrac{(${m} - y_1)(x_2 - x_1)}{y_2 - y_1}$.<br>`
+      + `Các nghiệm: ${rs.map(x=> `$${hoF(x)}$`).join('; ')}. Tổng bằng $${hoF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=>{ let s = 0; const xs = gridPts(G.xs[0], G.xs[G.xs.length - 1], 0.001); for(let i = 0; i < xs.length; i++){ const a = hoVal(G, xs[i]) - m; if(Math.abs(a) < 1e-9){ s += xs[i]; continue; } if(i + 1 < xs.length){ const b = hoVal(G, xs[i + 1]) - m; if(a*b < 0 && Math.abs(b) > 1e-9) s += xs[i] + a/(a - b)*0.001; } } return Math.abs(s - o.ans) < 0.06; }};
+  return o;
+});
+
+/* 3. TLN TH — số giá trị nguyên m để f(x) = m có nghiệm trên một đoạn */
+GT(10,5,0,'TH','Đọc đồ thị: số (tổng các) giá trị nguyên của m để phương trình f(x) = m có nghiệm thuộc một đoạn con của tập xác định', R=>{
+  const G = hoGen(R, 4, 6); if(!G) return null; const {xs} = G, n = xs.length - 1, i = R.int(0, n - 2), j = R.int(i + 1, n), p = xs[i], q = xs[j]; if(q - p < 2) return null;
+  const vals = gridPts(p, q, 0.01).map(x=> hoVal(G, x)), lo = Math.min(...vals), hi = Math.max(...vals), m1 = Math.ceil(lo - 1e-9), m2 = Math.floor(hi + 1e-9), cnt = m2 - m1 + 1, sum = (m1 + m2)*cnt/2, ask = R.pick([0, 1]), v = ask ? sum : cnt;
+  const o = {stem:`${hoStem(G)} ${ask ? 'Tính tổng tất cả các' : 'Có bao nhiêu'} giá trị nguyên của tham số $m$ để phương trình $f(x) = m$ có nghiệm thuộc đoạn $[${p}; ${q}]$${ask ? '.' : '?'}`, ans:v, hv:hoHv(G),
+    lg:`Phương trình $f(x) = m$ có nghiệm thuộc $[${p}; ${q}]$ khi và chỉ khi $m$ thuộc tập giá trị của $f$ trên đoạn đó.<br>Trên $[${p}; ${q}]$, điểm thấp nhất của đồ thị có tung độ $${hoF(lo)}$, điểm cao nhất có tung độ $${hoF(hi)}$; đồ thị liền nét nên tập giá trị là $[${hoF(lo)}; ${hoF(hi)}]$.<br>`
+      + (ask ? `Các giá trị nguyên của $m$: $${m1}, ${m1 + 1}, \\dots, ${m2}$, tổng bằng $${sum}$.` : `Số giá trị nguyên của $m$: $${m2} - ${m1 < 0 ? `(${m1})` : m1} + 1 = ${cnt}$.`),
+    verify:()=>{ let c = 0, s = 0; for(let m = -10; m <= 10; m++){ const xs2 = gridPts(p, q, 0.001); if(xs2.some((x, k)=> Math.abs(hoVal(G, x) - m) < 1e-9 || (k + 1 < xs2.length && (hoVal(G, x) - m)*(hoVal(G, xs2[k + 1]) - m) < 0))){ c++; s += m; } } return (ask ? s : c) === o.ans; }};
+  return o;
+});
+
+/* 4. TLN TH — đồ thị y = a√x + b qua hai điểm */
+GT(10,5,0,'TH','Xác định hàm số y = a√x + b khi biết đồ thị đi qua hai điểm, tính giá trị của hàm số', R=>{
+  const u = R.int(0, 3), w = u + R.int(1, 4), a = R.nz(-4, 4), b = R.int(-6, 6), z = R.int(0, 9); if(z === u || z === w) return null;
+  const y1 = a*u + b, y2 = a*w + b, v = a*z + b;
+  const o = {stem:`Biết đồ thị của hàm số $y = a\\sqrt{x} + b$ đi qua hai điểm $A(${u*u}; ${y1})$ và $B(${w*w}; ${y2})$. Tính giá trị của hàm số tại $x = ${z*z}$.`, ans:v,
+    lg:`Thay toạ độ $A$, $B$: $\\begin{cases} a\\sqrt{${u*u}} + b = ${y1} \\\\ a\\sqrt{${w*w}} + b = ${y2} \\end{cases} \\iff \\begin{cases} ${u === 0 ? '' : u === 1 ? 'a + ' : u + 'a + '}b = ${y1} \\\\ ${w === 1 ? '' : w}a + b = ${y2} \\end{cases}$<br>`
+      + `Trừ vế theo vế: $${w - u === 1 ? '' : w - u}a = ${y2 - y1} \\Rightarrow a = ${a}$, $b = ${b}$.<br>Vậy $y = ${a === 1 ? '' : a === -1 ? '-' : a}\\sqrt{x}${b === 0 ? '' : ` ${b < 0 ? '-' : '+'} ${Math.abs(b)}`}$ và tại $x = ${z*z}$: $y = ${a === 1 ? '' : a === -1 ? '-' : a + '\\cdot '}${z}${b === 0 ? '' : ` ${b < 0 ? '-' : '+'} ${Math.abs(b)}`} = ${v}$.`,
+    verify:()=>{ const A = (y2 - y1)/(Math.sqrt(w*w) - Math.sqrt(u*u)), B = y1 - A*Math.sqrt(u*u); return near(A*Math.sqrt(z*z) + B, o.ans); }};
+  return o;
+});
+
+/* 5. TLN VD — số điểm có toạ độ nguyên trên đồ thị y = (ax + b)/(x − c) */
+GT(10,5,0,'VD','Số điểm có hoành độ và tung độ đều là số nguyên trên đồ thị hàm số y = (ax + b)/(x − c) (chia đa thức, xét ước)', R=>{
+  const a = R.nz(-3, 3), c = R.int(-4, 4), k = R.pick([4, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 28, 30, 36]), b = R.pick([-1, 1])*k - a*c; if(Math.abs(b) > 60) return null;
+  const divs = []; for(let d = 1; d <= k; d++) if(k % d === 0) divs.push(d); const ask = R.pick([0, 1, 2]);
+  const xs = [...divs, ...divs.map(d=> -d)].map(d=> c + d), pos = xs.filter(x=> x > 0), v = ask === 0 ? 2*divs.length : ask === 1 ? pos.length : xs.reduce((s, x)=> s + x, 0);
+  if(ask === 1 && (pos.length === 0 || pos.length === xs.length)) return null; if(String(v).length > 4) return null;
+  const askT = ['có bao nhiêu điểm mà hoành độ và tung độ đều là số nguyên?', 'có bao nhiêu điểm có hoành độ dương mà hoành độ và tung độ đều là số nguyên?', 'có các điểm mà hoành độ và tung độ đều là số nguyên. Tính tổng hoành độ của tất cả các điểm đó.'][ask];
+  const tail = ask === 0 ? `Vậy có $${v}$ điểm.` : ask === 1 ? `Các hoành độ: $x = ${c} + d$ với $d$ là ước của $${k}$; hoành độ dương: ${pos.map(x=> `$${x}$`).join(', ')}. Vậy có $${v}$ điểm.` : `Các hoành độ: $x = ${c} + d$; các ước đối nhau triệt tiêu nên tổng hoành độ bằng $${2*divs.length}\\cdot ${c < 0 ? `(${c})` : c} = ${v}$.`;
+  const o = {stem:`Đồ thị của hàm số $y = \\dfrac{${termsT([[a, 'x'], [b, '']])}}{${termsT([[1, 'x'], [-c, '']])}}$ ${askT}`, ans:v,
+    lg:`Ta có $y = \\dfrac{${a}(${termsT([[1, 'x'], [-c, '']])}) ${b + a*c < 0 ? '-' : '+'} ${Math.abs(b + a*c)}}{${termsT([[1, 'x'], [-c, '']])}} = ${a} ${b + a*c < 0 ? '-' : '+'} \\dfrac{${Math.abs(b + a*c)}}{${termsT([[1, 'x'], [-c, '']])}}$.`.replace(/\$y = \\dfrac\{1\(/, '$y = \\dfrac{(').replace(/\\dfrac\{-1\(/, '\\dfrac{-(')
+      + `<br>Với $x$ nguyên, $y$ nguyên khi và chỉ khi $${termsT([[1, 'x'], [-c, '']])}$ là ước của $${k}$. Số $${k}$ có $${divs.length}$ ước dương (${divs.join(', ')}) nên có $${2*divs.length}$ ước nguyên, ứng với $${2*divs.length}$ giá trị $x$ (đều khác $${c}$).<br>${tail}`,
+    verify:()=>{ let cnt = 0, cp = 0, sx = 0; for(let x = -200; x <= 200; x++){ if(x === c) continue; const num = a*x + b, den = x - c; if(num % den === 0){ cnt++; sx += x; if(x > 0) cp++; } } return [cnt, cp, sx][ask] === o.ans; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-15 Hàm số, cụm 1: 50 dạng (nháp hs15_dot1–11)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-15.2 (10|5|0), đợt 11 (1 TLN + 1 TL). Claude viết.
+// Chuỗi: đồ thị chữ V y = k|x − a| + b cắt đường thẳng nằm ngang → diện tích tam giác; tự luận trọn vẹn: tập xác định, chứng minh đơn điệu bằng định nghĩa, điểm có toạ độ nguyên.
+const hpF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const hpOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+
+/* 1. TLN VD — diện tích tam giác giới hạn bởi đồ thị chữ V và đường thẳng nằm ngang */
+GT(10,5,0,'VD','Đồ thị y = k|x − a| + b (hình chữ V) và đường thẳng y = c: tìm giao điểm, tính diện tích tam giác tạo thành', R=>{
+  const k = R.pick([1, 2, 3, 4]), a = R.int(-3, 3), b = R.int(-3, 2), c = b + R.int(2, 9), h = c - b, w = h/k, S = h*w; if(c === 0 || 2*w === 1 || h === 1) return null; if(!hpOk(S) || !hpOk(a - w)) return null;
+  const f = x=> k*Math.abs(x - a) + b, kT = k === 1 ? '' : hpF(k);
+  const ex = `${kT}|${termsT([[1, 'x'], [-a, '']])}|${b === 0 ? '' : ` ${b < 0 ? '-' : '+'} ${Math.abs(b)}`}`;
+  const hv = {loai:'dothi', hamSo:`${k}*abs(x-(${a}))+(${b})`, luoi:true, ghiCucTri:false, gk:1, duong:[{a:0, b:c}], khung:{xmin:Math.min(-1, a - w) - 1.6, xmax:Math.max(1, a + w) + 1.6, ymin:Math.min(0, b) - 1.6, ymax:Math.max(0, c) + 1.6}};
+  const o = {stem:`Cho hàm số $y = ${ex}$ có đồ thị $(C)$ (hình chữ V) và đường thẳng $d: y = ${c}$. Đường thẳng $d$ cắt $(C)$ tại hai điểm $A$, $B$; gọi $I$ là điểm thấp nhất của $(C)$. Tính diện tích tam giác $IAB$.`, ans:Math.round(S*10)/10, hv,
+    lg:`Điểm thấp nhất của $(C)$ là $I(${a}; ${b})$ (vì $|${termsT([[1, 'x'], [-a, '']])}| \\ge 0$).<br>`
+      + `Hoành độ giao điểm: $${ex} = ${c}${k === 1 && b === 0 ? '' : ` \\iff |${termsT([[1, 'x'], [-a, '']])}| = ${hpF(w)}`} \\iff x = ${hpF(a - w)}$ hoặc $x = ${hpF(a + w)}$.<br>`
+      + `Do đó $A\\left(${hpF(a - w)}; ${c}\\right)$, $B\\left(${hpF(a + w)}; ${c}\\right)$, $AB = ${hpF(2*w)}$; khoảng cách từ $I$ đến $AB$ là $${c} - ${b < 0 ? `(${b})` : b} = ${h}$.<br>`
+      + `$S_{IAB} = \\dfrac{1}{2}\\cdot ${hpF(2*w)}\\cdot ${h} = ${hpF(S)}$${Number.isInteger(S) ? '' : ` $= ${nt(S)}$`}.`,
+    verify:()=>{ let L = a - 100, H = a; for(let i = 0; i < 200; i++){ const M = (L + H)/2; if(f(M) > c) L = M; else H = M; } const xA = L; L = a; H = a + 100; for(let i = 0; i < 200; i++){ const M = (L + H)/2; if(f(M) < c) L = M; else H = M; } const xB = L;
+      const area = Math.abs((xA - a)*(c - b) - (xB - a)*(c - b))/2; return near(area, o.ans, 1e-6); }};
+  return o;
+});
+
+/* 2. TL TH — bài trọn vẹn: tập xác định, đơn điệu bằng định nghĩa, điểm có toạ độ nguyên (thang 2 điểm) */
+GE(10,5,0,'TH','Tự luận: hàm số y = (px + q)/(x − a) — tập xác định, chứng minh đồng biến/nghịch biến trên một khoảng bằng định nghĩa, tìm các điểm có toạ độ nguyên trên đồ thị (có thang điểm)', R=>{
+  const p = R.nz(-3, 3), a = R.int(-3, 3), k = R.pick([-6, -4, -3, -2, 2, 3, 4, 6]), q = k - p*a; if(Math.abs(q) > 20) return null;
+  const f = x=> (p*x + q)/(x - a), xa = v=> termsT([[1, v], [-a, '']]), up = k < 0;
+  const divs = []; for(let d = 1; d <= Math.abs(k); d++) if(k % d === 0) divs.push(d, -d); const pts = divs.map(d=> [a + d, p + k/d]).sort((u, w)=> u[0] - w[0]);
+  const num = termsT([[p, 'x'], [q, '']]), den = xa('x');
+  return s6Parts(`Cho hàm số $y = f(x) = \\dfrac{${num}}{${den}}$.`, [
+    {q:`Tìm tập xác định của hàm số và tính $f(${a + 1})$, $f(${a - 1})$.`,
+     a:`Hàm số xác định khi $${den} \\ne 0 \\iff x \\ne ${a}$. Tập xác định $D = \\mathbb{R} \\setminus \\{${a}\\}$. (0,25 điểm)<br>`
+      + `$f(${a + 1}) = ${hpF(f(a + 1))}$; $f(${a - 1}) = ${hpF(f(a - 1))}$. (0,25 điểm)`,
+     chk:()=> !isFinite(f(a)) && near(f(a + 1), p + k) && near(f(a - 1), p - k)},
+    {q:`Chứng minh hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(${a}; +\\infty)$.`,
+     a:`Viết $f(x) = \\dfrac{${p}(${den}) ${k < 0 ? '-' : '+'} ${Math.abs(k)}}{${den}} = ${p} ${k < 0 ? '-' : '+'} \\dfrac{${Math.abs(k)}}{${den}}$. (0,25 điểm)<br>`.replace('\\dfrac{1(', '\\dfrac{(').replace('\\dfrac{-1(', '\\dfrac{-(')
+      + `Lấy $x_1, x_2 \\in (${a}; +\\infty)$, $x_1 < x_2$. Ta có $f(x_2) - f(x_1) = ${k}\\left(\\dfrac{1}{${xa('x_2')}} - \\dfrac{1}{${xa('x_1')}}\\right) = \\dfrac{${k}(x_1 - x_2)}{(${xa('x_1')})(${xa('x_2')})}$. (0,25 điểm)<br>`
+      + `Vì $x_1, x_2 > ${a}$ nên $(${xa('x_1')})(${xa('x_2')}) > 0$; lại có $x_1 - x_2 < 0$ và $${k} ${k < 0 ? '<' : '>'} 0$ nên $f(x_2) - f(x_1) ${up ? '>' : '<'} 0$, tức là $f(x_1) ${up ? '<' : '>'} f(x_2)$. (0,25 điểm)<br>`
+      + `Vậy hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên $(${a}; +\\infty)$. (0,25 điểm)`,
+     chk:()=> gridPts(a + 0.05, a + 30, 0.05).every((x, i, A)=> !i || (up ? f(x) > f(A[i - 1]) : f(x) < f(A[i - 1])))},
+    {q:`Tìm tất cả các điểm thuộc đồ thị hàm số có hoành độ và tung độ đều là số nguyên.`,
+     a:`Từ $f(x) = ${p} ${k < 0 ? '-' : '+'} \\dfrac{${Math.abs(k)}}{${den}}$: với $x$ nguyên, $y$ nguyên khi và chỉ khi $${den}$ là ước của $${Math.abs(k)}$, tức là $${den} \\in \\{${divs.slice().sort((u, w)=> u - w).join('; ')}\\}$. (0,25 điểm)<br>`
+      + `Các điểm cần tìm: ${pts.map(([x, y])=> `$(${x}; ${y})$`).join(', ')}. (0,25 điểm)`,
+     chk:()=>{ const found = []; for(let x = -60; x <= 60; x++){ if(x === a) continue; const y = f(x); if(Number.isInteger(Math.round(y*1e9)/1e9)) found.push([x, Math.round(y)]); } return found.length === pts.length && found.every(([x, y], i)=> x === pts[i][0] && y === pts[i][1]); }}]);
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.1 Đồ thị hàm số bậc hai: đỉnh, trục đối xứng, nhận dạng đồ thị, giao điểm (10|5|1), đợt 1 (5 TN). Claude viết.
+// Chuỗi: nhận biết hàm số bậc hai (bẫy: khai triển triệt tiêu x²) → điểm đối xứng qua trục đối xứng → số giao điểm với một đường thẳng
+// → đọc dấu a, b, c từ đồ thị → chọn công thức đúng của đồ thị đã cho.
+const paF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const paPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v))){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+const paQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const paPl = (a, b, c)=> `(${a})*x^2+(${b})*x+(${c})`;
+const paD2 = f=>{ const v = [-3, -1.5, 0.5, 2, 3.5].map(x=> f(x + 1) - 2*f(x) + f(x - 1)); return v.every(isFinite) && v.every(t=> Math.abs(t - v[0]) < 1e-9) && Math.abs(v[0]) > 1e-9; };
+
+/* 1. TN NB — nhận biết hàm số bậc hai */
+G(10,5,1,'NB','Nhận biết hàm số bậc hai (khai triển để thấy hệ số của x² khác 0; bẫy: các số hạng x² triệt tiêu)', R=>{
+  const p = R.nz(-4, 4), q = R.nz(-5, 5), r = R.nz(-3, 3), s = R.nz(-3, 3);
+  const good = [
+    {t:`y = (${termsT([[r, 'x'], [1, '']])})(${termsT([[s, 'x'], [-2, '']])})`, f:x=> (r*x + 1)*(s*x - 2)},
+    {t:`y = (m^2 + 1)x^2 ${p < 0 ? '-' : '+'} ${Math.abs(p)}x`, f:x=> 2*x*x + p*x, m:true},
+    {t:`y = ${q}${q < 0 ? '' : ''} - ${Math.abs(r) === 1 ? '' : Math.abs(r)}x^2`.replace(/^y = (-?\d+) - /, 'y = $1 - '), f:x=> q - Math.abs(r)*x*x}];
+  const bad = [
+    {t:`y = (x ${p < 0 ? '-' : '+'} ${Math.abs(p)})^2 - x^2`, f:x=> (x + p)**2 - x*x},
+    {t:`y = x(x ${q < 0 ? '-' : '+'} ${Math.abs(q)}) - x^2 + ${Math.abs(r)}`, f:x=> x*(x + q) - x*x + Math.abs(r)},
+    {t:`y = \\dfrac{1}{x^2} ${p < 0 ? '-' : '+'} ${Math.abs(p)}x`, f:x=> 1/(x*x) + p*x},
+    {t:`y = \\sqrt{x^2 + ${Math.abs(q)}}`, f:x=> Math.sqrt(x*x + Math.abs(q))},
+    {t:`y = 2x^3 ${s < 0 ? '-' : '+'} ${Math.abs(s)}x^2`, f:x=> 2*x**3 + s*x*x},
+    {t:`y = ${Math.abs(p)}x ${q < 0 ? '-' : '+'} ${Math.abs(q)}`, f:x=> Math.abs(p)*x + q}];
+  const g = R.pick(good), W = R.shuffle(bad).slice(0, 3), O = P=> ({t:`$${P.t}$`, v:P.t, f:P.f});
+  const o = {stem:`Hàm số nào dưới đây là hàm số bậc hai?`, ans:O(g), wrong:W.map(O),
+    lg:`Hàm số bậc hai có dạng $y = ax^2 + bx + c$ với $a \\ne 0$ (sau khi khai triển, rút gọn).<br>`
+      + `• $${g.t}$: ${g.m ? 'hệ số của $x^2$ là $m^2 + 1 > 0$ với mọi $m$' : 'khai triển được hệ số của $x^2$ khác $0$'} nên là hàm số bậc hai.<br>`
+      + W.map(P=> `• $${P.t}$: ${P.t.includes('dfrac') || P.t.includes('sqrt') ? 'không có dạng đa thức $ax^2 + bx + c$' : P.t.includes('x^3') ? 'có bậc ba' : P.t.includes('x^2') ? 'rút gọn được biểu thức bậc nhất (các số hạng $x^2$ triệt tiêu)' : 'là hàm số bậc nhất'}.`).join('<br>'),
+    verify:()=> paD2(o.ans.f) && o.wrong.every(w=> !paD2(w.f))};
+  return o;
+});
+
+/* 2. TN TH — điểm đối xứng qua trục đối xứng */
+G(10,5,1,'TH','Điểm đối xứng với một điểm của parabol qua trục đối xứng (cùng tung độ, hoành độ đối xứng qua x = −b/2a)', R=>{
+  const a = R.pick([-2, -1, 1, 2, 3]), h = R.nz(-3, 3), b = -2*a*h, c = R.int(-6, 6), x1 = h + R.nz(-4, 4), y1 = a*x1*x1 + b*x1 + c, x2 = 2*h - x1;
+  if(x1 === 0 || Math.abs(y1) > 60) return null; const f = x=> a*x*x + b*x + c;
+  const O = (x, y)=> ({t:`$(${x}; ${y})$`, v:`${x};${y}`, x, y});
+  const wrong = paPick3(R, O(x2, y1), [O(-x1, y1), O(x1, -y1), O(2*h + x1, y1), O(x2, -y1), O(h - x1, y1)]); if(!wrong) return null;
+  const o = {stem:`Điểm $A(${x1}; ${y1})$ thuộc parabol $(P): y = ${paQ(a, b, c)}$. Điểm đối xứng với $A$ qua trục đối xứng của $(P)$ có toạ độ là`, ans:O(x2, y1), wrong,
+    lg:`Trục đối xứng của $(P)$ là đường thẳng $x = -\\dfrac{b}{2a} = ${h}$. Điểm $B$ đối xứng với $A$ qua đường thẳng này có cùng tung độ $${y1}$ và hoành độ thoả mãn $\\dfrac{x_A + x_B}{2} = ${h}$, tức là $x_B = ${2*h} - ${x1 < 0 ? `(${x1})` : x1} = ${x2}$.<br>Vậy $B(${x2}; ${y1})$ (kiểm tra: $f(${x2}) = ${f(x2)}$).`,
+    verify:()=> f(o.ans.x) === o.ans.y && o.ans.x !== x1 && near((o.ans.x + x1)/2, -b/(2*a))};
+  return o;
+});
+
+/* 3. TN TH — số giao điểm của parabol với một đường thẳng */
+G(10,5,1,'TH','Tìm m để đường thẳng y = kx + m cắt parabol tại hai điểm phân biệt, tiếp xúc hoặc không có điểm chung (xét Δ của phương trình hoành độ giao điểm)', R=>{
+  const a = R.pick([-2, -1, 1, 2]), b = R.int(-5, 5), c = R.int(-5, 5), k = R.int(-4, 4), want = R.pick([2, 2, 0, 1]), B = b - k;
+  // a x² + B x + c − m = 0, Δ = B² − 4a(c − m) = B² − 4ac + 4am
+  const m0 = c - B*B/(4*a), mw = c + B*B/(4*a); if(B === 0) return null;
+  const cond = m=>{ const D = B*B - 4*a*(c - m); return want === 2 ? D > 0 : want === 0 ? D < 0 : D === 0; };
+  const gt = want === 2 ? a > 0 : a < 0;   // tập nghiệm m > m0 (gt) hoặc m < m0
+  const fm = (rel, v)=> `m ${rel} ${paF(v)}`, O = (rel, v)=> ({t:`$${fm(rel, v)}$`, v:fm(rel, v), rel, val:v});
+  const ans = want === 1 ? O('=', m0) : O(gt ? '>' : '<', m0);
+  const cands = want === 1 ? [O('=', mw), O('>', m0), O('<', m0), O('=', -m0)] : [O(gt ? '<' : '>', m0), O(gt ? '\\ge' : '\\le', m0), O(gt ? '>' : '<', mw), O('=', m0), O(gt ? '<' : '>', mw)];
+  const wrong = paPick3(R, ans, cands.filter(o=> !(o.rel === ans.rel && near(o.val, ans.val)))); if(!wrong) return null;
+  const line = `y = ${k === 0 ? 'm' : termsT([[k, 'x'], [1, 'm']])}`, ask = ['không có điểm chung', 'có đúng một điểm chung (tiếp xúc)', 'cắt nhau tại hai điểm phân biệt'][want];
+  const o = {stem:`Tìm tất cả các giá trị của tham số $m$ để parabol $(P): y = ${paQ(a, b, c)}$ và đường thẳng $d: ${line}$ ${ask}.`, ans, wrong,
+    lg:`Phương trình hoành độ giao điểm: $${paQ(a, b, c)} = ${k === 0 ? 'm' : termsT([[k, 'x'], [1, 'm']])} \\iff ${paQ(a, B, c)} - m = 0$.<br>`
+      + `$\\Delta = ${B < 0 ? `(${B})` : B}^2 - 4\\cdot ${a === 1 ? '' : `${a < 0 ? `(${a})` : a}\\cdot `}(${termsT([[c, ''], [-1, 'm']])}) = ${termsT([[4*a, 'm'], [B*B - 4*a*c, '']])}$.<br>`
+      + `Yêu cầu bài toán $\\iff \\Delta ${want === 2 ? '>' : want === 0 ? '<' : '='} 0 \\iff ${termsT([[4*a, 'm'], [B*B - 4*a*c, '']])} ${want === 2 ? '>' : want === 0 ? '<' : '='} 0 \\iff ${fm(ans.rel, m0)}$${want !== 1 && a < 0 ? ' (chia cho số âm, đổi chiều)' : ''}.`,
+    verify:()=>{ const inA = m=> o.ans.rel === '=' ? near(m, o.ans.val) : o.ans.rel === '>' ? m > o.ans.val + 1e-9 : m < o.ans.val - 1e-9; const ms = gridPts(m0 - 6, m0 + 6, 0.125).concat([m0]); return ms.every(m=> cond(m) === inA(m) || near(m, m0)) && cond(m0) === inA(m0); }};
+  return o;
+});
+
+/* 4. TN TH — đọc dấu a, b, c từ đồ thị */
+G(10,5,1,'TH','Đọc đồ thị parabol y = ax² + bx + c để xét dấu a, b, c và các biểu thức ab, abc, b² − 4ac, a + b + c, a − b + c', R=>{
+  const a = R.pick([-1, -0.5, 0.5, 1]), h = R.pick([-2, -1.5, -1, 1, 1.5, 2]), k = R.pick([-3, -2, -1, 1, 2, 3]), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) < 0.5) return null;
+  const f = x=> a*x*x + b*x + c; if(Math.abs(f(1)) < 0.5 || Math.abs(f(-1)) < 0.5) return null;
+  const Qs = {a:{t:'a', v:(A, B, C)=> A}, b:{t:'b', v:(A, B, C)=> B}, c:{t:'c', v:(A, B, C)=> C}, ab:{t:'ab', v:(A, B, C)=> A*B}, ac:{t:'ac', v:(A, B, C)=> A*C}, bc:{t:'bc', v:(A, B, C)=> B*C}, abc:{t:'abc', v:(A, B, C)=> A*B*C},
+    D:{t:'b^2 - 4ac', v:(A, B, C)=> B*B - 4*A*C}, s1:{t:'a + b + c', v:(A, B, C)=> A + B + C}, s2:{t:'a - b + c', v:(A, B, C)=> A - B + C}};
+  const keys = R.shuffle(Object.keys(Qs)), val = q=> Qs[q].v(a, b, c), S = (q, pos)=> ({t:`$${Qs[q].t} ${pos ? '>' : '<'} 0$`, v:`${q}${pos ? '+' : '-'}`, q, pos});
+  const ans = S(keys[0], val(keys[0]) > 0), wrong = keys.slice(1, 4).map(q=> S(q, !(val(q) > 0)));
+  const hv = {loai:'dothi', hamSo:paPl(a, b, c), luoi:true, ghiCucTri:false, khung:{xmin:Math.min(-1.5, h) - 2.6, xmax:Math.max(1.5, h) + 2.6, ymin:Math.min(0, k, c, f(1), f(-1)) - 1.6, ymax:Math.max(0, k, c, f(1), f(-1)) + 1.6}};
+  const sg = v=> v > 0 ? '>' : '<', nx = k*a > 0 ? 0 : 2;
+  const o = {stem:`Cho hàm số $y = ax^2 + bx + c$ có đồ thị là parabol như hình vẽ. Khẳng định nào dưới đây đúng?`, ans, wrong, hv,
+    lg:`• Parabol quay bề lõm ${a > 0 ? 'lên trên' : 'xuống dưới'} nên $a ${sg(a)} 0$.<br>• Trục đối xứng $x = -\\dfrac{b}{2a}$ nằm bên ${h > 0 ? 'phải' : 'trái'} trục tung nên $-\\dfrac{b}{2a} ${sg(h)} 0$, kết hợp $a ${sg(a)} 0$ suy ra $b ${sg(b)} 0$.<br>`
+      + `• Parabol cắt trục tung tại $(0; c)$ nằm ${c > 0 ? 'phía trên' : 'phía dưới'} trục hoành nên $c ${sg(c)} 0$.<br>`
+      + `• Parabol ${nx ? 'cắt trục hoành tại hai điểm phân biệt' : 'không cắt trục hoành'} nên $b^2 - 4ac ${nx ? '>' : '<'} 0$.<br>`
+      + `• Tại $x = 1$: $y = a + b + c$, điểm của đồ thị nằm ${f(1) > 0 ? 'phía trên' : 'phía dưới'} trục hoành nên $a + b + c ${sg(f(1))} 0$; tại $x = -1$: $a - b + c ${sg(f(-1))} 0$.<br>`
+      + `Từ đó: ${[ans, ...wrong].map(s=> `$${Qs[s.q].t} ${sg(val(s.q))} 0$`).join('; ')}. Vậy khẳng định đúng là ${ans.t}.`,
+    verify:()=>{ const A = (f(1) + f(-1) - 2*f(0))/2, B = (f(1) - f(-1))/2, C = f(0); const tv = s=> (Qs[s.q].v(A, B, C) > 0) === s.pos; return tv(o.ans) && o.wrong.every(w=> !tv(w)); }};
+  return o;
+});
+
+/* 5. TN TH — chọn công thức của đồ thị đã cho */
+G(10,5,1,'TH','Nhận dạng đồ thị: chọn công thức hàm số bậc hai có đồ thị là parabol đã cho (dựa vào đỉnh, bề lõm, giao điểm với trục tung)', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.nz(-2, 2), k = R.int(-4, 4), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) > 9) return null;
+  const O = (A, B, C)=> ({t:`$y = ${paQ(A, B, C)}$`, v:`${A},${B},${C}`, A, B, C});
+  const wrong = paPick3(R, O(a, b, c), [O(-a, -b, c), O(a, -b, c), O(a, b, c + (k >= 0 ? -2 : 2)), O(a, b, -c), O(-a, b, c), O(a/Math.abs(a)*(Math.abs(a) === 1 ? 2 : 1), -2*(a/Math.abs(a)*(Math.abs(a) === 1 ? 2 : 1))*h, (a/Math.abs(a)*(Math.abs(a) === 1 ? 2 : 1))*h*h + k)].filter(w=> w.A !== 0)); if(!wrong) return null;
+  const hv = {loai:'dothi', hamSo:paPl(a, b, c), luoi:true, ghiCucTri:true, diem:[0], khung:{xmin:Math.min(-1, h) - 2.6, xmax:Math.max(1, h) + 2.6, ymin:Math.min(0, k, c) - 1.6, ymax:Math.max(0, k, c) + 1.6}};
+  const o = {stem:`Đường cong trong hình vẽ là đồ thị của hàm số nào dưới đây?`, ans:O(a, b, c), wrong, hv,
+    lg:`Từ đồ thị: parabol quay bề lõm ${a > 0 ? 'lên trên ($a > 0$)' : 'xuống dưới ($a < 0$)'}, có đỉnh $I(${h}; ${k})$ và cắt trục tung tại $(0; ${c})$.<br>`
+      + `Kiểm tra các phương án: hàm số $y = ${paQ(a, b, c)}$ có $a ${a > 0 ? '>' : '<'} 0$, hoành độ đỉnh $-\\dfrac{${b}}{2\\cdot ${a < 0 ? `(${a})` : a}} = ${h}$, $y(${h}) = ${k}$ và $y(0) = ${c}$, phù hợp. ${''}`
+      + `Mỗi phương án còn lại sai ít nhất một yếu tố (bề lõm, vị trí đỉnh hoặc giao điểm với trục tung).`,
+    verify:()=>{ const f = x=> a*x*x + b*x + c, g = w=> x=> w.A*x*x + w.B*x + w.C; return [-3, -1, 0, 1, 2.5].every(x=> near(g(o.ans)(x), f(x))) && o.wrong.every(w=> [-3, -1, 0, 1, 2.5].some(x=> !near(g(w)(x), f(x)))); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.1 (10|5|1), đợt 2 (3 Đ–S + 2 TLN). Claude viết.
+// Chuỗi: đọc đồ thị parabol (bề lõm, đỉnh, số nghiệm f(x) = m, công thức) → parabol cắt Ox tại A, B: tam giác IAB (cân, diện tích)
+// → giao điểm parabol – đường thẳng (hoành độ, trung điểm, độ dài, tiếp xúc) → toạ độ đỉnh khi hệ số lẻ → độ dài đoạn chắn trên trục hoành.
+const pbF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pbOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const pbQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pbPl = (a, b, c)=> `(${a})*x^2+(${b})*x+(${c})`;
+const pbP = v=> v < 0 || !Number.isInteger(v) ? `\\left(${pbF(v)}\\right)` : pbF(v);
+
+/* 1. ĐS TH — đọc đồ thị parabol */
+GD(10,5,1,'TH','Đọc đồ thị parabol: bề lõm, toạ độ đỉnh, số nghiệm của f(x) = m, công thức của hàm số', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.nz(-2, 2), k = R.int(-3, 3), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) > 8) return null;
+  const f = x=> a*x*x + b*x + c, m0 = k + (R.rnd() < 0.5 ? 1 : -1)*R.int(1, 3), two = a > 0 ? m0 > k : m0 < k;
+  const items = [
+    claim(R, `Hệ số $a ${a > 0 ? '>' : '<'} 0$`, `Hệ số $a ${a > 0 ? '<' : '>'} 0$`, ()=> (f(10) > f(h)) === (a > 0), ()=> (f(10) > f(h)) !== (a > 0)),
+    claim(R, `Đỉnh của parabol là $I(${h}; ${k})$`, `Đỉnh của parabol là $I(${k === h ? h + 1 : k}; ${h})$`, ()=> near(f(h), k) && near(f(h - 1), f(h + 1)), ()=> near(f(k === h ? h + 1 : k), h) && false),
+    claim(R, two ? `Phương trình $f(x) = ${m0}$ có hai nghiệm phân biệt` : `Phương trình $f(x) = ${m0}$ vô nghiệm`, two ? `Phương trình $f(x) = ${m0}$ vô nghiệm` : `Phương trình $f(x) = ${m0}$ có hai nghiệm phân biệt`,
+      ()=> (b*b - 4*a*(c - m0) > 0) === two, ()=> (b*b - 4*a*(c - m0) > 0) !== two),
+    claim(R, `Hàm số đã cho là $y = ${pbQ(a, b, c)}$`, `Hàm số đã cho là $y = ${pbQ(a, -b, c)}$`, ()=> [0, 1, -1, 2].every(x=> near(a*x*x + b*x + c, f(x))), ()=> [0, 1, -1, 2].every(x=> near(a*x*x - b*x + c, f(x))))];
+  const hv = {loai:'dothi', hamSo:pbPl(a, b, c), luoi:true, ghiCucTri:true, diem:[0], khung:{xmin:Math.min(-1, h) - 2.6, xmax:Math.max(1, h) + 2.6, ymin:Math.min(0, k, c) - 1.6, ymax:Math.max(0, k, c) + 1.6}};
+  return {stem:`Cho hàm số bậc hai $y = f(x) = ax^2 + bx + c$ có đồ thị là parabol như hình vẽ.`, items, hv,
+    lg:`a) Parabol quay bề lõm ${a > 0 ? 'lên trên nên $a > 0$' : 'xuống dưới nên $a < 0$'}.<br>b) Đọc đồ thị: đỉnh $I(${h}; ${k})$.<br>`
+      + `c) Đường thẳng $y = ${m0}$ nằm ${(m0 > k) ? 'phía trên' : 'phía dưới'} đỉnh nên ${two ? 'cắt parabol tại hai điểm: phương trình có hai nghiệm phân biệt' : 'không cắt parabol: phương trình vô nghiệm'}.<br>`
+      + `d) Parabol có đỉnh $I(${h}; ${k})$ nên $y = ${a === 1 ? '' : a === -1 ? '-' : a}(${termsT([[1, 'x'], [-h, '']])})^2${k === 0 ? '' : ` ${k < 0 ? '-' : '+'} ${Math.abs(k)}`}$; hệ số $a$ xác định nhờ giao điểm với trục tung $(0; ${c})$: $${a === 1 ? '' : a === -1 ? '-' : a + '\\cdot '}${h*h}${k === 0 ? '' : ` ${k < 0 ? '-' : '+'} ${Math.abs(k)}`} = ${c}$. Khai triển: $y = ${pbQ(a, b, c)}$.`};
+});
+
+/* 2. ĐS VD — parabol cắt trục hoành tại A, B; tam giác IAB */
+GD(10,5,1,'VD','Parabol cắt trục hoành tại A, B, đỉnh I: hoành độ giao điểm, độ dài AB, tam giác IAB cân, diện tích tam giác IAB', R=>{
+  const a = R.pick([-2, -1, 1, 2]), x1 = R.int(-5, 3), x2 = x1 + 2*R.int(1, 4), h = (x1 + x2)/2, b = -a*(x1 + x2), c = a*x1*x2, k = a*h*h + b*h + c; if(Math.abs(c) > 30 || Math.abs(k) > 40 || x1 + x2 === 0) return null;
+  const AB = x2 - x1, S = AB*Math.abs(k)/2, Sw = AB*Math.abs(k);
+  const items = [
+    claim(R, `Parabol cắt trục hoành tại hai điểm có hoành độ $${x1}$ và $${x2}$`, `Parabol cắt trục hoành tại hai điểm có hoành độ $${-x1}$ và $${-x2}$`, ()=> a*x1*x1 + b*x1 + c === 0 && a*x2*x2 + b*x2 + c === 0, ()=> a*x1*x1 - b*x1 + c === 0 && a*x2*x2 - b*x2 + c === 0 && x1 + x2 === 0),
+    claimN(R, v=> `$AB = ${v}$`, AB, String(AB), AB/2, pbF(AB/2), ()=> Math.abs(x2 - x1)),
+    claim(R, `Tam giác $IAB$ cân tại $I$`, `Tam giác $IAB$ vuông tại $I$`, ()=> near(Math.hypot(h - x1, k), Math.hypot(h - x2, k)), ()=> near((x1 - h)*(x2 - h) + k*k, 0)),
+    claimN(R, v=> `Diện tích tam giác $IAB$ bằng $${v}$`, S, pbF(S), Sw, pbF(Sw), ()=> Math.abs((x1 - h)*(0 - k) - (x2 - h)*(0 - k))/2)];
+  if(near(Math.abs(k), AB/2)) return null;   // tránh trường hợp tam giác vừa cân vừa vuông làm mệnh đề sai thành đúng
+  return {stem:`Cho parabol $(P): y = ${pbQ(a, b, c)}$ cắt trục hoành tại hai điểm $A$, $B$ ($A$ có hoành độ nhỏ hơn) và có đỉnh $I$.`, items,
+    lg:`Giải $${pbQ(a, b, c)} = 0 \\iff x = ${x1}$ hoặc $x = ${x2}$, nên $A(${x1}; 0)$, $B(${x2}; 0)$, $AB = ${AB}$.<br>`
+      + `Đỉnh $I$ có hoành độ $${pbF(h)}$ (trung điểm của $AB$), tung độ $${pbF(k)}$.<br>`
+      + `a) Đúng với hoành độ $${x1}$, $${x2}$.<br>b) $AB = ${x2} - ${x1 < 0 ? `(${x1})` : x1} = ${AB}$.<br>`
+      + `c) $I$ nằm trên trục đối xứng là đường trung trực của $AB$ nên $IA = IB$: tam giác $IAB$ cân tại $I$ (không vuông vì khoảng cách từ $I$ đến $AB$ là $${pbF(Math.abs(k))} \\ne \\dfrac{AB}{2}$).<br>`
+      + `d) $S_{IAB} = \\dfrac{1}{2}\\cdot AB\\cdot |y_I| = \\dfrac{1}{2}\\cdot ${AB}\\cdot ${pbF(Math.abs(k))} = ${pbF(S)}$.`};
+});
+
+/* 3. ĐS VD — giao điểm parabol và đường thẳng */
+GD(10,5,1,'VD','Giao điểm của parabol và đường thẳng: hoành độ giao điểm, trung điểm của đoạn AB, độ dài AB, giá trị của m để đường thẳng tiếp xúc', R=>{
+  const a = R.pick([-1, 1, 2]), x1 = R.int(-4, 2), x2 = x1 + R.int(1, 5), k = R.int(-3, 3), d = R.int(-4, 4);
+  // a x² + b x + c − (kx + d) = a(x − x1)(x − x2)
+  const b = k - a*(x1 + x2), c = d + a*x1*x2; if(Math.abs(b) > 12 || Math.abs(c) > 20) return null;
+  const y1 = k*x1 + d, y2 = k*x2 + d, xm = (x1 + x2)/2, ym = (y1 + y2)/2, AB2 = (x2 - x1)**2 + (y2 - y1)**2;
+  const B = b - k, dT = c - B*B/(4*a);   // y = kx + dT tiếp xúc (P)
+  if(!pbOk(dT) || !pbOk(ym)) return null;
+  const items = [
+    claim(R, `Hoành độ các giao điểm là $${x1}$ và $${x2}$`, `Hoành độ các giao điểm là $${x1}$ và $${x2 + 1}$`, ()=> [x1, x2].every(x=> a*x*x + b*x + c === k*x + d), ()=> [x1, x2 + 1].every(x=> a*x*x + b*x + c === k*x + d)),
+    claimN(R, v=> `Trung điểm của đoạn $AB$ có tung độ bằng $${v}$`, ym, pbF(ym), xm !== ym ? xm : ym + 1, pbF(xm !== ym ? xm : ym + 1), ()=> (k*x1 + d + k*x2 + d)/2),
+    claimN(R, v=> `$AB^2 = ${v}$`, AB2, String(AB2), (x2 - x1)**2, String((x2 - x1)**2), ()=> (x2 - x1)**2 + (k*x2 - k*x1)**2),
+    claimN(R, v=> `Đường thẳng $y = ${k === 0 ? '' : termsT([[k, 'x']]) + ' + '}m$ tiếp xúc với $(P)$ khi $m = ${v}$`.replace('+ m = -', '+ m = -'), dT, pbF(dT), c + B*B/(4*a), pbF(c + B*B/(4*a)), ()=>{ let L = -200, H = 200; const D = m=> B*B - 4*a*(c - m); for(let i = 0; i < 200; i++){ const M = (L + H)/2; if((D(M) > 0) === (D(L) > 0)) L = M; else H = M; } return (L + H)/2; })];
+  if(near(AB2, (x2 - x1)**2)) return null;
+  const line = k === 0 ? `y = ${d}` : `y = ${termsT([[k, 'x'], [d, '']])}`;
+  return {stem:`Cho parabol $(P): y = ${pbQ(a, b, c)}$ và đường thẳng $d: ${line}$. Biết $d$ cắt $(P)$ tại hai điểm $A$, $B$.`, items,
+    lg:`Phương trình hoành độ giao điểm: $${pbQ(a, b, c)} = ${termsT([[k, 'x'], [d, '']])} \\iff ${pbQ(a, B, c - d)} = 0 \\iff x = ${x1}$ hoặc $x = ${x2}$.<br>`
+      + `Suy ra $A(${x1}; ${y1})$, $B(${x2}; ${y2})$.<br>a) Hoành độ giao điểm: $${x1}$ và $${x2}$.<br>`
+      + `b) Trung điểm $AB$: $\\left(${pbF(xm)}; ${pbF(ym)}\\right)$, tung độ $${pbF(ym)}$.<br>`
+      + `c) $AB^2 = (${x2} - ${x1 < 0 ? `(${x1})` : x1})^2 + (${y2} - ${y1 < 0 ? `(${y1})` : y1})^2 = ${AB2}$.<br>`
+      + `d) Đường thẳng $y = ${k === 0 ? '' : termsT([[k, 'x']]) + ' + '}m$ tiếp xúc $(P)$ khi $${pbQ(a, B, c)} - m = 0$ có nghiệm kép: $\\Delta = ${B*B} - ${4*a < 0 ? `(${4*a})` : 4*a}(${c} - m) = 0 \\iff m = ${pbF(dT)}$.`.replace(/\(\d+ - m\)/, s=> s).replace(/\(-?\d+ - m\)/, s=> s)};
+});
+
+/* 4. TLN TH — toạ độ đỉnh */
+GT(10,5,1,'TH','Toạ độ đỉnh của parabol (hệ số cho trước, đỉnh có toạ độ không nguyên): tính tổng, tích hoặc hiệu các toạ độ', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3, 4]), b = R.nz(-9, 9), c = R.int(-8, 8), h = -b/(2*a), k = c - b*b/(4*a), ask = R.int(0, 2);
+  const v = ask === 0 ? h + k : ask === 1 ? h*k : k - h; if(!pbOk(v) || !pbOk(h) || Number.isInteger(h) && R.rnd() < 0.6) return null;
+  const askT = ['x_I + y_I', 'x_I\\cdot y_I', 'y_I - x_I'][ask];
+  const o = {stem:`Gọi $I(x_I; y_I)$ là đỉnh của parabol $y = ${pbQ(a, b, c)}$. Tính $${askT}$.`, ans:Math.round(v*10)/10,
+    lg:`$x_I = -\\dfrac{b}{2a} = -\\dfrac{${b}}{2\\cdot ${a < 0 ? `(${a})` : a}} = ${pbF(h)}$; $y_I = f(x_I) = ${a}\\cdot ${pbP(h)}^2 ${b < 0 ? '-' : '+'} ${Math.abs(b)}\\cdot ${pbP(h)}${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`} = ${pbF(k)}$ (hoặc $y_I = -\\dfrac{\\Delta}{4a}$).<br>Vậy $${askT} = ${pbF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`.replace('= 1\\cdot', '= ').replace('= -1\\cdot', '= -'),
+    verify:()=>{ const f = x=> a*x*x + b*x + c; let L = -50, H = 50; for(let i = 0; i < 200; i++){ const m1 = L + (H - L)/3, m2 = H - (H - L)/3; if((f(m1) - f(m2))*a > 0) L = m1; else H = m2; } const X = (L + H)/2, Y = f(X); return near([X + Y, X*Y, Y - X][ask], o.ans, 1e-6); }};
+  return o;
+});
+
+/* 5. TLN TH — độ dài đoạn chắn trên trục hoành */
+GT(10,5,1,'TH','Độ dài đoạn thẳng AB với A, B là giao điểm của parabol với trục hoành (giải phương trình bậc hai)', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3, 4]), p = R.int(-12, 12), q = R.int(-12, 12), den = R.pick([1, 1, 2]); if(p === q) return null;
+  // nghiệm x1 = p/den, x2 = q/den (khi den = 2 thì nhân a cho đủ nguyên)
+  const A2 = a*den*den, B2 = -a*den*(p + q), C2 = a*p*q; const g = Math.abs(gcdI(gcdI(A2, B2), C2)); const aa = A2/g, bb = B2/g, cc = C2/g;
+  const v = Math.abs(p - q)/den; if(!pbOk(v) || Math.abs(bb) > 40 || Math.abs(cc) > 60) return null; const x1 = Math.min(p, q)/den, x2 = Math.max(p, q)/den;
+  const o = {stem:`Parabol $y = ${pbQ(aa, bb, cc)}$ cắt trục hoành tại hai điểm $A$ và $B$. Tính độ dài đoạn thẳng $AB$.`, ans:Math.round(v*10)/10,
+    lg:`Giải $${pbQ(aa, bb, cc)} = 0$: $\\Delta = ${bb*bb - 4*aa*cc}$, $x = \\dfrac{${-bb} \\pm ${Math.round(Math.sqrt(bb*bb - 4*aa*cc))}}{${2*aa}}$, được $x_1 = ${pbF(x1)}$, $x_2 = ${pbF(x2)}$.<br>$AB = |x_2 - x_1| = ${pbF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(v)}$`}.`,
+    verify:()=>{ const D = bb*bb - 4*aa*cc; return D > 0 && near(Math.sqrt(D)/Math.abs(aa), o.ans, 1e-9); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.1 (10|5|1), đợt 3 (5 TLN). Claude viết.
+// Chuỗi: điều kiện để parabol cắt trục hoành tại hai điểm (Δ′ bậc nhất theo m) → đường thẳng y = m cắt parabol tại hai điểm cùng nằm bên phải trục tung (đọc theo đỉnh và giao điểm với Oy)
+// → trung điểm dây cung (định lí Vi-ét) → đỉnh nằm trên một đường thẳng → đường thẳng qua một điểm cố định tiếp xúc parabol.
+const pcF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pcOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const pcQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pcP = v=> v < 0 ? `(${pcF(v)})` : pcF(v);
+const pcList = ms=> ms.length > 8 ? `${ms[0]}; ${ms[1]}; \\dots; ${ms[ms.length - 1]}` : ms.join('; ');
+
+/* 1. TLN TH — parabol chứa tham số cắt trục hoành tại hai điểm phân biệt */
+GT(10,5,1,'TH','Số giá trị nguyên của m để parabol y = x² − 2(m + p)x + m² + q cắt trục hoành tại hai điểm phân biệt (Δ′ là biểu thức bậc nhất theo m)', R=>{
+  const p = R.nz(-4, 4), q = R.int(-10, 10), N = R.pick([10, 15, 20]), up = R.rnd() < 0.5;
+  // Δ′ = (m + p)² − (m² + q) = 2pm + p² − q
+  const ok = m=> up ? 2*p*m + p*p - q > 0 : 2*p*m + p*p - q < 0;
+  const ms = []; for(let m = -N; m <= N; m++) if(ok(m)) ms.push(m); if(ms.length < 2 || ms.length > 2*N) return null; const v = ms.length;
+  const B = termsT([[1, 'm'], [p, '']]), C = termsT([[1, 'm^2'], [q, '']]), m0 = (q - p*p)/(2*p);
+  const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${N}; ${N}]$ để parabol $y = x^2 - 2(${B})x + ${C}$ ${up ? 'cắt trục hoành tại hai điểm phân biệt' : 'không cắt trục hoành'}?`, ans:v,
+    lg:`Xét phương trình $x^2 - 2(${B})x + ${C} = 0$ có $\\Delta' = (${B})^2 - (${C}) = ${termsT([[2*p, 'm'], [p*p - q, '']])}$.<br>`
+      + `Yêu cầu bài toán $\\iff \\Delta' ${up ? '>' : '<'} 0 \\iff ${termsT([[2*p, 'm'], [p*p - q, '']])} ${up ? '>' : '<'} 0 \\iff m ${(p > 0) === up ? '>' : '<'} ${pcF(m0)}$.<br>`
+      + `Kết hợp $m$ nguyên thuộc $[-${N}; ${N}]$: $m \\in \\{${pcList(ms)}\\}$, có $${v}$ giá trị.`,
+    verify:()=>{ let c = 0; for(let m = -N; m <= N; m++){ const b = -2*(m + p), cc = m*m + q, D = b*b - 4*cc; if(up ? D > 0 : D < 0) c++; } return c === o.ans; }};
+  return o;
+});
+
+/* 2. TLN VD — y = m cắt parabol tại hai điểm có hoành độ dương */
+GT(10,5,1,'VD','Số giá trị nguyên của m để đường thẳng y = m cắt parabol tại hai điểm phân biệt có hoành độ cùng dương (cùng âm): so sánh m với tung độ đỉnh và với giao điểm của parabol với trục tung', R=>{
+  const a = R.pick([-2, -1, 1, 2]), right = R.rnd() < 0.5, h = (right ? 1 : -1)*R.int(1, 4), k = R.int(-6, 4), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) > 30) return null;
+  // hai nghiệm cùng phía với đỉnh (so với trục tung) ⇔ m nằm giữa k và c (không lấy đầu mút)
+  const lo = Math.min(k, c), hi = Math.max(k, c), ms = []; for(let m = lo + 1; m < hi; m++) ms.push(m); if(ms.length < 2) return null;
+  const want = right ? 'dương' : 'âm', ask = R.pick([0, 1]), v = ask ? ms.reduce((s, m)=> s + m, 0) : ms.length; if(String(v).length > 4) return null;
+  const o = {stem:`Cho parabol $(P): y = ${pcQ(a, b, c)}$. ${ask ? 'Tính tổng tất cả các' : 'Có bao nhiêu'} giá trị nguyên của tham số $m$ để đường thẳng $y = m$ cắt $(P)$ tại hai điểm phân biệt có hoành độ cùng ${want}${ask ? '.' : '?'}`, ans:v,
+    lg:`$(P)$ có đỉnh $I(${h}; ${k})$, quay bề lõm ${a > 0 ? 'lên trên' : 'xuống dưới'}, cắt trục tung tại $(0; ${c})$. Trục đối xứng $x = ${h}$ nằm bên ${right ? 'phải' : 'trái'} trục tung.<br>`
+      + `Đường thẳng $y = m$ cắt $(P)$ tại hai điểm phân biệt khi $m ${a > 0 ? '>' : '<'} ${k}$; hai giao điểm đối xứng qua $x = ${h}$, cả hai cùng nằm bên ${right ? 'phải' : 'trái'} trục tung khi đường thẳng chưa vượt qua điểm $(0; ${c})$, tức là $m ${a > 0 ? '<' : '>'} ${c}$ (khi $m = ${c}$ có một giao điểm nằm trên trục tung).<br>`
+      + `Vậy $${lo} < m < ${hi}$, các giá trị nguyên: $\\{${pcList(ms)}\\}$, ${ask ? `tổng bằng $${v}$` : `có $${v}$ giá trị`}.`,
+    verify:()=>{ let cnt = 0, sum = 0; for(let m = -60; m <= 60; m++){ const D = b*b - 4*a*(c - m); if(D <= 0) continue; const r1 = (-b - Math.sqrt(D))/(2*a), r2 = (-b + Math.sqrt(D))/(2*a); if(right ? (r1 > 1e-12 && r2 > 1e-12) : (r1 < -1e-12 && r2 < -1e-12)){ cnt++; sum += m; } } return (ask ? sum : cnt) === o.ans; }};
+  return o;
+});
+
+/* 3. TLN VD — trung điểm của dây cung (Vi-ét) */
+GT(10,5,1,'VD','Đường thẳng cắt parabol tại A, B: toạ độ trung điểm M của đoạn AB theo định lí Vi-ét (không cần giải nghiệm)', R=>{
+  const a = R.pick([-2, -1, 1, 2, 3]), b = R.int(-6, 6), c = R.int(-6, 6), k = R.int(-4, 4), d = R.int(-6, 6), B = b - k, C = c - d;
+  if(B*B - 4*a*C <= 0) return null; const S = -B/a, xm = S/2, ym = k*xm + d, ask = R.int(0, 2), v = [xm + ym, ym, 2*xm + ym][ask];
+  if(Number.isInteger(Math.sqrt(B*B - 4*a*C)) && R.rnd() < 0.7) return null; if(!pcOk(v)) return null;
+  const askT = ['x_M + y_M', 'y_M', '2x_M + y_M'][ask], line = k === 0 ? `y = ${d}` : `y = ${termsT([[k, 'x'], [d, '']])}`;
+  const o = {stem:`Đường thẳng $d: ${line}$ cắt parabol $(P): y = ${pcQ(a, b, c)}$ tại hai điểm phân biệt $A$, $B$. Gọi $M(x_M; y_M)$ là trung điểm của đoạn thẳng $AB$. Tính $${askT}$.`, ans:Math.round(v*10)/10,
+    lg:`Phương trình hoành độ giao điểm: $${pcQ(a, b, c)} = ${termsT([[k, 'x'], [d, '']])} \\iff ${pcQ(a, B, C)} = 0$ ($\\Delta = ${B*B - 4*a*C} > 0$).<br>`
+      + `Theo định lí Vi-ét: $x_A + x_B = ${pcF(S)}$, nên $x_M = \\dfrac{x_A + x_B}{2} = ${pcF(xm)}$. Vì $M$ thuộc $d$: $y_M = ${k === 0 ? d : `${k === 1 ? '' : k === -1 ? '-' : k + '\\cdot '}${pcP(xm)}${d === 0 ? '' : ` ${d < 0 ? '-' : '+'} ${Math.abs(d)}`} = ${pcF(ym)}`}$.<br>`
+      + `Vậy $${askT} = ${pcF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=>{ const D = B*B - 4*a*C, x1 = (-B - Math.sqrt(D))/(2*a), x2 = (-B + Math.sqrt(D))/(2*a), X = (x1 + x2)/2, Y = (a*x1*x1 + b*x1 + c + a*x2*x2 + b*x2 + c)/2; return near([X + Y, Y, 2*X + Y][ask], o.ans, 1e-6); }};
+  return o;
+});
+
+/* 4. TLN VD — đỉnh của parabol nằm trên một đường thẳng */
+GT(10,5,1,'VD','Tìm m để đỉnh của parabol y = x² − 2mx + pm + q nằm trên một đường thẳng cho trước (phương trình bậc hai theo m), tính tổng hoặc tích các giá trị m', R=>{
+  const m1 = R.int(-5, 5), m2 = R.int(-5, 5), r = R.int(-4, 4); if(m1 === m2) return null;
+  // đỉnh I(m; −m² + pm + q) thuộc y = r x + s ⇔ m² + (r − p)m + (s − q) = 0 có nghiệm m1, m2
+  const sumR = m1 + m2, prod = m1*m2, s = R.int(-6, 6), q = s - prod, P = r + sumR; if(Math.abs(P) > 9 || P === 0) return null; return mk(P);
+  function mk(P){ const ask = R.pick([0, 1, 2]), v = [sumR, prod, m1*m1 + m2*m2][ask]; const askT = ['tổng', 'tích', 'tổng bình phương'][ask];
+    const line = `y = ${termsT([[r, 'x'], [s, '']])}`.replace('y = 0', 'y = 0');
+    const o = {stem:`Cho parabol $(P_m): y = x^2 - 2mx ${termsT([[P, 'm'], [q, '']]).startsWith('-') ? '- ' + termsT([[P, 'm'], [q, '']]).slice(1) : '+ ' + termsT([[P, 'm'], [q, '']])}$ ($m$ là tham số). Tính ${askT} các giá trị của $m$ để đỉnh của $(P_m)$ nằm trên đường thẳng $${r === 0 && s === 0 ? 'y = 0' : line}$.`.replace('+ 0$', '$'), ans:v,
+      lg:`$(P_m)$ có đỉnh $I(m; y_I)$ với $y_I = m^2 - 2m\\cdot m ${termsT([[P, 'm'], [q, '']]).startsWith('-') ? '- ' + termsT([[P, 'm'], [q, '']]).slice(1) : '+ ' + termsT([[P, 'm'], [q, '']])} = ${termsT([[-1, 'm^2'], [P, 'm'], [q, '']])}$.<br>`
+        + `$I$ thuộc đường thẳng $\\iff ${termsT([[-1, 'm^2'], [P, 'm'], [q, '']])} = ${termsT([[r, 'm'], [s, '']])} \\iff ${termsT([[1, 'm^2'], [r - P, 'm'], [s - q, '']])} = 0 \\iff m = ${Math.min(m1, m2)}$ hoặc $m = ${Math.max(m1, m2)}$.<br>`
+        + `${askT[0].toUpperCase() + askT.slice(1)} các giá trị: $${[`${m1} + ${m2 < 0 ? `(${m2})` : m2}`, `${m1}\\cdot ${m2 < 0 ? `(${m2})` : m2}`, `${m1 < 0 ? `(${m1})` : m1}^2 + ${m2 < 0 ? `(${m2})` : m2}^2`][ask]} = ${v}$.`,
+      verify:()=>{ const ms = []; for(let m = -30; m <= 30; m++){ const yI = -m*m + P*m + q; if(yI === r*m + s) ms.push(m); } return ms.length === 2 && [ms[0] + ms[1], ms[0]*ms[1], ms[0]*ms[0] + ms[1]*ms[1]][ask] === o.ans; }};
+    return o; }
+});
+
+/* 5. TLN VD — đường thẳng qua điểm cố định tiếp xúc parabol */
+GT(10,5,1,'VD','Đường thẳng y = mx + n (n cho trước) tiếp xúc với parabol: điều kiện Δ = 0 là phương trình bậc hai theo m; tính tổng hoặc tích các giá trị m', R=>{
+  const a = R.pick([-2, -1, 1, 2]), b = R.int(-6, 6), c = R.int(-6, 6), n = R.int(-6, 6), t2 = a*(c - n); const t = Math.round(Math.sqrt(Math.abs(t2)));
+  if(t2 <= 0 || t*t !== t2) return null;   // m = b ± 2t
+  const mA = b - 2*t, mB = b + 2*t, ask = R.pick([0, 1]), v = ask ? mA*mB : mA + mB;
+  const o = {stem:`Cho parabol $(P): y = ${pcQ(a, b, c)}$. Tính ${ask ? 'tích' : 'tổng'} các giá trị của tham số $m$ để đường thẳng $d: y = ${n === 0 ? 'mx' : `mx ${n < 0 ? '-' : '+'} ${Math.abs(n)}`}$ tiếp xúc với $(P)$ (có đúng một điểm chung).`, ans:v,
+    lg:`Phương trình hoành độ giao điểm: $${pcQ(a, b, c)} = mx${n === 0 ? '' : ` ${n < 0 ? '-' : '+'} ${Math.abs(n)}`} \\iff ${a === 1 ? '' : a === -1 ? '-' : a}x^2 + (${termsT([[b, ''], [-1, 'm']])})x ${c - n < 0 ? '-' : '+'} ${Math.abs(c - n)} = 0$.<br>`
+      + `$d$ tiếp xúc $(P)$ $\\iff \\Delta = (${termsT([[b, ''], [-1, 'm']])})^2 - ${4*a < 0 ? `(${4*a})` : 4*a}\\cdot ${c - n < 0 ? `(${c - n})` : c - n} = 0 \\iff (m ${b < 0 ? '+' : '-'} ${Math.abs(b)})^2 = ${4*t2} \\iff m = ${mA}$ hoặc $m = ${mB}$.`.replace(/\(m [+-] 0\)/, 'm')
+      + `<br>${ask ? 'Tích' : 'Tổng'} các giá trị: $${ask ? `${mA}\\cdot ${mB < 0 ? `(${mB})` : mB}` : `${mA} + ${mB < 0 ? `(${mB})` : mB}`} = ${v}$.`,
+    verify:()=>{ const ms = []; for(let m = -40; m <= 40; m++){ const D = (b - m)**2 - 4*a*(c - n); if(D === 0) ms.push(m); } return ms.length === 2 && (ask ? ms[0]*ms[1] : ms[0] + ms[1]) === o.ans; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.1 (10|5|1), đợt 4 (5 TLN). Claude viết.
+// Chuỗi: hai điểm cùng tung độ đối xứng qua trục (x₁ + x₂ = 2x_I) → diện tích tam giác tạo bởi các giao điểm với hai trục
+// → giao điểm của hai parabol → đỉnh nằm trên trục hoành (Δ = 0 theo m) → đọc đồ thị: số giá trị m để f(x) = m có hai nghiệm trên một đoạn.
+const pdF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pdOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const pdQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pdPl = (a, b, c)=> `(${a})*x^2+(${b})*x+(${c})`;
+
+/* 1. TLN TH — điểm đối xứng: biết một giao điểm, tìm giao điểm còn lại của parabol với đường thẳng nằm ngang */
+GT(10,5,1,'TH','Parabol có trục đối xứng x = x_I cắt đường thẳng nằm ngang tại hai điểm: biết hoành độ một điểm, tìm hoành độ điểm còn lại (x₁ + x₂ = 2x_I)', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3]), h2 = R.nz(-9, 9), b = -a*h2, c = R.int(-6, 6), x1 = R.int(-6, 6), h = h2/2, x2 = h2 - x1; if(x1 === x2) return null;
+  const m = a*x1*x1 + b*x1 + c; if(Math.abs(m) > 99) return null;
+  const o = {stem:`Đường thẳng $y = ${m}$ cắt parabol $(P): y = ${pdQ(a, b, c)}$ tại hai điểm, trong đó có điểm $A(${x1}; ${m})$. Tìm hoành độ của giao điểm còn lại.`, ans:x2,
+    lg:`Trục đối xứng của $(P)$: $x = -\\dfrac{b}{2a} = ${pdF(h)}$. Hai giao điểm của $(P)$ với đường thẳng nằm ngang có cùng tung độ nên đối xứng nhau qua trục: $x_A + x_B = 2\\cdot ${pdF(h) .startsWith('-') ? `\\left(${pdF(h)}\\right)` : pdF(h)} = ${h2}$.<br>Suy ra $x_B = ${h2} - ${x1 < 0 ? `(${x1})` : x1} = ${x2}$.`,
+    verify:()=>{ const D = b*b - 4*a*(c - m); const r = [(-b - Math.sqrt(D))/(2*a), (-b + Math.sqrt(D))/(2*a)]; return r.some(x=> near(x, x1)) && r.some(x=> near(x, o.ans)); }};
+  return o;
+});
+
+/* 2. TLN VD — diện tích tam giác tạo bởi các giao điểm với hai trục */
+GT(10,5,1,'VD','Parabol cắt trục hoành tại A, B và cắt trục tung tại C: tính diện tích tam giác ABC', R=>{
+  const a = R.pick([-2, -1, 1, 2]), x1 = R.int(-6, 4), x2 = x1 + R.int(1, 7), b = -a*(x1 + x2), c = a*x1*x2; if(c === 0 || Math.abs(c) > 40) return null;
+  const S = (x2 - x1)*Math.abs(c)/2; if(!pdOk(S) || x2 - x1 === 1 || Math.abs(c) === 1) return null;
+  const o = {stem:`Parabol $(P): y = ${pdQ(a, b, c)}$ cắt trục hoành tại hai điểm $A$, $B$ và cắt trục tung tại điểm $C$. Tính diện tích tam giác $ABC$.`, ans:Math.round(S*10)/10,
+    lg:`$${pdQ(a, b, c)} = 0 \\iff x = ${x1}$ hoặc $x = ${x2}$, nên $A(${x1}; 0)$, $B(${x2}; 0)$, $AB = ${x2 - x1}$.<br>$x = 0 \\Rightarrow y = ${c}$, nên $C(0; ${c})$; khoảng cách từ $C$ đến trục hoành là $${Math.abs(c)}$.<br>`
+      + `$S_{ABC} = \\dfrac{1}{2}\\cdot ${x2 - x1}\\cdot ${Math.abs(c)} = ${pdF(S)}$${Number.isInteger(S) ? '' : ` $= ${nt(S)}$`}.`,
+    verify:()=>{ const D = b*b - 4*a*c, r1 = (-b - Math.sqrt(D))/(2*a), r2 = (-b + Math.sqrt(D))/(2*a), C = c; return near(Math.abs((r2 - r1)*C)/2, o.ans); }};
+  return o;
+});
+
+/* 3. TLN TH — giao điểm của hai parabol */
+GT(10,5,1,'TH','Giao điểm của hai parabol: lập phương trình hoành độ giao điểm (bậc hai hoặc bậc nhất), tính tổng các tung độ giao điểm', R=>{
+  const a1 = R.pick([1, 2, -1]), a2 = R.pick([-2, -1, 1, 3]), x1 = R.int(-4, 3), x2 = x1 + R.int(1, 5); if(a1 === a2) return null;
+  // a1 x² + b1 x + c1 − (a2 x² + b2 x + c2) = (a1 − a2)(x − x1)(x − x2)
+  const b1 = R.int(-5, 5), c1 = R.int(-6, 6), A = a1 - a2, b2 = b1 + A*(x1 + x2), c2 = c1 - A*x1*x2; if(Math.abs(b2) > 12 || Math.abs(c2) > 30) return null;
+  const f = x=> a1*x*x + b1*x + c1, y1 = f(x1), y2 = f(x2), ask = R.pick([0, 1]), v = ask ? y1 + y2 : x1 + x2 + y1 + y2; if(String(v).length > 4) return null;
+  const o = {stem:`Hai parabol $y = ${pdQ(a1, b1, c1)}$ và $y = ${pdQ(a2, b2, c2)}$ cắt nhau tại hai điểm $A(x_A; y_A)$, $B(x_B; y_B)$. Tính $${ask ? 'y_A + y_B' : 'x_A + x_B + y_A + y_B'}$.`, ans:v,
+    lg:`Phương trình hoành độ giao điểm: $${pdQ(a1, b1, c1)} = ${pdQ(a2, b2, c2)} \\iff ${pdQ(A, b1 - b2, c1 - c2)} = 0 \\iff x = ${x1}$ hoặc $x = ${x2}$.<br>`
+      + `Tung độ: $y = ${y1}$ (tại $x = ${x1}$), $y = ${y2}$ (tại $x = ${x2}$).<br>Vậy $${ask ? 'y_A + y_B' : 'x_A + x_B + y_A + y_B'} = ${v}$.`,
+    verify:()=>{ const g = x=> a2*x*x + b2*x + c2, rs = []; for(let x = -30; x <= 30; x++) if(f(x) === g(x)) rs.push(x); return rs.length === 2 && (ask ? f(rs[0]) + f(rs[1]) : rs[0] + rs[1] + f(rs[0]) + f(rs[1])) === o.ans; }};
+  return o;
+});
+
+/* 4. TLN VD — đỉnh nằm trên trục hoành */
+GT(10,5,1,'VD','Tìm m để đỉnh của parabol chứa tham số nằm trên trục hoành (Δ = 0, phương trình bậc hai theo m), tính tổng hoặc tích các giá trị m', R=>{
+  const m1 = R.int(-5, 5), m2 = R.int(-5, 5); if(m1 === m2) return null;
+  // y = x² − 2(m + p)x + q m + r: Δ′ = (m + p)² − q m − r = m² + (2p − q)m + p² − r = (m − m1)(m − m2)
+  const p = R.int(-3, 3), q = 2*p + (m1 + m2), r = p*p - m1*m2; if(Math.abs(q) > 12 || Math.abs(r) > 30) return null;
+  const ask = R.pick([0, 1]), v = ask ? m1*m2 : m1 + m2;
+  const B = termsT([[1, 'm'], [p, '']]), C = termsT([[q, 'm'], [r, '']]);
+  const o = {stem:`Cho parabol $(P_m): y = x^2 - 2(${B})x ${C.startsWith('-') ? '- ' + C.slice(1) : '+ ' + C}$ ($m$ là tham số). Tính ${ask ? 'tích' : 'tổng'} các giá trị của $m$ để đỉnh của $(P_m)$ nằm trên trục hoành.`.replace('2(m)x', '2mx'), ans:v,
+    lg:`Đỉnh của $(P_m)$ nằm trên trục hoành $\\iff$ phương trình $x^2 - 2(${B})x ${C.startsWith('-') ? '- ' + C.slice(1) : '+ ' + C} = 0$ có nghiệm kép $\\iff \\Delta' = 0$.<br>`.replace('2(m)x', '2mx')
+      + `$\\Delta' = (${B})^2 - ${q === 0 ? (r < 0 ? `(${r})` : r) : `(${C})`} =${termsT([[1, 'm^2'], [2*p - q, 'm'], [p*p - r, '']])} = 0 \\iff m = ${Math.min(m1, m2)}$ hoặc $m = ${Math.max(m1, m2)}$.<br>`.replace('= (m)^2', '= m^2')
+      + `${ask ? 'Tích' : 'Tổng'} các giá trị: $${ask ? `${m1 < 0 ? `(${m1})` : m1}\\cdot ${m2 < 0 ? `(${m2})` : m2}` : `${m1} + ${m2 < 0 ? `(${m2})` : m2}`} = ${v}$.`,
+    verify:()=>{ const ms = []; for(let m = -30; m <= 30; m++){ const bb = -2*(m + p), cc = q*m + r; if(bb*bb - 4*cc === 0) ms.push(m); } return ms.length === 2 && (ask ? ms[0]*ms[1] : ms[0] + ms[1]) === o.ans; }};
+  return o;
+});
+
+/* 5. TLN VD — đọc đồ thị: f(x) = m có hai nghiệm phân biệt thuộc một đoạn */
+GT(10,5,1,'VD','Đọc đồ thị parabol: số giá trị nguyên của m để phương trình f(x) = m có hai nghiệm phân biệt thuộc đoạn [p; q]', R=>{
+  const a = R.pick([-1, 1, 0.5, -0.5]), h = R.int(-1, 2)*(Math.abs(a) === 0.5 ? 2 : 1), k = R.int(-3, 2)*(a > 0 ? 1 : -1), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c;
+  const p = h - R.int(1, 4)*(Math.abs(a) === 0.5 ? 2 : 1), q = h + R.int(1, 4)*(Math.abs(a) === 0.5 ? 2 : 1), fp = f(p), fq = f(q); if(Math.max(Math.abs(fp), Math.abs(fq)) > 12) return null;
+  // hai nghiệm thuộc [p; q] ⇔ m nằm giữa k (không lấy) và giá trị ở đầu mút gần đỉnh hơn (lấy)
+  const near2 = a > 0 ? Math.min(fp, fq) : Math.max(fp, fq), lo = Math.min(k, near2), hi = Math.max(k, near2);
+  const ms = []; for(let m = Math.ceil(lo); m <= Math.floor(hi); m++){ if(m === k) continue; ms.push(m); } if(ms.length < 2) return null;
+  const ask = R.pick([0, 1]), v = ask ? ms.reduce((s, m)=> s + m, 0) : ms.length;
+  const hv = {loai:'dothi', hamSo:pdPl(a, b, c), luoi:true, ghiCucTri:true, diem:[p, q], khung:{xmin:Math.min(-1, p) - 1.6, xmax:Math.max(1, q) + 1.6, ymin:Math.min(0, k, fp, fq) - 1.6, ymax:Math.max(0, k, fp, fq) + 1.6}};
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có đồ thị là parabol như hình vẽ. ${ask ? 'Tính tổng tất cả các' : 'Có bao nhiêu'} giá trị nguyên của tham số $m$ để phương trình $f(x) = m$ có hai nghiệm phân biệt thuộc đoạn $[${p}; ${q}]$${ask ? '.' : '?'}`, ans:v, hv,
+    lg:`Đồ thị có đỉnh $I(${h}; ${k})$; trên đoạn $[${p}; ${q}]$: $f(${p}) = ${fp}$, $f(${q}) = ${fq}$.<br>`
+      + `Đường thẳng $y = m$ cắt phần đồ thị ứng với $x \\in [${p}; ${q}]$ tại hai điểm phân biệt khi nó nằm ${a > 0 ? 'trên' : 'dưới'} đỉnh và chưa vượt qua đầu mút gần đỉnh hơn (đầu mút có ${a > 0 ? 'tung độ nhỏ hơn' : 'tung độ lớn hơn'}): $${a > 0 ? `${k} < m \\le ${near2}` : `${near2} \\le m < ${k}`}$.<br>`
+      + `Các giá trị nguyên: $\\{${ms.join('; ')}\\}$, ${ask ? `tổng bằng $${v}$` : `có $${v}$ giá trị`}.`,
+    verify:()=>{ let cnt = 0, sum = 0; for(let m = -30; m <= 30; m++){ const D = b*b - 4*a*(c - m); if(D <= 0) continue; const r = [(-b - Math.sqrt(D))/(2*a), (-b + Math.sqrt(D))/(2*a)]; if(r.every(x=> x >= p - 1e-9 && x <= q + 1e-9)){ cnt++; sum += m; } } return (ask ? sum : cnt) === o.ans; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.1 (10|5|1), đợt 5 (4 TLN). Claude viết.
+// Chuỗi: độ dài dây cung tạo bởi đường thẳng và parabol (AB²) → dây cung nằm ngang có độ dài cho trước (đối xứng qua trục)
+// → đường thẳng qua đỉnh và giao điểm với trục tung → diện tích tam giác tạo bởi đỉnh và một dây cung nằm ngang.
+const peF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const peOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const peQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const peP = v=> v < 0 ? `(${peF(v)})` : peF(v);
+
+/* 1. TLN VD — AB² với A, B là giao điểm của đường thẳng và parabol */
+GT(10,5,1,'VD','Đường thẳng cắt parabol tại hai điểm A, B: tìm toạ độ giao điểm và tính AB²', R=>{
+  const a = R.pick([-2, -1, 1, 2]), x1 = R.int(-4, 2), x2 = x1 + R.int(1, 5), k = R.nz(-4, 4), d = R.int(-5, 5);
+  const b = k - a*(x1 + x2), c = d + a*x1*x2; if(Math.abs(b) > 12 || Math.abs(c) > 25) return null;
+  const y1 = k*x1 + d, y2 = k*x2 + d, v = (x2 - x1)**2 + (y2 - y1)**2; if(String(v).length > 4) return null;
+  const o = {stem:`Đường thẳng $d: y = ${termsT([[k, 'x'], [d, '']])}$ cắt parabol $(P): y = ${peQ(a, b, c)}$ tại hai điểm phân biệt $A$, $B$. Tính $AB^2$.`, ans:v,
+    lg:`Phương trình hoành độ giao điểm: $${peQ(a, b, c)} = ${termsT([[k, 'x'], [d, '']])} \\iff ${peQ(a, b - k, c - d)} = 0 \\iff x = ${x1}$ hoặc $x = ${x2}$.<br>`
+      + `Suy ra $A(${x1}; ${y1})$, $B(${x2}; ${y2})$ và $AB^2 = (${x2} - ${peP(x1)})^2 + (${y2} - ${peP(y1)})^2 = ${(x2 - x1)**2} + ${(y2 - y1)**2} = ${v}$.`,
+    verify:()=>{ const D = (b - k)**2 - 4*a*(c - d), r1 = (-(b - k) - Math.sqrt(D))/(2*a), r2 = (-(b - k) + Math.sqrt(D))/(2*a); return near((r2 - r1)**2*(1 + k*k), o.ans, 1e-6); }};
+  return o;
+});
+
+/* 2. TLN TH — dây cung nằm ngang có độ dài cho trước */
+GT(10,5,1,'TH','Tìm m để đường thẳng y = m cắt parabol tại hai điểm A, B với AB bằng độ dài cho trước (A, B đối xứng qua trục đối xứng)', R=>{
+  const a = R.pick([-2, -1, 1, 2, 0.5, -0.5]), h = R.int(-3, 3), k = R.int(-6, 6), b = -2*a*h, c = a*h*h + k, L = 2*R.int(1, 4); if(!Number.isInteger(b) || !Number.isInteger(c)) return null;
+  const m = k + a*(L/2)**2; if(!peOk(m)) return null;
+  const o = {stem:`Cho parabol $(P): y = ${peQ(a, b, c)}$. Tìm $m$ để đường thẳng $y = m$ cắt $(P)$ tại hai điểm $A$, $B$ sao cho $AB = ${L}$.`, ans:m,
+    lg:`$(P)$ có trục đối xứng $x = ${h}$. Hai giao điểm $A$, $B$ của $(P)$ với đường thẳng nằm ngang đối xứng nhau qua trục nên $x_A = ${h} - ${L/2}$, $x_B = ${h} + ${L/2}$, tức là $x_B = ${h + L/2}$.<br>`
+      + `Khi đó $m = f(${h + L/2}) = ${a === 1 ? '' : a === -1 ? '-' : peF(a)}\\left(${h + L/2} ${h < 0 ? '+' : '-'} ${Math.abs(h)}\\right)^2${k === 0 ? '' : ` ${k < 0 ? '-' : '+'} ${Math.abs(k)}`} = ${peF(m)}$ (dùng $f(x) = ${a === 1 ? '' : a === -1 ? '-' : peF(a)}(${termsT([[1, 'x'], [-h, '']])})^2${k === 0 ? '' : ` ${k < 0 ? '-' : '+'} ${Math.abs(k)}`}$).`.replace(/\\left\(\d+ [+-] 0\\right\)/, `${h + L/2}`).replace('(x)^2', 'x^2'),
+    verify:()=>{ const D = b*b - 4*a*(c - o.ans); if(D <= 0) return false; return near(Math.sqrt(D)/Math.abs(a), L, 1e-9); }};
+  return o;
+});
+
+/* 3. TLN TH — đường thẳng qua đỉnh và giao điểm với trục tung */
+GT(10,5,1,'TH','Đường thẳng đi qua đỉnh I của parabol và giao điểm C của parabol với trục tung: xác định y = px + q, tính p + q', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3]), h = R.nz(-3, 3), k = R.int(-6, 6), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) > 30) return null;
+  const p = (k - c)/h, q = c, ask = R.pick([0, 1]), v = ask ? p*q : p + q; if(!peOk(v)) return null;
+  const o = {stem:`Gọi $I$ là đỉnh và $C$ là giao điểm với trục tung của parabol $(P): y = ${peQ(a, b, c)}$. Đường thẳng $IC$ có phương trình $y = px + q$. Tính $${ask ? 'p\\cdot q' : 'p + q'}$.`, ans:v,
+    lg:`Đỉnh $I(${h}; ${k})$ (vì $x_I = -\\dfrac{b}{2a} = ${h}$, $y_I = f(${h}) = ${k}$); $C(0; ${c})$.<br>`
+      + `Đường thẳng qua $C(0; ${c})$ nên $q = ${c}$; qua $I$ nên $${k} = ${h === 1 ? '' : h === -1 ? '-' : h}p + ${peP(c)}$ $\\Rightarrow p = \\dfrac{${k} - ${peP(c)}}{${h}} = ${peF(p)}$.<br>Vậy $${ask ? 'p\\cdot q' : 'p + q'} = ${peF(v)}$.`,
+    verify:()=>{ const f = x=> a*x*x + b*x + c, X = -b/(2*a), Y = f(X), P = (Y - f(0))/X, Q = f(0); return near(ask ? P*Q : P + Q, o.ans); }};
+  return o;
+});
+
+/* 4. TLN VD — diện tích tam giác tạo bởi đỉnh và dây cung nằm ngang */
+GT(10,5,1,'VD','Đường thẳng y = m cắt parabol tại A, B; tính diện tích tam giác IAB với I là đỉnh parabol', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3, 0.5, -0.5]), h = R.int(-3, 3), k = R.int(-5, 5), b = -2*a*h, c = a*h*h + k, t = R.int(1, 4), m = k + a*t*t; if(Math.abs(c) > 30 || !Number.isInteger(c) || !Number.isInteger(m)) return null;
+  const S = Math.abs(a)*t*t*t; if(!peOk(S) || S === 1) return null;   // đáy 2t, chiều cao |a|t²
+  const o = {stem:`Cho parabol $(P): y = ${peQ(a, b, c)}$ có đỉnh $I$. Đường thẳng $y = ${m}$ cắt $(P)$ tại hai điểm $A$, $B$. Tính diện tích tam giác $IAB$.`, ans:S,
+    lg:`Đỉnh $I(${h}; ${k})$. Phương trình hoành độ giao điểm: $${peQ(a, b, c)} = ${m} \\iff ${a === 1 ? '' : a === -1 ? '-' : peF(a)}(${termsT([[1, 'x'], [-h, '']])})^2 = ${m - k} \\iff (${termsT([[1, 'x'], [-h, '']])})^2 = ${t*t} \\iff x = ${h - t}$ hoặc $x = ${h + t}$.<br>`.replace(/\(x\)\^2/g, 'x^2')
+      + `$AB = ${2*t}$; khoảng cách từ $I$ đến đường thẳng $AB$ là $|${m} - ${peP(k)}| = ${Math.abs(m - k)}$.<br>$S_{IAB} = \\dfrac{1}{2}\\cdot ${2*t}\\cdot ${Math.abs(m - k)} = ${nt(S)}$.`,
+    verify:()=>{ const D = b*b - 4*a*(c - m), r1 = (-b - Math.sqrt(D))/(2*a), r2 = (-b + Math.sqrt(D))/(2*a), X = -b/(2*a), Y = a*X*X + b*X + c; return near(Math.abs((r1 - X)*(m - Y) - (r2 - X)*(m - Y))/2, o.ans); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.2 Sự biến thiên; giá trị lớn nhất, nhỏ nhất của hàm số bậc hai (10|5|1), đợt 6 (5 TN). Claude viết.
+// Chuỗi: bảng biến thiên ↔ công thức → tìm m để hàm số đồng biến trên một nửa khoảng (vị trí trục đối xứng) → GTLN/GTNN trên đoạn không chứa đỉnh (bẫy lấy giá trị tại đỉnh)
+// → tập giá trị trên ℝ → so sánh hai giá trị nhờ tính đối xứng và đơn điệu.
+const pfF = v=>{ if(!isFinite(v)) return v > 0 ? '+\\infty' : '-\\infty'; for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pfPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v))){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+const pfQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pfBbt = (a, h, k)=> ({loai:'bbt', coDaoHam:false, nhan:['x', '', 'y'], x:['-\\infty', pfF(h), '+\\infty'], dau:a > 0 ? ['-', '+'] : ['+', '-'], tai:['', '', ''], y:a > 0 ? ['+\\infty', pfF(k), '+\\infty'] : ['-\\infty', pfF(k), '-\\infty']});
+
+/* 1. TN TH — bảng biến thiên của hàm số nào */
+G(10,5,1,'TH','Bảng biến thiên đã cho là của hàm số bậc hai nào (đối chiếu chiều biến thiên và toạ độ đỉnh)', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.nz(-3, 3), k = R.int(-5, 5), b = -2*a*h, c = a*h*h + k;
+  const O = (A, B, C)=> ({t:`$y = ${pfQ(A, B, C)}$`, v:`${A},${B},${C}`, A, B, C});
+  const wrong = pfPick3(R, O(a, b, c), [O(-a, -b, -c), O(a, -b, c), O(-a, b, c), O(a, b, c + 2*(k >= 0 ? -1 : 1)), O(-a, -b, 2*k - c)]); if(!wrong) return null;
+  const o = {stem:`Bảng biến thiên dưới đây là của hàm số nào?`, ans:O(a, b, c), wrong, hv:pfBbt(a, h, k),
+    lg:`Từ bảng biến thiên: hàm số ${a > 0 ? 'nghịch biến rồi đồng biến' : 'đồng biến rồi nghịch biến'} nên $a ${a > 0 ? '>' : '<'} 0$; đỉnh $I(${h}; ${k})$.<br>`
+      + `Hàm số $y = ${pfQ(a, b, c)}$ có $a = ${a}$, $x_I = -\\dfrac{${b}}{2\\cdot ${a < 0 ? `(${a})` : a}} = ${h}$, $y_I = ${k}$, phù hợp. Các hàm số còn lại sai dấu của $a$ hoặc sai toạ độ đỉnh.`,
+    verify:()=>{ const ok = w=> (w.A > 0) === (a > 0) && near(-w.B/(2*w.A), h) && near(w.C - w.B*w.B/(4*w.A), k); return ok(o.ans) && o.wrong.every(w=> !ok(w)); }};
+  return o;
+});
+
+/* 2. TN VD — tìm m để hàm số đồng biến (nghịch biến) trên một nửa khoảng */
+G(10,5,1,'VD','Tìm m để hàm số bậc hai chứa tham số đồng biến (nghịch biến) trên khoảng (α; +∞) hoặc (−∞; α): so sánh trục đối xứng x = m + p với α', R=>{
+  const a = R.pick([-1, 1]), p = R.int(-3, 3), al = R.int(-4, 4), c = R.int(-6, 6), right = R.rnd() < 0.5, up = R.rnd() < 0.5;
+  // trục x = m + p. a > 0: đồng biến trên (h; +∞), nghịch biến trên (−∞; h). a < 0: ngược lại.
+  // trên (α; +∞): cần (a > 0) === up và h ≤ α; trên (−∞; α): cần (a > 0) !== up và h ≥ α
+  if(right ? (a > 0) !== up : (a > 0) === up) return null;
+  const v0 = al - p, rel = right ? '\\le' : '\\ge';
+  const B = termsT([[1, 'm'], [p, '']]), y = `y = ${a > 0 ? '' : '-'}x^2 ${a > 0 ? '-' : '+'} 2(${B})x${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`}`.replace('2(m)x', '2mx');
+  const O = (r, v)=> ({t:`$m ${r} ${v}$`, v:`${r}${v}`, r, val:v});
+  const wrong = pfPick3(R, O(rel, v0), [O(right ? '<' : '>', v0), O(right ? '\\ge' : '\\le', v0), O(rel, al + p), O(right ? '>' : '<', v0)]); if(!wrong) return null;
+  const tap = right ? `(${al}; +\\infty)` : `(-\\infty; ${al})`;
+  const o = {stem:`Tìm tất cả các giá trị của tham số $m$ để hàm số $${y}$ ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $${tap}$.`, ans:O(rel, v0), wrong,
+    lg:`Hàm số có $a = ${a} ${a > 0 ? '>' : '<'} 0$, trục đối xứng $x = ${B}$; hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $${right ? `(${B}; +\\infty)` : `(-\\infty; ${B})`}$.<br>`.replace('x = m$', 'x = m$')
+      + `Yêu cầu bài toán $\\iff ${tap} \\subset ${right ? `(${B}; +\\infty)` : `(-\\infty; ${B})`} \\iff ${B} ${rel} ${al} \\iff m ${rel} ${v0}$.`,
+    verify:()=>{ const good = m=>{ const h = m + p, f = x=> a*x*x - 2*a*(m + p)*x + c, xs = right ? gridPts(al + 0.05, al + 20, 0.05) : gridPts(al - 20, al - 0.05, 0.05); return xs.every((x, i)=> !i || (up ? f(x) > f(xs[i - 1]) : f(x) < f(xs[i - 1]))); };
+      const inA = m=> o.ans.r === '\\le' ? m <= o.ans.val : m >= o.ans.val; return gridPts(v0 - 4, v0 + 4, 0.5).every(m=> good(m) === inA(m)); }};
+  return o;
+});
+
+/* 3. TN TH — GTLN/GTNN trên đoạn không chứa đỉnh */
+G(10,5,1,'TH','Giá trị lớn nhất (nhỏ nhất) của hàm số bậc hai trên một đoạn không chứa hoành độ đỉnh (bẫy: lấy giá trị tại đỉnh)', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), k = R.int(-5, 5), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c;
+  const left = R.rnd() < 0.5, p = left ? h - R.int(3, 5) : h + R.int(1, 2), q = left ? h - R.int(1, 2) : h + R.int(3, 5), askMax = R.rnd() < 0.5;
+  const vals = [f(p), f(q)], ans = askMax ? Math.max(...vals) : Math.min(...vals); if(Math.abs(ans) > 99) return null;
+  const O = v=> ({t:`$${v}$`, v});
+  const wrong = pfPick3(R, O(ans), [O(k), O(askMax ? Math.min(...vals) : Math.max(...vals)), O(f((p + q)/2) === Math.round(f((p + q)/2)) ? f((p + q)/2) : k + 1), O(ans + (askMax ? 1 : -1)*Math.abs(a))]); if(!wrong) return null;
+  const o = {stem:`Giá trị ${askMax ? 'lớn nhất' : 'nhỏ nhất'} của hàm số $y = ${pfQ(a, b, c)}$ trên đoạn $[${p}; ${q}]$ bằng`, ans:O(ans), wrong,
+    lg:`Hàm số có $a ${a > 0 ? '>' : '<'} 0$, đỉnh $I(${h}; ${k})$, nên ${a > 0 ? 'nghịch biến trên $(-\\infty; ' + h + ')$ và đồng biến trên $(' + h + '; +\\infty)$' : 'đồng biến trên $(-\\infty; ' + h + ')$ và nghịch biến trên $(' + h + '; +\\infty)$'}.<br>`
+      + `Đoạn $[${p}; ${q}]$ nằm bên ${left ? 'trái' : 'phải'} $x = ${h}$ nên trên đoạn này hàm số ${(a > 0) === left ? 'nghịch biến' : 'đồng biến'}: $f(${p}) = ${f(p)}$, $f(${q}) = ${f(q)}$.<br>`
+      + `Vậy giá trị ${askMax ? 'lớn nhất' : 'nhỏ nhất'} là $${ans}$ (không phải $${k}$ vì $x = ${h}$ không thuộc đoạn).`,
+    verify:()=>{ const ys = gridPts(p, q, 0.01).map(f); return (askMax ? Math.max(...ys) : Math.min(...ys)) === o.ans.v; }};
+  return o;
+});
+
+/* 4. TN TH — tập giá trị của hàm số bậc hai trên ℝ */
+G(10,5,1,'TH','Tập giá trị của hàm số bậc hai trên ℝ: [y_I; +∞) khi a > 0, (−∞; y_I] khi a < 0', R=>{
+  const a = R.pick([-3, -2, -1, 1, 2, 3]), b = R.nz(-8, 8), c = R.int(-6, 6), h = -b/(2*a), k = c - b*b/(4*a);
+  if(Math.abs(k*4 - Math.round(k*4)) > 1e-9 || h === k) return null;
+  const I = (lo, hi)=> ({t:`$${lo === null ? '(-\\infty' : '[' + pfF(lo)}; ${hi === null ? '+\\infty)' : pfF(hi) + ']'}$`, v:`${lo},${hi}`});
+  const ans = a > 0 ? I(k, null) : I(null, k);
+  const wrong = pfPick3(R, ans, [a > 0 ? I(null, k) : I(k, null), a > 0 ? I(h, null) : I(null, h), a > 0 ? I(c, null) : I(null, c), a > 0 ? I(-k, null) : I(null, -k)]); if(!wrong) return null;
+  const o = {stem:`Tập giá trị của hàm số $y = ${pfQ(a, b, c)}$ là`, ans, wrong,
+    lg:`Đỉnh $I\\left(${pfF(h)}; ${pfF(k)}\\right)$ (với $y_I = -\\dfrac{\\Delta}{4a} = -\\dfrac{${b*b - 4*a*c}}{${4*a}} = ${pfF(k)}$). Vì $a ${a > 0 ? '>' : '<'} 0$ nên hàm số đạt giá trị ${a > 0 ? 'nhỏ nhất' : 'lớn nhất'} bằng $${pfF(k)}$ tại $x = ${pfF(h)}$ và nhận mọi giá trị ${a > 0 ? 'lớn' : 'nhỏ'} hơn hoặc bằng $${pfF(k)}$.<br>Tập giá trị: $${a > 0 ? `[${pfF(k)}; +\\infty)` : `(-\\infty; ${pfF(k)}]`}$.`,
+    verify:()=>{ const f = x=> a*x*x + b*x + c, ys = gridPts(-40, 40, 0.0025).map(f), ext = a > 0 ? Math.min(...ys) : Math.max(...ys); return o.ans.v === (a > 0 ? `${Math.round(ext*1e6)/1e6 === k ? k : NaN},null` : `null,${Math.round(ext*1e6)/1e6 === k ? k : NaN}`); }};
+  return o;
+});
+
+/* 5. TN VD — so sánh hai giá trị nhờ tính đối xứng và đơn điệu */
+G(10,5,1,'VD','So sánh hai giá trị của hàm số bậc hai tại hai điểm nằm khác phía trục đối xứng (đưa về cùng một phía nhờ tính đối xứng, rồi dùng tính đơn điệu)', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), b = -2*a*h, c = R.int(-6, 6), f = x=> a*x*x + b*x + c;
+  const d1 = R.int(1, 5), d2 = R.int(1, 5); if(d1 === d2) return null; const u = h - d1, w = h + d2;   // khác phía trục
+  const pairs = [[u, w], [h - R.int(1, 4), h - R.int(5, 7)], [h + R.int(1, 3), h - R.int(4, 6)], [h + R.int(4, 6), h + R.int(1, 3)]].filter(([x, y])=> f(x) !== f(y));
+  if(pairs.length < 4) return null;
+  const S = ([x, y], lt)=> ({t:`$f(${x}) ${lt ? '<' : '>'} f(${y})$`, v:`${x}|${y}|${lt}`, x, y, lt});
+  const P = R.shuffle(pairs), ans = S(P[0], f(P[0][0]) < f(P[0][1])), wrong = P.slice(1).map(pr=> S(pr, !(f(pr[0]) < f(pr[1]))));
+  const why = ({x, y})=> `$|${x} - ${h < 0 ? `(${h})` : h}| = ${Math.abs(x - h)}$, $|${y} - ${h < 0 ? `(${h})` : h}| = ${Math.abs(y - h)}$`;
+  const o = {stem:`Cho hàm số $f(x) = ${pfQ(a, b, c)}$. Mệnh đề nào dưới đây đúng?`, ans, wrong,
+    lg:`Trục đối xứng $x = ${h}$, $a ${a > 0 ? '>' : '<'} 0$ nên điểm càng xa trục đối xứng thì giá trị của $f$ càng ${a > 0 ? 'lớn' : 'nhỏ'} (do $f(x) = ${a === 1 ? '' : a === -1 ? '-' : a}(${termsT([[1, 'x'], [-h, '']])})^2${c - a*h*h === 0 ? '' : ` ${c - a*h*h < 0 ? '-' : '+'} ${Math.abs(c - a*h*h)}`}$).<br>`.replace('(x)^2', 'x^2')
+      + [ans, ...wrong].map(s=> `• ${why(s)} nên $f(${s.x}) ${f(s.x) < f(s.y) ? '<' : '>'} f(${s.y})$.`).join('<br>') + `<br>Vậy mệnh đề đúng là ${ans.t}.`,
+    verify:()=>{ const tv = s=> s.lt ? a*s.x*s.x + b*s.x + c < a*s.y*s.y + b*s.y + c : a*s.x*s.x + b*s.x + c > a*s.y*s.y + b*s.y + c; return tv(o.ans) && o.wrong.every(w=> !tv(w)); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.2 (10|5|1), đợt 7 (1 TN + 4 Đ–S). Claude viết.
+// Chuỗi: đọc bảng biến thiên trên một đoạn → Đ–S về khoảng đơn điệu và GTLN/GTNN trên ℝ, trên đoạn → GTLN, GTNN trên đoạn chứa đỉnh, số nghiệm f(x) = t
+// → họ hàm số chứa tham số (đỉnh, điều kiện đồng biến, GTNN) → hàm số cố định trên đoạn [0; m] thay đổi.
+const pgF = v=>{ if(!isFinite(v)) return v > 0 ? '+\\infty' : '-\\infty'; for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pgQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pgMinMax = (f, p, q)=>{ const ys = gridPts(p, q, 0.001).map(f); return [Math.min(...ys), Math.max(...ys)]; };
+
+/* 1. TN TH — đọc bảng biến thiên trên một đoạn */
+G(10,5,1,'TH','Đọc bảng biến thiên của hàm số bậc hai trên một đoạn: chiều biến thiên, GTLN, GTNN, số nghiệm của f(x) = m', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-2, 2), k = R.int(-4, 4), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c;
+  const p = h - R.int(1, 3), q = h + R.int(1, 3); if(q - h === h - p) return null; const fp = f(p), fq = f(q);
+  const hv = {loai:'bbt', coDaoHam:false, nhan:['x', '', 'y'], x:[String(p), String(h), String(q)], dau:a > 0 ? ['-', '+'] : ['+', '-'], tai:['', '', ''], y:[String(fp), String(k), String(fq)]};
+  const ext = a > 0 ? Math.max(fp, fq) : Math.min(fp, fq), nearV = a > 0 ? Math.min(fp, fq) : Math.max(fp, fq);
+  const pool = [
+    {t:`Hàm số ${a > 0 ? 'đồng biến' : 'nghịch biến'} trên khoảng $(${h}; ${q})$`, ok:true}, {t:`Hàm số ${a > 0 ? 'nghịch biến' : 'đồng biến'} trên khoảng $(${h}; ${q})$`, ok:false},
+    {t:`Giá trị ${a > 0 ? 'nhỏ nhất' : 'lớn nhất'} của hàm số trên đoạn $[${p}; ${q}]$ bằng $${k}$`, ok:true}, {t:`Giá trị ${a > 0 ? 'nhỏ nhất' : 'lớn nhất'} của hàm số trên đoạn $[${p}; ${q}]$ bằng $${h}$`, ok:h === k},
+    {t:`Giá trị ${a > 0 ? 'lớn nhất' : 'nhỏ nhất'} của hàm số trên đoạn $[${p}; ${q}]$ bằng $${ext}$`, ok:true}, {t:`Giá trị ${a > 0 ? 'lớn nhất' : 'nhỏ nhất'} của hàm số trên đoạn $[${p}; ${q}]$ bằng $${nearV}$`, ok:nearV === ext},
+    {t:`Phương trình $f(x) = ${nearV}$ có hai nghiệm phân biệt thuộc đoạn $[${p}; ${q}]$`, ok:true}, {t:`Phương trình $f(x) = ${ext}$ có hai nghiệm phân biệt thuộc đoạn $[${p}; ${q}]$`, ok:false}];
+  const T = pool.filter(s=> s.ok), F = pool.filter(s=> !s.ok); if(F.length < 3) return null;
+  const pick = R.pick(T), O = s=> ({t:s.t, v:s.t, ok:s.ok}), wrong = R.shuffle(F).slice(0, 3).map(O);
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ xác định trên đoạn $[${p}; ${q}]$ có bảng biến thiên như hình vẽ. Khẳng định nào dưới đây đúng?`, ans:O(pick), wrong, hv,
+    lg:`Từ bảng biến thiên: trên $(${p}; ${h})$ hàm số ${a > 0 ? 'nghịch biến' : 'đồng biến'}, trên $(${h}; ${q})$ hàm số ${a > 0 ? 'đồng biến' : 'nghịch biến'}; $f(${p}) = ${fp}$, $f(${h}) = ${k}$, $f(${q}) = ${fq}$.<br>`
+      + `Do đó giá trị ${a > 0 ? 'nhỏ nhất' : 'lớn nhất'} trên đoạn là $${k}$, giá trị ${a > 0 ? 'lớn nhất' : 'nhỏ nhất'} là $${ext}$; đường thẳng $y = ${nearV}$ cắt phần đồ thị trên đoạn tại hai điểm, còn $y = ${ext}$ chỉ cắt tại một điểm.<br>Vậy khẳng định đúng là: ${pick.t}.`,
+    verify:()=>{ const [mn, mx] = pgMinMax(f, p, q), cnt = t=>{ const D = b*b - 4*a*(c - t); if(D < 0) return 0; const r = [(-b - Math.sqrt(D))/(2*a), (-b + Math.sqrt(D))/(2*a)].filter(x=> x >= p - 1e-9 && x <= q + 1e-9); return new Set(r.map(x=> Math.round(x*1e6))).size; };
+      const chk = [cnt(nearV) === 2, cnt(ext) === 1, near(a > 0 ? mn : mx, k), near(a > 0 ? mx : mn, ext)]; return chk.every(Boolean) && o.wrong.every(w=> !w.ok) && o.ans.ok; }};
+  return o;
+});
+
+/* 2. ĐS TH — khoảng đơn điệu, GTNN trên ℝ và trên đoạn không chứa đỉnh */
+GD(10,5,1,'TH','Hàm số bậc hai: khoảng đồng biến, nghịch biến (khoảng con), giá trị lớn nhất hoặc nhỏ nhất trên ℝ và trên một đoạn không chứa đỉnh', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), k = R.int(-6, 6), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c;
+  const up = a > 0, s1 = h + R.int(1, 2), s2 = s1 + R.int(2, 4), w1 = h - R.int(1, 2);
+  const p = h + R.int(1, 3), q = p + R.int(1, 3), onSeg = up ? f(p) : f(p);   // đoạn bên phải đỉnh: GTNN (a>0) hoặc GTLN (a<0) tại p
+  const items = [
+    claim(R, `Hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(${s1}; ${s2})$`, `Hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(${w1}; ${s2})$`, ()=> gridPts(s1, s2, 0.05).every((x, i, A)=> !i || (up ? f(x) > f(A[i - 1]) : f(x) < f(A[i - 1]))), ()=> gridPts(w1, s2, 0.05).every((x, i, A)=> !i || (up ? f(x) > f(A[i - 1]) : f(x) < f(A[i - 1])))),
+    claim(R, `Hàm số ${up ? 'nghịch biến' : 'đồng biến'} trên khoảng $(-\\infty; ${h})$`, `Hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(-\\infty; ${h})$`, ()=> up ? f(h - 2) > f(h - 1) : f(h - 2) < f(h - 1), ()=> up ? f(h - 2) < f(h - 1) : f(h - 2) > f(h - 1)),
+    claimN(R, v=> `Giá trị ${up ? 'nhỏ nhất' : 'lớn nhất'} của hàm số trên $\\mathbb{R}$ bằng $${v}$`, k, String(k), c !== k ? c : k + 1, String(c !== k ? c : k + 1), ()=>{ const ys = gridPts(-30, 30, 0.01).map(f); return up ? Math.min(...ys) : Math.max(...ys); }),
+    claimN(R, v=> `Giá trị ${up ? 'nhỏ nhất' : 'lớn nhất'} của hàm số trên đoạn $[${p}; ${q}]$ bằng $${v}$`, onSeg, String(onSeg), k, String(k), ()=>{ const [mn, mx] = pgMinMax(f, p, q); return up ? mn : mx; })];
+  return {stem:`Cho hàm số $y = f(x) = ${pgQ(a, b, c)}$.`, items,
+    lg:`$a = ${a} ${up ? '>' : '<'} 0$, đỉnh $I(${h}; ${k})$: hàm số ${up ? 'nghịch biến' : 'đồng biến'} trên $(-\\infty; ${h})$ và ${up ? 'đồng biến' : 'nghịch biến'} trên $(${h}; +\\infty)$.<br>`
+      + `a) $(${s1}; ${s2}) \\subset (${h}; +\\infty)$ nên hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên đó; khoảng $(${w1}; ${s2})$ chứa $x = ${h}$ nên hàm số không ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng này.<br>`
+      + `b) Trên $(-\\infty; ${h})$ hàm số ${up ? 'nghịch biến' : 'đồng biến'}.<br>c) Giá trị ${up ? 'nhỏ nhất' : 'lớn nhất'} trên $\\mathbb{R}$ là $y_I = ${k}$.<br>`
+      + `d) Đoạn $[${p}; ${q}]$ nằm bên phải $x = ${h}$, hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên đoạn đó nên giá trị ${up ? 'nhỏ nhất' : 'lớn nhất'} là $f(${p}) = ${onSeg}$.`};
+});
+
+/* 3. ĐS VD — GTLN, GTNN trên đoạn chứa đỉnh */
+GD(10,5,1,'VD','GTLN, GTNN của hàm số bậc hai trên đoạn chứa hoành độ đỉnh; tổng M + m; số nghiệm của f(x) = t trên đoạn', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-2, 2), k = R.int(-5, 5), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c;
+  const p = h - R.int(1, 3), q = h + R.int(1, 4); if(q - h === h - p) return null; const fp = f(p), fq = f(q), far = a > 0 ? Math.max(fp, fq) : Math.min(fp, fq), nr = a > 0 ? Math.min(fp, fq) : Math.max(fp, fq);
+  const M = a > 0 ? far : k, m = a > 0 ? k : far, t = a > 0 ? nr + R.int(1, 2) : nr - R.int(1, 2); if(a > 0 ? t > far : t < far) return null;
+  const items = [
+    claimN(R, v=> `Giá trị nhỏ nhất của hàm số trên đoạn $[${p}; ${q}]$ bằng $${v}$`, m, String(m), a > 0 ? Math.min(fp, fq) : Math.min(fp, fq) === m ? k : Math.min(fp, fq), String(a > 0 ? Math.min(fp, fq) : Math.min(fp, fq) === m ? k : Math.min(fp, fq)), ()=> pgMinMax(f, p, q)[0]),
+    claimN(R, v=> `Giá trị lớn nhất của hàm số trên đoạn $[${p}; ${q}]$ bằng $${v}$`, M, String(M), a > 0 ? (Math.max(fp, fq) === M ? Math.min(fp, fq) : Math.max(fp, fq)) : Math.max(fp, fq), String(a > 0 ? (Math.max(fp, fq) === M ? Math.min(fp, fq) : Math.max(fp, fq)) : Math.max(fp, fq)), ()=> pgMinMax(f, p, q)[1]),
+    claimN(R, v=> `$M + m = ${v}$, với $M$, $m$ lần lượt là giá trị lớn nhất, nhỏ nhất của hàm số trên đoạn $[${p}; ${q}]$`, M + m, String(M + m), fp + fq, String(fp + fq), ()=>{ const [mn, mx] = pgMinMax(f, p, q); return mn + mx; }),
+    claim(R, `Phương trình $f(x) = ${t}$ có đúng một nghiệm thuộc đoạn $[${p}; ${q}]$`, `Phương trình $f(x) = ${t}$ có hai nghiệm phân biệt thuộc đoạn $[${p}; ${q}]$`,
+      ()=>{ const D = b*b - 4*a*(c - t), r = [(-b - Math.sqrt(D))/(2*a), (-b + Math.sqrt(D))/(2*a)].filter(x=> x >= p - 1e-9 && x <= q + 1e-9); return r.length === 1; }, ()=>{ const D = b*b - 4*a*(c - t), r = [(-b - Math.sqrt(D))/(2*a), (-b + Math.sqrt(D))/(2*a)].filter(x=> x >= p - 1e-9 && x <= q + 1e-9); return r.length === 2; })];
+  if(M + m === fp + fq || near(m, (a > 0 ? Math.min(fp, fq) : (Math.min(fp, fq) === m ? k : Math.min(fp, fq))))) return null;
+  return {stem:`Cho hàm số $y = f(x) = ${pgQ(a, b, c)}$ xét trên đoạn $[${p}; ${q}]$.`, items,
+    lg:`Đỉnh $I(${h}; ${k})$ với $${h} \\in [${p}; ${q}]$; $f(${p}) = ${fp}$, $f(${q}) = ${fq}$.<br>`
+      + `Vì $a ${a > 0 ? '>' : '<'} 0$: ${a > 0 ? `giá trị nhỏ nhất là $f(${h}) = ${k}$, giá trị lớn nhất là $\\max\\{${fp}; ${fq}\\} = ${far}$` : `giá trị lớn nhất là $f(${h}) = ${k}$, giá trị nhỏ nhất là $\\min\\{${fp}; ${fq}\\} = ${far}$`}.<br>`
+      + `a) $m = ${m}$. b) $M = ${M}$. c) $M + m = ${M + m}$.<br>d) Đường thẳng $y = ${t}$ nằm giữa $${nr}$ và $${far}$: chỉ cắt phần đồ thị ở phía có đầu mút $${far}$, nên phương trình có đúng một nghiệm thuộc đoạn.`};
+});
+
+/* 4. ĐS VD — họ parabol chứa tham số */
+GD(10,5,1,'VD','Hàm số y = x² − 2mx + m² + pm + q chứa tham số: toạ độ đỉnh, điều kiện đồng biến trên một khoảng, GTNN theo m, đường thẳng chứa các đỉnh', R=>{
+  const p = R.nz(-4, 4), q = R.int(-6, 6), al = R.int(-3, 3), m0 = R.int(-4, 4), K = p*m0 + q, m1 = R.nz(-3, 3);
+  const f = (m, x)=> x*x - 2*m*x + m*m + p*m + q, C = termsT([[1, 'm^2'], [p, 'm'], [q, '']]);
+  const items = [
+    claim(R, `Với $m = ${m1}$, đỉnh của đồ thị là $I(${m1}; ${p*m1 + q})$`, `Với $m = ${m1}$, đỉnh của đồ thị là $I(${-m1}; ${p*m1 + q})$`, ()=> near(f(m1, m1), p*m1 + q) && near(f(m1, m1 - 1), f(m1, m1 + 1)), ()=> m1 === 0),
+    claim(R, `Hàm số đồng biến trên khoảng $(${al}; +\\infty)$ khi và chỉ khi $m \\le ${al}$`, `Hàm số đồng biến trên khoảng $(${al}; +\\infty)$ khi và chỉ khi $m \\ge ${al}$`,
+      ()=> [al - 2, al - 0.5, al, al + 0.5, al + 2].every(m=> gridPts(al + 0.1, al + 10, 0.1).every((x, i, A)=> !i || f(m, x) > f(m, A[i - 1])) === (m <= al)), ()=> false),
+    claimN(R, v=> `Giá trị nhỏ nhất của hàm số bằng $${K}$ khi $m = ${v}$`, m0, String(m0), p ? -m0 === m0 ? m0 + 1 : -m0 : m0 + 1, String(-m0 === m0 ? m0 + 1 : -m0), ()=>{ for(let m = -20; m <= 20; m++){ const ys = gridPts(m - 5, m + 5, 0.01).map(x=> f(m, x)); if(near(Math.min(...ys), K)) return m; } return NaN; }),
+    claim(R, `Khi $m$ thay đổi, đỉnh của đồ thị luôn nằm trên đường thẳng $y = ${termsT([[p, 'x'], [q, '']])}$`, `Khi $m$ thay đổi, đỉnh của đồ thị luôn nằm trên đường thẳng $y = ${termsT([[-p, 'x'], [q, '']])}$`, ()=> [-3, 0, 2, 5].every(m=> near(f(m, m), p*m + q)), ()=> [-3, 0, 2, 5].every(m=> near(f(m, m), -p*m + q)))];
+  return {stem:`Cho hàm số $y = x^2 - 2mx + ${C}$ ($m$ là tham số).`.replace('+ -', '- '), items,
+    lg:`Ta có $y = (x - m)^2 ${termsT([[p, 'm'], [q, '']]).startsWith('-') ? '- ' + termsT([[p, 'm'], [q, '']]).slice(1) : '+ ' + termsT([[p, 'm'], [q, '']])}$ nên đỉnh $I(m; ${termsT([[p, 'm'], [q, '']])})$, $a = 1 > 0$.<br>`
+      + `a) $m = ${m1}$: $I(${m1}; ${p*m1 + q})$.<br>b) Hàm số đồng biến trên $(m; +\\infty)$, nên đồng biến trên $(${al}; +\\infty)$ $\\iff m \\le ${al}$.<br>`
+      + `c) Giá trị nhỏ nhất là $${termsT([[p, 'm'], [q, '']])} = ${K} \\iff m = ${m0}$.<br>d) Đỉnh $I(x_I; y_I)$ với $x_I = m$, $y_I = ${termsT([[p, 'm'], [q, '']])}$ nên $y_I = ${termsT([[p, 'x_I'], [q, '']])}$: đỉnh luôn nằm trên đường thẳng $y = ${termsT([[p, 'x'], [q, '']])}$.`};
+});
+
+/* 5. ĐS VD — hàm số cố định trên đoạn [0; m] thay đổi */
+GD(10,5,1,'VD','Hàm số bậc hai cố định xét trên đoạn [0; m] với m thay đổi: GTNN, GTLN theo vị trí của đỉnh và độ dài đoạn', R=>{
+  const h = R.int(1, 3), k = R.int(-5, 3), f = x=> (x - h)**2 + k, c = h*h + k, b = -2*h, m1 = R.int(1, h - 1 >= 1 ? h - 1 : 1), m2 = h + R.int(1, 2*h - 1 >= h + 1 ? h - 1 : 1), m3 = 2*h + R.int(1, 3);
+  if(h === 1 && m1 >= h) return null;
+  const items = [
+    claimN(R, v=> `Với $m = ${m1}$, giá trị nhỏ nhất của hàm số trên đoạn $[0; ${m1}]$ bằng $${v}$`, f(m1), String(f(m1)), k, String(k), ()=> pgMinMax(f, 0, m1)[0]),
+    claimN(R, v=> `Với $m = ${m2}$, giá trị nhỏ nhất của hàm số trên đoạn $[0; ${m2}]$ bằng $${v}$`, k, String(k), f(m2), String(f(m2)), ()=> pgMinMax(f, 0, m2)[0]),
+    claimN(R, v=> `Với $m = ${m2}$, giá trị lớn nhất của hàm số trên đoạn $[0; ${m2}]$ bằng $${v}$`, Math.max(c, f(m2)), String(Math.max(c, f(m2))), Math.min(c, f(m2)) === Math.max(c, f(m2)) ? k : Math.min(c, f(m2)), String(Math.min(c, f(m2)) === Math.max(c, f(m2)) ? k : Math.min(c, f(m2))), ()=> pgMinMax(f, 0, m2)[1]),
+    claimN(R, v=> `Với $m = ${m3}$, giá trị lớn nhất của hàm số trên đoạn $[0; ${m3}]$ bằng $${v}$`, f(m3), String(f(m3)), c, String(c), ()=> pgMinMax(f, 0, m3)[1])];
+  if(m1 >= h || m2 <= h || m2 > 2*h || m1 < 1 || f(m3) === c) return null;
+  return {stem:`Cho hàm số $y = f(x) = ${pgQ(1, b, c)}$ xét trên đoạn $[0; m]$ với $m > 0$.`, items,
+    lg:`$f(x) = (x - ${h})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$, đỉnh $I(${h}; ${k})$, $a > 0$; $f(0) = ${c}$ và $f(${2*h}) = ${c}$ (đối xứng qua $x = ${h}$).<br>`.replace(' + 0$', '$')
+      + `a) $m = ${m1} < ${h}$: hàm số nghịch biến trên $[0; ${m1}]$, giá trị nhỏ nhất là $f(${m1}) = ${f(m1)}$.<br>`
+      + `b) $m = ${m2} \\ge ${h}$: đoạn chứa đỉnh nên giá trị nhỏ nhất là $${k}$.<br>`
+      + `c) $m = ${m2} \\le ${2*h}$: điểm $x = 0$ xa đỉnh hơn $x = ${m2}$ nên giá trị lớn nhất là $f(0) = ${c}$${f(m2) === c ? ` $= f(${m2})$` : ''}.<br>`
+      + `d) $m = ${m3} > ${2*h}$: điểm $x = ${m3}$ xa đỉnh hơn $x = 0$ nên giá trị lớn nhất là $f(${m3}) = ${f(m3)}$.`};
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.2 (10|5|1), đợt 8 (5 TLN). Claude viết.
+// Chuỗi: M + m trên đoạn chứa đỉnh → số giá trị nguyên m để hàm số đơn điệu trên một nửa khoảng → GTNN trên đoạn bằng k (tịnh tiến theo m)
+// → GTLN trên ℝ bằng k (phương trình bậc hai theo m) → giá trị nhỏ nhất của m để f(x) ≤ m với mọi x thuộc đoạn.
+const phF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const phOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const phQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const phMM = (f, p, q)=>{ const ys = gridPts(p, q, 0.001).map(f); return [Math.min(...ys), Math.max(...ys)]; };
+const phList = ms=> ms.length > 8 ? `${ms[0]}; ${ms[1]}; \\dots; ${ms[ms.length - 1]}` : ms.join('; ');
+
+/* 1. TLN TH — M + m trên đoạn */
+GT(10,5,1,'TH','Giá trị lớn nhất M và giá trị nhỏ nhất m của hàm số bậc hai trên một đoạn (lập bảng biến thiên trên đoạn): tính M + m hoặc M − m', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), k = R.int(-6, 6), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c;
+  const inside = R.rnd() < 0.7, p = inside ? h - R.int(1, 3) : h + R.int(1, 2), q = inside ? h + R.int(1, 4) : p + R.int(1, 3); const [mn, mx] = [Math.min(f(p), f(q), inside ? k : Infinity), Math.max(f(p), f(q), inside ? k : -Infinity)];
+  const ask = R.pick([0, 1]), v = ask ? mx - mn : mx + mn; if(String(v).length > 4) return null;
+  const o = {stem:`Gọi $M$, $m$ lần lượt là giá trị lớn nhất, giá trị nhỏ nhất của hàm số $y = ${phQ(a, b, c)}$ trên đoạn $[${p}; ${q}]$. Tính $${ask ? 'M - m' : 'M + m'}$.`, ans:v,
+    lg:`Đỉnh $I(${h}; ${k})$, $a ${a > 0 ? '>' : '<'} 0$. ${inside ? `Vì $${h} \\in [${p}; ${q}]$ nên so sánh $f(${p}) = ${f(p)}$, $f(${h}) = ${k}$, $f(${q}) = ${f(q)}$.` : `Vì $${h} \\notin [${p}; ${q}]$ nên hàm số đơn điệu trên đoạn; so sánh $f(${p}) = ${f(p)}$, $f(${q}) = ${f(q)}$.`}<br>`
+      + `Suy ra $M = ${mx}$, $m = ${mn}$ và $${ask ? 'M - m' : 'M + m'} = ${v}$.`,
+    verify:()=>{ const [m1, m2] = phMM(f, p, q); return near(ask ? m2 - m1 : m2 + m1, o.ans, 1e-9); }};
+  return o;
+});
+
+/* 2. TLN TH — số giá trị nguyên m để hàm số đơn điệu trên một nửa khoảng */
+GT(10,5,1,'TH','Số giá trị nguyên của m thuộc một đoạn để hàm số y = ±x² + 2(m + p)x + c đồng biến (nghịch biến) trên một nửa khoảng (α; +∞) hoặc (−∞; α)', R=>{
+  const a = R.pick([-1, 1]), p = R.int(-4, 4), al = R.int(-5, 5), N = R.pick([10, 15, 20]), right = R.rnd() < 0.5, c = R.int(-5, 5);
+  const up = right ? a > 0 : a < 0;   // a > 0: đồng biến trên (h; +∞); a < 0: đồng biến trên (−∞; h)
+  // hàm y = a x² − 2a(m + p) x + c có trục x = m + p
+  const ok = m=> right ? m + p <= al : m + p >= al, ms = []; for(let m = -N; m <= N; m++) if(ok(m)) ms.push(m); if(ms.length < 2 || ms.length > 2*N) return null;
+  const B = termsT([[1, 'm'], [p, '']]), y = `y = ${a > 0 ? '' : '-'}x^2 ${a > 0 ? '-' : '+'} 2(${B})x${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`}`.replace('2(m)x', '2mx'), tap = right ? `(${al}; +\\infty)` : `(-\\infty; ${al})`;
+  const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${N}; ${N}]$ để hàm số $${y}$ ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $${tap}$?`, ans:ms.length,
+    lg:`Trục đối xứng $x = ${B}$, $a = ${a}$; hàm số ${up ? 'đồng biến' : 'nghịch biến'} trên $${right ? `(${B}; +\\infty)` : `(-\\infty; ${B})`}$.<br>`
+      + `Yêu cầu $\\iff ${B} ${right ? '\\le' : '\\ge'} ${al} \\iff m ${right ? '\\le' : '\\ge'} ${al - p}$. Kết hợp $m \\in [-${N}; ${N}]$ nguyên: $m \\in \\{${phList(ms)}\\}$, có $${ms.length}$ giá trị.`,
+    verify:()=>{ let cnt = 0; for(let m = -N; m <= N; m++){ const f = x=> a*x*x - 2*a*(m + p)*x + c, xs = right ? gridPts(al + 0.05, al + 15, 0.05) : gridPts(al - 15, al - 0.05, 0.05); if(xs.every((x, i)=> !i || (up ? f(x) > f(xs[i - 1]) : f(x) < f(xs[i - 1])))) cnt++; } return cnt === o.ans; }};
+  return o;
+});
+
+/* 3. TLN TH — GTNN trên đoạn bằng k (tịnh tiến) */
+GT(10,5,1,'TH','Tìm m để giá trị nhỏ nhất (lớn nhất) của hàm số y = ax² + bx + m trên một đoạn bằng số cho trước', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), b = -2*a*h, K = R.int(-9, 9), inside = R.rnd() < 0.6, p = inside ? h - R.int(1, 3) : h + R.int(1, 2), q = inside ? h + R.int(1, 3) : p + R.int(1, 3);
+  const g = x=> a*x*x + b*x, [gmn, gmx] = phMM(g, p, q), askMin = a > 0 ? R.rnd() < 0.7 : R.rnd() < 0.3, v = K - (askMin ? gmn : gmx); if(Math.abs(v) > 99) return null;
+  const at = askMin ? (a > 0 ? (inside ? h : p) : (g(p) <= g(q) ? p : q)) : (a < 0 ? (inside ? h : p) : (g(p) >= g(q) ? p : q));
+  const o = {stem:`Tìm giá trị của tham số $m$ để giá trị ${askMin ? 'nhỏ nhất' : 'lớn nhất'} của hàm số $y = ${termsT([[a, 'x^2'], [b, 'x']])} + m$ trên đoạn $[${p}; ${q}]$ bằng $${K}$.`, ans:v,
+    lg:`Đặt $g(x) = ${termsT([[a, 'x^2'], [b, 'x']])}$, đỉnh tại $x = ${h}$${inside ? ` thuộc đoạn $[${p}; ${q}]$` : ` không thuộc đoạn $[${p}; ${q}]$`}. So sánh $g(${p}) = ${g(p)}$, ${inside ? `$g(${h}) = ${g(h)}$, ` : ''}$g(${q}) = ${g(q)}$: giá trị ${askMin ? 'nhỏ nhất' : 'lớn nhất'} của $g$ trên đoạn là $${askMin ? gmn : gmx}$ (tại $x = ${at}$).<br>`
+      + `Do đó giá trị ${askMin ? 'nhỏ nhất' : 'lớn nhất'} của $y = g(x) + m$ là $${askMin ? gmn : gmx} + m = ${K} \\iff m = ${v}$.`,
+    verify:()=>{ const [mn, mx] = phMM(x=> a*x*x + b*x + o.ans, p, q); return near(askMin ? mn : mx, K, 1e-9); }};
+  return o;
+});
+
+/* 4. TLN VD — GTLN (GTNN) trên ℝ bằng k: phương trình bậc hai theo m */
+GT(10,5,1,'VD','Tìm m để giá trị lớn nhất (nhỏ nhất) của hàm số bậc hai chứa tham số trên ℝ bằng số cho trước (y_I = k là phương trình bậc hai theo m), tính tổng hoặc tích các giá trị m', R=>{
+  const s = R.pick([-1, 1]), m1 = R.int(-5, 5), m2 = R.int(-5, 5), r = R.int(-3, 3), K = R.int(-6, 6); if(m1 === m2) return null;
+  // y = s x² − 2s(m + r) x + C(m), đỉnh x = m + r, y_I = C(m) − s(m + r)². Chọn C(m) = s(m + r)² + K + t(m − m1)(m − m2) với t = ±1 sao cho y_I = K ⇔ m ∈ {m1, m2}
+  const t = R.pick([-1, 1]), c2 = s + t, c1 = 2*s*r - t*(m1 + m2), c0 = s*r*r + K + t*m1*m2; if(c2 === 0 && R.rnd() < 0.5) return null; if(Math.abs(c1) > 12 || Math.abs(c0) > 30) return null;
+  const C = termsT([[c2, 'm^2'], [c1, 'm'], [c0, '']]), B = termsT([[1, 'm'], [r, '']]), ask = R.pick([0, 1]), v = ask ? m1*m2 : m1 + m2;
+  const y = `y = ${s > 0 ? '' : '-'}x^2 ${s > 0 ? '-' : '+'} 2(${B})x ${C.startsWith('-') ? '- ' + C.slice(1) : '+ ' + C}`.replace('2(m)x', '2mx');
+  const o = {stem:`Cho hàm số $${y}$ ($m$ là tham số). Tính ${ask ? 'tích' : 'tổng'} các giá trị của $m$ để giá trị ${s > 0 ? 'nhỏ nhất' : 'lớn nhất'} của hàm số bằng $${K}$.`, ans:v,
+    lg:`Hàm số có $a = ${s}$, đỉnh tại $x = ${B}$; giá trị ${s > 0 ? 'nhỏ nhất' : 'lớn nhất'} là $y_I = y(${B}) = ${C} ${s > 0 ? '-' : '+'} (${B})^2 = ${termsT([[c2 - s, 'm^2'], [c1 - 2*s*r, 'm'], [c0 - s*r*r, '']])}$.<br>`.replace('(m)^2', 'm^2')
+      + `Giải $${termsT([[c2 - s, 'm^2'], [c1 - 2*s*r, 'm'], [c0 - s*r*r, '']])} = ${K} \\iff ${termsT([[t, 'm^2'], [-t*(m1 + m2), 'm'], [t*m1*m2, '']])} = 0 \\iff m = ${Math.min(m1, m2)}$ hoặc $m = ${Math.max(m1, m2)}$.<br>`
+      + `${ask ? 'Tích' : 'Tổng'} các giá trị: $${ask ? `${m1 < 0 ? `(${m1})` : m1}\\cdot ${m2 < 0 ? `(${m2})` : m2}` : `${m1} + ${m2 < 0 ? `(${m2})` : m2}`} = ${v}$.`,
+    verify:()=>{ const ms = []; for(let m = -30; m <= 30; m++){ const h = m + r, yI = s*h*h - 2*s*(m + r)*h + c2*m*m + c1*m + c0; if(near(yI, K)) ms.push(m); } return ms.length === 2 && (ask ? ms[0]*ms[1] : ms[0] + ms[1]) === o.ans; }};
+  return o;
+});
+
+/* 5. TLN TH — giá trị nhỏ nhất của m để f(x) ≤ m với mọi x thuộc đoạn */
+GT(10,5,1,'TH','Tìm giá trị nhỏ nhất của m (lớn nhất của m) để f(x) ≤ m (f(x) ≥ m) với mọi x thuộc một đoạn: đưa về GTLN (GTNN) của hàm số bậc hai trên đoạn', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), k = R.int(-6, 6), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c, p = h - R.int(0, 3), q = h + R.int(1, 4), le = R.rnd() < 0.5;
+  const [mn, mx] = phMM(f, p, q), v = le ? mx : mn; if(Math.abs(v) > 99) return null;
+  const o = {stem:`Tìm giá trị ${le ? 'nhỏ nhất' : 'lớn nhất'} của tham số $m$ để $${phQ(a, b, c)} ${le ? '\\le' : '\\ge'} m$ với mọi $x \\in [${p}; ${q}]$.`, ans:v,
+    lg:`Yêu cầu bài toán $\\iff m ${le ? '\\ge' : '\\le'} ${le ? '\\max' : '\\min'}_{[${p}; ${q}]} f(x)$ với $f(x) = ${phQ(a, b, c)}$.<br>`
+      + `$f$ có đỉnh $I(${h}; ${k})$${h >= p && h <= q ? ` thuộc đoạn` : ''}; $f(${p}) = ${f(p)}$, $f(${q}) = ${f(q)}$${h > p && h < q ? `, $f(${h}) = ${k}$` : ''}. Suy ra ${le ? '\\max' : '\\min'} trên đoạn bằng $${v}$.`.replace(/\\(max|min)/, s=> `$${s}$`).replace('$$', '$')
+      + `<br>Vậy $m ${le ? '\\ge' : '\\le'} ${v}$, giá trị ${le ? 'nhỏ nhất' : 'lớn nhất'} của $m$ là $${v}$.`,
+    verify:()=>{ const xs = gridPts(p, q, 0.001), okm = m=> xs.every(x=> le ? f(x) <= m + 1e-9 : f(x) >= m - 1e-9); return okm(o.ans) && !okm(o.ans + (le ? -0.01 : 0.01)); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.2 (10|5|1), đợt 9 (5 TLN). Claude viết.
+// Chuỗi: đặt ẩn phụ t = x² (điều kiện t ≥ 0, bẫy khi đỉnh của g(t) nằm ngoài miền) → t = x² + bx (t ≥ −b²/4)
+// → GTNN của αx² + βy² khi x + y = S (thế, đưa về bậc hai) → GTLN của xy khi x + ky = S → tích bốn thừa số cách đều (ghép cặp, đặt ẩn phụ).
+const piF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const piOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const piMin = (f, lo, hi, step = 0.0005)=>{ let m = Infinity; for(let x = lo; x <= hi; x += step) m = Math.min(m, f(x)); return m; };
+
+/* 1. TLN VD — t = x², t ≥ 0 */
+GT(10,5,1,'VD','Giá trị nhỏ nhất (lớn nhất) của hàm số y = ±(x⁴ − 2px²) + q: đặt t = x² ≥ 0, xét vị trí đỉnh t = p so với miền t ≥ 0', R=>{
+  const s = R.pick([1, 1, -1]), p = R.int(-4, 5), q = R.int(-9, 9); if(p === 0) return null;
+  // s = 1: GTNN của x⁴ − 2px² + q; s = −1: GTLN của −x⁴ + 2px² + q
+  const v = p > 0 ? q - s*p*p : q; if(String(v).length > 4) return null;
+  const f = x=> s*(x**4 - 2*p*x*x) + q, T = s > 0 ? 'nhỏ nhất' : 'lớn nhất';
+  const ex = `${s > 0 ? '' : '-'}x^4 ${(s*-2*p) < 0 ? '-' : '+'} ${Math.abs(2*p)}x^2${q === 0 ? '' : ` ${q < 0 ? '-' : '+'} ${Math.abs(q)}`}`;
+  const o = {stem:`Tìm giá trị ${T} của hàm số $y = ${ex}$.`, ans:v,
+    lg:`Đặt $t = x^2$, điều kiện $t \\ge 0$. Khi đó $y = g(t) = ${s > 0 ? '' : '-'}t^2 ${(s*-2*p) < 0 ? '-' : '+'} ${Math.abs(2*p)}t${q === 0 ? '' : ` ${q < 0 ? '-' : '+'} ${Math.abs(q)}`}$, đỉnh tại $t = ${p}$.<br>`
+      + (p > 0 ? `Vì $${p} \\ge 0$ thuộc miền $t \\ge 0$ nên giá trị ${T} là $g(${p}) = ${v}$, đạt khi $x^2 = ${p}$.`
+               : `Vì $${p} < 0$ nằm ngoài miền $t \\ge 0$, trên $[0; +\\infty)$ hàm $g$ ${s > 0 ? 'đồng biến' : 'nghịch biến'} nên giá trị ${T} là $g(0) = ${q}$, đạt khi $x = 0$ (không lấy $g(${p})$).`),
+    verify:()=> s > 0 ? near(piMin(f, -4, 4, 0.0005), o.ans, 1e-4) : near(-piMin(x=> -f(x), -4, 4, 0.0005), o.ans, 1e-4)};
+  return o;
+});
+
+/* 2. TLN VD — t = x² + bx, t ≥ −b²/4 */
+GT(10,5,1,'VD','Giá trị nhỏ nhất của y = (x² + bx)² + s(x² + bx) + r: đặt t = x² + bx với t ≥ −b²/4, xét hàm bậc hai theo t trên nửa khoảng', R=>{
+  const b = 2*R.nz(-3, 3), s = 2*R.int(-6, 6), r = R.int(-9, 9), t0 = -b*b/4, tv = -s/2, g = t=> t*t + s*t + r;
+  const v = tv >= t0 ? g(tv) : g(t0); if(String(v).length > 4) return null; if(tv >= t0 && R.rnd() < 0.4) return null;
+  const u = `x^2 ${b < 0 ? '-' : '+'} ${Math.abs(b)}x`;
+  const o = {stem:`Tìm giá trị nhỏ nhất của hàm số $y = (${u})^2 ${s === 0 ? '' : `${s < 0 ? '-' : '+'} ${Math.abs(s)}(${u})`}${r === 0 ? '' : ` ${r < 0 ? '-' : '+'} ${Math.abs(r)}`}$.`.replace(' $.', '$.'), ans:v,
+    lg:`Đặt $t = ${u} = (x ${b < 0 ? '-' : '+'} ${Math.abs(b/2)})^2 - ${b*b/4} \\ge ${t0}$. Khi đó $y = g(t) = ${termsT([[1, 't^2'], [s, 't'], [r, '']])}$ với $t \\ge ${t0}$; đỉnh của $g$ tại $t = ${piF(tv)}$.<br>`
+      + (tv >= t0 ? `Vì $${piF(tv)} \\ge ${t0}$ nên giá trị nhỏ nhất là $g(${piF(tv)}) = ${v}$.`
+                  : `Vì $${piF(tv)} < ${t0}$ nên $g$ đồng biến trên $[${t0}; +\\infty)$, giá trị nhỏ nhất là $g(${t0}) = ${v}$ (đạt khi $x = ${-b/2}$).`),
+    verify:()=> near(piMin(x=> (x*x + b*x)**2 + s*(x*x + b*x) + r, -b/2 - 6, -b/2 + 6, 0.0005), o.ans, 1e-4)};
+  return o;
+});
+
+/* 3. TLN VD — GTNN của αx² + βy² khi x + y = S */
+GT(10,5,1,'VD','Giá trị nhỏ nhất của P = αx² + βy² với x + y = S: thế y = S − x, đưa về hàm số bậc hai của x', R=>{
+  const al = R.int(1, 4), be = R.int(1, 4), S = R.nz(-12, 12), v = al*be*S*S/(al + be); if(!piOk(v)) return null;
+  const x0 = be*S/(al + be), y0 = S - x0;
+  const o = {stem:`Cho hai số thực $x$, $y$ thoả mãn $x + y = ${S}$. Tìm giá trị nhỏ nhất của biểu thức $P = ${al === 1 ? '' : al}x^2 + ${be === 1 ? '' : be}y^2$.`, ans:Math.round(v*10)/10,
+    lg:`Thế $y = ${S} - x$: $P = ${al === 1 ? '' : al}x^2 + ${be === 1 ? '' : be}(${S} - x)^2 = ${termsT([[al + be, 'x^2'], [-2*be*S, 'x'], [be*S*S, '']])}$.<br>`.replace('(-', '(-').replace(/\((-?\d+) - x\)/, (s0, d)=> `(${d} - x)`)
+      + `Đây là hàm số bậc hai của $x$ có $a = ${al + be} > 0$, đạt giá trị nhỏ nhất tại $x = \\dfrac{${2*be*S}}{${2*(al + be)}} = ${piF(x0)}$ (khi đó $y = ${piF(y0)}$).<br>`
+      + `$P_{\\min} = ${piF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=> near(piMin(x=> al*x*x + be*(S - x)**2, -40, 40, 0.001), o.ans, 1e-3)};
+  return o;
+});
+
+/* 4. TLN VD — GTLN của xy khi x + ky = S */
+GT(10,5,1,'VD','Giá trị lớn nhất của tích P = xy với x + ky = S: thế x = S − ky, đưa về hàm số bậc hai của y (có thể kèm bài toán diện tích hình chữ nhật)', R=>{
+  const k = R.int(1, 4), S = R.int(4, 24), v = S*S/(4*k); if(!piOk(v)) return null; const y0 = S/(2*k), x0 = S/2;
+  const ctx = R.rnd() < 0.5;
+  const stem = ctx ? (k === 1 ? `Một người có $${S}$ m lưới để rào một mảnh vườn hình chữ nhật đặt ở góc sân: hai cạnh của vườn tựa vào hai bức tường vuông góc có sẵn (không cần rào), hai cạnh còn lại dài $x$ (m) và $y$ (m) được rào bằng toàn bộ số lưới. Diện tích lớn nhất của mảnh vườn là bao nhiêu mét vuông?`
+      : `Một người có $${S}$ m lưới để rào một mảnh vườn hình chữ nhật, một cạnh tựa vào bức tường có sẵn (không cần rào). Phần rào gồm một cạnh song song với tường dài $x$ (m) và $${k}$ đoạn vuông góc với tường, mỗi đoạn dài $y$ (m)${k > 2 ? ' (có ngăn chia ô)' : ''}. Diện tích lớn nhất của mảnh vườn là bao nhiêu mét vuông?`)
+    : `Cho hai số thực $x$, $y$ thoả mãn $x + ${k === 1 ? '' : k}y = ${S}$. Tìm giá trị lớn nhất của biểu thức $P = xy$.`;
+  const o = {stem, ans:Math.round(v*10)/10,
+    lg:`${ctx ? `Ta có $x + ${k === 1 ? '' : k}y = ${S}$ và diện tích $P = xy$ ($x, y > 0$).<br>` : ''}Thế $x = ${S} - ${k === 1 ? '' : k}y$: $P = (${S} - ${k === 1 ? '' : k}y)y = ${termsT([[-k, 'y^2'], [S, 'y']])}$, là hàm số bậc hai của $y$ với $a = ${-k} < 0$.<br>`
+      + `$P$ đạt giá trị lớn nhất tại $y = \\dfrac{${S}}{${2*k}} = ${piF(y0)}$ (khi đó $x = ${piF(x0)}$): $P_{\\max} = ${piF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}${ctx ? ' (m²)' : ''}.`,
+    verify:()=> near(-piMin(y=> -(S - k*y)*y, 0, S/k, 0.0005), o.ans, 1e-3)};
+  return o;
+});
+
+/* 5. TLN VD — tích bốn thừa số cách đều */
+GT(10,5,1,'VD','Giá trị nhỏ nhất của y = (x − p)(x − p − d)(x − p − 2d)(x − p − 3d) + c: ghép cặp ngoài – trong, đặt ẩn phụ để đưa về hàm số bậc hai', R=>{
+  const p = R.int(-4, 3), d = R.pick([1, 1, 2, 2, 3]), c = R.int(-9, 12), v = c - d**4; if(String(v).length > 4) return null;
+  const L = j=> termsT([[1, 'x'], [-(p + j*d), '']]), f = x=> (x - p)*(x - p - d)*(x - p - 2*d)*(x - p - 3*d) + c;
+  const A = termsT([[1, 'x^2'], [-(2*p + 3*d), 'x'], [p*(p + 3*d), '']]);
+  const o = {stem:`Tìm giá trị nhỏ nhất của hàm số $y = (${L(0)})(${L(1)})(${L(2)})(${L(3)})${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`}$.`.replace(/\(x\)/g, 'x'), ans:v,
+    lg:`Ghép thừa số thứ nhất với thứ tư, thứ hai với thứ ba: $(${L(0)})(${L(3)}) = ${A}$, $(${L(1)})(${L(2)}) = ${A} + ${2*d*d}$.`.replace(/\(x\)/g, 'x')
+      + `<br>Đặt $t = ${A}$, ta có $y = t(t + ${2*d*d})${c === 0 ? '' : ` ${c < 0 ? '-' : '+'} ${Math.abs(c)}`} = (t + ${d*d})^2 ${c - d**4 < 0 ? '-' : '+'} ${Math.abs(c - d**4)} \\ge ${v}$.`.replace(' + 0 ', ' ')
+      + `<br>Dấu bằng khi $t = -${d*d}$, tức là $${A} = -${d*d}$; phương trình này có nghiệm vì giá trị nhỏ nhất của $${A}$ là $-${piF(9*d*d/4)} \\le -${d*d}$.<br>Vậy giá trị nhỏ nhất của $y$ là $${v}$.`,
+    verify:()=> near(piMin(f, p - 2, p + 5*d, 0.0005), o.ans, 1e-4)};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.1, 10-16.2 Hàm số bậc hai: đồ thị, sự biến thiên, GTLN–GTNN (50 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.2 (10|5|1), đợt 10 (6 TLN). Claude viết.
+// Chuỗi: bảng biến thiên trên đoạn → số m để f(x) = m có nghiệm → hàm số nghịch biến trên khoảng (m; m + d) → đoạn [m; m + L] chứa đỉnh (GTNN bằng y_I)
+// → tìm c để M + m trên đoạn bằng số cho trước → GTLN của √(bậc hai) → GTLN của k/(bậc hai).
+const pjF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pjOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const pjQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pjMM = (f, p, q)=>{ const ys = gridPts(p, q, 0.001).map(f).filter(isFinite); return [Math.min(...ys), Math.max(...ys)]; };
+const pjList = ms=> ms.length > 8 ? `${ms[0]}; ${ms[1]}; \\dots; ${ms[ms.length - 1]}` : ms.join('; ');
+
+/* 1. TLN TH — bảng biến thiên: số m để f(x) = m có nghiệm trên đoạn */
+GT(10,5,1,'TH','Đọc bảng biến thiên của hàm số bậc hai trên một đoạn: số (tổng các) giá trị nguyên của m để phương trình f(x) = m có nghiệm thuộc đoạn', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-2, 2), k = R.int(-5, 5), b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c, p = h - R.int(1, 3), q = h + R.int(1, 3);
+  const vals = [f(p), k, f(q)], lo = Math.min(...vals), hi = Math.max(...vals), ms = []; for(let m = lo; m <= hi; m++) ms.push(m);
+  const ask = R.pick([0, 1]), v = ask ? ms.reduce((s, m)=> s + m, 0) : ms.length; if(String(v).length > 4) return null;
+  const hv = {loai:'bbt', coDaoHam:false, nhan:['x', '', 'y'], x:[String(p), String(h), String(q)], dau:a > 0 ? ['-', '+'] : ['+', '-'], tai:['', '', ''], y:vals.map(String)};
+  const o = {stem:`Cho hàm số bậc hai $y = f(x)$ có bảng biến thiên trên đoạn $[${p}; ${q}]$ như hình vẽ. ${ask ? 'Tính tổng tất cả các' : 'Có bao nhiêu'} giá trị nguyên của tham số $m$ để phương trình $f(x) = m$ có nghiệm thuộc đoạn $[${p}; ${q}]$${ask ? '.' : '?'}`, ans:v, hv,
+    lg:`Phương trình có nghiệm thuộc đoạn khi và chỉ khi $m$ thuộc tập giá trị của $f$ trên đoạn. Từ bảng biến thiên: giá trị nhỏ nhất là $${lo}$, giá trị lớn nhất là $${hi}$, nên $${lo} \\le m \\le ${hi}$.<br>`
+      + `Các giá trị nguyên: $\\{${pjList(ms)}\\}$, ${ask ? `tổng bằng $${v}$` : `có $${v}$ giá trị`}.`,
+    verify:()=>{ const [mn, mx] = pjMM(f, p, q); let cnt = 0, s = 0; for(let m = -99; m <= 99; m++) if(m >= mn - 1e-9 && m <= mx + 1e-9){ cnt++; s += m; } return (ask ? s : cnt) === o.ans; }};
+  return o;
+});
+
+/* 2. TLN TH — hàm số nghịch biến trên khoảng (m; m + d) */
+GT(10,5,1,'TH','Số giá trị nguyên của m để hàm số bậc hai đồng biến (nghịch biến) trên khoảng (m; m + d): khoảng phải nằm trọn về một phía của trục đối xứng', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), b = -2*a*h, c = R.int(-6, 6), d = R.int(1, 4), N = R.pick([10, 15, 20]), up = R.rnd() < 0.5;
+  // a > 0: đồng biến trên (h; +∞) ⇒ cần m ≥ h; nghịch biến trên (−∞; h) ⇒ cần m + d ≤ h
+  const rightSide = (a > 0) === up, ms = []; for(let m = -N; m <= N; m++) if(rightSide ? m >= h : m + d <= h) ms.push(m);
+  const o = {stem:`Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-${N}; ${N}]$ để hàm số $y = ${pjQ(a, b, c)}$ ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng $(m; m + ${d})$?`, ans:ms.length,
+    lg:`Hàm số có $a ${a > 0 ? '>' : '<'} 0$, trục đối xứng $x = ${h}$, nên ${up ? 'đồng biến' : 'nghịch biến'} trên $${rightSide ? `(${h}; +\\infty)` : `(-\\infty; ${h})`}$ và không ${up ? 'đồng biến' : 'nghịch biến'} trên khoảng nào chứa $x = ${h}$ ở bên trong.<br>`
+      + `Yêu cầu $\\iff (m; m + ${d}) \\subset ${rightSide ? `(${h}; +\\infty) \\iff m \\ge ${h}` : `(-\\infty; ${h}) \\iff m + ${d} \\le ${h} \\iff m \\le ${h - d}`}$.<br>Kết hợp $m \\in [-${N}; ${N}]$ nguyên: có $${ms.length}$ giá trị.`,
+    verify:()=>{ let cnt = 0; const f = x=> a*x*x + b*x + c; for(let m = -N; m <= N; m++){ const xs = gridPts(m + 0.01, m + d - 0.01, 0.01).concat([m + 1e-6, m + d - 1e-6]).sort((u, w)=> u - w); if(xs.every((x, i)=> !i || (up ? f(x) > f(xs[i - 1]) : f(x) < f(xs[i - 1])))) cnt++; } return cnt === o.ans; }};
+  return o;
+});
+
+/* 3. TLN VD — đoạn [m; m + L] chứa hoành độ đỉnh */
+GT(10,5,1,'VD','Số giá trị nguyên của m để giá trị nhỏ nhất (lớn nhất) của hàm số bậc hai trên đoạn [m; m + L] bằng tung độ đỉnh (đoạn chứa hoành độ đỉnh)', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-4, 4), k = R.int(-6, 6), b = -2*a*h, c = a*h*h + k, L = R.int(2, 7), f = x=> a*x*x + b*x + c;
+  const ms = []; for(let m = h - L; m <= h; m++) ms.push(m); const ask = R.pick([0, 1]), v = ask ? ms.reduce((s, m)=> s + m, 0) : ms.length;
+  const T = a > 0 ? 'nhỏ nhất' : 'lớn nhất';
+  const o = {stem:`${ask ? 'Tính tổng tất cả các' : 'Có bao nhiêu'} giá trị nguyên của tham số $m$ để giá trị ${T} của hàm số $y = ${pjQ(a, b, c)}$ trên đoạn $[m; m + ${L}]$ bằng $${k}$${ask ? '.' : '?'}`, ans:v,
+    lg:`Hàm số có đỉnh $I(${h}; ${k})$, $a ${a > 0 ? '>' : '<'} 0$. Giá trị ${T} trên một đoạn bằng $${k}$ khi và chỉ khi đoạn đó chứa $x = ${h}$ (nếu không, hàm số đơn điệu trên đoạn và giá trị ${T} đạt tại đầu mút, khác $${k}$).<br>`
+      + `$${h} \\in [m; m + ${L}] \\iff m \\le ${h} \\le m + ${L} \\iff ${h - L} \\le m \\le ${h}$. Các giá trị nguyên: $\\{${pjList(ms)}\\}$, ${ask ? `tổng bằng $${v}$` : `có $${v}$ giá trị`}.`,
+    verify:()=>{ let cnt = 0, s = 0; for(let m = -30; m <= 30; m++){ const [mn, mx] = pjMM(f, m, m + L); if(near(a > 0 ? mn : mx, k, 1e-9)){ cnt++; s += m; } } return (ask ? s : cnt) === o.ans; }};
+  return o;
+});
+
+/* 4. TLN TH — tìm c để M + m trên đoạn bằng số cho trước */
+GT(10,5,1,'TH','Tìm hằng số c để tổng giá trị lớn nhất và giá trị nhỏ nhất của hàm số y = ax² + bx + c trên một đoạn bằng số cho trước', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.int(-3, 3), b = -2*a*h, p = h - R.int(0, 3), q = h + R.int(1, 4), g = x=> a*x*x + b*x, [gm, gM] = pjMM(g, p, q), K = R.int(-20, 20);
+  const v = (K - gm - gM)/2; if(!pjOk(v)) return null;
+  const o = {stem:`Tìm $c$ để tổng giá trị lớn nhất và giá trị nhỏ nhất của hàm số $y = ${termsT([[a, 'x^2'], [b, 'x']])} + c$ trên đoạn $[${p}; ${q}]$ bằng $${K}$.`, ans:Math.round(v*10)/10,
+    lg:`Đặt $g(x) = ${termsT([[a, 'x^2'], [b, 'x']])}$, đỉnh tại $x = ${h}$${h >= p && h <= q ? ' thuộc đoạn' : ''}. So sánh $g(${p}) = ${g(p)}$, ${h > p && h < q ? `$g(${h}) = ${g(h)}$, ` : ''}$g(${q}) = ${g(q)}$: trên đoạn, $\\max g = ${gM}$, $\\min g = ${gm}$.<br>`
+      + `Khi đó $\\max y + \\min y = (${gM} + c) + (${gm} + c) = ${gM + gm} + 2c = ${K} \\iff c = ${pjF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(v)}$`}.`,
+    verify:()=>{ const [mn, mx] = pjMM(x=> a*x*x + b*x + o.ans, p, q); return near(mn + mx, K, 1e-6); }};
+  return o;
+});
+
+/* 5. TLN VD — GTLN của √(−x² + bx + c) */
+GT(10,5,1,'VD','Giá trị lớn nhất của hàm số y = √(−x² + bx + c) (tìm tập xác định, GTLN của biểu thức dưới căn)', R=>{
+  const h = R.nz(-4, 4), r = R.int(1, 8), K = r*r, b = 2*h, c = K - h*h, ask = R.int(0, 2);
+  const f = x=> Math.sqrt(-x*x + b*x + c), v = [r, r + h, r*h][ask], askT = ['M', 'M + x_0', 'M\\cdot x_0'][ask];
+  const o = {stem:`Hàm số $y = \\sqrt{${pjQ(-1, b, c)}}$ đạt giá trị lớn nhất bằng $M$ tại $x = x_0$. Tính $${askT}$.`, ans:v,
+    lg:`Biểu thức dưới căn $g(x) = ${pjQ(-1, b, c)} = ${K} - (${termsT([[1, 'x'], [-h, '']])})^2 \\le ${K}$, dấu bằng khi $x = ${h}$.`.replace('(x)^2', 'x^2')
+      + `<br>Do đó $y = \\sqrt{g(x)} \\le \\sqrt{${K}} = ${r}$ (với mọi $x$ thuộc tập xác định $[${h - r}; ${h + r}]$), nên $M = ${r}$, $x_0 = ${h}$${ask ? ` và $${askT} = ${v}$` : ''}.`,
+    verify:()=>{ let best = -Infinity, at = 0; for(let i = -15000; i <= 15000; i++){ const x = i/1000, y = f(x); if(isFinite(y) && y > best){ best = y; at = x; } } return near([best, best + at, best*at][ask], o.ans, 1e-2); }};
+  return o;
+});
+
+/* 6. TLN VD — GTLN của k/(x² + bx + c) */
+GT(10,5,1,'VD','Giá trị lớn nhất của hàm số y = k/(x² + bx + c) khi mẫu luôn dương: mẫu đạt giá trị nhỏ nhất thì phân thức đạt giá trị lớn nhất', R=>{
+  const h = R.int(-4, 4), mn = R.pick([1, 2, 3, 4, 5, 6, 8, 10]), k = R.pick([2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24]), b = -2*h, c = h*h + mn, v = k/mn; if(!pjOk(v)) return null;
+  const f = x=> k/(x*x + b*x + c);
+  const o = {stem:`Tìm giá trị lớn nhất của hàm số $y = \\dfrac{${k}}{${pjQ(1, b, c)}}$.`, ans:Math.round(v*10)/10,
+    lg:`Mẫu số $${pjQ(1, b, c)} = (${termsT([[1, 'x'], [-h, '']])})^2 + ${mn} \\ge ${mn} > 0$ với mọi $x$, dấu bằng khi $x = ${h}$.`.replace('(x)^2', 'x^2')
+      + `<br>Tử số dương nên $y = \\dfrac{${k}}{${pjQ(1, b, c)}} \\le \\dfrac{${k}}{${mn}} = ${pjF(v)}$${Number.isInteger(v) ? '' : ` $= ${nt(v)}$`}. Giá trị lớn nhất là $${pjF(v)}$, đạt khi $x = ${h}$.`,
+    verify:()=>{ let best = -Infinity; for(let i = -20000; i <= 20000; i++) best = Math.max(best, f(i/1000)); return near(best, o.ans, 1e-3); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.3 Xác định hàm số bậc hai (10|5|1), đợt 11 (5 TN). Claude viết.
+// Chuỗi: qua ba điểm (hệ ba ẩn) → trục đối xứng + hai điểm → GTLN/GTNN tại x = h + một điểm (dạng a(x − h)² + k)
+// → cắt trục hoành tại hai điểm + một điểm (dạng a(x − x₁)(x − x₂)) → tiếp xúc trục hoành + một điểm.
+const pkF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pkQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pkP = v=> v < 0 ? `(${v})` : String(v);
+// phương án: chọn 3 sai từ các biến thể, loại biến thể vẫn thoả mọi điều kiện
+const pkOpts = (R, A, B, C, chk)=>{ const O = (a, b, c)=> ({t:`$y = ${pkQ(a, b, c)}$`, v:`${a},${b},${c}`, A:a, B:b, C:c});
+  const cands = [[A, -B, C], [-A, B, C], [A, B, -C], [-A, -B, -C], [A, B + A, C], [A, B, C + A], [2*A, B, C], [A, -B, -C]].filter(([a, b, c])=> a !== 0 && !chk(a, b, c));
+  const seen = new Set([`${A},${B},${C}`]), out = []; R.shuffle(cands).forEach(([a, b, c])=>{ const k = `${a},${b},${c}`; if(out.length < 3 && !seen.has(k)){ seen.add(k); out.push(O(a, b, c)); } });
+  return out.length === 3 ? {ans:O(A, B, C), wrong:out} : null; };
+
+/* 1. TN TH — parabol qua ba điểm */
+G(10,5,1,'TH','Xác định parabol y = ax² + bx + c đi qua ba điểm cho trước (lập và giải hệ ba phương trình bậc nhất ba ẩn)', R=>{
+  const A = R.pick([-2, -1, 1, 2, 3]), B = R.int(-5, 5), C = R.int(-6, 6), xs = R.distinct(3, -3, 3); if(xs.length < 3) return null; xs.sort((u, w)=> u - w);
+  const f = x=> A*x*x + B*x + C, P = xs.map(x=> [x, f(x)]); if(P.some(([, y])=> Math.abs(y) > 40)) return null;
+  const chk = (a, b, c)=> P.every(([x, y])=> a*x*x + b*x + c === y), op = pkOpts(R, A, B, C, chk); if(!op) return null;
+  const eq = ([x, y])=> `${termsT([[x*x, 'a'], [x, 'b'], [1, 'c']])} = ${y}`;
+  const o = {stem:`Parabol $y = ax^2 + bx + c$ đi qua ba điểm ${P.map(([x, y], i)=> `$${'MNP'[i]}(${x}; ${y})$`).join(', ')} có phương trình là`, ...op,
+    lg:`Thay toạ độ ba điểm vào $y = ax^2 + bx + c$: $\\begin{cases} ${P.map(eq).join(' \\\\ ')} \\end{cases} \\iff \\begin{cases} a = ${A} \\\\ b = ${B} \\\\ c = ${C} \\end{cases}$<br>Vậy $y = ${pkQ(A, B, C)}$.`,
+    verify:()=> chk(o.ans.A, o.ans.B, o.ans.C) && o.wrong.every(w=> !chk(w.A, w.B, w.C))};
+  return o;
+});
+
+/* 2. TN TH — trục đối xứng và hai điểm */
+G(10,5,1,'TH','Xác định parabol y = ax² + bx + c biết trục đối xứng x = h và đi qua hai điểm (b = −2ah)', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.nz(-3, 3), B = -2*A*h, C = R.int(-6, 6), f = x=> A*x*x + B*x + C, x1 = R.int(-3, 3), x2 = R.int(-3, 3);
+  if(x1 === x2 || x1 + x2 === 2*h) return null; const y1 = f(x1), y2 = f(x2); if(Math.abs(y1) > 40 || Math.abs(y2) > 40) return null;
+  const chk = (a, b, c)=> near(-b/(2*a), h) && a*x1*x1 + b*x1 + c === y1 && a*x2*x2 + b*x2 + c === y2, op = pkOpts(R, A, B, C, chk); if(!op) return null;
+  const o = {stem:`Parabol $y = ax^2 + bx + c$ có trục đối xứng là đường thẳng $x = ${h}$ và đi qua hai điểm $A(${x1}; ${y1})$, $B(${x2}; ${y2})$ có phương trình là`, ...op,
+    lg:`Trục đối xứng $x = -\\dfrac{b}{2a} = ${h} \\iff b = ${termsT([[-2*h, 'a']])}$.<br>Thay toạ độ $A$, $B$: $\\begin{cases} ${termsT([[x1*x1, 'a'], [x1, 'b'], [1, 'c']])} = ${y1} \\\\ ${termsT([[x2*x2, 'a'], [x2, 'b'], [1, 'c']])} = ${y2} \\end{cases}$; thế $b = ${termsT([[-2*h, 'a']])}$ rồi giải được $a = ${A}$, $b = ${B}$, $c = ${C}$.<br>Vậy $y = ${pkQ(A, B, C)}$.`,
+    verify:()=> chk(o.ans.A, o.ans.B, o.ans.C) && o.wrong.every(w=> !chk(w.A, w.B, w.C))};
+  return o;
+});
+
+/* 3. TN TH — GTLN/GTNN tại x = h và một điểm */
+G(10,5,1,'TH','Xác định hàm số bậc hai biết giá trị lớn nhất (nhỏ nhất) bằng k đạt tại x = h và đồ thị đi qua một điểm (dạng y = a(x − h)² + k)', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.nz(-3, 3), k = R.int(-6, 6), B = -2*A*h, C = A*h*h + k, x0 = h + R.nz(-3, 3), y0 = A*(x0 - h)**2 + k; if(Math.abs(C) > 40 || Math.abs(y0) > 40) return null;
+  const chk = (a, b, c)=> (a < 0) === (A < 0) && near(-b/(2*a), h) && near(c - b*b/(4*a), k) && a*x0*x0 + b*x0 + c === y0, op = pkOpts(R, A, B, C, chk); if(!op) return null;
+  const T = A < 0 ? 'lớn nhất' : 'nhỏ nhất';
+  const o = {stem:`Hàm số bậc hai $y = f(x)$ đạt giá trị ${T} bằng $${k}$ tại $x = ${h}$ và có đồ thị đi qua điểm $M(${x0}; ${y0})$. Hàm số đó là`, ...op,
+    lg:`Đồ thị có đỉnh $I(${h}; ${k})$ nên $f(x) = a(${termsT([[1, 'x'], [-h, '']])})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$ với $a ${A < 0 ? '<' : '>'} 0$.`.replace(' + 0$', '$')
+      + `<br>Qua $M$: $a(${x0} ${h < 0 ? '+' : '-'} ${Math.abs(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${y0} \\iff ${(x0 - h)**2}a = ${y0 - k} \\iff a = ${A}$ (thoả mãn).`
+      + `<br>Vậy $f(x) = ${A === 1 ? '' : A === -1 ? '-' : A}(${termsT([[1, 'x'], [-h, '']])})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$, tức là $y = ${pkQ(A, B, C)}$.`.replace(' + 0$', '$'),
+    verify:()=> chk(o.ans.A, o.ans.B, o.ans.C) && o.wrong.every(w=> !chk(w.A, w.B, w.C))};
+  return o;
+});
+
+/* 4. TN TH — cắt trục hoành tại hai điểm và đi qua một điểm */
+G(10,5,1,'TH','Xác định parabol cắt trục hoành tại hai điểm có hoành độ cho trước và đi qua một điểm khác (dạng y = a(x − x₁)(x − x₂))', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), x1 = R.int(-4, 2), x2 = x1 + R.int(1, 5), B = -A*(x1 + x2), C = A*x1*x2, x0 = R.int(-4, 5); if(x0 === x1 || x0 === x2) return null;
+  const y0 = A*(x0 - x1)*(x0 - x2); if(Math.abs(y0) > 40 || Math.abs(C) > 40) return null;
+  const chk = (a, b, c)=> [x1, x2].every(x=> a*x*x + b*x + c === 0) && a*x0*x0 + b*x0 + c === y0, op = pkOpts(R, A, B, C, chk); if(!op) return null;
+  const L = v=> termsT([[1, 'x'], [-v, '']]);
+  const o = {stem:`Parabol $y = ax^2 + bx + c$ cắt trục hoành tại hai điểm có hoành độ $${x1}$ và $${x2}$, đồng thời đi qua điểm $M(${x0}; ${y0})$. Parabol đó là`, ...op,
+    lg:`Parabol cắt trục hoành tại $x = ${x1}$ và $x = ${x2}$ nên $y = a(${L(x1)})(${L(x2)})$.`.replace(/\(x\)/g, 'x')
+      + `<br>Qua $M$: $a(${x0} ${x1 < 0 ? '+' : '-'} ${Math.abs(x1)})(${x0} ${x2 < 0 ? '+' : '-'} ${Math.abs(x2)}) = ${y0} \\iff ${(x0 - x1)*(x0 - x2)}a = ${y0} \\iff a = ${A}$.<br>Vậy $y = ${A === 1 ? '' : A === -1 ? '-' : A}(${L(x1)})(${L(x2)})$, tức là $y = ${pkQ(A, B, C)}$.`.replace(/\(x\)/g, 'x').replace(/ [+-] 0\)/g, ')'),
+    verify:()=> chk(o.ans.A, o.ans.B, o.ans.C) && o.wrong.every(w=> !chk(w.A, w.B, w.C))};
+  return o;
+});
+
+/* 5. TN VD — tiếp xúc trục hoành và đi qua một điểm */
+G(10,5,1,'VD','Xác định parabol y = ax² + bx + c tiếp xúc với trục hoành tại điểm có hoành độ h (đỉnh nằm trên trục hoành) và cắt trục tung tại điểm cho trước', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3, 4]), h = R.nz(-3, 3), B = -2*A*h, C = A*h*h; if(Math.abs(C) > 40) return null;
+  const chk = (a, b, c)=> near(-b/(2*a), h) && near(c - b*b/(4*a), 0) && c === C, op = pkOpts(R, A, B, C, chk); if(!op) return null;
+  const o = {stem:`Parabol $y = ax^2 + bx + c$ tiếp xúc với trục hoành tại điểm $A(${h}; 0)$ và cắt trục tung tại điểm $B(0; ${C})$. Parabol đó là`, ...op,
+    lg:`Parabol tiếp xúc trục hoành tại $A(${h}; 0)$ nên $A$ là đỉnh: $y = a(${termsT([[1, 'x'], [-h, '']])})^2$.<br>Qua $B(0; ${C})$: $a\\cdot ${h*h} = ${C} \\iff a = ${A}$.<br>Vậy $y = ${A === 1 ? '' : A === -1 ? '-' : A}(${termsT([[1, 'x'], [-h, '']])})^2$, tức là $y = ${pkQ(A, B, C)}$.`,
+    verify:()=> chk(o.ans.A, o.ans.B, o.ans.C) && o.wrong.every(w=> !chk(w.A, w.B, w.C))};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.3 (10|5|1), đợt 12 (1 TN + 4 Đ–S). Claude viết.
+// Chuỗi: đọc đồ thị để xác định a, b, c (tính a + b + c) → Đ–S qua ba điểm → Đ–S biết GTLN/GTNN và một điểm
+// → Đ–S xác định từ đồ thị → Đ–S biết f(x + 1) − f(x) và f(0) (đồng nhất hệ số).
+const plF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const plQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const plPl = (a, b, c)=> `(${a})*x^2+(${b})*x+(${c})`;
+const plPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v))){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+
+/* 1. TN VD — đọc đồ thị, tính biểu thức của a, b, c */
+G(10,5,1,'VD','Đọc đồ thị parabol (đỉnh và một điểm) để xác định a, b, c rồi tính một biểu thức của a, b, c', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.nz(-2, 2), k = R.int(-3, 3), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) > 8) return null;
+  const ask = R.int(0, 2), val = [a + b + c, a - b + c, 2*a + b - c][ask], askT = ['a + b + c', 'a - b + c', '2a + b - c'][ask];
+  const O = v=> ({t:`$${v}$`, v}), wrong = plPick3(R, O(val), [O([-a + b + c, a + b - c, a - b - c][ask]), O([a - b + c, a + b + c, 2*a - b - c][ask]), O(val + 2*a), O(-val), O(val + 1)]); if(!wrong) return null;
+  const hv = {loai:'dothi', hamSo:plPl(a, b, c), luoi:true, ghiCucTri:true, diem:[0], khung:{xmin:Math.min(-1, h) - 2.6, xmax:Math.max(1, h) + 2.6, ymin:Math.min(0, k, c) - 1.6, ymax:Math.max(0, k, c) + 1.6}};
+  const o = {stem:`Cho hàm số $y = ax^2 + bx + c$ có đồ thị là parabol như hình vẽ. Tính $${askT}$.`, ans:O(val), wrong, hv,
+    lg:`Từ đồ thị: đỉnh $I(${h}; ${k})$, parabol cắt trục tung tại $(0; ${c})$ nên $c = ${c}$.<br>`
+      + `Ta có $y = a(${termsT([[1, 'x'], [-h, '']])})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$; thay $x = 0$: $${h*h}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${c} \\iff a = ${a}$; $b = -2ah = ${b}$.`.replace(' + 0 = ', ' = ').replace(' + 0$', '$')
+      + `<br>Vậy $${askT} = ${val}$.`,
+    verify:()=>{ const f = x=> a*x*x + b*x + c, A = (f(1) + f(-1) - 2*f(0))/2, B = (f(1) - f(-1))/2, C = f(0); return [A + B + C, A - B + C, 2*A + B - C][ask] === o.ans.v; }};
+  return o;
+});
+
+/* 2. ĐS TH — parabol qua ba điểm */
+GD(10,5,1,'TH','Parabol y = ax² + bx + c đi qua ba điểm: các hệ số, toạ độ đỉnh, giá trị tại một điểm', R=>{
+  const A = R.pick([-2, -1, 1, 2]), B = R.int(-5, 5), C = R.int(-6, 6), xs = [-1, 0, R.pick([1, 2])], f = x=> A*x*x + B*x + C, P = xs.map(x=> [x, f(x)]);
+  const h = -B/(2*A), k = f(h), x0 = R.int(2, 4), items = [
+    claimN(R, v=> `$a = ${v}$`, A, String(A), -A, String(-A), ()=>{ const [[x1, y1], [x2, y2], [x3, y3]] = P; return ((y3 - y1)/(x3 - x1) - (y2 - y1)/(x2 - x1))/(x3 - x2); }),
+    claimN(R, v=> `$b + c = ${v}$`, B + C, String(B + C), B - C !== B + C ? B - C : B + C + 1, String(B - C !== B + C ? B - C : B + C + 1), ()=> f(1) - A),
+    claim(R, `Đỉnh của parabol là $I\\left(${plF(h)}; ${plF(k)}\\right)$`, `Đỉnh của parabol là $I\\left(${plF(-h)}; ${plF(k)}\\right)$`, ()=> near(f(h - 1), f(h + 1)) && near(f(h), k), ()=> h === 0),
+    claimN(R, v=> `$f(${x0}) = ${v}$`, f(x0), String(f(x0)), f(x0) + A*2, String(f(x0) + A*2), ()=> A*x0*x0 + B*x0 + C)];
+  if(B === 0) return null;
+  return {stem:`Cho parabol $(P): y = f(x) = ax^2 + bx + c$ đi qua ba điểm ${P.map(([x, y], i)=> `$${'ABC'[i]}(${x}; ${y})$`).join(', ')}.`, items,
+    lg:`Thay toạ độ: $f(0) = c = ${f(0)}$; $f(-1) = a - b + c = ${f(-1)}$; $f(${xs[2]}) = ${xs[2]*xs[2]}a + ${xs[2]}b + c = ${f(xs[2])}$. Giải hệ được $a = ${A}$, $b = ${B}$, $c = ${C}$: $y = ${plQ(A, B, C)}$.`.replace('= 1a + 1b', '= a + b')
+      + `<br>a) $a = ${A}$. b) $b + c = ${B + C}$.<br>c) $x_I = -\\dfrac{b}{2a} = ${plF(h)}$, $y_I = ${plF(k)}$.<br>d) $f(${x0}) = ${f(x0)}$.`};
+});
+
+/* 3. ĐS TH — biết GTLN/GTNN và một điểm */
+GD(10,5,1,'TH','Hàm số bậc hai đạt GTLN (GTNN) bằng k tại x = h và đồ thị đi qua một điểm: hệ số a, công thức, giao điểm với trục tung, giá trị tại một điểm đối xứng', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.nz(-3, 3), k = R.int(-6, 6), B = -2*A*h, C = A*h*h + k, x0 = h + R.nz(-2, 2), y0 = A*(x0 - h)**2 + k, f = x=> A*x*x + B*x + C;
+  if(Math.abs(C) > 40) return null; const T = A < 0 ? 'lớn nhất' : 'nhỏ nhất', xs = 2*h - x0;
+  const items = [
+    claimN(R, v=> `$a = ${v}$`, A, String(A), -A, String(-A), ()=> (y0 - k)/(x0 - h)**2),
+    claim(R, `Hàm số là $y = ${plQ(A, B, C)}$`, `Hàm số là $y = ${plQ(A, -B, C)}$`, ()=> near(f(h), k) && near(f(x0), y0), ()=> near(A*h*h - B*h + C, k) && near(A*x0*x0 - B*x0 + C, y0)),
+    claimN(R, v=> `Đồ thị cắt trục tung tại điểm có tung độ $${v}$`, C, String(C), k, String(k), ()=> f(0)),
+    claimN(R, v=> `$f(${xs}) = ${v}$`, y0, String(y0), -y0 !== y0 ? -y0 : y0 + 1, String(-y0 !== y0 ? -y0 : y0 + 1), ()=> f(xs))];
+  if(C === k) return null;
+  return {stem:`Cho hàm số bậc hai $y = f(x) = ax^2 + bx + c$ đạt giá trị ${T} bằng $${k}$ tại $x = ${h}$ và đồ thị đi qua điểm $M(${x0}; ${y0})$.`, items,
+    lg:`Đỉnh $I(${h}; ${k})$ nên $f(x) = a(${termsT([[1, 'x'], [-h, '']])})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$; qua $M$: $${(x0 - h)**2 === 1 ? '' : (x0 - h)**2}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${y0}${(x0 - h)**2 === 1 ? '' : ` \\iff ${(x0 - h)**2}a = ${y0 - k}`} \\iff a = ${A}$.`.replace(' + 0$', '$').replace(' + 0 = ', ' = ')
+      + `<br>a) $a = ${A}$. b) Khai triển: $y = ${plQ(A, B, C)}$. c) $f(0) = ${C}$.<br>d) $x = ${xs}$ đối xứng với $x = ${x0}$ qua trục $x = ${h}$ nên $f(${xs}) = f(${x0}) = ${y0}$.`};
+});
+
+/* 4. ĐS VD — xác định từ đồ thị */
+GD(10,5,1,'VD','Xác định hàm số bậc hai từ đồ thị (đỉnh, giao điểm với trục tung): hệ số, công thức, giao điểm với trục hoành, giá trị tại một điểm', R=>{
+  const a = R.pick([-1, 1]), h = R.nz(-2, 2), t = R.int(1, 3), k = -a*t*t, b = -2*a*h, c = a*h*h + k, f = x=> a*x*x + b*x + c; if(Math.abs(c) > 9) return null;
+  const x0 = h + R.nz(-3, 3), items = [
+    claim(R, `$a ${a > 0 ? '>' : '<'} 0$ và $b ${b > 0 ? '>' : '<'} 0$`, `$a ${a > 0 ? '>' : '<'} 0$ và $b ${b > 0 ? '<' : '>'} 0$`, ()=> (a > 0) === (f(5) + f(-5) > 2*f(0)) && (b > 0) === (f(1) > f(-1)), ()=> false),
+    claim(R, `Hàm số là $y = ${plQ(a, b, c)}$`, `Hàm số là $y = ${plQ(a, b, c + (k > 0 ? -1 : 1))}$`, ()=> near(f(h), k), ()=> near(a*h*h + b*h + c + (k > 0 ? -1 : 1), k)),
+    claim(R, `Đồ thị cắt trục hoành tại hai điểm có hoành độ $${h - t}$ và $${h + t}$`, `Đồ thị cắt trục hoành tại hai điểm có hoành độ $${-h - t}$ và $${-h + t}$`, ()=> f(h - t) === 0 && f(h + t) === 0, ()=> f(-h - t) === 0 && f(-h + t) === 0),
+    claimN(R, v=> `$f(${x0}) = ${v}$`, f(x0), String(f(x0)), f(x0) + 2*a, String(f(x0) + 2*a), ()=> a*x0*x0 + b*x0 + c)];
+  const hv = {loai:'dothi', hamSo:plPl(a, b, c), luoi:true, ghiCucTri:true, diem:[0], khung:{xmin:Math.min(-1, h - t) - 1.6, xmax:Math.max(1, h + t) + 1.6, ymin:Math.min(0, k, c) - 1.6, ymax:Math.max(0, k, c) + 1.6}};
+  return {stem:`Cho hàm số bậc hai $y = f(x) = ax^2 + bx + c$ có đồ thị là parabol như hình vẽ.`, items, hv,
+    lg:`Từ đồ thị: bề lõm ${a > 0 ? 'quay lên ($a > 0$)' : 'quay xuống ($a < 0$)'}, đỉnh $I(${h}; ${k})$, cắt trục tung tại $(0; ${c})$.<br>$f(x) = a(${termsT([[1, 'x'], [-h, '']])})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$, $f(0) = ${h*h}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${c} \\iff a = ${a}$.`
+      + `<br>a) $a ${a > 0 ? '>' : '<'} 0$; trục $x = ${h}$ ${h > 0 ? 'bên phải' : 'bên trái'} trục tung nên $-\\dfrac{b}{2a} ${h > 0 ? '>' : '<'} 0$, suy ra $b ${b > 0 ? '>' : '<'} 0$.<br>`
+      + `b) $y = ${plQ(a, b, c)}$. c) $f(x) = 0 \\iff (${termsT([[1, 'x'], [-h, '']])})^2 = ${t*t} \\iff x = ${h - t}$ hoặc $x = ${h + t}$.<br>d) $f(${x0}) = ${f(x0)}$.`};
+});
+
+/* 5. ĐS VD — biết f(x + 1) − f(x) và f(0) */
+GD(10,5,1,'VD','Xác định f(x) = ax² + bx + c biết f(x + 1) − f(x) = px + q với mọi x và f(0) = r (đồng nhất hệ số)', R=>{
+  const a = R.nz(-3, 3), b = R.int(-5, 5), c = R.int(-6, 6), p = 2*a, q = a + b, f = x=> a*x*x + b*x + c, x0 = R.int(2, 5);
+  const S = Array.from({length:x0}, (_, i)=> f(i + 1) - f(i)).reduce((s, d)=> s + d, 0);
+  const items = [
+    claimN(R, v=> `$a = ${v}$`, a, String(a), p, String(p), ()=> ((f(2) - f(1)) - (f(1) - f(0)))/2),
+    claimN(R, v=> `$b = ${v}$`, b, String(b), q, String(q), ()=> (f(1) - f(0)) - a),
+    claimN(R, v=> `$f(${x0}) = ${v}$`, f(x0), String(f(x0)), f(x0) - c, String(f(x0) - c), ()=> c + S),
+    claim(R, `Hàm số ${a > 0 ? 'nghịch biến' : 'đồng biến'} trên khoảng $\\left(-\\infty; ${plF(-b/(2*a))}\\right)$`, `Hàm số ${a > 0 ? 'đồng biến' : 'nghịch biến'} trên khoảng $\\left(-\\infty; ${plF(-b/(2*a))}\\right)$`, ()=> a > 0 ? f(-b/(2*a) - 2) > f(-b/(2*a) - 1) : f(-b/(2*a) - 2) < f(-b/(2*a) - 1), ()=> a > 0 ? f(-b/(2*a) - 2) < f(-b/(2*a) - 1) : f(-b/(2*a) - 2) > f(-b/(2*a) - 1))];
+  if(c === 0 || p === a || q === b) return null;
+  return {stem:`Cho hàm số bậc hai $f(x) = ax^2 + bx + c$ thoả mãn $f(x + 1) - f(x) = ${termsT([[p, 'x'], [q, '']])}$ với mọi $x \\in \\mathbb{R}$ và $f(0) = ${c}$.`, items,
+    lg:`$f(x + 1) - f(x) = a[(x + 1)^2 - x^2] + b[(x + 1) - x] = 2ax + a + b$.<br>Đồng nhất với $${termsT([[p, 'x'], [q, '']])}$: $2a = ${p}$, $a + b = ${q}$ nên $a = ${a}$, $b = ${b}$; $c = f(0) = ${c}$.<br>`
+      + `Vậy $f(x) = ${plQ(a, b, c)}$. c) $f(${x0}) = ${f(x0)}$. d) Trục đối xứng $x = ${plF(-b/(2*a))}$, $a ${a > 0 ? '>' : '<'} 0$ nên hàm số ${a > 0 ? 'nghịch biến' : 'đồng biến'} trên $\\left(-\\infty; ${plF(-b/(2*a))}\\right)$.`};
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.3 (10|5|1), đợt 13 (5 TLN). Claude viết.
+// Chuỗi: qua ba điểm (giải hệ) → trục đối xứng + hai điểm → GTLN/GTNN + một điểm → hai giao điểm với trục hoành + một điểm → tiếp xúc trục hoành + giao điểm với trục tung.
+const pmF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pmOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const pmQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pmL = v=> termsT([[1, 'x'], [-v, '']]);
+// giải hệ 3 ẩn bằng Cramer (dùng trong verify, độc lập với cách sinh)
+const pmSolve = P=>{ const M = P.map(([x])=> [x*x, x, 1]), Y = P.map(([, y])=> y), det = m=> m[0][0]*(m[1][1]*m[2][2] - m[1][2]*m[2][1]) - m[0][1]*(m[1][0]*m[2][2] - m[1][2]*m[2][0]) + m[0][2]*(m[1][0]*m[2][1] - m[1][1]*m[2][0]);
+  const D = det(M); return [0, 1, 2].map(j=> det(M.map((r, i)=> r.map((v, k)=> k === j ? Y[i] : v)))/D); };
+
+/* 1. TLN TH — qua ba điểm */
+GT(10,5,1,'TH','Parabol y = ax² + bx + c đi qua ba điểm: giải hệ ba ẩn, tính một biểu thức của a, b, c', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), B = R.int(-6, 6), C = R.int(-8, 8), xs = R.distinct(3, -3, 4); if(xs.length < 3) return null; xs.sort((u, w)=> u - w);
+  const f = x=> A*x*x + B*x + C, P = xs.map(x=> [x, f(x)]); if(P.some(([, y])=> Math.abs(y) > 60)) return null;
+  const ask = R.int(0, 3), v = [A + B + C, A*B*C, A - B + 2*C, 4*A + 2*B + C][ask], askT = ['a + b + c', 'abc', 'a - b + 2c', '4a + 2b + c'][ask]; if(String(v).length > 4) return null;
+  const o = {stem:`Parabol $y = ax^2 + bx + c$ đi qua ba điểm ${P.map(([x, y], i)=> `$${'ABC'[i]}(${x}; ${y})$`).join(', ')}. Tính $${askT}$.`, ans:v,
+    lg:`Thay toạ độ ba điểm: $\\begin{cases} ${P.map(([x, y])=> `${termsT([[x*x, 'a'], [x, 'b'], [1, 'c']])} = ${y}`).join(' \\\\ ')} \\end{cases} \\iff \\begin{cases} a = ${A} \\\\ b = ${B} \\\\ c = ${C} \\end{cases}$<br>Vậy $${askT} = ${v}$.`,
+    verify:()=>{ const [a, b, c] = pmSolve(P); return near([a + b + c, a*b*c, a - b + 2*c, 4*a + 2*b + c][ask], o.ans, 1e-6); }};
+  return o;
+});
+
+/* 2. TLN TH — trục đối xứng và hai điểm */
+GT(10,5,1,'TH','Parabol y = ax² + bx + c có trục đối xứng x = h và đi qua hai điểm: xác định hàm số, tính giá trị tại một điểm', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.nz(-3, 3), B = -2*A*h, C = R.int(-6, 6), f = x=> A*x*x + B*x + C, x1 = R.int(-3, 4), x2 = R.int(-3, 4), x0 = R.int(-4, 5);
+  if(x1 === x2 || x1 + x2 === 2*h || x0 === x1 || x0 === x2) return null; const y1 = f(x1), y2 = f(x2), v = f(x0); if([y1, y2, v].some(y=> Math.abs(y) > 80)) return null;
+  const o = {stem:`Parabol $(P): y = ax^2 + bx + c$ có trục đối xứng $x = ${h}$ và đi qua hai điểm $A(${x1}; ${y1})$, $B(${x2}; ${y2})$. Tính tung độ của điểm thuộc $(P)$ có hoành độ bằng $${x0}$.`, ans:v,
+    lg:`$-\\dfrac{b}{2a} = ${h} \\Rightarrow b = ${termsT([[-2*h, 'a']])}$. Thay toạ độ $A$, $B$ được hệ $\\begin{cases} ${termsT([[x1*x1 - 2*h*x1, 'a'], [1, 'c']])} = ${y1} \\\\ ${termsT([[x2*x2 - 2*h*x2, 'a'], [1, 'c']])} = ${y2} \\end{cases} \\iff \\begin{cases} a = ${A} \\\\ c = ${C} \\end{cases}$, $b = ${B}$.<br>`
+      + `$(P): y = ${pmQ(A, B, C)}$; tại $x = ${x0}$: $y = ${v}$.`,
+    verify:()=>{ const a = ((y1 - y2) )/((x1*x1 - 2*h*x1) - (x2*x2 - 2*h*x2)), c = y1 - a*(x1*x1 - 2*h*x1); return near(a*x0*x0 - 2*a*h*x0 + c, o.ans, 1e-9); }};
+  return o;
+});
+
+/* 3. TLN TH — GTLN/GTNN và một điểm */
+GT(10,5,1,'TH','Hàm số bậc hai đạt GTLN (GTNN) bằng k tại x = h, đồ thị qua một điểm: tính giá trị của hàm số tại một điểm khác', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.int(-3, 3), k = R.int(-8, 8), x0 = h + R.nz(-3, 3), y0 = A*(x0 - h)**2 + k, x1 = R.int(-4, 5); if(x1 === x0 || x1 === h) return null;
+  const v = A*(x1 - h)**2 + k; if(Math.abs(v) > 99 || Math.abs(y0) > 80) return null; const T = A < 0 ? 'lớn nhất' : 'nhỏ nhất';
+  const o = {stem:`Hàm số bậc hai $y = f(x)$ đạt giá trị ${T} bằng $${k}$ tại $x = ${h}$ và $f(${x0}) = ${y0}$. Tính $f(${x1})$.`, ans:v,
+    lg:`$f(x) = a(${pmL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$. Từ $f(${x0}) = ${y0}$: $${(x0 - h)**2 === 1 ? `a = ${A}` : `${(x0 - h)**2}a = ${y0 - k} \\iff a = ${A}`}$.<br>Vậy $f(${x1}) = ${A}\\cdot ${(x1 - h)**2} ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${v}$.`.replace(/\(x\)\^2/g, 'x^2').replace(/ \+ 0\$/g, '$').replace(' + 0 = ', ' = '),
+    verify:()=>{ const a = (y0 - k)/((x0 - h)**2); return near(a*(x1 - h)**2 + k, o.ans); }};
+  return o;
+});
+
+/* 4. TLN TH — hai giao điểm với trục hoành và một điểm */
+GT(10,5,1,'TH','Parabol cắt trục hoành tại hai điểm có hoành độ x₁, x₂ và đi qua một điểm: xác định y = a(x − x₁)(x − x₂), tính giao điểm với trục tung hoặc giá trị tại một điểm', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), x1 = R.int(-5, 2), x2 = x1 + R.int(1, 6), x0 = R.int(-4, 6); if([x0 - x1, x0 - x2].some(d=> Math.abs(d) <= 1)) return null;
+  const pp = v=> v < 0 ? `(${v})` : String(v);
+  const y0 = A*(x0 - x1)*(x0 - x2), ask = R.pick([0, 1]), t = R.int(-3, 6), v = ask ? A*(t - x1)*(t - x2) : A*x1*x2; if(Math.abs(y0) > 80 || Math.abs(v) > 99 || (ask && (t === x0 || [t - x1, t - x2].some(d=> Math.abs(d) <= 1))) || (!ask && (Math.abs(x1) === 1 || Math.abs(x2) === 1 || x1 === 0 || x2 === 0))) return null;
+  const o = {stem:`Parabol $(P): y = ax^2 + bx + c$ cắt trục hoành tại hai điểm có hoành độ $${x1}$, $${x2}$ và đi qua điểm $M(${x0}; ${y0})$. ${ask ? `Tính tung độ của điểm thuộc $(P)$ có hoành độ $${t}$.` : `Tìm tung độ giao điểm của $(P)$ với trục tung.`}`, ans:v,
+    lg:`$(P): y = a(${pmL(x1)})(${pmL(x2)})$. Qua $M$: $a\\cdot ${pp(x0 - x1)}\\cdot ${pp(x0 - x2)} = ${y0} \\iff a = ${A}$.`.replace(/\(x\)/g, 'x')
+      + `<br>${ask ? `Tại $x = ${t}$: $y = ${A}\\cdot ${pp(t - x1)}\\cdot ${pp(t - x2)} = ${v}$.` : `Tại $x = 0$: $y = ${A}\\cdot ${pp(-x1)}\\cdot ${pp(-x2)} = ${v}$.`}`,
+    verify:()=>{ const a = y0/((x0 - x1)*(x0 - x2)), g = x=> a*(x - x1)*(x - x2); return near(ask ? g(t) : g(0), o.ans); }};
+  return o;
+});
+
+/* 5. TLN TH — tiếp xúc trục hoành và giao điểm với trục tung */
+GT(10,5,1,'TH','Parabol tiếp xúc với trục hoành tại x = h và cắt trục tung tại (0; c): xác định y = a(x − h)², tính a + b + c hoặc giá trị tại một điểm', R=>{
+  const A = R.pick([-4, -3, -2, -1, 1, 2, 3, 4]), h = R.nz(-3, 3), C = A*h*h, B = -2*A*h, ask = R.pick([0, 1]), t = R.int(-3, 5), v = ask ? A*(t - h)**2 : A + B + C;
+  if(Math.abs(C) > 40 || Math.abs(v) > 99 || (ask && t === 0)) return null;
+  const o = {stem:`Parabol $(P): y = ax^2 + bx + c$ tiếp xúc với trục hoành tại điểm có hoành độ $${h}$ và cắt trục tung tại điểm có tung độ $${C}$. ${ask ? `Tính tung độ của điểm thuộc $(P)$ có hoành độ $${t}$.` : 'Tính $a + b + c$.'}`, ans:v,
+    lg:`$(P)$ tiếp xúc trục hoành tại $(${h}; 0)$ nên đỉnh là $(${h}; 0)$: $y = a(${pmL(h)})^2$. Cắt trục tung tại $(0; ${C})$: $${h*h === 1 ? `a = ${A}` : `${h*h}a = ${C} \\iff a = ${A}`}$.<br>`
+      + (ask ? `Tại $x = ${t}$: $y = ${A}\\cdot ${(t - h)**2} = ${v}$.` : `$y = ${pmQ(A, B, C)}$ nên $a + b + c = ${A} ${B < 0 ? '-' : '+'} ${Math.abs(B)} ${C < 0 ? '-' : '+'} ${Math.abs(C)} = ${v}$ (cũng là $y(1)$).`),
+    verify:()=>{ const a = C/(h*h), g = x=> a*(x - h)**2; return near(ask ? g(t) : g(1), o.ans); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.3 (10|5|1), đợt 14 (5 TLN). Claude viết.
+// Chuỗi: đồng nhất f(x + 1) − f(x) → độ dài dây cung trên trục hoành + trục đối xứng → đọc đồ thị tính biểu thức của a, b, c
+// → bảng biến thiên + một điểm → qua gốc toạ độ và có đỉnh cho trước.
+const pnF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pnOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const pnQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const pnL = v=> termsT([[1, 'x'], [-v, '']]);
+const pnPl = (a, b, c)=> `(${a})*x^2+(${b})*x+(${c})`;
+
+/* 1. TLN VD — f(x + 1) − f(x) = px + q */
+GT(10,5,1,'VD','Tìm hàm số bậc hai f(x) = ax² + bx + c biết f(x + 1) − f(x) = px + q với mọi x và f(0) cho trước (đồng nhất hệ số), tính f(k)', R=>{
+  const a = R.nz(-3, 3), b = R.int(-6, 6), c = R.int(-8, 8), k = R.int(2, 6), f = x=> a*x*x + b*x + c, v = f(k); if(Math.abs(v) > 99) return null;
+  const p = 2*a, q = a + b;
+  const o = {stem:`Cho hàm số bậc hai $f(x) = ax^2 + bx + c$ thoả mãn $f(x + 1) - f(x) = ${termsT([[p, 'x'], [q, '']])}$ với mọi $x$ và $f(0) = ${c}$. Tính $f(${k})$.`, ans:v,
+    lg:`$f(x + 1) - f(x) = 2ax + a + b$. Đồng nhất: $2a = ${p}$, $a + b = ${q}$ nên $a = ${a}$, $b = ${b}$; $c = ${c}$.<br>Vậy $f(x) = ${pnQ(a, b, c)}$ và $f(${k}) = ${v}$.`,
+    verify:()=>{ let s = c; for(let x = 0; x < k; x++) s += p*x + q; return s === o.ans; }};
+  return o;
+});
+
+/* 2. TLN TH — dây cung trên trục hoành và trục đối xứng */
+GT(10,5,1,'TH','Parabol y = x² + bx + c có trục đối xứng x = h và cắt trục hoành tại A, B với AB = L: tìm b, c', R=>{
+  const h = R.int(-4, 4), L = 2*R.int(1, 5), s = R.pick([1, -1]), x1 = h - L/2, x2 = h + L/2, b = -s*(x1 + x2), c = s*x1*x2, ask = R.int(0, 2);
+  const v = [b + c, b*c, c - b][ask], askT = ['b + c', 'bc', 'c - b'][ask]; if(String(v).length > 4) return null;
+  const o = {stem:`Parabol $(P): y = ${s > 0 ? '' : '-'}x^2 + bx + c$ có trục đối xứng là đường thẳng $x = ${h}$ và cắt trục hoành tại hai điểm $A$, $B$ sao cho $AB = ${L}$. Tính $${askT}$.`, ans:v,
+    lg:`$A$, $B$ đối xứng nhau qua trục $x = ${h}$ nên có hoành độ $${h} \\pm ${L/2}$, tức là $${x1}$ và $${x2}$.<br>Do đó $y = ${s > 0 ? '' : '-'}(${pnL(x1)})(${pnL(x2)}) = ${pnQ(s, b, c)}$, nên $b = ${b}$, $c = ${c}$ và $${askT} = ${v}$.`.replace(/\(x\)/g, 'x'),
+    verify:()=>{ const D = b*b - 4*s*c, r = Math.sqrt(D)/Math.abs(s); return D > 0 && near(r, L) && near(-b/(2*s), h) && [b + c, b*c, c - b][ask] === o.ans; }};
+  return o;
+});
+
+/* 3. TLN VD — đọc đồ thị, tính biểu thức của a, b, c */
+GT(10,5,1,'VD','Đọc đồ thị parabol y = ax² + bx + c (đỉnh, giao điểm với trục tung) để xác định a, b, c rồi tính abc hoặc b² − 4ac', R=>{
+  const a = R.pick([-2, -1, 1, 2]), h = R.nz(-2, 2), k = R.int(-3, 3), b = -2*a*h, c = a*h*h + k; if(Math.abs(c) > 8 || c === 0) return null;
+  const ask = R.pick([0, 1, 2]), v = [a*b*c, b*b - 4*a*c, a + 2*b + 3*c][ask], askT = ['abc', 'b^2 - 4ac', 'a + 2b + 3c'][ask];
+  const hv = {loai:'dothi', hamSo:pnPl(a, b, c), luoi:true, ghiCucTri:true, diem:[0], khung:{xmin:Math.min(-1, h) - 2.6, xmax:Math.max(1, h) + 2.6, ymin:Math.min(0, k, c) - 1.6, ymax:Math.max(0, k, c) + 1.6}};
+  const o = {stem:`Cho hàm số $y = ax^2 + bx + c$ có đồ thị là parabol như hình vẽ. Tính $${askT}$.`, ans:v, hv,
+    lg:`Từ đồ thị: đỉnh $I(${h}; ${k})$, cắt trục tung tại $(0; ${c})$ nên $c = ${c}$; $y = a(${pnL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$, thay $x = 0$ được $a = ${a}$; $b = -2ah = ${b}$.`.replace(' + 0$', '$')
+      + `<br>Vậy $${askT} = ${v}$.`,
+    verify:()=>{ const f = x=> a*x*x + b*x + c, A = (f(1) + f(-1) - 2*f(0))/2, B = (f(1) - f(-1))/2, C = f(0); return [A*B*C, B*B - 4*A*C, A + 2*B + 3*C][ask] === o.ans; }};
+  return o;
+});
+
+/* 4. TLN TH — bảng biến thiên và một điểm */
+GT(10,5,1,'TH','Hàm số bậc hai có bảng biến thiên cho trước (đỉnh) và đồ thị qua một điểm: xác định hàm số, tính giá trị tại một điểm', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.int(-3, 3), k = R.int(-6, 6), x0 = h + R.nz(-3, 3), y0 = A*(x0 - h)**2 + k, x1 = R.int(-4, 5), v = A*(x1 - h)**2 + k;
+  if(x1 === x0 || x1 === h || Math.abs(v) > 99 || Math.abs(y0) > 80) return null;
+  const hv = {loai:'bbt', coDaoHam:false, nhan:['x', '', 'y'], x:['-\\infty', String(h), '+\\infty'], dau:A > 0 ? ['-', '+'] : ['+', '-'], tai:['', '', ''], y:A > 0 ? ['+\\infty', String(k), '+\\infty'] : ['-\\infty', String(k), '-\\infty']};
+  const o = {stem:`Hàm số bậc hai $y = f(x)$ có bảng biến thiên như hình vẽ và $f(${x0}) = ${y0}$. Tính $f(${x1})$.`, ans:v, hv,
+    lg:`Từ bảng biến thiên: đỉnh $I(${h}; ${k})$ nên $f(x) = a(${pnL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$.`.replace(/\(x\)\^2/, 'x^2').replace(' + 0$', '$')
+      + `<br>$f(${x0}) = ${y0} \\Rightarrow a = ${A}$ (phù hợp với bảng: $a ${A > 0 ? '>' : '<'} 0$). Vậy $f(${x1}) = ${v}$.`,
+    verify:()=>{ const a = (y0 - k)/((x0 - h)**2); return (a > 0) === (A > 0) && near(a*(x1 - h)**2 + k, o.ans); }};
+  return o;
+});
+
+/* 5. TLN VD — qua gốc toạ độ, đỉnh cho trước */
+GT(10,5,1,'VD','Parabol y = ax² + bx + c đi qua gốc toạ độ và có đỉnh I(h; k): tìm a, b (c = 0), tính a + b hoặc giá trị tại một điểm', R=>{
+  const h = R.nz(-4, 4), k = R.nz(-8, 8), a = -k/(h*h), b = 2*k/h, ask = R.pick([0, 1]), t = R.int(-3, 6), v = ask ? a*t*t + b*t : a + b; if(!pnOk(v) || !pnOk(a)) return null;
+  const o = {stem:`Parabol $(P): y = ax^2 + bx + c$ đi qua gốc toạ độ $O$ và có đỉnh $I(${h}; ${k})$. ${ask ? `Tính tung độ của điểm thuộc $(P)$ có hoành độ $${t}$.` : 'Tính $a + b$.'}`, ans:Math.round(v*10)/10,
+    lg:`$(P)$ qua $O$ nên $c = 0$. Đỉnh $I(${h}; ${k})$: $y = a(${pnL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$; qua $O$: $${h*h}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = 0 \\iff a = ${pnF(a)}$; $b = -2ah = ${pnF(b)}$.`.replace(/\(x\)\^2/, 'x^2')
+      + `<br>${ask ? `Tại $x = ${t}$: $y = ${pnF(a*t*t + b*t)}$` : `$a + b = ${pnF(a + b)}$`}${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=>{ const A2 = -k/(h*h), B2 = -2*A2*h; return near(A2*h*h + B2*h, k) && near(ask ? A2*t*t + B2*t : A2 + B2, o.ans, 1e-9); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.3 (10|5|1), đợt 15 (5 TLN). Claude viết.
+// Chuỗi: biết ba giá trị liên tiếp → giá trị tiếp theo (sai phân bậc hai) → GTNN và một điểm (hai parabol thoả mãn) → hai giá trị bằng nhau suy ra trục đối xứng
+// → đỉnh và dây cung nằm ngang → đỉnh và khoảng cách hai giao điểm với trục hoành.
+const poF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const poOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+const poQ = (a, b, c)=> termsT([[a, 'x^2'], [b, 'x'], [c, '']]);
+const poL = v=> termsT([[1, 'x'], [-v, '']]);
+
+/* 1. TLN TH — biết f(1), f(2), f(3), tính f(4) */
+GT(10,5,1,'TH','Hàm số bậc hai f(x) = ax² + bx + c biết ba giá trị f(1), f(2), f(3): xác định hàm số, tính giá trị tiếp theo', R=>{
+  const a = R.nz(-3, 3), b = R.int(-6, 6), c = R.int(-8, 8), f = x=> a*x*x + b*x + c, t = R.pick([0, 4, 5, -1]), v = f(t); if(Math.abs(v) > 99) return null;
+  const o = {stem:`Cho hàm số bậc hai $f(x) = ax^2 + bx + c$ có $f(1) = ${f(1)}$, $f(2) = ${f(2)}$, $f(3) = ${f(3)}$. Tính $f(${t})$.`, ans:v,
+    lg:`Ta có hệ $\\begin{cases} a + b + c = ${f(1)} \\\\ 4a + 2b + c = ${f(2)} \\\\ 9a + 3b + c = ${f(3)} \\end{cases}$. Trừ liên tiếp: $3a + b = ${f(2) - f(1)}$, $5a + b = ${f(3) - f(2)}$, suy ra $2a = ${f(3) - 2*f(2) + f(1)}$.<br>`
+      + `Giải được $a = ${a}$, $b = ${b}$, $c = ${c}$: $f(x) = ${poQ(a, b, c)}$. Vậy $f(${t}) = ${v}$.`,
+    verify:()=>{ const y1 = f(1), y2 = f(2), y3 = f(3), L = x=> y1*(x - 2)*(x - 3)/2 - y2*(x - 1)*(x - 3) + y3*(x - 1)*(x - 2)/2; return near(L(t), o.ans); }};
+  return o;
+});
+
+/* 2. TLN VD — y = x² + bx + c qua một điểm và có GTNN bằng k */
+GT(10,5,1,'VD','Parabol y = x² + bx + c đi qua một điểm và có giá trị nhỏ nhất bằng k: có hai parabol thoả mãn, tính tổng (tích) các giá trị b', R=>{
+  const k = R.int(-6, 4), x1 = R.int(-3, 3), d = R.int(1, 4), y1 = k + d*d, hA = x1 - d, hB = x1 + d, bA = -2*hA, bB = -2*hB, ask = R.pick([0, 1]), v = ask ? bA*bB : bA + bB; if(hA === 0 || hB === 0) return null;
+  const o = {stem:`Có hai parabol dạng $y = x^2 + bx + c$ đi qua điểm $M(${x1}; ${y1})$ và có giá trị nhỏ nhất bằng $${k}$. Tính ${ask ? 'tích' : 'tổng'} các giá trị của $b$ tương ứng.`, ans:v,
+    lg:`Giá trị nhỏ nhất bằng $${k}$ nên $y = (x - h)^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$ với $h = -\\dfrac{b}{2}$.`.replace(' + 0$', '$')
+      + `<br>Qua $M$: $(${x1} - h)^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${y1} \\iff (${x1} - h)^2 = ${d*d} \\iff h = ${hA}$ hoặc $h = ${hB}$, tương ứng $b = ${bA}$ hoặc $b = ${bB}$.`.replace(' + 0 = ', ' = ').replace('(0 - h)', '(-h)')
+      + `<br>${ask ? 'Tích' : 'Tổng'}: $${ask ? `${bA < 0 ? `(${bA})` : bA}\\cdot ${bB < 0 ? `(${bB})` : bB}` : `${bA} + ${bB < 0 ? `(${bB})` : bB}`} = ${v}$.`,
+    verify:()=>{ const bs = []; for(let b = -30; b <= 30; b++){ const c = y1 - x1*x1 - b*x1; if(near(c - b*b/4, k)) bs.push(b); } return bs.length === 2 && (ask ? bs[0]*bs[1] : bs[0] + bs[1]) === o.ans; }};
+  return o;
+});
+
+/* 3. TLN VD — hai giá trị bằng nhau suy ra trục đối xứng */
+GT(10,5,1,'VD','Hàm số bậc hai có f(p) = f(q) (suy ra trục đối xứng x = (p + q)/2), biết thêm giá trị tại đỉnh và tại 0: tính giá trị tại một điểm', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.nz(-3, 3), k = R.int(-6, 6), s = R.int(1, 4), p = h - s, q = h + s, f = x=> A*(x - h)**2 + k, c = f(0), t = R.int(-4, 5); if(t === 0 || t === h) return null;
+  const v = f(t); if(Math.abs(v) > 99 || Math.abs(c) > 60) return null;
+  const o = {stem:`Hàm số bậc hai $y = f(x)$ thoả mãn $f(${p}) = f(${q})$, $f(${h}) = ${k}$ và $f(0) = ${c}$. Tính $f(${t})$.`, ans:v,
+    lg:`$f(${p}) = f(${q})$ nên trục đối xứng là $x = \\dfrac{${p} + ${q < 0 ? `(${q})` : q}}{2} = ${h}$, do đó đỉnh là $(${h}; ${k})$: $f(x) = a(${poL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$.`.replace(' + 0$', '$')
+      + `<br>$f(0) = ${h*h === 1 ? '' : h*h}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${c} \\iff a = ${A}$. Vậy $f(${t}) = ${A}\\cdot ${(t - h)**2} ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${v}$.`.replace(/ \+ 0 = /g, ' = '),
+    verify:()=>{ const a = (c - k)/(h*h), g = x=> a*(x - h)**2 + k; return near(g(p), g(q)) && near(g(t), o.ans); }};
+  return o;
+});
+
+/* 4. TLN VD — đỉnh và dây cung nằm ngang */
+GT(10,5,1,'VD','Parabol có đỉnh I(h; k) và cắt đường thẳng y = m tại hai điểm có hoành độ cho trước: xác định hệ số a, tính giá trị tại một điểm', R=>{
+  const A = R.pick([-3, -2, -1, 1, 2, 3]), h = R.int(-3, 3), k = R.int(-6, 6), s = R.int(1, 4), m = k + A*s*s, x1 = h - s, x2 = h + s, t = R.int(-4, 5), v = A*(t - h)**2 + k;
+  if(t === x1 || t === x2 || t === h || Math.abs(v) > 99) return null;
+  const o = {stem:`Parabol $(P): y = ax^2 + bx + c$ có đỉnh $I(${h}; ${k})$ và cắt đường thẳng $y = ${m}$ tại hai điểm có hoành độ $${x1}$ và $${x2}$. Tính tung độ của điểm thuộc $(P)$ có hoành độ $${t}$.`, ans:v,
+    lg:`$(P): y = a(${poL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$. Điểm $(${x2}; ${m})$ thuộc $(P)$: $${s*s === 1 ? '' : s*s}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${m} \\iff a = ${A}$.`.replace(/\(x\)\^2/, 'x^2').replace(/ \+ 0\$/, '$').replace(' + 0 = ', ' = ')
+      + `<br>Tại $x = ${t}$: $y = ${A}\\cdot ${(t - h)**2} ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${v}$.`.replace(' + 0 = ', ' = '),
+    verify:()=>{ const a = (m - k)/((x1 - h)**2); return near(a*(x2 - h)**2 + k, m) && near(a*(t - h)**2 + k, o.ans); }};
+  return o;
+});
+
+/* 5. TLN VD — đỉnh và khoảng cách hai giao điểm với trục hoành */
+GT(10,5,1,'VD','Parabol có đỉnh I(h; k) và cắt trục hoành tại hai điểm cách nhau một khoảng L: xác định a = −4k/L², tính giao điểm với trục tung', R=>{
+  const h = R.int(-3, 3), L = 2*R.int(1, 4), a0 = R.pick([-3, -2, -1, 1, 2, 3, 0.5, -0.5]), k = -a0*(L/2)**2; if(!Number.isInteger(k) || k === 0) return null;
+  const c = a0*h*h + k, ask = R.pick([0, 1]), v = ask ? a0*(1 - h)**2 + k : c; if(!poOk(v) || (ask && Math.abs(1 - h) === L/2)) return null;
+  const o = {stem:`Parabol $(P): y = ax^2 + bx + c$ có đỉnh $I(${h}; ${k})$ và cắt trục hoành tại hai điểm $A$, $B$ với $AB = ${L}$. ${ask ? 'Tính $a + b + c$.' : 'Tìm tung độ giao điểm của $(P)$ với trục tung.'}`, ans:Math.round(v*10)/10,
+    lg:`$A$, $B$ đối xứng qua trục $x = ${h}$ nên $A(${h - L/2}; 0)$, $B(${h + L/2}; 0)$. $(P): y = a(${poL(h)})^2 ${k < 0 ? '-' : '+'} ${Math.abs(k)}$, qua $B$: $${(L/2)**2}a ${k < 0 ? '-' : '+'} ${Math.abs(k)} = 0 \\iff a = ${poF(a0)}$.`.replace(/\(x\)\^2/, 'x^2')
+      + `<br>${ask ? `$a + b + c = y(1) = ${poF(a0)}\\cdot ${(1 - h)**2} ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${poF(v)}$` : `Tại $x = 0$: $y = ${poF(a0)}\\cdot ${h*h} ${k < 0 ? '-' : '+'} ${Math.abs(k)} = ${poF(v)}$`}${Number.isInteger(v) ? '' : ` $= ${nt(v)}$`}.`,
+    verify:()=>{ const a = -k/((L/2)**2), g = x=> a*(x - h)**2 + k; return near(g(h - L/2), 0) && near(g(h + L/2), 0) && near(ask ? g(1) : g(0), o.ans, 1e-9); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.4 Ứng dụng thực tế của hàm số bậc hai (10|5|1), đợt 16 (5 TN). Claude viết.
+// Chuỗi: thời điểm vật ném chạm đất (nghiệm dương) → xe tải đi qua cổng parabol (lập phương trình cổng) → giá vé tối ưu khi tăng giá giảm khách
+// → giá bán tối ưu khi số lượng bán phụ thuộc bậc nhất vào giá → chiều dài thanh treo của cầu treo cáp parabol.
+const pqF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const pqPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v)) && isFinite(c.v) && c.v > 0){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+const pqO = (v, u)=> ({t:`$${nt(v)}$ ${u}`, v:Math.round(v*1000)/1000});
+
+/* 1. TN TH — thời điểm vật ném chạm đất */
+G(10,5,1,'TH','Vật được ném lên theo phương thẳng đứng, độ cao h(t) = −5t² + v₀t + h₀: tìm thời điểm vật chạm đất (nghiệm dương của phương trình bậc hai)', R=>{
+  const T = R.pick([1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6]), r = R.pick([0.2, 0.4, 0.5, 1]), v0 = 5*(T - r), h0 = 5*T*r; if(!Number.isInteger(Math.round(v0*1e6)/1e5) || h0 <= 0 || h0 > 30 || v0 <= 0) return null;
+  const h = t=> -5*t*t + v0*t + h0, tTop = v0/10, ask = R.pick([0, 0, 1]), tb = v0/5, ansV = ask ? tb : T;
+  const wrong = pqPick3(R, pqO(ansV, 'giây'), [pqO(tTop, 'giây'), pqO(T, 'giây'), pqO(tb, 'giây'), pqO(T + r, 'giây'), pqO(2*T, 'giây'), pqO(T - r, 'giây') ]); if(!wrong) return null;
+  const o = {stem:`Một quả bóng được ném thẳng đứng lên từ độ cao $${nt(h0)}$ m so với mặt đất. Độ cao của quả bóng sau $t$ giây được cho bởi $h(t) = -5t^2 + ${nt(v0)}t + ${nt(h0)}$ (mét). ${ask ? 'Sau bao lâu kể từ lúc ném thì quả bóng rơi trở lại độ cao ban đầu?' : 'Sau bao lâu kể từ lúc ném thì quả bóng chạm đất?'}`, ans:pqO(ansV, 'giây'), wrong,
+    lg:ask ? `Bóng trở lại độ cao ban đầu khi $h(t) = ${nt(h0)} \\iff -5t^2 + ${nt(v0)}t = 0 \\iff t = 0$ (lúc ném) hoặc $t = ${nt(tb)}$.<br>Vậy sau $${nt(tb)}$ giây bóng trở lại độ cao ban đầu (gấp đôi thời điểm đạt độ cao lớn nhất $t = ${nt(tTop)}$ giây).`
+      : `Bóng chạm đất khi $h(t) = 0 \\iff -5t^2 + ${nt(v0)}t + ${nt(h0)} = 0 \\iff t = ${nt(T)}$ hoặc $t = ${nt(-r)}$ (loại vì $t > 0$).<br>Vậy sau $${nt(T)}$ giây quả bóng chạm đất (không nhầm với thời điểm đạt độ cao lớn nhất $t = ${nt(tTop)}$ giây).`,
+    verify:()=>{ const g = ask ? (t=> h(t) - h0) : h; return Math.abs(g(o.ans.v)) < 1e-9 && o.ans.v > 0 && o.wrong.every(w=> Math.abs(g(w.v)) > 1e-6 || w.v <= 0); }};
+  return o;
+});
+
+/* 2. TN TH — xe tải đi qua cổng parabol */
+G(10,5,1,'TH','Cổng hình parabol có chiều rộng chân cổng và chiều cao cho trước: tính chiều cao lớn nhất của xe tải có chiều rộng cho trước đi qua chính giữa cổng', R=>{
+  const W = R.pick([6, 8, 10, 12]), H = R.pick([4, 5, 6, 8, 9]), w = R.pick([2, 3, 4]); if(w >= W) return null;
+  const ha = H*(1 - (w/W)**2); if(Math.abs(ha*100 - Math.round(ha*100)) > 1e-9) return null;   // y = H − (4H/W²)x², tại x = w/2
+  const two = v=> Math.abs(v*100 - Math.round(v*100)) < 1e-9;
+  const wrong = pqPick3(R, pqO(ha, 'm'), [pqO(H - w/2, 'm'), pqO(H*(1 - w/W), 'm'), pqO(H*(1 - (w/(2*W))**2), 'm'), pqO(H - (4*H/(W*W))*w*w, 'm'), pqO(ha - 0.5, 'm')].filter(c=> two(c.v))); if(!wrong) return null;
+  const o = {stem:`Một cổng có dạng parabol, khoảng cách giữa hai chân cổng là $${W}$ m và chiều cao của cổng (tính từ mặt đường đến đỉnh) là $${H}$ m. Một xe tải có chiều rộng thùng $${w}$ m muốn đi qua chính giữa cổng. Chiều cao tối đa của xe (làm tròn đến hàng phần trăm nếu cần) để xe đi qua cổng là`, ans:pqO(ha, 'm'), wrong,
+    lg:`Chọn hệ trục với gốc $O$ là trung điểm hai chân cổng, trục $Oy$ đi qua đỉnh. Cổng có phương trình $y = ax^2 + ${H}$, đi qua $(${W/2}; 0)$ nên $${W*W/4}a + ${H} = 0 \\iff a = ${frT(-H, W*W/4)}$.<br>`
+      + `Xe đi chính giữa nên hai mép thùng ở $x = \\pm ${pqF(w/2)}$, tại đó cổng cao $y = ${pqF(-4*H/(W*W))}\\cdot ${pqF(w*w/4)} + ${H} = ${nt(ha)}$ (m).<br>Vậy xe cao tối đa $${nt(ha)}$ m.`,
+    verify:()=>{ const y = x=> H*(1 - 4*x*x/(W*W)); return near(y(w/2), o.ans.v, 1e-6) && near(y(W/2), 0) && o.wrong.every(w2=> !near(w2.v, y(w/2), 1e-6)); }};
+  return o;
+});
+
+/* 3. TN TH — giá vé tối ưu */
+G(10,5,1,'TH','Doanh thu lớn nhất: mỗi lần tăng giá vé một mức thì số khách giảm một lượng cố định; tìm giá vé để doanh thu lớn nhất', R=>{
+  const ctx = R.pick([{d:'xe buýt du lịch', u:'vé'}, {d:'rạp chiếu phim', u:'vé'}, {d:'hồ bơi', u:'vé'}]), p0 = R.pick([20, 30, 40, 50]), n0 = R.pick([300, 400, 500, 600, 800]), s = R.pick([1, 2, 5]), k = R.pick([10, 20, 25, 40]);
+  // tăng giá s·x nghìn đồng thì số khách giảm k·x: R(x) = (p0 + s x)(n0 − k x), đỉnh x* = (n0 s − k p0)/(2 s k)
+  const xs = (n0*s - k*p0)/(2*s*k); if(xs <= 0 || xs > 6 || !Number.isInteger(xs*2)) return null; const pBest = p0 + s*xs; if(!Number.isInteger(pBest*10)) return null;
+  const wrong = pqPick3(R, pqO(pBest, 'nghìn đồng'), [pqO(p0, 'nghìn đồng'), pqO(p0 + s*2*xs, 'nghìn đồng'), pqO(n0/(2*k)*s, 'nghìn đồng'), pqO(pBest + s, 'nghìn đồng'), pqO(p0 + xs, 'nghìn đồng')]); if(!wrong) return null;
+  const o = {stem:`Một ${ctx.d} bán ${ctx.u} với giá $${p0}$ nghìn đồng thì mỗi ngày có $${n0}$ khách. Khảo sát cho thấy cứ tăng giá thêm $${s}$ nghìn đồng thì số khách giảm $${k}$ người. Để doanh thu mỗi ngày lớn nhất thì giá ${ctx.u} nên là`, ans:pqO(pBest, 'nghìn đồng'), wrong,
+    lg:`Gọi $x$ là số lần tăng giá ($x \\ge 0$): giá ${ctx.u} là $${p0} + ${s === 1 ? '' : s}x$ (nghìn đồng), số khách là $${n0} - ${k}x$.<br>Doanh thu $R(x) = (${p0} + ${s === 1 ? '' : s}x)(${n0} - ${k}x) = ${termsT([[-s*k, 'x^2'], [n0*s - k*p0, 'x'], [p0*n0, '']])}$, là hàm bậc hai có $a < 0$, đạt giá trị lớn nhất tại $x = \\dfrac{${n0*s - k*p0}}{${2*s*k}} = ${nt(xs)}$.<br>Giá ${ctx.u} tối ưu: $${p0} + ${s === 1 ? '' : s + '\\cdot '}${nt(xs)} = ${nt(pBest)}$ (nghìn đồng).`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 0; i <= 20000; i++){ const x = i/100, Rv = (p0 + s*x)*(n0 - k*x); if(Rv > best){ best = Rv; at = p0 + s*x; } } return Math.abs(at - o.ans.v) < 0.03; }};
+  return o;
+});
+
+/* 4. TN VD — giá bán tối ưu khi số lượng bán phụ thuộc bậc nhất vào giá */
+G(10,5,1,'VD','Lợi nhuận lớn nhất: số sản phẩm bán được là hàm bậc nhất của giá bán, chi phí mỗi sản phẩm cố định; tìm giá bán tối ưu', R=>{
+  const c = R.pick([20, 30, 40, 50, 60]), A = R.pick([1200, 1500, 1800, 2000, 2400, 3000]), B = R.pick([10, 15, 20, 25, 30]);
+  // q = A − B p (sản phẩm/tháng), lợi nhuận L = (p − c)(A − Bp), đỉnh p* = (A/B + c)/2
+  const pm = A/B; if(pm <= c + 4) return null; const ps = (pm + c)/2; if(!Number.isInteger(ps*10)) return null;
+  const wrong = pqPick3(R, pqO(ps, 'nghìn đồng'), [pqO(pm/2, 'nghìn đồng'), pqO(c, 'nghìn đồng'), pqO(pm, 'nghìn đồng'), pqO((pm - c)/2, 'nghìn đồng'), pqO(ps + 5, 'nghìn đồng')]); if(!wrong) return null;
+  const o = {stem:`Một cửa hàng nhập một loại áo phông với giá $${c}$ nghìn đồng/chiếc. Nếu bán với giá $p$ (nghìn đồng/chiếc) thì mỗi tháng bán được $q = ${A} - ${B}p$ chiếc. Để lợi nhuận mỗi tháng lớn nhất, cửa hàng nên bán với giá`, ans:pqO(ps, 'nghìn đồng'), wrong,
+    lg:`Lợi nhuận $L(p) = (p - ${c})(${A} - ${B}p) = ${termsT([[-B, 'p^2'], [A + B*c, 'p'], [-A*c, '']])}$ (nghìn đồng), là hàm bậc hai của $p$ với hệ số $-${B} < 0$.<br>$L$ lớn nhất tại $p = \\dfrac{${A + B*c}}{${2*B}} = ${nt(ps)}$ (nghìn đồng). (Không lấy giá làm doanh thu $pq$ lớn nhất là $${nt(pm/2)}$.)`,
+    verify:()=>{ let best = -Infinity, at = 0; for(let i = 0; i <= 40000; i++){ const p = i/100, Lv = (p - c)*(A - B*p); if(Lv > best){ best = Lv; at = p; } } return Math.abs(at - o.ans.v) < 0.03; }};
+  return o;
+});
+
+/* 5. TN TH — thanh treo của cầu treo cáp parabol */
+G(10,5,1,'TH','Cầu treo có dây cáp chính dạng parabol nối đỉnh hai trụ: tính chiều dài thanh treo thẳng đứng tại một vị trí trên mặt cầu', R=>{
+  const L = R.pick([100, 120, 160, 200, 240]), H = R.pick([20, 24, 30, 40]), h0 = R.pick([1, 2, 3, 5]), d = R.pick([10, 20, 30, 40, 50]); if(d >= L/2) return null;
+  // cáp y = a x² + h0 (gốc ở mặt cầu, giữa nhịp), qua (L/2; H): a = (H − h0)/(L/2)²
+  const a = (H - h0)/((L/2)**2), y = a*d*d + h0; if(Math.abs(y*100 - Math.round(y*100)) > 1e-9) return null;
+  const wrong = pqPick3(R, pqO(y, 'm'), [pqO(a*d*d, 'm'), pqO(H*(2*d/L), 'm'), pqO((H - h0)*(2*d/L) + h0, 'm'), pqO(H - a*d*d, 'm')]); if(!wrong) return null;
+  const o = {stem:`Một cây cầu treo có hai trụ cách nhau $${L}$ m, đỉnh mỗi trụ cao $${H}$ m so với mặt cầu. Dây cáp chính có dạng parabol, điểm thấp nhất của cáp ở chính giữa nhịp và cách mặt cầu $${h0}$ m. Các thanh treo thẳng đứng nối cáp với mặt cầu. Chiều dài thanh treo cách điểm chính giữa nhịp $${d}$ m là`, ans:pqO(y, 'm'), wrong,
+    lg:`Chọn gốc toạ độ trên mặt cầu tại chính giữa nhịp, trục $Oy$ thẳng đứng. Cáp có phương trình $y = ax^2 + ${h0}$, đi qua đỉnh trụ $(${L/2}; ${H})$: $a = \\dfrac{${H} - ${h0}}{${L/2}^2} = ${frT(H - h0, (L/2)**2)}$.<br>Tại $x = ${d}$: $y = ${frT(H - h0, (L/2)**2)}\\cdot ${d*d} + ${h0} = ${nt(y)}$ (m). Vậy thanh treo dài $${nt(y)}$ m.`,
+    verify:()=>{ const f = x=> (H - h0)*x*x/((L/2)**2) + h0; return near(f(L/2), H) && near(f(d), o.ans.v, 1e-6); }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.4 (10|5|1), đợt 17 (1 TN + 4 Đ–S). Claude viết.
+// Chuỗi: máng nước gập từ tấm tôn (diện tích mặt cắt lớn nhất) → Đ–S chuyển động ném (thời điểm, độ cao lớn nhất, chạm đất)
+// → Đ–S cổng parabol (phương trình, chiều cao, bề rộng, xe qua được) → Đ–S kinh doanh (lợi nhuận, giá tối ưu) → Đ–S rào vườn sát tường.
+const prF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const prPick3 = (R, ans, cands)=>{ const seen = new Set([String(ans.v)]), out = []; R.shuffle(cands).forEach(c=>{ if(out.length < 3 && !seen.has(String(c.v)) && c.v > 0){ seen.add(String(c.v)); out.push(c); } }); return out.length === 3 ? out : null; };
+
+/* 1. TN TH — máng nước */
+G(10,5,1,'TH','Gập hai mép của tấm tôn thành máng nước có mặt cắt hình chữ nhật: chiều cao mép gập để diện tích mặt cắt (lưu lượng) lớn nhất', R=>{
+  const W = R.pick([20, 24, 28, 30, 32, 36, 40, 48, 50, 60]), x0 = W/4, S = W*W/8, askS = R.rnd() < 0.5; if(!Number.isInteger(x0*10) || !Number.isInteger(S*10)) return null;
+  const O = v=> ({t:`$${nt(v)}$ ${askS ? 'cm²' : 'cm'}`, v});
+  const ans = O(askS ? S : x0), wrong = prPick3(R, ans, (askS ? [O(W*W/4), O(W*W/16), O(W*W/2), O(W*W/10), O(3*W*W/32)] : [O(W/2), O(W/3), O(W/8), O(W/6), O(W/5)]).filter(o=> Math.abs(o.v*10 - Math.round(o.v*10)) < 1e-9)); if(!wrong) return null;
+  const o = {stem:`Từ một tấm tôn hình chữ nhật có chiều rộng $${W}$ cm, người ta gập hai mép dọc theo chiều dài để được một máng thoát nước có mặt cắt là hình chữ nhật (hai mép gập vuông góc với đáy, cao bằng nhau). ${askS ? 'Diện tích lớn nhất của mặt cắt máng là' : 'Để máng có mặt cắt diện tích lớn nhất (thoát nước nhiều nhất) thì chiều cao mỗi mép gập là'}`, ans, wrong,
+    lg:`Gọi $x$ (cm) là chiều cao mép gập, $0 < x < ${W/2}$. Đáy máng rộng $${W} - 2x$, diện tích mặt cắt $S(x) = x(${W} - 2x) = -2x^2 + ${W}x$.<br>`
+      + `$S$ là hàm bậc hai có $a = -2 < 0$, lớn nhất tại $x = \\dfrac{${W}}{4} = ${nt(x0)}$ (thuộc khoảng $(0; ${W/2})$), khi đó $S = ${nt(x0)}\\cdot ${nt(W - 2*x0)} = ${nt(S)}$ (cm²).<br>Vậy ${askS ? `diện tích lớn nhất là $${nt(S)}$ cm²` : `chiều cao mép gập là $${nt(x0)}$ cm`}.`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 1; i < W*50; i++){ const x = i/100, s = x*(W - 2*x); if(s > best){ best = s; at = x; } } return Math.abs((askS ? best : at) - o.ans.v) < 0.02; }};
+  return o;
+});
+
+/* 2. ĐS TH — chuyển động ném */
+GD(10,5,1,'TH','Chuyển động của vật ném lên, độ cao h(t) = −5t² + v₀t + h₀: độ cao ban đầu, thời điểm và độ cao lớn nhất, thời điểm chạm đất', R=>{
+  const T = R.pick([2, 2.5, 3, 3.5, 4, 5]), r = R.pick([0.2, 0.4, 0.5, 1]), v0 = 5*(T - r), h0 = 5*T*r; if(h0 > 30 || v0 <= 0) return null;
+  const h = t=> -5*t*t + v0*t + h0, tm = v0/10, H = h(tm); if(!Number.isInteger(Math.round(H*1e6)/1e4)) return null;
+  const items = [
+    claimN(R, v=> `Quả bóng được ném từ độ cao $${v}$ m`, h0, nt(h0), v0, nt(v0), ()=> h(0)),
+    claimN(R, v=> `Quả bóng đạt độ cao lớn nhất tại thời điểm $t = ${v}$ giây`, tm, nt(tm), v0/5, nt(v0/5), ()=>{ let best = -1, at = 0; for(let i = 0; i <= 20000; i++){ const t = i/1000; if(h(t) > best){ best = h(t); at = t; } } return Math.round(at*1000)/1000; }),
+    claimN(R, v=> `Độ cao lớn nhất của quả bóng là $${v}$ m`, H, nt(H), H - h0, nt(H - h0), ()=>{ let best = -1; for(let i = 0; i <= 20000; i++) best = Math.max(best, h(i/1000)); return Math.round(best*1e6)/1e6; }),
+    claimN(R, v=> `Quả bóng chạm đất sau $${v}$ giây kể từ lúc ném`, T, nt(T), v0/5, nt(v0/5), ()=>{ let L = tm, Hh = 100; for(let i = 0; i < 200; i++){ const M = (L + Hh)/2; if(h(M) > 0) L = M; else Hh = M; } return Math.round(L*1e6)/1e6; })];
+  return {stem:`Một quả bóng được ném thẳng đứng lên trên. Độ cao (mét) của quả bóng so với mặt đất sau $t$ giây là $h(t) = -5t^2 + ${nt(v0)}t + ${nt(h0)}$.`, items,
+    lg:`a) $h(0) = ${nt(h0)}$ m.<br>b) $h(t)$ là hàm bậc hai có $a = -5 < 0$, lớn nhất tại $t = \\dfrac{${nt(v0)}}{10} = ${nt(tm)}$ giây.<br>c) $h(${nt(tm)}) = ${nt(H)}$ m.<br>`
+      + `d) $h(t) = 0 \\iff -5t^2 + ${nt(v0)}t + ${nt(h0)} = 0 \\iff t = ${nt(T)}$ (nhận) hoặc $t = ${nt(-r)}$ (loại). Bóng chạm đất sau $${nt(T)}$ giây.`};
+});
+
+/* 3. ĐS VD — cổng parabol */
+GD(10,5,1,'VD','Cổng parabol: lập phương trình theo chiều rộng chân cổng và chiều cao; chiều cao tại một vị trí; bề rộng tại một độ cao; kiểm tra xe đi qua được', R=>{
+  const W = R.pick([8, 10, 12, 16, 20]), H = R.pick([4, 5, 6, 8, 10]), a = -4*H/(W*W), d = R.int(1, W/2 - 1), hd = H - (-a)*(W/2 - d)**2*0 + a*(W/2 - d)**2 - 0;
+  // gốc tại trung điểm chân cổng: y = a x² + H; điểm cách chân cổng d mét có x = W/2 − d
+  const yd = a*(W/2 - d)**2 + H; if(Math.abs(yd*100 - Math.round(yd*100)) > 1e-9) return null;
+  const u = R.int(1, W/2 - 1), hu = a*u*u + H; if(Math.abs(hu*100 - Math.round(hu*100)) > 1e-9) return null;   // độ cao hu có bề rộng 2u
+  const wt = R.pick([2, 2.5, 3, 4]), ht = Math.round((a*(wt/2)**2 + H + R.pick([-0.3, 0.2]))*10)/10, pass = ht < a*(wt/2)**2 + H; if(ht <= 0) return null; const gh = a*(wt/2)**2 + H; if(Math.abs(gh*100 - Math.round(gh*100)) > 1e-9) return null;
+  const items = [
+    claim(R, `Chọn hệ trục với gốc là trung điểm hai chân cổng, trục tung đi qua đỉnh, cổng có phương trình $y = ${prF(a)}x^2 + ${H}$`, `Chọn hệ trục với gốc là trung điểm hai chân cổng, trục tung đi qua đỉnh, cổng có phương trình $y = ${prF(a*2)}x^2 + ${H}$`, ()=> near(a*(W/2)**2 + H, 0), ()=> near(2*a*(W/2)**2 + H, 0)),
+    claimN(R, v=> `Tại vị trí cách chân cổng $${d}$ m (tính theo phương ngang), cổng cao $${v}$ m`, yd, nt(yd), a*d*d + H, nt(a*d*d + H), ()=> H*(1 - ((W/2 - d)/(W/2))**2)),
+    claimN(R, v=> `Ở độ cao $${nt(hu)}$ m, bề rộng của cổng là $${v}$ m`, 2*u, String(2*u), u, String(u), ()=> 2*Math.sqrt((H - hu)/(-a))),
+    claim(R, pass ? `Một xe tải rộng $${nt(wt)}$ m, cao $${nt(ht)}$ m đi chính giữa cổng thì đi qua được` : `Một xe tải rộng $${nt(wt)}$ m, cao $${nt(ht)}$ m đi chính giữa cổng thì không đi qua được`,
+             pass ? `Một xe tải rộng $${nt(wt)}$ m, cao $${nt(ht)}$ m đi chính giữa cổng thì không đi qua được` : `Một xe tải rộng $${nt(wt)}$ m, cao $${nt(ht)}$ m đi chính giữa cổng thì đi qua được`,
+             ()=> (ht < H*(1 - (wt/W)**2)) === pass, ()=> (ht < H*(1 - (wt/W)**2)) !== pass)];
+  if(near(yd, a*d*d + H)) return null;
+  return {stem:`Một cổng có dạng parabol, khoảng cách giữa hai chân cổng là $${W}$ m, chiều cao của cổng là $${H}$ m.`, items,
+    lg:`a) $y = ax^2 + ${H}$ đi qua $(${W/2}; 0)$: $${W*W/4}a + ${H} = 0 \\iff a = ${prF(a)}$.<br>`
+      + `b) Điểm cách chân cổng $${d}$ m có $x = ${W/2 - d}$: $y = ${prF(a)}\\cdot ${(W/2 - d)**2} + ${H} = ${nt(yd)}$ (m).<br>`
+      + `c) $y = ${nt(hu)} \\iff x^2 = ${u*u} \\iff x = \\pm ${u}$, bề rộng $${2*u}$ m.<br>`
+      + `d) Hai mép thùng xe ở $x = \\pm ${nt(wt/2)}$, tại đó cổng cao $${nt(a*(wt/2)**2 + H)}$ m ${pass ? '>' : '<'} $${nt(ht)}$ m nên xe ${pass ? 'đi qua được' : 'không đi qua được'}.`};
+});
+
+/* 4. ĐS VD — kinh doanh */
+GD(10,5,1,'VD','Bài toán kinh doanh: số lượng bán q = A − Bp, giá nhập c; lợi nhuận tại một giá, giá bán cho lợi nhuận lớn nhất, lợi nhuận lớn nhất', R=>{
+  const c = R.pick([20, 30, 40]), A = R.pick([1200, 1500, 1800, 2000, 2400]), B = R.pick([10, 15, 20, 25]), pm = A/B; if(pm <= c + 10) return null;
+  const ps = (pm + c)/2; if(!Number.isInteger(ps)) return null; const L = p=> (p - c)*(A - B*p), Lmax = L(ps), p1 = ps + R.pick([-10, -5, 5, 10]);
+  if(Lmax % 1000) return null;
+  const items = [
+    claimN(R, v=> `Khi bán với giá $${p1}$ nghìn đồng/sản phẩm thì lợi nhuận mỗi tháng là $${v}$ triệu đồng`, L(p1)/1000, nt(L(p1)/1000), p1*(A - B*p1)/1000, nt(p1*(A - B*p1)/1000), ()=> (p1 - c)*(A - B*p1)/1000),
+    claimN(R, v=> `Giá bán để lợi nhuận lớn nhất là $${v}$ nghìn đồng/sản phẩm`, ps, String(ps), pm/2, nt(pm/2), ()=>{ let best = -Infinity, at = 0; for(let i = 0; i <= 40000; i++){ const p = i/100; if(L(p) > best){ best = L(p); at = p; } } return Math.round(at); }),
+    claimN(R, v=> `Lợi nhuận lớn nhất mỗi tháng là $${v}$ triệu đồng`, Lmax/1000, nt(Lmax/1000), pm*pm*B/4/1000, nt(pm*pm*B/4/1000), ()=>{ let best = -Infinity; for(let i = 0; i <= 40000; i++) best = Math.max(best, L(i/100)); return Math.round(best)/1000; }),
+    claim(R, `Giá bán cho lợi nhuận lớn nhất cao hơn giá bán cho doanh thu lớn nhất`, `Giá bán cho lợi nhuận lớn nhất bằng giá bán cho doanh thu lớn nhất`, ()=> ps > pm/2, ()=> near(ps, pm/2))];
+  return {stem:`Một cửa hàng nhập một loại sản phẩm với giá $${c}$ nghìn đồng/sản phẩm. Nếu bán với giá $p$ (nghìn đồng/sản phẩm) thì mỗi tháng bán được $${A} - ${B}p$ sản phẩm.`, items,
+    lg:`Lợi nhuận mỗi tháng (nghìn đồng): $L(p) = (p - ${c})(${A} - ${B}p) = ${termsT([[-B, 'p^2'], [A + B*c, 'p'], [-A*c, '']])}$.<br>`
+      + `a) $L(${p1}) = ${p1 - c}\\cdot ${A - B*p1} = ${L(p1)}$ nghìn đồng $= ${nt(L(p1)/1000)}$ triệu đồng.<br>b) $L$ lớn nhất tại $p = \\dfrac{${A + B*c}}{${2*B}} = ${ps}$.<br>`
+      + `c) $L(${ps}) = ${ps - c}\\cdot ${A - B*ps} = ${Lmax}$ nghìn đồng $= ${nt(Lmax/1000)}$ triệu đồng.<br>d) Doanh thu $p(${A} - ${B}p)$ lớn nhất tại $p = ${nt(pm/2)} < ${ps}$.`};
+});
+
+/* 5. ĐS TH — rào vườn sát tường */
+GD(10,5,1,'TH','Rào mảnh vườn hình chữ nhật sát bức tường bằng S mét lưới: biểu thức diện tích, điều kiện của biến, kích thước và diện tích lớn nhất', R=>{
+  const S = R.pick([20, 24, 30, 32, 40, 48, 50, 60, 80]), x0 = S/4, Smax = S*S/8; if(!Number.isInteger(x0*10) || !Number.isInteger(Smax*10)) return null;
+  const items = [
+    claim(R, `Diện tích mảnh vườn là $S(x) = x(${S} - 2x)$`, `Diện tích mảnh vườn là $S(x) = x(${S} - x)$`, ()=> near(3*(S - 6), 3*(S - 2*3)), ()=> false),
+    claim(R, `Điều kiện của $x$ là $0 < x < ${S/2}$`, `Điều kiện của $x$ là $0 < x < ${S}$`, ()=> S - 2*(S/2) === 0, ()=> S - 2*S > 0),
+    claimN(R, v=> `Diện tích lớn nhất của mảnh vườn là $${v}$ m²`, Smax, nt(Smax), S*S/4, nt(S*S/4), ()=>{ let best = 0; for(let i = 1; i < S*50; i++){ const x = i/100; best = Math.max(best, x*(S - 2*x)); } return Math.round(best*100)/100; }),
+    claimN(R, v=> `Khi diện tích lớn nhất, cạnh song song với tường dài $${v}$ m`, S/2, nt(S/2), x0, nt(x0), ()=> S - 2*(S/4))];
+  return {stem:`Một người dùng $${S}$ m lưới để rào một mảnh vườn hình chữ nhật, một cạnh của vườn là bức tường có sẵn (không cần rào). Gọi $x$ (m) là độ dài mỗi cạnh vuông góc với tường.`, items,
+    lg:`Cạnh song song với tường dài $${S} - 2x$ (m), cần $x > 0$ và $${S} - 2x > 0$ nên $0 < x < ${S/2}$.<br>`
+      + `$S(x) = x(${S} - 2x) = -2x^2 + ${S}x$ lớn nhất tại $x = \\dfrac{${S}}{4} = ${nt(x0)}$, khi đó cạnh song song với tường dài $${nt(S/2)}$ m và diện tích lớn nhất là $${nt(x0)}\\cdot ${nt(S/2)} = ${nt(Smax)}$ m².`};
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.4 (10|5|1), đợt 18 (5 TLN). Claude viết.
+// Chuỗi: độ cao của vật ném tại một thời điểm và khoảng thời gian bay → pháo hoa nổ ở độ cao lớn nhất → lợi nhuận lớn nhất (triệu đồng)
+// → diện tích mặt cắt máng nước → khung cửa sổ có thêm thanh ngang (chu vi cố định, diện tích lớn nhất).
+const psF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const psOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+
+/* 1. TLN TH — vật ném: thời gian bay đến khi chạm đất */
+GT(10,5,1,'TH','Vật được ném xiên từ một độ cao, độ cao h(t) = −4,9t² + v₀t + h₀ (số liệu chọn để nghiệm đẹp): tính thời gian từ lúc ném đến khi chạm đất', R=>{
+  const T = R.pick([1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 6]), r = R.pick([0.2, 0.5, 1, 2]); if(r >= T || !Number.isInteger(Math.round(T*r*1e6)/1e5) || h0Bad(T, r)) return null;
+  function h0Bad(T, r){ return 4.9*T*r > 40; }
+  const v0s = Math.round(4.9*(T - r)*100)/100, h0s = Math.round(4.9*T*r*100)/100, h = t=> -4.9*t*t + v0s*t + h0s, t1 = R.int(1, Math.floor(T)), y1 = Math.round(h(t1)*1000)/1000, ask = R.pick([0, 0, 1]);
+  if(ask && (!psOk(y1) || t1 >= T)) return null; const v = ask ? y1 : T;
+  const o = {stem:`Một quả bóng được ném lên từ ${h0s > 4 ? 'ban công một toà nhà, ' : ''}độ cao $${nt(h0s)}$ m so với mặt đất. Độ cao (mét) của quả bóng so với mặt đất sau $t$ giây là $h(t) = -4{,}9t^2 + ${nt(v0s)}t + ${nt(h0s)}$. ${ask ? `Độ cao của quả bóng tại thời điểm $t = ${t1}$ giây là bao nhiêu mét?` : 'Sau bao nhiêu giây kể từ lúc ném thì quả bóng chạm đất?'}`, ans:v,
+    lg:ask ? `$h(${t1}) = -4{,}9\\cdot ${t1*t1} + ${nt(v0s)}\\cdot ${t1} + ${nt(h0s)} = ${nt(y1)}$ (m).`
+      : `Bóng chạm đất khi $h(t) = 0 \\iff -4{,}9t^2 + ${nt(v0s)}t + ${nt(h0s)} = 0$. Chia hai vế cho $-4{,}9$: $${termsT([[1, 't^2'], [-Math.round((T - r)*100)/100, 't'], [-Math.round(T*r*100)/100, '']])} = 0 \\iff (t - ${nt(T)})(t + ${nt(r)}) = 0$.<br>Nhận $t = ${nt(T)}$ (loại $t = -${nt(r)}$). Vậy bóng chạm đất sau $${nt(T)}$ giây.`,
+    verify:()=>{ if(ask) return Math.abs(-4.9*t1*t1 + v0s*t1 + h0s - o.ans) < 1e-6; let L = 0, H = 30; for(let i = 0; i < 200; i++){ const M = (L + H)/2; if(h(M) > 0) L = M; else H = M; } return Math.abs(L - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 2. TLN TH — pháo hoa nổ ở độ cao lớn nhất */
+GT(10,5,1,'TH','Quả pháo hoa bắn thẳng đứng, độ cao h(t) = −5t² + v₀t + h₀, nổ khi đạt độ cao lớn nhất: tính độ cao nổ hoặc thời điểm nổ', R=>{
+  const v0 = R.pick([30, 35, 40, 45, 50, 60]), h0 = R.pick([0, 1, 2, 5, 10]), tm = v0/10, H = -5*tm*tm + v0*tm + h0, ask = R.pick([0, 0, 1]); const v = ask ? tm : H; if(!psOk(v)) return null;
+  const o = {stem:`Một quả pháo hoa được bắn thẳng đứng lên từ độ cao $${h0}$ m${h0 === 0 ? ' (mặt đất)' : ''} và nổ khi đạt độ cao lớn nhất. Độ cao (mét) của quả pháo sau $t$ giây là $h(t) = -5t^2 + ${v0}t${h0 === 0 ? '' : ' + ' + h0}$. ${ask ? 'Quả pháo nổ sau bao nhiêu giây kể từ lúc bắn?' : 'Quả pháo nổ ở độ cao bao nhiêu mét?'}`, ans:v,
+    lg:`$h(t)$ là hàm số bậc hai có $a = -5 < 0$, đạt giá trị lớn nhất tại $t = -\\dfrac{${v0}}{2\\cdot (-5)} = ${nt(tm)}$ (giây).<br>${ask ? `Vậy quả pháo nổ sau $${nt(tm)}$ giây.` : `Độ cao lớn nhất: $h(${nt(tm)}) = -5\\cdot ${nt(tm*tm)} + ${v0}\\cdot ${nt(tm)}${h0 ? ' + ' + h0 : ''} = ${nt(H)}$ (m).`}`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 0; i <= 200000; i++){ const t = i/10000, y = -5*t*t + v0*t + h0; if(y > best){ best = y; at = t; } } return Math.abs((ask ? at : best) - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 3. TLN VD — lợi nhuận lớn nhất (triệu đồng) */
+GT(10,5,1,'VD','Lợi nhuận lớn nhất khi số sản phẩm bán được là hàm bậc nhất của giá bán: lập hàm lợi nhuận bậc hai, tính lợi nhuận lớn nhất (triệu đồng)', R=>{
+  const ctx = R.pick([{sp:'chiếc mũ bảo hiểm', c:[60, 80, 100]}, {sp:'hộp bánh trung thu', c:[40, 50, 60]}, {sp:'chậu cây cảnh', c:[30, 40, 50]}]), c = R.pick(ctx.c), A = R.pick([1500, 2000, 2400, 3000, 3600]), B = R.pick([5, 8, 10, 12, 15, 20]);
+  const pm = A/B, ps = (pm + c)/2; if(pm <= c + 20 || !Number.isInteger(ps) || ps > 2*c + 20 || A - B*ps < 100) return null; const L = (ps - c)*(A - B*ps)/1000; if(!psOk(L)) return null;
+  const o = {stem:`Một cửa hàng nhập ${ctx.sp} với giá $${c}$ nghìn đồng/chiếc. Nếu bán với giá $x$ (nghìn đồng/chiếc) thì mỗi tháng bán được $${A} - ${B}x$ chiếc. Lợi nhuận lớn nhất mỗi tháng mà cửa hàng có thể đạt được là bao nhiêu triệu đồng?`, ans:L,
+    lg:`Lợi nhuận mỗi tháng (nghìn đồng): $P(x) = (x - ${c})(${A} - ${B}x) = ${termsT([[-B, 'x^2'], [A + B*c, 'x'], [-A*c, '']])}$.<br>`
+      + `$P$ lớn nhất tại $x = \\dfrac{${A + B*c}}{${2*B}} = ${ps}$; $P(${ps}) = ${ps - c}\\cdot ${A - B*ps} = ${(ps - c)*(A - B*ps)}$ (nghìn đồng) $= ${nt(L)}$ triệu đồng.`,
+    verify:()=>{ let best = -Infinity; for(let i = 0; i <= 100000; i++){ const x = i/100; best = Math.max(best, (x - c)*(A - B*x)); } return Math.abs(best/1000 - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 4. TLN TH — máng nước gập ba (mặt cắt hình thang cân với góc cố định được thay bằng chữ nhật) */
+GT(10,5,1,'TH','Gập tấm tôn thành máng có mặt cắt hình chữ nhật (hai mép gập cao bằng nhau): diện tích mặt cắt lớn nhất', R=>{
+  const W = 2*R.int(8, 45), S = W*W/8, ask = R.pick([0, 1]), v = ask ? W/2 : S; if(!psOk(v)) return null;
+  const o = {stem:`Người ta gập hai mép của một tấm tôn hình chữ nhật rộng $${W}$ cm (gập dọc theo chiều dài, hai mép gập vuông góc với đáy và cao bằng nhau) để làm máng thoát nước. ${ask ? 'Khi diện tích mặt cắt của máng lớn nhất thì chiều rộng đáy máng bằng bao nhiêu xentimét?' : 'Diện tích lớn nhất của mặt cắt máng là bao nhiêu xentimét vuông?'}`, ans:v,
+    lg:`Gọi chiều cao mép gập là $x$ (cm), $0 < x < ${W/2}$; đáy máng rộng $${W} - 2x$. Diện tích mặt cắt $S(x) = x(${W} - 2x) = -2x^2 + ${W}x$, lớn nhất tại $x = ${nt(W/4)}$.<br>`
+      + `Khi đó đáy rộng $${W} - 2\\cdot ${nt(W/4)} = ${nt(W/2)}$ cm và $S_{\\max} = ${nt(W/4)}\\cdot ${nt(W/2)} = ${nt(S)}$ cm². Vậy ${ask ? `đáy máng rộng $${nt(W/2)}$ cm` : `diện tích lớn nhất là $${nt(S)}$ cm²`}.`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 1; i < W*100; i++){ const x = i/200, s = x*(W - 2*x); if(s > best){ best = s; at = x; } } return Math.abs((ask ? W - 2*at : best) - o.ans) < 0.02; }};
+  return o;
+});
+
+/* 5. TLN VD — khung cửa sổ có thanh ngang */
+GT(10,5,1,'VD','Làm khung cửa sổ hình chữ nhật có k thanh ngang (song song với chiều rộng) từ thanh nhôm dài L: chiều rộng để diện tích cửa lớn nhất và diện tích lớn nhất', R=>{
+  const k = R.pick([1, 2, 3]), L = R.int(5, 30), n = 2 + k;   // n thanh ngang (kể cả hai cạnh) dài x, 2 thanh đứng dài y: n x + 2y = L
+  const x0 = L/(2*n), y0 = L/4, S = x0*y0, ask = R.pick([0, 1]), v = ask ? x0 : S; if(!psOk(v) || !psOk(x0*10/10)) return null;
+  const o = {stem:`Một người dùng thanh nhôm dài $${L}$ m để làm khung một cửa sổ hình chữ nhật, khung gồm hai cạnh đứng, hai cạnh ngang và thêm $${k}$ thanh ngang ở giữa (mỗi thanh ngang dài bằng chiều rộng cửa). ${ask ? 'Để diện tích cửa sổ lớn nhất thì chiều rộng cửa (độ dài mỗi thanh ngang) bằng bao nhiêu mét?' : 'Diện tích lớn nhất của cửa sổ là bao nhiêu mét vuông?'} (Bỏ qua phần hao hụt khi cắt, ghép.)`, ans:Math.round(v*10)/10,
+    lg:`Gọi chiều rộng là $x$, chiều cao là $y$ (m). Tổng chiều dài các thanh: $${n}x + 2y = ${L} \\Rightarrow y = \\dfrac{${L} - ${n}x}{2}$, với $0 < x < ${psF(L/n)}$.<br>`
+      + `Diện tích $S(x) = x\\cdot\\dfrac{${L} - ${n}x}{2} = -\\dfrac{${n}}{2}x^2 + ${psF(L/2)}x$, lớn nhất tại $x = \\dfrac{${L}}{${2*n}}${frT(L, 2*n) === `\\dfrac{${L}}{${2*n}}` ? '' : ` = ${psF(x0)}`}$ (m), khi đó $y = ${psF(y0)}$ m và $S_{\\max} = ${psF(S)}$ m².`
+      + `<br>Vậy ${ask ? `chiều rộng cửa là $${psF(x0)}$ m` : `diện tích lớn nhất là $${psF(S)}$ m²`}${Number.isInteger(v) ? '' : ` $= ${nt(Math.round(v*10)/10)}$`}.`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 1; i < L*1000/n; i++){ const x = i/1000, s = x*(L - n*x)/2; if(s > best){ best = s; at = x; } } return Math.abs((ask ? at : best) - o.ans) < 0.01; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.4 (10|5|1), đợt 19 (5 TLN). Claude viết.
+// Chuỗi: quỹ đạo quả bóng theo khoảng cách ngang (tầm xa, độ cao lớn nhất) → ném tạ (độ cao cực đại theo phương ngang)
+// → cầu vòm parabol (bề rộng ở một độ cao) → tour du lịch giảm giá theo số khách (doanh thu lớn nhất) → mật độ trồng cây (sản lượng lớn nhất).
+const ptF = v=>{ for(let q = 1; q <= 60; q++){ const p = Math.round(v*q); if(Math.abs(v - p/q) < 1e-9) return frT(p, q); } return nt(v); };
+const ptOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+
+/* 1. TLN TH — quỹ đạo quả bóng theo khoảng cách ngang */
+GT(10,5,1,'TH','Quỹ đạo quả bóng là parabol y = ax² + bx (gốc tại chân cầu thủ): tính tầm xa (khoảng cách đến điểm chạm đất) hoặc độ cao lớn nhất', R=>{
+  const D = R.pick([20, 24, 30, 32, 36, 40, 48, 50]), Hm = R.pick([4, 5, 6, 8, 9, 10, 12]), a = -4*Hm/(D*D), b = 4*Hm/D, ask = R.pick([0, 1]);
+  const af = frT(-4*Hm, D*D), bf = frT(4*Hm, D); const v = ask ? Hm : D;
+  const o = {stem:`Một cầu thủ sút quả bóng từ mặt sân. Chọn hệ trục với gốc toạ độ tại vị trí sút, trục $Ox$ nằm ngang theo hướng bóng bay; quỹ đạo của bóng là một phần parabol $y = ${af}x^2 + ${bf}x$ ($x$, $y$ tính bằng mét). ${ask ? 'Quả bóng đạt độ cao lớn nhất bằng bao nhiêu mét?' : 'Quả bóng chạm đất cách vị trí sút bao nhiêu mét (theo phương ngang)?'}`, ans:v,
+    lg:ask ? `Đỉnh parabol có hoành độ $x = -\\dfrac{b}{2a} = ${nt(D/2)}$, độ cao lớn nhất $y = ${af}\\cdot ${nt(D*D/4)} + ${bf}\\cdot ${nt(D/2)} = ${nt(Hm)}$ (m).`
+      : `Bóng chạm đất khi $y = 0 \\iff x\\left(${af}x + ${bf}\\right) = 0 \\iff x = 0$ (vị trí sút) hoặc $x = ${nt(D)}$.<br>Vậy bóng chạm đất cách vị trí sút $${nt(D)}$ m.`,
+    verify:()=>{ const y = x=> a*x*x + b*x; if(ask){ let best = 0; for(let i = 0; i <= 100000; i++) best = Math.max(best, y(i/1000)); return Math.abs(best - o.ans) < 1e-3; } let L = 1e-6 + D/2, H = 1000; for(let i = 0; i < 200; i++){ const M = (L + H)/2; if(y(M) > 0) L = M; else H = M; } return Math.abs(L - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 2. TLN VD — ném tạ: độ cao cực đại và khoảng cách */
+GT(10,5,1,'VD','Đường bay của quả tạ là parabol y = ax² + bx + c theo khoảng cách ngang x (c là độ cao tay ra tạ): tìm khoảng cách ngang tại đó tạ cao nhất hoặc độ cao lớn nhất', R=>{
+  const h = R.pick([3, 4, 5, 6, 7, 8]), k = R.pick([3, 3.2, 3.5, 3.6, 4, 4.2, 4.5, 4.8, 5]), c = R.pick([1.6, 1.8, 2, 2.2]), a = (c - k)/(h*h); if(a >= 0) return null;
+  const b = -2*a*h, ask = R.pick([0, 1]), v = ask ? k : h, dk = Math.round((c - k)*10), af = frT(dk, 10*h*h), bf = frT(-2*dk, 10*h);
+  const o = {stem:`Một vận động viên đẩy tạ, quả tạ rời tay ở độ cao $${nt(c)}$ m. Chọn hệ trục với gốc toạ độ trên mặt đất ngay dưới điểm tạ rời tay; đường bay của tạ là $y = ${af}x^2 + ${bf}x + ${nt(c)}$ ($x$ là khoảng cách theo phương ngang, $x$ và $y$ tính bằng mét). ${ask ? 'Độ cao lớn nhất mà quả tạ đạt được là bao nhiêu mét?' : 'Quả tạ đạt độ cao lớn nhất khi đã bay được bao nhiêu mét theo phương ngang?'}`, ans:v,
+    lg:`Hàm số bậc hai có $a = ${af} < 0$, đạt giá trị lớn nhất tại $x = -\\dfrac{b}{2a} = ${nt(h)}$ (m); độ cao lớn nhất $y(${nt(h)}) = ${nt(k)}$ (m).<br>Vậy ${ask ? `độ cao lớn nhất là $${nt(k)}$ m` : `tạ cao nhất khi bay được $${nt(h)}$ m theo phương ngang`}.`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 0; i <= 30000; i++){ const x = i/1000, y = a*x*x + b*x + c; if(y > best){ best = y; at = x; } } return Math.abs((ask ? best : at) - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 3. TLN TH — cầu vòm parabol: bề rộng ở một độ cao */
+GT(10,5,1,'TH','Vòm cầu dạng parabol (biết nhịp vòm và chiều cao vòm): tính bề rộng của vòm tại một độ cao cho trước', R=>{
+  const L = R.pick([40, 60, 80, 100, 120]), H = R.pick([8, 10, 12, 15, 16, 20]), t = R.pick([0.5, 0.6, 0.8]), u = t*L/2, hu = H*(1 - t*t); if(!ptOk(hu) || !Number.isInteger(u)) return null;
+  const o = {stem:`Một cây cầu có vòm dạng parabol, khoảng cách giữa hai chân vòm (nhịp vòm) là $${L}$ m, đỉnh vòm cao $${H}$ m so với đường nối hai chân vòm. Tại độ cao $${nt(hu)}$ m, bề rộng của vòm (khoảng cách giữa hai điểm của vòm ở cùng độ cao đó) là bao nhiêu mét?`, ans:2*u,
+    lg:`Chọn gốc toạ độ tại trung điểm hai chân vòm, trục $Oy$ đi qua đỉnh: vòm có phương trình $y = ax^2 + ${H}$, qua $(${L/2}; 0)$ nên $${L*L/4}a + ${H} = 0 \\iff a = ${frT(-4*H, L*L)}$.<br>`
+      + `$y = ${nt(hu)} \\iff ${frT(-4*H, L*L)}x^2 = ${nt(hu)} - ${H} \\iff x^2 = ${u*u} \\iff x = \\pm ${u}$. Bề rộng của vòm tại độ cao đó là $${2*u}$ m.`,
+    verify:()=>{ const y = x=> H*(1 - 4*x*x/(L*L)); let Lo = 0, Hi = L/2; for(let i = 0; i < 200; i++){ const M = (Lo + Hi)/2; if(y(M) > hu) Lo = M; else Hi = M; } return Math.abs(2*Lo - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 4. TLN VD — tour du lịch giảm giá theo số khách */
+GT(10,5,1,'VD','Tour du lịch: giá cơ bản cho một nhóm tối thiểu, mỗi khách thêm thì giá mỗi người giảm một lượng; tìm số khách để doanh thu của công ty lớn nhất', R=>{
+  const n0 = R.pick([20, 25, 30]), p0 = R.pick([2000, 2400, 3000, 3500, 4000]), d = R.pick([20, 25, 40, 50]), nmax = R.pick([60, 70, 80]);
+  // n = n0 + x khách, giá mỗi người p0 − d x (nghìn đồng); R(x) = (n0 + x)(p0 − d x), đỉnh x* = (p0 − d n0)/(2d)
+  const xs = (p0 - d*n0)/(2*d); if(!Number.isInteger(xs) || xs <= 0 || n0 + xs > nmax) return null; const N = n0 + xs, ask = R.pick([0, 1]), Rmax = (n0 + xs)*(p0 - d*xs)/1000; const v = ask ? Rmax : N; if(!ptOk(v)) return null;
+  const o = {stem:`Một công ty du lịch đưa ra giá tour là $${nt(p0)}$ nghìn đồng/người cho đoàn $${n0}$ khách. Nếu đoàn có nhiều hơn $${n0}$ khách thì cứ thêm một khách, giá tour của mỗi người (kể cả những người đã có) giảm $${d}$ nghìn đồng; mỗi đoàn có tối đa $${nmax}$ khách. ${ask ? 'Doanh thu lớn nhất của công ty từ một đoàn là bao nhiêu triệu đồng?' : 'Đoàn có bao nhiêu khách thì doanh thu của công ty lớn nhất?'}`, ans:v,
+    lg:`Gọi $x$ là số khách thêm ($0 \\le x \\le ${nmax - n0}$): số khách $${n0} + x$, giá mỗi người $${p0} - ${d}x$ (nghìn đồng).<br>`
+      + `Doanh thu $R(x) = (${n0} + x)(${p0} - ${d}x) = ${termsT([[-d, 'x^2'], [p0 - d*n0, 'x'], [n0*p0, '']])}$, lớn nhất tại $x = \\dfrac{${p0 - d*n0}}{${2*d}} = ${xs}$ (thoả mãn).<br>`
+      + `Khi đó đoàn có $${N}$ khách và doanh thu là $${N}\\cdot ${p0 - d*xs} = ${N*(p0 - d*xs)}$ nghìn đồng $= ${nt(Rmax)}$ triệu đồng.`,
+    verify:()=>{ let best = -1, at = 0; for(let x = 0; x <= nmax - n0; x++){ const Rv = (n0 + x)*(p0 - d*x); if(Rv > best){ best = Rv; at = n0 + x; } } return Math.abs((ask ? best/1000 : at) - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 5. TLN VD — mật độ trồng cây */
+GT(10,5,1,'VD','Năng suất vườn cây: trồng thêm mỗi cây trên một đơn vị diện tích thì năng suất mỗi cây giảm; tìm số cây cần trồng để tổng sản lượng lớn nhất', R=>{
+  const n0 = R.pick([20, 24, 25, 30, 40]), y0 = R.pick([40, 48, 50, 60, 80]), d = R.pick([0.5, 1, 2]);
+  // trồng n0 + x cây, mỗi cây cho y0 − d x (kg): Q(x) = (n0 + x)(y0 − d x), đỉnh x* = (y0 − d n0)/(2d)
+  const xs = (y0 - d*n0)/(2*d); if(!Number.isInteger(xs) || xs <= 0) return null; const N = n0 + xs, Q = N*(y0 - d*xs), ask = R.pick([0, 1]), v = ask ? Q : N; if(!ptOk(v)) return null;
+  const o = {stem:`Trên một mảnh vườn, nếu trồng $${n0}$ cây bưởi thì mỗi cây cho trung bình $${y0}$ kg quả mỗi vụ. Khảo sát cho thấy cứ trồng thêm một cây thì mỗi cây (kể cả các cây cũ) cho ít hơn $${nt(d)}$ kg quả. ${ask ? 'Tổng sản lượng lớn nhất của mảnh vườn mỗi vụ là bao nhiêu ki-lô-gam?' : 'Cần trồng tất cả bao nhiêu cây để tổng sản lượng mỗi vụ lớn nhất?'}`, ans:v,
+    lg:`Gọi $x$ là số cây trồng thêm: tổng số cây $${n0} + x$, mỗi cây cho $${y0} - ${nt(d)}x$ (kg).<br>Sản lượng $Q(x) = (${n0} + x)(${y0} - ${nt(d)}x) = ${termsT([[-d, 'x^2'], [y0 - d*n0, 'x'], [n0*y0, '']])}$, lớn nhất tại $x = \\dfrac{${nt(y0 - d*n0)}}{${nt(2*d)}} = ${xs}$.<br>`
+      + `Khi đó trồng $${N}$ cây, sản lượng $${N}\\cdot ${nt(y0 - d*xs)} = ${nt(Q)}$ (kg).`,
+    verify:()=>{ let best = -1, at = 0; for(let x = 0; x <= 200; x++){ const q = (n0 + x)*(y0 - d*x); if(q > best){ best = q; at = n0 + x; } } return Math.abs((ask ? best : at) - o.ans) < 1e-6; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
+})();
+
+// ---------- V2.76: dạng thay số bổ sung (10-16.3, 10-16.4 Hàm số bậc hai: xác định hàm số, ứng dụng thực tế (49 dạng)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// Lớp 10 — 10-16.4 (10|5|1), đợt 20 (4 TLN). Claude viết.
+// Chuỗi: chiều cao đường hầm parabol tại một vị trí → bề rộng cổng parabol ở một độ cao → vị trí thanh treo có chiều dài cho trước của cầu treo
+// → hình chữ nhật có diện tích lớn nhất đặt trong mảnh đất hình tam giác vuông.
+const puOk = v=> Math.abs(v*10 - Math.round(v*10)) < 1e-9 && String(Math.round(v*10)/10).length <= 4;
+
+/* 1. TLN TH — chiều cao đường hầm tại một vị trí */
+GT(10,5,1,'TH','Mặt cắt đường hầm dạng parabol (biết bề rộng mặt đường và chiều cao đỉnh hầm): tính chiều cao của hầm tại vị trí cách mép đường một khoảng cho trước', R=>{
+  const W = R.pick([8, 10, 12, 14, 16]), H = R.pick([5, 6, 7, 8, 9, 10]), d = R.int(1, W/2 - 1), x = W/2 - d, y = H*(1 - 4*x*x/(W*W)); if(!puOk(y)) return null;
+  const o = {stem:`Mặt cắt ngang của một đường hầm có dạng parabol, mặt đường rộng $${W}$ m và điểm cao nhất của hầm cách mặt đường $${H}$ m. Tính chiều cao của hầm tại vị trí cách mép đường $${d}$ m (đơn vị: mét).`, ans:Math.round(y*10)/10,
+    lg:`Chọn gốc toạ độ tại trung điểm mặt đường, trục $Oy$ đi qua đỉnh hầm: $y = ax^2 + ${H}$, qua $(${W/2}; 0)$ nên $${W*W/4}a + ${H} = 0 \\iff a = ${frT(-4*H, W*W)}$.<br>`
+      + `Vị trí cách mép đường $${d}$ m có $x = ${W/2} - ${d} = ${x}$: $y = ${frT(-4*H, W*W)}\\cdot ${x*x} + ${H} = ${nt(Math.round(y*10)/10)}$ (m).`,
+    verify:()=>{ const f = t=> H - 4*H*t*t/(W*W); return near(f(W/2), 0) && Math.abs(f(W/2 - d) - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 2. TLN TH — bề rộng cổng ở một độ cao */
+GT(10,5,1,'TH','Cổng parabol biết khoảng cách hai chân cổng và chiều cao: tính bề rộng của cổng tại một độ cao (khoảng cách giữa hai điểm của cổng ở độ cao đó)', R=>{
+  const W = R.pick([6, 8, 10, 12, 14, 16]), H = R.pick([4, 5, 6, 8, 9, 10]), t = R.pick([0.2, 0.25, 0.4, 0.5, 0.6, 0.75, 0.8]), u = t*W/2, hu = H*(1 - t*t); if(!puOk(hu) || !puOk(2*u)) return null;
+  const o = {stem:`Cổng chào của một trường học có dạng parabol, khoảng cách giữa hai chân cổng là $${W}$ m, chiều cao của cổng là $${H}$ m. Ở độ cao $${nt(hu)}$ m so với mặt đất, bề rộng của cổng là bao nhiêu mét?`, ans:Math.round(2*u*10)/10,
+    lg:`Chọn gốc toạ độ tại trung điểm hai chân cổng: cổng có phương trình $y = ax^2 + ${H}$ với $a = ${frT(-4*H, W*W)}$ (vì đi qua $(${W/2}; 0)$).<br>`
+      + `$y = ${nt(hu)} \\iff ${frT(-4*H, W*W)}x^2 = ${nt(hu)} - ${H} \\iff x^2 = ${nt(u*u)} \\iff x = \\pm ${nt(u)}$. Bề rộng của cổng ở độ cao đó là $${nt(2*u)}$ m.`,
+    verify:()=>{ const f = x=> H - 4*H*x*x/(W*W); let L = 0, Hi = W/2; for(let i = 0; i < 200; i++){ const M = (L + Hi)/2; if(f(M) > hu) L = M; else Hi = M; } return Math.abs(2*L - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 3. TLN VD — vị trí thanh treo có chiều dài cho trước */
+GT(10,5,1,'VD','Cầu treo có cáp parabol: tìm khoảng cách từ chính giữa nhịp đến thanh treo có chiều dài cho trước', R=>{
+  const L = R.pick([100, 120, 160, 200]), H = R.pick([25, 30, 40, 50]), h0 = R.pick([1, 2, 5]), s = R.pick([0.3, 0.4, 0.5, 0.6, 0.7]), d = s*L/2, yd = (H - h0)*s*s + h0; if(!Number.isInteger(d) || !puOk(yd)) return null;
+  const o = {stem:`Một cây cầu treo có hai trụ cách nhau $${L}$ m, đỉnh trụ cao $${H}$ m so với mặt cầu. Dây cáp chính dạng parabol, điểm thấp nhất của cáp ở chính giữa nhịp và cách mặt cầu $${h0}$ m. Thanh treo thẳng đứng dài $${nt(yd)}$ m nằm cách điểm chính giữa nhịp bao nhiêu mét?`, ans:d,
+    lg:`Chọn gốc toạ độ trên mặt cầu tại chính giữa nhịp: cáp có phương trình $y = ax^2 + ${h0}$, qua đỉnh trụ $(${L/2}; ${H})$: $a = \\dfrac{${H} - ${h0}}{${L/2}^2} = ${frT(H - h0, (L/2)**2)}$.<br>`
+      + `$y = ${nt(yd)} \\iff ${frT(H - h0, (L/2)**2)}x^2 =${nt(yd - h0)} \\iff x^2 = ${d*d} \\iff x = \\pm ${d}$. Vậy thanh treo cách điểm chính giữa nhịp $${d}$ m.`,
+    verify:()=>{ const f = x=> (H - h0)*x*x/((L/2)**2) + h0; let Lo = 0, Hi = L/2; for(let i = 0; i < 200; i++){ const M = (Lo + Hi)/2; if(f(M) < yd) Lo = M; else Hi = M; } return Math.abs(Lo - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 4. TLN VD — hình chữ nhật lớn nhất trong tam giác vuông */
+GT(10,5,1,'VD','Mảnh đất hình tam giác vuông: xây khu nhà hình chữ nhật có hai cạnh nằm trên hai cạnh góc vuông, một đỉnh nằm trên cạnh huyền; diện tích lớn nhất', R=>{
+  const a = R.pick([10, 12, 16, 20, 24, 30, 40]), b = R.pick([8, 10, 12, 15, 18, 20, 30]), S = a*b/4, ask = R.pick([0, 1]), v = ask ? a/2 : S; if(!puOk(v)) return null;
+  const o = {stem:`Một mảnh đất có dạng tam giác vuông $OAB$ vuông tại $O$ với $OA = ${a}$ m, $OB = ${b}$ m. Người ta xây một khu nhà hình chữ nhật $OMNP$ với $M$ thuộc cạnh $OA$, $P$ thuộc cạnh $OB$ và $N$ thuộc cạnh $AB$. ${ask ? 'Khi diện tích khu nhà lớn nhất thì $OM$ bằng bao nhiêu mét?' : 'Diện tích lớn nhất của khu nhà là bao nhiêu mét vuông?'}`, ans:v,
+    lg:`Đặt $OM = x$ ($0 < x < ${a}$). Vì $MN \\parallel OB$ nên $\\dfrac{MN}{OB} = \\dfrac{AM}{AO}$, suy ra $MN = ${b}\\cdot\\dfrac{${a} - x}{${a}}$.<br>`
+      + `Diện tích $S(x) = x\\cdot ${b}\\cdot\\dfrac{${a} - x}{${a}} = ${frT(-b, a)}x^2 + ${b}x$, là hàm bậc hai có hệ số $x^2$ âm, lớn nhất tại $x = ${nt(a/2)}$.<br>`
+      + `Khi đó $MN = ${nt(b/2)}$ và $S_{\\max} = ${nt(a/2)}\\cdot ${nt(b/2)} = ${nt(S)}$ (m²). Vậy ${ask ? `$OM = ${nt(a/2)}$ m` : `diện tích lớn nhất là $${nt(S)}$ m²`}.`,
+    verify:()=>{ let best = -1, at = 0; for(let i = 1; i < a*100; i++){ const x = i/100, s = x*b*(a - x)/a; if(s > best){ best = s; at = x; } } return Math.abs((ask ? at : best) - o.ans) < 0.02; }};
+  return o;
+});
+
+}
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.76'; GEN[k].l1 = 'V2.76'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
