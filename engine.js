@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.88 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.89 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -438,10 +438,10 @@ const CHUYEN_DE = {
   '11-33': [['Đạo hàm cấp hai', '1-5'],
             ['Câu Đúng–Sai tổng hợp đạo hàm (quy tắc tính, tiếp tuyến, đạo hàm cấp hai); tiếp tuyến trong bài toán thực tế', ''],
             ['Đạo hàm cấp n (quy nạp); tiếp tuyến nâng cao: tiếp tuyến qua một điểm, tiếp tuyến chung', '', 'hsg']],
-  '12-18': [['Xác suất có điều kiện', '1-5'],
-            ['Xác suất có điều kiện bằng sơ đồ cây; câu Đúng–Sai tổng hợp xác suất có điều kiện trong tình huống thực tế', '']],
-  '12-19': [['Công thức xác suất toàn phần và công thức Bayes', '1-12'],
-            ['Câu Đúng–Sai tổng hợp xác suất toàn phần – Bayes theo cấu trúc đề tốt nghiệp; công thức Bayes với ba giả thiết trở lên', '']],
+  '12-18': [['Xác suất có điều kiện', '1-30'],
+            ['Xác suất có điều kiện bằng sơ đồ cây; câu Đúng–Sai tổng hợp xác suất có điều kiện trong tình huống thực tế', '31-60']],
+  '12-19': [['Công thức xác suất toàn phần và công thức Bayes', '1-32'],
+            ['Câu Đúng–Sai tổng hợp xác suất toàn phần – Bayes theo cấu trúc đề tốt nghiệp; công thức Bayes với ba giả thiết trở lên', '33-62']],
 };
 let _cd = null;
 function cdNums(s){ const o = []; String(s).split(',').forEach(p=>{ const m = p.trim().match(/^(\d+)(?:-(\d+))?$/); if(!m) return; for(let i = +m[1]; i <= +(m[2] || m[1]); i++) o.push(i); }); return o; }
@@ -632,7 +632,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.88';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.88: Lớp 11 Chương I: thêm 61 dạng trả lời ngắn — 11-01.1, 11-02.1, 11-03.1, 11-04.1, 11-04.2 mỗi chuyên đề đủ 16 TLN V2.87: Lớp 6: 6-07.4 thêm 22 dạng (bài toán thực tế ƯCLN, BCNN; rút gọn, quy đồng, cộng phân số) — đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL V2.86: Lớp 6: 6-07.3 (ước chung, ƯCLN, bội chung, BCNN) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 20 dạng (55–74) V2.85: Lớp 6: 6-07.1 (quan hệ chia hết, dấu hiệu chia hết cho 2, 5, 3, 9) và 6-07.2 (số nguyên tố, hợp số, phân tích ra thừa số nguyên tố) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (7–54) V2.84: Lớp 6: 6-06.3 (luỹ thừa) và 6-06.4 (thứ tự thực hiện phép tính, tìm x) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 40 dạng (57–96); bài 6-06 xong cả 4 chuyên đề V2.83: Lớp 6: 6-06.1 (tập hợp, cách ghi số, thứ tự trong N) và 6-06.2 (cộng, trừ, nhân, chia số tự nhiên, chia có dư, tính chất) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (9–56); nháp lớp 6 ghép sau đoạn tách V1.61 (@SAU_V161) V2.82: Phiếu in sẵn tên (mỗi em một mã): đáp án gửi MBP Chấm kèm tên, SBD học sinh để app chấm tự nhận bài của em nào V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.89';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.89: Lớp 12: Chương VI xác suất có điều kiện thêm 105 dạng — 12-18.1, 12-19.1 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL; hai chuyên đề ôn thi 12-18.2 (sơ đồ cây, Đ–S thực tế), 12-19.2 (Bayes ba giả thiết, Đ–S tổng hợp) mỗi chuyên đề 30 dạng V2.88: Lớp 11 Chương I: thêm 61 dạng trả lời ngắn — 11-01.1, 11-02.1, 11-03.1, 11-04.1, 11-04.2 mỗi chuyên đề đủ 16 TLN V2.87: Lớp 6: 6-07.4 thêm 22 dạng (bài toán thực tế ƯCLN, BCNN; rút gọn, quy đồng, cộng phân số) — đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL V2.86: Lớp 6: 6-07.3 (ước chung, ƯCLN, bội chung, BCNN) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 20 dạng (55–74) V2.85: Lớp 6: 6-07.1 (quan hệ chia hết, dấu hiệu chia hết cho 2, 5, 3, 9) và 6-07.2 (số nguyên tố, hợp số, phân tích ra thừa số nguyên tố) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (7–54) V2.84: Lớp 6: 6-06.3 (luỹ thừa) và 6-06.4 (thứ tự thực hiện phép tính, tìm x) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 40 dạng (57–96); bài 6-06 xong cả 4 chuyên đề V2.83: Lớp 6: 6-06.1 (tập hợp, cách ghi số, thứ tự trong N) và 6-06.2 (cộng, trừ, nhân, chia số tự nhiên, chia có dư, tính chất) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (9–56); nháp lớp 6 ghép sau đoạn tách V1.61 (@SAU_V161) V2.82: Phiếu in sẵn tên (mỗi em một mã): đáp án gửi MBP Chấm kèm tên, SBD học sinh để app chấm tự nhận bài của em nào V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -73826,6 +73826,2585 @@ GT(11,0,3,'VD','Thực tế: tổng hai dao động cùng biên độ x₁ = A s
 }
 
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.88'; GEN[k].l1 = 'V2.88'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.1 Xác suất có điều kiện (12|6|0), đợt 1 (dạng 6–10: 5 TN). Claude viết.
+// Chuỗi: định nghĩa P(A|B) từ P(A), P(B), P(A ∩ B) (6) → bảng hai chiều, phân biệt P(A|B) với P(B|A) (7)
+// → thu hẹp không gian mẫu khi gieo hai xúc xắc (8) → P(A | B̄) (bẫy 1 − P(A|B)) (9) → rút thẻ, biết chia hết cho p (10).
+
+/* 6. TN NB — định nghĩa */
+G(12,6,0,'NB','Tính P(A | B) hoặc P(B | A) khi biết P(A), P(B), P(A ∩ B) — bẫy chia nhầm cho xác suất của biến cố kia, nhân thay vì chia', R=>{
+  const a = 5*R.int(4, 16), b = 5*R.int(4, 16), c = 5*R.int(1, 15); if(a === b || c >= Math.min(a, b) || a + b - c > 100) return null;
+  const hoi = R.pick(['AB', 'BA']), den = hoi === 'AB' ? b : a, oth = hoi === 'AB' ? a : b;
+  const L = hoi === 'AB' ? 'P(A \\mid B)' : 'P(B \\mid A)', E = hoi === 'AB' ? 'B' : 'A';
+  const ans = xcFr(c, den), wrong = xcW(R, ans, [xcFr(c, oth), xcFr(den - c, den), xcNu(c*den/10000), xcFr(c, a + b - c)]); if(!wrong) return null;
+  const o = {stem:`Cho hai biến cố $A$ và $B$ có $P(A) = ${xcP(a)}$, $P(B) = ${xcP(b)}$ và $P(A \\cap B) = ${xcP(c)}$. Giá trị của $${L}$ bằng`, ans, wrong,
+    lg:`$${L} = \\dfrac{P(A \\cap B)}{P(${E})} = \\dfrac{${xcP(c)}}{${xcP(den)}} = ${frT(c, den)}$.`,
+    verify:()=> near(o.ans.v, (c/100)/(den/100), 1e-9)};
+  return o;
+});
+
+/* 7. TN TH — bảng hai chiều */
+G(12,6,0,'TH','Bảng thống kê hai chiều (giới tính – cận thị, tiêm vắc xin – mắc cúm, …): chọn ngẫu nhiên một người, biết người đó thuộc nhóm này, tính xác suất thuộc nhóm kia — bẫy đổi chiều điều kiện, chia cho tổng số', R=>{
+  const ctx = R.pick([
+    {ai:'học sinh lớp 12 của một trường', u:'học sinh', r:['Nam', 'Nữ'], c:['Cận thị', 'Không cận thị'], rv:['là nam', 'là nữ'], cv:['bị cận thị', 'không bị cận thị']},
+    {ai:'khách hàng của một siêu thị trong một ngày', u:'khách hàng', r:['Có thẻ thành viên', 'Không có thẻ'], c:['Trên 500 nghìn đồng', 'Không quá 500 nghìn đồng'], rv:['có thẻ thành viên', 'không có thẻ thành viên'], cv:['mua hàng trên 500 nghìn đồng', 'mua hàng không quá 500 nghìn đồng']},
+    {ai:'người dân của một khu phố', u:'người', r:['Đã tiêm vắc xin', 'Chưa tiêm vắc xin'], c:['Mắc cúm', 'Không mắc cúm'], rv:['đã tiêm vắc xin', 'chưa tiêm vắc xin'], cv:['mắc cúm', 'không mắc cúm']},
+    {ai:'học sinh của một trường', u:'học sinh', r:['Đi xe buýt', 'Đi xe đạp'], c:['Từng đi học muộn', 'Chưa từng đi học muộn'], rv:['đi học bằng xe buýt', 'đi học bằng xe đạp'], cv:['từng đi học muộn', 'chưa từng đi học muộn']}]);
+  const n = [[R.int(6, 60), R.int(10, 90)], [R.int(6, 60), R.int(10, 90)]], i = R.int(0, 1), j = R.int(0, 1), N = n[0][0] + n[0][1] + n[1][0] + n[1][1];
+  const rs = n[i][0] + n[i][1], cs = n[0][j] + n[1][j], x = n[i][j], dir = R.pick(['c', 'r']);
+  const den = dir === 'c' ? cs : rs, oth = dir === 'c' ? rs : cs;
+  const ans = xcFr(x, den), wrong = xcW(R, ans, [xcFr(x, oth), xcFr(x, N), xcFr(den - x, den), xcFr(dir === 'c' ? rs : cs, N)]); if(!wrong) return null;
+  const biet = dir === 'c' ? ctx.cv[j] : ctx.rv[i], hoi = dir === 'c' ? ctx.rv[i] : ctx.cv[j];
+  const o = {stem:`Kết quả khảo sát $${N}$ ${ctx.ai} được cho trong bảng sau (đơn vị: ${ctx.u}):<br>${xcTb(ctx.r, ctx.c, n)}<br>Chọn ngẫu nhiên một ${ctx.u} trong số đó. Biết ${ctx.u} được chọn ${biet}, xác suất để ${ctx.u} đó ${hoi} bằng`, ans, wrong,
+    lg:`Gọi $B$: "${ctx.u} được chọn ${biet}", $A$: "${ctx.u} được chọn ${hoi}". Có $${dir === 'c' ? `${n[0][j]} + ${n[1][j]}` : `${n[i][0]} + ${n[i][1]}`} = ${den}$ ${ctx.u} ${biet}, trong đó có $${x}$ ${ctx.u} ${hoi}.<br>$P(A \\mid B) = \\dfrac{n(A \\cap B)}{n(B)} = \\dfrac{${x}}{${den}}${frT(x, den) === `\\dfrac{${x}}{${den}}` ? '' : ' = ' + frT(x, den)}$.`,
+    verify:()=> near(o.ans.v, (x/N)/(den/N), 1e-9)};
+  return o;
+});
+
+/* 8. TN TH — gieo hai xúc xắc, thu hẹp không gian mẫu */
+G(12,6,0,'TH','Gieo hai con xúc xắc: biết tổng số chấm bằng s (hoặc không nhỏ hơn s), tính xác suất có mặt k chấm, con thứ nhất chẵn, tích chẵn hoặc con thứ nhất lớn hơn — liệt kê không gian mẫu thu hẹp (bẫy chia cho 36)', R=>{
+  const bk = R.pick(['eq', 'ge']), s = bk === 'eq' ? R.int(4, 10) : R.int(7, 11), kind = R.pick(['k', 'chan', 'lon', 'tich']), k = R.int(1, 6);
+  const isB = ([u, v])=> bk === 'eq' ? u + v === s : u + v >= s, tB = bk === 'eq' ? `bằng $${s}$` : `không nhỏ hơn $${s}$`;
+  const all = []; for(let u = 1; u <= 6; u++) for(let v = 1; v <= 6; v++) all.push([u, v]);
+  const isA = ([u, v])=> kind === 'k' ? (u === k || v === k) : kind === 'chan' ? u % 2 === 0 : kind === 'tich' ? (u*v) % 2 === 0 : u > v;
+  const B = all.filter(isB), AB = B.filter(isA), A = all.filter(isA);
+  if(AB.length === 0 || AB.length === B.length) return null;
+  const ans = xcFr(AB.length, B.length), wrong = xcW(R, ans, [xcFr(AB.length, 36), xcFr(A.length, 36), xcFr(AB.length, A.length), xcFr(B.length - AB.length, B.length)]); if(!wrong) return null;
+  const tA = kind === 'k' ? `có ít nhất một con xúc xắc xuất hiện mặt $${k}$ chấm` : kind === 'chan' ? 'con xúc xắc thứ nhất xuất hiện mặt có số chấm chẵn' : kind === 'tich' ? 'tích số chấm xuất hiện trên hai con xúc xắc là số chẵn' : 'số chấm của con xúc xắc thứ nhất lớn hơn số chấm của con xúc xắc thứ hai';
+  const ls = L=> L.map(([u, v])=> `(${u}; ${v})`).join(', ');
+  const o = {stem:`Gieo đồng thời hai con xúc xắc cân đối và đồng chất (một con thứ nhất, một con thứ hai). Biết tổng số chấm xuất hiện trên hai con xúc xắc ${tB}, xác suất để ${tA} bằng`, ans, wrong,
+    lg:`Gọi $B$: "tổng số chấm ${tB}", $A$: "${tA}". Các kết quả thuận lợi cho $B$: $${ls(B)}$, gồm $${B.length}$ kết quả.<br>Trong đó các kết quả thuận lợi cho $A$: $${ls(AB)}$, gồm $${AB.length}$ kết quả.<br>$P(A \\mid B) = \\dfrac{n(A \\cap B)}{n(B)} = ${frT(AB.length, B.length)}$ (không chia cho $36$ vì đã biết $B$ xảy ra).`,
+    verify:()=>{ let nb = 0, nab = 0; for(let u = 1; u <= 6; u++) for(let v = 1; v <= 6; v++){ if(bk === 'eq' ? u + v !== s : u + v < s) continue; nb++; if(isA([u, v])) nab++; } return near(o.ans.v, (nab/36)/(nb/36), 1e-9); }};
+  return o;
+});
+
+/* 9. TN VD — P(A | B̄) */
+G(12,6,0,'VD','Tính P(A | B̄) = [P(A) − P(A ∩ B)] / [1 − P(B)] khi biết P(A), P(B), P(A ∩ B) — bẫy lấy 1 − P(A | B), quên chia cho P(B̄)', R=>{
+  const a = 5*R.int(4, 16), b = 5*R.int(4, 16), c = 5*R.int(1, 15); if(c >= Math.min(a, b) || a + b - c > 100 || a - c < 5) return null;
+  const sw = R.rnd() < 0.5, X = sw ? 'B' : 'A', Y = sw ? 'A' : 'B', pX = sw ? b : a, pY = sw ? a : b;
+  const ans = xcFr(pX - c, 100 - pY), wrong = xcW(R, ans, [xcFr(pY - c, pY), xcNu((pX - c)/100), xcFr(pX - c, pY), xcFr(100 - pX, 100 - pY)]); if(!wrong) return null;
+  const o = {stem:`Cho hai biến cố $A$ và $B$ có $P(A) = ${xcP(a)}$, $P(B) = ${xcP(b)}$ và $P(A \\cap B) = ${xcP(c)}$. Giá trị của $P(${X} \\mid \\overline{${Y}})$ bằng`, ans, wrong,
+    lg:`$P(\\overline{${Y}}) = 1 - ${xcP(pY)} = ${xcP(100 - pY)}$; $P(${X} \\cap \\overline{${Y}}) = P(${X}) - P(A \\cap B) = ${xcP(pX)} - ${xcP(c)} = ${xcP(pX - c)}$.<br>$P(${X} \\mid \\overline{${Y}}) = \\dfrac{P(${X} \\cap \\overline{${Y}})}{P(\\overline{${Y}})} = \\dfrac{${xcP(pX - c)}}{${xcP(100 - pY)}} = ${frT(pX - c, 100 - pY)}$.<br>(Lưu ý $P(${X} \\mid \\overline{${Y}}) \\ne 1 - P(${X} \\mid ${Y})$; điều đúng là $P(\\overline{${X}} \\mid ${Y}) = 1 - P(${X} \\mid ${Y})$.)`,
+    verify:()=>{ /* bảng bốn ô xác suất */ const pXnY = pX/100 - c/100, pnY = 1 - pY/100; return near(o.ans.v, pXnY/pnY, 1e-9) && near(pXnY + c/100 + (pY - c)/100 + (100 - a - b + c)/100, 1, 1e-9); }};
+  return o;
+});
+
+/* 10. TN VD — rút thẻ, biết số chia hết cho p */
+G(12,6,0,'VD','Rút ngẫu nhiên một thẻ đánh số từ 1 đến N: biết số trên thẻ chia hết cho p, tính xác suất số đó chia hết cho q (đếm bội của BCNN) — bẫy dùng tích p·q, chia cho N', R=>{
+  const N = R.int(20, 99), p = R.pick([2, 3, 4, 5, 6]), q = R.pick([2, 3, 4, 5, 6, 9, 10]); if(p === q) return null;
+  const L = p*q/xcG(p, q); if(L === p) return null;
+  const nB = Math.floor(N/p), nAB = Math.floor(N/L), nA = Math.floor(N/q); if(nAB < 1) return null;
+  const ans = xcFr(nAB, nB), wrong = xcW(R, ans, [xcFr(nAB, N), xcFr(nA, N), xcFr(nAB, nA), xcFr(Math.floor(N/(p*q)), nB), xcFr(1, q)]); if(!wrong) return null;
+  const o = {stem:`Một hộp đựng $${N}$ tấm thẻ được đánh số từ $1$ đến $${N}$. Rút ngẫu nhiên một tấm thẻ. Biết số ghi trên thẻ rút được chia hết cho $${p}$, xác suất để số đó chia hết cho $${q}$ bằng`, ans, wrong,
+    lg:`Gọi $B$: "số trên thẻ chia hết cho $${p}$", $A$: "số trên thẻ chia hết cho $${q}$". Từ $1$ đến $${N}$ có $${nB}$ số chia hết cho $${p}$.<br>Số chia hết cho cả $${p}$ và $${q}$ là số chia hết cho $\\text{BCNN}(${p}, ${q}) = ${L}$: có $${nAB}$ số.<br>$P(A \\mid B) = \\dfrac{n(A \\cap B)}{n(B)} = \\dfrac{${nAB}}{${nB}}${frT(nAB, nB) === `\\dfrac{${nAB}}{${nB}}` ? '' : ' = ' + frT(nAB, nB)}$.`,
+    verify:()=>{ let b = 0, ab = 0; for(let t = 1; t <= N; t++){ if(t % p) continue; b++; if(t % q === 0) ab++; } return near(o.ans.v, ab/b, 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.1 Xác suất có điều kiện (12|6|0), đợt 2 (dạng 11–15: 1 TN, 4 Đ–S). Claude viết.
+// Chuỗi: công thức nhân trong tình huống thực tế (11) → Đ–S bảng hai chiều và tính độc lập (12)
+// → Đ–S lấy bi không hoàn lại, công thức nhân (13) → Đ–S chọn hai người, biết có ít nhất một nữ (14) → Đ–S từ P(A), P(B), P(A ∪ B) (15).
+
+/* 11. TN TH — công thức nhân xác suất trong thực tế */
+G(12,6,0,'TH','Công thức nhân xác suất trong thực tế: P(A ∩ B) = P(A)·P(B | A) hoặc P(A ∩ B̄) = P(A)·[1 − P(B | A)] (hai vòng thi, khách mua hàng, hai khâu kiểm tra) — bẫy lấy luôn P(B | A)', R=>{
+  const ctx = R.pick([
+    {intro:(a, b)=> `Một thí sinh tham gia một cuộc thi gồm hai vòng. Xác suất thí sinh đó vượt qua vòng 1 là $${xcPc(a)}$. Nếu đã vượt qua vòng 1 thì xác suất thí sinh đó vượt qua vòng 2 là $${xcPc(b)}$.`,
+     A:'thí sinh vượt qua vòng 1', B:'thí sinh vượt qua vòng 2', q1:'thí sinh đó vượt qua cả hai vòng thi', q2:'thí sinh đó vượt qua vòng 1 nhưng không vượt qua vòng 2'},
+    {intro:(a, b)=> `Tại một cửa hàng tiện lợi, có $${xcPc(a)}$ khách hàng mua bánh mì; trong số khách hàng mua bánh mì, có $${xcPc(b)}$ khách hàng mua thêm sữa. Chọn ngẫu nhiên một khách hàng của cửa hàng.`,
+     A:'khách hàng mua bánh mì', B:'khách hàng mua sữa', q1:'khách hàng đó mua cả bánh mì và sữa', q2:'khách hàng đó mua bánh mì nhưng không mua sữa'},
+    {intro:(a, b)=> `Mỗi sản phẩm của một xưởng phải qua hai khâu kiểm tra. Có $${xcPc(a)}$ sản phẩm đạt khâu thứ nhất; trong số các sản phẩm đạt khâu thứ nhất, có $${xcPc(b)}$ sản phẩm đạt khâu thứ hai. Chọn ngẫu nhiên một sản phẩm của xưởng.`,
+     A:'sản phẩm đạt khâu thứ nhất', B:'sản phẩm đạt khâu thứ hai', q1:'sản phẩm đó đạt cả hai khâu kiểm tra', q2:'sản phẩm đó đạt khâu thứ nhất nhưng không đạt khâu thứ hai'}]);
+  const a = 5*R.int(8, 19), b = 5*R.int(6, 19), hoi = R.pick([1, 2]), bb = hoi === 1 ? b : 100 - b, v = a*bb/10000;
+  const ans = xcNu(v), wrong = xcW(R, ans, [xcNu(bb/100), xcNu(a*(100 - bb)/10000), xcNu((a + bb)/200), xcNu(a/100), xcNu(Math.abs(a - bb)/100)]); if(!wrong) return null;
+  const o = {stem:`${ctx.intro(a, b)} Xác suất để ${hoi === 1 ? ctx.q1 : ctx.q2} bằng`, ans, wrong,
+    lg:`Gọi $A$: "${ctx.A}", $B$: "${ctx.B}". Ta có $P(A) = ${xcP(a)}$, $P(B \\mid A) = ${xcP(b)}$${hoi === 2 ? ` nên $P(\\overline{B} \\mid A) = 1 - ${xcP(b)} = ${xcP(100 - b)}$` : ''}.<br>Theo công thức nhân xác suất: $P(A \\cap ${hoi === 1 ? 'B' : '\\overline{B}'}) = P(A) \\cdot P(${hoi === 1 ? 'B' : '\\overline{B}'} \\mid A) = ${xcP(a)} \\cdot ${xcP(bb)} = ${nt(v)}$.`,
+    verify:()=>{ /* đếm trên 10 000 người giả định */ const nA = a*100, nAB = nA*b/100; return near(o.ans.v, (hoi === 1 ? nAB : nA - nAB)/10000, 1e-9); }};
+  return o;
+});
+
+/* 12. Đ–S TH — bảng hai chiều, tính độc lập */
+GD(12,6,0,'TH','Đúng – Sai: bảng thống kê hai chiều (câu lạc bộ, khảo sát) — P(B), P(A | B), P(B | A) và kiểm tra hai biến cố có độc lập không (so sánh P(A | B) với P(A))', R=>{
+  const ctx = R.pick([
+    {ai:'thành viên của một câu lạc bộ thể thao', u:'thành viên', r:['Nam', 'Nữ'], c:['Thích bóng đá', 'Không thích bóng đá'], rv:'là nam', cv:'thích bóng đá'},
+    {ai:'học sinh khối 11 của một trường', u:'học sinh', r:['Học thêm Toán', 'Không học thêm Toán'], c:['Điểm Toán từ 8 trở lên', 'Điểm Toán dưới 8'], rv:'có học thêm Toán', cv:'có điểm Toán từ 8 trở lên'},
+    {ai:'người đi xe máy được kiểm tra trên một tuyến đường', u:'người', r:['Có mũ đạt chuẩn', 'Mũ không đạt chuẩn'], c:['Dưới 30 tuổi', 'Từ 30 tuổi trở lên'], rv:'đội mũ bảo hiểm đạt chuẩn', cv:'dưới 30 tuổi'}]);
+  let n;
+  if(R.rnd() < 0.4){ const p = R.int(2, 6), q = R.int(2, 7), k = R.int(2, 9), m = R.int(2, 9); if(p === q || k === m) return null; n = [[k*p, k*q], [m*p, m*q]]; }
+  else n = [[R.int(8, 60), R.int(8, 60)], [R.int(8, 60), R.int(8, 60)]];
+  const N = n[0][0] + n[0][1] + n[1][0] + n[1][1], rA = n[0][0] + n[0][1], cB = n[0][0] + n[1][0], x = n[0][0], indep = x*N === rA*cB;
+  if(x === cB || x === rA) return null;
+  const items = [
+    claimN(R, v=> `Xác suất để ${ctx.u} được chọn ${ctx.cv} bằng $${v}$`, cB/N, frT(cB, N), x/N, frT(x, N), ()=> (n[0][0] + n[1][0])/N),
+    claimN(R, v=> `Biết ${ctx.u} được chọn ${ctx.cv}, xác suất để ${ctx.u} đó ${ctx.rv} bằng $${v}$`, x/cB, frT(x, cB), x/rA, frT(x, rA), ()=> (x/N)/(cB/N)),
+    claimN(R, v=> `Biết ${ctx.u} được chọn ${ctx.rv}, xác suất để ${ctx.u} đó ${ctx.cv} bằng $${v}$`, x/rA, frT(x, rA), (cB - x)/(N - rA), frT(cB - x, N - rA), ()=> (x/N)/(rA/N)),
+    claim(R, `Hai biến cố $A$: "${ctx.u} được chọn ${ctx.rv}" và $B$: "${ctx.u} được chọn ${ctx.cv}" ${indep ? 'là hai biến cố độc lập' : 'không độc lập'}`, `Hai biến cố $A$: "${ctx.u} được chọn ${ctx.rv}" và $B$: "${ctx.u} được chọn ${ctx.cv}" ${indep ? 'không độc lập' : 'là hai biến cố độc lập'}`,
+      ()=> (Math.abs(x/cB - rA/N) < 1e-12) === indep, ()=> (Math.abs(x/cB - rA/N) < 1e-12) !== indep)];
+  return {stem:`Kết quả khảo sát $${N}$ ${ctx.ai} được cho trong bảng sau (đơn vị: ${ctx.u}):<br>${xcTb(ctx.r, ctx.c, n)}<br>Chọn ngẫu nhiên một ${ctx.u} trong số đó. Gọi $A$ là biến cố "${ctx.u} được chọn ${ctx.rv}", $B$ là biến cố "${ctx.u} được chọn ${ctx.cv}".`, items,
+    lg:`a) Có $${n[0][0]} + ${n[1][0]} = ${cB}$ ${ctx.u} ${ctx.cv} nên $P(B) = \\dfrac{${cB}}{${N}}${frT(cB, N) === `\\dfrac{${cB}}{${N}}` ? '' : ' = ' + frT(cB, N)}$.<br>`
+      + `b) $P(A \\mid B) = \\dfrac{n(A \\cap B)}{n(B)} = \\dfrac{${x}}{${cB}}${frT(x, cB) === `\\dfrac{${x}}{${cB}}` ? '' : ' = ' + frT(x, cB)}$.<br>`
+      + `c) $n(A) = ${n[0][0]} + ${n[0][1]} = ${rA}$ nên $P(B \\mid A) = \\dfrac{n(A \\cap B)}{n(A)} = \\dfrac{${x}}{${rA}}${frT(x, rA) === `\\dfrac{${x}}{${rA}}` ? '' : ' = ' + frT(x, rA)}$.<br>`
+      + `d) $P(A) = \\dfrac{${rA}}{${N}}${frT(rA, N) === `\\dfrac{${rA}}{${N}}` ? '' : ' = ' + frT(rA, N)}$, $P(A \\mid B) = ${frT(x, cB)}$. ${indep ? `Vì $P(A \\mid B) = P(A)$ nên $A$ và $B$ độc lập.` : `Vì $P(A \\mid B) \\ne P(A)$ nên $A$ và $B$ không độc lập.`}`};
+});
+
+/* 13. Đ–S VD — lấy bi không hoàn lại */
+GD(12,6,0,'VD','Đúng – Sai: lấy lần lượt hai viên bi không hoàn lại — P(lần 1 đỏ), P(lần 2 đỏ | lần 1 đỏ), P(cả hai đỏ), P(lần 1 đỏ và lần 2 xanh) bằng công thức nhân (bẫy coi như có hoàn lại)', R=>{
+  const a = R.int(3, 9), b = R.int(2, 8), N = a + b, col = R.pick([['đỏ', 'xanh'], ['trắng', 'đen'], ['vàng', 'xanh']]);
+  const items = [
+    claimN(R, v=> `Xác suất để viên bi lấy lần thứ nhất màu ${col[0]} bằng $${v}$`, a/N, frT(a, N), b/N, frT(b, N), ()=> a/N),
+    claimN(R, v=> `$P(A_2 \\mid A_1) = ${v}$`, (a - 1)/(N - 1), frT(a - 1, N - 1), a/N, frT(a, N), ()=>{ let c = 0, t = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++){ if(i === j || i >= a) continue; t++; if(j < a) c++; } return c/t; }),
+    claimN(R, v=> `Xác suất để cả hai viên bi lấy ra đều màu ${col[0]} bằng $${v}$`, a*(a - 1)/(N*(N - 1)), frT(a*(a - 1), N*(N - 1)), a*a/(N*N), frT(a*a, N*N), ()=> xcC(a, 2)/xcC(N, 2)),
+    claimN(R, v=> `Xác suất để viên bi lấy lần thứ nhất màu ${col[0]} và viên bi lấy lần thứ hai màu ${col[1]} bằng $${v}$`, a*b/(N*(N - 1)), frT(a*b, N*(N - 1)), 2*a*b/(N*(N - 1)), frT(2*a*b, N*(N - 1)), ()=>{ let c = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++) if(i !== j && i < a && j >= a) c++; return c/(N*(N - 1)); })];
+  if(near(a*(a - 1)/(N*(N - 1)), a*a/(N*N), 1e-9)) return null;
+  return {stem:`Một hộp có $${a}$ viên bi ${col[0]} và $${b}$ viên bi ${col[1]}, các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên lần lượt hai viên bi, không hoàn lại. Gọi $A_1$ là biến cố "viên bi lấy lần thứ nhất màu ${col[0]}", $A_2$ là biến cố "viên bi lấy lần thứ hai màu ${col[0]}".`, items,
+    lg:`a) $P(A_1) = ${frT(a, N)}$.<br>b) Khi $A_1$ xảy ra, hộp còn $${N - 1}$ viên bi, trong đó có $${a - 1}$ viên màu ${col[0]} nên $P(A_2 \\mid A_1) = ${frT(a - 1, N - 1)}$.<br>`
+      + `c) $P(A_1 \\cap A_2) = P(A_1) \\cdot P(A_2 \\mid A_1) = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${a - 1}}{${N - 1}} = ${frT(a*(a - 1), N*(N - 1))}$.<br>`
+      + `d) Khi $A_1$ xảy ra, hộp còn $${b}$ viên màu ${col[1]} trong $${N - 1}$ viên nên $P(A_1 \\cap \\overline{A_2}) = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${b}}{${N - 1}} = ${frT(a*b, N*(N - 1))}$.`};
+});
+
+/* 14. Đ–S VD — chọn hai người, biết có ít nhất một nữ */
+GD(12,6,0,'VD','Đúng – Sai: chọn ngẫu nhiên hai học sinh từ nhóm có m nam, n nữ — biết có ít nhất một nữ, xác suất cả hai là nữ, đúng một nữ (bẫy dùng không gian mẫu ban đầu)', R=>{
+  const m = R.int(3, 10), n = R.int(3, 10), T = xcC(m + n, 2), cm = xcC(m, 2), cn = xcC(n, 2), nB = T - cm, nB2 = T - cn;
+  const items = [
+    claimN(R, v=> `Xác suất để có ít nhất một học sinh nữ bằng $${v}$`, nB/T, frT(nB, T), n*m/T, frT(n*m, T), ()=> 1 - cm/T),
+    claimN(R, v=> `Biết trong hai học sinh được chọn có ít nhất một học sinh nữ, xác suất để cả hai đều là nữ bằng $${v}$`, cn/nB, frT(cn, nB), cn/T, frT(cn, T), ()=>{ let b = 0, ab = 0; for(let i = 0; i < m + n; i++) for(let j = i + 1; j < m + n; j++){ const nu = (i >= m) + (j >= m); if(nu) b++; if(nu === 2) ab++; } return ab/b; }),
+    claimN(R, v=> `Biết trong hai học sinh được chọn có ít nhất một học sinh nữ, xác suất để có đúng một học sinh nữ bằng $${v}$`, m*n/nB, frT(m*n, nB), m*n/T, frT(m*n, T), ()=> 1 - cn/nB),
+    claimN(R, v=> `Biết trong hai học sinh được chọn có ít nhất một học sinh nam, xác suất để cả hai đều là nam bằng $${v}$`, cm/nB2, frT(cm, nB2), cm/nB, frT(cm, nB), ()=> (cm/T)/(1 - cn/T))];
+  if(near(cm/nB2, cm/nB, 1e-9)) return null;
+  return {stem:`Một nhóm học sinh có $${m}$ nam và $${n}$ nữ. Chọn ngẫu nhiên đồng thời hai học sinh trong nhóm.`, items,
+    lg:`Số cách chọn hai học sinh: $C_{${m + n}}^{2} = ${T}$; chỉ có nam: $C_{${m}}^{2} = ${cm}$; chỉ có nữ: $C_{${n}}^{2} = ${cn}$; một nam một nữ: $${m} \\cdot ${n} = ${m*n}$.<br>`
+      + `a) $B$: "có ít nhất một nữ" có $${T} - ${cm} = ${nB}$ kết quả nên $P(B) = ${frT(nB, T)}$.<br>`
+      + `b) Biết $B$ xảy ra, không gian mẫu thu hẹp còn $${nB}$ kết quả, trong đó $${cn}$ kết quả cả hai là nữ: xác suất bằng $${frT(cn, nB)}$.<br>`
+      + `c) Trong $${nB}$ kết quả đó có $${m*n}$ kết quả đúng một nữ: xác suất bằng $${frT(m*n, nB)}$.<br>`
+      + `d) "Có ít nhất một nam" có $${T} - ${cn} = ${nB2}$ kết quả, trong đó $${cm}$ kết quả cả hai là nam: xác suất bằng $${frT(cm, nB2)}$.`};
+});
+
+/* 15. Đ–S VD — từ P(A), P(B), P(A ∪ B) */
+GD(12,6,0,'VD','Đúng – Sai: cho P(A), P(B), P(A ∪ B) — tính P(A ∩ B), P(A | B), P(Ā | B) và kiểm tra A, B độc lập (bẫy P(A ∩ B) = P(A)·P(B) khi chưa biết độc lập)', R=>{
+  const a = 10*R.int(2, 8), b = 10*R.int(2, 8), ind = R.rnd() < 0.4, c = ind ? a*b/100 : a*b/100 + R.pick([-8, -6, -4, 4, 6, 8, 10]);
+  if(c <= 0 || c >= Math.min(a, b) || a + b - c > 100 || a === b) return null;
+  const u = a + b - c;
+  const items = [
+    claimN(R, v=> `$P(A \\cap B) = ${v}$`, c/100, xcP(c), ind ? (a + b - u + 5)/100 : a*b/10000, ind ? xcP(a + b - u + 5) : nt(a*b/10000), ()=> (a + b - u)/100),
+    claimN(R, v=> `$P(A \\mid B) = ${v}$`, c/b, frT(c, b), c/a, frT(c, a), ()=> ((a + b - u)/100)/(b/100)),
+    claimN(R, v=> `$P(\\overline{A} \\mid B) = ${v}$`, (b - c)/b, frT(b - c, b), ind ? (b - c)/100 : (100 - a)/100, ind ? xcP(b - c) : xcP(100 - a), ()=> 1 - ((a + b - u)/100)/(b/100)),
+    claim(R, `Hai biến cố $A$ và $B$ ${ind ? 'độc lập' : 'không độc lập'}`, `Hai biến cố $A$ và $B$ ${ind ? 'không độc lập' : 'độc lập'}`, ()=> (Math.abs(c/b - a/100) < 1e-12) === ind, ()=> (Math.abs(c/b - a/100) < 1e-12) !== ind)];
+  if(near(c/b, c/a, 1e-9) || near((b - c)/b, ind ? (b - c)/100 : (100 - a)/100, 1e-9)) return null;
+  return {stem:`Cho hai biến cố $A$ và $B$ có $P(A) = ${xcP(a)}$, $P(B) = ${xcP(b)}$ và $P(A \\cup B) = ${xcP(u)}$.`, items,
+    lg:`a) $P(A \\cap B) = P(A) + P(B) - P(A \\cup B) = ${xcP(a)} + ${xcP(b)} - ${xcP(u)} = ${xcP(c)}$.<br>b) $P(A \\mid B) = \\dfrac{P(A \\cap B)}{P(B)} = \\dfrac{${xcP(c)}}{${xcP(b)}} = ${frT(c, b)}$.<br>`
+      + `c) $P(\\overline{A} \\mid B) = 1 - P(A \\mid B) = ${frT(b - c, b)}$.<br>d) ${ind ? `$P(A \\mid B) = ${frT(c, b)} = ${xcP(a)} = P(A)$ nên $A$ và $B$ độc lập` : `$P(A \\mid B) = ${frT(c, b)} \\ne ${xcP(a)} = P(A)$ nên $A$ và $B$ không độc lập`} (cũng có thể so sánh $P(A \\cap B) = ${xcP(c)}$ với $P(A) \\cdot P(B) = ${nt(a*b/10000)}$).`};
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.1 Xác suất có điều kiện (12|6|0), đợt 3 (dạng 16–20: 5 TLN). Claude viết.
+// Chuỗi: bảng hai chiều (16) → công thức nhân, hỏi ngược P(B|A) (17) → hỏi ngược số người từ hai xác suất có điều kiện (18)
+// → chọn ba người, biết có ít nhất một nữ (19) → rút hai thẻ, biết thẻ thứ nhất (20). Đáp số dạng phần trăm, ≤ 1 chữ số thập phân.
+
+/* 16. TLN TH — bảng hai chiều, đáp số phần trăm */
+GT(12,6,0,'TH','Bảng thống kê hai chiều (hãng điện thoại – mức hài lòng, bằng cấp – thu nhập, ôn luyện – điểm thi thử): biết người được chọn thuộc nhóm này, tính xác suất thuộc nhóm kia (đáp số phần trăm)', R=>{
+  const ctx = R.pick([
+    {ai:'người dùng điện thoại', u:'người', r:['Hãng M', 'Hãng N'], c:['Hài lòng', 'Chưa hài lòng'], rv:['dùng điện thoại hãng M', 'dùng điện thoại hãng N'], cv:['hài lòng với điện thoại đang dùng', 'chưa hài lòng với điện thoại đang dùng']},
+    {ai:'nhân viên của một công ty', u:'nhân viên', r:['Có bằng đại học', 'Không có bằng đại học'], c:['Trên 15 triệu đồng', 'Không quá 15 triệu đồng'], rv:['có bằng đại học', 'không có bằng đại học'], cv:['có thu nhập trên 15 triệu đồng mỗi tháng', 'có thu nhập không quá 15 triệu đồng mỗi tháng']},
+    {ai:'học sinh lớp 12 tham gia thi thử', u:'học sinh', r:['Ôn luyện đều đặn', 'Không ôn luyện đều đặn'], c:['Từ 8 điểm trở lên', 'Dưới 8 điểm'], rv:['ôn luyện đều đặn', 'không ôn luyện đều đặn'], cv:['đạt từ 8 điểm trở lên', 'đạt dưới 8 điểm']}]);
+  const n = [[R.int(10, 120), R.int(10, 120)], [R.int(10, 120), R.int(10, 120)]], i = R.int(0, 1), j = R.int(0, 1), N = n[0][0] + n[0][1] + n[1][0] + n[1][1];
+  const rs = n[i][0] + n[i][1], cs = n[0][j] + n[1][j], k = n[i][j], dir = R.pick(['c', 'r']), den = dir === 'c' ? cs : rs;
+  const A = xcAns(100*k/den); if(!A) return null;
+  const biet = dir === 'c' ? ctx.cv[j] : ctx.rv[i], hoi = dir === 'c' ? ctx.rv[i] : ctx.cv[j];
+  const o = {stem:`Kết quả khảo sát $${N}$ ${ctx.ai} được cho trong bảng sau (đơn vị: ${ctx.u}):<br>${xcTb(ctx.r, ctx.c, n)}<br>Chọn ngẫu nhiên một ${ctx.u} trong số đó. Biết ${ctx.u} được chọn ${biet}, xác suất để ${ctx.u} đó ${hoi} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Có $${dir === 'c' ? `${n[0][j]} + ${n[1][j]}` : `${n[i][0]} + ${n[i][1]}`} = ${den}$ ${ctx.u} ${biet}, trong đó có $${k}$ ${ctx.u} ${hoi}.<br>Xác suất cần tìm bằng $${xcFq(k, den)}$ nên $x = 100 \\cdot ${frT(k, den)} ${A.ap}$.`,
+    verify:()=> near(o.ans, xcR1(100*(k/N)/(den/N)), 1e-9)};
+  return o;
+});
+
+/* 17. TLN TH — công thức nhân, hỏi ngược */
+GT(12,6,0,'TH','Công thức nhân xác suất (trả lời ngắn): P(A ∩ B) = P(A)·P(B | A), P(A ∩ B̄) = P(A)·P(B̄ | A) hoặc hỏi ngược P(B | A) = P(A ∩ B)/P(A) — mưa và hoãn trận đấu, xe buýt và đến muộn, hộ có internet và truyền hình', R=>{
+  const kind = R.pick(['mua', 'bus', 'net']), a = 5*R.int(4, 18), b = 5*R.int(2, 18), hoi = R.pick(['AB', 'ABn', 'BA']);
+  let stem, lg, v, chk;
+  if(hoi === 'BA'){ const c = 5*R.int(1, 17); if(c >= a) return null; v = 100*c/a;
+    const T = {mua:[`Theo thống kê ở một địa phương, có $${xcPc(a)}$ số ngày trong tháng Bảy có mưa và có $${xcPc(c)}$ số ngày trong tháng Bảy vừa có mưa vừa xảy ra ngập úng. Chọn ngẫu nhiên một ngày có mưa của tháng Bảy`, 'ngày đó xảy ra ngập úng', 'ngày được chọn có mưa', 'ngày được chọn xảy ra ngập úng'],
+      bus:[`Ở một trường, có $${xcPc(a)}$ học sinh đi học bằng xe buýt và có $${xcPc(c)}$ học sinh vừa đi học bằng xe buýt vừa từng đến trường muộn. Chọn ngẫu nhiên một học sinh đi học bằng xe buýt`, 'học sinh đó từng đến trường muộn', 'học sinh đi học bằng xe buýt', 'học sinh từng đến trường muộn'],
+      net:[`Ở một khu dân cư, có $${xcPc(a)}$ hộ gia đình lắp internet cáp quang và có $${xcPc(c)}$ hộ gia đình lắp cả internet cáp quang và truyền hình cáp. Chọn ngẫu nhiên một hộ có lắp internet cáp quang`, 'hộ đó có lắp truyền hình cáp', 'hộ lắp internet cáp quang', 'hộ lắp truyền hình cáp']}[kind];
+    const A = xcAns(v); if(!A) return null;
+    stem = `${T[0]}. Xác suất để ${T[1]} bằng $x\\%$. Tìm $x$${A.lt}.`;
+    lg = `Gọi $A$: "${T[2]}", $B$: "${T[3]}". $P(A) = ${xcP(a)}$, $P(A \\cap B) = ${xcP(c)}$ nên $P(B \\mid A) = \\dfrac{P(A \\cap B)}{P(A)} = \\dfrac{${xcP(c)}}{${xcP(a)}} = ${frT(c, a)}$.<br>Vậy $x = 100 \\cdot ${frT(c, a)} ${A.ap}$.`;
+    chk = ()=> xcR1(100*(c*100)/(a*100)); v = A.v;
+  } else {
+    const bb = hoi === 'AB' ? b : 100 - b; v = a*bb/100; if(!xcEx(v)) return null;
+    const T = {mua:[`Theo dự báo, xác suất có mưa vào chiều Chủ nhật là $${xcPc(a)}$. Nếu có mưa thì xác suất trận bóng đá chiều hôm đó bị hoãn là $${xcPc(b)}$.`, hoi === 'AB' ? 'chiều Chủ nhật có mưa và trận bóng đá bị hoãn' : 'chiều Chủ nhật có mưa nhưng trận bóng đá vẫn diễn ra', 'có mưa', 'trận đấu bị hoãn'],
+      bus:[`Ở một trường, có $${xcPc(a)}$ học sinh đi học bằng xe buýt; trong số các học sinh đi học bằng xe buýt, có $${xcPc(b)}$ học sinh từng đến trường muộn. Chọn ngẫu nhiên một học sinh của trường.`, hoi === 'AB' ? 'học sinh đó đi học bằng xe buýt và từng đến trường muộn' : 'học sinh đó đi học bằng xe buýt và chưa từng đến trường muộn', 'học sinh đi học bằng xe buýt', 'học sinh từng đến trường muộn'],
+      net:[`Ở một khu dân cư, có $${xcPc(a)}$ hộ gia đình lắp internet cáp quang; trong số đó, có $${xcPc(b)}$ hộ lắp thêm truyền hình cáp. Chọn ngẫu nhiên một hộ của khu dân cư.`, hoi === 'AB' ? 'hộ đó lắp cả internet cáp quang và truyền hình cáp' : 'hộ đó lắp internet cáp quang nhưng không lắp truyền hình cáp', 'hộ lắp internet cáp quang', 'hộ lắp truyền hình cáp']}[kind];
+    if(v <= 0) return null;
+    stem = `${T[0]} Xác suất để ${T[1]} bằng $x\\%$. Tìm $x$.`;
+    lg = `Gọi $A$: "${T[2]}", $B$: "${T[3]}". $P(A) = ${xcP(a)}$, $P(B \\mid A) = ${xcP(b)}$${hoi === 'ABn' ? `, $P(\\overline{B} \\mid A) = 1 - ${xcP(b)} = ${xcP(100 - b)}$` : ''}.<br>$P(A \\cap ${hoi === 'AB' ? 'B' : '\\overline{B}'}) = P(A) \\cdot P(${hoi === 'AB' ? 'B' : '\\overline{B}'} \\mid A) = ${xcP(a)} \\cdot ${xcP(bb)} = ${nt(v/100)}$ nên $x = ${nt(v)}$.`;
+    chk = ()=>{ const nA = a*100, nAB = nA*b/100; return (hoi === 'AB' ? nAB : nA - nAB)/100; };
+  }
+  const o = {stem, ans:v, lg, verify:()=> near(o.ans, chk(), 1e-9)};
+  return o;
+});
+
+/* 18. TLN VD — hỏi ngược số người */
+GT(12,6,0,'VD','Hỏi ngược từ hai xác suất có điều kiện: biết số người thuộc nhóm A, P(B | A) và P(A | B) — tìm số người thuộc nhóm B hoặc thuộc ít nhất một nhóm (n(A ∩ B) = P(B | A)·n(A))', R=>{
+  const ctx = R.pick([
+    {pre:'Một câu lạc bộ thể thao', A:'chơi cầu lông', B:'chơi bóng bàn', u:'thành viên'},
+    {pre:'Một trung tâm ngoại ngữ', A:'học tiếng Anh', B:'học tiếng Nhật', u:'học viên'},
+    {pre:'Một trường học', A:'tham gia câu lạc bộ Toán', B:'tham gia câu lạc bộ Tin học', u:'học sinh'}]);
+  const nA = R.int(20, 90), nAB = R.int(4, 40), nB = R.int(nAB + 2, 120); if(nAB >= nA - 2) return null;
+  const p = nAB/nA, q = nAB/nB, dec = x=> xcEx(x*10);   /* ≤ 2 chữ số thập phân */
+  if(!dec(p) || !dec(q)) return null;
+  const hoi = R.pick(['B', 'U']), ans = hoi === 'B' ? nB : nA + nB - nAB;
+  const o = {stem:`${ctx.pre} có $${nA}$ ${ctx.u} ${ctx.A}. Chọn ngẫu nhiên một ${ctx.u}. Biết rằng nếu chọn được ${ctx.u} ${ctx.A} thì xác suất ${ctx.u} đó ${ctx.B} là $${nt(p)}$; nếu chọn được ${ctx.u} ${ctx.B} thì xác suất ${ctx.u} đó ${ctx.A} là $${nt(q)}$. ${hoi === 'B' ? `Có bao nhiêu ${ctx.u} ${ctx.B}?` : `Có bao nhiêu ${ctx.u} ${ctx.A} hoặc ${ctx.B} (ít nhất một trong hai)?`}`, ans,
+    lg:`Gọi $A$: "${ctx.u} ${ctx.A}", $B$: "${ctx.u} ${ctx.B}". $P(B \\mid A) = \\dfrac{n(A \\cap B)}{n(A)}$ nên $n(A \\cap B) = ${nt(p)} \\cdot ${nA} = ${nAB}$.<br>$P(A \\mid B) = \\dfrac{n(A \\cap B)}{n(B)}$ nên $n(B) = \\dfrac{${nAB}}{${nt(q)}} = ${nB}$.`
+      + (hoi === 'U' ? `<br>Số ${ctx.u} ${ctx.A} hoặc ${ctx.B}: $n(A) + n(B) - n(A \\cap B) = ${nA} + ${nB} - ${nAB} = ${ans}$.` : ''),
+    verify:()=>{ let b = 0; for(let t = 1; t <= 500; t++) if(Math.abs(Math.round(p*nA)/t - q) < 1e-12){ b = t; break; } return b > 0 && o.ans === (hoi === 'B' ? b : nA + b - Math.round(p*nA)); }};
+  return o;
+});
+
+/* 19. TLN VD — chọn ba người, biết có ít nhất một nữ */
+GT(12,6,0,'VD','Chọn ngẫu nhiên ba học sinh từ nhóm có m nam, n nữ: biết có ít nhất một nữ, tính xác suất có đúng k nữ hoặc có ít nhất hai nữ (thu hẹp không gian mẫu, đáp số phần trăm)', R=>{
+  const m = R.int(3, 9), n = R.int(3, 9), N = m + n, k = R.pick([1, 2, 3, 'ge2']), T = xcC(N, 3), cm = xcC(m, 3), nB = T - cm;
+  const f = j=> xcC(n, j)*xcC(m, 3 - j), nAB = k === 'ge2' ? f(2) + f(3) : f(k);
+  const A = xcAns(100*nAB/nB); if(!A) return null;
+  const tk = k === 'ge2' ? 'có ít nhất hai học sinh nữ' : k === 3 ? 'cả ba học sinh đều là nữ' : `có đúng ${k === 1 ? 'một' : 'hai'} học sinh nữ`;
+  const tc = k === 'ge2' ? `C_{${n}}^{2} \\cdot C_{${m}}^{1} + C_{${n}}^{3} = ${f(2)} + ${f(3)}` : k === 3 ? `C_{${n}}^{3}` : `C_{${n}}^{${k}} \\cdot C_{${m}}^{${3 - k}}`;
+  const o = {stem:`Một nhóm học sinh có $${m}$ nam và $${n}$ nữ. Chọn ngẫu nhiên đồng thời ba học sinh trong nhóm. Biết trong ba học sinh được chọn có ít nhất một học sinh nữ, xác suất để ${tk} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $B$: "có ít nhất một nữ", $A$: "${tk}". $n(\\Omega) = C_{${N}}^{3} = ${T}$, $n(B) = C_{${N}}^{3} - C_{${m}}^{3} = ${T} - ${cm} = ${nB}$.<br>$n(A \\cap B) = ${tc} = ${nAB}$.<br>$P(A \\mid B) = ${xcFq(nAB, nB)}$ nên $x = 100 \\cdot ${frT(nAB, nB)} ${A.ap}$.`,
+    verify:()=>{ let b = 0, ab = 0; for(let i = 0; i < N; i++) for(let j = i + 1; j < N; j++) for(let l = j + 1; l < N; l++){ const nu = (i >= m) + (j >= m) + (l >= m); if(!nu) continue; b++; if(k === 'ge2' ? nu >= 2 : nu === k) ab++; } return near(o.ans, xcR1(100*ab/b), 1e-9); }};
+  return o;
+});
+
+/* 20. TLN TH — rút hai thẻ, biết thẻ thứ nhất */
+GT(12,6,0,'TH','Rút lần lượt hai thẻ không hoàn lại từ các thẻ đánh số 1 đến N: biết thẻ thứ nhất mang số chẵn (lẻ, không chia hết cho 3), tính xác suất tổng hai số chẵn (lẻ) hoặc tích chia hết cho 3 (đáp số phần trăm)', R=>{
+  const N = R.int(10, 40), kind = R.pick(['chan', 'le', 'ba']), hoi = R.pick(['chan', 'le']);
+  const c1 = kind === 'chan' ? (t=> t % 2 === 0) : kind === 'le' ? (t=> t % 2 === 1) : (t=> t % 3 !== 0);
+  const ev = kind === 'ba' ? ((s, t)=> (s*t) % 3 === 0) : hoi === 'chan' ? ((s, t)=> (s + t) % 2 === 0) : ((s, t)=> (s + t) % 2 === 1);
+  const E = Math.floor(N/2), O = N - E, M3 = Math.floor(N/3);
+  const same = hoi === 'chan', fav = kind === 'ba' ? M3 : same ? (kind === 'chan' ? E : O) - 1 : (kind === 'chan' ? O : E);   /* tổng chẵn ⇔ hai số cùng tính chẵn lẻ */
+  const A = xcAns(100*fav/(N - 1)); if(!A) return null;
+  const t1 = kind === 'chan' ? 'mang số chẵn' : kind === 'le' ? 'mang số lẻ' : 'mang số không chia hết cho $3$';
+  const t2 = kind === 'ba' ? 'tích hai số ghi trên hai thẻ chia hết cho $3$' : `tổng hai số ghi trên hai thẻ là số ${hoi === 'chan' ? 'chẵn' : 'lẻ'}`;
+  const why = kind === 'ba' ? `tích chia hết cho $3$ khi và chỉ khi thẻ thứ hai mang số chia hết cho $3$; từ $1$ đến $${N}$ có $${M3}$ số như vậy (đều khác thẻ thứ nhất)`
+    : same ? `tổng ${hoi === 'chan' ? 'chẵn' : 'lẻ'} khi và chỉ khi thẻ thứ hai cũng mang số ${kind === 'chan' ? 'chẵn' : 'lẻ'}; còn lại $${(kind === 'chan' ? E : O)} - 1 = ${fav}$ thẻ như vậy`
+    : `tổng ${hoi === 'chan' ? 'chẵn' : 'lẻ'} khi và chỉ khi thẻ thứ hai mang số ${kind === 'chan' ? 'lẻ' : 'chẵn'}; có $${fav}$ thẻ như vậy`;
+  const o = {stem:`Một hộp có $${N}$ tấm thẻ được đánh số từ $1$ đến $${N}$. Rút ngẫu nhiên lần lượt hai tấm thẻ, không hoàn lại. Biết thẻ rút lần thứ nhất ${t1}, xác suất để ${t2} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Khi thẻ thứ nhất ${t1}, hộp còn $${N - 1}$ thẻ; ${why}.<br>Xác suất cần tìm bằng $${xcFq(fav, N - 1)}$ nên $x = 100 \\cdot ${frT(fav, N - 1)} ${A.ap}$.`,
+    verify:()=>{ let b = 0, ab = 0; for(let s = 1; s <= N; s++) for(let t = 1; t <= N; t++){ if(s === t || !c1(s)) continue; b++; if(ev(s, t)) ab++; } return near(o.ans, xcR1(100*ab/b), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.1 Xác suất có điều kiện (12|6|0), đợt 4 (dạng 21–25: 5 TLN). Claude viết.
+// Chuỗi: công thức nhân cho ba lần lấy không hoàn lại (21) → gieo đồng xu, biết có ít nhất một lần sấp (22)
+// → P(A ∪ B) từ P(B)·P(A | B) (23) → P(Ā | B̄) từ P(A ∪ B) (24) → P(B | A) khi biết P(A | B) (25).
+
+/* 21. TLN VD — ba lần lấy không hoàn lại */
+GT(12,6,0,'VD','Công thức nhân cho ba lần lấy không hoàn lại: kiểm tra lần lượt ba sản phẩm của lô có k phế phẩm — xác suất cả ba đều tốt hoặc hai sản phẩm đầu tốt, sản phẩm thứ ba là phế phẩm (đáp số phần trăm)', R=>{
+  const N = R.int(15, 50), k = R.int(2, 8), g = N - k, hoi = R.pick(['ttt', 'ttp']);
+  const num = hoi === 'ttt' ? g*(g - 1)*(g - 2) : g*(g - 1)*k, den = N*(N - 1)*(N - 2), A = xcAns(100*num/den); if(!A) return null;
+  const f3 = hoi === 'ttt' ? `\\dfrac{${g - 2}}{${N - 2}}` : `\\dfrac{${k}}{${N - 2}}`;
+  const o = {stem:`Một lô hàng có $${N}$ sản phẩm, trong đó có $${k}$ phế phẩm. Nhân viên kiểm tra lấy ngẫu nhiên lần lượt ba sản phẩm của lô (sản phẩm đã lấy không trả lại lô). Xác suất để ${hoi === 'ttt' ? 'cả ba sản phẩm lấy ra đều là sản phẩm tốt' : 'hai sản phẩm lấy ra đầu tiên là sản phẩm tốt và sản phẩm lấy ra thứ ba là phế phẩm'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $A_i$: "sản phẩm lấy lần thứ $i$ là sản phẩm tốt" ($i = 1, 2, 3$). Lô có $${g}$ sản phẩm tốt.<br>`
+      + `$P(A_1) = \\dfrac{${g}}{${N}}$; $P(A_2 \\mid A_1) = \\dfrac{${g - 1}}{${N - 1}}$ (còn $${g - 1}$ sản phẩm tốt trong $${N - 1}$ sản phẩm); ${hoi === 'ttt' ? `$P(A_3 \\mid A_1 \\cap A_2) = \\dfrac{${g - 2}}{${N - 2}}$` : `$P(\\overline{A_3} \\mid A_1 \\cap A_2) = \\dfrac{${k}}{${N - 2}}$ (vẫn còn đủ $${k}$ phế phẩm)`}.<br>`
+      + `Theo công thức nhân: xác suất cần tìm bằng $\\dfrac{${g}}{${N}} \\cdot \\dfrac{${g - 1}}{${N - 1}} \\cdot ${f3} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let t = 0, c = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++){ if(j === i) continue; for(let l = 0; l < N; l++){ if(l === i || l === j) continue; t++; if(i < g && j < g && (hoi === 'ttt' ? l < g : l >= g)) c++; } } return near(o.ans, xcR1(100*c/t), 1e-9); }};
+  return o;
+});
+
+/* 22. TLN VD — gieo đồng xu, biết có ít nhất một lần sấp */
+GT(12,6,0,'VD','Gieo một đồng xu cân đối n lần: biết có ít nhất một lần xuất hiện mặt sấp (hoặc mặt ngửa), tính xác suất có đúng k lần hoặc ít nhất k lần xuất hiện mặt sấp (đếm trên không gian mẫu thu hẹp, đáp số phần trăm)', R=>{
+  const n = R.int(3, 6), cs = R.pick(['S', 'N']), q = R.pick(['eq', 'ge']), k = R.int(q === 'eq' ? 1 : 2, n);
+  const top = cs === 'S' ? n : n - 1;   /* điều kiện "ít nhất một ngửa" loại kết quả toàn sấp */
+  let nAB = 0, terms = []; for(let j = k; j <= (q === 'eq' ? k : n); j++){ if(j > top) continue; nAB += xcC(n, j); terms.push(`C_{${n}}^{${j}}`); }
+  const nB = 2**n - 1; if(!nAB) return null; const A = xcAns(100*nAB/nB); if(!A) return null;
+  const tB = cs === 'S' ? 'có ít nhất một lần xuất hiện mặt sấp' : 'có ít nhất một lần xuất hiện mặt ngửa', tA = `có ${q === 'eq' ? 'đúng' : 'ít nhất'} $${k}$ lần xuất hiện mặt sấp`;
+  const o = {stem:`Gieo một đồng xu cân đối và đồng chất $${n}$ lần liên tiếp. Biết rằng ${tB}, xác suất để ${tA} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Không gian mẫu gồm $2^{${n}} = ${2**n}$ kết quả đồng khả năng. Gọi $B$: "${tB}", $A$: "${tA}".<br>`
+      + `$B$ gồm mọi kết quả trừ kết quả cả $${n}$ lần đều ${cs === 'S' ? 'ngửa' : 'sấp'}: $n(B) = ${2**n} - 1 = ${nB}$.<br>`
+      + `$A \\cap B$: ${cs === 'N' && q === 'ge' ? `(kết quả cả $${n}$ lần đều sấp không thuộc $B$) ` : ''}$n(A \\cap B) = ${terms.join(' + ')} = ${nAB}$.<br>`
+      + `$P(A \\mid B) = ${xcFq(nAB, nB)}$ nên $x = 100 \\cdot ${frT(nAB, nB)} ${A.ap}$.`,
+    verify:()=>{ let b = 0, ab = 0; for(let s = 0; s < 2**n; s++){ let sap = 0; for(let i = 0; i < n; i++) if(s >> i & 1) sap++; if(cs === 'S' ? sap === 0 : sap === n) continue; b++; if(q === 'eq' ? sap === k : sap >= k) ab++; } return near(o.ans, xcR1(100*ab/b), 1e-9); }};
+  return o;
+});
+
+/* 23. TLN TH — P(A ∪ B) từ P(B)·P(A | B) */
+GT(12,6,0,'TH','Tính P(A ∪ B) hoặc P(Ā ∩ B̄) khi biết P(A), P(B), P(A | B): trước hết P(A ∩ B) = P(B)·P(A | B) — thích đọc sách và thể thao, biết tiếng Anh và tiếng Trung (đáp số phần trăm)', R=>{
+  const ctx = R.pick([
+    {pre:'Ở một trường', u:'học sinh', A:'thích đọc sách', B:'thích chơi thể thao', U:'thích ít nhất một trong hai hoạt động đó', N:'không thích cả hai hoạt động đó'},
+    {pre:'Ở một công ty', u:'nhân viên', A:'biết tiếng Anh', B:'biết tiếng Trung', U:'biết ít nhất một trong hai ngoại ngữ đó', N:'không biết cả hai ngoại ngữ đó'}]);
+  const a = 5*R.int(4, 14), b = 5*R.int(4, 14), c = 5*R.int(2, 16), ab = b*c/100, hoi = R.pick(['U', 'N']);
+  if(!xcEx(ab) || ab >= Math.min(a, b) || a + b - ab > 100) return null;
+  const u = a + b - ab, v = hoi === 'U' ? u : 100 - u; if(v <= 0) return null;
+  const o = {stem:`${ctx.pre}, có $${xcPc(a)}$ ${ctx.u} ${ctx.A} và $${xcPc(b)}$ ${ctx.u} ${ctx.B}; trong số các ${ctx.u} ${ctx.B}, có $${xcPc(c)}$ ${ctx.u} ${ctx.A}. Chọn ngẫu nhiên một ${ctx.u}. Xác suất để ${ctx.u} đó ${hoi === 'U' ? ctx.U : ctx.N} bằng $x\\%$. Tìm $x$.`, ans:v,
+    lg:`Gọi $A$: "${ctx.u} ${ctx.A}", $B$: "${ctx.u} ${ctx.B}". $P(A) = ${xcP(a)}$, $P(B) = ${xcP(b)}$, $P(A \\mid B) = ${xcP(c)}$.<br>`
+      + `$P(A \\cap B) = P(B) \\cdot P(A \\mid B) = ${xcP(b)} \\cdot ${xcP(c)} = ${xcP(ab)}$.<br>$P(A \\cup B) = P(A) + P(B) - P(A \\cap B) = ${xcP(a)} + ${xcP(b)} - ${xcP(ab)} = ${xcP(u)}$`
+      + (hoi === 'U' ? ` nên $x = ${nt(u)}$.` : `.<br>$P(\\overline{A} \\cap \\overline{B}) = 1 - P(A \\cup B) = ${xcP(100 - u)}$ nên $x = ${nt(100 - u)}$.`),
+    verify:()=>{ const nA = a*100, nB = b*100, nAB = nB*c/100, nU = nA + nB - nAB; return near(o.ans, (hoi === 'U' ? nU : 10000 - nU)/100, 1e-9); }};
+  return o;
+});
+
+/* 24. TLN VD — P(Ā | B̄) từ P(A ∪ B) */
+GT(12,6,0,'VD','Tính P(Ā | B̄) hoặc P(B̄ | Ā) khi biết P(A), P(B), P(A ∪ B): P(Ā ∩ B̄) = 1 − P(A ∪ B) (đáp số phần trăm)', R=>{
+  const a = 5*R.int(3, 16), b = 5*R.int(3, 16), c = 5*R.int(1, 12); if(c >= Math.min(a, b) || a + b - c >= 100 || a === b) return null;
+  const u = a + b - c, sw = R.rnd() < 0.5, X = sw ? 'B' : 'A', Y = sw ? 'A' : 'B', pY = sw ? a : b;
+  const A = xcAns(100*(100 - u)/(100 - pY)); if(!A) return null;
+  const o = {stem:`Cho hai biến cố $A$ và $B$ có $P(A) = ${xcP(a)}$, $P(B) = ${xcP(b)}$ và $P(A \\cup B) = ${xcP(u)}$. Biết $P(\\overline{${X}} \\mid \\overline{${Y}}) = x\\%$, tìm $x$${A.lt}.`, ans:A.v,
+    lg:`$P(\\overline{A} \\cap \\overline{B}) = P(\\overline{A \\cup B}) = 1 - ${xcP(u)} = ${xcP(100 - u)}$; $P(\\overline{${Y}}) = 1 - ${xcP(pY)} = ${xcP(100 - pY)}$.<br>`
+      + `$P(\\overline{${X}} \\mid \\overline{${Y}}) = \\dfrac{P(\\overline{A} \\cap \\overline{B})}{P(\\overline{${Y}})} = \\dfrac{${xcP(100 - u)}}{${xcP(100 - pY)}} = ${frT(100 - u, 100 - pY)}$ nên $x = 100 \\cdot ${frT(100 - u, 100 - pY)} ${A.ap}$.`,
+    verify:()=>{ /* bảng bốn ô */ const ab = (a + b - u)/100, nn = 1 - a/100 - b/100 + ab; return near(o.ans, xcR1(100*nn/(1 - pY/100)), 1e-9); }};
+  return o;
+});
+
+/* 25. TLN VD — P(B | A) khi biết P(A | B) */
+GT(12,6,0,'VD','Biết P(A), P(B) và P(A | B), tính P(B | A): P(A ∩ B) = P(B)·P(A | B) rồi chia cho P(A) — câu lạc bộ thể thao và âm nhạc, khách hàng mua online và dùng thẻ (bẫy cho rằng P(B | A) = P(A | B))', R=>{
+  const ctx = R.pick([
+    {pre:'Ở một trường', u:'học sinh', A:'tham gia câu lạc bộ thể thao', B:'tham gia câu lạc bộ âm nhạc'},
+    {pre:'Ở một cửa hàng', u:'khách hàng', A:'mua hàng trực tuyến', B:'thanh toán bằng thẻ tín dụng'}]);
+  const a = 5*R.int(4, 14), b = 5*R.int(3, 14), c = 5*R.int(2, 18), ab = b*c/100;
+  if(ab >= Math.min(a, b) || a + b - ab > 100 || a === b) return null;
+  const A = xcAns(100*ab/a); if(!A || near(A.v, c, 1e-9)) return null;
+  const o = {stem:`${ctx.pre}, có $${xcPc(a)}$ ${ctx.u} ${ctx.A} và $${xcPc(b)}$ ${ctx.u} ${ctx.B}. Trong số các ${ctx.u} ${ctx.B}, có $${xcPc(c)}$ ${ctx.u} ${ctx.A}. Chọn ngẫu nhiên một ${ctx.u} ${ctx.A}. Xác suất để ${ctx.u} đó ${ctx.B} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $A$: "${ctx.u} ${ctx.A}", $B$: "${ctx.u} ${ctx.B}". $P(A) = ${xcP(a)}$, $P(B) = ${xcP(b)}$, $P(A \\mid B) = ${xcP(c)}$.<br>`
+      + `$P(A \\cap B) = P(B) \\cdot P(A \\mid B) = ${xcP(b)} \\cdot ${xcP(c)} = ${xcP(ab)}$.<br>$P(B \\mid A) = \\dfrac{P(A \\cap B)}{P(A)} = \\dfrac{${xcP(ab)}}{${xcP(a)}} = ${frT(Math.round(ab*100), a*100)}$ nên $x ${A.ap}$ (khác $P(A \\mid B)$).`,
+    verify:()=>{ const nA = a*100, nAB = b*100*c/100; return near(o.ans, xcR1(100*nAB/nA), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.1 Xác suất có điều kiện (12|6|0), đợt 5 (dạng 26–30: 5 TLN). Claude viết.
+// Chuỗi: biết viên bi thứ hai, hỏi viên bi thứ nhất (đếm cặp có thứ tự) (26) → hỏi ngược số bi xanh từ một xác suất (27)
+// → P(A | B̄) trong khảo sát hộ gia đình (28) → bảng ba hàng, điều kiện là hợp hai nhóm (29) → thử chìa khoá (công thức nhân nhiều bước) (30).
+
+/* 26. TLN VD — biết viên bi thứ hai, hỏi viên bi thứ nhất */
+GT(12,6,0,'VD','Lấy lần lượt hai viên bi không hoàn lại: biết viên bi thứ hai màu đỏ, tính xác suất viên bi thứ nhất màu xanh (đỏ) — đếm các cặp có thứ tự trên không gian mẫu thu hẹp (đáp số phần trăm)', R=>{
+  const r = R.int(3, 15), b = R.int(3, 15), N = r + b, hoi = R.pick(['X', 'D']), col = R.pick([['đỏ', 'xanh'], ['trắng', 'đen'], ['vàng', 'tím']]);
+  const nB = r*(N - 1), nAB = hoi === 'X' ? b*r : r*(r - 1), A = xcAns(100*nAB/nB); if(!A) return null;
+  const o = {stem:`Một hộp có $${r}$ viên bi ${col[0]} và $${b}$ viên bi ${col[1]}, các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên lần lượt hai viên bi, không hoàn lại. Biết viên bi lấy lần thứ hai màu ${col[0]}, xác suất để viên bi lấy lần thứ nhất màu ${hoi === 'X' ? col[1] : col[0]} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Mỗi kết quả là một cặp có thứ tự (viên thứ nhất, viên thứ hai): $n(\\Omega) = ${N} \\cdot ${N - 1} = ${N*(N - 1)}$.<br>`
+      + `$B$: "viên thứ hai màu ${col[0]}": chọn viên thứ hai trong $${r}$ viên ${col[0]}, viên thứ nhất là một trong $${N - 1}$ viên còn lại: $n(B) = ${r} \\cdot ${N - 1} = ${nB}$.<br>`
+      + `$A \\cap B$: viên thứ nhất màu ${hoi === 'X' ? col[1] : col[0]}, viên thứ hai màu ${col[0]}: $n(A \\cap B) = ${hoi === 'X' ? `${b} \\cdot ${r}` : `${r} \\cdot ${r - 1}`} = ${nAB}$.<br>`
+      + `$P(A \\mid B) = ${xcFq(nAB, nB)}$ nên $x = 100 \\cdot ${frT(nAB, nB)} ${A.ap}$.`,
+    verify:()=>{ let t = 0, c = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++){ if(i === j || j >= r) continue; t++; if(hoi === 'X' ? i >= r : i < r) c++; } return near(o.ans, xcR1(100*c/t), 1e-9); }};
+  return o;
+});
+
+/* 27. TLN VD — hỏi ngược số bi xanh */
+GT(12,6,0,'VD','Hỏi ngược: hộp có r viên bi đỏ và một số viên bi xanh; biết P(lần 2 đỏ | lần 1 đỏ) hoặc xác suất lấy được hai viên đỏ (không hoàn lại) — tìm số viên bi xanh', R=>{
+  const r = R.int(3, 15), x = R.int(2, 30), N = r + x, kind = R.pick(['cond', 'both']);
+  const p = kind === 'cond' ? [r - 1, N - 1] : [r*(r - 1), N*(N - 1)], pT = frT(p[0], p[1]);
+  const val = (xx, k)=> k === 'cond' ? (r - 1)/(r + xx - 1) : r*(r - 1)/((r + xx)*(r + xx - 1));
+  const o = {stem:`Một hộp có $${r}$ viên bi đỏ và một số viên bi xanh, các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên lần lượt hai viên bi, không hoàn lại. ${kind === 'cond' ? `Biết rằng nếu viên bi lấy lần thứ nhất màu đỏ thì xác suất để viên bi lấy lần thứ hai cũng màu đỏ bằng $${pT}$.` : `Biết xác suất để cả hai viên bi lấy ra đều màu đỏ bằng $${pT}$.`} Hộp có bao nhiêu viên bi xanh?`, ans:x,
+    lg:`Gọi số viên bi xanh là $n$ ($n \\ge 1$), hộp có $${r} + n$ viên.<br>`
+      + (kind === 'cond' ? `Nếu lần thứ nhất lấy được bi đỏ, hộp còn $${r} + n - 1$ viên, trong đó $${r - 1}$ viên đỏ: $\\dfrac{${r - 1}}{${r - 1} + n} = ${pT}$ $\\Rightarrow ${r - 1} + n = ${N - 1}$ $\\Rightarrow n = ${x}$.`
+        : `Theo công thức nhân: $\\dfrac{${r}}{${r} + n} \\cdot \\dfrac{${r - 1}}{${r - 1} + n} = ${pT}$ $\\Leftrightarrow (${r} + n)(${r - 1} + n) = ${r*(r - 1)} \\cdot ${frT(p[1], p[0])} = ${N*(N - 1)}$.<br>Vế trái tăng theo $n$ và bằng $${N*(N - 1)} = ${N} \\cdot ${N - 1}$ khi $${r} + n = ${N}$, nên $n = ${x}$.`),
+    verify:()=>{ const sol = []; for(let xx = 1; xx <= 300; xx++) if(Math.abs(val(xx, kind) - p[0]/p[1]) < 1e-12) sol.push(xx); return sol.length === 1 && o.ans === sol[0]; }};
+  return o;
+});
+
+/* 28. TLN TH — P(A | B̄) trong khảo sát */
+GT(12,6,0,'TH','Khảo sát hộ gia đình (xe máy – ô tô) hoặc học sinh (thích Toán – thích Văn): biết tỉ lệ từng nhóm và nhóm chung, chọn một người không thuộc nhóm B, tính xác suất thuộc nhóm A — P(A | B̄) = [P(A) − P(A ∩ B)]/[1 − P(B)] (đáp số phần trăm)', R=>{
+  const ctx = R.pick([
+    {pre:'Ở một khu dân cư', u:'hộ', A:'có xe máy', B:'có ô tô', nA:'không có xe máy', nB:'không có ô tô', ca:'có cả xe máy và ô tô'},
+    {pre:'Ở một trường', u:'học sinh', A:'thích môn Toán', B:'thích môn Ngữ văn', nA:'không thích môn Toán', nB:'không thích môn Ngữ văn', ca:'thích cả hai môn đó'}]);
+  const a = 5*R.int(6, 18), b = 5*R.int(2, 12), c = 5*R.int(1, 10), sw = R.rnd() < 0.5; if(c >= Math.min(a, b) || a + b - c > 100) return null;
+  const pX = sw ? b : a, pY = sw ? a : b, A = xcAns(100*(pX - c)/(100 - pY)); if(!A) return null;
+  const X = sw ? 'B' : 'A', Y = sw ? 'A' : 'B', tX = sw ? ctx.B : ctx.A, tnY = sw ? ctx.nA : ctx.nB;
+  const o = {stem:`${ctx.pre}, có $${xcPc(a)}$ số ${ctx.u} ${ctx.A}, $${xcPc(b)}$ số ${ctx.u} ${ctx.B} và $${xcPc(c)}$ số ${ctx.u} ${ctx.ca}. Chọn ngẫu nhiên một ${ctx.u} ${tnY}. Xác suất để ${ctx.u} đó ${tX} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $A$: "${ctx.u} ${ctx.A}", $B$: "${ctx.u} ${ctx.B}". Cần tính $P(${X} \\mid \\overline{${Y}})$.<br>$P(${X} \\cap \\overline{${Y}}) = P(${X}) - P(A \\cap B) = ${xcP(pX)} - ${xcP(c)} = ${xcP(pX - c)}$; $P(\\overline{${Y}}) = 1 - ${xcP(pY)} = ${xcP(100 - pY)}$.<br>`
+      + `$P(${X} \\mid \\overline{${Y}}) = \\dfrac{${xcP(pX - c)}}{${xcP(100 - pY)}} = ${frT(pX - c, 100 - pY)}$ nên $x = 100 \\cdot ${frT(pX - c, 100 - pY)} ${A.ap}$.`,
+    verify:()=>{ /* 100 hộ giả định: bảng bốn ô */ const n11 = c, nX0 = pX - c, n00 = 100 - a - b + c, nY0 = pY - c; return near(nX0 + n11 + n00 + nY0, 100, 1e-9) && near(o.ans, xcR1(100*nX0/(nX0 + n00)), 1e-9); }};
+  return o;
+});
+
+/* 29. TLN TH — bảng ba hàng */
+GT(12,6,0,'TH','Bảng thống kê theo khối 10, 11, 12 (đạt – chưa đạt kiểm tra thể lực): biết học sinh đạt, tính xác suất thuộc một khối; biết học sinh không thuộc khối 10, tính xác suất đạt (điều kiện là hợp hai nhóm, đáp số phần trăm)', R=>{
+  const n = [0, 1, 2].map(()=> [R.int(40, 160), R.int(5, 60)]), N = n.reduce((s, r)=> s + r[0] + r[1], 0), hoi = R.pick(['khoi', 'dat', 'chua']), kk = R.int(0, 2), K = ['10', '11', '12'];
+  let num, den, biet, tA, how;
+  if(hoi === 'khoi'){ den = n[0][0] + n[1][0] + n[2][0]; num = n[kk][0]; biet = 'đạt'; tA = `là học sinh khối ${K[kk]}`; how = `Có $${n[0][0]} + ${n[1][0]} + ${n[2][0]} = ${den}$ học sinh đạt, trong đó $${num}$ học sinh khối ${K[kk]}`; }
+  else { const o1 = [0, 1, 2].filter(i=> i !== kk); den = o1.reduce((s, i)=> s + n[i][0] + n[i][1], 0); num = o1.reduce((s, i)=> s + n[i][hoi === 'dat' ? 0 : 1], 0);
+    biet = `không phải học sinh khối ${K[kk]}`; tA = hoi === 'dat' ? 'đạt' : 'chưa đạt';
+    how = `Học sinh không thuộc khối ${K[kk]} là học sinh khối ${K[o1[0]]} hoặc ${K[o1[1]]}: có $${n[o1[0]][0]} + ${n[o1[0]][1]} + ${n[o1[1]][0]} + ${n[o1[1]][1]} = ${den}$ học sinh, trong đó $${n[o1[0]][hoi === 'dat' ? 0 : 1]} + ${n[o1[1]][hoi === 'dat' ? 0 : 1]} = ${num}$ học sinh ${tA}`; }
+  const A = xcAns(100*num/den); if(!A) return null;
+  const tb = `$\\begin{array}{|c|c|c|}\\hline & \\text{Đạt} & \\text{Chưa đạt} \\\\ \\hline ${K.map((k, i)=> `\\text{Khối ${k}} & ${n[i][0]} & ${n[i][1]}`).join(' \\\\ \\hline ')} \\\\ \\hline \\end{array}$`;
+  const o = {stem:`Kết quả kiểm tra thể lực của $${N}$ học sinh một trường trung học phổ thông được cho trong bảng sau (đơn vị: học sinh):<br>${tb}<br>Chọn ngẫu nhiên một học sinh trong số đó. Biết học sinh được chọn ${biet}, xác suất để học sinh đó ${tA} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`${how}.<br>Xác suất cần tìm bằng $${xcFq(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let b = 0, ab = 0; n.forEach((row, i)=> row.forEach((cnt, j)=>{ const inB = hoi === 'khoi' ? j === 0 : i !== kk, inA = hoi === 'khoi' ? i === kk : j === (hoi === 'dat' ? 0 : 1); if(inB){ b += cnt; if(inA) ab += cnt; } })); return near(o.ans, xcR1(100*ab/b), 1e-9); }};
+  return o;
+});
+
+/* 30. TLN VD — thử chìa khoá */
+GT(12,6,0,'VD','Thử lần lượt từng chiếc chìa khoá (thử xong bỏ ra) trong N chìa có m chìa mở được cửa: xác suất mở được cửa đúng ở lần thử thứ k hoặc trong không quá k lần thử — công thức nhân nhiều bước (đáp số phần trăm)', R=>{
+  const N = R.int(5, 12), m = R.int(1, 3), q = R.pick(['eq', 'le']), k = R.int(2, Math.min(4, N - m)); if(N - m < 2) return null;
+  let num = 1, den = 1; const fs = [];
+  if(q === 'eq'){ for(let i = 0; i < k - 1; i++){ num *= N - m - i; den *= N - i; fs.push(`\\dfrac{${N - m - i}}{${N - i}}`); } num *= m; den *= N - k + 1; fs.push(`\\dfrac{${m}}{${N - k + 1}}`); }
+  else { for(let i = 0; i < k; i++){ num *= N - m - i; den *= N - i; fs.push(`\\dfrac{${N - m - i}}{${N - i}}`); } }
+  const P = q === 'eq' ? num/den : 1 - num/den, A = xcAns(100*P); if(!A) return null;
+  const Pq = q === 'eq' ? frT(num, den) : frT(den - num, den);
+  const o = {stem:`Một người có $${N}$ chiếc chìa khoá trông giống nhau, trong đó chỉ có $${m}$ chiếc mở được cửa. Người đó thử ngẫu nhiên lần lượt từng chiếc, chiếc nào không mở được thì bỏ ra (không thử lại). Xác suất để người đó mở được cửa ${q === 'eq' ? `đúng ở lần thử thứ $${k}$` : `trong không quá $${k}$ lần thử`} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:(q === 'eq' ? `Mở được cửa đúng ở lần thử thứ $${k}$ nghĩa là $${k - 1}$ lần đầu đều chọn phải chìa không mở được và lần thứ $${k}$ chọn đúng chìa mở được. Theo công thức nhân:<br>$P = ${fs.join(' \\cdot ')} = ${Pq}$`
+        : `Biến cố đối: cả $${k}$ lần thử đầu đều chọn phải chìa không mở được, có xác suất (công thức nhân) $${fs.join(' \\cdot ')} = ${frT(num, den)}$.<br>$P = 1 - ${frT(num, den)} = ${Pq}$`)
+      + ` nên $x = 100 \\cdot ${Pq} ${A.ap}$.`,
+    verify:()=>{ /* vị trí chìa mở được đầu tiên trong một hoán vị ngẫu nhiên */ const pe = j=> xcC(N - j, m - 1)/xcC(N, m); let s = 0; for(let j = 1; j <= k; j++) s += pe(j); return near(o.ans, xcR1(100*(q === 'eq' ? pe(k) : s)), 1e-9) && near(s, 1 - xcC(N - k, m)/xcC(N, m), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.1 Công thức xác suất toàn phần và công thức Bayes (12|6|1), đợt 1 (dạng 13–17: 3 TN, 2 Đ–S). Claude viết.
+// Chuỗi: chọn hộp rồi lấy bi — xác suất toàn phần (13) → chuyển bi từ hộp này sang hộp kia (14) → Bayes: biết bi đỏ, đã chọn hộp nào (15)
+// → Đ–S trời mưa và tắc đường: toàn phần, Bayes, P(M | T̄) (16) → Đ–S chuyển bi: P(E), P(A | E), P(A), P(E | A) (17).
+
+/* 13. TN TH — chọn hộp rồi lấy bi */
+G(12,6,1,'TH','Hai hộp bi, chọn một hộp nhờ tung đồng xu hoặc gieo xúc xắc rồi lấy ngẫu nhiên một viên bi: tính xác suất lấy được bi đỏ (công thức xác suất toàn phần) — bẫy gộp bi hai hộp, quên nhân xác suất chọn hộp', R=>{
+  const a = R.int(1, 9), b = R.int(1, 9), c = R.int(1, 9), d = R.int(1, 9), n1 = a + b, n2 = c + d, how = R.pick(['xu', 'xx']), k = R.int(1, 5);
+  const p1 = how === 'xu' ? [1, 2] : [k, 6], num = p1[0]*a*n2 + (p1[1] - p1[0])*c*n1, den = p1[1]*n1*n2;
+  const ans = xcFr(num, den), wrong = xcW(R, ans, [xcFr(a + c, n1 + n2), xcFr(a*n2 + c*n1, 2*n1*n2), xcFr(a*c, n1*n2), xcFr(p1[0]*a, p1[1]*n1), xcFr(p1[0]*c*n1 + (p1[1] - p1[0])*a*n2, den)]); if(!wrong) return null;
+  const tHow = how === 'xu' ? 'Tung một đồng xu cân đối: nếu xuất hiện mặt sấp thì chọn hộp I, nếu xuất hiện mặt ngửa thì chọn hộp II.'
+    : `Gieo một con xúc xắc cân đối: nếu xuất hiện ${k === 1 ? 'mặt $1$ chấm' : `mặt có số chấm không lớn hơn $${k}$`} thì chọn hộp I, ngược lại thì chọn hộp II.`;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. ${tHow} Từ hộp được chọn, lấy ngẫu nhiên một viên bi. Xác suất để lấy được viên bi đỏ bằng`, ans, wrong,
+    lg:`Gọi $H$: "chọn hộp I", $A$: "lấy được viên bi đỏ". $P(H) = ${frT(p1[0], p1[1])}$, $P(\\overline{H}) = ${frT(p1[1] - p1[0], p1[1])}$; $P(A \\mid H) = ${frT(a, n1)}$, $P(A \\mid \\overline{H}) = ${frT(c, n2)}$.<br>`
+      + `Theo công thức xác suất toàn phần: $P(A) = P(H) \\cdot P(A \\mid H) + P(\\overline{H}) \\cdot P(A \\mid \\overline{H}) = ${frT(p1[0], p1[1])} \\cdot ${frT(a, n1)} + ${frT(p1[1] - p1[0], p1[1])} \\cdot ${frT(c, n2)} = ${frT(num, den)}$.`,
+    verify:()=>{ /* trung bình theo từng kết quả đồng khả năng của đồng xu (xúc xắc) */ let s = 0; for(let t = 1; t <= p1[1]; t++) s += t <= p1[0] ? a/n1 : c/n2; return near(o.ans.v, s/p1[1], 1e-9); }};
+  return o;
+});
+
+/* 14. TN VD — chuyển bi */
+G(12,6,1,'VD','Chuyển một viên bi từ hộp I sang hộp II rồi lấy ngẫu nhiên một viên bi từ hộp II: tính xác suất lấy được bi đỏ (xác suất toàn phần theo màu viên bi chuyển sang) — bẫy bỏ qua viên bi được chuyển', R=>{
+  const a = R.int(1, 8), b = R.int(1, 8), c = R.int(1, 8), d = R.int(1, 8), n1 = a + b, n2 = c + d;
+  const num = a*(c + 1) + b*c, den = n1*(n2 + 1);
+  const ans = xcFr(num, den), wrong = xcW(R, ans, [xcFr(c, n2), xcFr(c + 1, n2 + 1), xcFr(a + c, n1 + n2), xcFr(a*(c + 1), den), xcFr(c, n2 + 1)]); if(!wrong) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên một viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên một viên bi từ hộp II. Xác suất để viên bi lấy ra từ hộp II là viên bi đỏ bằng`, ans, wrong,
+    lg:`Gọi $E$: "viên bi chuyển sang là bi đỏ", $A$: "viên bi lấy từ hộp II là bi đỏ". $P(E) = ${frT(a, n1)}$, $P(\\overline{E}) = ${frT(b, n1)}$.<br>`
+      + `Nếu $E$ xảy ra, hộp II có $${n2 + 1}$ viên, trong đó $${c + 1}$ viên đỏ: $P(A \\mid E) = ${frT(c + 1, n2 + 1)}$; nếu $\\overline{E}$ xảy ra, hộp II có $${c}$ viên đỏ trong $${n2 + 1}$ viên: $P(A \\mid \\overline{E}) = ${frT(c, n2 + 1)}$.<br>`
+      + `$P(A) = ${frT(a, n1)} \\cdot ${frT(c + 1, n2 + 1)} + ${frT(b, n1)} \\cdot ${frT(c, n2 + 1)} = ${frT(num, den)}$.`,
+    verify:()=>{ let s = 0; for(let i = 0; i < n1; i++){ const red = c + (i < a ? 1 : 0); s += red/(n2 + 1); } return near(o.ans.v, s/n1, 1e-9); }};
+  return o;
+});
+
+/* 15. TN VD — Bayes: biết bi đỏ, đã chọn hộp I */
+G(12,6,1,'VD','Công thức Bayes với hai hộp bi: chọn một hộp nhờ tung đồng xu hoặc gieo xúc xắc rồi lấy được viên bi đỏ — tính xác suất viên bi đó lấy từ hộp I (bẫy lấy P(A | H), lấy P(H ∩ A))', R=>{
+  const a = R.int(1, 9), b = R.int(1, 9), c = R.int(1, 9), d = R.int(1, 9), n1 = a + b, n2 = c + d, how = R.pick(['xu', 'xx']), k = R.int(1, 5);
+  const p1 = how === 'xu' ? [1, 2] : [k, 6], j1 = p1[0]*a*n2, num = j1 + (p1[1] - p1[0])*c*n1, den = p1[1]*n1*n2;
+  const ans = xcFr(j1, num), wrong = xcW(R, ans, [xcFr(j1, den), xcFr(a, n1), xcFr(a, a + c), xcFr(p1[0], p1[1]), xcFr(num, den)]); if(!wrong) return null;
+  const tHow = how === 'xu' ? 'Tung một đồng xu cân đối: nếu xuất hiện mặt sấp thì chọn hộp I, nếu xuất hiện mặt ngửa thì chọn hộp II.'
+    : `Gieo một con xúc xắc cân đối: nếu xuất hiện ${k === 1 ? 'mặt $1$ chấm' : `mặt có số chấm không lớn hơn $${k}$`} thì chọn hộp I, ngược lại thì chọn hộp II.`;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. ${tHow} Từ hộp được chọn, lấy ngẫu nhiên một viên bi thì được viên bi đỏ. Xác suất để viên bi đó được lấy từ hộp I bằng`, ans, wrong,
+    lg:`Gọi $H$: "chọn hộp I", $A$: "lấy được viên bi đỏ". $P(H) = ${frT(p1[0], p1[1])}$, $P(A \\mid H) = ${frT(a, n1)}$, $P(A \\mid \\overline{H}) = ${frT(c, n2)}$.<br>`
+      + `$P(H) \\cdot P(A \\mid H) = ${frT(j1, den)}$; $P(A) = ${frT(p1[0], p1[1])} \\cdot ${frT(a, n1)} + ${frT(p1[1] - p1[0], p1[1])} \\cdot ${frT(c, n2)} = ${frT(num, den)}$.<br>`
+      + `Theo công thức Bayes: $P(H \\mid A) = \\dfrac{P(H) \\cdot P(A \\mid H)}{P(A)} = ${frT(j1, num)}$.`,
+    verify:()=>{ /* đếm trên p1[1]·n1·n2 kết quả giả định đồng khả năng */ let tot = 0, h = 0; for(let t = 1; t <= p1[1]; t++){ const r = t <= p1[0] ? a*n2 : c*n1; tot += r; if(t <= p1[0]) h += r; } return near(o.ans.v, h/tot, 1e-9); }};
+  return o;
+});
+
+/* 16. Đ–S VD — trời mưa và tắc đường */
+GD(12,6,1,'VD','Đúng – Sai: trời mưa và tắc đường — P(M̄ ∩ T), P(T) theo công thức xác suất toàn phần, P(M | T) theo công thức Bayes, P(M | T̄) (bẫy 1 − P(M | T))', R=>{
+  const p = 5*R.int(2, 9), q = 5*R.int(8, 18), r = 5*R.int(1, 8); if(q <= r) return null;
+  const PT = p*q + (100 - p)*r;   /* phần vạn */
+  const wB = near(PT, (q + r)*50, 1e-9) ? p*q + 100*r : (q + r)*50;
+  const items = [
+    claimN(R, v=> `Xác suất để ngày đó không mưa và xảy ra tắc đường bằng $${v}$`, (100 - p)*r/10000, nt((100 - p)*r/10000), (100 - p)*(100 - r)/10000, nt((100 - p)*(100 - r)/10000), ()=> (1 - p/100)*(r/100)),
+    claimN(R, v=> `Xác suất để ngày đó xảy ra tắc đường bằng $${v}$`, PT/10000, nt(PT/10000), wB/10000, nt(wB/10000), ()=> p/100*q/100 + (1 - p/100)*r/100),
+    claimN(R, v=> `Biết ngày đó xảy ra tắc đường, xác suất để ngày đó có mưa bằng $${v}$`, p*q/PT, frT(p*q, PT), p*q/10000, nt(p*q/10000), ()=> (p*q/10000)/(PT/10000)),
+    claimN(R, v=> `Biết ngày đó không xảy ra tắc đường, xác suất để ngày đó có mưa bằng $${v}$`, p*(100 - q)/(10000 - PT), frT(p*(100 - q), 10000 - PT), (PT - p*q)/PT, frT(PT - p*q, PT), ()=> (p/100*(1 - q/100))/(1 - PT/10000))];
+  if(near(p*(100 - q)/(10000 - PT), (PT - p*q)/PT, 1e-9)) return null;
+  return {stem:`Ở một thành phố, xác suất một ngày bất kì trong mùa mưa có mưa là $${xcPc(p)}$. Nếu trời mưa thì xác suất xảy ra tắc đường ở một nút giao thông là $${xcPc(q)}$; nếu trời không mưa thì xác suất đó là $${xcPc(r)}$. Xét một ngày trong mùa mưa.`, items,
+    lg:`Gọi $M$: "ngày đó có mưa", $T$: "ngày đó xảy ra tắc đường". $P(M) = ${xcP(p)}$, $P(\\overline{M}) = ${xcP(100 - p)}$, $P(T \\mid M) = ${xcP(q)}$, $P(T \\mid \\overline{M}) = ${xcP(r)}$.<br>`
+      + `a) $P(\\overline{M} \\cap T) = P(\\overline{M}) \\cdot P(T \\mid \\overline{M}) = ${xcP(100 - p)} \\cdot ${xcP(r)} = ${nt((100 - p)*r/10000)}$.<br>`
+      + `b) $P(T) = P(M) \\cdot P(T \\mid M) + P(\\overline{M}) \\cdot P(T \\mid \\overline{M}) = ${xcP(p)} \\cdot ${xcP(q)} + ${xcP(100 - p)} \\cdot ${xcP(r)} = ${nt(PT/10000)}$.<br>`
+      + `c) $P(M \\mid T) = \\dfrac{P(M) \\cdot P(T \\mid M)}{P(T)} = \\dfrac{${nt(p*q/10000)}}{${nt(PT/10000)}} = ${frT(p*q, PT)}$.<br>`
+      + `d) $P(\\overline{T}) = 1 - ${nt(PT/10000)} = ${nt(1 - PT/10000)}$, $P(M \\cap \\overline{T}) = ${xcP(p)} \\cdot ${xcP(100 - q)} = ${nt(p*(100 - q)/10000)}$ nên $P(M \\mid \\overline{T}) = \\dfrac{${nt(p*(100 - q)/10000)}}{${nt(1 - PT/10000)}} = ${frT(p*(100 - q), 10000 - PT)}$ (không phải $1 - P(M \\mid T)$).`};
+});
+
+/* 17. Đ–S VD — chuyển bi */
+GD(12,6,1,'VD','Đúng – Sai: chuyển một viên bi từ hộp I sang hộp II rồi lấy một viên từ hộp II — P(E), P(A | E), P(A) (toàn phần) và P(E | A) (Bayes: biết bi lấy ra đỏ, bi chuyển sang là đỏ)', R=>{
+  const a = R.int(1, 8), b = R.int(1, 8), c = R.int(1, 8), d = R.int(1, 8), n1 = a + b, n2 = c + d, num = a*(c + 1) + b*c, den = n1*(n2 + 1);
+  if(a === b) return null;
+  const items = [
+    claimN(R, v=> `$P(E) = ${v}$`, a/n1, frT(a, n1), b/n1, frT(b, n1), ()=> a/(a + b)),
+    claimN(R, v=> `$P(A \\mid E) = ${v}$`, (c + 1)/(n2 + 1), frT(c + 1, n2 + 1), c/n2, frT(c, n2), ()=> (c + 1)/(c + d + 1)),
+    claimN(R, v=> `$P(A) = ${v}$`, num/den, frT(num, den), (a + c)/(n1 + n2), frT(a + c, n1 + n2), ()=>{ let s = 0; for(let i = 0; i < n1; i++) s += (c + (i < a ? 1 : 0))/(n2 + 1); return s/n1; }),
+    claimN(R, v=> `Biết viên bi lấy từ hộp II là bi đỏ, xác suất để viên bi đã chuyển sang là bi đỏ bằng $${v}$`, a*(c + 1)/num, frT(a*(c + 1), num), a/n1, frT(a, n1), ()=> (a/n1*(c + 1)/(n2 + 1))/(num/den))];
+  if(near(c/n2, (c + 1)/(n2 + 1), 1e-9) || near(num/den, (a + c)/(n1 + n2), 1e-9)) return null;
+  return {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên một viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên một viên bi từ hộp II. Gọi $E$ là biến cố "viên bi chuyển sang hộp II là bi đỏ", $A$ là biến cố "viên bi lấy ra từ hộp II là bi đỏ".`, items,
+    lg:`a) $P(E) = ${frT(a, n1)}$.<br>b) Khi $E$ xảy ra, hộp II có $${n2 + 1}$ viên bi, trong đó $${c + 1}$ viên đỏ nên $P(A \\mid E) = ${frT(c + 1, n2 + 1)}$.<br>`
+      + `c) $P(A \\mid \\overline{E}) = ${frT(c, n2 + 1)}$; $P(A) = ${frT(a, n1)} \\cdot ${frT(c + 1, n2 + 1)} + ${frT(b, n1)} \\cdot ${frT(c, n2 + 1)} = ${frT(num, den)}$.<br>`
+      + `d) $P(E \\mid A) = \\dfrac{P(E) \\cdot P(A \\mid E)}{P(A)} = \\dfrac{${frT(a*(c + 1), den)}}{${frT(num, den)}} = ${frT(a*(c + 1), num)}$.`};
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.1 Công thức xác suất toàn phần và công thức Bayes (12|6|1), đợt 2 (dạng 18–22: 5 TLN). Claude viết.
+// Chuỗi: xác suất toàn phần trong bốn tình huống (học thêm, ca sản xuất, khách quen, bảo hiểm) (18) → Bayes cùng tình huống (19)
+// → xét nghiệm nhanh: tỉ lệ dương tính, dương tính giả trong số dương tính (20) → thi trắc nghiệm: biết hay đoán (21) → kênh truyền tín hiệu nhiễu (22).
+
+/* 18. TLN TH — xác suất toàn phần */
+GT(12,6,1,'TH','Công thức xác suất toàn phần (trả lời ngắn): học thêm và đạt giỏi, ca ngày – ca đêm và phế phẩm, khách quen và mua hàng, nhóm rủi ro và sự cố bảo hiểm — tính P(A) (đáp số phần trăm)', R=>{
+  const c = xcCt2(R); if(!c) return null;
+  const v = (c.p*c.a + (100 - c.p)*c.b)/100, A = xcAns(v); if(!A) return null;
+  const o = {stem:`${c.intro(c.p, c.a, c.b)} ${c.pick} Xác suất để ${c.u} đó ${c.A} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "${c.u} ${c.H}", $A$: "${c.u} ${c.A}". $P(H) = ${xcP(c.p)}$, $P(\\overline{H}) = ${xcP(100 - c.p)}$, $P(A \\mid H) = ${xcP(c.a)}$, $P(A \\mid \\overline{H}) = ${xcP(c.b)}$.<br>`
+      + `$P(A) = P(H) \\cdot P(A \\mid H) + P(\\overline{H}) \\cdot P(A \\mid \\overline{H}) = ${xcP(c.p)} \\cdot ${xcP(c.a)} + ${xcP(100 - c.p)} \\cdot ${xcP(c.b)} = ${nt(v/100)}$ nên $x ${A.ap}$.`,
+    verify:()=>{ /* 10 000 đối tượng giả định */ const nH = c.p*100, nA = nH*c.a/100 + (10000 - nH)*c.b/100; return near(o.ans, xcR1(nA/100), 1e-9); }};
+  return o;
+});
+
+/* 19. TLN VD — Bayes */
+GT(12,6,1,'VD','Công thức Bayes (trả lời ngắn): biết A đã xảy ra (đạt giỏi, là phế phẩm, có mua hàng, gặp sự cố), tính xác suất thuộc nhóm H hoặc H̄ — P(H | A) = P(H)·P(A | H)/P(A) (đáp số phần trăm)', R=>{
+  const c = xcCt2(R); if(!c) return null;
+  const j = R.pick(['H', 'nH']), t1 = c.p*c.a, t2 = (100 - c.p)*c.b, v = 100*(j === 'H' ? t1 : t2)/(t1 + t2), A = xcAns(v); if(!A) return null;
+  const o = {stem:`${c.intro(c.p, c.a, c.b)} ${c.pick.replace('.', '')} thì thấy ${c.u} đó ${c.A}. Xác suất để ${c.u} đó ${j === 'H' ? c.H : c.nH} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "${c.u} ${c.H}", $A$: "${c.u} ${c.A}". $P(H) = ${xcP(c.p)}$, $P(A \\mid H) = ${xcP(c.a)}$, $P(A \\mid \\overline{H}) = ${xcP(c.b)}$.<br>`
+      + `$P(A) = ${xcP(c.p)} \\cdot ${xcP(c.a)} + ${xcP(100 - c.p)} \\cdot ${xcP(c.b)} = ${nt((t1 + t2)/10000)}$.<br>`
+      + `$P(${j === 'H' ? 'H' : '\\overline{H}'} \\mid A) = \\dfrac{P(${j === 'H' ? 'H' : '\\overline{H}'}) \\cdot P(A \\mid ${j === 'H' ? 'H' : '\\overline{H}'})}{P(A)} = \\dfrac{${nt((j === 'H' ? t1 : t2)/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(j === 'H' ? t1 : t2, t1 + t2)}$ nên $x = 100 \\cdot ${frT(j === 'H' ? t1 : t2, t1 + t2)} ${A.ap}$.`,
+    verify:()=>{ const nH = c.p*100, aH = nH*c.a/100, aN = (10000 - nH)*c.b/100; return near(o.ans, xcR1(100*(j === 'H' ? aH : aN)/(aH + aN)), 1e-9); }};
+  return o;
+});
+
+/* 20. TLN VD — xét nghiệm nhanh */
+GT(12,6,1,'VD','Xét nghiệm nhanh (trả lời ngắn): biết tỉ lệ mắc bệnh, tỉ lệ dương tính ở người mắc bệnh và dương tính giả ở người không mắc bệnh — tính tỉ lệ dương tính hoặc xác suất một người có kết quả dương tính nhưng không mắc bệnh (đáp số phần trăm)', R=>{
+  const p = R.pick([2, 4, 5, 8, 10, 12, 15, 20]), s = R.pick([85, 90, 92, 95, 98]), f = R.pick([2, 3, 4, 5, 8, 10]), hoi = R.pick(['duong', 'gia']);
+  const t1 = p*s, t2 = (100 - p)*f, v = hoi === 'duong' ? (t1 + t2)/100 : 100*t2/(t1 + t2), A = xcAns(v); if(!A) return null;
+  const o = {stem:`Ở một vùng, tỉ lệ người mắc một bệnh truyền nhiễm là $${xcPc(p)}$. Một loại xét nghiệm nhanh cho kết quả dương tính với $${xcPc(s)}$ số người mắc bệnh và cho kết quả dương tính (dương tính giả) với $${xcPc(f)}$ số người không mắc bệnh. Chọn ngẫu nhiên một người ở vùng đó làm xét nghiệm. ${hoi === 'duong' ? 'Xác suất để người đó có kết quả dương tính bằng $x\\%$.' : 'Biết người đó có kết quả dương tính, xác suất để người đó không mắc bệnh bằng $x\\%$.'} Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $B$: "người đó mắc bệnh", $D$: "kết quả xét nghiệm dương tính". $P(B) = ${xcP(p)}$, $P(\\overline{B}) = ${xcP(100 - p)}$, $P(D \\mid B) = ${xcP(s)}$, $P(D \\mid \\overline{B}) = ${xcP(f)}$.<br>`
+      + `$P(D) = ${xcP(p)} \\cdot ${xcP(s)} + ${xcP(100 - p)} \\cdot ${xcP(f)} = ${nt((t1 + t2)/10000)}$`
+      + (hoi === 'duong' ? ` nên $x ${A.ap}$.` : `.<br>$P(\\overline{B} \\mid D) = \\dfrac{P(\\overline{B}) \\cdot P(D \\mid \\overline{B})}{P(D)} = \\dfrac{${nt(t2/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(t2, t1 + t2)}$ nên $x = 100 \\cdot ${frT(t2, t1 + t2)} ${A.ap}$.`),
+    verify:()=>{ const nB = p*100, dB = nB*s/100, dN = (10000 - nB)*f/100; return near(o.ans, xcR1(hoi === 'duong' ? (dB + dN)/100 : 100*dN/(dB + dN)), 1e-9); }};
+  return o;
+});
+
+/* 21. TLN VD — thi trắc nghiệm: biết hay đoán */
+GT(12,6,1,'VD','Thi trắc nghiệm: học sinh biết đáp án với xác suất p, không biết thì chọn ngẫu nhiên một trong k phương án — tính xác suất trả lời đúng (toàn phần) hoặc biết trả lời đúng, xác suất học sinh thực sự biết đáp án (Bayes, đáp số phần trăm)', R=>{
+  const p = 5*R.int(8, 18), k = R.pick([2, 4, 4]), hoi = R.pick(['dung', 'biet']);
+  const t1 = p*k, t2 = 100 - p, v = hoi === 'dung' ? (t1 + t2)/k : 100*t1/(t1 + t2), A = xcAns(v); if(!A) return null;
+  const tk = k === 4 ? 'mỗi câu có bốn phương án, chỉ một phương án đúng' : 'mỗi ý chỉ có hai khả năng Đúng hoặc Sai';
+  const o = {stem:`Trong một bài thi trắc nghiệm, ${tk}. Với mỗi ${k === 4 ? 'câu' : 'ý'}, xác suất một học sinh biết đáp án là $${xcPc(p)}$; nếu không biết đáp án, học sinh đó chọn ngẫu nhiên một ${k === 4 ? 'phương án' : 'khả năng'}. Xét một ${k === 4 ? 'câu' : 'ý'} của bài thi. ${hoi === 'dung' ? 'Xác suất để học sinh đó trả lời đúng bằng $x\\%$.' : 'Biết học sinh đó trả lời đúng, xác suất để học sinh đó thực sự biết đáp án bằng $x\\%$.'} Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "học sinh biết đáp án", $D$: "học sinh trả lời đúng". $P(H) = ${xcP(p)}$, $P(D \\mid H) = 1$, $P(D \\mid \\overline{H}) = ${frT(1, k)}$.<br>`
+      + `$P(D) = ${xcP(p)} \\cdot 1 + ${xcP(100 - p)} \\cdot ${frT(1, k)} = ${frT(t1 + t2, 100*k)}$`
+      + (hoi === 'dung' ? ` nên $x = 100 \\cdot ${frT(t1 + t2, 100*k)} ${A.ap}$.` : `.<br>$P(H \\mid D) = \\dfrac{P(H) \\cdot P(D \\mid H)}{P(D)} = \\dfrac{${xcP(p)}}{${frT(t1 + t2, 100*k)}} = ${frT(t1, t1 + t2)}$ nên $x = 100 \\cdot ${frT(t1, t1 + t2)} ${A.ap}$.`),
+    verify:()=>{ /* 100·k học sinh giả định */ const N = 100*k, biet = p*k, doan = (N - biet)/k; return near(o.ans, xcR1(hoi === 'dung' ? 100*(biet + doan)/N : 100*biet/(biet + doan)), 1e-9); }};
+  return o;
+});
+
+/* 22. TLN VD — kênh truyền tín hiệu */
+GT(12,6,1,'VD','Kênh truyền tín hiệu nhị phân bị nhiễu: biết tỉ lệ gửi tín hiệu 0 và xác suất bị đổi sai của mỗi loại tín hiệu — tính xác suất nhận được 0 (toàn phần) hoặc biết nhận được 0, xác suất tín hiệu gửi đi là 0 (là 1) (Bayes, đáp số phần trăm)', R=>{
+  const p = 5*R.int(6, 14), e0 = R.int(1, 10), e1 = R.int(1, 10), hoi = R.pick(['n0', 'g0', 'g1']);
+  const t0 = p*(100 - e0), t1 = (100 - p)*e1, v = hoi === 'n0' ? (t0 + t1)/100 : 100*(hoi === 'g0' ? t0 : t1)/(t0 + t1), A = xcAns(v); if(!A) return null;
+  const o = {stem:`Một hệ thống truyền tín hiệu chỉ gồm hai loại tín hiệu $0$ và $1$, trong đó $${xcPc(p)}$ số tín hiệu được gửi đi là tín hiệu $0$. Do nhiễu, tín hiệu $0$ bị nhận sai thành $1$ với xác suất $${xcPc(e0)}$, tín hiệu $1$ bị nhận sai thành $0$ với xác suất $${xcPc(e1)}$. Xét một tín hiệu được gửi đi. ${hoi === 'n0' ? 'Xác suất để tín hiệu nhận được là $0$ bằng $x\\%$.' : `Biết tín hiệu nhận được là $0$, xác suất để tín hiệu gửi đi là $${hoi === 'g0' ? 0 : 1}$ bằng $x\\%$.`} Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $G$: "tín hiệu gửi đi là $0$", $N$: "tín hiệu nhận được là $0$". $P(G) = ${xcP(p)}$, $P(N \\mid G) = 1 - ${xcP(e0)} = ${xcP(100 - e0)}$, $P(N \\mid \\overline{G}) = ${xcP(e1)}$.<br>`
+      + `$P(N) = ${xcP(p)} \\cdot ${xcP(100 - e0)} + ${xcP(100 - p)} \\cdot ${xcP(e1)} = ${nt((t0 + t1)/10000)}$`
+      + (hoi === 'n0' ? ` nên $x ${A.ap}$.` : `.<br>$P(${hoi === 'g0' ? 'G' : '\\overline{G}'} \\mid N) = \\dfrac{${nt((hoi === 'g0' ? t0 : t1)/10000)}}{${nt((t0 + t1)/10000)}} = ${frT(hoi === 'g0' ? t0 : t1, t0 + t1)}$ nên $x = 100 \\cdot ${frT(hoi === 'g0' ? t0 : t1, t0 + t1)} ${A.ap}$.`),
+    verify:()=>{ const n0 = p*100*(100 - e0)/100, n1 = (100 - p)*100*e1/100; return near(o.ans, xcR1(hoi === 'n0' ? (n0 + n1)/100 : 100*(hoi === 'g0' ? n0 : n1)/(n0 + n1)), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.1 Công thức xác suất toàn phần và công thức Bayes (12|6|1), đợt 3 (dạng 23–27: 5 TLN). Claude viết.
+// Chuỗi: hỏi ngược tỉ lệ sản lượng từ tỉ lệ phế phẩm chung (23) → rút thăm lần lượt: người thứ hai trúng (24)
+// → thời tiết hai ngày liên tiếp (25) → chuyển một bi rồi lấy hai bi (26) → Bayes: biết hai bi lấy ra đều đỏ (27).
+
+/* 23. TLN VD — hỏi ngược tỉ lệ sản lượng */
+GT(12,6,1,'VD','Hỏi ngược công thức xác suất toàn phần: biết tỉ lệ phế phẩm chung của kho và tỉ lệ phế phẩm của từng máy — tìm tỉ lệ sản phẩm do máy I sản xuất, rồi (tuỳ đề) tính xác suất một phế phẩm do máy I sản xuất', R=>{
+  const x = 5*R.int(2, 18), d1 = R.int(1, 8), d2 = R.int(1, 8), hoi = R.pick(['x', 'x', 'bayes']); if(d1 === d2) return null;
+  const t = (x*d1 + (100 - x)*d2)/100; if(!xcEx(t*10)) return null;
+  let ans, lt = '', ap = '';
+  if(hoi === 'x') ans = x; else { const A = xcAns(100*x*d1/(x*d1 + (100 - x)*d2)); if(!A) return null; ans = A.v; lt = A.lt; ap = A.ap; }
+  const o = {stem:`Một kho hàng chỉ chứa sản phẩm của hai máy I và II. Tỉ lệ phế phẩm của máy I là $${xcPc(d1)}$, của máy II là $${xcPc(d2)}$. Lấy ngẫu nhiên một sản phẩm trong kho thì xác suất lấy được phế phẩm là $${xcPc(t)}$. ${hoi === 'x' ? 'Sản phẩm do máy I sản xuất chiếm bao nhiêu phần trăm số sản phẩm trong kho?' : `Biết sản phẩm lấy ra là phế phẩm, xác suất để sản phẩm đó do máy I sản xuất bằng $x\\%$. Tìm $x$${lt}.`}`, ans,
+    lg:`Gọi $q$ là tỉ lệ sản phẩm của máy I trong kho, $H$: "sản phẩm do máy I sản xuất", $F$: "sản phẩm là phế phẩm". Theo công thức xác suất toàn phần:<br>`
+      + `$P(F) = q \\cdot ${xcP(d1)} + (1 - q) \\cdot ${xcP(d2)} = ${xcP(t)}$ $\\Leftrightarrow ${nt((d1 - d2)/100)}q = ${nt((t - d2)/100)}$ $\\Leftrightarrow q = ${xcP(x)}$, tức máy I sản xuất $${xcPc(x)}$ số sản phẩm.`
+      + (hoi === 'x' ? '' : `<br>$P(H \\mid F) = \\dfrac{P(H) \\cdot P(F \\mid H)}{P(F)} = \\dfrac{${xcP(x)} \\cdot ${xcP(d1)}}{${xcP(t)}} = ${frT(x*d1, x*d1 + (100 - x)*d2)}$ nên $x = 100 \\cdot ${frT(x*d1, x*d1 + (100 - x)*d2)} ${ap}$.`),
+    verify:()=>{ let q = -1; for(let k = 0; k <= 1000; k++) if(Math.abs(k/10*d1 + (100 - k/10)*d2 - 100*t) < 1e-9){ q = k/10; break; } if(q < 0) return false; return near(o.ans, hoi === 'x' ? q : xcR1(100*q*d1/(100*t)), 1e-9); }};
+  return o;
+});
+
+/* 24. TLN TH — rút thăm lần lượt */
+GT(12,6,1,'TH','Rút thăm lần lượt không hoàn lại: hộp có n lá thăm, trong đó k lá trúng thưởng — tính xác suất người rút thứ hai trúng (hoặc không trúng) bằng công thức xác suất toàn phần theo kết quả của người thứ nhất (đáp số phần trăm)', R=>{
+  const n = R.int(5, 25), k = R.int(1, n - 1), hoi = R.pick(['trung', 'truot']);
+  const num = hoi === 'trung' ? k*(k - 1) + (n - k)*k : k*(n - k) + (n - k)*(n - k - 1), den = n*(n - 1), A = xcAns(100*num/den); if(!A) return null;
+  const f2 = hoi === 'trung' ? [frT(k - 1, n - 1), frT(k, n - 1)] : [frT(n - k, n - 1), frT(n - k - 1, n - 1)];
+  const o = {stem:`Một hộp có $${n}$ lá thăm giống nhau, trong đó có $${k}$ lá thăm trúng thưởng. Hai bạn An và Bình lần lượt rút ngẫu nhiên mỗi bạn một lá thăm (An rút trước, lá thăm đã rút không trả lại hộp). Xác suất để Bình rút được lá thăm ${hoi === 'trung' ? 'trúng thưởng' : 'không trúng thưởng'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "An rút được thăm trúng thưởng", $B$: "Bình rút được thăm ${hoi === 'trung' ? 'trúng thưởng' : 'không trúng thưởng'}". $P(H) = \\dfrac{${k}}{${n}}$, $P(\\overline{H}) = \\dfrac{${n - k}}{${n}}$; $P(B \\mid H) = ${f2[0]}$, $P(B \\mid \\overline{H}) = ${f2[1]}$.<br>`
+      + `$P(B) = \\dfrac{${k}}{${n}} \\cdot ${f2[0]} + \\dfrac{${n - k}}{${n}} \\cdot ${f2[1]} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$ (bằng xác suất An ${hoi === 'trung' ? 'trúng' : 'không trúng'}: rút trước hay rút sau đều như nhau).`,
+    verify:()=>{ let t = 0, c = 0; for(let i = 0; i < n; i++) for(let j = 0; j < n; j++){ if(i === j) continue; t++; if(hoi === 'trung' ? j < k : j >= k) c++; } return near(o.ans, xcR1(100*c/t), 1e-9) && near(c/t, hoi === 'trung' ? k/n : (n - k)/n, 1e-9); }};
+  return o;
+});
+
+/* 25. TLN VD — thời tiết hai ngày liên tiếp */
+GT(12,6,1,'VD','Thời tiết hai ngày liên tiếp: biết xác suất hôm nay mưa và xác suất ngày mai mưa khi hôm nay mưa (không mưa) — tính xác suất ngày mai mưa (toàn phần) hoặc biết ngày mai mưa, xác suất hôm nay đã mưa (Bayes, đáp số phần trăm)', R=>{
+  const p = 5*R.int(4, 16), a = 5*R.int(8, 16), b = 5*R.int(2, 8), hoi = R.pick(['mai', 'nay']);
+  const t1 = p*a, t2 = (100 - p)*b, v = hoi === 'mai' ? (t1 + t2)/100 : 100*t1/(t1 + t2), A = xcAns(v); if(!A) return null;
+  const o = {stem:`Theo dự báo, xác suất hôm nay có mưa ở một địa phương là $${xcPc(p)}$. Nếu hôm nay có mưa thì xác suất ngày mai có mưa là $${xcPc(a)}$; nếu hôm nay không mưa thì xác suất ngày mai có mưa là $${xcPc(b)}$. ${hoi === 'mai' ? 'Xác suất để ngày mai có mưa bằng $x\\%$.' : 'Biết ngày mai có mưa, xác suất để hôm nay cũng có mưa bằng $x\\%$.'} Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "hôm nay có mưa", $M$: "ngày mai có mưa". $P(H) = ${xcP(p)}$, $P(M \\mid H) = ${xcP(a)}$, $P(M \\mid \\overline{H}) = ${xcP(b)}$.<br>`
+      + `$P(M) = ${xcP(p)} \\cdot ${xcP(a)} + ${xcP(100 - p)} \\cdot ${xcP(b)} = ${nt((t1 + t2)/10000)}$`
+      + (hoi === 'mai' ? ` nên $x ${A.ap}$.` : `.<br>$P(H \\mid M) = \\dfrac{P(H) \\cdot P(M \\mid H)}{P(M)} = \\dfrac{${nt(t1/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(t1, t1 + t2)}$ nên $x = 100 \\cdot ${frT(t1, t1 + t2)} ${A.ap}$.`),
+    verify:()=>{ const nH = p*100, m1 = nH*a/100, m2 = (10000 - nH)*b/100; return near(o.ans, xcR1(hoi === 'mai' ? (m1 + m2)/100 : 100*m1/(m1 + m2)), 1e-9); }};
+  return o;
+});
+
+/* 26. TLN VD — chuyển một bi rồi lấy hai bi */
+GT(12,6,1,'VD','Chuyển một viên bi từ hộp I sang hộp II rồi lấy đồng thời hai viên bi từ hộp II: tính xác suất hai viên lấy ra đều màu đỏ (xác suất toàn phần theo màu viên bi chuyển sang, đáp số phần trăm)', R=>{
+  const a = R.int(1, 8), b = R.int(1, 8), c = R.int(2, 8), d = R.int(1, 8), n1 = a + b, n2 = c + d;
+  const T = xcC(n2 + 1, 2), num = a*xcC(c + 1, 2) + b*xcC(c, 2), den = n1*T, A = xcAns(100*num/den); if(!A) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên một viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên đồng thời hai viên bi từ hộp II. Xác suất để hai viên bi lấy ra từ hộp II đều màu đỏ bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $E$: "viên bi chuyển sang là bi đỏ", $A$: "hai viên lấy từ hộp II đều đỏ". $P(E) = ${frT(a, n1)}$, $P(\\overline{E}) = ${frT(b, n1)}$. Sau khi chuyển, hộp II có $${n2 + 1}$ viên bi.<br>`
+      + `$P(A \\mid E) = \\dfrac{C_{${c + 1}}^{2}}{C_{${n2 + 1}}^{2}} = ${xcFq(xcC(c + 1, 2), T)}$; $P(A \\mid \\overline{E}) = \\dfrac{C_{${c}}^{2}}{C_{${n2 + 1}}^{2}} = ${xcFq(xcC(c, 2), T)}$.<br>`
+      + `$P(A) = ${frT(a, n1)} \\cdot ${frT(xcC(c + 1, 2), T)} + ${frT(b, n1)} \\cdot ${frT(xcC(c, 2), T)} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let s = 0; for(let i = 0; i < n1; i++){ const red = c + (i < a ? 1 : 0); let t = 0, f = 0; for(let u = 0; u < n2 + 1; u++) for(let w = u + 1; w < n2 + 1; w++){ t++; if(u < red && w < red) f++; } s += f/t; } return near(o.ans, xcR1(100*s/n1), 1e-9); }};
+  return o;
+});
+
+/* 27. TLN VD — Bayes: biết hai bi lấy ra đều đỏ */
+GT(12,6,1,'VD','Công thức Bayes: chuyển một viên bi từ hộp I sang hộp II rồi lấy đồng thời hai viên bi từ hộp II thì được hai viên đỏ — tính xác suất viên bi đã chuyển sang là bi đỏ (đáp số phần trăm)', R=>{
+  const a = R.int(1, 8), b = R.int(1, 8), c = R.int(2, 8), d = R.int(1, 8), n1 = a + b, n2 = c + d;
+  const T = xcC(n2 + 1, 2), j = a*xcC(c + 1, 2), num = j + b*xcC(c, 2), A = xcAns(100*j/num); if(!A) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên một viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên đồng thời hai viên bi từ hộp II thì được hai viên bi đỏ. Xác suất để viên bi đã chuyển từ hộp I sang hộp II là bi đỏ bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $E$: "viên bi chuyển sang là bi đỏ", $A$: "hai viên lấy từ hộp II đều đỏ". $P(E) = ${frT(a, n1)}$, $P(A \\mid E) = \\dfrac{C_{${c + 1}}^{2}}{C_{${n2 + 1}}^{2}} = ${frT(xcC(c + 1, 2), T)}$, $P(A \\mid \\overline{E}) = \\dfrac{C_{${c}}^{2}}{C_{${n2 + 1}}^{2}} = ${frT(xcC(c, 2), T)}$.<br>`
+      + `$P(A) = ${frT(a, n1)} \\cdot ${frT(xcC(c + 1, 2), T)} + ${frT(b, n1)} \\cdot ${frT(xcC(c, 2), T)} = ${frT(num, n1*T)}$.<br>`
+      + `$P(E \\mid A) = \\dfrac{P(E) \\cdot P(A \\mid E)}{P(A)} = \\dfrac{${frT(j, n1*T)}}{${frT(num, n1*T)}} = ${frT(j, num)}$ nên $x = 100 \\cdot ${frT(j, num)} ${A.ap}$.`,
+    verify:()=>{ /* đếm: (viên chuyển, cặp lấy ra) đồng khả năng */ let e = 0, all = 0; for(let i = 0; i < n1; i++){ const red = c + (i < a ? 1 : 0); for(let u = 0; u < n2 + 1; u++) for(let w = u + 1; w < n2 + 1; w++) if(u < red && w < red){ all++; if(i < a) e++; } } return near(o.ans, xcR1(100*e/all), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 1: 12-18.1 (dạng 6–30), 12-19.1 (dạng 13–32), 45 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.1 Công thức xác suất toàn phần và công thức Bayes (12|6|1), đợt 4 (dạng 28–32: 5 TLN). Claude viết.
+// Chuỗi: chọn hộp nhờ xúc xắc rồi lấy hai bi cùng màu (28) → lọc thư rác theo từ khoá (29)
+// → Bayes với biến cố đối: biết A không xảy ra (30) → hỏi ngược số bi đỏ của hộp II (31) → máy kiểm tra loại bỏ phế phẩm (32).
+
+/* 28. TLN VD — chọn hộp rồi lấy hai bi cùng màu */
+GT(12,6,1,'VD','Chọn một trong hai hộp nhờ gieo xúc xắc rồi lấy đồng thời hai viên bi từ hộp được chọn: tính xác suất hai viên bi cùng màu (công thức xác suất toàn phần, đáp số phần trăm)', R=>{
+  const a = R.int(2, 8), b = R.int(2, 8), c = R.int(2, 8), d = R.int(2, 8), n1 = a + b, n2 = c + d, k = R.int(1, 5);
+  const s1 = xcC(a, 2) + xcC(b, 2), T1 = xcC(n1, 2), s2 = xcC(c, 2) + xcC(d, 2), T2 = xcC(n2, 2);
+  const num = k*s1*T2 + (6 - k)*s2*T1, den = 6*T1*T2, A = xcAns(100*num/den); if(!A) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Gieo một con xúc xắc cân đối: nếu xuất hiện ${k === 1 ? 'mặt $1$ chấm' : `mặt có số chấm không lớn hơn $${k}$`} thì chọn hộp I, ngược lại thì chọn hộp II. Từ hộp được chọn, lấy ngẫu nhiên đồng thời hai viên bi. Xác suất để hai viên bi lấy ra cùng màu bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "chọn hộp I", $A$: "hai viên bi cùng màu". $P(H) = ${frT(k, 6)}$, $P(\\overline{H}) = ${frT(6 - k, 6)}$.<br>`
+      + `$P(A \\mid H) = \\dfrac{C_{${a}}^{2} + C_{${b}}^{2}}{C_{${n1}}^{2}} = ${xcFq(s1, T1)}$; $P(A \\mid \\overline{H}) = \\dfrac{C_{${c}}^{2} + C_{${d}}^{2}}{C_{${n2}}^{2}} = ${xcFq(s2, T2)}$.<br>`
+      + `$P(A) = ${frT(k, 6)} \\cdot ${frT(s1, T1)} + ${frT(6 - k, 6)} \\cdot ${frT(s2, T2)} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ const pr = (r, g)=>{ let t = 0, f = 0; for(let u = 0; u < r + g; u++) for(let w = u + 1; w < r + g; w++){ t++; if((u < r) === (w < r)) f++; } return f/t; }; let s = 0; for(let face = 1; face <= 6; face++) s += face <= k ? pr(a, b) : pr(c, d); return near(o.ans, xcR1(100*s/6), 1e-9); }};
+  return o;
+});
+
+/* 29. TLN VD — lọc thư rác */
+GT(12,6,1,'VD','Bộ lọc thư rác: biết tỉ lệ thư rác, tỉ lệ thư rác chứa một từ khoá và tỉ lệ thư thường chứa từ khoá đó — biết thư chứa từ khoá, tính xác suất thư là thư rác; hoặc biết thư không chứa từ khoá, xác suất thư là thư rác (Bayes, đáp số phần trăm)', R=>{
+  const p = 5*R.int(4, 14), a = 5*R.int(10, 18), b = R.int(1, 10), hoi = R.pick(['co', 'co', 'khong']);
+  const t1 = hoi === 'co' ? p*a : p*(100 - a), t2 = hoi === 'co' ? (100 - p)*b : (100 - p)*(100 - b), A = xcAns(100*t1/(t1 + t2)); if(!A) return null;
+  const o = {stem:`Ở một hộp thư điện tử, có $${xcPc(p)}$ số thư nhận được là thư rác. Có $${xcPc(a)}$ số thư rác chứa từ khoá "khuyến mãi", trong khi chỉ có $${xcPc(b)}$ số thư thường chứa từ khoá này. Chọn ngẫu nhiên một thư trong hộp thư thì thấy thư đó ${hoi === 'co' ? 'có' : 'không'} chứa từ khoá "khuyến mãi". Xác suất để thư đó là thư rác bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $S$: "thư là thư rác", $K$: "thư chứa từ khoá". $P(S) = ${xcP(p)}$, $P(K \\mid S) = ${xcP(a)}$, $P(K \\mid \\overline{S}) = ${xcP(b)}$.<br>`
+      + (hoi === 'co' ? `$P(K) = ${xcP(p)} \\cdot ${xcP(a)} + ${xcP(100 - p)} \\cdot ${xcP(b)} = ${nt((t1 + t2)/10000)}$.<br>$P(S \\mid K) = \\dfrac{P(S) \\cdot P(K \\mid S)}{P(K)} = \\dfrac{${nt(t1/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(t1, t1 + t2)}$`
+        : `$P(\\overline{K} \\mid S) = ${xcP(100 - a)}$, $P(\\overline{K} \\mid \\overline{S}) = ${xcP(100 - b)}$; $P(\\overline{K}) = ${xcP(p)} \\cdot ${xcP(100 - a)} + ${xcP(100 - p)} \\cdot ${xcP(100 - b)} = ${nt((t1 + t2)/10000)}$.<br>$P(S \\mid \\overline{K}) = \\dfrac{P(S) \\cdot P(\\overline{K} \\mid S)}{P(\\overline{K})} = \\dfrac{${nt(t1/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(t1, t1 + t2)}$`)
+      + ` nên $x = 100 \\cdot ${frT(t1, t1 + t2)} ${A.ap}$.`,
+    verify:()=>{ const nS = p*100, kS = nS*a/100, kN = (10000 - nS)*b/100, sel = hoi === 'co' ? [kS, kN] : [nS - kS, 10000 - nS - kN]; return near(o.ans, xcR1(100*sel[0]/(sel[0] + sel[1])), 1e-9); }};
+  return o;
+});
+
+/* 30. TLN VD — Bayes với biến cố đối */
+GT(12,6,1,'VD','Công thức Bayes khi biết biến cố A không xảy ra (không đạt giỏi, không là phế phẩm, không mua hàng, không gặp sự cố): P(H | Ā) = P(H)·[1 − P(A | H)]/P(Ā) (đáp số phần trăm)', R=>{
+  const c = xcCt2(R); if(!c) return null;
+  const j = R.pick(['H', 'nH']), t1 = c.p*(100 - c.a), t2 = (100 - c.p)*(100 - c.b), v = 100*(j === 'H' ? t1 : t2)/(t1 + t2), A = xcAns(v); if(!A) return null;
+  const E = j === 'H' ? 'H' : '\\overline{H}';
+  const o = {stem:`${c.intro(c.p, c.a, c.b)} ${c.pick.replace('.', '')} thì thấy ${c.u} đó ${c.nA}. Xác suất để ${c.u} đó ${j === 'H' ? c.H : c.nH} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H$: "${c.u} ${c.H}", $A$: "${c.u} ${c.A}". $P(H) = ${xcP(c.p)}$, $P(\\overline{A} \\mid H) = 1 - ${xcP(c.a)} = ${xcP(100 - c.a)}$, $P(\\overline{A} \\mid \\overline{H}) = 1 - ${xcP(c.b)} = ${xcP(100 - c.b)}$.<br>`
+      + `$P(\\overline{A}) = ${xcP(c.p)} \\cdot ${xcP(100 - c.a)} + ${xcP(100 - c.p)} \\cdot ${xcP(100 - c.b)} = ${nt((t1 + t2)/10000)}$.<br>`
+      + `$P(${E} \\mid \\overline{A}) = \\dfrac{P(${E}) \\cdot P(\\overline{A} \\mid ${E})}{P(\\overline{A})} = \\dfrac{${nt((j === 'H' ? t1 : t2)/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(j === 'H' ? t1 : t2, t1 + t2)}$ nên $x = 100 \\cdot ${frT(j === 'H' ? t1 : t2, t1 + t2)} ${A.ap}$.`,
+    verify:()=>{ const nH = c.p*100, kH = nH - nH*c.a/100, kN = (10000 - nH) - (10000 - nH)*c.b/100; return near(o.ans, xcR1(100*(j === 'H' ? kH : kN)/(kH + kN)), 1e-9); }};
+  return o;
+});
+
+/* 31. TLN VD — hỏi ngược số bi đỏ */
+GT(12,6,1,'VD','Hỏi ngược công thức xác suất toàn phần: chọn một trong hai hộp nhờ tung đồng xu rồi lấy một viên bi; biết xác suất lấy được bi đỏ — tìm số viên bi đỏ của hộp II', R=>{
+  const a = R.int(1, 9), b = R.int(1, 9), n2 = R.int(6, 20), x = R.int(1, n2 - 1), n1 = a + b;
+  const num = a*n2 + x*n1, den = 2*n1*n2, pT = frT(num, den);
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${n2}$ viên bi, gồm bi đỏ và bi xanh. Tung một đồng xu cân đối: nếu xuất hiện mặt sấp thì chọn hộp I, nếu xuất hiện mặt ngửa thì chọn hộp II. Từ hộp được chọn, lấy ngẫu nhiên một viên bi. Biết xác suất lấy được viên bi đỏ bằng $${pT}$. Hộp II có bao nhiêu viên bi đỏ?`, ans:x,
+    lg:`Gọi $n$ là số bi đỏ của hộp II ($0 \\le n \\le ${n2}$), $H$: "chọn hộp I", $A$: "lấy được bi đỏ". Theo công thức xác suất toàn phần:<br>`
+      + `$P(A) = \\dfrac{1}{2} \\cdot ${frT(a, n1)} + \\dfrac{1}{2} \\cdot \\dfrac{n}{${n2}} = ${pT}$ $\\Leftrightarrow \\dfrac{n}{${n2}} = 2 \\cdot ${pT} - ${frT(a, n1)} = ${frT(x, n2)}$ $\\Leftrightarrow n = ${x}$.`,
+    verify:()=>{ const sol = []; for(let t = 0; t <= n2; t++) if(near(0.5*a/n1 + 0.5*t/n2, num/den, 1e-12)) sol.push(t); return sol.length === 1 && o.ans === sol[0]; }};
+  return o;
+});
+
+/* 32. TLN VD — máy kiểm tra loại bỏ phế phẩm */
+GT(12,6,1,'VD','Máy kiểm tra chất lượng: loại bỏ phế phẩm với xác suất a nhưng cũng loại nhầm sản phẩm tốt với xác suất b — tính tỉ lệ phế phẩm trong số sản phẩm được chấp nhận hoặc tỉ lệ sản phẩm tốt trong số sản phẩm bị loại (Bayes với biến cố đối, đáp số phần trăm)', R=>{
+  const p = R.int(2, 10), a = R.pick([80, 85, 90, 95, 98]), b = R.int(1, 5), hoi = R.pick(['nhan', 'loai']);
+  const t1 = hoi === 'nhan' ? p*(100 - a) : (100 - p)*b, t2 = hoi === 'nhan' ? (100 - p)*(100 - b) : p*a, A = xcAns(100*t1/(t1 + t2)); if(!A) return null;
+  const o = {stem:`Một dây chuyền có $${xcPc(p)}$ sản phẩm làm ra là phế phẩm. Mỗi sản phẩm được một máy kiểm tra tự động: máy loại bỏ phế phẩm với xác suất $${xcPc(a)}$, nhưng cũng loại bỏ nhầm sản phẩm tốt với xác suất $${xcPc(b)}$; sản phẩm không bị loại thì được chấp nhận. Chọn ngẫu nhiên một sản phẩm ${hoi === 'nhan' ? 'đã được chấp nhận' : 'đã bị máy loại bỏ'}. Xác suất để sản phẩm đó là ${hoi === 'nhan' ? 'phế phẩm' : 'sản phẩm tốt'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $F$: "sản phẩm là phế phẩm", $L$: "sản phẩm bị loại". $P(F) = ${xcP(p)}$, $P(L \\mid F) = ${xcP(a)}$, $P(L \\mid \\overline{F}) = ${xcP(b)}$.<br>`
+      + (hoi === 'nhan' ? `$P(\\overline{L}) = ${xcP(p)} \\cdot ${xcP(100 - a)} + ${xcP(100 - p)} \\cdot ${xcP(100 - b)} = ${nt((t1 + t2)/10000)}$.<br>$P(F \\mid \\overline{L}) = \\dfrac{P(F) \\cdot P(\\overline{L} \\mid F)}{P(\\overline{L})} = \\dfrac{${nt(t1/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(t1, t1 + t2)}$`
+        : `$P(L) = ${xcP(p)} \\cdot ${xcP(a)} + ${xcP(100 - p)} \\cdot ${xcP(b)} = ${nt((t1 + t2)/10000)}$.<br>$P(\\overline{F} \\mid L) = \\dfrac{P(\\overline{F}) \\cdot P(L \\mid \\overline{F})}{P(L)} = \\dfrac{${nt(t1/10000)}}{${nt((t1 + t2)/10000)}} = ${frT(t1, t1 + t2)}$`)
+      + ` nên $x = 100 \\cdot ${frT(t1, t1 + t2)} ${A.ap}$.`,
+    verify:()=>{ const nF = p*100, lF = nF*a/100, lG = (10000 - nF)*b/100, s = hoi === 'nhan' ? [nF - lF, 10000 - nF - lG] : [lG, lF]; return near(o.ans, xcR1(100*s[0]/(s[0] + s[1])), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.2 Xác suất có điều kiện bằng sơ đồ cây; Đ–S thực tế (12|6|0), đợt 1 (dạng 31–35: 5 TN). Claude viết.
+// Chuỗi: đọc một đường đi trên sơ đồ cây (31) → cây có nhánh để trống, phải lấy phần bù (32) → hai bi khác màu / cùng màu: cộng các đường (33)
+// → ba lần lấy, đúng hai bi đỏ: ba đường (34) → bắn tối đa ba viên, xác suất thay đổi sau mỗi lần trượt (35).
+
+/* 31. TN NB — một đường đi trên sơ đồ cây */
+G(12,6,0,'NB','Đọc sơ đồ cây hai tầng: xác suất của một đường đi bằng tích xác suất trên các nhánh, P(A ∩ B) = P(A)·P(B | A) — bẫy lấy xác suất nhánh cuối, cộng thay vì nhân, lấy nhầm nhánh tầng 1', R=>{
+  const a = 10*R.int(2, 8), b = 10*R.int(1, 9), c = 10*R.int(1, 9); if(b === c) return null;
+  const hoi = R.pick(['AB', 'AnB', 'nAB', 'nAnB']), pA = hoi[0] === 'n' ? 100 - a : a, pB = hoi === 'AB' ? b : hoi === 'AnB' ? 100 - b : hoi === 'nAB' ? c : 100 - c, v = pA*pB/10000;
+  const oth = hoi[0] === 'n' ? a : 100 - a;
+  const ans = xcNu(v), wrong = xcW(R, ans, [xcNu(pB/100), xcNu((pA + pB)/200), xcNu(oth*pB/10000), xcNu(pA/100), xcNu(pA*(100 - pB)/10000)]); if(!wrong) return null;
+  const E = {AB:'A \\cap B', AnB:'A \\cap \\overline{B}', nAB:'\\overline{A} \\cap B', nAnB:'\\overline{A} \\cap \\overline{B}'}[hoi], tA = hoi[0] === 'n' ? '\\overline{A}' : 'A', tB = hoi.slice(-2) === 'nB' ? '\\overline{B}' : 'B';
+  const cay = xcCay([['A', xcP(a)], ['\\overline{A}', xcP(100 - a)]], [[['B', xcP(b)], ['\\overline{B}', xcP(100 - b)]], [['B', xcP(c)], ['\\overline{B}', xcP(100 - c)]]]);
+  const o = {stem:`Cho sơ đồ cây biểu diễn hai biến cố $A$, $B$ (số trong ngoặc ở tầng thứ nhất là xác suất của $A$, $\\overline{A}$; ở tầng thứ hai là xác suất có điều kiện của $B$, $\\overline{B}$ khi biết biến cố ở nhánh trước đã xảy ra):<br>${cay}<br>Xác suất $P(${E})$ bằng`, ans, wrong,
+    lg:`Đường đi $${tA} \\to ${tB}$: $P(${E}) = P(${tA}) \\cdot P(${tB} \\mid ${tA}) = ${xcP(pA)} \\cdot ${xcP(pB)} = ${nt(v)}$ (nhân các xác suất trên đường đi).`,
+    verify:()=>{ const nA = hoi[0] === 'n' ? 10000 - a*100 : a*100, k = nA*pB/100; return near(o.ans.v, k/10000, 1e-9); }};
+  return o;
+});
+
+/* 32. TN TH — cây có nhánh để trống */
+G(12,6,0,'TH','Sơ đồ cây có nhánh để trống: điền xác suất còn thiếu bằng phần bù (các nhánh từ một nút có tổng bằng 1) rồi tính xác suất một đường đi — bẫy dùng ngay số của nhánh bên cạnh', R=>{
+  const a = 5*R.int(4, 16), b = 5*R.int(2, 18), c = 5*R.int(2, 18); if(b === c) return null;
+  const hoi = R.pick(['nAnB', 'nAB', 'AnB']), pA = hoi[0] === 'n' ? 100 - a : a, pB = hoi === 'nAnB' ? 100 - c : hoi === 'nAB' ? c : 100 - b, v = pA*pB/10000;
+  const ans = xcNu(v), wrong = xcW(R, ans, [xcNu((hoi[0] === 'n' ? a : 100 - a)*pB/10000), xcNu(pA*(100 - pB)/10000), xcNu((100 - pA)*(100 - pB)/10000), xcNu(pB/100)]); if(!wrong) return null;
+  const E = {AnB:'A \\cap \\overline{B}', nAB:'\\overline{A} \\cap B', nAnB:'\\overline{A} \\cap \\overline{B}'}[hoi];
+  const cay = xcCay([['A', xcP(a)], ['\\overline{A}', '?']], [[['B', xcP(b)], ['\\overline{B}', '?']], [['B', hoi === 'nAB' ? '?' : xcP(c)], ['\\overline{B}', hoi === 'nAB' ? xcP(100 - c) : '?']]]);
+  const tA = hoi[0] === 'n' ? '\\overline{A}' : 'A', tB = hoi.slice(-2) === 'nB' ? '\\overline{B}' : 'B';
+  const o = {stem:`Cho sơ đồ cây biểu diễn hai biến cố $A$, $B$, trong đó một số nhánh chưa ghi xác suất (dấu ?):<br>${cay}<br>Xác suất $P(${E})$ bằng`, ans, wrong,
+    lg:`Các nhánh xuất phát từ cùng một nút có tổng xác suất bằng $1$: $P(${tA}) = ${hoi[0] === 'n' ? `1 - ${xcP(a)} = ` : ''}${xcP(pA)}$, $P(${tB} \\mid ${tA}) = ${xcP(pB)}$${(hoi === 'AnB') ? ` (bằng $1 - ${xcP(b)}$)` : hoi === 'nAnB' ? ` (bằng $1 - ${xcP(c)}$)` : ` (bằng $1 - ${xcP(100 - c)}$)`}.<br>$P(${E}) = ${xcP(pA)} \\cdot ${xcP(pB)} = ${nt(v)}$.`,
+    verify:()=> near(o.ans.v, (hoi[0] === 'n' ? 1 - a/100 : a/100)*(hoi === 'nAnB' ? 1 - c/100 : hoi === 'nAB' ? 1 - (100 - c)/100 : 1 - b/100), 1e-9)};
+  return o;
+});
+
+/* 33. TN TH — hai bi khác màu / cùng màu */
+G(12,6,0,'TH','Lấy lần lượt hai viên bi không hoàn lại, dùng sơ đồ cây: xác suất hai viên khác màu (hoặc cùng màu) bằng tổng xác suất các đường đi thích hợp — bẫy chỉ lấy một đường, coi như có hoàn lại', R=>{
+  const a = R.int(2, 9), b = R.int(2, 9), N = a + b, hoi = R.pick(['khac', 'cung']), D = N*(N - 1);
+  const num = hoi === 'khac' ? 2*a*b : a*(a - 1) + b*(b - 1);
+  const ans = xcFr(num, D), wrong = xcW(R, ans, [xcFr(a*b, D), xcFr(hoi === 'khac' ? 2*a*b : a*a + b*b, N*N), xcFr(a*(a - 1), D), xcFr(D - num - a*b, D), xcFr(1, 2)]); if(!wrong) return null;
+  const o = {stem:`Một hộp có $${a}$ viên bi đỏ và $${b}$ viên bi xanh, các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên lần lượt hai viên bi, không hoàn lại. Xác suất để hai viên bi lấy ra ${hoi === 'khac' ? 'khác màu' : 'cùng màu'} bằng`, ans, wrong,
+    lg:`Sơ đồ cây: lần 1 đỏ $\\left(${frT(a, N)}\\right)$ hoặc xanh $\\left(${frT(b, N)}\\right)$; lần 2 (còn $${N - 1}$ viên): sau đỏ thì đỏ $\\left(${frT(a - 1, N - 1)}\\right)$, xanh $\\left(${frT(b, N - 1)}\\right)$; sau xanh thì đỏ $\\left(${frT(a, N - 1)}\\right)$, xanh $\\left(${frT(b - 1, N - 1)}\\right)$.<br>`
+      + (hoi === 'khac' ? `Hai đường đi "đỏ – xanh" và "xanh – đỏ": $P = ${frT(a, N)} \\cdot ${frT(b, N - 1)} + ${frT(b, N)} \\cdot ${frT(a, N - 1)} = ${frT(num, D)}$.`
+        : `Hai đường đi "đỏ – đỏ" và "xanh – xanh": $P = ${frT(a, N)} \\cdot ${frT(a - 1, N - 1)} + ${frT(b, N)} \\cdot ${frT(b - 1, N - 1)} = ${frT(num, D)}$.`),
+    verify:()=>{ let t = 0, f = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++){ if(i === j) continue; t++; const kh = (i < a) !== (j < a); if(hoi === 'khac' ? kh : !kh) f++; } return near(o.ans.v, f/t, 1e-9); }};
+  return o;
+});
+
+/* 34. TN VD — ba lần lấy, đúng hai bi đỏ */
+G(12,6,0,'VD','Lấy lần lượt ba viên bi không hoàn lại: xác suất có đúng hai viên đỏ bằng tổng ba đường đi trên sơ đồ cây (Đ Đ X, Đ X Đ, X Đ Đ) — bẫy chỉ tính một đường, coi như có hoàn lại', R=>{
+  const a = R.int(3, 9), b = R.int(2, 8), N = a + b, D = N*(N - 1)*(N - 2), one = a*(a - 1)*b;
+  const ans = xcFr(3*one, D), wrong = xcW(R, ans, [xcFr(one, D), xcFr(3*a*a*b, N*N*N), xcFr(2*one, D), xcFr(a*(a - 1)*(a - 2), D)]); if(!wrong) return null;
+  const o = {stem:`Một hộp có $${a}$ viên bi đỏ và $${b}$ viên bi xanh, các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên lần lượt ba viên bi, không hoàn lại. Xác suất để trong ba viên bi lấy ra có đúng hai viên màu đỏ bằng`, ans, wrong,
+    lg:`Trên sơ đồ cây ba tầng có ba đường đi thoả mãn (Đ = đỏ, X = xanh):<br>$\\text{Đ Đ X}: \\dfrac{${a}}{${N}} \\cdot \\dfrac{${a - 1}}{${N - 1}} \\cdot \\dfrac{${b}}{${N - 2}}$; $\\text{Đ X Đ}: \\dfrac{${a}}{${N}} \\cdot \\dfrac{${b}}{${N - 1}} \\cdot \\dfrac{${a - 1}}{${N - 2}}$; $\\text{X Đ Đ}: \\dfrac{${b}}{${N}} \\cdot \\dfrac{${a}}{${N - 1}} \\cdot \\dfrac{${a - 1}}{${N - 2}}$.<br>`
+      + `Mỗi đường có xác suất $${frT(one, D)}$, nên xác suất cần tìm bằng $3 \\cdot ${frT(one, D)} = ${frT(3*one, D)}$.`,
+    verify:()=> near(o.ans.v, xcC(a, 2)*b/xcC(N, 3), 1e-9)};
+  return o;
+});
+
+/* 35. TN VD — bắn tối đa ba viên */
+G(12,6,0,'VD','Bắn tối đa ba viên, trúng thì dừng; sau mỗi lần trượt xác suất trúng thay đổi (p₁, p₂, p₃): xác suất trúng đích, trúng ở đúng lần thứ hai (thứ ba) — sơ đồ cây và biến cố đối (bẫy cộng p₁ + p₂ + p₃, quên các lần trượt trước)', R=>{
+  const p1 = 10*R.int(2, 6), p2 = p1 + 10*R.int(1, 3), p3 = p2 + 10*R.int(0, 2); if(p3 > 90) return null;
+  const hoi = R.pick(['trung', 'lan2', 'lan3']), q1 = 100 - p1, q2 = 100 - p2, q3 = 100 - p3;
+  const v = hoi === 'trung' ? 1 - q1*q2*q3/1e6 : hoi === 'lan2' ? q1*p2/1e4 : q1*q2*p3/1e6;
+  const ans = xcNu(v), wrong = xcW(R, ans, [xcNu(p1*p2*p3/1e6), xcNu(hoi === 'lan2' ? p2/100 : p3/100), xcNu(q1*q2*q3/1e6), xcNu(hoi === 'trung' ? (p1 + p2)/100 : p1*p2/1e4), xcNu(hoi === 'lan3' ? q1*p3/1e4 : p1*q2/1e4)]); if(!wrong) return null;
+  const o = {stem:`Một xạ thủ bắn vào một mục tiêu, bắn tối đa ba viên đạn và dừng ngay khi có một viên trúng. Xác suất viên thứ nhất trúng là $${xcP(p1)}$; nếu viên thứ nhất trượt thì xác suất viên thứ hai trúng là $${xcP(p2)}$; nếu hai viên đầu đều trượt thì xác suất viên thứ ba trúng là $${xcP(p3)}$. Xác suất để ${hoi === 'trung' ? 'mục tiêu bị bắn trúng' : hoi === 'lan2' ? 'xạ thủ bắn trúng ở đúng viên thứ hai' : 'xạ thủ bắn trúng ở đúng viên thứ ba'} bằng`, ans, wrong,
+    lg:`Gọi $T_i$: "viên thứ $i$ trúng". Trên sơ đồ cây: $P(\\overline{T_1}) = ${xcP(q1)}$, $P(\\overline{T_2} \\mid \\overline{T_1}) = ${xcP(q2)}$, $P(\\overline{T_3} \\mid \\overline{T_1} \\cap \\overline{T_2}) = ${xcP(q3)}$.<br>`
+      + (hoi === 'trung' ? `Biến cố đối "cả ba viên đều trượt" có xác suất $${xcP(q1)} \\cdot ${xcP(q2)} \\cdot ${xcP(q3)} = ${nt(q1*q2*q3/1e6)}$ nên xác suất mục tiêu bị trúng bằng $1 - ${nt(q1*q2*q3/1e6)} = ${nt(v)}$.`
+        : hoi === 'lan2' ? `Trúng ở đúng viên thứ hai: viên 1 trượt, viên 2 trúng: $P = ${xcP(q1)} \\cdot ${xcP(p2)} = ${nt(v)}$.`
+        : `Trúng ở đúng viên thứ ba: hai viên đầu trượt, viên 3 trúng: $P = ${xcP(q1)} \\cdot ${xcP(q2)} \\cdot ${xcP(p3)} = ${nt(v)}$.`),
+    verify:()=>{ const pr = [p1, p2, p3].map(x=> x/100); let miss = 1, at = [0, 0, 0]; for(let i = 0; i < 3; i++){ at[i] = miss*pr[i]; miss *= 1 - pr[i]; } return near(o.ans.v, hoi === 'trung' ? at[0] + at[1] + at[2] : hoi === 'lan2' ? at[1] : at[2], 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.2 Xác suất có điều kiện bằng sơ đồ cây; Đ–S thực tế (12|6|0), đợt 2 (dạng 36–40: 3 TN, 2 Đ–S). Claude viết.
+// Chuỗi: sơ đồ cây tần số — đếm để tính xác suất có điều kiện (36) → thi đấu ba ván thắng hai, xác suất phụ thuộc ván trước (37)
+// → hỏi ngược một nhánh trên cây (38) → Đ–S thi bằng lái hai phần (39) → Đ–S ba lần lấy không hoàn lại (40).
+
+/* 36. TN TH — sơ đồ cây tần số */
+G(12,6,0,'TH','Sơ đồ cây tần số (số người ở mỗi nhánh): chọn ngẫu nhiên một người thuộc nhóm ở tầng hai, tính xác suất người đó thuộc một nhánh ở tầng một bằng cách đếm — bẫy chia cho số người của nhánh tầng một, chia cho tổng', R=>{
+  const ctx = R.pick([
+    {pre:'người được khám sức khoẻ', H:'Hút thuốc', nH:'Không hút thuốc', B:'Bệnh phổi', nB:'Không bệnh phổi', h:'hút thuốc', b:'mắc bệnh phổi', u:'người'},
+    {pre:'học sinh khối 12', H:'Học thêm', nH:'Không học thêm', B:'Điểm từ 8', nB:'Điểm dưới 8', h:'có học thêm', b:'đạt điểm từ 8 trở lên', u:'học sinh'},
+    {pre:'khách hàng mua điện thoại', H:'Mua trả góp', nH:'Trả ngay', B:'Mua bảo hành', nB:'Không bảo hành', h:'mua trả góp', b:'mua thêm gói bảo hành', u:'khách hàng'}]);
+  const n1 = R.int(40, 300), n2 = R.int(40, 300), k1 = R.int(Math.ceil(n1*0.1), Math.floor(n1*0.5)), k2 = R.int(Math.ceil(n2*0.05), Math.floor(n2*0.4)), N = n1 + n2, hoi = R.pick(['H', 'nH']);
+  const kk = hoi === 'H' ? k1 : k2, nn = hoi === 'H' ? n1 : n2;
+  const ans = xcFr(kk, k1 + k2), wrong = xcW(R, ans, [xcFr(kk, nn), xcFr(kk, N), xcFr(k1 + k2, N), xcFr(nn, N)]); if(!wrong) return null;
+  const cay = xcCay([[`\\text{${ctx.H}}`, n1], [`\\text{${ctx.nH}}`, n2]], [[[`\\text{${ctx.B}}`, k1], [`\\text{${ctx.nB}}`, n1 - k1]], [[`\\text{${ctx.B}}`, k2], [`\\text{${ctx.nB}}`, n2 - k2]]]);
+  const o = {stem:`Kết quả khảo sát $${N}$ ${ctx.pre} được biểu diễn bằng sơ đồ cây tần số sau (số trong ngoặc là số ${ctx.u} của nhánh):<br>${cay}<br>Chọn ngẫu nhiên một ${ctx.u} ${ctx.b} trong số đó. Xác suất để ${ctx.u} đó ${hoi === 'H' ? ctx.h : 'không ' + ctx.h.replace(/^có /, '')} bằng`, ans, wrong,
+    lg:`Số ${ctx.u} ${ctx.b}: $${k1} + ${k2} = ${k1 + k2}$, trong đó có $${kk}$ ${ctx.u} ${hoi === 'H' ? ctx.h : 'không ' + ctx.h.replace(/^có /, '')}.<br>Xác suất cần tìm bằng $${xcFq(kk, k1 + k2)}$.`,
+    verify:()=> near(o.ans.v, (kk/N)/((k1 + k2)/N), 1e-9)};
+  return o;
+});
+
+/* 37. TN VD — thi đấu ba ván thắng hai, phụ thuộc ván trước */
+G(12,6,0,'VD','Thi đấu theo thể thức ba ván thắng hai, xác suất thắng mỗi ván phụ thuộc kết quả ván trước (tâm lí): tính xác suất A thắng chung cuộc bằng sơ đồ cây — bẫy coi các ván độc lập, bỏ sót đường đi', R=>{
+  const p = 10*R.int(3, 7), q = 10*R.int(5, 8), r = 10*R.int(2, 5); if(q <= r) return null;
+  const v = (p*q*100 + p*(100 - q)*r + (100 - p)*r*q)/1e6;
+  const ans = xcNu(v), wrong = xcW(R, ans, [xcNu(p*q/1e4), xcNu((p*p*100 + 2*p*p*(100 - p))/1e6), xcNu((p*q*100 + p*(100 - q)*r)/1e6), xcNu((p*q*100 + (100 - p)*r*q)/1e6)]); if(!wrong) return null;
+  const o = {stem:`Hai kì thủ A và B thi đấu theo thể thức ba ván thắng hai (ai thắng hai ván trước thì thắng chung cuộc, mỗi ván không có hoà). Xác suất A thắng ván đầu tiên là $${xcP(p)}$. Ở các ván sau, nếu A vừa thắng ván trước thì xác suất A thắng ván tiếp theo là $${xcP(q)}$; nếu A vừa thua ván trước thì xác suất đó là $${xcP(r)}$. Xác suất để A thắng chung cuộc bằng`, ans, wrong,
+    lg:`Kí hiệu T (A thắng), H (A thua). Trên sơ đồ cây, A thắng chung cuộc theo ba đường đi:<br>`
+      + `T T: $${xcP(p)} \\cdot ${xcP(q)} = ${nt(p*q/1e4)}$; T H T: $${xcP(p)} \\cdot ${xcP(100 - q)} \\cdot ${xcP(r)} = ${nt(p*(100 - q)*r/1e6)}$; H T T: $${xcP(100 - p)} \\cdot ${xcP(r)} \\cdot ${xcP(q)} = ${nt((100 - p)*r*q/1e6)}$.<br>`
+      + `Xác suất A thắng chung cuộc bằng $${nt(p*q/1e4)} + ${nt(p*(100 - q)*r/1e6)} + ${nt((100 - p)*r*q/1e6)} = ${nt(v)}$.`,
+    verify:()=>{ /* duyệt mọi chuỗi kết quả */ let s = 0; const go = (w, l, last, pr)=>{ if(w === 2){ s += pr; return; } if(l === 2) return; const pw = last === null ? p/100 : last ? q/100 : r/100; go(w + 1, l, true, pr*pw); go(w, l + 1, false, pr*(1 - pw)); }; go(0, 0, null, 1); return near(o.ans.v, s, 1e-9); }};
+  return o;
+});
+
+/* 38. TN TH — hỏi ngược một nhánh */
+G(12,6,0,'TH','Hỏi ngược trên sơ đồ cây: biết xác suất của nhánh tầng một và của cả đường đi (vd hồ sơ qua vòng sơ loại, hồ sơ được tuyển), tìm xác suất có điều kiện ở nhánh tầng hai — bẫy lấy luôn xác suất đường đi, nhân thay vì chia', R=>{
+  const ctx = R.pick([
+    {t:(a, c)=> `Ở một đợt tuyển dụng, có $${xcPc(a)}$ hồ sơ qua vòng sơ loại; chỉ hồ sơ qua sơ loại mới được phỏng vấn, và có $${xcPc(c)}$ tổng số hồ sơ được tuyển.`, q:'một hồ sơ đã qua vòng sơ loại thì được tuyển'},
+    {t:(a, c)=> `Ở một kì thi chọn học sinh giỏi gồm hai vòng, có $${xcPc(a)}$ thí sinh qua vòng 1; chỉ thí sinh qua vòng 1 mới được thi vòng 2, và có $${xcPc(c)}$ tổng số thí sinh đạt giải.`, q:'một thí sinh đã qua vòng 1 thì đạt giải'},
+    {t:(a, c)=> `Một loại hạt giống có tỉ lệ nảy mầm $${xcPc(a)}$; chỉ hạt nảy mầm mới có thể phát triển thành cây con khoẻ mạnh, và có $${xcPc(c)}$ tổng số hạt gieo phát triển thành cây con khoẻ mạnh.`, q:'một hạt đã nảy mầm phát triển thành cây con khoẻ mạnh'}]);
+  const a = 5*R.int(4, 18), c = 5*R.int(1, 15); if(c >= a) return null;
+  const ans = xcFr(c, a), wrong = xcW(R, ans, [xcNu(c/100), xcNu(a*c/1e4), xcFr(a - c, a), xcNu((a - c)/100)]); if(!wrong) return null;
+  const o = {stem:`${ctx.t(a, c)} Xác suất để ${ctx.q} bằng`, ans, wrong,
+    lg:`Gọi $A$ là biến cố ở nhánh thứ nhất, $B$ là biến cố ở nhánh thứ hai. Vì $B$ chỉ xảy ra khi $A$ đã xảy ra nên $P(A \\cap B) = P(B) = ${xcP(c)}$.<br>Trên sơ đồ cây: $P(A \\cap B) = P(A) \\cdot P(B \\mid A)$ nên $P(B \\mid A) = \\dfrac{${xcP(c)}}{${xcP(a)}} = ${frT(c, a)}$.`,
+    verify:()=>{ const nA = a*100, nB = c*100; return near(o.ans.v, nB/nA, 1e-9); }};
+  return o;
+});
+
+/* 39. Đ–S TH — thi bằng lái hai phần */
+GD(12,6,0,'TH','Đúng – Sai: thi bằng lái xe gồm phần lí thuyết và phần thực hành (trượt lí thuyết thì không thi thực hành) — sơ đồ cây: xác suất trượt lí thuyết, đỗ cả hai phần, đỗ lí thuyết nhưng trượt thực hành, không có bằng', R=>{
+  const a = 5*R.int(12, 19), b = 5*R.int(10, 18), ab = a*b;
+  const items = [
+    claimN(R, v=> `Xác suất để thí sinh đó trượt phần lí thuyết bằng $${v}$`, (100 - a)/100, xcP(100 - a), (100 - b)/100, xcP(100 - b), ()=> 1 - a/100),
+    claimN(R, v=> `Xác suất để thí sinh đó đỗ cả hai phần thi bằng $${v}$`, ab/1e4, nt(ab/1e4), b/100, xcP(b), ()=> (a/100)*(b/100)),
+    claimN(R, v=> `Xác suất để thí sinh đó đỗ phần lí thuyết nhưng trượt phần thực hành bằng $${v}$`, a*(100 - b)/1e4, nt(a*(100 - b)/1e4), (100 - b)/100, xcP(100 - b), ()=> a/100 - (a/100)*(b/100)),
+    claimN(R, v=> `Xác suất để thí sinh đó không được cấp bằng lái xe bằng $${v}$`, 1 - ab/1e4, nt(1 - ab/1e4), (200 - a - b)/100, xcP(200 - a - b), ()=> (1 - a/100) + a/100*(1 - b/100))];
+  if(near(1 - ab/1e4, (200 - a - b)/100, 1e-9) || a === b) return null;
+  return {stem:`Một kì thi sát hạch lái xe gồm phần lí thuyết và phần thực hành; thí sinh trượt phần lí thuyết thì không được thi phần thực hành, thí sinh đỗ cả hai phần thì được cấp bằng. Xác suất một thí sinh đỗ phần lí thuyết là $${xcP(a)}$; nếu đã đỗ phần lí thuyết thì xác suất thí sinh đó đỗ phần thực hành là $${xcP(b)}$. Xét một thí sinh dự thi.`, items,
+    lg:`Gọi $L$: "đỗ lí thuyết", $T$: "đỗ thực hành". Sơ đồ cây: $L$ $(${xcP(a)})$ rồi $T$ $(${xcP(b)})$ hoặc $\\overline{T}$ $(${xcP(100 - b)})$; $\\overline{L}$ $(${xcP(100 - a)})$ thì dừng.<br>`
+      + `a) $P(\\overline{L}) = 1 - ${xcP(a)} = ${xcP(100 - a)}$.<br>b) $P(L \\cap T) = ${xcP(a)} \\cdot ${xcP(b)} = ${nt(ab/1e4)}$.<br>c) $P(L \\cap \\overline{T}) = ${xcP(a)} \\cdot ${xcP(100 - b)} = ${nt(a*(100 - b)/1e4)}$.<br>`
+      + `d) Không có bằng khi trượt lí thuyết hoặc đỗ lí thuyết mà trượt thực hành: $${xcP(100 - a)} + ${nt(a*(100 - b)/1e4)} = ${nt(1 - ab/1e4)}$ (cũng bằng $1 - ${nt(ab/1e4)}$).`};
+});
+
+/* 40. Đ–S VD — ba lần lấy không hoàn lại */
+GD(12,6,0,'VD','Đúng – Sai: lấy lần lượt ba viên bi không hoàn lại — P(cả ba đỏ), P(lần ba đỏ | hai lần đầu đỏ), P(đúng một viên đỏ), P(viên đỏ đầu tiên xuất hiện ở lần lấy thứ hai) bằng sơ đồ cây', R=>{
+  const a = R.int(3, 8), b = R.int(3, 8), N = a + b, D = N*(N - 1)*(N - 2);
+  const all = a*(a - 1)*(a - 2), one = 3*a*b*(b - 1);
+  const items = [
+    claimN(R, v=> `Xác suất để cả ba viên bi lấy ra đều màu đỏ bằng $${v}$`, all/D, frT(all, D), a**3/N**3, frT(a**3, N**3), ()=> xcC(a, 3)/xcC(N, 3)),
+    claimN(R, v=> `Biết hai viên bi lấy ra đầu tiên đều màu đỏ, xác suất để viên bi lấy lần thứ ba cũng màu đỏ bằng $${v}$`, (a - 2)/(N - 2), frT(a - 2, N - 2), a/N, frT(a, N), ()=> (all/D)/(a*(a - 1)/(N*(N - 1)))),
+    claimN(R, v=> `Xác suất để trong ba viên bi lấy ra có đúng một viên màu đỏ bằng $${v}$`, one/D, frT(one, D), one/3/D, frT(one/3, D), ()=> a*xcC(b, 2)/xcC(N, 3)),
+    claimN(R, v=> `Xác suất để viên bi đỏ đầu tiên xuất hiện ở lần lấy thứ hai bằng $${v}$`, b*a/(N*(N - 1)), frT(b*a, N*(N - 1)), b*a/(N*N), frT(b*a, N*N), ()=>{ let t = 0, f = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++){ if(i === j) continue; t++; if(i >= a && j < a) f++; } return f/t; })];
+  if(near((a - 2)/(N - 2), a/N, 1e-9)) return null;
+  return {stem:`Một hộp có $${a}$ viên bi đỏ và $${b}$ viên bi xanh, các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên lần lượt ba viên bi, không hoàn lại.`, items,
+    lg:`a) Đường đi Đ Đ Đ: $\\dfrac{${a}}{${N}} \\cdot \\dfrac{${a - 1}}{${N - 1}} \\cdot \\dfrac{${a - 2}}{${N - 2}} = ${frT(all, D)}$.<br>b) Sau hai lần lấy được bi đỏ, hộp còn $${N - 2}$ viên, trong đó $${a - 2}$ viên đỏ: xác suất bằng $${frT(a - 2, N - 2)}$.<br>`
+      + `c) Ba đường đi Đ X X, X Đ X, X X Đ, mỗi đường có xác suất $\\dfrac{${a} \\cdot ${b} \\cdot ${b - 1}}{${N} \\cdot ${N - 1} \\cdot ${N - 2}}$: tổng bằng $${frT(one, D)}$.<br>`
+      + `d) Lần 1 xanh, lần 2 đỏ (lần 3 tuỳ ý): $\\dfrac{${b}}{${N}} \\cdot \\dfrac{${a}}{${N - 1}} = ${frT(a*b, N*(N - 1))}$.`};
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.2 Xác suất có điều kiện bằng sơ đồ cây; Đ–S thực tế (12|6|0), đợt 3 (dạng 41–45: 2 Đ–S, 3 TLN). Claude viết.
+// Chuỗi: Đ–S thi đấu ba ván thắng hai có yếu tố tâm lí (41) → Đ–S khảo sát đeo kính theo giới tính, tính độc lập (42)
+// → TLN tuyển dụng ba vòng: được tuyển, bị loại ở vòng nào (43) → TLN số viên đạn phải dùng (44) → TLN lấy bi đến khi gặp bi xanh (45).
+
+/* 41. Đ–S VD — thi đấu ba ván thắng hai */
+GD(12,6,0,'VD','Đúng – Sai: thi đấu ba ván thắng hai, xác suất thắng mỗi ván phụ thuộc kết quả ván trước — P(A thắng hai ván đầu), P(trận kết thúc sau hai ván), P(phải đấu ván thứ ba), P(A thắng chung cuộc) bằng sơ đồ cây', R=>{
+  const p = 10*R.int(3, 7), q = 10*R.int(5, 8), r = 10*R.int(2, 5); if(q <= r) return null;
+  const tt = p*q/1e4, hh = (100 - p)*(100 - r)/1e4, win = (p*q*100 + p*(100 - q)*r + (100 - p)*r*q)/1e6;
+  const items = [
+    claimN(R, v=> `Xác suất để A thắng cả hai ván đầu bằng $${v}$`, tt, nt(tt), p*p/1e4, nt(p*p/1e4), ()=> p/100*q/100),
+    claimN(R, v=> `Xác suất để trận đấu kết thúc sau đúng hai ván bằng $${v}$`, tt + hh, nt(tt + hh), tt, nt(tt), ()=> p/100*q/100 + (1 - p/100)*(1 - r/100)),
+    claimN(R, v=> `Xác suất để hai kì thủ phải đấu ván thứ ba bằng $${v}$`, 1 - tt - hh, nt(1 - tt - hh), 1 - tt, nt(1 - tt), ()=> p/100*(1 - q/100) + (1 - p/100)*r/100),
+    claimN(R, v=> `Xác suất để A thắng chung cuộc bằng $${v}$`, win, nt(win), tt + p*(100 - q)*r/1e6, nt(tt + p*(100 - q)*r/1e6), ()=>{ let s = 0; const go = (w, l, last, pr)=>{ if(w === 2){ s += pr; return; } if(l === 2) return; const pw = last === null ? p/100 : last ? q/100 : r/100; go(w + 1, l, true, pr*pw); go(w, l + 1, false, pr*(1 - pw)); }; go(0, 0, null, 1); return s; })];
+  if(near(p, q, 1e-9)) return null;
+  return {stem:`Hai kì thủ A và B thi đấu theo thể thức ba ván thắng hai (ai thắng hai ván trước thì thắng chung cuộc, mỗi ván không có hoà). Xác suất A thắng ván đầu tiên là $${xcP(p)}$. Ở các ván sau, nếu A vừa thắng ván trước thì xác suất A thắng ván tiếp theo là $${xcP(q)}$; nếu A vừa thua ván trước thì xác suất đó là $${xcP(r)}$.`, items,
+    lg:`Kí hiệu T (A thắng), H (A thua). Sơ đồ cây: ván 1: T $(${xcP(p)})$, H $(${xcP(100 - p)})$; sau T: T $(${xcP(q)})$, H $(${xcP(100 - q)})$; sau H: T $(${xcP(r)})$, H $(${xcP(100 - r)})$.<br>`
+      + `a) T T: $${xcP(p)} \\cdot ${xcP(q)} = ${nt(tt)}$ (không phải $${xcP(p)}^2$ vì hai ván không độc lập).<br>b) Kết thúc sau hai ván khi T T hoặc H H: $${nt(tt)} + ${xcP(100 - p)} \\cdot ${xcP(100 - r)} = ${nt(tt + hh)}$.<br>`
+      + `c) Phải đấu ván ba (T H hoặc H T): $1 - ${nt(tt + hh)} = ${nt(1 - tt - hh)}$.<br>d) A thắng chung cuộc: T T, T H T, H T T: $${nt(tt)} + ${nt(p*(100 - q)*r/1e6)} + ${nt((100 - p)*r*q/1e6)} = ${nt(win)}$.`};
+});
+
+/* 42. Đ–S TH — đeo kính theo giới tính */
+GD(12,6,0,'TH','Đúng – Sai thực tế: biết tỉ lệ học sinh nữ và tỉ lệ đeo kính trong từng giới — xác suất chọn được nữ đeo kính, nam không đeo kính, P(không đeo kính | nữ) và kiểm tra hai biến cố "nữ", "đeo kính" có độc lập không', R=>{
+  const f = 5*R.int(8, 12), x = 5*R.int(3, 10), ind = R.rnd() < 0.35, y = ind ? x : 5*R.int(2, 9); if(!ind && x === y) return null;
+  const items = [
+    claimN(R, v=> `Xác suất để học sinh được chọn là nữ và đeo kính bằng $${v}$`, f*x/1e4, nt(f*x/1e4), x/100, xcP(x), ()=> f/100*x/100),
+    claimN(R, v=> `Xác suất để học sinh được chọn là nam và không đeo kính bằng $${v}$`, (100 - f)*(100 - y)/1e4, nt((100 - f)*(100 - y)/1e4), (100 - f)*y/1e4, nt((100 - f)*y/1e4), ()=> (1 - f/100)*(1 - y/100)),
+    claimN(R, v=> `Chọn ngẫu nhiên một học sinh nữ của trường, xác suất để học sinh đó không đeo kính bằng $${v}$`, (100 - x)/100, xcP(100 - x), f*(100 - x)/1e4, nt(f*(100 - x)/1e4), ()=> 1 - x/100),
+    claim(R, `Hai biến cố "học sinh được chọn là nữ" và "học sinh được chọn đeo kính" ${ind ? 'độc lập' : 'không độc lập'}`, `Hai biến cố "học sinh được chọn là nữ" và "học sinh được chọn đeo kính" ${ind ? 'không độc lập' : 'độc lập'}`,
+      ()=> (x === y) === ind, ()=> (x === y) !== ind)];
+  return {stem:`Ở một trường trung học phổ thông, có $${xcPc(f)}$ học sinh là nữ. Tỉ lệ học sinh đeo kính cận là $${xcPc(x)}$ trong số học sinh nữ và $${xcPc(y)}$ trong số học sinh nam. Chọn ngẫu nhiên một học sinh của trường.`, items,
+    lg:`Gọi $F$: "học sinh là nữ", $K$: "học sinh đeo kính". $P(F) = ${xcP(f)}$, $P(K \\mid F) = ${xcP(x)}$, $P(K \\mid \\overline{F}) = ${xcP(y)}$.<br>`
+      + `a) $P(F \\cap K) = ${xcP(f)} \\cdot ${xcP(x)} = ${nt(f*x/1e4)}$.<br>b) $P(\\overline{F} \\cap \\overline{K}) = ${xcP(100 - f)} \\cdot ${xcP(100 - y)} = ${nt((100 - f)*(100 - y)/1e4)}$.<br>`
+      + `c) $P(\\overline{K} \\mid F) = 1 - ${xcP(x)} = ${xcP(100 - x)}$.<br>d) ${ind ? `Tỉ lệ đeo kính ở nam và nữ như nhau ($${xcP(x)}$) nên $P(K) = ${xcP(x)} = P(K \\mid F)$: hai biến cố độc lập.` : `$P(K \\mid F) = ${xcP(x)} \\ne ${xcP(y)} = P(K \\mid \\overline{F})$, nên việc biết giới tính làm thay đổi xác suất đeo kính: hai biến cố không độc lập.`}`};
+});
+
+/* 43. TLN TH — tuyển dụng ba vòng */
+GT(12,6,0,'TH','Tuyển dụng ba vòng (bị loại ở vòng nào thì dừng): biết xác suất qua từng vòng khi đã qua các vòng trước — tính xác suất được tuyển, bị loại ở vòng 2 hoặc ở vòng 3 (công thức nhân trên sơ đồ cây, đáp số phần trăm)', R=>{
+  const a = 10*R.int(5, 9), b = 10*R.int(4, 9), c = 5*R.int(8, 18), hoi = R.pick(['tuyen', 'loai2', 'loai3']);
+  const v = hoi === 'tuyen' ? a*b*c/1e4 : hoi === 'loai2' ? a*(100 - b)/100 : a*b*(100 - c)/1e4, A = xcAns(v); if(!A) return null;
+  const o = {stem:`Một công ty tuyển nhân viên qua ba vòng: hồ sơ, kiểm tra năng lực và phỏng vấn; ứng viên bị loại ở vòng nào thì dừng ở vòng đó. Xác suất một ứng viên qua vòng hồ sơ là $${xcPc(a)}$; nếu đã qua vòng hồ sơ thì xác suất qua vòng kiểm tra năng lực là $${xcPc(b)}$; nếu đã qua hai vòng đầu thì xác suất qua vòng phỏng vấn là $${xcPc(c)}$. Xác suất để một ứng viên ${hoi === 'tuyen' ? 'được tuyển (qua cả ba vòng)' : hoi === 'loai2' ? 'bị loại ở vòng kiểm tra năng lực' : 'bị loại ở vòng phỏng vấn'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:(hoi === 'tuyen' ? `Đường đi qua – qua – qua: $P = ${xcP(a)} \\cdot ${xcP(b)} \\cdot ${xcP(c)} = ${nt(a*b*c/1e6)}$`
+        : hoi === 'loai2' ? `Đường đi qua vòng hồ sơ rồi trượt vòng kiểm tra: $P = ${xcP(a)} \\cdot (1 - ${xcP(b)}) = ${xcP(a)} \\cdot ${xcP(100 - b)} = ${nt(a*(100 - b)/1e4)}$`
+        : `Đường đi qua – qua – trượt: $P = ${xcP(a)} \\cdot ${xcP(b)} \\cdot ${xcP(100 - c)} = ${nt(a*b*(100 - c)/1e6)}$`) + ` nên $x ${A.ap}$.`,
+    verify:()=>{ const n1 = 1e6*a/100, n2 = n1*b/100, n3 = n2*c/100; return near(o.ans, xcR1(100*(hoi === 'tuyen' ? n3 : hoi === 'loai2' ? n1 - n2 : n2 - n3)/1e6), 1e-9); }};
+  return o;
+});
+
+/* 44. TLN VD — số viên đạn phải dùng */
+GT(12,6,0,'VD','Bắn tối đa ba viên, trúng thì dừng, xác suất trúng tăng sau mỗi lần trượt: tính xác suất phải dùng đúng ba viên (hai viên đầu trượt, viên thứ ba trúng hay trượt đều được) hoặc dùng không quá hai viên (đáp số phần trăm) — bẫy đòi viên thứ ba trúng', R=>{
+  const p1 = 10*R.int(2, 6), p2 = p1 + 5*R.int(1, 6), p3 = p2 + 5*R.int(0, 3); if(p3 > 95) return null;
+  const hoi = R.pick(['ba', 'hai']), q12 = (100 - p1)*(100 - p2)/100, v = hoi === 'ba' ? q12 : 100 - q12, A = xcAns(v); if(!A) return null;
+  const o = {stem:`Một xạ thủ bắn vào một mục tiêu, bắn tối đa ba viên đạn và dừng ngay khi có một viên trúng. Xác suất viên thứ nhất trúng là $${xcP(p1)}$; nếu viên thứ nhất trượt thì xác suất viên thứ hai trúng là $${xcP(p2)}$; nếu hai viên đầu đều trượt thì xác suất viên thứ ba trúng là $${xcP(p3)}$. Xác suất để xạ thủ phải dùng ${hoi === 'ba' ? 'đúng ba viên đạn' : 'không quá hai viên đạn'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Xạ thủ phải bắn viên thứ ba khi và chỉ khi hai viên đầu đều trượt (viên thứ ba trúng hay trượt thì cũng đã dùng ba viên):<br>$P(\\text{dùng ba viên}) = ${xcP(100 - p1)} \\cdot ${xcP(100 - p2)} = ${nt(q12/100)}$`
+      + (hoi === 'ba' ? ` nên $x ${A.ap}$.` : `.<br>Dùng không quá hai viên là biến cố đối: $P = 1 - ${nt(q12/100)} = ${nt(1 - q12/100)}$ nên $x ${A.ap}$.`),
+    verify:()=>{ let u3 = 0; const pr = [p1, p2, p3].map(x=> x/100); u3 = (1 - pr[0])*(1 - pr[1])*pr[2] + (1 - pr[0])*(1 - pr[1])*(1 - pr[2]); return near(o.ans, xcR1(100*(hoi === 'ba' ? u3 : 1 - u3)), 1e-9); }};
+  return o;
+});
+
+/* 45. TLN VD — lấy bi đến khi gặp bi xanh */
+GT(12,6,0,'VD','Lấy lần lượt từng viên bi không hoàn lại cho đến khi được viên bi xanh thì dừng (tối đa ba lần): tính xác suất dừng ở đúng lần thứ hai, phải lấy đủ ba lần, hoặc ba lần vẫn chưa được bi xanh (đáp số phần trăm)', R=>{
+  const a = R.int(3, 10), b = R.int(2, 10), N = a + b, hoi = R.pick(['dung2', 'ba', 'chua']);
+  const num = hoi === 'dung2' ? a*b*(N - 2) : hoi === 'ba' ? a*(a - 1)*(N - 2) : a*(a - 1)*(a - 2), den = N*(N - 1)*(N - 2), A = xcAns(100*num/den); if(!A) return null;
+  const txt = hoi === 'dung2' ? 'dừng lại ở đúng lần lấy thứ hai' : hoi === 'ba' ? 'phải lấy đủ ba lần' : 'sau ba lần lấy vẫn chưa được viên bi xanh';
+  const o = {stem:`Một hộp có $${a}$ viên bi đỏ và $${b}$ viên bi xanh. Một người lấy ngẫu nhiên lần lượt từng viên bi, không hoàn lại, cho đến khi lấy được viên bi xanh thì dừng, nhưng lấy không quá ba lần. Xác suất để người đó ${txt} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:(hoi === 'dung2' ? `Dừng ở lần thứ hai: lần 1 đỏ, lần 2 xanh: $P = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${b}}{${N - 1}} = ${frT(num, den)}$`
+        : hoi === 'ba' ? `Phải lấy lần thứ ba khi hai lần đầu đều đỏ (lần ba màu gì cũng được): $P = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${a - 1}}{${N - 1}} = ${frT(num, den)}$`
+        : `Ba lần đều đỏ: $P = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${a - 1}}{${N - 1}} \\cdot \\dfrac{${a - 2}}{${N - 2}} = ${frT(num, den)}$`) + ` nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let t = 0, f = 0; for(let i = 0; i < N; i++) for(let j = 0; j < N; j++){ if(j === i) continue; for(let l = 0; l < N; l++){ if(l === i || l === j) continue; t++; const r = [i < a, j < a, l < a]; if(hoi === 'dung2' ? (r[0] && !r[1]) : hoi === 'ba' ? (r[0] && r[1]) : (r[0] && r[1] && r[2])) f++; } } return near(o.ans, xcR1(100*f/t), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.2 Xác suất có điều kiện bằng sơ đồ cây; Đ–S thực tế (12|6|0), đợt 4 (dạng 46–50: 5 TLN). Claude viết.
+// Chuỗi: lấy bi, trả lại kèm thêm bi cùng màu (46) → thời tiết hai ngày tới khi hôm nay mưa (47) → hệ thống máy dự phòng (48)
+// → cây tần số: đếm số khách hàng ở một nhánh (49) → từ cây tần số tính xác suất có điều kiện (50).
+
+/* 46. TLN VD — trả lại kèm thêm bi cùng màu */
+GT(12,6,0,'VD','Lấy một viên bi, xem màu rồi trả lại hộp kèm thêm k viên cùng màu, sau đó lấy tiếp một viên: xác suất cả hai viên đỏ hoặc hai viên khác màu (sơ đồ cây, xác suất lần hai phụ thuộc lần một, đáp số phần trăm)', R=>{
+  const a = R.int(2, 9), b = R.int(2, 9), k = R.int(1, 4), N = a + b, hoi = R.pick(['dd', 'khac']);
+  const num = hoi === 'dd' ? a*(a + k) : 2*a*b, den = N*(N + k), A = xcAns(100*num/den); if(!A) return null;
+  const o = {stem:`Một hộp có $${a}$ viên bi đỏ và $${b}$ viên bi xanh. Lấy ngẫu nhiên một viên bi, xem màu rồi trả viên bi đó vào hộp, đồng thời bỏ thêm vào hộp $${k}$ viên bi cùng màu với nó; sau đó lấy ngẫu nhiên một viên bi từ hộp. Xác suất để ${hoi === 'dd' ? 'cả hai viên bi lấy ra đều màu đỏ' : 'hai viên bi lấy ra khác màu'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Sau lần lấy thứ nhất hộp có $${N + k}$ viên. Sơ đồ cây: lần 1 đỏ $\\left(\\dfrac{${a}}{${N}}\\right)$ thì hộp có $${a + k}$ đỏ, $${b}$ xanh; lần 1 xanh $\\left(\\dfrac{${b}}{${N}}\\right)$ thì hộp có $${a}$ đỏ, $${b + k}$ xanh.<br>`
+      + (hoi === 'dd' ? `Đường đi đỏ – đỏ: $P = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${a + k}}{${N + k}} = ${frT(num, den)}$`
+        : `Hai đường đi đỏ – xanh và xanh – đỏ: $P = \\dfrac{${a}}{${N}} \\cdot \\dfrac{${b}}{${N + k}} + \\dfrac{${b}}{${N}} \\cdot \\dfrac{${a}}{${N + k}} = ${frT(num, den)}$`) + ` nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let s = 0; for(let i = 0; i < N; i++){ const red = i < a, r2 = a + (red ? k : 0), tot = N + k; s += hoi === 'dd' ? (red ? r2/tot : 0) : (red ? (tot - r2)/tot : r2/tot); } return near(o.ans, xcR1(100*s/N), 1e-9); }};
+  return o;
+});
+
+/* 47. TLN VD — thời tiết hai ngày tới */
+GT(12,6,0,'VD','Thời tiết: hôm nay có mưa; nếu một ngày có mưa thì ngày hôm sau mưa với xác suất a, nếu không mưa thì hôm sau mưa với xác suất b — tính xác suất hai ngày tới đều mưa, đều không mưa hoặc có đúng một ngày mưa (sơ đồ cây, đáp số phần trăm)', R=>{
+  const a = 5*R.int(8, 16), b = 5*R.int(2, 8), hoi = R.pick(['hai', 'khong', 'mot']);
+  const v = hoi === 'hai' ? a*a/100 : hoi === 'khong' ? (100 - a)*(100 - b)/100 : (a*(100 - a) + (100 - a)*b)/100, A = xcAns(v); if(!A) return null;
+  const o = {stem:`Ở một vùng, nếu một ngày có mưa thì xác suất ngày hôm sau có mưa là $${xcPc(a)}$; nếu một ngày không mưa thì xác suất ngày hôm sau có mưa là $${xcPc(b)}$. Biết hôm nay trời mưa. Xác suất để trong hai ngày tới ${hoi === 'hai' ? 'cả hai ngày đều có mưa' : hoi === 'khong' ? 'cả hai ngày đều không mưa' : 'có đúng một ngày có mưa'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Kí hiệu M (mưa), K (không mưa). Từ hôm nay (mưa): ngày mai M $(${xcP(a)})$ hoặc K $(${xcP(100 - a)})$; sau M thì ngày kia M $(${xcP(a)})$, K $(${xcP(100 - a)})$; sau K thì ngày kia M $(${xcP(b)})$, K $(${xcP(100 - b)})$.<br>`
+      + (hoi === 'hai' ? `Đường M M: $${xcP(a)} \\cdot ${xcP(a)} = ${nt(a*a/1e4)}$`
+        : hoi === 'khong' ? `Đường K K: $${xcP(100 - a)} \\cdot ${xcP(100 - b)} = ${nt((100 - a)*(100 - b)/1e4)}$`
+        : `Hai đường M K và K M: $${xcP(a)} \\cdot ${xcP(100 - a)} + ${xcP(100 - a)} \\cdot ${xcP(b)} = ${nt(v/100)}$`) + ` nên $x ${A.ap}$.`,
+    verify:()=>{ let s = 0; [[1, a/100], [0, 1 - a/100]].forEach(([m1, p1])=>{ const pm = m1 ? a/100 : b/100; [[1, pm], [0, 1 - pm]].forEach(([m2, p2])=>{ const n = m1 + m2; if(hoi === 'hai' ? n === 2 : hoi === 'khong' ? n === 0 : n === 1) s += p1*p2; }); }); return near(o.ans, xcR1(100*s), 1e-9); }};
+  return o;
+});
+
+/* 48. TLN VD — hệ thống máy dự phòng */
+GT(12,6,0,'VD','Hệ thống có máy chính và máy dự phòng (máy dự phòng chỉ chạy khi máy chính hỏng, khi đó dễ hỏng hơn vì chạy quá tải): tính xác suất hệ thống ngừng hoạt động hoặc hệ thống phải dùng máy dự phòng mà vẫn hoạt động (đáp số phần trăm)', R=>{
+  const p = R.int(2, 15), q = 5*R.int(2, 12), hoi = R.pick(['ngung', 'duphong']);
+  const v = hoi === 'ngung' ? p*q/100 : p*(100 - q)/100, A = xcAns(v); if(!A) return null;
+  const o = {stem:`Một trạm bơm có một máy bơm chính và một máy bơm dự phòng; máy dự phòng chỉ hoạt động khi máy chính bị hỏng. Trong một ca làm việc, xác suất máy chính bị hỏng là $${xcPc(p)}$; nếu máy chính bị hỏng thì máy dự phòng phải chạy liên tục nên xác suất máy dự phòng cũng bị hỏng trong ca đó là $${xcPc(q)}$. Xác suất để trong một ca ${hoi === 'ngung' ? 'trạm bơm ngừng hoạt động (cả hai máy đều hỏng)' : 'trạm bơm phải dùng máy dự phòng và vẫn hoạt động suốt ca'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $C$: "máy chính hỏng", $D$: "máy dự phòng hỏng". $P(C) = ${xcP(p)}$, $P(D \\mid C) = ${xcP(q)}$.<br>`
+      + (hoi === 'ngung' ? `$P(C \\cap D) = P(C) \\cdot P(D \\mid C) = ${xcP(p)} \\cdot ${xcP(q)} = ${nt(p*q/1e4)}$` : `$P(C \\cap \\overline{D}) = P(C) \\cdot P(\\overline{D} \\mid C) = ${xcP(p)} \\cdot ${xcP(100 - q)} = ${nt(p*(100 - q)/1e4)}$`) + ` nên $x ${A.ap}$.`,
+    verify:()=>{ const nC = 1e6*p/100, nCD = nC*q/100; return near(o.ans, xcR1(100*(hoi === 'ngung' ? nCD : nC - nCD)/1e6), 1e-9); }};
+  return o;
+});
+
+/* 49. TLN TH — cây tần số: đếm một nhánh */
+GT(12,6,0,'TH','Sơ đồ cây tần số: từ tổng số khách hàng, tỉ lệ ở tầng một và tỉ lệ có điều kiện ở tầng hai, tính số khách hàng ở một nhánh (mua trực tuyến và trả lại hàng, mua tại cửa hàng và không trả lại…)', R=>{
+  const N = 100*R.int(4, 30), a = 5*R.int(4, 14), b = R.int(2, 20), c = R.int(1, 12), hoi = R.pick(['onTra', 'onKhong', 'chTra', 'chKhong']);
+  const on = N*a/100, ch = N - on, ans = hoi === 'onTra' ? on*b/100 : hoi === 'onKhong' ? on*(100 - b)/100 : hoi === 'chTra' ? ch*c/100 : ch*(100 - c)/100;
+  if(!Number.isInteger(on) || !Number.isInteger(ans) || String(ans).length > 4 || ans <= 0) return null;
+  const txt = {onTra:'mua trực tuyến và trả lại hàng', onKhong:'mua trực tuyến và không trả lại hàng', chTra:'mua tại cửa hàng và trả lại hàng', chKhong:'mua tại cửa hàng và không trả lại hàng'}[hoi];
+  const o = {stem:`Trong tháng, một cửa hàng có $${N}$ khách hàng, trong đó $${xcPc(a)}$ khách hàng mua trực tuyến, số còn lại mua tại cửa hàng. Có $${xcPc(b)}$ khách hàng mua trực tuyến trả lại hàng và $${xcPc(c)}$ khách hàng mua tại cửa hàng trả lại hàng. Có bao nhiêu khách hàng ${txt}?`, ans,
+    lg:`Sơ đồ cây tần số: mua trực tuyến $${xcP(a)} \\cdot ${N} = ${on}$ khách, mua tại cửa hàng $${N} - ${on} = ${ch}$ khách.<br>`
+      + (hoi[0] === 'o' ? `Nhánh "${txt}": $${on} \\cdot ${xcP(hoi === 'onTra' ? b : 100 - b)} = ${ans}$ khách.` : `Nhánh "${txt}": $${ch} \\cdot ${xcP(hoi === 'chTra' ? c : 100 - c)} = ${ans}$ khách.`),
+    verify:()=>{ const pOn = a/100, pr = hoi === 'onTra' ? pOn*b/100 : hoi === 'onKhong' ? pOn*(1 - b/100) : hoi === 'chTra' ? (1 - pOn)*c/100 : (1 - pOn)*(1 - c/100); return near(o.ans, N*pr, 1e-9); }};
+  return o;
+});
+
+/* 50. TLN VD — xác suất có điều kiện từ cây tần số */
+GT(12,6,0,'VD','Từ sơ đồ cây tần số (khách mua trực tuyến / tại cửa hàng, có trả lại hàng hay không): chọn ngẫu nhiên một khách đã trả lại hàng, tính xác suất khách đó mua trực tuyến — đếm trên các nhánh (đáp số phần trăm)', R=>{
+  const N = 100*R.int(4, 30), a = 5*R.int(4, 14), b = R.int(2, 20), c = R.int(1, 12), hoi = R.pick(['on', 'ch']);
+  const on = N*a/100, ch = N - on, t1 = on*b/100, t2 = ch*c/100; if(!Number.isInteger(t1) || !Number.isInteger(t2) || t1 + t2 === 0) return null;
+  const kk = hoi === 'on' ? t1 : t2, A = xcAns(100*kk/(t1 + t2)); if(!A || kk === 0) return null;
+  const o = {stem:`Trong tháng, một cửa hàng có $${N}$ khách hàng, trong đó $${xcPc(a)}$ khách hàng mua trực tuyến, số còn lại mua tại cửa hàng. Có $${xcPc(b)}$ khách hàng mua trực tuyến trả lại hàng và $${xcPc(c)}$ khách hàng mua tại cửa hàng trả lại hàng. Chọn ngẫu nhiên một khách hàng đã trả lại hàng. Xác suất để khách hàng đó ${hoi === 'on' ? 'mua trực tuyến' : 'mua tại cửa hàng'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Sơ đồ cây tần số: mua trực tuyến $${on}$ khách, trong đó $${on} \\cdot ${xcP(b)} = ${t1}$ khách trả lại hàng; mua tại cửa hàng $${ch}$ khách, trong đó $${ch} \\cdot ${xcP(c)} = ${t2}$ khách trả lại hàng.<br>`
+      + `Có $${t1} + ${t2} = ${t1 + t2}$ khách trả lại hàng, trong đó $${kk}$ khách ${hoi === 'on' ? 'mua trực tuyến' : 'mua tại cửa hàng'}: xác suất bằng $${xcFq(kk, t1 + t2)}$ nên $x = 100 \\cdot ${frT(kk, t1 + t2)} ${A.ap}$.`,
+    verify:()=>{ const x1 = a/100*b/100, x2 = (1 - a/100)*c/100; return near(o.ans, xcR1(100*(hoi === 'on' ? x1 : x2)/(x1 + x2)), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.2 Xác suất có điều kiện bằng sơ đồ cây; Đ–S thực tế (12|6|0), đợt 5 (dạng 51–55: 5 TLN). Claude viết.
+// Chuỗi: tung đồng xu rồi gieo một hoặc hai xúc xắc (51) → hỏi ngược số bi đỏ từ xác suất hai bi cùng màu (52)
+// → thi đấu ba ván thắng hai có yếu tố tâm lí (53) → hai giai đoạn: trời mưa – đi xe buýt (54) → ba người rút thăm lần lượt (55).
+
+/* 51. TLN VD — đồng xu rồi xúc xắc */
+GT(12,6,0,'VD','Tung đồng xu: sấp thì gieo một con xúc xắc, ngửa thì gieo hai con xúc xắc; tính xác suất đồng xu ra ngửa và tổng số chấm không nhỏ hơn s, hoặc đồng xu ra sấp và số chấm không nhỏ hơn s (công thức nhân trên sơ đồ cây, đáp số phần trăm)', R=>{
+  const hoi = R.pick(['N', 'N', 'S']), eq = hoi === 'N' && R.rnd() < 0.5, s = hoi === 'N' ? (eq ? R.int(3, 11) : R.int(5, 12)) : R.int(2, 6);
+  const okS = t=> eq ? t === s : t >= s;
+  let cnt = 0, tot; if(hoi === 'N'){ tot = 36; for(let u = 1; u <= 6; u++) for(let w = 1; w <= 6; w++) if(okS(u + w)) cnt++; } else { tot = 6; cnt = 7 - s; }
+  const tq = eq ? `bằng $${s}$` : `không nhỏ hơn $${s}$`;
+  const A = xcAns(100*cnt/(2*tot)); if(!A) return null;
+  const o = {stem:`Tung một đồng xu cân đối. Nếu đồng xu xuất hiện mặt sấp thì gieo một con xúc xắc cân đối; nếu xuất hiện mặt ngửa thì gieo đồng thời hai con xúc xắc cân đối. Xác suất để đồng xu xuất hiện mặt ${hoi === 'N' ? 'ngửa và tổng số chấm trên hai con xúc xắc' : 'sấp và số chấm trên con xúc xắc'} ${tq} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $${hoi}$: "đồng xu xuất hiện mặt ${hoi === 'N' ? 'ngửa' : 'sấp'}", $B$: "${hoi === 'N' ? 'tổng số chấm' : 'số chấm'} ${tq}". $P(${hoi}) = \\dfrac{1}{2}$.<br>`
+      + (hoi === 'N' ? `Gieo hai con xúc xắc có $36$ kết quả, trong đó $${cnt}$ kết quả có tổng ${tq}: $P(B \\mid N) = ${xcFq(cnt, 36)}$.` : `Gieo một con xúc xắc có $${cnt}$ mặt có số chấm không nhỏ hơn $${s}$: $P(B \\mid S) = ${xcFq(cnt, 6)}$.`)
+      + `<br>$P(${hoi} \\cap B) = \\dfrac{1}{2} \\cdot ${frT(cnt, tot)} = ${frT(cnt, 2*tot)}$ nên $x = 100 \\cdot ${frT(cnt, 2*tot)} ${A.ap}$.`,
+    verify:()=>{ let f = 0; if(hoi === 'N'){ for(let u = 1; u <= 6; u++) for(let w = 1; w <= 6; w++) if(okS(u + w)) f++; return near(o.ans, xcR1(100*0.5*f/36), 1e-9); } for(let u = 1; u <= 6; u++) if(u >= s) f++; return near(o.ans, xcR1(100*0.5*f/6), 1e-9); }};
+  return o;
+});
+
+/* 52. TLN VD — hỏi ngược số bi đỏ */
+GT(12,6,0,'VD','Hỏi ngược: hộp có N viên bi đỏ và xanh, số bi đỏ nhiều hơn số bi xanh; lấy lần lượt hai viên không hoàn lại, biết xác suất hai viên cùng màu (hoặc khác màu) — tìm số viên bi đỏ', R=>{
+  const N = R.int(8, 20), r = R.int(Math.floor(N/2) + 1, N - 1), b = N - r, hoi = R.pick(['cung', 'khac']);
+  const num = hoi === 'cung' ? r*(r - 1) + b*(b - 1) : 2*r*b, den = N*(N - 1), pT = frT(num, den);
+  const o = {stem:`Một hộp có $${N}$ viên bi gồm bi đỏ và bi xanh, trong đó số bi đỏ nhiều hơn số bi xanh. Lấy ngẫu nhiên lần lượt hai viên bi, không hoàn lại. Biết xác suất để hai viên bi lấy ra ${hoi === 'cung' ? 'cùng màu' : 'khác màu'} bằng $${pT}$. Hộp có bao nhiêu viên bi đỏ?`, ans:r,
+    lg:`Gọi số bi đỏ là $n$ $(n > ${N/2})$, số bi xanh là $${N} - n$. Theo sơ đồ cây, xác suất hai viên khác màu bằng $\\dfrac{n}{${N}} \\cdot \\dfrac{${N} - n}{${N - 1}} + \\dfrac{${N} - n}{${N}} \\cdot \\dfrac{n}{${N - 1}} = \\dfrac{2n(${N} - n)}{${den}}$.<br>`
+      + (hoi === 'cung' ? `Xác suất hai viên khác màu bằng $1 - ${pT} = ${frT(den - num, den)}$, nên` : `Do đó $\\dfrac{2n(${N} - n)}{${den}} = ${pT}$, nên`) + ` $2n(${N} - n) = ${2*r*b}$ $\\Leftrightarrow n(${N} - n) = ${r*b}$ $\\Leftrightarrow n = ${r}$ hoặc $n = ${b}$. Vì $n > ${N/2}$ nên $n = ${r}$.`,
+    verify:()=>{ const sol = []; for(let x = 0; x <= N; x++){ if(2*x <= N) continue; const v = hoi === 'cung' ? (x*(x - 1) + (N - x)*(N - x - 1))/den : 2*x*(N - x)/den; if(near(v, num/den, 1e-12)) sol.push(x); } return sol.length === 1 && o.ans === sol[0]; }};
+  return o;
+});
+
+/* 53. TLN VD — thi đấu ba ván thắng hai */
+GT(12,6,0,'VD','Thi đấu ba ván thắng hai, xác suất thắng mỗi ván phụ thuộc kết quả ván trước: tính xác suất A thắng chung cuộc hoặc B thắng chung cuộc sau đúng ba ván (cộng các đường đi trên sơ đồ cây, đáp số phần trăm)', R=>{
+  const p = 10*R.int(3, 7), q = 10*R.int(5, 8), r = 10*R.int(2, 5), hoi = R.pick(['A', 'B3']); if(q <= r) return null;
+  const P = [p, q, r].map(x=> x/100), win = P[0]*P[1] + P[0]*(1 - P[1])*P[2] + (1 - P[0])*P[2]*P[1];
+  const b3 = P[0]*(1 - P[1])*(1 - P[2]) + (1 - P[0])*P[2]*(1 - P[1]), A = xcAns(100*(hoi === 'A' ? win : b3)); if(!A) return null;
+  const o = {stem:`Hai đội A và B thi đấu theo thể thức ba trận thắng hai (đội nào thắng hai trận trước thì vô địch, mỗi trận không có hoà). Xác suất A thắng trận đầu tiên là $${xcP(p)}$. Ở các trận sau, nếu A vừa thắng trận trước thì xác suất A thắng trận tiếp theo là $${xcP(q)}$; nếu A vừa thua trận trước thì xác suất đó là $${xcP(r)}$. Xác suất để ${hoi === 'A' ? 'đội A vô địch' : 'đội B vô địch sau đúng ba trận'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Kí hiệu T (A thắng), H (A thua). Các nhánh: trận 1 T $(${xcP(p)})$; sau T thì T $(${xcP(q)})$; sau H thì T $(${xcP(r)})$.<br>`
+      + (hoi === 'A' ? `A vô địch theo các đường T T, T H T, H T T: $${xcP(p)} \\cdot ${xcP(q)} + ${xcP(p)} \\cdot ${xcP(100 - q)} \\cdot ${xcP(r)} + ${xcP(100 - p)} \\cdot ${xcP(r)} \\cdot ${xcP(q)} = ${nt(Math.round(win*1e6)/1e6)}$`
+        : `B vô địch sau đúng ba trận theo các đường T H H, H T H: $${xcP(p)} \\cdot ${xcP(100 - q)} \\cdot ${xcP(100 - r)} + ${xcP(100 - p)} \\cdot ${xcP(r)} \\cdot ${xcP(100 - q)} = ${nt(Math.round(b3*1e6)/1e6)}$`) + ` nên $x ${A.ap}$.`,
+    verify:()=>{ let s = 0; const go = (w, l, last, pr, n)=>{ if(w === 2){ if(hoi === 'A') s += pr; return; } if(l === 2){ if(hoi === 'B3' && n === 3) s += pr; return; } const pw = last === null ? p/100 : last ? q/100 : r/100; go(w + 1, l, true, pr*pw, n + 1); go(w, l + 1, false, pr*(1 - pw), n + 1); }; go(0, 0, null, 1, 0); return near(o.ans, xcR1(100*s), 1e-9); }};
+  return o;
+});
+
+/* 54. TLN TH — hai giai đoạn: trời mưa, đi xe buýt */
+GT(12,6,0,'TH','Hai giai đoạn trong thực tế (trời mưa → cách đi làm): biết xác suất trời mưa, xác suất đi xe buýt khi mưa và khi không mưa — tính xác suất của một đường đi trên sơ đồ cây (đáp số phần trăm)', R=>{
+  const m = 5*R.int(4, 14), b1 = 5*R.int(10, 18), b2 = 5*R.int(2, 10), hoi = R.pick(['MB', 'MnB', 'nMB', 'nMnB']);
+  const pm = hoi[0] === 'n' ? 100 - m : m, pb = hoi === 'MB' ? b1 : hoi === 'MnB' ? 100 - b1 : hoi === 'nMB' ? b2 : 100 - b2, v = pm*pb/100, A = xcAns(v); if(!A) return null;
+  const txt = {MB:'trời mưa và anh An đi xe buýt', MnB:'trời mưa nhưng anh An không đi xe buýt', nMB:'trời không mưa và anh An đi xe buýt', nMnB:'trời không mưa và anh An không đi xe buýt'}[hoi];
+  const o = {stem:`Theo dự báo, xác suất sáng mai trời mưa là $${xcPc(m)}$. Nếu trời mưa thì anh An đi làm bằng xe buýt với xác suất $${xcPc(b1)}$; nếu trời không mưa thì anh An đi xe buýt với xác suất $${xcPc(b2)}$, còn lại anh đi xe đạp. Xác suất để sáng mai ${txt} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $M$: "trời mưa", $B$: "anh An đi xe buýt". Đường đi trên sơ đồ cây: $P = ${xcP(pm)} \\cdot ${xcP(pb)} = ${nt(v/100)}$ ${hoi[0] === 'n' ? `(với $P(\\overline{M}) = 1 - ${xcP(m)}$) ` : ''}nên $x ${A.ap}$.`,
+    verify:()=>{ const nM = 1e6*m/100, nN = 1e6 - nM, k = hoi === 'MB' ? nM*b1/100 : hoi === 'MnB' ? nM*(1 - b1/100) : hoi === 'nMB' ? nN*b2/100 : nN*(1 - b2/100); return near(o.ans, xcR1(100*k/1e6), 1e-9); }};
+  return o;
+});
+
+/* 55. TLN VD — ba người rút thăm lần lượt */
+GT(12,6,0,'VD','Ba người lần lượt rút thăm không hoàn lại từ n lá thăm có k lá trúng thưởng: tính xác suất chỉ người thứ ba trúng, cả ba đều không trúng, hoặc cả ba đều trúng (công thức nhân nhiều bước, đáp số phần trăm)', R=>{
+  const n = R.int(6, 20), k = R.int(2, Math.min(6, n - 3)), hoi = R.pick(['ba', 'khong', 'ca']);
+  const num = hoi === 'ba' ? (n - k)*(n - k - 1)*k : hoi === 'khong' ? (n - k)*(n - k - 1)*(n - k - 2) : k*(k - 1)*(k - 2), den = n*(n - 1)*(n - 2);
+  if(!num) return null; const A = xcAns(100*num/den); if(!A) return null;
+  const f = hoi === 'ba' ? [`\\dfrac{${n - k}}{${n}}`, `\\dfrac{${n - k - 1}}{${n - 1}}`, `\\dfrac{${k}}{${n - 2}}`] : hoi === 'khong' ? [`\\dfrac{${n - k}}{${n}}`, `\\dfrac{${n - k - 1}}{${n - 1}}`, `\\dfrac{${n - k - 2}}{${n - 2}}`] : [`\\dfrac{${k}}{${n}}`, `\\dfrac{${k - 1}}{${n - 1}}`, `\\dfrac{${k - 2}}{${n - 2}}`];
+  const o = {stem:`Một hộp có $${n}$ lá thăm, trong đó có $${k}$ lá trúng thưởng. Ba bạn An, Bình, Chi lần lượt rút ngẫu nhiên mỗi bạn một lá thăm (lá đã rút không trả lại hộp). Xác suất để ${hoi === 'ba' ? 'chỉ có Chi (người rút thứ ba) trúng thưởng' : hoi === 'khong' ? 'cả ba bạn đều không trúng thưởng' : 'cả ba bạn đều trúng thưởng'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Theo sơ đồ cây (xác suất mỗi lượt rút phụ thuộc các lượt trước): $P = ${f.join(' \\cdot ')} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let t = 0, c = 0; for(let i = 0; i < n; i++) for(let j = 0; j < n; j++){ if(j === i) continue; for(let l = 0; l < n; l++){ if(l === i || l === j) continue; t++; const w = [i < k, j < k, l < k]; if(hoi === 'ba' ? (!w[0] && !w[1] && w[2]) : hoi === 'khong' ? (!w[0] && !w[1] && !w[2]) : (w[0] && w[1] && w[2])) c++; } } return near(o.ans, xcR1(100*c/t), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-18.2 Xác suất có điều kiện bằng sơ đồ cây; Đ–S thực tế (12|6|0), đợt 6 (dạng 56–60: 3 TLN, 2 TL). Claude viết.
+// Chuỗi: hỏi ngược xác suất có điều kiện ở một vòng thi (56) → chuyển bi rồi lấy bi: xác suất một đường đi (57)
+// → dây chuyền sản xuất, chất lượng sản phẩm sau phụ thuộc sản phẩm trước (58) → tự luận có thang điểm: thi bằng lái (59), thi đấu ba ván thắng hai (60).
+
+/* 56. TLN VD — hỏi ngược một vòng thi */
+GT(12,6,0,'VD','Hỏi ngược trên sơ đồ cây ba tầng: biết xác suất qua vòng 1, xác suất qua vòng 3 khi đã qua hai vòng đầu và xác suất qua cả ba vòng — tìm xác suất qua vòng 2 khi đã qua vòng 1 (đáp số phần trăm)', R=>{
+  const a = 5*R.int(10, 19), b = 5*R.int(6, 19), c = 5*R.int(10, 19), t = a*b*c/1e4; if(!xcEx(t*10)) return null;
+  const o = {stem:`Một cuộc thi tài năng gồm ba vòng; thí sinh bị loại ở vòng nào thì dừng ở vòng đó. Xác suất một thí sinh qua vòng 1 là $${xcPc(a)}$; nếu đã qua hai vòng đầu thì xác suất qua vòng 3 là $${xcPc(c)}$. Biết xác suất một thí sinh qua cả ba vòng là $${xcPc(t)}$. Nếu thí sinh đã qua vòng 1 thì xác suất qua vòng 2 là $x\\%$. Tìm $x$.`, ans:b,
+    lg:`Gọi $x\\%$ là xác suất qua vòng 2 khi đã qua vòng 1. Theo sơ đồ cây, xác suất qua cả ba vòng bằng $${xcP(a)} \\cdot \\dfrac{x}{100} \\cdot ${xcP(c)} = ${xcP(t)}$ $\\Rightarrow \\dfrac{x}{100} = \\dfrac{${xcP(t)}}{${xcP(a)} \\cdot ${xcP(c)}} = ${xcP(b)}$ $\\Rightarrow x = ${b}$.`,
+    verify:()=>{ let s = -1; for(let k = 1; k <= 1000; k++) if(near(a/100*k/1000*c/100, t/100, 1e-12)){ s = k/10; break; } return near(o.ans, s, 1e-9); }};
+  return o;
+});
+
+/* 57. TLN VD — chuyển bi rồi lấy bi: một đường đi */
+GT(12,6,0,'VD','Chuyển một viên bi từ hộp I sang hộp II rồi lấy một viên bi từ hộp II: xác suất viên chuyển sang màu đỏ và viên lấy ra màu xanh (một đường đi trên sơ đồ cây, xác suất nhánh sau tính trên hộp II đã thay đổi, đáp số phần trăm)', R=>{
+  const a = R.int(1, 9), b = R.int(1, 9), c = R.int(1, 9), d = R.int(1, 9), n1 = a + b, n2 = c + d + 1, hoi = R.pick(['DX', 'XD', 'DD', 'XX']);
+  const e = hoi[0] === 'D' ? a : b, red2 = c + (hoi[0] === 'D' ? 1 : 0), f = hoi[1] === 'D' ? red2 : n2 - red2, num = e*f, den = n1*n2, A = xcAns(100*num/den); if(!A || !num) return null;
+  const col = s=> s === 'D' ? 'đỏ' : 'xanh';
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên một viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên một viên bi từ hộp II. Xác suất để viên bi chuyển sang màu ${col(hoi[0])} và viên bi lấy ra từ hộp II màu ${col(hoi[1])} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Nhánh thứ nhất: viên chuyển sang màu ${col(hoi[0])} với xác suất $${frT(e, n1)}$. Khi đó hộp II có $${n2}$ viên, trong đó $${red2}$ viên đỏ và $${n2 - red2}$ viên xanh, nên nhánh thứ hai có xác suất $${frT(f, n2)}$.<br>`
+      + `$P = ${frT(e, n1)} \\cdot ${frT(f, n2)} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let s = 0; for(let i = 0; i < n1; i++){ const mv = i < a ? 'D' : 'X'; if(mv !== hoi[0]) continue; const r = c + (mv === 'D' ? 1 : 0); s += (hoi[1] === 'D' ? r : n2 - r)/n2; } return near(o.ans, xcR1(100*s/n1), 1e-9); }};
+  return o;
+});
+
+/* 58. TLN VD — chất lượng sản phẩm liên tiếp */
+GT(12,6,0,'VD','Dây chuyền sản xuất: chất lượng sản phẩm sau phụ thuộc sản phẩm ngay trước (tốt → tốt với xác suất a, lỗi → tốt với xác suất b); trong ba sản phẩm đầu tiên, tính xác suất có đúng một sản phẩm lỗi (cộng ba đường đi trên sơ đồ cây, đáp số phần trăm)', R=>{
+  const p = 5*R.int(16, 19), a = 5*R.int(16, 19), b = 5*R.int(8, 16), P = [p, a, b].map(x=> x/100);
+  const v = (1 - P[0])*P[2]*P[1] + P[0]*(1 - P[1])*P[2] + P[0]*P[1]*(1 - P[1]), A = xcAns(100*v); if(!A) return null;
+  const T = x=> xcP(x);
+  const o = {stem:`Một máy tự động sản xuất lần lượt từng sản phẩm. Sản phẩm đầu tiên là sản phẩm tốt với xác suất $${T(p)}$. Với các sản phẩm tiếp theo: nếu sản phẩm ngay trước là sản phẩm tốt thì sản phẩm sau tốt với xác suất $${T(a)}$; nếu sản phẩm ngay trước bị lỗi thì sản phẩm sau tốt với xác suất $${T(b)}$. Xác suất để trong ba sản phẩm đầu tiên có đúng một sản phẩm lỗi bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Kí hiệu T (tốt), L (lỗi). Có ba đường đi thoả mãn:<br>L T T: $${T(100 - p)} \\cdot ${T(b)} \\cdot ${T(a)}$; T L T: $${T(p)} \\cdot ${T(100 - a)} \\cdot ${T(b)}$; T T L: $${T(p)} \\cdot ${T(a)} \\cdot ${T(100 - a)}$.<br>`
+      + `Tổng: $${frT(Math.round(v*1e6), 1e6)}$ nên $x = 100 \\cdot ${frT(Math.round(v*1e6), 1e6)} ${A.ap}$.`,
+    verify:()=>{ let s = 0; for(let m = 0; m < 8; m++){ const q = [m & 1, m >> 1 & 1, m >> 2 & 1]; if(q[0] + q[1] + q[2] !== 2) continue; let pr = q[0] ? P[0] : 1 - P[0]; for(let i = 1; i < 3; i++){ const pt = q[i - 1] ? P[1] : P[2]; pr *= q[i] ? pt : 1 - pt; } s += pr; } return near(o.ans, xcR1(100*s), 1e-9); }};
+  return o;
+});
+
+/* 59. TL VD — thi bằng lái (thang điểm 1,0) */
+GE(12,6,0,'VD','Tự luận có thang điểm: thi sát hạch lái xe gồm lí thuyết và thực hành, trượt lí thuyết thì không thi thực hành — a) lập sơ đồ cây; b) xác suất được cấp bằng; c) xác suất trượt thực hành; d) ước tính số thí sinh được cấp bằng trong N thí sinh', R=>{
+  const a = 5*R.int(12, 19), b = 5*R.int(10, 18), N = 100*R.int(2, 12), ab = a*b/1e4, k = N*ab; if(!Number.isInteger(k)) return null;
+  return s6Parts(`Một kì thi sát hạch lái xe gồm phần lí thuyết và phần thực hành; thí sinh trượt phần lí thuyết thì không được thi phần thực hành, thí sinh đỗ cả hai phần thì được cấp bằng. Xác suất một thí sinh đỗ phần lí thuyết là $${xcP(a)}$; nếu đã đỗ phần lí thuyết thì xác suất đỗ phần thực hành là $${xcP(b)}$.`, [
+    {q:'Gọi $L$: "thí sinh đỗ lí thuyết", $T$: "thí sinh đỗ thực hành". Lập sơ đồ cây biểu diễn quá trình thi của một thí sinh.',
+     a:`Tầng một: $L$ với xác suất $${xcP(a)}$, $\\overline{L}$ với xác suất $${xcP(100 - a)}$ (dừng). Tầng hai (sau $L$): $T$ với xác suất $${xcP(b)}$, $\\overline{T}$ với xác suất $${xcP(100 - b)}$. <b>(0,25 điểm)</b>`, chk:()=> near(a/100 + (100 - a)/100, 1, 1e-12) && near(b/100 + (100 - b)/100, 1, 1e-12)},
+    {q:'Tính xác suất để một thí sinh được cấp bằng.', a:`$P(L \\cap T) = P(L) \\cdot P(T \\mid L) = ${xcP(a)} \\cdot ${xcP(b)} = ${nt(ab)}$. <b>(0,25 điểm)</b>`, chk:()=> near(ab, a/100*b/100, 1e-12)},
+    {q:'Tính xác suất để một thí sinh đỗ lí thuyết nhưng trượt thực hành.', a:`$P(L \\cap \\overline{T}) = ${xcP(a)} \\cdot ${xcP(100 - b)} = ${nt(a*(100 - b)/1e4)}$. <b>(0,25 điểm)</b>`, chk:()=> near(a*(100 - b)/1e4 + ab + (100 - a)/100, 1, 1e-12)},
+    {q:`Một đợt sát hạch có $${N}$ thí sinh. Ước tính số thí sinh được cấp bằng.`, a:`Số thí sinh được cấp bằng ước tính là $${N} \\cdot ${nt(ab)} = ${k}$ (thí sinh). <b>(0,25 điểm)</b>`, chk:()=> k === N*a*b/1e4}]);
+});
+
+/* 60. TL VD — thi đấu ba ván thắng hai (thang điểm 1,0) */
+GE(12,6,0,'VD','Tự luận có thang điểm: thi đấu ba ván thắng hai, xác suất thắng mỗi ván phụ thuộc ván trước — a) xác suất A thắng hai ván đầu; b) xác suất phải đấu ván ba; c) xác suất A thắng chung cuộc (sơ đồ cây)', R=>{
+  const p = 10*R.int(3, 7), q = 10*R.int(5, 8), r = 10*R.int(2, 5); if(q <= r) return null;
+  const tt = p*q/1e4, hh = (100 - p)*(100 - r)/1e4, x1 = p*(100 - q)*r/1e6, x2 = (100 - p)*r*q/1e6, win = tt + x1 + x2;
+  return s6Parts(`Hai kì thủ A và B thi đấu theo thể thức ba ván thắng hai (ai thắng hai ván trước thì thắng chung cuộc, mỗi ván không có hoà). Xác suất A thắng ván đầu tiên là $${xcP(p)}$. Ở các ván sau, nếu A vừa thắng ván trước thì xác suất A thắng ván tiếp theo là $${xcP(q)}$; nếu A vừa thua ván trước thì xác suất đó là $${xcP(r)}$.`, [
+    {q:'Tính xác suất để A thắng cả hai ván đầu.', a:`Kí hiệu T (A thắng), H (A thua). Đường đi T T: $${xcP(p)} \\cdot ${xcP(q)} = ${nt(tt)}$. <b>(0,25 điểm)</b>`, chk:()=> near(tt, p/100*q/100, 1e-12)},
+    {q:'Tính xác suất để hai kì thủ phải đấu ván thứ ba.', a:`Trận đấu kết thúc sau hai ván khi T T hoặc H H: $${nt(tt)} + ${xcP(100 - p)} \\cdot ${xcP(100 - r)} = ${nt(tt + hh)}$. <b>(0,25 điểm)</b><br>Xác suất phải đấu ván thứ ba: $1 - ${nt(tt + hh)} = ${nt(1 - tt - hh)}$. <b>(0,25 điểm)</b>`,
+     chk:()=> near(1 - tt - hh, p/100*(1 - q/100) + (1 - p/100)*r/100, 1e-12)},
+    {q:'Tính xác suất để A thắng chung cuộc.', a:`A thắng chung cuộc theo các đường T T, T H T, H T T: $${nt(tt)} + ${xcP(p)} \\cdot ${xcP(100 - q)} \\cdot ${xcP(r)} + ${xcP(100 - p)} \\cdot ${xcP(r)} \\cdot ${xcP(q)} = ${nt(tt)} + ${nt(x1)} + ${nt(x2)} = ${nt(win)}$. <b>(0,25 điểm)</b>`,
+     chk:()=>{ let s = 0; const go = (w, l, last, pr)=>{ if(w === 2){ s += pr; return; } if(l === 2) return; const pw = last === null ? p/100 : last ? q/100 : r/100; go(w + 1, l, true, pr*pw); go(w, l + 1, false, pr*(1 - pw)); }; go(0, 0, null, 1); return near(s, win, 1e-12); }}]);
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.2 Đ–S tổng hợp xác suất toàn phần – Bayes; công thức Bayes với ba giả thiết (12|6|1), đợt 1 (dạng 33–37: 5 TN). Claude viết.
+// Chuỗi: xác suất toàn phần với ba giả thiết (33) → Bayes: biết A xảy ra, thuộc nhóm nào (34) → Bayes khi A không xảy ra (35)
+// → ba hộp bi chọn nhờ xúc xắc (36) → Bayes với ba hộp (37).
+
+/* 33. TN TH — xác suất toàn phần, ba giả thiết */
+G(12,6,1,'TH','Công thức xác suất toàn phần với ba giả thiết H₁, H₂, H₃ (ba nhà máy, ba lớp, ba nhóm tuổi, ba loại xe): P(A) = ΣP(Hᵢ)·P(A | Hᵢ) — bẫy lấy trung bình các tỉ lệ, ghép nhầm tỉ lệ với nhóm', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const T = xcT3(c), sw = c.s[0]*c.d[1] + c.s[1]*c.d[0] + c.s[2]*c.d[2];
+  const ans = xcNu(T/1e4), wrong = xcW(R, ans, [xcFr(c.d[0] + c.d[1] + c.d[2], 300), xcNu(sw/1e4), xcNu((c.s[0]*c.d[0] + c.s[1]*c.d[1])/1e4), xcNu((c.d[0] + c.d[1] + c.d[2])/100)]); if(!wrong) return null;
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick}. Xác suất để ${c.u} đó ${c.A} bằng`, ans, wrong,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}". $H_1, H_2, H_3$ đôi một xung khắc và có hợp là không gian mẫu.<br>`
+      + `$P(A) = P(H_1)P(A \\mid H_1) + P(H_2)P(A \\mid H_2) + P(H_3)P(A \\mid H_3) = ${xcSum3(c)} = ${nt(T/1e4)}$.`,
+    verify:()=>{ let n = 0; c.s.forEach((s, i)=> n += 1e4*s/100*c.d[i]/100); return near(o.ans.v, n/1e4, 1e-9); }};
+  return o;
+});
+
+/* 34. TN VD — Bayes, ba giả thiết */
+G(12,6,1,'VD','Công thức Bayes với ba giả thiết: biết A đã xảy ra (phế phẩm, đạt điểm cao, nằm viện lâu, gặp sự cố), tính xác suất thuộc nhóm Hᵢ — bẫy lấy P(Hᵢ), lấy P(Hᵢ ∩ A), chia tỉ lệ theo P(A | Hᵢ)', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const i = R.int(0, 2), T = xcT3(c), j = c.s[i]*c.d[i];
+  const ans = xcFr(j, T), wrong = xcW(R, ans, [xcNu(c.s[i]/100), xcNu(j/1e4), xcFr(c.d[i], c.d[0] + c.d[1] + c.d[2]), xcNu(c.d[i]/100), xcFr(c.s[(i + 1) % 3]*c.d[(i + 1) % 3], T)]); if(!wrong) return null;
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick} thì thấy ${c.u} đó ${c.A}. Xác suất để ${c.u} đó ${c.H[i]} bằng`, ans, wrong,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}".<br>$P(A) = ${xcSum3(c)} = ${nt(T/1e4)}$.<br>`
+      + `Theo công thức Bayes: $P(H_${i + 1} \\mid A) = \\dfrac{P(H_${i + 1}) \\cdot P(A \\mid H_${i + 1})}{P(A)} = \\dfrac{${nt(j/1e4)}}{${nt(T/1e4)}} = ${frT(j, T)}$.`,
+    verify:()=>{ const n = c.s.map((s, k)=> s*c.d[k]); return near(o.ans.v, n[i]/(n[0] + n[1] + n[2]), 1e-9); }};
+  return o;
+});
+
+/* 35. TN VD — Bayes khi A không xảy ra */
+G(12,6,1,'VD','Công thức Bayes với ba giả thiết khi biết A không xảy ra: P(Hᵢ | Ā) = P(Hᵢ)·[1 − P(A | Hᵢ)]/[1 − P(A)] — bẫy lấy 1 − P(Hᵢ | A), quên lấy phần bù của P(A | Hᵢ)', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const i = R.int(0, 2), T = xcT3(c), j = c.s[i]*(100 - c.d[i]), jA = c.s[i]*c.d[i];
+  const ans = xcFr(j, 1e4 - T), wrong = xcW(R, ans, [xcFr(T - jA, T), xcNu(c.s[i]/100), xcNu(j/1e4), xcFr(jA, 1e4 - T)]); if(!wrong) return null;
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick} thì thấy ${c.u} đó ${c.nA}. Xác suất để ${c.u} đó ${c.H[i]} bằng`, ans, wrong,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}".<br>$P(\\overline{A}) = ${xcSum3(c, true)} = ${nt(1 - T/1e4)}$.<br>`
+      + `$P(H_${i + 1} \\mid \\overline{A}) = \\dfrac{P(H_${i + 1}) \\cdot P(\\overline{A} \\mid H_${i + 1})}{P(\\overline{A})} = \\dfrac{${nt(j/1e4)}}{${nt(1 - T/1e4)}} = ${frT(j, 1e4 - T)}$.`,
+    verify:()=>{ const n = c.s.map((s, k)=> s*(100 - c.d[k])); return near(o.ans.v, n[i]/(n[0] + n[1] + n[2]), 1e-9); }};
+  return o;
+});
+
+/* chọn hộp nhờ gieo xúc xắc: k = [số mặt chọn hộp I, II, III] */
+const xcHop3 = R=>{ const k1 = R.int(1, 3), k2 = R.int(1, 6 - k1 - 1), k3 = 6 - k1 - k2; if(k3 < 1) return null;
+  const f = [[1, k1], [k1 + 1, k1 + k2], [k1 + k2 + 1, 6]], t = ([a, b])=> a === b ? `mặt $${a}$ chấm` : b === a + 1 ? `mặt $${a}$ hoặc $${b}$ chấm` : `mặt có số chấm từ $${a}$ đến $${b}$`;
+  return {k:[k1, k2, k3], txt:`Gieo một con xúc xắc cân đối: nếu xuất hiện ${t(f[0])} thì chọn hộp I, ${t(f[1])} thì chọn hộp II, ${t(f[2])} thì chọn hộp III.`}; };
+
+/* 36. TN TH — ba hộp bi */
+G(12,6,1,'TH','Ba hộp bi, chọn một hộp nhờ gieo xúc xắc rồi lấy ngẫu nhiên một viên bi: tính xác suất lấy được bi đỏ (xác suất toàn phần với ba giả thiết) — bẫy gộp bi ba hộp, coi ba hộp đồng khả năng', R=>{
+  const h = xcHop3(R); if(!h) return null;
+  const r = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], x = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], n = r.map((v, i)=> v + x[i]);
+  let num = 0, den = 6*n[0]*n[1]*n[2]; r.forEach((v, i)=> num += h.k[i]*v*den/(6*n[i]));
+  const ans = xcFr(num, den), eq = r.reduce((s, v, i)=> s + v/n[i], 0)/3;
+  const wrong = xcW(R, ans, [xcFr(r[0] + r[1] + r[2], n[0] + n[1] + n[2]), {t:`$${frT(Math.round(eq*n[0]*n[1]*n[2]*3), 3*n[0]*n[1]*n[2])}$`, v:eq}, xcFr(h.k[0]*r[0], 6*n[0]), xcFr(r[0]*r[1]*r[2], n[0]*n[1]*n[2])]); if(!wrong) return null;
+  const o = {stem:`Hộp I có $${r[0]}$ bi đỏ và $${x[0]}$ bi xanh; hộp II có $${r[1]}$ bi đỏ và $${x[1]}$ bi xanh; hộp III có $${r[2]}$ bi đỏ và $${x[2]}$ bi xanh. ${h.txt} Từ hộp được chọn, lấy ngẫu nhiên một viên bi. Xác suất để lấy được viên bi đỏ bằng`, ans, wrong,
+    lg:`Gọi $H_1, H_2, H_3$: "chọn hộp I, II, III"; $A$: "lấy được bi đỏ". $P(H_1) = ${frT(h.k[0], 6)}$, $P(H_2) = ${frT(h.k[1], 6)}$, $P(H_3) = ${frT(h.k[2], 6)}$.<br>`
+      + `$P(A) = ${frT(h.k[0], 6)} \\cdot ${frT(r[0], n[0])} + ${frT(h.k[1], 6)} \\cdot ${frT(r[1], n[1])} + ${frT(h.k[2], 6)} \\cdot ${frT(r[2], n[2])} = ${frT(num, den)}$.`,
+    verify:()=>{ let s = 0; for(let f = 1; f <= 6; f++){ const i = f <= h.k[0] ? 0 : f <= h.k[0] + h.k[1] ? 1 : 2; s += r[i]/n[i]; } return near(o.ans.v, s/6, 1e-9); }};
+  return o;
+});
+
+/* 37. TN VD — Bayes với ba hộp */
+G(12,6,1,'VD','Công thức Bayes với ba hộp bi chọn nhờ gieo xúc xắc: lấy được viên bi đỏ, tính xác suất viên bi đó lấy từ hộp II (hộp I, hộp III) — bẫy lấy P(chọn hộp), lấy tỉ lệ bi đỏ của hộp', R=>{
+  const h = xcHop3(R); if(!h) return null;
+  const r = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], x = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], n = r.map((v, i)=> v + x[i]), i = R.int(0, 2), L = n[0]*n[1]*n[2];
+  const t = r.map((v, k)=> h.k[k]*v*L/n[k]), num = t[0] + t[1] + t[2];
+  const ans = xcFr(t[i], num), wrong = xcW(R, ans, [xcFr(h.k[i], 6), xcFr(r[i], n[i]), xcFr(r[i], r[0] + r[1] + r[2]), xcFr(t[i], 6*L)]); if(!wrong) return null;
+  const nm = ['I', 'II', 'III'];
+  const o = {stem:`Hộp I có $${r[0]}$ bi đỏ và $${x[0]}$ bi xanh; hộp II có $${r[1]}$ bi đỏ và $${x[1]}$ bi xanh; hộp III có $${r[2]}$ bi đỏ và $${x[2]}$ bi xanh. ${h.txt} Từ hộp được chọn, lấy ngẫu nhiên một viên bi thì được viên bi đỏ. Xác suất để viên bi đó được lấy từ hộp ${nm[i]} bằng`, ans, wrong,
+    lg:`Gọi $H_1, H_2, H_3$: "chọn hộp I, II, III"; $A$: "lấy được bi đỏ". $P(A) = ${frT(h.k[0], 6)} \\cdot ${frT(r[0], n[0])} + ${frT(h.k[1], 6)} \\cdot ${frT(r[1], n[1])} + ${frT(h.k[2], 6)} \\cdot ${frT(r[2], n[2])} = ${frT(num, 6*L)}$.<br>`
+      + `$P(H_${i + 1} \\mid A) = \\dfrac{P(H_${i + 1}) \\cdot P(A \\mid H_${i + 1})}{P(A)} = \\dfrac{${frT(t[i], 6*L)}}{${frT(num, 6*L)}} = ${frT(t[i], num)}$.`,
+    verify:()=>{ let s = 0, si = 0; for(let f = 1; f <= 6; f++){ const k = f <= h.k[0] ? 0 : f <= h.k[0] + h.k[1] ? 1 : 2; s += r[k]/n[k]; if(k === i) si += r[k]/n[k]; } return near(o.ans.v, si/s, 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.2 Đ–S tổng hợp xác suất toàn phần – Bayes; Bayes với ba giả thiết (12|6|1), đợt 2 (dạng 38–42: 3 TN, 2 Đ–S). Claude viết.
+// Chuỗi: hỏi ngược tỉ lệ của nhóm thứ ba từ P(A) (38) → biết A xảy ra, nhóm nào có khả năng cao nhất (39)
+// → chuyển hai bi: ba giả thiết theo số bi đỏ được chuyển (40) → Đ–S tổng hợp ba nhà máy (41) → Đ–S xét nghiệm hai lần (42).
+
+/* 38. TN VD — hỏi ngược tỉ lệ của nhóm thứ ba */
+G(12,6,1,'VD','Hỏi ngược công thức xác suất toàn phần với ba giả thiết: biết tỉ lệ từng nhóm, P(A | H₁), P(A | H₂) và P(A) — tìm P(A | H₃) — bẫy lấy 3P(A) trừ hai tỉ lệ, quên chia cho P(H₃)', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const T = xcT3(c), rest = T - c.s[0]*c.d[0] - c.s[1]*c.d[1], d3 = c.d[2];
+  const ans = {t:`$${xcPc(d3)}$`, v:d3}, wrong = xcW(R, ans, [{t:`$${xcPc(3*T/100 - c.d[0] - c.d[1])}$`, v:3*T/100 - c.d[0] - c.d[1]}, {t:`$${xcPc(rest/100)}$`, v:rest/100}, {t:`$${xcPc(d3 + 1)}$`, v:d3 + 1}, {t:`$${xcPc(T/100)}$`, v:T/100}]); if(!wrong || !xcEx(T/100*10)) return null;
+  const intro = c.intro(c.s, c.d).replace(/, \$[0-9{},]+\\%\$\.$/, ' và một tỉ lệ chưa biết đối với nhóm thứ ba.');
+  if(intro === c.intro(c.s, c.d)) return null;
+  const o = {stem:`${intro} ${c.pick}, biết xác suất để ${c.u} đó ${c.A} là $${xcPc(T/100)}$. Tỉ lệ ${c.u} ${c.A} của ${c.h[2]} bằng`, ans, wrong,
+    lg:`Gọi $x = P(A \\mid H_3)$. Theo công thức xác suất toàn phần: $${xcP(c.s[0])} \\cdot ${xcP(c.d[0])} + ${xcP(c.s[1])} \\cdot ${xcP(c.d[1])} + ${xcP(c.s[2])} \\cdot x = ${nt(T/1e4)}$<br>`
+      + `$\\Leftrightarrow ${xcP(c.s[2])} \\cdot x = ${nt(rest/1e4)}$ $\\Leftrightarrow x = ${xcP(d3)}$, tức $${xcPc(d3)}$.`,
+    verify:()=> near(o.ans.v, 100*(T/1e4 - c.s[0]/100*c.d[0]/100 - c.s[1]/100*c.d[1]/100)/(c.s[2]/100), 1e-9)};
+  return o;
+});
+
+/* 39. TN VD — nhóm có khả năng cao nhất */
+G(12,6,1,'VD','Biết A đã xảy ra, trong ba giả thiết H₁, H₂, H₃ giả thiết nào có xác suất lớn nhất: so sánh các tích P(Hᵢ)·P(A | Hᵢ) (cùng mẫu P(A)) — bẫy chọn nhóm đông nhất hoặc nhóm có tỉ lệ P(A | Hᵢ) cao nhất', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const bu = R.rnd() < 0.3, mn = R.rnd() < 0.4, dd = c.d.map(x=> bu ? 100 - x : x), pr = c.s.map((s, i)=> s*dd[i]);
+  const ext = mn ? Math.min(...pr) : Math.max(...pr); if(pr.filter(v=> v === ext).length > 1) return null;
+  const k = pr.indexOf(ext), ks = c.s.indexOf(mn ? Math.min(...c.s) : Math.max(...c.s)); if(k === ks && R.rnd() < 0.6) return null;
+  const opt = i=> ({t:`${c.u[0].toUpperCase() + c.u.slice(1)} đó ${c.H[i]}`, v:i});
+  const ans = opt(k), wrong = [0, 1, 2].filter(i=> i !== k).map(opt).concat([{t:'Ba trường hợp có xác suất bằng nhau', v:3}]);
+  const E = bu ? '\\overline{A}' : 'A';
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick} thì thấy ${c.u} đó ${bu ? c.nA : c.A}. Khả năng nào sau đây có xác suất ${mn ? 'nhỏ' : 'lớn'} nhất?`, ans, wrong,
+    lg:`Theo công thức Bayes, $P(H_i \\mid ${E}) = \\dfrac{P(H_i) \\cdot P(${E} \\mid H_i)}{P(${E})}$ có cùng mẫu $P(${E})$, nên chỉ cần so sánh các tích:<br>`
+      + `$${c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(dd[i])} = ${nt(pr[i]/1e4)}`).join('$; $')}$.<br>Tích ${mn ? 'nhỏ' : 'lớn'} nhất là $${nt(ext/1e4)}$, nên khả năng ${mn ? 'nhỏ' : 'lớn'} nhất là: ${ans.t}.`,
+    verify:()=>{ const post = c.s.map((s, i)=> s/100*(bu ? 1 - c.d[i]/100 : c.d[i]/100)), T = post[0] + post[1] + post[2], q = post.map(v=> v/T); return o.ans.v === q.indexOf(mn ? Math.min(...q) : Math.max(...q)); }};
+  return o;
+});
+
+/* 40. TN VD — chuyển hai bi */
+G(12,6,1,'VD','Chuyển hai viên bi từ hộp I sang hộp II rồi lấy một viên bi từ hộp II: ba giả thiết theo số bi đỏ được chuyển (0, 1, 2) — tính xác suất lấy được bi đỏ bằng công thức xác suất toàn phần', R=>{
+  const a = R.int(2, 7), b = R.int(2, 7), c = R.int(1, 7), d = R.int(1, 7), n1 = a + b, n2 = c + d, T = xcC(n1, 2);
+  const pH = [xcC(b, 2), a*b, xcC(a, 2)], num = pH.reduce((s, h, k)=> s + h*(c + k), 0), den = T*(n2 + 2);
+  const ans = xcFr(num, den), wrong = xcW(R, ans, [xcFr(c, n2), xcFr(c, n2 + 2), xcFr(c + 2, n2 + 2), xcFr(a + c, n1 + n2), xcFr(c + 1, n2 + 2)]); if(!wrong) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên một viên bi từ hộp II. Xác suất để viên bi lấy ra từ hộp II là bi đỏ bằng`, ans, wrong,
+    lg:`Gọi $H_k$: "trong hai viên chuyển sang có $k$ viên đỏ" ($k = 0, 1, 2$): $P(H_0) = \\dfrac{C_{${b}}^{2}}{C_{${n1}}^{2}} = ${frT(pH[0], T)}$, $P(H_1) = \\dfrac{${a} \\cdot ${b}}{C_{${n1}}^{2}} = ${frT(pH[1], T)}$, $P(H_2) = \\dfrac{C_{${a}}^{2}}{C_{${n1}}^{2}} = ${frT(pH[2], T)}$.<br>`
+      + `Sau khi chuyển, hộp II có $${n2 + 2}$ viên: $P(A \\mid H_k) = \\dfrac{${c} + k}{${n2 + 2}}$.<br>$P(A) = ${frT(pH[0], T)} \\cdot ${frT(c, n2 + 2)} + ${frT(pH[1], T)} \\cdot ${frT(c + 1, n2 + 2)} + ${frT(pH[2], T)} \\cdot ${frT(c + 2, n2 + 2)} = ${frT(num, den)}$.`,
+    verify:()=>{ let s = 0, t = 0; for(let i = 0; i < n1; i++) for(let j = i + 1; j < n1; j++){ t++; s += (c + (i < a) + (j < a))/(n2 + 2); } return near(o.ans.v, s/t, 1e-9); }};
+  return o;
+});
+
+/* 41. Đ–S VD — tổng hợp ba nhóm */
+GD(12,6,1,'VD','Đúng – Sai tổng hợp với ba giả thiết (ba nhà máy, ba lớp, ba nhóm tuổi, ba loại xe): P(H₁ ∩ A), P(A) theo công thức xác suất toàn phần, P(Hᵢ | A) theo công thức Bayes và nhận định giả thiết có khả năng cao nhất', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const T = xcT3(c), pr = c.s.map((s, i)=> s*c.d[i]), mx = Math.max(...pr); if(pr.filter(v=> v === mx).length > 1) return null;
+  const k = pr.indexOf(mx), i = R.int(0, 2), oth = [0, 1, 2].filter(x=> x !== k), kf = R.pick(oth);
+  const items = [
+    claimN(R, v=> `Xác suất để ${c.u} được chọn ${c.H[0]} và ${c.A} bằng $${v}$`, pr[0]/1e4, nt(pr[0]/1e4), c.d[0]/100, xcP(c.d[0]), ()=> c.s[0]/100*c.d[0]/100),
+    claimN(R, v=> `Xác suất để ${c.u} được chọn ${c.A} bằng $${v}$`, T/1e4, nt(T/1e4), (c.d[0] + c.d[1] + c.d[2])/300, frT(c.d[0] + c.d[1] + c.d[2], 300), ()=> pr.reduce((s, x)=> s + x, 0)/1e4),
+    claimN(R, v=> `Biết ${c.u} được chọn ${c.A}, xác suất để ${c.u} đó ${c.H[i]} bằng $${v}$`, pr[i]/T, frT(pr[i], T), c.s[i]/100, xcP(c.s[i]), ()=> (c.s[i]/100*c.d[i]/100)/(T/1e4)),
+    claim(R, `Nếu ${c.u} được chọn ${c.A} thì khả năng cao nhất là ${c.u} đó ${c.H[k]}`, `Nếu ${c.u} được chọn ${c.A} thì khả năng cao nhất là ${c.u} đó ${c.H[kf]}`, ()=> pr[k] === mx, ()=> pr[kf] === mx)];
+  if(near(T/1e4, (c.d[0] + c.d[1] + c.d[2])/300, 1e-9) || near(pr[i]/T, c.s[i]/100, 1e-9) || near(pr[0]/1e4, c.d[0]/100, 1e-9)) return null;
+  return {stem:`${c.intro(c.s, c.d)} ${c.pick}.`, items,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}".<br>`
+      + `a) $P(H_1 \\cap A) = ${xcP(c.s[0])} \\cdot ${xcP(c.d[0])} = ${nt(pr[0]/1e4)}$.<br>b) $P(A) = ${xcSum3(c)} = ${nt(T/1e4)}$.<br>`
+      + `c) $P(H_${i + 1} \\mid A) = \\dfrac{${nt(pr[i]/1e4)}}{${nt(T/1e4)}} = ${frT(pr[i], T)}$.<br>d) So sánh các tích $P(H_i) \\cdot P(A \\mid H_i)$: $${pr.map(v=> nt(v/1e4)).join('$, $')}$; lớn nhất ứng với ${c.u} ${c.H[k]}.`};
+});
+
+/* 42. Đ–S VD — xét nghiệm hai lần */
+GD(12,6,1,'VD','Đúng – Sai: xét nghiệm hai lần (hai lần độc lập khi biết tình trạng bệnh) — P(dương tính lần 1), P(mắc bệnh | dương tính một lần), P(mắc bệnh | dương tính cả hai lần) và nhận xét ý nghĩa của xét nghiệm lặp lại (Bayes cập nhật)', R=>{
+  const p = R.pick([1, 2, 4, 5, 10]), s = R.pick([90, 95, 98]), f = R.pick([2, 4, 5, 10]);
+  const t1 = p*s, t2 = (100 - p)*f, u1 = p*s*s, u2 = (100 - p)*f*f, post1 = t1/(t1 + t2), post2 = u1/(u1 + u2), thr = R.pick([0.5, 0.8, 0.9]);
+  const items = [
+    claimN(R, v=> `Xác suất để người đó có kết quả dương tính ở lần xét nghiệm thứ nhất bằng $${v}$`, (t1 + t2)/1e4, nt((t1 + t2)/1e4), s/100, xcP(s), ()=> p/100*s/100 + (1 - p/100)*f/100),
+    claimN(R, v=> `Biết lần xét nghiệm thứ nhất cho kết quả dương tính, xác suất để người đó mắc bệnh bằng $${v}$`, post1, frT(t1, t1 + t2), s/100, xcP(s), ()=> (p*s/1e4)/((t1 + t2)/1e4)),
+    claim(R, `Biết cả hai lần xét nghiệm đều cho kết quả dương tính, xác suất để người đó mắc bệnh xấp xỉ $${nt(Math.round(post2*1e3)/1e3)}$ (làm tròn đến hàng phần nghìn)`, `Biết cả hai lần xét nghiệm đều cho kết quả dương tính, xác suất để người đó mắc bệnh xấp xỉ $${nt(Math.round(post1*1e3)/1e3)}$ (làm tròn đến hàng phần nghìn)`,
+      ()=>{ const q = post1, r = q*s/100/(q*s/100 + (1 - q)*f/100); return near(Math.round(r*1e3), Math.round(post2*1e3), 1e-9); }, ()=>{ const q = post1, r = q*s/100/(q*s/100 + (1 - q)*f/100); return near(Math.round(r*1e3), Math.round(post1*1e3), 1e-9); }),
+    claim(R, `Biết cả hai lần xét nghiệm đều dương tính, xác suất người đó mắc bệnh ${post2 > thr ? 'lớn hơn' : 'không lớn hơn'} $${nt(thr)}$`, `Biết cả hai lần xét nghiệm đều dương tính, xác suất người đó mắc bệnh ${post2 > thr ? 'không lớn hơn' : 'lớn hơn'} $${nt(thr)}$`,
+      ()=> (post2 > thr) === (u1/(u1 + u2) > thr), ()=> (post2 > thr) !== (u1/(u1 + u2) > thr))];
+  if(Math.abs(post2 - thr) < 0.005) return null;
+  return {stem:`Tỉ lệ người mắc một bệnh trong cộng đồng là $${xcPc(p)}$. Một loại xét nghiệm cho kết quả dương tính với $${xcPc(s)}$ số người mắc bệnh và dương tính giả với $${xcPc(f)}$ số người không mắc bệnh. Một người được chọn ngẫu nhiên đi xét nghiệm hai lần; giả sử khi đã biết người đó mắc bệnh hay không thì kết quả hai lần xét nghiệm độc lập với nhau.`, items,
+    lg:`Gọi $B$: "người đó mắc bệnh", $D_1$, $D_2$: "lần 1, lần 2 dương tính".<br>a) $P(D_1) = ${xcP(p)} \\cdot ${xcP(s)} + ${xcP(100 - p)} \\cdot ${xcP(f)} = ${nt((t1 + t2)/1e4)}$.<br>`
+      + `b) $P(B \\mid D_1) = \\dfrac{${nt(t1/1e4)}}{${nt((t1 + t2)/1e4)}} = ${frT(t1, t1 + t2)}$.<br>`
+      + `c) $P(D_1 \\cap D_2 \\mid B) = ${xcP(s)}^2$, $P(D_1 \\cap D_2 \\mid \\overline{B}) = ${xcP(f)}^2$ nên $P(B \\mid D_1 \\cap D_2) = \\dfrac{${xcP(p)} \\cdot ${xcP(s)}^2}{${xcP(p)} \\cdot ${xcP(s)}^2 + ${xcP(100 - p)} \\cdot ${xcP(f)}^2} = ${frT(u1, u1 + u2)} \\approx ${nt(Math.round(post2*1e3)/1e3)}$.<br>`
+      + `d) $${frT(u1, u1 + u2)} \\approx ${nt(Math.round(post2*1e3)/1e3)}$ ${post2 > thr ? '>' : '<'} $${nt(thr)}$.`};
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.2 Đ–S tổng hợp xác suất toàn phần – Bayes; Bayes với ba giả thiết (12|6|1), đợt 3 (dạng 43–47: 5 TLN). Claude viết.
+// Chuỗi (trả lời ngắn, đáp số phần trăm): xác suất toàn phần ba giả thiết (43) → Bayes biết A (44) → Bayes biết Ā (45)
+// → ba hộp bi chọn nhờ xúc xắc (46) → Bayes với ba hộp (47).
+
+/* 43. TLN TH — xác suất toàn phần ba giả thiết */
+GT(12,6,1,'TH','Công thức xác suất toàn phần với ba giả thiết (ba nhà máy, ba lớp, ba nhóm tuổi, ba loại xe) — trả lời ngắn: P(A) = ΣP(Hᵢ)·P(A | Hᵢ) (đáp số phần trăm)', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const T = xcT3(c), A = xcAns(T/100); if(!A) return null;
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick}. Xác suất để ${c.u} đó ${c.A} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}".<br>$P(A) = ${xcSum3(c)} = ${nt(T/1e4)}$ nên $x ${A.ap}$.`,
+    verify:()=>{ let n = 0; c.s.forEach((s, i)=> n += s*c.d[i]/100); return near(o.ans, xcR1(n), 1e-9); }};
+  return o;
+});
+
+/* 44. TLN VD — Bayes biết A */
+GT(12,6,1,'VD','Công thức Bayes với ba giả thiết — trả lời ngắn: biết A đã xảy ra, tính xác suất thuộc nhóm Hᵢ (đáp số phần trăm)', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const i = R.int(0, 2), T = xcT3(c), j = c.s[i]*c.d[i], A = xcAns(100*j/T); if(!A) return null;
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick} thì thấy ${c.u} đó ${c.A}. Xác suất để ${c.u} đó ${c.H[i]} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}".<br>$P(A) = ${xcSum3(c)} = ${nt(T/1e4)}$.<br>`
+      + `$P(H_${i + 1} \\mid A) = \\dfrac{${nt(j/1e4)}}{${nt(T/1e4)}} = ${frT(j, T)}$ nên $x = 100 \\cdot ${frT(j, T)} ${A.ap}$.`,
+    verify:()=>{ const n = c.s.map((s, k)=> s*c.d[k]); return near(o.ans, xcR1(100*n[i]/(n[0] + n[1] + n[2])), 1e-9); }};
+  return o;
+});
+
+/* 45. TLN VD — Bayes biết Ā */
+GT(12,6,1,'VD','Công thức Bayes với ba giả thiết khi A không xảy ra — trả lời ngắn: P(Hᵢ | Ā) = P(Hᵢ)·P(Ā | Hᵢ)/P(Ā) (đáp số phần trăm)', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const i = R.int(0, 2), T = 1e4 - xcT3(c), j = c.s[i]*(100 - c.d[i]), A = xcAns(100*j/T); if(!A) return null;
+  const o = {stem:`${c.intro(c.s, c.d)} ${c.pick} thì thấy ${c.u} đó ${c.nA}. Xác suất để ${c.u} đó ${c.H[i]} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}".<br>$P(\\overline{A}) = ${xcSum3(c, true)} = ${nt(T/1e4)}$.<br>`
+      + `$P(H_${i + 1} \\mid \\overline{A}) = \\dfrac{${nt(j/1e4)}}{${nt(T/1e4)}} = ${frT(j, T)}$ nên $x = 100 \\cdot ${frT(j, T)} ${A.ap}$.`,
+    verify:()=>{ const n = c.s.map((s, k)=> s*(100 - c.d[k])); return near(o.ans, xcR1(100*n[i]/(n[0] + n[1] + n[2])), 1e-9); }};
+  return o;
+});
+
+const xcHop3b = R=>{ const k1 = R.int(1, 3), k2 = R.int(1, 6 - k1 - 1), k3 = 6 - k1 - k2; if(k3 < 1) return null;
+  const f = [[1, k1], [k1 + 1, k1 + k2], [k1 + k2 + 1, 6]], t = ([a, b])=> a === b ? `mặt $${a}$ chấm` : b === a + 1 ? `mặt $${a}$ hoặc $${b}$ chấm` : `mặt có số chấm từ $${a}$ đến $${b}$`;
+  return {k:[k1, k2, k3], txt:`Gieo một con xúc xắc cân đối: nếu xuất hiện ${t(f[0])} thì chọn hộp I, ${t(f[1])} thì chọn hộp II, ${t(f[2])} thì chọn hộp III.`}; };
+
+/* 46. TLN TH — ba hộp bi */
+GT(12,6,1,'TH','Ba hộp bi, chọn hộp nhờ gieo xúc xắc rồi lấy một viên bi — trả lời ngắn: xác suất lấy được bi đỏ (hoặc bi xanh) theo công thức xác suất toàn phần (đáp số phần trăm)', R=>{
+  const h = xcHop3b(R); if(!h) return null;
+  const r = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], x = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], n = r.map((v, i)=> v + x[i]), mu = R.pick(['đỏ', 'xanh']), g = mu === 'đỏ' ? r : x, L = n[0]*n[1]*n[2];
+  const t = g.map((v, k)=> h.k[k]*v*L/n[k]), num = t[0] + t[1] + t[2], den = 6*L, A = xcAns(100*num/den); if(!A) return null;
+  const o = {stem:`Hộp I có $${r[0]}$ bi đỏ và $${x[0]}$ bi xanh; hộp II có $${r[1]}$ bi đỏ và $${x[1]}$ bi xanh; hộp III có $${r[2]}$ bi đỏ và $${x[2]}$ bi xanh. ${h.txt} Từ hộp được chọn, lấy ngẫu nhiên một viên bi. Xác suất để lấy được viên bi ${mu} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1, H_2, H_3$: "chọn hộp I, II, III", $A$: "lấy được bi ${mu}". $P(A) = ${frT(h.k[0], 6)} \\cdot ${frT(g[0], n[0])} + ${frT(h.k[1], 6)} \\cdot ${frT(g[1], n[1])} + ${frT(h.k[2], 6)} \\cdot ${frT(g[2], n[2])} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let s = 0; for(let f = 1; f <= 6; f++){ const k = f <= h.k[0] ? 0 : f <= h.k[0] + h.k[1] ? 1 : 2; s += g[k]/n[k]; } return near(o.ans, xcR1(100*s/6), 1e-9); }};
+  return o;
+});
+
+/* 47. TLN VD — Bayes với ba hộp */
+GT(12,6,1,'VD','Công thức Bayes với ba hộp bi chọn nhờ gieo xúc xắc — trả lời ngắn: lấy được viên bi đỏ (xanh), tính xác suất viên bi đó lấy từ hộp đã cho (đáp số phần trăm)', R=>{
+  const h = xcHop3b(R); if(!h) return null;
+  const r = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], x = [R.int(1, 8), R.int(1, 8), R.int(1, 8)], n = r.map((v, i)=> v + x[i]), mu = R.pick(['đỏ', 'xanh']), g = mu === 'đỏ' ? r : x, L = n[0]*n[1]*n[2], i = R.int(0, 2);
+  const t = g.map((v, k)=> h.k[k]*v*L/n[k]), num = t[0] + t[1] + t[2], A = xcAns(100*t[i]/num); if(!A) return null;
+  const nm = ['I', 'II', 'III'];
+  const o = {stem:`Hộp I có $${r[0]}$ bi đỏ và $${x[0]}$ bi xanh; hộp II có $${r[1]}$ bi đỏ và $${x[1]}$ bi xanh; hộp III có $${r[2]}$ bi đỏ và $${x[2]}$ bi xanh. ${h.txt} Từ hộp được chọn, lấy ngẫu nhiên một viên bi thì được viên bi ${mu}. Xác suất để viên bi đó được lấy từ hộp ${nm[i]} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1, H_2, H_3$: "chọn hộp I, II, III", $A$: "lấy được bi ${mu}". $P(A) = ${frT(h.k[0], 6)} \\cdot ${frT(g[0], n[0])} + ${frT(h.k[1], 6)} \\cdot ${frT(g[1], n[1])} + ${frT(h.k[2], 6)} \\cdot ${frT(g[2], n[2])} = ${frT(num, 6*L)}$.<br>`
+      + `$P(H_${i + 1} \\mid A) = \\dfrac{${frT(h.k[i], 6)} \\cdot ${frT(g[i], n[i])}}{${frT(num, 6*L)}} = ${frT(t[i], num)}$ nên $x = 100 \\cdot ${frT(t[i], num)} ${A.ap}$.`,
+    verify:()=>{ let s = 0, si = 0; for(let f = 1; f <= 6; f++){ const k = f <= h.k[0] ? 0 : f <= h.k[0] + h.k[1] ? 1 : 2; s += g[k]/n[k]; if(k === i) si += g[k]/n[k]; } return near(o.ans, xcR1(100*si/s), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.2 Đ–S tổng hợp xác suất toàn phần – Bayes; Bayes với ba giả thiết (12|6|1), đợt 4 (dạng 48–52: 5 TLN). Claude viết.
+// Chuỗi: thi trắc nghiệm ba mức hiểu bài (biết, loại được hai phương án, đoán) — xác suất trả lời đúng (48) → Bayes: biết trả lời đúng (49)
+// → chuyển hai bi rồi lấy bi (50) → Bayes: biết lấy được bi đỏ, hai bi chuyển sang đều đỏ (51) → xét nghiệm hai lần (52).
+
+/* thi trắc nghiệm: p = [biết đáp án, loại được hai phương án sai, đoán hoàn toàn] (%) */
+const xcTn3 = R=>{ const p1 = 5*R.int(6, 14), p2 = 5*R.int(2, 8), p3 = 100 - p1 - p2; if(p3 < 5) return null; return [p1, p2, p3]; };
+const xcTn3T = p=> `Trong một bài thi trắc nghiệm, mỗi câu có bốn phương án, chỉ một phương án đúng. Với mỗi câu, một học sinh biết chắc đáp án với xác suất $${xcPc(p[0])}$; loại được hai phương án sai rồi chọn ngẫu nhiên một trong hai phương án còn lại với xác suất $${xcPc(p[1])}$; còn lại thì chọn ngẫu nhiên một trong bốn phương án.`;
+
+/* 48. TLN VD — xác suất trả lời đúng */
+GT(12,6,1,'VD','Thi trắc nghiệm với ba mức: biết chắc đáp án, loại được hai phương án sai, đoán hoàn toàn — xác suất trả lời đúng một câu theo công thức xác suất toàn phần với ba giả thiết (đáp số phần trăm)', R=>{
+  const p = xcTn3(R); if(!p) return null;
+  const v = p[0] + p[1]/2 + p[2]/4, A = xcAns(v); if(!A) return null;
+  const o = {stem:`${xcTn3T(p)} Xét một câu bất kì. Xác suất để học sinh đó trả lời đúng câu này bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1$: "biết chắc đáp án", $H_2$: "loại được hai phương án sai", $H_3$: "đoán hoàn toàn"; $D$: "trả lời đúng". $P(D \\mid H_1) = 1$, $P(D \\mid H_2) = \\dfrac{1}{2}$, $P(D \\mid H_3) = \\dfrac{1}{4}$.<br>`
+      + `$P(D) = ${xcP(p[0])} \\cdot 1 + ${xcP(p[1])} \\cdot \\dfrac{1}{2} + ${xcP(p[2])} \\cdot \\dfrac{1}{4} = ${nt(v/100)}$ nên $x ${A.ap}$.`,
+    verify:()=>{ /* 400 câu giả định */ const n = p.map(x=> 4*x), dung = n[0] + n[1]/2 + n[2]/4; return near(o.ans, xcR1(100*dung/400), 1e-9); }};
+  return o;
+});
+
+/* 49. TLN VD — Bayes: biết trả lời đúng */
+GT(12,6,1,'VD','Thi trắc nghiệm ba mức (biết chắc, loại được hai phương án, đoán hoàn toàn): biết học sinh trả lời đúng, tính xác suất học sinh thực sự biết đáp án hoặc chỉ đoán hoàn toàn (Bayes với ba giả thiết, đáp số phần trăm)', R=>{
+  const p = xcTn3(R); if(!p) return null;
+  const j = R.pick([0, 2, 1]), num = [4*p[0], 2*p[1], p[2]], tot = num[0] + num[1] + num[2], A = xcAns(100*num[j]/tot); if(!A) return null;
+  const tj = ['học sinh đó biết chắc đáp án', 'học sinh đó đã loại được hai phương án sai', 'học sinh đó chỉ đoán hoàn toàn'][j];
+  const o = {stem:`${xcTn3T(p)} Biết học sinh đó trả lời đúng một câu. Xác suất để ${tj} ở câu này bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_1, H_2, H_3$ như ba trường hợp trên, $D$: "trả lời đúng". $P(D) = ${xcP(p[0])} \\cdot 1 + ${xcP(p[1])} \\cdot \\dfrac{1}{2} + ${xcP(p[2])} \\cdot \\dfrac{1}{4} = ${nt(tot/400)}$.<br>`
+      + `$P(H_${j + 1} \\mid D) = \\dfrac{${nt(num[j]/400)}}{${nt(tot/400)}} = ${frT(num[j], tot)}$ nên $x = 100 \\cdot ${frT(num[j], tot)} ${A.ap}$.`,
+    verify:()=>{ const d = [p[0]/100, p[1]/200, p[2]/400], s = d[0] + d[1] + d[2]; return near(o.ans, xcR1(100*d[j]/s), 1e-9); }};
+  return o;
+});
+
+/* 50. TLN VD — chuyển hai bi */
+GT(12,6,1,'VD','Chuyển hai viên bi từ hộp I sang hộp II rồi lấy một viên bi từ hộp II — trả lời ngắn: xác suất lấy được bi đỏ (ba giả thiết theo số bi đỏ được chuyển, đáp số phần trăm)', R=>{
+  const a = R.int(2, 7), b = R.int(2, 7), c = R.int(1, 7), d = R.int(1, 7), n1 = a + b, n2 = c + d, T = xcC(n1, 2);
+  const pH = [xcC(b, 2), a*b, xcC(a, 2)], num = pH.reduce((s, h, k)=> s + h*(c + k), 0), den = T*(n2 + 2), A = xcAns(100*num/den); if(!A) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên một viên bi từ hộp II. Xác suất để viên bi lấy ra là bi đỏ bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`$H_k$: "chuyển sang $k$ viên đỏ": $P(H_0) = ${frT(pH[0], T)}$, $P(H_1) = ${frT(pH[1], T)}$, $P(H_2) = ${frT(pH[2], T)}$; $P(A \\mid H_k) = \\dfrac{${c} + k}{${n2 + 2}}$.<br>`
+      + `$P(A) = ${frT(pH[0], T)} \\cdot ${frT(c, n2 + 2)} + ${frT(pH[1], T)} \\cdot ${frT(c + 1, n2 + 2)} + ${frT(pH[2], T)} \\cdot ${frT(c + 2, n2 + 2)} = ${frT(num, den)}$ nên $x = 100 \\cdot ${frT(num, den)} ${A.ap}$.`,
+    verify:()=>{ let s = 0, t = 0; for(let i = 0; i < n1; i++) for(let j = i + 1; j < n1; j++){ t++; s += (c + (i < a) + (j < a))/(n2 + 2); } return near(o.ans, xcR1(100*s/t), 1e-9); }};
+  return o;
+});
+
+/* 51. TLN VD — Bayes: hai bi chuyển sang đều đỏ */
+GT(12,6,1,'VD','Chuyển hai viên bi từ hộp I sang hộp II rồi lấy một viên từ hộp II thì được bi đỏ: tính xác suất cả hai viên chuyển sang đều đỏ (hoặc đều xanh) — Bayes với ba giả thiết (đáp số phần trăm)', R=>{
+  const a = R.int(2, 7), b = R.int(2, 7), c = R.int(1, 7), d = R.int(1, 7), n1 = a + b, n2 = c + d, T = xcC(n1, 2), j = R.pick([2, 0]);
+  const pH = [xcC(b, 2), a*b, xcC(a, 2)], tk = pH.map((h, k)=> h*(c + k)), num = tk[0] + tk[1] + tk[2], A = xcAns(100*tk[j]/num); if(!A) return null;
+  const o = {stem:`Hộp I có $${a}$ viên bi đỏ và $${b}$ viên bi xanh; hộp II có $${c}$ viên bi đỏ và $${d}$ viên bi xanh. Lấy ngẫu nhiên đồng thời hai viên bi từ hộp I bỏ sang hộp II, sau đó lấy ngẫu nhiên một viên bi từ hộp II thì được viên bi đỏ. Xác suất để hai viên bi đã chuyển sang đều màu ${j === 2 ? 'đỏ' : 'xanh'} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`$H_k$: "chuyển sang $k$ viên đỏ": $P(H_0) = ${frT(pH[0], T)}$, $P(H_1) = ${frT(pH[1], T)}$, $P(H_2) = ${frT(pH[2], T)}$; $P(A \\mid H_k) = \\dfrac{${c} + k}{${n2 + 2}}$.<br>`
+      + `$P(A) = ${frT(num, T*(n2 + 2))}$; $P(H_${j} \\mid A) = \\dfrac{${frT(pH[j], T)} \\cdot ${frT(c + j, n2 + 2)}}{${frT(num, T*(n2 + 2))}} = ${frT(tk[j], num)}$ nên $x = 100 \\cdot ${frT(tk[j], num)} ${A.ap}$.`,
+    verify:()=>{ let s = 0, sj = 0; for(let i = 0; i < n1; i++) for(let k = i + 1; k < n1; k++){ const m = (i < a) + (k < a), pr = (c + m)/(n2 + 2); s += pr; if(m === j) sj += pr; } return near(o.ans, xcR1(100*sj/s), 1e-9); }};
+  return o;
+});
+
+/* 52. TLN VD — xét nghiệm hai lần */
+GT(12,6,1,'VD','Xét nghiệm hai lần (độc lập khi biết tình trạng bệnh): biết cả hai lần dương tính (hoặc một lần dương tính, một lần âm tính), tính xác suất người đó mắc bệnh — Bayes cập nhật (đáp số phần trăm)', R=>{
+  const p = R.pick([1, 2, 4, 5, 8, 10]), s = R.pick([85, 90, 95, 98]), f = R.pick([2, 4, 5, 8, 10]), hoi = R.pick(['dd', 'dd', 'da']);
+  const u1 = hoi === 'dd' ? p*s*s : p*s*(100 - s), u2 = hoi === 'dd' ? (100 - p)*f*f : (100 - p)*f*(100 - f), A = xcAns(100*u1/(u1 + u2)); if(!A) return null;
+  const o = {stem:`Tỉ lệ người mắc một bệnh trong cộng đồng là $${xcPc(p)}$. Một loại xét nghiệm cho kết quả dương tính với $${xcPc(s)}$ số người mắc bệnh và dương tính giả với $${xcPc(f)}$ số người không mắc bệnh. Một người được chọn ngẫu nhiên xét nghiệm hai lần thì ${hoi === 'dd' ? 'cả hai lần đều dương tính' : 'lần thứ nhất dương tính, lần thứ hai âm tính'}. Giả sử khi đã biết người đó mắc bệnh hay không thì kết quả hai lần xét nghiệm độc lập với nhau. Xác suất để người đó mắc bệnh bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $B$: "mắc bệnh", $K$: "kết quả hai lần như đề bài". $P(K \\mid B) = ${hoi === 'dd' ? `${xcP(s)}^2` : `${xcP(s)} \\cdot ${xcP(100 - s)}`}$, $P(K \\mid \\overline{B}) = ${hoi === 'dd' ? `${xcP(f)}^2` : `${xcP(f)} \\cdot ${xcP(100 - f)}`}$.<br>`
+      + `$P(B \\mid K) = \\dfrac{P(B) \\cdot P(K \\mid B)}{P(B) \\cdot P(K \\mid B) + P(\\overline{B}) \\cdot P(K \\mid \\overline{B})} = ${frT(u1, u1 + u2)}$ nên $x = 100 \\cdot ${frT(u1, u1 + u2)} ${A.ap}$.`,
+    verify:()=>{ /* cập nhật từng lần */ let q = p/100; const step = (pos)=>{ const a = pos ? s/100 : 1 - s/100, b = pos ? f/100 : 1 - f/100; q = q*a/(q*a + (1 - q)*b); }; step(true); step(hoi === 'dd'); return near(o.ans, xcR1(100*q), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.2 Đ–S tổng hợp xác suất toàn phần – Bayes; Bayes với ba giả thiết (12|6|1), đợt 5 (dạng 53–57: 5 TLN). Claude viết.
+// Chuỗi: hỏi ngược tỉ lệ P(A | H₃) (53) → hỏi ngược tỉ lệ nhóm H₂ (54) → nhân chứng nhận dạng màu xe với ba màu (55)
+// → hỏi ngược P(A | H₁) từ tỉ lệ trong số A (Bayes ngược) (56) → ba lô hàng, lấy hai sản phẩm (57).
+
+/* 53. TLN VD — hỏi ngược P(A | H3) */
+GT(12,6,1,'VD','Hỏi ngược công thức xác suất toàn phần với ba giả thiết — trả lời ngắn: biết tỉ lệ ba nhóm, P(A | H₁), P(A | H₂) và P(A), tìm P(A | H₃) theo phần trăm', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const T = xcT3(c), intro = c.intro(c.s, c.d).replace(/, \$[0-9{},]+\\%\$\.$/, ' và chưa biết đối với nhóm thứ ba.'); if(intro === c.intro(c.s, c.d)) return null;
+  const rest = T - c.s[0]*c.d[0] - c.s[1]*c.d[1];
+  const o = {stem:`${intro} ${c.pick}, biết xác suất để ${c.u} đó ${c.A} là $${xcPc(T/100)}$. Tỉ lệ ${c.u} ${c.A} của ${c.h[2]} là $x\\%$. Tìm $x$.`, ans:c.d[2],
+    lg:`Gọi $q = P(A \\mid H_3)$. Theo công thức xác suất toàn phần: $${xcP(c.s[0])} \\cdot ${xcP(c.d[0])} + ${xcP(c.s[1])} \\cdot ${xcP(c.d[1])} + ${xcP(c.s[2])} \\cdot q = ${nt(T/1e4)}$<br>$\\Leftrightarrow ${xcP(c.s[2])}q = ${nt(rest/1e4)}$ $\\Leftrightarrow q = ${xcP(c.d[2])}$ nên $x = ${c.d[2]}$.`,
+    verify:()=> near(o.ans, 100*(T/1e4 - c.s[0]*c.d[0]/1e4 - c.s[1]*c.d[1]/1e4)/(c.s[2]/100), 1e-9)};
+  return o;
+});
+
+/* 54. TLN VD — hỏi ngược tỉ lệ nhóm H2 */
+GT(12,6,1,'VD','Hỏi ngược công thức xác suất toàn phần — trả lời ngắn: ba nhà máy cung cấp hàng cho một kho, biết thị phần nhà máy I, tỉ lệ phế phẩm của cả ba nhà máy và tỉ lệ phế phẩm chung của kho; tìm thị phần nhà máy II', R=>{
+  const s1 = 5*R.int(3, 10), s2 = R.int(10, 55), s3 = 100 - s1 - s2, d = [R.int(1, 9), R.int(1, 9), R.int(1, 9)]; if(s3 < 10 || d[1] === d[2]) return null;
+  const T = s1*d[0] + s2*d[1] + s3*d[2];
+  const o = {stem:`Một kho hàng chỉ nhận sản phẩm từ ba nhà máy I, II, III, trong đó nhà máy I cung cấp $${xcPc(s1)}$ số sản phẩm. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$. Lấy ngẫu nhiên một sản phẩm trong kho thì xác suất lấy được phế phẩm là $${xcPc(T/100)}$. Nhà máy II cung cấp bao nhiêu phần trăm số sản phẩm của kho?`, ans:s2,
+    lg:`Gọi $y\\%$ là thị phần của nhà máy II, thị phần nhà máy III là $(${100 - s1} - y)\\%$. Theo công thức xác suất toàn phần (tính theo phần vạn):<br>`
+      + `$${s1} \\cdot ${d[0]} + y \\cdot ${d[1]} + (${100 - s1} - y) \\cdot ${d[2]} = ${T}$ $\\Leftrightarrow ${d[1] - d[2]}y = ${T - s1*d[0] - (100 - s1)*d[2]}$ $\\Leftrightarrow y = ${s2}$.`,
+    verify:()=>{ const y = (T - s1*d[0] - (100 - s1)*d[2])/(d[1] - d[2]); return near(o.ans, y, 1e-9) && near(s1/100*d[0]/100 + y/100*d[1]/100 + (1 - s1/100 - y/100)*d[2]/100, T/1e4, 1e-12); }};
+  return o;
+});
+
+/* 55. TLN VD — nhân chứng nhận dạng màu xe */
+GT(12,6,1,'VD','Nhân chứng nhận dạng màu xe với ba màu (xanh, trắng, vàng): nhân chứng nói đúng màu với xác suất c, nói sai thì nói nhầm sang mỗi màu còn lại với khả năng như nhau — biết nhân chứng nói xe màu xanh, tính xác suất xe thực sự màu xanh (Bayes ba giả thiết, đáp số phần trăm)', R=>{
+  const s = [5*R.int(2, 8), 5*R.int(4, 10)], s3 = 100 - s[0] - s[1], c = 10*R.int(6, 9); if(s3 < 10) return null;
+  const e = (100 - c)/2, t1 = s[0]*c, t2 = (s[1] + s3)*e, A = xcAns(100*t1/(t1 + t2)); if(!A) return null;
+  const o = {stem:`Ở một thành phố, xe taxi chỉ có ba màu: $${xcPc(s[0])}$ số xe màu xanh, $${xcPc(s[1])}$ số xe màu trắng, còn lại màu vàng. Một nhân chứng nhìn thấy một chiếc taxi gây tai nạn và khẳng định xe màu xanh. Kiểm tra cho thấy trong điều kiện tương tự, nhân chứng này nhận đúng màu xe với xác suất $${xcPc(c)}$; khi nhận sai thì nhầm sang mỗi màu còn lại với xác suất như nhau. Xác suất để chiếc taxi đó thực sự màu xanh bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $X, T, V$: "xe màu xanh, trắng, vàng"; $N$: "nhân chứng nói xe màu xanh". $P(N \\mid X) = ${xcP(c)}$, $P(N \\mid T) = P(N \\mid V) = \\dfrac{1 - ${xcP(c)}}{2} = ${xcP(e)}$.<br>`
+      + `$P(N) = ${xcP(s[0])} \\cdot ${xcP(c)} + ${xcP(s[1])} \\cdot ${xcP(e)} + ${xcP(s3)} \\cdot ${xcP(e)} = ${nt((t1 + t2)/1e4)}$.<br>`
+      + `$P(X \\mid N) = \\dfrac{${nt(t1/1e4)}}{${nt((t1 + t2)/1e4)}} = ${frT(t1, t1 + t2)}$ nên $x = 100 \\cdot ${frT(t1, t1 + t2)} ${A.ap}$.`,
+    verify:()=>{ const pr = [s[0]*c/100, s[1]*e/100, s3*e/100]; return near(o.ans, xcR1(100*pr[0]/(pr[0] + pr[1] + pr[2])), 1e-9); }};
+  return o;
+});
+
+/* 56. TLN VD — hỏi ngược P(A | H1) từ tỉ lệ trong số A */
+GT(12,6,1,'VD','Bayes ngược với ba giả thiết: biết thị phần ba nhà máy, tỉ lệ phế phẩm của nhà máy II, III và tỉ lệ phế phẩm của nhà máy I trong số phế phẩm của kho — tìm tỉ lệ phế phẩm của nhà máy I (trả lời ngắn)', R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2, d = [R.int(1, 15), R.int(1, 9), R.int(1, 9)]; if(s3 < 10) return null;
+  const T = s1*d[0] + s2*d[1] + s3*d[2], y = 100*s1*d[0]/T; if(!xcEx(y) || y <= 0) return null;
+  const o = {stem:`Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s1)}$, $${xcPc(s2)}$, $${xcPc(s3)}$. Tỉ lệ phế phẩm của nhà máy II là $${xcPc(d[1])}$, của nhà máy III là $${xcPc(d[2])}$. Thống kê cho thấy trong số phế phẩm của kho, có $${xcPc(y)}$ là sản phẩm của nhà máy I. Tỉ lệ phế phẩm của nhà máy I là bao nhiêu phần trăm?`, ans:d[0],
+    lg:`Gọi $t$ là tỉ lệ phế phẩm của nhà máy I, $A$: "sản phẩm là phế phẩm". Theo công thức Bayes: $P(H_1 \\mid A) = \\dfrac{${xcP(s1)}t}{${xcP(s1)}t + ${xcP(s2)} \\cdot ${xcP(d[1])} + ${xcP(s3)} \\cdot ${xcP(d[2])}} = ${xcP(y)}$.<br>`
+      + `Đặt $t = \\dfrac{u}{100}$ (u là tỉ lệ phần trăm cần tìm), nhân tử và mẫu với $10\\,000$: $\\dfrac{${s1}u}{${s1}u + ${s2*d[1] + s3*d[2]}} = \\dfrac{${nt(y)}}{100}$ $\\Leftrightarrow ${s1}u \\cdot 100 = ${nt(y)}(${s1}u + ${s2*d[1] + s3*d[2]})$<br>`
+      + `$\\Leftrightarrow ${nt(s1*(100 - y))}u = ${nt(y*(s2*d[1] + s3*d[2]))}$ $\\Leftrightarrow u = ${d[0]}$, tức tỉ lệ phế phẩm của nhà máy I là $${xcPc(d[0])}$.`,
+    verify:()=>{ const m = (s2*d[1] + s3*d[2])/1e4, t = y/100*m/(s1/100*(1 - y/100)); return near(o.ans, 100*t, 1e-9); }};
+  return o;
+});
+
+/* 57. TLN VD — ba lô hàng, lấy hai sản phẩm */
+GT(12,6,1,'VD','Ba lô hàng có số phế phẩm khác nhau, chọn ngẫu nhiên một lô rồi lấy đồng thời hai sản phẩm: tính xác suất cả hai sản phẩm đều tốt (công thức xác suất toàn phần với ba giả thiết, đáp số phần trăm)', R=>{
+  const n = [R.int(8, 15), R.int(8, 15), R.int(8, 15)], k = [R.int(1, 4), R.int(1, 4), R.int(1, 4)];
+  const pg = n.map((m, i)=> xcC(m - k[i], 2)/xcC(m, 2)), v = (pg[0] + pg[1] + pg[2])/3, A = xcAns(100*v); if(!A) return null;
+  let num = 0, den = 3; const fr = n.map((m, i)=> [xcC(m - k[i], 2), xcC(m, 2)]); den = 3*fr[0][1]*fr[1][1]*fr[2][1]; num = fr.reduce((s, [a, b])=> s + a*den/(3*b), 0);
+  const o = {stem:`Có ba lô hàng: lô I có $${n[0]}$ sản phẩm trong đó $${k[0]}$ phế phẩm; lô II có $${n[1]}$ sản phẩm trong đó $${k[1]}$ phế phẩm; lô III có $${n[2]}$ sản phẩm trong đó $${k[2]}$ phế phẩm. Chọn ngẫu nhiên một lô (khả năng chọn mỗi lô như nhau), rồi từ lô đó lấy ngẫu nhiên đồng thời hai sản phẩm. Xác suất để cả hai sản phẩm lấy ra đều tốt bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_i$: "chọn lô thứ $i$" ($P(H_i) = \\dfrac{1}{3}$), $A$: "hai sản phẩm đều tốt". $P(A \\mid H_1) = \\dfrac{C_{${n[0] - k[0]}}^{2}}{C_{${n[0]}}^{2}} = ${frT(fr[0][0], fr[0][1])}$, $P(A \\mid H_2) = \\dfrac{C_{${n[1] - k[1]}}^{2}}{C_{${n[1]}}^{2}} = ${frT(fr[1][0], fr[1][1])}$, $P(A \\mid H_3) = \\dfrac{C_{${n[2] - k[2]}}^{2}}{C_{${n[2]}}^{2}} = ${frT(fr[2][0], fr[2][1])}$.<br>`
+      + `$P(A) = \\dfrac{1}{3}\\left(${frT(fr[0][0], fr[0][1])} + ${frT(fr[1][0], fr[1][1])} + ${frT(fr[2][0], fr[2][1])}\\right) = ${frT(Math.round(num), den)}$ nên $x = 100 \\cdot ${frT(Math.round(num), den)} ${A.ap}$.`,
+    verify:()=>{ let s = 0; n.forEach((m, i)=>{ let t = 0, g = 0; for(let a = 0; a < m; a++) for(let b = a + 1; b < m; b++){ t++; if(a >= k[i] && b >= k[i]) g++; } s += g/t; }); return near(o.ans, xcR1(100*s/3), 1e-9); }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
+})();
+
+// ---------- V2.89: dạng thay số bổ sung (Lớp 12 cân đối hình thức, đợt 2: 12-18.2 (dạng 31–60), 12-19.2 (dạng 33–62), 60 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+/* Tiện ích chung cho nháp Chương VI lớp 12 (xác suất có điều kiện, xác suất toàn phần, Bayes) — tiền tố xc.
+   Ghép vào đầu mỗi nháp bằng ghep.sh vì wrap.py bọc mỗi nháp thành một phạm vi riêng. */
+const xcG = (a, b)=> b ? xcG(b, a % b) : Math.abs(a);
+const xcC = (n, k)=>{ if(k < 0 || k > n) return 0; let r = 1; for(let i = 1; i <= k; i++) r = r*(n - k + i)/i; return Math.round(r); };
+const xcEx = x=> Math.abs(x*10 - Math.round(x*10)) < 1e-9;   /* x có không quá 1 chữ số thập phân */
+/* làm tròn tới hàng phần mười; null khi sát điểm giữa (dễ lệch khi làm tròn) hoặc quá 4 kí tự */
+const xcR1 = x=>{ if(!isFinite(x) || x < 0) return null; const t = x*10, f = t - Math.floor(t); if(!xcEx(x) && Math.abs(f - 0.5) < 1e-4) return null; const v = Math.round(t)/10; return String(v).length <= 4 ? v : null; };
+const xcLt = x=> xcEx(x) ? '' : ' (làm tròn kết quả đến hàng phần mười)';
+const xcAp = (x, v)=> xcEx(x) ? `= ${nt(v)}` : `\\approx ${nt(v)}`;   /* "= 12,5" hoặc "≈ 12,5" */
+const xcP = x=> nt(x/100);    /* x phần trăm → số thập phân, vd 35 → 0{,}35 */
+const xcPc = x=> `${nt(x)}\\%`;
+const xcFq = (n, d)=>{ const s = `\\dfrac{${n}}{${d}}`, r = frT(n, d); return r === s ? s : s + ' = ' + r; };   /* "n/d = rút gọn" */
+const xcFr = (n, d)=> ({t:`$${frT(n, d)}$`, v:n/d});
+const xcNu = x=> ({t:`$${nt(x)}$`, v:x});
+/* chọn 3 phương án sai khác giá trị (và khác chữ) với đáp án; không đủ thì trả null */
+const xcW = (R, ans, cand)=>{ const out = [], seen = [ans]; for(const c of R.shuffle(cand.slice())){ if(!c || !isFinite(c.v) || c.v < 0 || (ans.v <= 1 && c.v > 1)) continue; if(seen.some(s=> Math.abs(s.v - c.v) < 1e-9 || s.t === c.t)) continue; seen.push(c); out.push(c); if(out.length === 3) break; } return out.length === 3 ? out : null; };
+/* bảng hai chiều: hàng r[0], r[1]; cột c[0], c[1]; n = [[n00, n01], [n10, n11]] */
+const xcTb = (r, c, n)=> `$\\begin{array}{|c|c|c|}\\hline & \\text{${c[0]}} & \\text{${c[1]}} \\\\ \\hline \\text{${r[0]}} & ${n[0][0]} & ${n[0][1]} \\\\ \\hline \\text{${r[1]}} & ${n[1][0]} & ${n[1][1]} \\\\ \\hline \\end{array}$`;
+/* tình huống hai giả thiết H, H̄ và biến cố A (xác suất toàn phần, Bayes): p = P(H), a = P(A | H), b = P(A | H̄), tính theo phần trăm */
+const xcCt2 = R=>{
+  const L = [
+    {k:'hoc', p:5*R.int(6, 16), a:5*R.int(6, 14), b:5*R.int(2, 8), intro:(p, a, b)=> `Ở một trường, có $${xcPc(p)}$ học sinh tham gia học thêm môn Toán. Tỉ lệ học sinh đạt điểm giỏi môn Toán là $${xcPc(a)}$ trong nhóm có học thêm và $${xcPc(b)}$ trong nhóm không học thêm.`, pick:'Chọn ngẫu nhiên một học sinh của trường.', u:'học sinh', H:'có học thêm', nH:'không học thêm', A:'đạt điểm giỏi', nA:'không đạt điểm giỏi'},
+    {k:'ca', p:5*R.int(10, 16), a:R.int(1, 5), b:R.int(2, 9), intro:(p, a, b)=> `Một xưởng sản xuất làm việc hai ca: ca ngày làm ra $${xcPc(p)}$ tổng số sản phẩm, ca đêm làm ra phần còn lại. Tỉ lệ phế phẩm của ca ngày là $${xcPc(a)}$, của ca đêm là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một sản phẩm của xưởng.', u:'sản phẩm', H:'do ca ngày làm ra', nH:'do ca đêm làm ra', A:'là phế phẩm', nA:'không là phế phẩm'},
+    {k:'khach', p:5*R.int(4, 12), a:5*R.int(8, 16), b:5*R.int(2, 8), intro:(p, a, b)=> `Một cửa hàng có $${xcPc(p)}$ số khách vào cửa hàng là khách quen. Tỉ lệ mua hàng của khách quen là $${xcPc(a)}$, của khách vãng lai là $${xcPc(b)}$.`, pick:'Chọn ngẫu nhiên một khách đã vào cửa hàng.', u:'khách', H:'là khách quen', nH:'là khách vãng lai', A:'có mua hàng', nA:'không mua hàng'},
+    {k:'bh', p:5*R.int(12, 17), a:R.int(1, 4), b:R.int(5, 12), intro:(p, a, b)=> `Một công ty bảo hiểm chia khách hàng thành hai nhóm: nhóm rủi ro thấp chiếm $${xcPc(p)}$, nhóm rủi ro cao chiếm phần còn lại. Xác suất một khách hàng gặp sự cố trong một năm là $${xcPc(a)}$ với nhóm rủi ro thấp và $${xcPc(b)}$ với nhóm rủi ro cao.`, pick:'Chọn ngẫu nhiên một khách hàng của công ty.', u:'khách hàng', H:'thuộc nhóm rủi ro thấp', nH:'thuộc nhóm rủi ro cao', A:'gặp sự cố trong năm', nA:'không gặp sự cố trong năm'}];
+  const c = R.pick(L); if(c.a === c.b || c.p >= 100) return null; return c; };
+/* tình huống ba giả thiết H1, H2, H3 (phân hoạch) và biến cố A: s = tỉ lệ (%) từng nhóm, d = P(A | Hi) (%) */
+const xcCt3 = R=>{
+  const s1 = 5*R.int(3, 10), s2 = 5*R.int(3, 10), s3 = 100 - s1 - s2; if(s3 < 10) return null;
+  const L = [
+    {u:'sản phẩm', d:[R.int(1, 8), R.int(1, 8), R.int(1, 8)], H:['do nhà máy I sản xuất', 'do nhà máy II sản xuất', 'do nhà máy III sản xuất'], h:['nhà máy I', 'nhà máy II', 'nhà máy III'], A:'là phế phẩm', nA:'không là phế phẩm',
+     intro:(s, d)=> `Một kho hàng nhận sản phẩm từ ba nhà máy I, II, III với tỉ lệ số sản phẩm lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$. Tỉ lệ phế phẩm của ba nhà máy lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Lấy ngẫu nhiên một sản phẩm trong kho'},
+    {u:'học sinh', d:[5*R.int(2, 12), 5*R.int(2, 12), 5*R.int(2, 12)], H:['thuộc lớp 12A1', 'thuộc lớp 12A2', 'thuộc lớp 12A3'], h:['lớp 12A1', 'lớp 12A2', 'lớp 12A3'], A:'đạt từ 9 điểm trở lên', nA:'không đạt từ 9 điểm trở lên',
+     intro:(s, d)=> `Ba lớp 12A1, 12A2, 12A3 của một trường cùng làm một bài thi thử; số học sinh mỗi lớp lần lượt chiếm $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s[2])}$ tổng số học sinh ba lớp. Tỉ lệ học sinh đạt từ 9 điểm trở lên của ba lớp lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một học sinh của ba lớp'},
+    {u:'bệnh nhân', d:[5*R.int(1, 4), 5*R.int(3, 7), 5*R.int(6, 11)], H:['dưới 40 tuổi', 'từ 40 đến 60 tuổi', 'trên 60 tuổi'], h:['nhóm dưới 40 tuổi', 'nhóm từ 40 đến 60 tuổi', 'nhóm trên 60 tuổi'], A:'phải nằm viện quá một tuần', nA:'không phải nằm viện quá một tuần',
+     intro:(s, d)=> `Bệnh nhân của một khoa điều trị thuộc ba nhóm tuổi: dưới 40 tuổi chiếm $${xcPc(s[0])}$, từ 40 đến 60 tuổi chiếm $${xcPc(s[1])}$, trên 60 tuổi chiếm $${xcPc(s[2])}$. Tỉ lệ bệnh nhân phải nằm viện quá một tuần ở ba nhóm lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một bệnh nhân của khoa'},
+    {u:'xe', d:[R.int(1, 9), R.int(1, 9), R.int(1, 9)], H:['là xe 4 chỗ', 'là xe 7 chỗ', 'là xe điện'], h:['loại xe 4 chỗ', 'loại xe 7 chỗ', 'loại xe điện'], A:'gặp sự cố kĩ thuật trong tháng', nA:'không gặp sự cố kĩ thuật trong tháng',
+     intro:(s, d)=> `Một hãng taxi có ba loại xe: xe 4 chỗ chiếm $${xcPc(s[0])}$, xe 7 chỗ chiếm $${xcPc(s[1])}$, xe điện chiếm $${xcPc(s[2])}$ tổng số xe. Trong một tháng, tỉ lệ xe gặp sự cố kĩ thuật của ba loại lần lượt là $${xcPc(d[0])}$, $${xcPc(d[1])}$, $${xcPc(d[2])}$.`, pick:'Chọn ngẫu nhiên một xe của hãng'}];
+  const c = R.pick(L); if(new Set(c.d).size < 2) return null; c.s = [s1, s2, s3]; return c; };
+const xcT3 = c=> c.s.reduce((t, s, i)=> t + s*c.d[i], 0);   /* 10000·P(A) */
+const xcSum3 = (c, f)=> c.s.map((s, i)=> `${xcP(s)} \\cdot ${xcP(f ? 100 - c.d[i] : c.d[i])}`).join(' + ');
+/* sơ đồ cây hai tầng dạng chữ: nh = [[nhãn, xác suất (chuỗi TeX)], [..]], con = [[[nhãn, xs], [nhãn, xs]], [[..], [..]]] */
+const xcCay = (nh, con)=> `$\\begin{array}{l} ${nh.map(([l, p], i)=> `${l}\\;(${p}) \\left\\lbrace \\begin{array}{l} ${con[i].map(([l2, p2])=> `${l2}\\;(${p2})`).join(' \\\\ ')} \\end{array}\\right.`).join(' \\\\[4pt] ')} \\end{array}$`;
+/* đáp số TLN dạng phần trăm (≤ 1 chữ số thập phân, làm tròn khi cần): trả {v, lt, ap} hoặc null */
+const xcAns = x=>{ const v = xcR1(x); if(v == null || v <= 0) return null; return {v, lt:xcLt(x), ap:xcAp(x, v)}; };
+// Lớp 12 — 12-19.2 Đ–S tổng hợp xác suất toàn phần – Bayes; Bayes với ba giả thiết (12|6|1), đợt 6 (dạng 58–62: 3 TLN, 2 TL). Claude viết.
+// Chuỗi: Bayes với ba lô hàng (58) → kênh truyền ba tín hiệu (59) → hỏi ngược số phế phẩm của lô (60)
+// → tự luận có thang điểm: ba nhóm (61), thi trắc nghiệm ba mức (62).
+
+/* 58. TLN VD — Bayes với ba lô hàng */
+GT(12,6,1,'VD','Ba lô hàng, chọn ngẫu nhiên một lô rồi lấy hai sản phẩm thì cả hai đều tốt: tính xác suất đã chọn lô I (lô II, lô III) — Bayes với ba giả thiết (đáp số phần trăm)', R=>{
+  const n = [R.int(8, 15), R.int(8, 15), R.int(8, 15)], k = [R.int(1, 4), R.int(1, 4), R.int(1, 4)], i = R.int(0, 2);
+  const fr = n.map((m, j)=> [xcC(m - k[j], 2), xcC(m, 2)]), L = fr[0][1]*fr[1][1]*fr[2][1], t = fr.map(([a, b])=> a*L/b), num = t[0] + t[1] + t[2], A = xcAns(100*t[i]/num); if(!A) return null;
+  const nm = ['I', 'II', 'III'];
+  const o = {stem:`Có ba lô hàng: lô I có $${n[0]}$ sản phẩm trong đó $${k[0]}$ phế phẩm; lô II có $${n[1]}$ sản phẩm trong đó $${k[1]}$ phế phẩm; lô III có $${n[2]}$ sản phẩm trong đó $${k[2]}$ phế phẩm. Chọn ngẫu nhiên một lô (khả năng như nhau), rồi từ lô đó lấy ngẫu nhiên đồng thời hai sản phẩm thì thấy cả hai đều tốt. Xác suất để lô được chọn là lô ${nm[i]} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $H_j$: "chọn lô thứ $j$" ($P(H_j) = \\dfrac{1}{3}$), $A$: "hai sản phẩm đều tốt". $P(A \\mid H_1) = ${frT(fr[0][0], fr[0][1])}$, $P(A \\mid H_2) = ${frT(fr[1][0], fr[1][1])}$, $P(A \\mid H_3) = ${frT(fr[2][0], fr[2][1])}$.<br>`
+      + `Vì $P(H_1) = P(H_2) = P(H_3)$ nên $P(H_${i + 1} \\mid A) = \\dfrac{P(A \\mid H_${i + 1})}{P(A \\mid H_1) + P(A \\mid H_2) + P(A \\mid H_3)} = ${frT(Math.round(t[i]), Math.round(num))}$ nên $x = 100 \\cdot ${frT(Math.round(t[i]), Math.round(num))} ${A.ap}$.`,
+    verify:()=>{ const pg = n.map((m, j)=>{ let a = 0, g = 0; for(let u = 0; u < m; u++) for(let w = u + 1; w < m; w++){ a++; if(u >= k[j] && w >= k[j]) g++; } return g/a; }); return near(o.ans, xcR1(100*pg[i]/(pg[0] + pg[1] + pg[2])), 1e-9); }};
+  return o;
+});
+
+/* 59. TLN VD — kênh truyền ba tín hiệu */
+GT(12,6,1,'VD','Kênh truyền ba loại tín hiệu A, B, C: mỗi tín hiệu được nhận đúng với xác suất cho trước, nhận sai thì nhầm sang mỗi loại còn lại như nhau — biết nhận được A, tính xác suất tín hiệu gửi đi là A (Bayes ba giả thiết, đáp số phần trăm)', R=>{
+  const s = [5*R.int(4, 10), 5*R.int(3, 8)], s3 = 100 - s[0] - s[1], c = [10*R.int(7, 9), 10*R.int(7, 9), 10*R.int(7, 9)]; if(s3 < 10) return null;
+  const pA = [c[0], (100 - c[1])/2, (100 - c[2])/2], t = [s[0], s[1], s3].map((x, i)=> x*pA[i]), tot = t[0] + t[1] + t[2], j = R.pick([0, 0, 1]), A = xcAns(100*t[j]/tot); if(!A) return null;
+  const nm = ['A', 'B', 'C'];
+  const o = {stem:`Một hệ thống truyền ba loại tín hiệu A, B, C với tỉ lệ gửi đi lần lượt là $${xcPc(s[0])}$, $${xcPc(s[1])}$, $${xcPc(s3)}$. Do nhiễu, tín hiệu A, B, C được nhận đúng với xác suất lần lượt là $${xcPc(c[0])}$, $${xcPc(c[1])}$, $${xcPc(c[2])}$; khi bị nhận sai, mỗi tín hiệu bị nhận nhầm thành một trong hai loại còn lại với khả năng như nhau. Biết một tín hiệu được nhận là A, xác suất để tín hiệu gửi đi là ${nm[j]} bằng $x\\%$. Tìm $x$${A.lt}.`, ans:A.v,
+    lg:`Gọi $G_A, G_B, G_C$: "gửi đi A, B, C"; $N$: "nhận được A". $P(N \\mid G_A) = ${xcP(c[0])}$, $P(N \\mid G_B) = \\dfrac{1 - ${xcP(c[1])}}{2} = ${xcP(pA[1])}$, $P(N \\mid G_C) = \\dfrac{1 - ${xcP(c[2])}}{2} = ${xcP(pA[2])}$.<br>`
+      + `$P(N) = ${xcP(s[0])} \\cdot ${xcP(pA[0])} + ${xcP(s[1])} \\cdot ${xcP(pA[1])} + ${xcP(s3)} \\cdot ${xcP(pA[2])} = ${nt(tot/1e4)}$.<br>$P(G_${nm[j]} \\mid N) = \\dfrac{${nt(t[j]/1e4)}}{${nt(tot/1e4)}} = ${frT(Math.round(t[j]*2), Math.round(tot*2))}$ nên $x = 100 \\cdot ${frT(Math.round(t[j]*2), Math.round(tot*2))} ${A.ap}$.`,
+    verify:()=>{ const q = [s[0]/100*c[0]/100, s[1]/100*(1 - c[1]/100)/2, s3/100*(1 - c[2]/100)/2]; return near(o.ans, xcR1(100*q[j]/(q[0] + q[1] + q[2])), 1e-9); }};
+  return o;
+});
+
+/* 60. TLN VD — hỏi ngược số phế phẩm của lô */
+GT(12,6,1,'VD','Hỏi ngược với ba lô hàng: chọn ngẫu nhiên một lô (khả năng như nhau) rồi lấy một sản phẩm; biết số sản phẩm mỗi lô, số phế phẩm của hai lô và xác suất lấy được phế phẩm — tìm số phế phẩm của lô còn lại', R=>{
+  const n = [R.pick([10, 12, 15, 20]), R.pick([10, 12, 15, 20]), R.pick([15, 20, 24, 25, 30])], k = [R.int(1, 5), R.int(1, 5), R.int(1, 12)]; if(k[2] >= n[2]) return null;
+  const L = 3*n[0]*n[1]*n[2], num = k[0]*n[1]*n[2] + k[1]*n[0]*n[2] + k[2]*n[0]*n[1];
+  const pT = frT(num, L);
+  const o = {stem:`Có ba lô hàng: lô I có $${n[0]}$ sản phẩm trong đó $${k[0]}$ phế phẩm; lô II có $${n[1]}$ sản phẩm trong đó $${k[1]}$ phế phẩm; lô III có $${n[2]}$ sản phẩm, trong đó có một số phế phẩm. Chọn ngẫu nhiên một lô (khả năng như nhau) rồi lấy ngẫu nhiên một sản phẩm từ lô đó. Biết xác suất lấy được phế phẩm bằng $${pT}$. Lô III có bao nhiêu phế phẩm?`, ans:k[2],
+    lg:`Gọi $m$ là số phế phẩm của lô III. Theo công thức xác suất toàn phần: $\\dfrac{1}{3}\\left(${frT(k[0], n[0])} + ${frT(k[1], n[1])} + \\dfrac{m}{${n[2]}}\\right) = ${pT}$<br>`
+      + `$\\Leftrightarrow \\dfrac{m}{${n[2]}} = 3 \\cdot ${pT} - ${frT(k[0], n[0])} - ${frT(k[1], n[1])} = ${frT(k[2], n[2])}$ $\\Leftrightarrow m = ${k[2]}$.`,
+    verify:()=>{ const sol = []; for(let m = 0; m <= n[2]; m++) if(near((k[0]/n[0] + k[1]/n[1] + m/n[2])/3, num/L, 1e-12)) sol.push(m); return sol.length === 1 && o.ans === sol[0]; }};
+  return o;
+});
+
+/* 61. TL VD — ba nhóm (thang điểm 1,0) */
+GE(12,6,1,'VD','Tự luận có thang điểm: ba giả thiết (ba nhà máy, ba lớp, ba nhóm tuổi, ba loại xe) — a) tính P(A) theo công thức xác suất toàn phần; b) biết A xảy ra, tính xác suất thuộc từng nhóm (Bayes); c) nhận xét nhóm có khả năng cao nhất', R=>{
+  const c = xcCt3(R); if(!c) return null;
+  const T = xcT3(c), pr = c.s.map((s, i)=> s*c.d[i]), mx = Math.max(...pr); if(pr.filter(v=> v === mx).length > 1) return null;
+  const k = pr.indexOf(mx);
+  return s6Parts(`${c.intro(c.s, c.d)} ${c.pick}.`, [
+    {q:`Tính xác suất để ${c.u} đó ${c.A}.`, a:`Gọi $H_1, H_2, H_3$ lần lượt là biến cố ${c.u} được chọn ${c.H.join(', ')}; $A$: "${c.u} ${c.A}". $H_1, H_2, H_3$ đôi một xung khắc, có hợp là không gian mẫu. <b>(0,25 điểm)</b><br>$P(A) = ${xcSum3(c)} = ${nt(T/1e4)}$. <b>(0,25 điểm)</b>`,
+     chk:()=> near(T/1e4, c.s.reduce((s, x, i)=> s + x/100*c.d[i]/100, 0), 1e-12)},
+    {q:`Biết ${c.u} được chọn ${c.A}, tính xác suất để ${c.u} đó thuộc từng nhóm.`, a:`Theo công thức Bayes: $P(H_1 \\mid A) = ${frT(pr[0], T)}$, $P(H_2 \\mid A) = ${frT(pr[1], T)}$, $P(H_3 \\mid A) = ${frT(pr[2], T)}$ (tử số lần lượt là $${pr.map(v=> nt(v/1e4)).join('$, $')}$, mẫu số $P(A) = ${nt(T/1e4)}$). <b>(0,25 điểm)</b>`,
+     chk:()=> near(pr[0]/T + pr[1]/T + pr[2]/T, 1, 1e-12)},
+    {q:`Nếu ${c.u} được chọn ${c.A} thì khả năng cao nhất ${c.u} đó thuộc nhóm nào?`, a:`So sánh ba xác suất ở câu b): lớn nhất là $${frT(pr[k], T)}$, nên khả năng cao nhất là ${c.u} đó ${c.H[k]}. <b>(0,25 điểm)</b>`, chk:()=> pr[k] === mx}]);
+});
+
+/* 62. TL VD — thi trắc nghiệm ba mức (thang điểm 1,0) */
+GE(12,6,1,'VD','Tự luận có thang điểm: thi trắc nghiệm ba mức (biết chắc, loại được hai phương án, đoán) — a) xác suất trả lời đúng một câu; b) biết trả lời đúng, xác suất học sinh biết chắc đáp án; c) ước tính số câu trả lời đúng trong bài N câu', R=>{
+  const p1 = 5*R.int(6, 14), p2 = 5*R.int(2, 8), p3 = 100 - p1 - p2; if(p3 < 5) return null;
+  const v = p1 + p2/2 + p3/4, N = R.pick([40, 50, 80, 100]), k = N*v/100; if(!Number.isInteger(k)) return null;
+  const num = 4*p1, tot = 4*p1 + 2*p2 + p3;
+  return s6Parts(`Trong một bài thi trắc nghiệm, mỗi câu có bốn phương án, chỉ một phương án đúng. Với mỗi câu, một học sinh biết chắc đáp án với xác suất $${xcP(p1)}$; loại được hai phương án sai rồi chọn ngẫu nhiên một trong hai phương án còn lại với xác suất $${xcP(p2)}$; còn lại thì chọn ngẫu nhiên một trong bốn phương án.`, [
+    {q:'Tính xác suất để học sinh đó trả lời đúng một câu.', a:`Gọi $H_1, H_2, H_3$ là ba trường hợp trên, $D$: "trả lời đúng"; $P(D \\mid H_1) = 1$, $P(D \\mid H_2) = \\dfrac{1}{2}$, $P(D \\mid H_3) = \\dfrac{1}{4}$. <b>(0,25 điểm)</b><br>$P(D) = ${xcP(p1)} + ${xcP(p2)} \\cdot \\dfrac{1}{2} + ${xcP(p3)} \\cdot \\dfrac{1}{4} = ${nt(v/100)}$. <b>(0,25 điểm)</b>`,
+     chk:()=> near(v/100, p1/100 + p2/200 + p3/400, 1e-12)},
+    {q:'Biết học sinh đó trả lời đúng một câu, tính xác suất để học sinh đó biết chắc đáp án câu này.', a:`$P(H_1 \\mid D) = \\dfrac{${xcP(p1)} \\cdot 1}{${nt(v/100)}} = ${frT(num, tot)}$. <b>(0,25 điểm)</b>`, chk:()=> near(num/tot, (p1/100)/(v/100), 1e-12)},
+    {q:`Bài thi có $${N}$ câu. Ước tính số câu học sinh đó trả lời đúng.`, a:`Số câu trả lời đúng ước tính là $${N} \\cdot ${nt(v/100)} = ${k}$ (câu). <b>(0,25 điểm)</b>`, chk:()=> k === N*(p1 + p2/2 + p3/4)/100}]);
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.89'; GEN[k].l1 = 'V2.89'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
