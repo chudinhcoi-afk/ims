@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.87 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.88 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -416,10 +416,10 @@ const CHUYEN_DE = {
   '10-27': [['Thực hành tính xác suất theo định nghĩa cổ điển', '1-13'],
             ['Câu Đúng–Sai tổng hợp xác suất cổ điển; xác suất trong bài toán thực tế nhiều bước (chia nhóm, xếp chỗ, trò chơi)', ''],
             ['Xác suất nâng cao: chọn số, xếp chỗ có điều kiện; xác suất trên lưới và trò chơi', '', 'hsg']],
-  '11-02': [['Công thức lượng giác', '1-15'],
+  '11-02': [['Công thức lượng giác', '1-15,36-48'],
             ['Chứng minh đẳng thức, nhận dạng tam giác bằng công thức lượng giác; GTLN, GTNN của biểu thức lượng giác', '16-35', 'hsg']],
-  '11-04': [['Phương trình lượng giác cơ bản', '1-17'],
-            ['Phương trình lượng giác trong thực tế (dao động, độ cao cabin vòng quay, thuỷ triều, nhiệt độ theo giờ); câu Đúng–Sai tổng hợp hàm số và phương trình lượng giác', ''],
+  '11-04': [['Phương trình lượng giác cơ bản', '1-17,38-49'],
+            ['Phương trình lượng giác trong thực tế (dao động, độ cao cabin vòng quay, thuỷ triều, nhiệt độ theo giờ); câu Đúng–Sai tổng hợp hàm số và phương trình lượng giác', '50-65'],
             ['Phương trình lượng giác nâng cao: đưa về tích, đặt ẩn phụ, đánh giá hai vế; phương trình lượng giác chứa tham số', '18-37', 'hsg']],
   '11-05': [['Dãy số', '1-20'],
             ['Dãy số truy hồi: tìm số hạng tổng quát (tuyến tính cấp một, cấp hai, dãy phụ); chứng minh đơn điệu, bị chặn bằng quy nạp', '21-40', 'hsg']],
@@ -632,7 +632,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.87';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.87: Lớp 6: 6-07.4 thêm 22 dạng (bài toán thực tế ƯCLN, BCNN; rút gọn, quy đồng, cộng phân số) — đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL V2.86: Lớp 6: 6-07.3 (ước chung, ƯCLN, bội chung, BCNN) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 20 dạng (55–74) V2.85: Lớp 6: 6-07.1 (quan hệ chia hết, dấu hiệu chia hết cho 2, 5, 3, 9) và 6-07.2 (số nguyên tố, hợp số, phân tích ra thừa số nguyên tố) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (7–54) V2.84: Lớp 6: 6-06.3 (luỹ thừa) và 6-06.4 (thứ tự thực hiện phép tính, tìm x) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 40 dạng (57–96); bài 6-06 xong cả 4 chuyên đề V2.83: Lớp 6: 6-06.1 (tập hợp, cách ghi số, thứ tự trong N) và 6-06.2 (cộng, trừ, nhân, chia số tự nhiên, chia có dư, tính chất) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (9–56); nháp lớp 6 ghép sau đoạn tách V1.61 (@SAU_V161) V2.82: Phiếu in sẵn tên (mỗi em một mã): đáp án gửi MBP Chấm kèm tên, SBD học sinh để app chấm tự nhận bài của em nào V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.88';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.88: Lớp 11 Chương I: thêm 61 dạng trả lời ngắn — 11-01.1, 11-02.1, 11-03.1, 11-04.1, 11-04.2 mỗi chuyên đề đủ 16 TLN V2.87: Lớp 6: 6-07.4 thêm 22 dạng (bài toán thực tế ƯCLN, BCNN; rút gọn, quy đồng, cộng phân số) — đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL V2.86: Lớp 6: 6-07.3 (ước chung, ƯCLN, bội chung, BCNN) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 20 dạng (55–74) V2.85: Lớp 6: 6-07.1 (quan hệ chia hết, dấu hiệu chia hết cho 2, 5, 3, 9) và 6-07.2 (số nguyên tố, hợp số, phân tích ra thừa số nguyên tố) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (7–54) V2.84: Lớp 6: 6-06.3 (luỹ thừa) và 6-06.4 (thứ tự thực hiện phép tính, tìm x) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 40 dạng (57–96); bài 6-06 xong cả 4 chuyên đề V2.83: Lớp 6: 6-06.1 (tập hợp, cách ghi số, thứ tự trong N) và 6-06.2 (cộng, trừ, nhân, chia số tự nhiên, chia có dư, tính chất) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (9–56); nháp lớp 6 ghép sau đoạn tách V1.61 (@SAU_V161) V2.82: Phiếu in sẵn tên (mỗi em một mã): đáp án gửi MBP Chấm kèm tên, SBD học sinh để app chấm tự nhận bài của em nào V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -72584,6 +72584,1248 @@ GE(10,5,2,'VD','Tự luận thực tế (có thang điểm): vật ném lên the
 
 }
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.81'; GEN[k].l1 = 'V2.81'; });
+})();
+
+// ---------- V2.88: dạng thay số bổ sung (11-01…11-04 (Chương I lớp 11) TLN: 61 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// 11-01 Giá trị lượng giác của góc lượng giác — bổ sung 11 dạng TLN (chuyên đề 11-01.1 lên 16 TLN).
+// Chuỗi: số đo góc lượng giác khi quay → số đo dương nhỏ nhất/âm lớn nhất → điểm biểu diễn họ góc → góc nα trùng điểm cho trước;
+// giá trị lượng giác: biết một giá trị → hằng đẳng thức tan + cot → góc lớn về góc đặc biệt → rút gọn góc liên quan; thực tế: cung kinh tuyến, xe đạp, hai kim đồng hồ.
+const t1Ok = x=>{ const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9) return null; return String(r).length <= 4 ? r : null; };
+const t1Pi = (p, q)=>{ if(p === 0) return '0'; const g = gcdI(p, q); p /= g; q /= g; if(q < 0){ p = -p; q = -q; } const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return q === 1 ? s + n : `${s}\\dfrac{${n}}{${q}}`; };
+const t1Deg = d=> `${nt(d)}^\\circ`;
+const t1Q = [['0 < \\alpha < \\dfrac{\\pi}{2}', 1, 1], ['\\dfrac{\\pi}{2} < \\alpha < \\pi', -1, 1], ['\\pi < \\alpha < \\dfrac{3\\pi}{2}', -1, -1], ['\\dfrac{3\\pi}{2} < \\alpha < 2\\pi', 1, -1], ['-\\dfrac{\\pi}{2} < \\alpha < 0', 1, -1]];
+const t1Tri = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29]];
+const t1Term = (c, t, first)=>{ if(c === 0) return ''; const a = Math.abs(c), s = c < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + '); return s + (a === 1 ? '' : a) + t; };
+const t1Sum = arr=>{ let o = ''; arr.forEach(([c, t])=>{ if(c !== 0) o += t1Term(c, t, o === ''); }); return o || '0'; };
+
+/* 1. TLN TH — số đo góc lượng giác khi quay: chiều dương/âm, bánh răng ăn khớp */
+GT(11,0,0,'TH','Số đo góc lượng giác của một chuyển động quay: chiều quay (âm, dương), số vòng, hai bánh răng ăn khớp quay ngược chiều nhau', R=>{
+  const form = R.pick(['quay', 'rang']);
+  if(form === 'quay'){
+    const n = R.pick([0.25, 0.5, 0.75, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.5, 4.5, 5.25]), cw = R.rnd() < 0.5;
+    const ans = (cw ? -1 : 1)*n*360; if(t1Ok(ans) === null) return null;
+    const o = {stem:`Một bánh xe quay quanh trục của nó được $${nt(n)}$ vòng ${cw ? 'cùng' : 'ngược'} chiều kim đồng hồ. Gọi $O$ là tâm bánh xe, $M$ là một điểm cố định trên vành bánh xe với $OM$ lúc đầu ở vị trí $OA$, lúc sau ở vị trí $OB$. Tính số đo (độ) của góc lượng giác $(OA, OB)$ mà tia $OM$ đã quét.`,
+      ans, lg:`Mỗi vòng quay ứng với góc $360^\\circ$. Chiều ngược chiều kim đồng hồ là chiều dương, cùng chiều kim đồng hồ là chiều âm.<br>Bánh xe quay $${nt(n)}$ vòng ${cw ? 'cùng' : 'ngược'} chiều kim đồng hồ nên số đo góc lượng giác là $${cw ? '-' : ''}${nt(n)}\\cdot 360^\\circ = ${t1Deg(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+      verify:()=> Math.abs((cw ? -2 : 2)*Math.PI*n*180/Math.PI - o.ans) < 1e-6};
+    return o;
+  }
+  const z1 = R.pick([12, 15, 16, 18, 20, 24, 30, 36, 40, 45, 48]), z2 = R.pick([10, 12, 15, 16, 18, 20, 24, 30, 36, 40, 60]); if(z1 === z2) return null;
+  const n = R.pick([0.5, 1, 1.5, 2, 2.5, 3, 4, 5]), cw = R.rnd() < 0.5;
+  const turns = n*z1/z2, ans = (cw ? 1 : -1)*turns*360; if(!Number.isInteger(n*z1) ||t1Ok(ans) === null || Math.abs(ans) < 30) return null;
+  const o = {stem:`Hai bánh răng ăn khớp với nhau: bánh thứ nhất có $${z1}$ răng, bánh thứ hai có $${z2}$ răng. Bánh thứ nhất quay $${nt(n)}$ vòng ${cw ? 'cùng' : 'ngược'} chiều kim đồng hồ. Tính số đo (độ) của góc lượng giác mà bánh răng thứ hai đã quay được (chiều dương là chiều ngược chiều kim đồng hồ).`,
+    ans, lg:`Hai bánh răng ăn khớp quay ngược chiều nhau, số răng đi qua chỗ tiếp xúc bằng nhau: $${nt(n)}\\cdot ${z1} = ${nt(n*z1)}$ răng.<br>Bánh thứ hai quay được $\\dfrac{${nt(n*z1)}}{${z2}} = ${frT(Math.round(2*n*z1), 2*z2)}$ vòng theo chiều ${cw ? 'ngược' : 'cùng'} chiều kim đồng hồ, tức là chiều ${cw ? 'dương' : 'âm'}.<br>Số đo góc lượng giác: $${cw ? '' : '-'}${frT(Math.round(2*n*z1), 2*z2)}\\cdot 360^\\circ = ${t1Deg(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=> Math.abs(-(cw ? -1 : 1)*n*z1*360/z2 - o.ans) < 1e-6};
+  return o;
+});
+
+/* 2. TLN TH — số đo dương nhỏ nhất / âm lớn nhất của góc cùng tia đầu, tia cuối */
+GT(11,0,0,'TH','Góc lượng giác cùng tia đầu, tia cuối với góc cho trước (số đo α + k360°): số đo dương nhỏ nhất, số đo âm lớn nhất (độ)', R=>{
+  const rad = R.rnd() < 0.4; let a, aT;
+  if(rad){ const q = R.pick([3, 4, 6, 9, 10, 12, 18]); const p = R.nz(-80, 80); if(gcdI(p, q) !== 1 || Math.abs(p/q) < 2.2) return null; a = 180*p/q; aT = t1Pi(p, q); if(!Number.isInteger(a)) return null; }
+  else { a = R.pick([1, -1])*R.int(400, 3000); if(a % 360 === 0) return null; aT = t1Deg(a); }
+  if(((a % 360) + 360) % 360 === 0) return null;
+  const pos = ((a % 360) + 360) % 360, neg = pos - 360, want = R.pick(['pos', 'neg']), ans = want === 'pos' ? pos : neg;
+  const k = Math.round((ans - a)/360);
+  const o = {stem:`Góc lượng giác $(Ou, Ov)$ có số đo $${aT}$${rad ? '' : ''}. Trong các góc lượng giác có cùng tia đầu $Ou$, tia cuối $Ov$, góc có số đo ${want === 'pos' ? 'dương nhỏ nhất' : 'âm lớn nhất'} bằng bao nhiêu độ?`,
+    ans, lg:`${rad ? `Đổi sang độ: $${aT} = ${t1Deg(a)}$.<br>` : ''}Các góc lượng giác cùng tia đầu, tia cuối có số đo $${t1Deg(a)} + k\\cdot 360^\\circ$ $(k \\in \\mathbb{Z})$.<br>Ta có $${t1Deg(a)} = ${t1Deg(pos)} ${a - pos < 0 ? '+ (' + Math.round((a - pos)/360) + ')' : '+ ' + Math.round((a - pos)/360)}\\cdot 360^\\circ$ với $0^\\circ < ${t1Deg(pos)} < 360^\\circ$.<br>`
+      + (want === 'pos' ? `Số đo dương nhỏ nhất là $${t1Deg(pos)}$ (ứng với $k = ${k}$).` : `Số đo âm lớn nhất là $${t1Deg(pos)} - 360^\\circ = ${t1Deg(neg)}$ (ứng với $k = ${k}$).`) + `<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=> Math.abs(Math.cos((o.ans - a)*Math.PI/180) - 1) < 1e-9 && (want === 'pos' ? o.ans > 0 && o.ans <= 360 : o.ans < 0 && o.ans >= -360)};
+  return o;
+});
+
+/* 3. TLN VD — số điểm biểu diễn của một hay hai họ góc trên đường tròn lượng giác */
+GT(11,0,0,'VD','Đếm số điểm biểu diễn trên đường tròn lượng giác của một họ góc (α = a + k2π/n) hoặc hợp của hai họ góc (điểm trùng nhau chỉ tính một lần)', R=>{
+  const fam = ()=>{ const n = R.pick([1, 2, 3, 4, 6, 8, 12]), q = R.pick([2, 3, 4, 6, 12]), p = R.int(-11, 11); if(gcdI(p, q) !== 1 && p !== 0) return null; return {n, p, q, u:((12*p/q) % 24 + 24) % 24}; };
+  const stepT = n=> ({1:'k2\\pi', 2:'k\\pi', 3:'\\dfrac{k2\\pi}{3}', 4:'\\dfrac{k\\pi}{2}', 6:'\\dfrac{k\\pi}{3}', 8:'\\dfrac{k\\pi}{4}', 12:'\\dfrac{k\\pi}{6}'})[n];
+  const famT = f=> f.p === 0 ? stepT(f.n) : `${t1Pi(f.p, f.q)} + ${stepT(f.n)}`;
+  const pts = f=>{ const s = new Set(), st = 24/f.n; for(let i = 0; i < f.n; i++) s.add((f.u + i*st) % 24); return s; };
+  const two = R.rnd() < 0.8, f1 = fam(), f2 = two ? fam() : null; if(!f1 || (two && !f2)) return null;
+  if(two && (f1.n === f2.n || (f1.p === f2.p && f1.q === f2.q))) return null;
+  const s1 = pts(f1), s2 = two ? pts(f2) : new Set(), all = new Set([...s1, ...s2]), ans = all.size;
+  const common = two ? [...s1].filter(x=> s2.has(x)).length : 0; if(two && common === 0 && R.rnd() < 0.5) return null;
+  const angT = u=> t1Pi(u, 12);
+  const listT = s=> [...s].sort((x, y)=> x - y).map(u=> `$${angT(u)}$`).join(', ');
+  const lg = `Họ góc $\\alpha = ${famT(f1)}$ $(k \\in \\mathbb{Z})$: khi $k$ tăng thêm ${f1.n} đơn vị thì góc tăng đúng $2\\pi$ nên có $${f1.n}$ điểm biểu diễn, ứng với các góc ${listT(s1)} (trong $[0; 2\\pi)$).`
+    + (two ? `<br>Họ góc $\\alpha = ${famT(f2)}$ có $${f2.n}$ điểm biểu diễn, ứng với các góc ${listT(s2)}.<br>Hai họ có $${common}$ điểm chung${common ? ` (${listT(new Set([...s1].filter(x=> s2.has(x))))})` : ''}, nên số điểm phân biệt là $${f1.n} + ${f2.n} - ${common} = ${ans}$.` : '')
+    + `<br>Đáp số: $${ans}$.`;
+  const o = {stem: two ? `Trên đường tròn lượng giác, có bao nhiêu điểm biểu diễn các góc lượng giác có số đo $\\alpha = ${famT(f1)}$ hoặc $\\alpha = ${famT(f2)}$ $(k \\in \\mathbb{Z})$?` : `Trên đường tròn lượng giác, các góc lượng giác có số đo $\\alpha = ${famT(f1)}$ $(k \\in \\mathbb{Z})$ được biểu diễn bởi bao nhiêu điểm?`,
+    ans, lg, verify:()=>{ const P = []; [f1, f2].filter(Boolean).forEach(f=>{ for(let k = -30; k <= 30; k++){ const x = Math.PI*f.p/f.q + k*2*Math.PI/f.n; const c = [Math.cos(x), Math.sin(x)]; if(!P.some(d=> Math.hypot(d[0] - c[0], d[1] - c[1]) < 1e-7)) P.push(c); } }); return P.length === o.ans; }};
+  return o;
+});
+
+/* 4. TLN TH — biết một giá trị lượng giác và khoảng chứa α, tính biểu thức */
+GT(11,0,0,'TH','Biết một giá trị lượng giác (sin, cos hoặc tan) và khoảng chứa α, tính giá trị biểu thức của sin α, cos α, tan α (xét dấu theo góc phần tư)', R=>{
+  const [a, b, c] = R.pick(t1Tri), Q = R.pick(t1Q), sw = R.rnd() < 0.5;
+  const s = Q[2]*(sw ? b : a)/c, co = Q[1]*(sw ? a : b)/c, ta = s/co;
+  const giv = R.pick(['sin', 'cos', 'tan']);
+  const givT = giv === 'sin' ? `\\sin\\alpha = ${frT(Math.round(s*c), c)}` : giv === 'cos' ? `\\cos\\alpha = ${frT(Math.round(co*c), c)}` : `\\tan\\alpha = ${frT(Math.round(s*c), Math.round(co*c))}`;
+  const leg = Math.abs(Math.round(co*c));
+  const cs = [R.int(-3, 3), R.int(-3, 3), R.int(-2, 2)]; if(cs.filter(x=> x).length < 2) return null;
+  const terms = [], vals = [];
+  if(giv !== 'sin' && cs[0]){ terms.push([cs[0]*c, '\\sin\\alpha']); vals.push(cs[0]*c*s); }
+  if(giv !== 'cos' && cs[1]){ terms.push([cs[1]*c, '\\cos\\alpha']); vals.push(cs[1]*c*co); }
+  if(giv !== 'tan' && cs[2]){ terms.push([cs[2]*leg, '\\tan\\alpha']); vals.push(cs[2]*leg*ta); }
+  if(terms.length < 2) return null;
+  const ans = t1Ok(vals.reduce((x, y)=> x + y, 0)); if(ans === null) return null;
+  const sT = frT(Math.round(s*c), c), cT = frT(Math.round(co*c), c), tT = frT(Math.round(s*c), Math.round(co*c));
+  let lg = `Vì $${Q[0]}$ nên $\\sin\\alpha ${Q[2] > 0 ? '> 0' : '< 0'}$, $\\cos\\alpha ${Q[1] > 0 ? '> 0' : '< 0'}$.<br>`;
+  if(giv === 'sin') lg += `$\\cos^2\\alpha = 1 - \\sin^2\\alpha = 1 - \\dfrac{${(sw ? b : a)**2}}{${c*c}} = \\dfrac{${(sw ? a : b)**2}}{${c*c}}$ nên $\\cos\\alpha = ${cT}$, $\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha} = ${tT}$.`;
+  else if(giv === 'cos') lg += `$\\sin^2\\alpha = 1 - \\cos^2\\alpha = 1 - \\dfrac{${(sw ? a : b)**2}}{${c*c}} = \\dfrac{${(sw ? b : a)**2}}{${c*c}}$ nên $\\sin\\alpha = ${sT}$, $\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha} = ${tT}$.`;
+  else lg += `$\\dfrac{1}{\\cos^2\\alpha} = 1 + \\tan^2\\alpha = 1 + \\dfrac{${(sw ? b : a)**2}}{${(sw ? a : b)**2}} = \\dfrac{${c*c}}{${(sw ? a : b)**2}}$ nên $\\cos\\alpha = ${cT}$ và $\\sin\\alpha = \\tan\\alpha\\cdot\\cos\\alpha = ${sT}$.`;
+  const P = t1Sum(terms);
+  lg += `<br>$P = ${terms.map(([k, t])=> `${k < 0 ? '(' + k + ')' : k}\\cdot\\left(${t === '\\sin\\alpha' ? sT : t === '\\cos\\alpha' ? cT : tT}\\right)`).join(' + ')} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`;
+  const o = {stem:`Cho $${givT}$ với $${Q[0]}$. Tính giá trị của biểu thức $P = ${P}$.`, ans, lg,
+    verify:()=>{ const al = Math.atan2(s, co); const m = {'\\sin\\alpha':Math.sin(al), '\\cos\\alpha':Math.cos(al), '\\tan\\alpha':Math.tan(al)}; return Math.abs(terms.reduce((x, [k, t])=> x + k*m[t], 0) - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 5. TLN TH — biết tan α + cot α = m: hằng đẳng thức với tan α·cot α = 1 */
+GT(11,0,0,'TH','Biết tan α + cot α = m, tính tan²α + cot²α, tan³α + cot³α, (tan α − cot α)² hoặc sin α cos α (hằng đẳng thức và tan α·cot α = 1)', R=>{
+  const m = R.pick([1, -1])*R.pick([2, 2.5, 3, 4, 5, 6, 8, 10, 1.5*2, 3.5, 4.5, 2.2]); if(Math.abs(m) < 2) return null;
+  const form = R.pick(['sq', 'cube', 'diff', 'sc']);
+  const v = {sq: m*m - 2, cube: m**3 - 3*m, diff: m*m - 4, sc: 1/m}[form]; const ans = t1Ok(v); if(ans === null) return null;
+  const mT = nt(m), ask = {sq:'\\tan^2\\alpha + \\cot^2\\alpha', cube:'\\tan^3\\alpha + \\cot^3\\alpha', diff:'(\\tan\\alpha - \\cot\\alpha)^2', sc:'\\sin\\alpha\\cos\\alpha'}[form];
+  const mp = m < 0 ? `(${mT})` : mT;
+  const lg = form === 'sc' ? `$\\tan\\alpha + \\cot\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha} + \\dfrac{\\cos\\alpha}{\\sin\\alpha} = \\dfrac{\\sin^2\\alpha + \\cos^2\\alpha}{\\sin\\alpha\\cos\\alpha} = \\dfrac{1}{\\sin\\alpha\\cos\\alpha}$.<br>Suy ra $\\sin\\alpha\\cos\\alpha = \\dfrac{1}{${mT}} = ${nt(ans)}$.`
+    : `Vì $\\tan\\alpha\\cdot\\cot\\alpha = 1$ nên ` + (form === 'sq' ? `$\\tan^2\\alpha + \\cot^2\\alpha = (\\tan\\alpha + \\cot\\alpha)^2 - 2\\tan\\alpha\\cot\\alpha = ${mp}^2 - 2 = ${nt(ans)}$.`
+      : form === 'cube' ? `$\\tan^3\\alpha + \\cot^3\\alpha = (\\tan\\alpha + \\cot\\alpha)^3 - 3\\tan\\alpha\\cot\\alpha(\\tan\\alpha + \\cot\\alpha) = ${mp}^3 - 3\\cdot ${mp} = ${nt(ans)}$.`
+      : `$(\\tan\\alpha - \\cot\\alpha)^2 = (\\tan\\alpha + \\cot\\alpha)^2 - 4\\tan\\alpha\\cot\\alpha = ${mp}^2 - 4 = ${nt(ans)}$.`);
+  const o = {stem:`Cho góc $\\alpha$ thoả mãn $\\tan\\alpha + \\cot\\alpha = ${mT}$. Tính $${ask}$.`, ans, lg: lg + `<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const t = (m + Math.sqrt(m*m - 4))/2, al = Math.atan(t), T = Math.tan(al), C = 1/T;
+      const w = {sq: T*T + C*C, cube: T**3 + C**3, diff: (T - C)**2, sc: Math.sin(al)*Math.cos(al)}[form]; return Math.abs(w - o.ans) < 1e-7; }};
+  return o;
+});
+
+/* 6. TLN TH — góc lớn đưa về góc đặc biệt (bớt k·360°, góc đối) */
+GT(11,0,0,'TH','Tính giá trị biểu thức chứa giá trị lượng giác của các góc lớn hoặc góc âm (cộng, bớt bội của 360°) đưa về góc đặc biệt', R=>{
+  const SIN = {0:0, 30:0.5, 90:1, 150:0.5, 180:0, 210:-0.5, 270:-1, 330:-0.5}, COS = {0:1, 60:0.5, 90:0, 120:-0.5, 180:-1, 240:-0.5, 270:0, 300:0.5}, TAN = {0:0, 45:1, 135:-1, 180:0, 225:1, 315:-1};
+  const fs = R.shuffle([['\\sin', SIN], ['\\cos', COS], ['\\tan', TAN]]);
+  const terms = []; let sum = 0;
+  for(const [f, tb] of fs){ const base = +R.pick(Object.keys(tb)); const k = R.pick([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]); const ang = base + 360*k; if(Math.abs(ang) > 2000 || Math.abs(ang) < 360) return null;
+    const c = R.pick([1, 1, 2, 3, -1, -2]); terms.push({f, ang, base, k, c, v: tb[base]}); sum += c*tb[base]; }
+  const ans = t1Ok(sum); if(ans === null) return null;
+  if(terms.filter(t=> t.v !== 0).length < 2) return null;
+  const tT = t=> `${t.f}\\left(${t1Deg(t.ang)}\\right)`;
+  const A = t1Sum(terms.map(t=> [t.c, tT(t)]));
+  const lg = terms.map(t=> `$${tT(t)} = ${t.f}\\left(${t1Deg(t.base)} ${t.k < 0 ? '-' : '+'} ${Math.abs(t.k)}\\cdot 360^\\circ\\right) = ${t.f} ${t1Deg(t.base)} = ${nt(t.v)}$.`).join('<br>')
+    + `<br>Vậy $A = ${terms.map(t=> `${t.c < 0 ? '(' + t.c + ')' : t.c}\\cdot ${t.v < 0 ? '(' + nt(t.v) + ')' : nt(t.v)}`).join(' + ')} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`;
+  const o = {stem:`Tính giá trị của biểu thức $A = ${A}$.`, ans, lg,
+    verify:()=> Math.abs(terms.reduce((s, t)=>{ const r = t.ang*Math.PI/180; return s + t.c*(t.f === '\\sin' ? Math.sin(r) : t.f === '\\cos' ? Math.cos(r) : Math.tan(r)); }, 0) - o.ans) < 1e-9};
+  return o;
+});
+
+/* 7. TLN VD — rút gọn biểu thức các góc liên quan đặc biệt rồi tính */
+GT(11,0,0,'VD','Rút gọn biểu thức chứa các góc liên quan đặc biệt (π ± x, π/2 ± x, 3π/2 ± x, kπ + x) về sin x, cos x rồi tính giá trị khi biết sin x (cos x) và khoảng chứa x', R=>{
+  const Qs = [['0 < x < \\dfrac{\\pi}{2}', 1, 1], ['\\dfrac{\\pi}{2} < x < \\pi', -1, 1], ['\\pi < x < \\dfrac{3\\pi}{2}', -1, -1], ['\\dfrac{3\\pi}{2} < x < 2\\pi', 1, -1]];
+  const Q = R.pick(Qs), sw = R.rnd() < 0.5, S = Q[2]*(sw ? 0.8 : 0.6), C = Q[1]*(sw ? 0.6 : 0.8), giv = R.pick(['sin', 'cos']);
+  const nT = n=> ({1:'\\dfrac{\\pi}{2}', 2:'\\pi', 3:'\\dfrac{3\\pi}{2}', 4:'2\\pi', 5:'\\dfrac{5\\pi}{2}', 6:'3\\pi', 7:'\\dfrac{7\\pi}{2}'})[n];
+  const used = new Set(), terms = [];
+  for(let i = 0; i < 3; i++){ const f = R.pick(['sin', 'cos']), n = R.int(1, 7), s = R.pick([1, -1]), c = R.pick([1, 1, 2, 3, -1, -2]); const key = f + n + s; if(used.has(key)) return null; used.add(key);
+    const r = ((n % 4) + 4) % 4; let g, sg; // f(y + nπ/2), y = s·x
+    if(f === 'sin'){ g = [ 'sin', 'cos', 'sin', 'cos'][r]; sg = [1, 1, -1, -1][r]; } else { g = ['cos', 'sin', 'cos', 'sin'][r]; sg = [1, -1, -1, 1][r]; }
+    if(s < 0 && g === 'sin') sg = -sg;
+    terms.push({f, n, s, c, g, sg}); }
+  const argT = t=> `${nT(t.n)} ${t.s > 0 ? '+' : '-'} x`;
+  const A = t1Sum(terms.map(t=> [t.c, `\\${t.f}\\left(${argT(t)}\\right)`]));
+  let a = 0, b = 0; terms.forEach(t=>{ if(t.g === 'sin') a += t.c*t.sg; else b += t.c*t.sg; });
+  if(a === 0 && b === 0) return null;
+  const ans = t1Ok(a*S + b*C); if(ans === null) return null;
+  const red = t=> `${t.sg < 0 ? '-' : ''}\\${t.g} x`;
+  const lg = `Dùng các công thức góc liên quan đặc biệt (bớt bội của $2\\pi$, góc hơn kém $\\pi$, hơn kém $\\dfrac{\\pi}{2}$, góc đối):<br>`
+    + terms.map(t=> `$\\${t.f}\\left(${argT(t)}\\right) = ${red(t)}$`).join('; ') + `.<br>Suy ra $A = ${t1Sum([[a, '\\sin x'], [b, '\\cos x']])}$.<br>`
+    + (giv === 'sin' ? `Vì $${Q[0]}$ nên $\\cos x ${C > 0 ? '> 0' : '< 0'}$, $\\cos x = ${C > 0 ? '' : '-'}\\sqrt{1 - ${nt(S)}^2} = ${nt(C)}$.` : `Vì $${Q[0]}$ nên $\\sin x ${S > 0 ? '> 0' : '< 0'}$, $\\sin x = ${S > 0 ? '' : '-'}\\sqrt{1 - ${C < 0 ? '(' + nt(C) + ')' : nt(C)}^2} = ${nt(S)}$.`)
+    + `<br>Vậy $A = ${[[a, S], [b, C]].filter(([k])=> k).map(([k, v])=> `${k < 0 ? '(' + k + ')' : k}\\cdot ${v < 0 ? '(' + nt(v) + ')' : nt(v)}`).join(' + ')} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`;
+  const o = {stem:`Cho $${giv === 'sin' ? '\\sin x = ' + nt(S) : '\\cos x = ' + nt(C)}$ với $${Q[0]}$. Tính giá trị của biểu thức $A = ${A}$.`, ans, lg,
+    verify:()=>{ const x = Math.atan2(S, C); return Math.abs(terms.reduce((s, t)=>{ const y = t.n*Math.PI/2 + t.s*x; return s + t.c*(t.f === 'sin' ? Math.sin(y) : Math.cos(y)); }, 0) - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 8. TLN VD — thực tế: khoảng cách hai địa điểm cùng kinh tuyến */
+GT(11,0,0,'VD','Thực tế: khoảng cách giữa hai địa điểm cùng kinh tuyến trên Trái Đất — độ dài cung tròn theo hiệu (tổng) vĩ độ', R=>{
+  const Rr = R.pick([6371, 6400, 6378]), p1 = R.int(5, 70), p2 = R.int(0, 70), same = R.rnd() < 0.55; if(same && Math.abs(p1 - p2) < 6) return null;
+  const d = same ? Math.abs(p1 - p2) : p1 + p2; if(d > 89 || d < 6) return null;
+  const L = Rr*d*Math.PI/180, ans = Math.round(L); if(Math.abs(L - ans) > 0.45 || String(ans).length > 4) return null;
+  const h1 = 'Bắc', h2 = same ? 'Bắc' : 'Nam';
+  const o = {stem:`Coi Trái Đất là hình cầu bán kính $${Rr}$ km. Hai địa điểm $A$, $B$ nằm trên cùng một kinh tuyến; $A$ ở vĩ độ $${p1}^\\circ$ ${h1}, $B$ ở vĩ độ $${p2}^\\circ$ ${h2}. Tính độ dài cung kinh tuyến nhỏ $AB$ (đơn vị km, làm tròn đến hàng đơn vị).`,
+    ans, lg:`Gọi $O$ là tâm Trái Đất. Vĩ độ là số đo góc giữa bán kính tới điểm đó và mặt phẳng xích đạo, nên góc ở tâm $\\widehat{AOB} = ${same ? `${Math.max(p1, p2)}^\\circ - ${Math.min(p1, p2)}^\\circ` : `${p1}^\\circ + ${p2}^\\circ`} = ${d}^\\circ$ (hai điểm ${same ? 'cùng' : 'khác'} bán cầu).<br>Đổi sang rađian: $${d}^\\circ = \\dfrac{${d}\\pi}{180}$.<br>Độ dài cung: $l = R\\alpha = ${Rr}\\cdot\\dfrac{${d}\\pi}{180} \\approx ${nt(Math.round(L*100)/100)}$ (km).<br>Đáp số: $${ans}$.`,
+    verify:()=> Math.abs(2*Math.PI*Rr*d/360 - o.ans) < 0.5};
+  return o;
+});
+
+/* 9. TLN VD — thực tế: xe đạp (đĩa, líp, bánh xe) */
+GT(11,0,0,'VD','Thực tế: xe đạp — đĩa và líp nối bằng xích, bánh xe lăn không trượt: quãng đường đi được khi đạp một số vòng (số vòng quay, độ dài cung)', R=>{
+  const z1 = R.pick([32, 36, 38, 40, 42, 44, 46, 48, 52]), z2 = R.pick([14, 16, 18, 20, 22, 24, 28]), dI = R.pick([[66, '26 inch'], [71, '28 inch'], [61, '24 inch'], [51, '20 inch']]);
+  const n = R.pick([5, 8, 10, 12, 15, 20, 25, 30, 40, 50]), ask = R.pick(['m', 'goc']);
+  if(ask === 'goc'){
+    const frac = R.pick([0.25, 0.5, 0.75, 1/3]), ang = 360*frac*z1/z2; const ans = t1Ok(Math.round(ang*10)/10); if(ans === null || Math.abs(ang - Math.round(ang)) > 1e-9) return null;
+    const fT = frac === 1/3 ? '\\dfrac{1}{3}' : nt(frac);
+    const o = {stem:`Một xe đạp có đĩa trước $${z1}$ răng, líp sau $${z2}$ răng (đĩa và líp nối với nhau bằng xích). Khi người đi xe đạp quay bàn đạp được $${fT}$ vòng thì bánh xe sau quay được một góc bao nhiêu độ?`,
+      ans, lg:`Xích chuyển động nên số răng đi qua đĩa và líp bằng nhau: khi đĩa quay $${fT}$ vòng thì líp (gắn với bánh sau) quay $${fT}\\cdot\\dfrac{${z1}}{${z2}}$ vòng.<br>Góc bánh sau quay được: $${fT}\\cdot\\dfrac{${z1}}{${z2}}\\cdot 360^\\circ = ${t1Deg(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+      verify:()=> Math.abs(2*Math.PI*frac*z1/z2*180/Math.PI - o.ans) < 1e-6};
+    return o;
+  }
+  const S = n*z1/z2*Math.PI*dI[0]/100, ans = Math.round(S); if(Math.abs(S - ans) > 0.4 || String(ans).length > 4) return null;
+  const o = {stem:`Một xe đạp có đĩa trước $${z1}$ răng, líp sau $${z2}$ răng, bánh sau có đường kính $${dI[0]}$ cm (loại ${dI[1]}). Người đi xe đạp quay bàn đạp đều được $${n}$ vòng, bánh xe lăn không trượt trên đường. Hỏi xe đi được quãng đường bao nhiêu mét (làm tròn đến hàng đơn vị)?`,
+    ans, lg:`Đĩa quay $${n}$ vòng thì líp và bánh sau quay $${n}\\cdot\\dfrac{${z1}}{${z2}} = ${frT(n*z1, z2)}$ vòng (số răng xích đi qua đĩa và líp bằng nhau).<br>Mỗi vòng bánh xe lăn được quãng đường bằng chu vi $\\pi d = ${dI[0]}\\pi$ (cm).<br>Quãng đường: $${n}\\cdot\\dfrac{${z1}}{${z2}}\\cdot ${dI[0]}\\pi \\approx ${nt(Math.round(S*100*100)/100)}$ cm $\\approx ${nt(Math.round(S*100)/100)}$ m.<br>Đáp số: $${ans}$.`,
+    verify:()=> Math.abs(2*Math.PI*(dI[0]/2)*n*z1/z2/100 - o.ans) < 0.5};
+  return o;
+});
+
+/* 10. TLN TH — góc giữa kim giờ và kim phút */
+GT(11,0,0,'TH','Thực tế: góc (độ) giữa kim giờ và kim phút lúc h giờ m phút — tốc độ quay của mỗi kim (kim phút 6° mỗi phút, kim giờ 0,5° mỗi phút)', R=>{
+  const h = R.int(1, 11), m = R.int(1, 59), raw = Math.abs(30*h - 5.5*m), ang = raw > 180 ? 360 - raw : raw;
+  const ans = t1Ok(ang); if(ans === null || ang < 3) return null;
+  const o = {stem:`Lúc $${h}$ giờ $${m}$ phút, góc (nhỏ hơn hoặc bằng $180^\\circ$) tạo bởi kim giờ và kim phút của đồng hồ bằng bao nhiêu độ?`,
+    ans, lg:`Tính từ vị trí số 12, theo chiều kim đồng hồ: kim phút quay $6^\\circ$ mỗi phút nên ở vị trí $${m}\\cdot 6^\\circ = ${t1Deg(6*m)}$.<br>Kim giờ quay $30^\\circ$ mỗi giờ, tức $0{,}5^\\circ$ mỗi phút, nên ở vị trí $${h}\\cdot 30^\\circ + ${m}\\cdot 0{,}5^\\circ = ${t1Deg(30*h + 0.5*m)}$.<br>Hiệu hai vị trí: $|${t1Deg(30*h + 0.5*m)} - ${t1Deg(6*m)}| = ${t1Deg(raw)}$`
+      + (raw > 180 ? ` $> 180^\\circ$ nên góc giữa hai kim là $360^\\circ - ${t1Deg(raw)} = ${t1Deg(ang)}$.` : `.`) + `<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const a = (h*60 + m)*0.5 % 360, b = m*6; let d = Math.abs(a - b) % 360; d = Math.min(d, 360 - d); return Math.abs(d - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 11. TLN VD — số nguyên dương n nhỏ nhất để góc nα có điểm biểu diễn trùng điểm cho trước */
+GT(11,0,0,'VD','Tư duy: số nguyên dương n nhỏ nhất để điểm biểu diễn của góc nα trên đường tròn lượng giác trùng với điểm A(1; 0), A\'(−1; 0), B(0; 1) hoặc B\'(0; −1)', R=>{
+  const q = R.pick([3, 4, 5, 6, 8, 9, 10, 12, 15, 18]), p = R.int(1, 2*q - 1); if(gcdI(p, q) !== 1) return null;
+  const tg = R.pick([['A(1; 0)', 0, '0'], ["A'(-1; 0)", 1, '\\pi'], ['B(0; 1)', 0.5, '\\dfrac{\\pi}{2}'], ["B'(0; -1)", -0.5, '-\\dfrac{\\pi}{2}']]);
+  let N = 0; for(let n = 1; n <= 99; n++){ const r = n*p/q - tg[1]; if(Math.abs(r/2 - Math.round(r/2)) < 1e-9){ N = n; break; } }
+  if(!N || N < 2) return null;
+  const K = Math.round((N*p/q - tg[1])/2), ans = N;
+  const bT = tg[1] === 0 ? '' : tg[1] === 1 ? '1 + ' : tg[1] === 0.5 ? '\\dfrac{1}{2} + ' : '-\\dfrac{1}{2} + ';
+  const lg = `Điểm $${tg[0]}$ biểu diễn các góc $${tg[2] === '0' ? '' : tg[2] + ' + '}k2\\pi$ $(k \\in \\mathbb{Z})$.<br>Điểm biểu diễn góc $n\\alpha$ trùng $${tg[0]}$ $\\Leftrightarrow n\\cdot ${t1Pi(p, q)} = ${tg[2] === '0' ? '' : tg[2] + ' + '}k2\\pi$ $\\Leftrightarrow \\dfrac{${p === 1 ? '' : p}n}{${q}} = ${bT}2k$ $\\Leftrightarrow ${p === 1 ? '' : p}n = ${tg[1] === 0 ? `${2*q}k` : tg[1] === 1 ? `${q}(1 + 2k)` : tg[1] === 0.5 ? `\\dfrac{${q}(1 + 4k)}{2}` : `\\dfrac{${q}(4k - 1)}{2}`}$.<br>`
+    + `Thử lần lượt các số nguyên dương $n$: số nhỏ nhất thoả mãn là $n = ${N}$ (ứng với $k = ${K}$): $${N}\\cdot ${t1Pi(p, q)} = ${t1Pi(N*p, q)}${K === 0 ? '' : ' = ' + (tg[2] === '0' ? '' : tg[2] + ' + ') + (K === 1 ? '2\\pi' : K + '\\cdot 2\\pi')}$; với $n < ${N}$ thì $\\dfrac{${p === 1 ? '' : p}n}{${q}} - ${tg[1] === 0 ? '0' : nt(tg[1])}$ không là số nguyên chẵn.<br>Đáp số: $${ans}$.`;
+  const o = {stem:`Cho góc lượng giác $\\alpha = ${t1Pi(p, q)}$. Tìm số nguyên dương $n$ nhỏ nhất sao cho điểm biểu diễn của góc lượng giác $n\\alpha$ trên đường tròn lượng giác trùng với điểm $${tg[0]}$.`,
+    ans, lg, verify:()=>{ const x = o.ans*p*Math.PI/q, y = tg[1]*Math.PI; if(Math.hypot(Math.cos(x) - Math.cos(y), Math.sin(x) - Math.sin(y)) > 1e-9) return false;
+      for(let n = 1; n < o.ans; n++){ const z = n*p*Math.PI/q; if(Math.hypot(Math.cos(z) - Math.cos(y), Math.sin(z) - Math.sin(y)) < 1e-9) return false; } return true; }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.88'; GEN[k].l1 = 'V2.88'; });
+})();
+
+// ---------- V2.88: dạng thay số bổ sung (11-01…11-04 (Chương I lớp 11) TLN: 61 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// 11-02 Công thức lượng giác — bổ sung 13 dạng TLN cho chuyên đề 11-02.1 (lên 16 TLN).
+// Chuỗi: công thức cộng (xuôi, gộp ngược, ba góc, trong tam giác) → nhân đôi theo tan, hạ bậc xét dấu, nửa góc → rút gọn rồi tính
+// → biến đổi tích ↔ tổng → biểu thức không phụ thuộc x; thực tế: góc nhìn (hiệu hai góc), tổng hai dao động cùng biên độ.
+const t2Ok = x=>{ const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9) return null; return String(r).length <= 4 ? r : null; };
+const t2Tri = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25]];
+const t2Qa = (v, nm)=> [[`0 < ${nm} < \\dfrac{\\pi}{2}`, 1, 1], [`\\dfrac{\\pi}{2} < ${nm} < \\pi`, -1, 1], [`\\pi < ${nm} < \\dfrac{3\\pi}{2}`, -1, -1], [`\\dfrac{3\\pi}{2} < ${nm} < 2\\pi`, 1, -1]][v];
+const t2P = v=> (typeof v === 'number' ? v < 0 : String(v).startsWith('-')) ? `\\left(${typeof v === 'number' ? nt(v) : v}\\right)` : (typeof v === 'number' ? nt(v) : v);
+const t2Term = (c, t, first)=>{ if(c === 0) return ''; const a = Math.abs(c), s = c < 0 ? (first ? '-' : ' - ') : (first ? '' : ' + '); return s + (a === 1 && t ? '' : a) + t; };
+const t2Sum = arr=>{ let o = ''; arr.forEach(([c, t])=>{ if(c !== 0) o += t2Term(c, t, o === ''); }); return o || '0'; };
+const t2Fr = (p, q)=> frT(p, q);
+const t2Dg = d=> `${nt(d)}^\\circ`;
+const t2SpecS = {0:0, 30:0.5, 90:1, 150:0.5, 180:0, 210:-0.5, 270:-1, 330:-0.5}, t2SpecC = {0:1, 60:0.5, 90:0, 120:-0.5, 180:-1, 240:-0.5, 270:0, 300:0.5};
+const t2Rt = (r, N)=>{ /* r/√N trục căn: r√N/N */ const g = gcdI(Math.abs(r), N), a = Math.abs(r)/g, b = N/g, sg = r < 0 ? '-' : ''; return b === 1 ? `${sg}${a === 1 ? '' : a}\\sqrt{${N}}` : `${sg}\\dfrac{${a === 1 ? '' : a}\\sqrt{${N}}}{${b}}`; };
+
+/* 1. TLN TH — công thức cộng: biết sin a, cos b và góc phần tư */
+GT(11,0,1,'TH','Công thức cộng: biết sin a, cos b và khoảng chứa a, b — tính sin(a ± b), cos(a ± b) (xét dấu cos a, sin b trước khi thay)', R=>{
+  const [p1, q1, c1] = R.pick(t2Tri), [p2, q2, c2] = R.pick(t2Tri), Qa = t2Qa(R.int(0, 3), 'a'), Qb = t2Qa(R.int(0, 3), 'b'), s1 = R.rnd() < 0.5, s2 = R.rnd() < 0.5;
+  const sa = Qa[2]*(s1 ? q1 : p1), ca = Qa[1]*(s1 ? p1 : q1), sb = Qb[2]*(s2 ? q2 : p2), cb = Qb[1]*(s2 ? p2 : q2); // tử số, mẫu c1, c2
+  const f = R.pick(['sin+', 'sin-', 'cos+', 'cos-']), N = c1*c2;
+  const val = {'sin+': sa*cb + ca*sb, 'sin-': sa*cb - ca*sb, 'cos+': ca*cb - sa*sb, 'cos-': ca*cb + sa*sb}[f];
+  const ans = val; if(String(ans).length > 4) return null;
+  const fT = {'sin+':'\\sin(a + b)', 'sin-':'\\sin(a - b)', 'cos+':'\\cos(a + b)', 'cos-':'\\cos(a - b)'}[f];
+  const F = {'sin+':'\\sin a\\cos b + \\cos a\\sin b', 'sin-':'\\sin a\\cos b - \\cos a\\sin b', 'cos+':'\\cos a\\cos b - \\sin a\\sin b', 'cos-':'\\cos a\\cos b + \\sin a\\sin b'}[f];
+  const A = t2Fr(sa, c1), B = t2Fr(ca, c1), C = t2Fr(sb, c2), D = t2Fr(cb, c2), pr = (x, y)=> `${t2P(x)}\\cdot ${t2P(y)}`;
+  const sub = {'sin+': `${pr(A, D)} + ${pr(B, C)}`, 'sin-': `${pr(A, D)} - ${pr(B, C)}`, 'cos+': `${pr(B, D)} - ${pr(A, C)}`, 'cos-': `${pr(B, D)} + ${pr(A, C)}`}[f];
+  const o = {stem:`Cho $\\sin a = ${A}$ với $${Qa[0]}$ và $\\cos b = ${D}$ với $${Qb[0]}$. Tính $P = ${N}${fT}$.`, ans,
+    lg:`Vì $${Qa[0]}$ nên $\\cos a ${ca > 0 ? '> 0' : '< 0'}$: $\\cos a = ${ca > 0 ? '' : '-'}\\sqrt{1 - \\sin^2 a} = ${B}$.<br>Vì $${Qb[0]}$ nên $\\sin b ${sb > 0 ? '> 0' : '< 0'}$: $\\sin b = ${sb > 0 ? '' : '-'}\\sqrt{1 - \\cos^2 b} = ${C}$.<br>$${fT} = ${F} = ${sub} = ${t2Fr(val, N)}$.<br>Vậy $P = ${N}\\cdot ${t2P(t2Fr(val, N))} = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const a = Math.atan2(sa, ca), b = Math.atan2(sb, cb); const v = {'sin+':Math.sin(a + b), 'sin-':Math.sin(a - b), 'cos+':Math.cos(a + b), 'cos-':Math.cos(a - b)}[f]; return Math.abs(N*v - o.ans) < 1e-7; }};
+  return o;
+});
+
+/* 2. TLN TH — biết tan α, tính sin 2α, cos 2α, tan 2α (không cần biết góc phần tư) */
+GT(11,0,1,'TH','Biết tan α, tính biểu thức của sin 2α, cos 2α, tan 2α nhờ công thức theo tan α (không cần biết α thuộc góc phần tư nào)', R=>{
+  const [tp, tq] = R.pick([[2, 1], [3, 1], [1, 2], [1, 3], [-2, 1], [-3, 1], [-1, 2], [-1, 3], [4, 1], [1, 4], [5, 1], [-4, 1]]);
+  const t = tp/tq, s2 = 2*t/(1 + t*t), c2 = (1 - t*t)/(1 + t*t), tn = 2*t/(1 - t*t);
+  const m = R.int(-6, 6), n = R.int(-6, 6), useT = R.rnd() < 0.5; const tD = Math.abs(tq*tq - tp*tp)/gcdI(2*tp*tq, Math.abs(tq*tq - tp*tp));
+  const r = useT ? R.pick([1, -1, 2])*tD : 0;
+  if((m === 0) + (n === 0) + (r === 0) > 1) return null;
+  const ans = t2Ok(m*s2 + n*c2 + r*tn); if(ans === null) return null;
+  const den = tq*tq + tp*tp;
+  const sT = t2Fr(2*tp*tq, den), cT = t2Fr(tq*tq - tp*tp, den), tT = t2Fr(2*tp*tq, tq*tq - tp*tp), tanT = t2Fr(tp, tq);
+  const P = t2Sum([[m, '\\sin 2\\alpha'], [n, '\\cos 2\\alpha'], [r, '\\tan 2\\alpha']]);
+  const parts = [[m, sT], [n, cT], [r, tT]].filter(([k])=> k).map(([k, v])=> `${t2P(k)}\\cdot ${t2P(v)}`).join(' + ');
+  const o = {stem:`Cho $\\tan\\alpha = ${tanT}$. Tính giá trị của biểu thức $P = ${P}$.`, ans,
+    lg:`Dùng các công thức theo $t = \\tan\\alpha$: $\\sin 2\\alpha = \\dfrac{2t}{1 + t^2}$, $\\cos 2\\alpha = \\dfrac{1 - t^2}{1 + t^2}$, $\\tan 2\\alpha = \\dfrac{2t}{1 - t^2}$ (không cần biết $\\alpha$ ở góc phần tư nào).<br>Với $t = ${tanT}$: $\\sin 2\\alpha = ${sT}$, $\\cos 2\\alpha = ${cT}$${r ? `, $\\tan 2\\alpha = ${tT}$` : ''}.<br>$P = ${parts} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const a = Math.atan(t); return Math.abs(m*Math.sin(2*a) + n*Math.cos(2*a) + r*Math.tan(2*a) - o.ans) < 1e-7; }};
+  return o;
+});
+
+/* 3. TLN TH — biết cos 2α và góc phần tư của α, tính tan α */
+GT(11,0,1,'TH','Công thức hạ bậc: biết cos 2α và khoảng chứa α, tính tan α — tan²α = (1 − cos 2α)/(1 + cos 2α) rồi chọn dấu theo góc phần tư', R=>{
+  const L = [[3, 5, 0.5], [-3, 5, 2], [-4, 5, 3], [12, 13, 0.2], [-12, 13, 5], [-5, 13, 1.5], [-15, 17, 4], [8, 17, 0.6], [-24, 25, 7], [0, 1, 1], [-40, 41, 9], [-35, 37, 6]];
+  const [cp, cq, tv] = R.pick(L), qi = R.int(0, 3), Q = t2Qa(qi, '\\alpha'), sg = Q[1]*Q[2], ans = sg*tv;
+  const c = cp/cq, tt = (1 - c)/(1 + c);
+  const o = {stem:`Cho $\\cos 2\\alpha = ${t2Fr(cp, cq)}$ với $${Q[0]}$. Tính $\\tan\\alpha$.`, ans,
+    lg:`Theo công thức hạ bậc: $\\sin^2\\alpha = \\dfrac{1 - \\cos 2\\alpha}{2}$, $\\cos^2\\alpha = \\dfrac{1 + \\cos 2\\alpha}{2}$, nên<br>$\\tan^2\\alpha = \\dfrac{1 - \\cos 2\\alpha}{1 + \\cos 2\\alpha} = \\dfrac{1 - ${t2P(t2Fr(cp, cq))}}{1 + ${t2P(t2Fr(cp, cq))}} = ${t2Fr(cq - cp, cq + cp)}$.<br>Vì $${Q[0]}$ nên $\\sin\\alpha$ và $\\cos\\alpha$ ${sg > 0 ? 'cùng dấu, $\\tan\\alpha > 0$' : 'trái dấu, $\\tan\\alpha < 0$'}.<br>Vậy $\\tan\\alpha = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=> Math.abs(tt - o.ans*o.ans) < 1e-9 && Math.sign(o.ans) === sg};
+  return o;
+});
+
+/* 4. TLN TH — biết tan(a + b), tan(a − b): tính tan 2a, tan 2b */
+GT(11,0,1,'TH','Công thức cộng dùng khéo: biết tan(a + b) và tan(a − b), tính tan 2a = tan[(a + b) + (a − b)] hoặc tan 2b = tan[(a + b) − (a − b)]', R=>{
+  const V = [[1, 2], [1, 3], [2, 1], [3, 1], [4, 1], [1, 4], [5, 1], [1, 5], [6, 1], [7, 1], [3, 2], [2, 3], [1, 1], [3, 4], [4, 3]];
+  const [p1, q1] = R.pick(V), [p2, q2] = R.pick(V), s1 = R.pick([1, -1]), s2 = R.pick([1, -1]); const P = s1*p1/q1, Q = s2*p2/q2;
+  const w = R.pick(['2a', '2b']); const num = w === '2a' ? P + Q : P - Q, den = w === '2a' ? 1 - P*Q : 1 + P*Q; if(Math.abs(den) < 1e-9) return null;
+  const ans = t2Ok(num/den); if(ans === null || Math.abs(P - Q) < 1e-9) return null;
+  const PT = t2Fr(s1*p1, q1), QT = t2Fr(s2*p2, q2);
+  const nn = w === '2a' ? s1*p1*q2 + s2*p2*q1 : s1*p1*q2 - s2*p2*q1, dd = w === '2a' ? q1*q2 - s1*s2*p1*p2 : q1*q2 + s1*s2*p1*p2;
+  const o = {stem:`Cho $\\tan(a + b) = ${PT}$ và $\\tan(a - b) = ${QT}$. Tính $\\tan ${w}$.`, ans,
+    lg: (w === '2a' ? `Ta có $2a = (a + b) + (a - b)$ nên<br>$\\tan 2a = \\dfrac{\\tan(a + b) + \\tan(a - b)}{1 - \\tan(a + b)\\tan(a - b)} = \\dfrac{${PT} + ${t2P(QT)}}{1 - ${t2P(PT)}\\cdot ${t2P(QT)}}$`
+      : `Ta có $2b = (a + b) - (a - b)$ nên<br>$\\tan 2b = \\dfrac{\\tan(a + b) - \\tan(a - b)}{1 + \\tan(a + b)\\tan(a - b)} = \\dfrac{${PT} - ${t2P(QT)}}{1 + ${t2P(PT)}\\cdot ${t2P(QT)}}$`)
+      + ` $= \\dfrac{${t2Fr(nn, q1*q2)}}{${t2Fr(dd, q1*q2)}} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const x = Math.atan(P), y = Math.atan(Q), a = (x + y)/2, b = (x - y)/2; return Math.abs(Math.tan(w === '2a' ? 2*a : 2*b) - o.ans) < 1e-7; }};
+  return o;
+});
+
+/* 5. TLN VD — thực tế: góc nhìn (hiệu hai góc) */
+GT(11,0,1,'VD','Thực tế: góc nhìn một vật (tượng trên bệ, biển quảng cáo trên toà nhà, màn hình) — góc nhìn là hiệu hai góc, tính tan bằng công thức tan(β − α)', R=>{
+  const ctx = R.pick(['tuong', 'bien', 'manhinh']);
+  let lo, hi, d, eye, stem, nm;
+  if(ctx === 'tuong'){ const b = R.int(2, 6), h = R.int(2, 8); eye = R.pick([1.5, 1.6]); d = R.int(4, 20); lo = b - eye; hi = b + h - eye;
+    stem = `Một bức tượng cao $${h}$ m đặt trên một bệ cao $${b}$ m. Một người đứng cách chân bệ $${d}$ m, mắt người cách mặt đất $${nt(eye)}$ m. Gọi $\\theta$ là góc nhìn bức tượng (góc giữa hai tia nhìn từ mắt tới chân tượng và đỉnh tượng). Tính $\\theta$ (đơn vị độ, làm tròn đến hàng đơn vị).`; nm = ['chân tượng', 'đỉnh tượng']; }
+  else if(ctx === 'bien'){ const b = R.int(8, 30), h = R.int(3, 10); eye = R.pick([1.5, 1.6, 1.7]); d = R.int(10, 50); lo = b - eye; hi = b + h - eye;
+    stem = `Một biển quảng cáo cao $${h}$ m gắn trên tường một toà nhà, mép dưới của biển cách mặt đất $${b}$ m. Một người đứng cách chân tường $${d}$ m, mắt cách mặt đất $${nt(eye)}$ m. Gọi $\\theta$ là góc nhìn biển quảng cáo (góc giữa hai tia nhìn từ mắt tới mép dưới và mép trên của biển). Tính $\\theta$ (đơn vị độ, làm tròn đến hàng đơn vị).`; nm = ['mép dưới', 'mép trên']; }
+  else { const b = R.pick([1.5, 2, 2.5, 3]), h = R.pick([3, 4, 5, 6]); eye = 1.2; d = R.int(4, 16); lo = b - eye; hi = b + h - eye;
+    stem = `Màn hình của một phòng chiếu cao $${h}$ m, mép dưới cách sàn $${nt(b)}$ m. Một khán giả ngồi cách màn hình $${d}$ m (tính theo phương ngang), mắt cách sàn $${nt(eye)}$ m. Gọi $\\theta$ là góc nhìn màn hình (góc giữa hai tia nhìn từ mắt tới mép dưới và mép trên của màn hình). Tính $\\theta$ (đơn vị độ, làm tròn đến hàng đơn vị).`; nm = ['mép dưới', 'mép trên']; }
+  if(lo <= 0.2) return null;
+  const tb = hi/d, ta = lo/d, tt = (tb - ta)/(1 + tb*ta), th = Math.atan(tt)*180/Math.PI, ans = Math.round(th);
+  if(Math.abs(th - ans) > 0.4 || ans < 3) return null;
+  const k = x=> Math.round(x*100)/100;
+  const o = {stem, ans,
+    lg:`Gọi $E$ là mắt người, $H$ là hình chiếu của $E$ lên ${ctx === 'manhinh' ? 'màn hình' : ctx === 'tuong' ? 'đường thẳng đứng qua tượng' : 'tường'} ($EH = ${d}$ m). ${nm[0][0].toUpperCase() + nm[0].slice(1)} cao hơn mắt $${nt(k(lo))}$ m, ${nm[1]} cao hơn mắt $${nt(k(hi))}$ m.<br>Gọi $\\alpha$, $\\beta$ là góc nâng từ mắt tới ${nm[0]}, ${nm[1]}: $\\tan\\alpha = \\dfrac{${nt(k(lo))}}{${d}}$, $\\tan\\beta = \\dfrac{${nt(k(hi))}}{${d}}$, và $\\theta = \\beta - \\alpha$.<br>$\\tan\\theta = \\dfrac{\\tan\\beta - \\tan\\alpha}{1 + \\tan\\beta\\tan\\alpha} = \\dfrac{${nt(k(hi - lo))}\\cdot ${d}}{${d}^2 + ${nt(k(lo))}\\cdot ${nt(k(hi))}} \\approx ${nt(Math.round(tt*1e4)/1e4)}$.<br>Suy ra $\\theta \\approx ${nt(Math.round(th*100)/100)}^\\circ$.<br>Đáp số: $${ans}$.`,
+    verify:()=> Math.abs((Math.atan2(hi, d) - Math.atan2(lo, d))*180/Math.PI - o.ans) < 0.5};
+  return o;
+});
+
+/* 6. TLN VD — thực tế: tổng hai dao động cùng biên độ (biến tổng thành tích) */
+GT(11,0,1,'VD','Thực tế: tổng hai dao động (sóng âm) cùng biên độ lệch pha φ — biến tổng thành tích, biên độ tổng hợp 2A|cos(φ/2)|', R=>{
+  const A = R.pick([2, 3, 4, 5, 6, 8, 10, 12]), PH = [[1, 3, 60], [1, 2, 90], [2, 3, 120], [3, 4, 135], [5, 6, 150], [1, 4, 45], [1, 6, 30], [4, 5, 144], [1, 5, 36], [2, 5, 72], [3, 5, 108]];
+  const [pp, pq, deg] = R.pick(PH), ph = pp*Math.PI/pq, amp = 2*A*Math.abs(Math.cos(ph/2));
+  const ans = Math.round(amp*10)/10; if(Math.abs(amp - ans) > 0.04 || t2Ok(ans) === null) return null;
+  const fn = R.pick(['sin', 'cos']), w = R.pick([2, 4, 10, 100]);
+  const exact = Math.abs(amp - ans) < 1e-9;
+  const phT = `\\dfrac{${pp === 1 ? '' : pp}\\pi}{${pq}}`, hT = `\\dfrac{${pp === 1 ? '' : pp}\\pi}{${2*pq}}`;
+  const o = {stem:`Hai dao động điều hoà cùng phương lần lượt có li độ $x_1 = ${A}\\${fn}(${w}\\pi t)$ và $x_2 = ${A}\\${fn}\\left(${w}\\pi t + ${phT}\\right)$ (đơn vị cm, $t$ tính bằng giây). Dao động tổng hợp có li độ $x = x_1 + x_2$. Tính biên độ (giá trị lớn nhất của $|x|$) của dao động tổng hợp (đơn vị cm, làm tròn đến hàng phần mười).`, ans,
+    lg:`Dùng công thức biến đổi tổng thành tích: $\\${fn} u + \\${fn} v = 2\\${fn}\\dfrac{u + v}{2}\\cos\\dfrac{u - v}{2}$.<br>$x = ${A}\\left[\\${fn}(${w}\\pi t) + \\${fn}\\left(${w}\\pi t + ${phT}\\right)\\right] = ${2*A}\\cos ${hT}\\cdot\\${fn}\\left(${w}\\pi t + ${hT}\\right)$.<br>Vì $\\${fn}\\left(${w}\\pi t + ${hT}\\right)$ nhận mọi giá trị trong $[-1; 1]$ nên biên độ là $${2*A}\\left|\\cos ${hT}\\right| ${exact ? '=' : '\\approx'} ${nt(Math.round(amp*1000)/1000)}$ (cm).<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ let M = 0; for(let i = 0; i <= 4000; i++){ const t = i/4000*2/w; const u = w*Math.PI*t; const x = A*(fn === 'sin' ? Math.sin(u) + Math.sin(u + ph) : Math.cos(u) + Math.cos(u + ph)); M = Math.max(M, Math.abs(x)); } return Math.abs(M - o.ans) < 0.06; }};
+  return o;
+});
+
+/* 7. TLN TH — nhận dạng vế phải công thức cộng, nhân đôi (gộp ngược) */
+GT(11,0,1,'TH','Gộp ngược công thức cộng, công thức nhân đôi (sin a cos b ± cos a sin b, cos a cos b ∓ sin a sin b, 2 sin a cos a, cos²a − sin²a, (tan a + tan b)/(1 − tan a tan b)) để tính giá trị đúng', R=>{
+  const forms = R.shuffle(['s+', 's-', 'c+', 'c-', 'd', 'cc', 't+']).slice(0, 2);
+  const parts = []; let sum = 0;
+  for(const f of forms){
+    const c = R.pick([1, 2, 4, -2, 6, -4]);
+    let tex, red, val;
+    if(f === 's+' || f === 's-' || f === 'c+' || f === 'c-' || f === 't+'){
+      const tbl = f[0] === 's' ? t2SpecS : f[0] === 'c' ? t2SpecC : {45:1, 135:-1, 225:1};
+      const tot = +R.pick(Object.keys(tbl).filter(k=> +k > 0 && +k < 360)); const plus = f.endsWith('+');
+      let a, b; if(plus){ a = R.int(1, tot - 1); b = tot - a; } else { b = R.int(1, 89); a = tot + b; }
+      if(a === b || [a, b].some(x=> x % 15 === 0)) return null;
+      val = tbl[tot];
+      tex = f === 's+' ? `\\sin ${t2Dg(a)}\\cos ${t2Dg(b)} + \\cos ${t2Dg(a)}\\sin ${t2Dg(b)}` : f === 's-' ? `\\sin ${t2Dg(a)}\\cos ${t2Dg(b)} - \\cos ${t2Dg(a)}\\sin ${t2Dg(b)}`
+        : f === 'c+' ? `\\cos ${t2Dg(a)}\\cos ${t2Dg(b)} - \\sin ${t2Dg(a)}\\sin ${t2Dg(b)}` : f === 'c-' ? `\\cos ${t2Dg(a)}\\cos ${t2Dg(b)} + \\sin ${t2Dg(a)}\\sin ${t2Dg(b)}`
+        : `\\dfrac{\\tan ${t2Dg(a)} + \\tan ${t2Dg(b)}}{1 - \\tan ${t2Dg(a)}\\tan ${t2Dg(b)}}`;
+      if(f === 't+' && (a >= 90 || b >= 90)) return null;
+      red = `${f[0] === 's' ? '\\sin' : f[0] === 'c' ? '\\cos' : '\\tan'}(${t2Dg(a)} ${plus ? '+' : '-'} ${t2Dg(b)}) = ${f[0] === 's' ? '\\sin' : f[0] === 'c' ? '\\cos' : '\\tan'} ${t2Dg(tot)} = ${nt(val)}`;
+      parts.push({c, tex, red, val, ev:()=>{ const r = Math.PI/180; return f === 's+' ? Math.sin(a*r)*Math.cos(b*r) + Math.cos(a*r)*Math.sin(b*r) : f === 's-' ? Math.sin(a*r)*Math.cos(b*r) - Math.cos(a*r)*Math.sin(b*r) : f === 'c+' ? Math.cos(a*r)*Math.cos(b*r) - Math.sin(a*r)*Math.sin(b*r) : f === 'c-' ? Math.cos(a*r)*Math.cos(b*r) + Math.sin(a*r)*Math.sin(b*r) : (Math.tan(a*r) + Math.tan(b*r))/(1 - Math.tan(a*r)*Math.tan(b*r)); }});
+    } else {
+      const tbl = f === 'd' ? t2SpecS : t2SpecC, d2 = +R.pick(Object.keys(tbl).filter(k=> +k > 0 && +k < 360 && +k % 2 === 0)), a = d2/2; if(a % 45 === 0 && f === 'd') return null;
+      val = tbl[d2];
+      tex = f === 'd' ? `2\\sin ${t2Dg(a)}\\cos ${t2Dg(a)}` : `\\cos^2 ${t2Dg(a)} - \\sin^2 ${t2Dg(a)}`;
+      red = `${f === 'd' ? '\\sin' : '\\cos'}(2\\cdot ${t2Dg(a)}) = ${f === 'd' ? '\\sin' : '\\cos'} ${t2Dg(d2)} = ${nt(val)}`;
+      parts.push({c, tex, red, val, ev:()=>{ const r = a*Math.PI/180; return f === 'd' ? 2*Math.sin(r)*Math.cos(r) : Math.cos(r)**2 - Math.sin(r)**2; }});
+    }
+    sum += c*val;
+  }
+  const ans = t2Ok(sum); if(ans === null || parts.every(p=> p.val === 0)) return null;
+  const A = parts.map((p, i)=> `${p.c < 0 ? (i ? ' - ' : '-') : (i ? ' + ' : '')}${Math.abs(p.c) === 1 ? '' : Math.abs(p.c)}\\left(${p.tex}\\right)`).join('');
+  const o = {stem:`Tính giá trị của biểu thức $A = ${A}$.`, ans,
+    lg: parts.map(p=> `$${p.tex} = ${p.red}$.`).join('<br>') + `<br>Vậy $A = ${parts.map(p=> `${t2P(p.c)}\\cdot ${t2P(p.val)}`).join(' + ')} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=> Math.abs(parts.reduce((s, p)=> s + p.c*p.ev(), 0) - o.ans) < 1e-9};
+  return o;
+});
+
+/* 8. TLN TH — biến đổi tích thành tổng, tổng thành tích khi biết x + y, x − y */
+GT(11,0,1,'TH','Biến đổi tích thành tổng, tổng thành tích: biết x + y và x − y là các góc đặc biệt, tính sin x sin y, cos x cos y, sin x cos y, sin x ± sin y, cos x ± cos y', R=>{
+  const SP = [0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 240, 270, 300, 330];
+  const S = d=> Math.sin(d*Math.PI/180), C = d=> Math.cos(d*Math.PI/180);
+  const f = R.pick(['ss', 'cc', 'sc', 's+', 's-', 'c+', 'c-']);
+  let u, v, val, lg, ask;
+  if(f.length === 2 && f[1] !== '+' && f[1] !== '-'){
+    u = R.pick(SP.filter(x=> x > 0)); v = R.pick(SP.filter(x=> x < u && x > 0)); // u = x + y, v = x - y
+    val = f === 'ss' ? (C(v) - C(u))/2 : f === 'cc' ? (C(v) + C(u))/2 : (S(u) + S(v))/2;
+    ask = {ss:'\\sin x\\sin y', cc:'\\cos x\\cos y', sc:'\\sin x\\cos y'}[f];
+    const fm = {ss:'\\dfrac{1}{2}\\left[\\cos(x - y) - \\cos(x + y)\\right]', cc:'\\dfrac{1}{2}\\left[\\cos(x - y) + \\cos(x + y)\\right]', sc:'\\dfrac{1}{2}\\left[\\sin(x + y) + \\sin(x - y)\\right]'}[f];
+    lg = (vv, uu)=> `$${ask} = ${fm}$.`;
+  } else {
+    u = R.pick(SP.filter(x=> x > 0)); v = R.pick(SP.filter(x=> x < u && x > 0));
+    const h = (u)/2, k = (v)/2;
+    val = f === 's+' ? 2*S(h)*C(k) : f === 's-' ? 2*C(h)*S(k) : f === 'c+' ? 2*C(h)*C(k) : -2*S(h)*S(k);
+    ask = {'s+':'\\sin x + \\sin y', 's-':'\\sin x - \\sin y', 'c+':'\\cos x + \\cos y', 'c-':'\\cos x - \\cos y'}[f];
+    const fm = {'s+':'2\\sin\\dfrac{x + y}{2}\\cos\\dfrac{x - y}{2}', 's-':'2\\cos\\dfrac{x + y}{2}\\sin\\dfrac{x - y}{2}', 'c+':'2\\cos\\dfrac{x + y}{2}\\cos\\dfrac{x - y}{2}', 'c-':'-2\\sin\\dfrac{x + y}{2}\\sin\\dfrac{x - y}{2}'}[f];
+    lg = ()=> `$${ask} = ${fm}$, với $\\dfrac{x + y}{2} = ${t2Dg(h)}$, $\\dfrac{x - y}{2} = ${t2Dg(k)}$.`;
+  }
+  const m = R.pick([2, 4, 6, 8, 10, 12, 3, 5]); const ans = t2Ok(Math.round(m*val*1e9)/1e9); if(ans === null || Math.abs(val) < 1e-9 && R.rnd() < 0.7) return null;
+  const sv = x=>{ const tb = {0:'0', 30:'\\dfrac{1}{2}', 45:'\\dfrac{\\sqrt{2}}{2}', 60:'\\dfrac{\\sqrt{3}}{2}', 90:'1'}; const r = ((x % 360) + 360) % 360; const ref = r <= 90 ? r : r <= 180 ? 180 - r : r <= 270 ? r - 180 : 360 - r; const s = Math.sin(x*Math.PI/180) < -1e-12 ? '-' : ''; return s + (tb[ref] || '?'); };
+  const cv = x=> sv(x + 90);
+  let calc;
+  if(f === 'ss') calc = `\\dfrac{1}{2}\\left[\\cos ${t2Dg(v)} - \\cos ${t2Dg(u)}\\right] = \\dfrac{1}{2}\\left[${cv(v)} - ${t2P(cv(u))}\\right]`;
+  else if(f === 'cc') calc = `\\dfrac{1}{2}\\left[\\cos ${t2Dg(v)} + \\cos ${t2Dg(u)}\\right] = \\dfrac{1}{2}\\left[${cv(v)} + ${t2P(cv(u))}\\right]`;
+  else if(f === 'sc') calc = `\\dfrac{1}{2}\\left[\\sin ${t2Dg(u)} + \\sin ${t2Dg(v)}\\right] = \\dfrac{1}{2}\\left[${sv(u)} + ${t2P(sv(v))}\\right]`;
+  else { const h = u/2, k = v/2, mul = (...xs)=> xs.filter(x=> x !== '1').map(x=> t2P(x)).join('\\cdot ') || '1';
+    calc = f === 's+' ? `2\\sin ${t2Dg(h)}\\cos ${t2Dg(k)} = 2\\cdot ${mul(sv(h), cv(k))}` : f === 's-' ? `2\\cos ${t2Dg(h)}\\sin ${t2Dg(k)} = 2\\cdot ${mul(cv(h), sv(k))}` : f === 'c+' ? `2\\cos ${t2Dg(h)}\\cos ${t2Dg(k)} = 2\\cdot ${mul(cv(h), cv(k))}` : `-2\\sin ${t2Dg(h)}\\sin ${t2Dg(k)} = -2\\cdot ${mul(sv(h), sv(k))}`; }
+  if(calc.includes('?')) return null;
+  const vr = Math.round(val*1e9)/1e9; const vT = Number.isInteger(vr*4) ? t2Fr(Math.round(vr*4), 4) : null; if(!vT) return null;
+  const o = {stem:`Cho hai góc $x$, $y$ thoả mãn $x + y = ${t2Dg(u)}$ và $x - y = ${t2Dg(v)}$. Tính $P = ${m}\\left(${ask}\\right)$.`, ans,
+    lg: lg(v, u) + `<br>Suy ra $${ask} = ${calc} = ${vT}$.<br>Vậy $P = ${m}\\cdot ${t2P(vT)} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const x = (u + v)/2*Math.PI/180, y = (u - v)/2*Math.PI/180; const w = {ss:Math.sin(x)*Math.sin(y), cc:Math.cos(x)*Math.cos(y), sc:Math.sin(x)*Math.cos(y), 's+':Math.sin(x) + Math.sin(y), 's-':Math.sin(x) - Math.sin(y), 'c+':Math.cos(x) + Math.cos(y), 'c-':Math.cos(x) - Math.cos(y)}[f]; return Math.abs(m*w - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 9. TLN TH — tan(a + b + c) khi biết tan a, tan b, tan c */
+GT(11,0,1,'TH','Công thức cộng áp dụng hai lần: biết tan a, tan b, tan c, tính tan(a + b + c) (hoặc tan(a + b − c))', R=>{
+  const V = [1, 2, 3, 4, 5, 0.5, 1/3, 0.25, 0.2, 1.5, 2/3, 4/3, 3/4];
+  const vt = v=> Math.abs(v - Math.round(v)) < 1e-9 ? String(Math.round(v)) : Math.abs(v - 1/3) < 1e-9 ? '\\dfrac{1}{3}' : Math.abs(v - 2/3) < 1e-9 ? '\\dfrac{2}{3}' : Math.abs(v - 4/3) < 1e-9 ? '\\dfrac{4}{3}' : Math.abs(v - 3/4) < 1e-9 ? '\\dfrac{3}{4}' : Math.abs(v - 0.25) < 1e-9 ? '\\dfrac{1}{4}' : Math.abs(v - 0.2) < 1e-9 ? '\\dfrac{1}{5}' : Math.abs(v - 0.5) < 1e-9 ? '\\dfrac{1}{2}' : '\\dfrac{3}{2}';
+  const p = R.pick(V), q = R.pick(V), r = R.pick(V), sg = R.pick([1, 1, -1]); if(p === q && q === r) return null;
+  const ab = (p + q)/(1 - p*q); if(Math.abs(1 - p*q) < 1e-9) return null;
+  const rr = sg*r, den = 1 - ab*rr; if(Math.abs(den) < 1e-9) return null;
+  const val = (ab + rr)/den; const ans = t2Ok(Math.round(val*1e9)/1e9); if(ans === null) return null;
+  const toF = x=>{ for(let d = 1; d <= 400; d++){ const n = Math.round(x*d); if(Math.abs(x - n/d) < 1e-9) return t2Fr(n, d); } return null; };
+  const abT = toF(ab); if(!abT) return null;
+  const o = {stem:`Cho $\\tan a = ${vt(p)}$, $\\tan b = ${vt(q)}$, $\\tan c = ${vt(r)}$. Tính $\\tan(a + b ${sg > 0 ? '+' : '-'} c)$.`, ans,
+    lg:`$\\tan(a + b) = \\dfrac{\\tan a + \\tan b}{1 - \\tan a\\tan b} = \\dfrac{${vt(p)} + ${vt(q)}}{1 - ${vt(p)}\\cdot ${vt(q)}} = ${abT}$.<br>$\\tan\\left[(a + b) ${sg > 0 ? '+' : '-'} c\\right] = \\dfrac{\\tan(a + b) ${sg > 0 ? '+' : '-'} \\tan c}{1 ${sg > 0 ? '-' : '+'} \\tan(a + b)\\tan c} = \\dfrac{${abT} ${sg > 0 ? '+' : '-'} ${vt(r)}}{1 ${sg > 0 ? '-' : '+'} ${t2P(abT)}\\cdot ${vt(r)}} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=> Math.abs(Math.tan(Math.atan(p) + Math.atan(q) + sg*Math.atan(r)) - o.ans) < 1e-7};
+  return o;
+});
+
+/* 10. TLN VD — trong tam giác: C = π − (A + B) */
+GT(11,0,1,'VD','Trong tam giác ABC: biết cos A, cos B (hoặc tan A, tan B), tính cos C, sin C, tan C nhờ C = π − (A + B) — sin của góc trong tam giác luôn dương', R=>{
+  const mode = R.pick(['cos', 'cos', 'tan']);
+  if(mode === 'tan'){
+    const V = [[1, 1], [2, 1], [3, 1], [1, 2], [1, 3], [3, 2], [4, 1], [5, 1], [-2, 1], [-3, 1], [-4, 1]];
+    const [p1, q1] = R.pick(V), [p2, q2] = R.pick(V); const ta = p1/q1, tb = p2/q2; if(ta < 0 && tb < 0) return null;
+    const A = Math.atan2(p1, q1) < 0 ? Math.PI + Math.atan(ta) : Math.atan(ta), B = tb < 0 ? Math.PI + Math.atan(tb) : Math.atan(tb); if(A + B >= Math.PI - 1e-6) return null;
+    if(Math.abs(ta*tb - 1) < 1e-9) return null; const tc = (ta + tb)/(ta*tb - 1); const ans = t2Ok(Math.round(tc*1e9)/1e9); if(ans === null) return null;
+    const o = {stem:`Cho tam giác $ABC$ có $\\tan A = ${t2Fr(p1, q1)}$ và $\\tan B = ${t2Fr(p2, q2)}$. Tính $\\tan C$.`, ans,
+      lg:`Vì $A + B + C = \\pi$ nên $\\tan C = -\\tan(A + B) = -\\dfrac{\\tan A + \\tan B}{1 - \\tan A\\tan B} = \\dfrac{\\tan A + \\tan B}{\\tan A\\tan B - 1}$.<br>$\\tan C = \\dfrac{${t2Fr(p1, q1)} + ${t2P(t2Fr(p2, q2))}}{${t2P(t2Fr(p1, q1))}\\cdot ${t2P(t2Fr(p2, q2))} - 1} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+      verify:()=> Math.abs(Math.tan(Math.PI - A - B) - o.ans) < 1e-7};
+    return o;
+  }
+  const [a1, b1, c1] = R.pick(t2Tri), [a2, b2, c2] = R.pick(t2Tri), sw1 = R.rnd() < 0.5, sw2 = R.rnd() < 0.5, ob = R.pick([0, 0, 1, 2]);
+  const ca = (ob === 1 ? -1 : 1)*(sw1 ? a1 : b1), sa = sw1 ? b1 : a1, cb = (ob === 2 ? -1 : 1)*(sw2 ? a2 : b2), sb = sw2 ? b2 : a2;
+  const A = Math.acos(ca/c1), B = Math.acos(cb/c2); if(A + B >= Math.PI - 1e-6) return null;
+  const ask = R.pick(['cos', 'sin']), N = c1*c2;
+  const val = ask === 'cos' ? sa*sb - ca*cb : sa*cb + ca*sb; const ans = val; if(String(ans).length > 4 || (ask === 'sin' && ans <= 0)) return null;
+  const pr = (x, y)=> `${t2P(x)}\\cdot ${t2P(y)}`;
+  const o = {stem:`Cho tam giác $ABC$ có $\\cos A = ${t2Fr(ca, c1)}$ và $\\cos B = ${t2Fr(cb, c2)}$. Tính $P = ${N}\\${ask} C$.`, ans,
+    lg:`Trong tam giác, $0 < A, B < \\pi$ nên $\\sin A > 0$, $\\sin B > 0$: $\\sin A = \\sqrt{1 - \\cos^2 A} = ${t2Fr(sa, c1)}$, $\\sin B = ${t2Fr(sb, c2)}$.<br>Vì $C = \\pi - (A + B)$ nên `
+      + (ask === 'cos' ? `$\\cos C = -\\cos(A + B) = \\sin A\\sin B - \\cos A\\cos B = ${pr(t2Fr(sa, c1), t2Fr(sb, c2))} - ${pr(t2Fr(ca, c1), t2Fr(cb, c2))} = ${t2Fr(val, N)}$.`
+        : `$\\sin C = \\sin(A + B) = \\sin A\\cos B + \\cos A\\sin B = ${pr(t2Fr(sa, c1), t2Fr(cb, c2))} + ${pr(t2Fr(ca, c1), t2Fr(sb, c2))} = ${t2Fr(val, N)}$.`)
+      + `<br>Vậy $P = ${N}\\cdot ${t2P(t2Fr(val, N))} = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const Cc = Math.PI - A - B; return Math.abs(N*(ask === 'cos' ? Math.cos(Cc) : Math.sin(Cc)) - o.ans) < 1e-7; }};
+  return o;
+});
+
+/* 11. TLN VD — biểu thức không phụ thuộc x */
+GT(11,0,1,'VD','Tư duy: biểu thức lượng giác không phụ thuộc vào x (cos²x + cos²(x + 2π/3) + cos²(x − 2π/3), cos²x + cos²(a + x) − 2cos a cos x cos(a + x), …) — hạ bậc, tích thành tổng rồi tính', R=>{
+  const id = R.pick(['c3', 's3', 'cx', 'sum0', 'sq']);
+  const m = R.int(1, 12); let A, val, ev, lg;
+  if(id === 'c3' || id === 's3'){ const f = id === 'c3' ? '\\cos' : '\\sin';
+    A = `${m === 1 ? '' : m}${f}^2 x + ${m === 1 ? '' : m}${f}^2\\left(x + \\dfrac{2\\pi}{3}\\right) + ${m === 1 ? '' : m}${f}^2\\left(x - \\dfrac{2\\pi}{3}\\right)`; val = 1.5*m;
+    ev = x=> m*((id === 'c3' ? Math.cos : Math.sin)(x)**2 + (id === 'c3' ? Math.cos : Math.sin)(x + 2*Math.PI/3)**2 + (id === 'c3' ? Math.cos : Math.sin)(x - 2*Math.PI/3)**2);
+    lg = `Hạ bậc: ${f === '\\cos' ? '$\\cos^2 u = \\dfrac{1 + \\cos 2u}{2}$' : '$\\sin^2 u = \\dfrac{1 - \\cos 2u}{2}$'}, nên tổng ba bình phương bằng $\\dfrac{3}{2} ${f === '\\cos' ? '+' : '-'} \\dfrac{1}{2}\\left[\\cos 2x + \\cos\\left(2x + \\dfrac{4\\pi}{3}\\right) + \\cos\\left(2x - \\dfrac{4\\pi}{3}\\right)\\right]$.<br>Biến tổng thành tích: $\\cos\\left(2x + \\dfrac{4\\pi}{3}\\right) + \\cos\\left(2x - \\dfrac{4\\pi}{3}\\right) = 2\\cos 2x\\cos\\dfrac{4\\pi}{3} = -\\cos 2x$, nên ngoặc vuông bằng $0$.<br>Do đó tổng ba bình phương bằng $\\dfrac{3}{2}$ với mọi $x$, và $A = ${m}\\cdot\\dfrac{3}{2} = ${nt(val)}$.`;
+  } else if(id === 'cx'){ const [aT, a, s2] = R.pick([['\\dfrac{\\pi}{6}', Math.PI/6, 0.25], ['\\dfrac{\\pi}{4}', Math.PI/4, 0.5], ['\\dfrac{\\pi}{3}', Math.PI/3, 0.75], ['\\dfrac{2\\pi}{3}', 2*Math.PI/3, 0.75], ['\\dfrac{3\\pi}{4}', 3*Math.PI/4, 0.5], ['\\dfrac{5\\pi}{6}', 5*Math.PI/6, 0.25], ['\\dfrac{\\pi}{2}', Math.PI/2, 1]]);
+    const k = 4*m, ca = Math.cos(a), caT = {0.25:'', 0.5:'', 0.75:'', 1:''}[s2];
+    const caTex = Math.abs(a - Math.PI/2) < 1e-9 ? '0' : null;
+    A = `${k}\\cos^2 x + ${k}\\cos^2\\left(x + ${aT}\\right) - ${2*k}\\cos ${aT}\\cos x\\cos\\left(x + ${aT}\\right)`; val = k*s2;
+    ev = x=> k*(Math.cos(x)**2 + Math.cos(x + a)**2) - 2*k*Math.cos(a)*Math.cos(x)*Math.cos(x + a);
+    lg = `Tích thành tổng: $2\\cos x\\cos(x + a) = \\cos a + \\cos(2x + a)$, nên $2\\cos a\\cos x\\cos(x + a) = \\cos^2 a + \\cos a\\cos(2x + a)$ (với $a = ${aT}$).<br>Hạ bậc: $\\cos^2 x + \\cos^2(x + a) = 1 + \\dfrac{1}{2}\\left[\\cos 2x + \\cos(2x + 2a)\\right] = 1 + \\cos a\\cos(2x + a)$.<br>Trừ vế theo vế: $\\cos^2 x + \\cos^2(x + a) - 2\\cos a\\cos x\\cos(x + a) = 1 - \\cos^2 a = \\sin^2 a = \\sin^2 ${aT} = ${nt(s2)}$.<br>Vậy $A = ${k}\\cdot ${nt(s2)} = ${nt(val)}$.`;
+  } else if(id === 'sum0'){ const c0 = R.int(1, 12), f = R.pick(['\\sin', '\\cos']);
+    A = `${c0} + ${m === 1 ? '' : m}${f} x + ${m === 1 ? '' : m}${f}\\left(x + \\dfrac{2\\pi}{3}\\right) + ${m === 1 ? '' : m}${f}\\left(x + \\dfrac{4\\pi}{3}\\right)`; val = c0;
+    ev = x=> c0 + m*((f === '\\sin' ? Math.sin : Math.cos)(x) + (f === '\\sin' ? Math.sin : Math.cos)(x + 2*Math.PI/3) + (f === '\\sin' ? Math.sin : Math.cos)(x + 4*Math.PI/3));
+    lg = `Biến tổng thành tích: $${f}\\left(x + \\dfrac{2\\pi}{3}\\right) + ${f}\\left(x + \\dfrac{4\\pi}{3}\\right) = 2${f}(x + \\pi)\\cos\\dfrac{\\pi}{3} = ${f}(x + \\pi) = -${f} x$.<br>Do đó $${f} x + ${f}\\left(x + \\dfrac{2\\pi}{3}\\right) + ${f}\\left(x + \\dfrac{4\\pi}{3}\\right) = 0$ với mọi $x$, nên $A = ${c0}$.`;
+  } else { const [aT, a] = R.pick([['\\dfrac{\\pi}{4}', Math.PI/4], ['\\dfrac{\\pi}{6}', Math.PI/6], ['\\dfrac{\\pi}{3}', Math.PI/3]]); const f = R.pick(['\\sin', '\\cos']);
+    A = `${m === 1 ? '' : m}${f}^2\\left(${aT} + x\\right) + ${m === 1 ? '' : m}${f}^2\\left(${Math.abs(a - Math.PI/4) < 1e-9 ? aT : (Math.abs(a - Math.PI/6) < 1e-9 ? '\\dfrac{\\pi}{3}' : '\\dfrac{\\pi}{6}')} - x\\right)`; val = m;
+    const b = Math.PI/2 - a, bT = Math.abs(a - Math.PI/4) < 1e-9 ? aT : (Math.abs(a - Math.PI/6) < 1e-9 ? '\\dfrac{\\pi}{3}' : '\\dfrac{\\pi}{6}');
+    ev = x=> m*((f === '\\sin' ? Math.sin : Math.cos)(a + x)**2 + (f === '\\sin' ? Math.sin : Math.cos)(b - x)**2);
+    lg = `Hai góc $${aT} + x$ và $${bT} - x$ có tổng bằng $\\dfrac{\\pi}{2}$ (phụ nhau) nên $${f}\\left(${bT} - x\\right) = ${f === '\\sin' ? '\\cos' : '\\sin'}\\left(${aT} + x\\right)$.<br>Suy ra $${f}^2\\left(${aT} + x\\right) + ${f}^2\\left(${bT} - x\\right) = \\sin^2\\left(${aT} + x\\right) + \\cos^2\\left(${aT} + x\\right) = 1$, nên $A = ${m}$.`; }
+  const ans = t2Ok(val); if(ans === null) return null;
+  const o = {stem:`Biết biểu thức $A = ${A}$ không phụ thuộc vào $x$. Tính giá trị của $A$.`, ans, lg: lg + `<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=> [0.3, 1.1, 2.7].every(x=> Math.abs(ev(x) - o.ans) < 1e-9)};
+  return o;
+});
+
+/* 12. TLN TH — nửa góc: biết cos α và khoảng chứa α, tính sin(α/2), cos(α/2) */
+GT(11,0,1,'TH','Công thức hạ bậc cho nửa góc: biết cos α và khoảng chứa α, tính sin(α/2) hoặc cos(α/2) — xác định khoảng chứa α/2 để chọn dấu', R=>{
+  const v = R.int(1, 9)/10, ask = R.pick(['sin', 'cos']);
+  const cA = ask === 'sin' ? 1 - 2*v*v : 2*v*v - 1; const cn = Math.round(cA*50); if(Math.abs(cn) >= 50) return null;
+  const rg = R.pick([['0 < \\alpha < \\pi', '0 < \\dfrac{\\alpha}{2} < \\dfrac{\\pi}{2}', 1, 1], ['\\pi < \\alpha < 2\\pi', '\\dfrac{\\pi}{2} < \\dfrac{\\alpha}{2} < \\pi', 1, -1], ['-\\pi < \\alpha < 0', '-\\dfrac{\\pi}{2} < \\dfrac{\\alpha}{2} < 0', -1, 1], ['2\\pi < \\alpha < 3\\pi', '\\pi < \\dfrac{\\alpha}{2} < \\dfrac{3\\pi}{2}', -1, -1]]);
+  const sg = ask === 'sin' ? rg[2] : rg[3], ans = sg*v;
+  const cT = t2Fr(cn, 50);
+  const sq = ask === 'sin' ? t2Fr(50 - cn, 100) : t2Fr(50 + cn, 100);
+  const o = {stem:`Cho $\\cos\\alpha = ${cT}$ với $${rg[0]}$. Tính $\\${ask}\\dfrac{\\alpha}{2}$.`, ans,
+    lg:`Hạ bậc: $\\${ask}^2\\dfrac{\\alpha}{2} = \\dfrac{1 ${ask === 'sin' ? '-' : '+'} \\cos\\alpha}{2} = \\dfrac{1 ${ask === 'sin' ? '-' : '+'} ${t2P(cT)}}{2} = ${sq}$.<br>Vì $${rg[0]}$ nên $${rg[1]}$, do đó $\\${ask}\\dfrac{\\alpha}{2} ${sg > 0 ? '> 0' : '< 0'}$.<br>Vậy $\\${ask}\\dfrac{\\alpha}{2} = ${sg > 0 ? '' : '-'}\\sqrt{${sq}} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const base = Math.acos(cn/50); const al = rg[0].startsWith('0') ? base : rg[0].startsWith('\\pi') ? 2*Math.PI - base : rg[0].startsWith('-') ? -base : 2*Math.PI + base; return Math.abs((ask === 'sin' ? Math.sin : Math.cos)(al/2) - o.ans) < 1e-9; }};
+  return o;
+});
+
+/* 13. TLN TH — rút gọn bằng công thức nhân đôi rồi tính khi biết sin α hoặc cos α */
+GT(11,0,1,'TH','Rút gọn biểu thức bằng công thức nhân đôi về tan α (cot α) rồi tính giá trị khi biết cos α (sin α) và góc phần tư', R=>{
+  const forms = [['\\dfrac{\\sin 2\\alpha + \\sin\\alpha}{1 + \\cos 2\\alpha + \\cos\\alpha}', 't', '\\dfrac{\\sin\\alpha(2\\cos\\alpha + 1)}{2\\cos^2\\alpha + \\cos\\alpha} = \\dfrac{\\sin\\alpha(2\\cos\\alpha + 1)}{\\cos\\alpha(2\\cos\\alpha + 1)}'],
+    ['\\dfrac{1 - \\cos 2\\alpha}{\\sin 2\\alpha}', 't', '\\dfrac{2\\sin^2\\alpha}{2\\sin\\alpha\\cos\\alpha}'], ['\\dfrac{\\sin 2\\alpha}{1 + \\cos 2\\alpha}', 't', '\\dfrac{2\\sin\\alpha\\cos\\alpha}{2\\cos^2\\alpha}'],
+    ['\\dfrac{1 + \\cos 2\\alpha}{\\sin 2\\alpha}', 'c', '\\dfrac{2\\cos^2\\alpha}{2\\sin\\alpha\\cos\\alpha}'], ['\\dfrac{\\sin 2\\alpha - \\sin\\alpha}{1 - \\cos\\alpha + \\cos 2\\alpha}', 't', '\\dfrac{\\sin\\alpha(2\\cos\\alpha - 1)}{2\\cos^2\\alpha - \\cos\\alpha} = \\dfrac{\\sin\\alpha(2\\cos\\alpha - 1)}{\\cos\\alpha(2\\cos\\alpha - 1)}'],
+    ['\\dfrac{1 - \\cos 2\\alpha + \\sin 2\\alpha}{1 + \\cos 2\\alpha + \\sin 2\\alpha}', 't', '\\dfrac{2\\sin^2\\alpha + 2\\sin\\alpha\\cos\\alpha}{2\\cos^2\\alpha + 2\\sin\\alpha\\cos\\alpha} = \\dfrac{2\\sin\\alpha(\\sin\\alpha + \\cos\\alpha)}{2\\cos\\alpha(\\cos\\alpha + \\sin\\alpha)}']];
+  const [F, kind, step] = R.pick(forms);
+  const [p, r] = R.pick([[2, 1], [3, 1], [4, 1], [1, 2], [1, 5], [3, 2], [5, 2], [2, 5], [5, 1], [1, 4]]); // |tan| = p/r
+  const qi = R.int(0, 3), Q = t2Qa(qi, '\\alpha'), N = p*p + r*r, sgS = Q[2], sgC = Q[1];
+  const tv = sgS*sgC*p/r, val = kind === 't' ? tv : 1/tv; const ans = t2Ok(Math.round(val*1e9)/1e9); if(ans === null) return null;
+  const s = sgS*p/Math.sqrt(N), c = sgC*r/Math.sqrt(N);
+  if(Math.abs(2*c + 1) < 1e-6 || Math.abs(2*c - 1) < 1e-6 || Math.abs(s + c) < 1e-6) return null;
+  const giv = R.pick(['sin', 'cos']);
+  const gT = giv === 'cos' ? `\\cos\\alpha = ${t2Rt(sgC*r, N)}` : `\\sin\\alpha = ${t2Rt(sgS*p, N)}`;
+  const other = giv === 'cos' ? `$\\sin\\alpha = ${t2Rt(sgS*p, N)}$` : `$\\cos\\alpha = ${t2Rt(sgC*r, N)}$`;
+  const o = {stem:`Cho $${gT}$ với $${Q[0]}$. Tính giá trị của biểu thức $A = ${F}$.`, ans,
+    lg:`Dùng $\\sin 2\\alpha = 2\\sin\\alpha\\cos\\alpha$, $1 + \\cos 2\\alpha = 2\\cos^2\\alpha$, $1 - \\cos 2\\alpha = 2\\sin^2\\alpha$:<br>$A = ${step} = ${kind === 't' ? '\\tan\\alpha' : '\\cot\\alpha'}$.<br>Vì $${Q[0]}$ nên ${other} (theo $\\sin^2\\alpha + \\cos^2\\alpha = 1$ và dấu ở góc phần tư đó).<br>Suy ra $${kind === 't' ? '\\tan\\alpha = \\dfrac{\\sin\\alpha}{\\cos\\alpha}' : '\\cot\\alpha = \\dfrac{\\cos\\alpha}{\\sin\\alpha}'} = ${nt(ans)}$, tức $A = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const al = Math.atan2(s, c), S2 = Math.sin(2*al), C2 = Math.cos(2*al), S = Math.sin(al), C = Math.cos(al);
+      const v = [(S2 + S)/(1 + C2 + C), (1 - C2)/S2, S2/(1 + C2), (1 + C2)/S2, (S2 - S)/(1 - C + C2), (1 - C2 + S2)/(1 + C2 + S2)][forms.findIndex(f=> f[0] === F)]; return Math.abs(v - o.ans) < 1e-7; }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.88'; GEN[k].l1 = 'V2.88'; });
+})();
+
+// ---------- V2.88: dạng thay số bổ sung (11-01…11-04 (Chương I lớp 11) TLN: 61 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// 11-03 Hàm số lượng giác — bổ sung 9 dạng TLN (chuyên đề 11-03.1 lên 16 TLN).
+// Chuỗi: chu kì một hàm → chu kì tổng hai hàm (BCNN); tập xác định: đếm điểm không xác định trên đoạn; tính chẵn lẻ (ghi số thứ tự);
+// giá trị lớn nhất, nhỏ nhất: trên một đoạn → nhân đôi, hạ bậc → tam thức theo sin x → hỏi ngược tham số; thực tế: thời gian vượt ngưỡng.
+const t3Ok = x=>{ const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9) return null; return String(r).length <= 4 ? r : null; };
+const t3Pi = (p, q)=>{ if(p === 0) return '0'; const g = gcdI(p, q); p /= g; q /= g; if(q < 0){ p = -p; q = -q; } const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return q === 1 ? s + n : `${s}\\dfrac{${n}}{${q}}`; };
+const t3P = v=> (typeof v === 'number' ? v < 0 : String(v).startsWith('-')) ? `\\left(${typeof v === 'number' ? nt(v) : v}\\right)` : (typeof v === 'number' ? nt(v) : v);
+const t3Arg = (k, m)=>{ const g = gcdI(k, m); k /= g; m /= g; return m === 1 ? `${k === 1 ? '' : k}\\pi x` : `\\dfrac{${k === 1 ? '' : k}\\pi x}{${m}}`; };
+const t3Sum = arr=>{ let o = ''; arr.forEach(([c, t])=>{ if(c === 0) return; const a = Math.abs(c), s = c < 0 ? (o ? ' - ' : '-') : (o ? ' + ' : ''); o += s + (a === 1 && t ? '' : a) + t; }); return o || '0'; };
+
+/* 1. TLN TH — chu kì của một hàm số lượng giác (biến số có π) */
+GT(11,0,2,'TH','Chu kì của hàm số y = a sin(kπx/m + b) + c, a cos(…) + c, a tan(…), a sin²(…), a sin(…)cos(…) — chu kì là một số (biến x không có đơn vị góc)', R=>{
+  const k = R.int(1, 5), m = R.int(1, 12); if(gcdI(k, m) !== 1) return null;
+  const f = R.pick(['sin', 'cos', 'tan', 'cot', 'sin2', 'cos2', 'sc']), a = R.pick([1, 2, 3, -2, 5, 4]), c = R.int(-5, 5);
+  const per = ['sin', 'cos'].includes(f) ? 2*m/k : m/k; const ans = t3Ok(per); if(ans === null) return null;
+  const u = t3Arg(k, m), aT = a === 1 ? '' : a === -1 ? '-' : a;
+  const body = {sin:`\\sin\\left(${u}\\right)`, cos:`\\cos\\left(${u}\\right)`, tan:`\\tan\\left(${u}\\right)`, cot:`\\cot\\left(${u}\\right)`, sin2:`\\sin^2\\left(${u}\\right)`, cos2:`\\cos^2\\left(${u}\\right)`, sc:`\\sin\\left(${u}\\right)\\cos\\left(${u}\\right)`}[f];
+  const y = `${aT}${body}${c ? (c > 0 ? ' + ' + c : ' - ' + (-c)) : ''}`;
+  const w = `\\dfrac{${k === 1 ? '' : k}\\pi}{${m}}`, wT = m === 1 ? `${k === 1 ? '' : k}\\pi` : w;
+  let lg;
+  if(f === 'sin' || f === 'cos') lg = `Hàm số $y = a\\${f}(\\omega x + b) + c$ có chu kì $T = \\dfrac{2\\pi}{|\\omega|}$. Ở đây $\\omega = ${wT}$ nên $T = 2\\pi : ${wT} = ${nt(ans)}$.`;
+  else if(f === 'tan' || f === 'cot') lg = `Hàm số $y = a\\${f}(\\omega x + b)$ có chu kì $T = \\dfrac{\\pi}{|\\omega|}$. Ở đây $\\omega = ${wT}$ nên $T = \\pi : ${wT} = ${nt(ans)}$.`;
+  else { const red = f === 'sin2' ? `\\dfrac{1 - \\cos\\left(2\\cdot ${u}\\right)}{2}` : f === 'cos2' ? `\\dfrac{1 + \\cos\\left(2\\cdot ${u}\\right)}{2}` : `\\dfrac{1}{2}\\sin\\left(2\\cdot ${u}\\right)`;
+    lg = `Dùng công thức ${f === 'sc' ? 'nhân đôi' : 'hạ bậc'}: $${body} = ${red}$, nên $y$ là hàm số dạng $A\\${f === 'sc' ? 'sin' : 'cos'}(\\omega x) + B$ với $\\omega = 2\\cdot ${wT}$.<br>Chu kì $T = \\dfrac{2\\pi}{|\\omega|} = \\dfrac{2\\pi}{2\\cdot ${wT}} = ${nt(ans)}$.`; }
+  const fn = x=>{ const v = k*Math.PI*x/m; return a*({sin:Math.sin(v), cos:Math.cos(v), tan:Math.tan(v), cot:1/Math.tan(v), sin2:Math.sin(v)**2, cos2:Math.cos(v)**2, sc:Math.sin(v)*Math.cos(v)}[f]) + c; };
+  const o = {stem:`Tìm chu kì $T$ của hàm số $y = ${y}$.`, ans, lg: lg + `<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const xs = [0.137, 0.71, 1.93]; if(!xs.every(x=> Math.abs(fn(x + o.ans) - fn(x)) < 1e-6)) return false; return [2, 3, 5].every(j=> !xs.every(x=> Math.abs(fn(x + o.ans/j) - fn(x)) < 1e-6)); }};
+  return o;
+});
+
+/* 2. TLN VD — chu kì của tổng hai hàm (BCNN của hai chu kì) */
+GT(11,0,2,'VD','Tư duy: chu kì của tổng hai hàm số lượng giác y = sin(πx/a) + cos(πx/b), tan(πx/a) + sin(πx/b) — chu kì là bội chung nhỏ nhất của hai chu kì', R=>{
+  const a = R.int(1, 12), b = R.int(1, 12); if(a === b) return null;
+  const f1 = R.pick(['sin', 'cos', 'tan']), f2 = R.pick(['sin', 'cos']); if(f1 === f2 && a === b) return null;
+  const T1 = f1 === 'tan' ? a : 2*a, T2 = 2*b, lcm = T1*T2/gcdI(T1, T2); if(lcm > 999 || lcm === T1 || lcm === T2 && R.rnd() < 0.6) return null;
+  const ans = lcm, c1 = R.pick([1, 2, 3]), c2 = R.pick([1, 2, -1, 4]);
+  const u = n=> n === 1 ? '\\pi x' : `\\dfrac{\\pi x}{${n}}`;
+  const y = `${c1 === 1 ? '' : c1}\\${f1}\\left(${u(a)}\\right) ${c2 < 0 ? '-' : '+'} ${Math.abs(c2) === 1 ? '' : Math.abs(c2)}\\${f2}\\left(${u(b)}\\right)`;
+  const fn = x=> c1*({sin:Math.sin, cos:Math.cos, tan:Math.tan}[f1])(Math.PI*x/a) + c2*({sin:Math.sin, cos:Math.cos}[f2])(Math.PI*x/b);
+  const o = {stem:`Tìm chu kì $T$ (số dương nhỏ nhất thoả mãn $f(x + T) = f(x)$ với mọi $x$ thuộc tập xác định) của hàm số $f(x) = ${y}$.`, ans,
+    lg:`Số hạng thứ nhất có chu kì $T_1 = ${f1 === 'tan' ? `\\pi : \\dfrac{\\pi}{${a}}` : `2\\pi : \\dfrac{\\pi}{${a}}`} = ${T1}$; số hạng thứ hai có chu kì $T_2 = 2\\pi : \\dfrac{\\pi}{${b}} = ${T2}$.<br>Số $T > 0$ là chu kì của tổng khi $T$ đồng thời là bội của $T_1$ và của $T_2$ (hai số hạng có tần số khác nhau nên không bù trừ nhau được).<br>Vậy $T$ là bội chung nhỏ nhất của $${T1}$ và $${T2}$: $T = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const xs = [0.137, 0.71, 1.93, 2.4]; if(!xs.every(x=> Math.abs(fn(x + o.ans) - fn(x)) < 1e-6)) return false; for(let j = 2; j <= 12; j++) if(xs.every(x=> Math.abs(fn(x + o.ans/j) - fn(x)) < 1e-6)) return false; return true; }};
+  return o;
+});
+
+/* 3. TLN TH — đếm điểm thuộc đoạn mà hàm số không xác định */
+GT(11,0,2,'TH','Tập xác định: đếm số điểm thuộc một đoạn mà hàm số y = tan(kx + a), y = cot(kx + a) hoặc y = 1/(2 sin x − 1), 1/(2 cos x + 1) không xác định', R=>{
+  const form = R.pick(['tan', 'cot', 'frac']);
+  const ends = [[0, 1], [0, 2], [-1, 1], [0, 3], [-2, 2], [0, 4], [-1, 2], [0.5, 3], [-0.5, 2.5]];
+  const [L, U] = R.pick(ends); let cnt = 0, lg, y, pts = [], den, kD = 1;
+  if(form !== 'frac'){
+    const k = R.int(1, 4); kD = k; const aq = R.pick([[0, 1], [1, 4], [-1, 4], [1, 3], [-1, 6], [1, 6], [-1, 3]]); const a = aq[0]/aq[1];
+    den = x=> form === 'tan' ? Math.cos(k*x + a*Math.PI) : Math.sin(k*x + a*Math.PI);
+    const base = form === 'tan' ? 0.5 - a : -a; // kx + a = (base' + n)π
+    for(let n = -40; n <= 40; n++){ const x = (base + n)/k; if(x >= L - 1e-9 && x <= U + 1e-9) pts.push(x); }
+    const aT = aq[0] === 0 ? '' : (aq[0] > 0 ? ' + ' : ' - ') + t3Pi(Math.abs(aq[0]), aq[1]);
+    y = `\\${form}\\left(${k === 1 ? '' : k}x${aT}\\right)`;
+    lg = `Hàm số không xác định khi $${form === 'tan' ? '\\cos' : '\\sin'}\\left(${k === 1 ? '' : k}x${aT}\\right) = 0$ $\\Leftrightarrow ${k === 1 ? '' : k}x${aT} = ${form === 'tan' ? '\\dfrac{\\pi}{2} + ' : ''}n\\pi$ $\\Leftrightarrow x = ${t3Pi(Math.round((form === 'tan' ? 0.5 - a : -a)*12), 12*k)}${(form === 'tan' ? 0.5 - a : -a) === 0 ? '' : ''} + ${k === 1 ? 'n\\pi' : `\\dfrac{n\\pi}{${k}}`}$ $(n \\in \\mathbb{Z})$.`;
+    lg = lg.replace('x = 0 + ', 'x = ');
+  } else {
+    const f = R.pick(['sin', 'cos']), val = R.pick([1, -1]); // 2f(x) + val·(-1)... f(x) = v
+    den = x=> 2*(f === 'sin' ? Math.sin(x) : Math.cos(x)) - val;
+    const v = val/2; const r = f === 'sin' ? (v > 0 ? [1/6, 5/6] : [-1/6, 7/6]) : (v > 0 ? [1/3, -1/3] : [2/3, -2/3]);
+    for(let n = -20; n <= 20; n++) r.forEach(b=>{ const x = b + 2*n; if(x >= L - 1e-9 && x <= U + 1e-9) pts.push(x); });
+    y = `\\dfrac{1}{2\\${f} x ${val > 0 ? '-' : '+'} 1}`;
+    lg = `Hàm số không xác định khi $2\\${f} x ${val > 0 ? '-' : '+'} 1 = 0 \\Leftrightarrow \\${f} x = ${val > 0 ? '' : '-'}\\dfrac{1}{2}$ $\\Leftrightarrow x = ${t3Pi(Math.round(r[0]*6), 6)} + n2\\pi$ hoặc $x = ${t3Pi(Math.round(r[1]*6), 6)} + n2\\pi$ $(n \\in \\mathbb{Z})$.`;
+  }
+  pts = [...new Set(pts.map(x=> Math.round(x*1e9)/1e9))].sort((p, q)=> p - q); cnt = pts.length; if(cnt < 2) return null;
+  const ans = cnt;
+  const LT = t3Pi(Math.round(L*2), 2), UT = t3Pi(Math.round(U*2), 2);
+  const o = {stem:`Có bao nhiêu số thực $x$ thuộc đoạn $\\left[${LT}; ${UT}\\right]$ mà tại đó hàm số $y = ${y}$ không xác định?`, ans,
+    lg: lg + `<br>Các giá trị thuộc đoạn $\\left[${LT}; ${UT}\\right]$: ${pts.map(x=> `$${t3Pi(Math.round(x*12*kD), 12*kD)}$`).join(', ')}.<br>Có $${ans}$ giá trị.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const a0 = L*Math.PI, a1 = U*Math.PI, N = 200000; let c = 0, pv = den(a0 + (a1 - a0)*0.5/N);
+      for(let i = 1; i < N; i++){ const v = den(a0 + (a1 - a0)*(i + 0.5)/N); if(v*pv < 0) c++; pv = v; }
+      if(Math.abs(den(a0)) < 1e-9) c++; if(Math.abs(den(a1)) < 1e-9) c++; return c === o.ans; }};
+  return o;
+});
+
+/* 4. TLN TH — tính chẵn, lẻ: ghi số thứ tự các hàm số lẻ (chẵn) */
+GT(11,0,2,'TH','Tính chẵn, lẻ của hàm số lượng giác: trong danh sách hàm số, ghi liền các số thứ tự của các hàm số lẻ (chẵn) theo thứ tự tăng dần — có bẫy sin(x + π/2), cos(x − π/2)', R=>{
+  const pool = [['\\sin 2x', 'l'], ['\\cos 3x', 'c'], ['\\tan x', 'l'], ['\\cot 2x', 'l'], ['\\sin x + \\cos x', 'k'], ['x\\sin x', 'c'], ['x\\cos x', 'l'], ['\\sin^2 x', 'c'], ['\\sin x + \\tan x', 'l'], ['\\cos x + \\sin^2 x', 'c'],
+    ['\\sin x\\cos x', 'l'], ['|\\sin x|', 'c'], ['\\sin x + 1', 'k'], ['\\cos x + 1', 'c'], ['\\tan x\\sin x', 'c'], ['\\sin^3 x', 'l'], ['x + \\sin x', 'l'], ['\\cos\\left(x - \\dfrac{\\pi}{2}\\right)', 'l'], ['\\sin\\left(x + \\dfrac{\\pi}{2}\\right)', 'c'], ['\\sin x - \\cos x', 'k'], ['\\sin\\left(x + \\dfrac{\\pi}{4}\\right)', 'k'], ['\\cos^2 x - \\sin x', 'k'], ['x^2\\tan x', 'l'], ['\\dfrac{\\sin x}{x}', 'c']];
+  const ask = R.pick(['l', 'c']), list = R.shuffle(pool).slice(0, 6);
+  const idx = list.map((f, i)=> f[1] === ask ? i + 1 : 0).filter(Boolean); if(idx.length < 1 || idx.length > 4) return null;
+  const ans = +idx.join('');
+  const why = {l:'$f(-x) = -f(x)$', c:'$f(-x) = f(x)$', k:'không chẵn, không lẻ'};
+  const note = f=> f[0].includes('x - \\dfrac{\\pi}{2}') ? ' (vì $\\cos\\left(x - \\dfrac{\\pi}{2}\\right) = \\sin x$)' : f[0].includes('x + \\dfrac{\\pi}{2}') ? ' (vì $\\sin\\left(x + \\dfrac{\\pi}{2}\\right) = \\cos x$)' : f[0].includes('\\dfrac{\\pi}{4}') ? ' (vì $f\\left(\\dfrac{\\pi}{4}\\right) = 1$ còn $f\\left(-\\dfrac{\\pi}{4}\\right) = 0$)' : f[1] === 'k' ? ' (chẳng hạn so sánh $f(x)$ và $f(-x)$ tại $x = \\dfrac{\\pi}{2}$)' : '';
+  const o = {stem:`Cho các hàm số: ${list.map((f, i)=> `(${i + 1}) $y = ${f[0]}$`).join('; ')}. Ghi liền các số thứ tự của các hàm số ${ask === 'l' ? 'lẻ' : 'chẵn'} theo thứ tự tăng dần (ví dụ: 135).`, ans,
+    lg:`Các hàm số đều có tập xác định đối xứng qua $0$. Xét $f(-x)$, dùng $\\sin(-x) = -\\sin x$, $\\cos(-x) = \\cos x$, $\\tan(-x) = -\\tan x$, $\\cot(-x) = -\\cot x$:<br>`
+      + list.map((f, i)=> `(${i + 1}) ${f[1] === 'k' ? 'không chẵn, không lẻ' : f[1] === 'l' ? 'hàm số lẻ' : 'hàm số chẵn'}${f[1] === 'k' ? '' : ': ' + why[f[1]]}${note(f)}.`).join('<br>') + `<br>Các hàm số ${ask === 'l' ? 'lẻ' : 'chẵn'}: ${idx.map(i=> '(' + i + ')').join(', ')}.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const F = {'\\sin 2x':x=> Math.sin(2*x), '\\cos 3x':x=> Math.cos(3*x), '\\tan x':Math.tan, '\\cot 2x':x=> 1/Math.tan(2*x), '\\sin x + \\cos x':x=> Math.sin(x) + Math.cos(x), 'x\\sin x':x=> x*Math.sin(x), 'x\\cos x':x=> x*Math.cos(x), '\\sin^2 x':x=> Math.sin(x)**2, '\\sin x + \\tan x':x=> Math.sin(x) + Math.tan(x), '\\cos x + \\sin^2 x':x=> Math.cos(x) + Math.sin(x)**2,
+        '\\sin x\\cos x':x=> Math.sin(x)*Math.cos(x), '|\\sin x|':x=> Math.abs(Math.sin(x)), '\\sin x + 1':x=> Math.sin(x) + 1, '\\cos x + 1':x=> Math.cos(x) + 1, '\\tan x\\sin x':x=> Math.tan(x)*Math.sin(x), '\\sin^3 x':x=> Math.sin(x)**3, 'x + \\sin x':x=> x + Math.sin(x), '\\cos\\left(x - \\dfrac{\\pi}{2}\\right)':x=> Math.cos(x - Math.PI/2), '\\sin\\left(x + \\dfrac{\\pi}{2}\\right)':x=> Math.sin(x + Math.PI/2), '\\sin x - \\cos x':x=> Math.sin(x) - Math.cos(x), '\\sin\\left(x + \\dfrac{\\pi}{4}\\right)':x=> Math.sin(x + Math.PI/4), '\\cos^2 x - \\sin x':x=> Math.cos(x)**2 - Math.sin(x), 'x^2\\tan x':x=> x*x*Math.tan(x), '\\dfrac{\\sin x}{x}':x=> Math.sin(x)/x};
+      const xs = [0.3, 0.77, 1.21]; const got = list.map((f, i)=>{ const g = F[f[0]]; const odd = xs.every(x=> Math.abs(g(-x) + g(x)) < 1e-9), ev = xs.every(x=> Math.abs(g(-x) - g(x)) < 1e-9); return (ask === 'l' ? odd : ev) ? i + 1 : 0; }).filter(Boolean);
+      return +got.join('') === o.ans; }};
+  return o;
+});
+
+/* 5. TLN TH — GTLN, GTNN của y = a sin x + b (a cos x + b) trên một đoạn */
+GT(11,0,2,'TH','Giá trị lớn nhất, nhỏ nhất của y = a sin x + b, y = a cos x + b trên một đoạn — dựa vào đường tròn lượng giác (đồ thị) xác định tập giá trị của sin x, cos x trên đoạn đó', R=>{
+  const f = R.pick(['sin', 'cos']), okK = f === 'sin' ? [0, 1, 3, 5, 6, 7, 9, 11] : [0, 2, 3, 4, 6, 8, 9, 10];
+  const k1 = R.int(-6, 9), k2 = k1 + R.int(2, 12); if(!okK.includes(((k1 % 12) + 12) % 12) || !okK.includes(((k2 % 12) + 12) % 12)) return null;
+  const a = R.pick([1, 2, 3, 4, -2, -3, 5, -1]), b = R.int(-5, 6), ask = R.pick(['M', 'm', 'M+m', 'M-m', 'Mm']);
+  const g = x=> f === 'sin' ? Math.sin(x) : Math.cos(x);
+  let hi = -2, lo = 2; for(let k = k1; k <= k2; k++){ const v = g(k*Math.PI/6); hi = Math.max(hi, v); lo = Math.min(lo, v); }
+  const rd = v=> Math.round(v*1e9)/1e9; hi = rd(hi); lo = rd(lo);
+  const M = a > 0 ? a*hi + b : a*lo + b, m = a > 0 ? a*lo + b : a*hi + b;
+  const val = {M, m, 'M+m':M + m, 'M-m':M - m, Mm:M*m}[ask]; const ans = t3Ok(rd(val)); if(ans === null) return null;
+  const vT = v=> v === 0.5 ? '\\dfrac{1}{2}' : v === -0.5 ? '-\\dfrac{1}{2}' : nt(v);
+  const askT = {M:'M', m:'m', 'M+m':'M + m', 'M-m':'M - m', Mm:'M\\cdot m'}[ask];
+  const yT = `${a === 1 ? '' : a === -1 ? '-' : a}\\${f} x${b ? (b > 0 ? ' + ' + b : ' - ' + (-b)) : ''}`;
+  const o = {stem:`Gọi $M$, $m$ lần lượt là giá trị lớn nhất, giá trị nhỏ nhất của hàm số $y = ${yT}$ trên đoạn $\\left[${t3Pi(k1, 6)}; ${t3Pi(k2, 6)}\\right]$. Tính $${askT}$.`, ans,
+    lg:`Khi $x$ chạy trên đoạn $\\left[${t3Pi(k1, 6)}; ${t3Pi(k2, 6)}\\right]$, điểm biểu diễn chạy trên đường tròn lượng giác từ góc $${t3Pi(k1, 6)}$ đến góc $${t3Pi(k2, 6)}$ (ngược chiều kim đồng hồ). Theo hình chiếu lên trục ${f === 'sin' ? 'tung' : 'hoành'}, ta được $${vT(lo)} \\le \\${f} x \\le ${vT(hi)}$.<br>`
+      + `Vì $${a} ${a > 0 ? '> 0' : '< 0'}$ nên $M = ${a}\\cdot ${t3P(vT(a > 0 ? hi : lo))} ${b < 0 ? '-' : '+'} ${Math.abs(b)} = ${nt(rd(M))}$ và $m = ${a}\\cdot ${t3P(vT(a > 0 ? lo : hi))} ${b < 0 ? '-' : '+'} ${Math.abs(b)} = ${nt(rd(m))}$.<br>Vậy $${askT} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ let H = -1e9, Lw = 1e9; for(let i = 0; i <= 6000; i++){ const x = (k1 + (k2 - k1)*i/6000)*Math.PI/6, v = a*g(x) + b; H = Math.max(H, v); Lw = Math.min(Lw, v); } const w = {M:H, m:Lw, 'M+m':H + Lw, 'M-m':H - Lw, Mm:H*Lw}[ask]; return Math.abs(w - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 6. TLN TH — GTLN, GTNN qua công thức nhân đôi, hạ bậc */
+GT(11,0,2,'TH','Giá trị lớn nhất, nhỏ nhất của y = a sin x cos x + b, y = a(cos⁴x − sin⁴x) + b, y = a(cos²x − sin²x) + b, y = a(sin⁴x + cos⁴x) + b — đưa về sin 2x, cos 2x', R=>{
+  const f = R.pick(['sc', 'c4', 'c2', 's4']), a = R.pick([2, 4, 6, 8, 3, -2, -4, 10]), b = R.int(-6, 6), ask = R.pick(['M', 'm', 'M+m', 'M-m', 'Mm']);
+  let lo, hi, red, rng;
+  if(f === 'sc'){ red = `${a/2 === 1 ? '' : a/2 === -1 ? '-' : nt(a/2)}\\sin 2x`; lo = -Math.abs(a)/2; hi = Math.abs(a)/2; rng = `$-1 \\le \\sin 2x \\le 1$`; }
+  else if(f === 'c4'){ red = `${a}(\\cos^2 x - \\sin^2 x)(\\cos^2 x + \\sin^2 x) = ${a}\\cos 2x`; lo = -Math.abs(a); hi = Math.abs(a); rng = `$-1 \\le \\cos 2x \\le 1$`; }
+  else if(f === 'c2'){ red = `${a}\\cos 2x`; lo = -Math.abs(a); hi = Math.abs(a); rng = `$-1 \\le \\cos 2x \\le 1$`; }
+  else { red = `${a}\\left[(\\sin^2 x + \\cos^2 x)^2 - 2\\sin^2 x\\cos^2 x\\right] = ${a}\\left(1 - \\dfrac{1}{2}\\sin^2 2x\\right)`; const v1 = a, v2 = a/2; lo = Math.min(v1, v2); hi = Math.max(v1, v2); rng = `$0 \\le \\sin^2 2x \\le 1$`; }
+  const M = hi + b, m = lo + b; const val = {M, m, 'M+m':M + m, 'M-m':M - m, Mm:M*m}[ask]; const ans = t3Ok(val); if(ans === null) return null;
+  const body = {sc:`${a}\\sin x\\cos x`, c4:`${a}\\left(\\cos^4 x - \\sin^4 x\\right)`, c2:`${a}\\left(\\cos^2 x - \\sin^2 x\\right)`, s4:`${a}\\left(\\sin^4 x + \\cos^4 x\\right)`}[f];
+  const askT = {M:'M', m:'m', 'M+m':'M + m', 'M-m':'M - m', Mm:'M\\cdot m'}[ask];
+  const o = {stem:`Gọi $M$, $m$ lần lượt là giá trị lớn nhất, giá trị nhỏ nhất của hàm số $y = ${body}${b ? (b > 0 ? ' + ' + b : ' - ' + (-b)) : ''}$. Tính $${askT}$.`, ans,
+    lg:`Biến đổi: $${body} = ${red}$.<br>Vì ${rng} nên $${nt(lo)} \\le ${body} \\le ${nt(hi)}$, hai giá trị đầu mút đều đạt được.<br>Suy ra $M = ${nt(M)}$, $m = ${nt(m)}$ và $${askT} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ let H = -1e9, L = 1e9; for(let i = 0; i <= 8000; i++){ const x = i/8000*Math.PI, S = Math.sin(x), C = Math.cos(x); const v = b + a*({sc:S*C, c4:C**4 - S**4, c2:C*C - S*S, s4:S**4 + C**4}[f]); H = Math.max(H, v); L = Math.min(L, v); } return Math.abs({M:H, m:L, 'M+m':H + L, 'M-m':H - L, Mm:H*L}[ask] - o.ans) < 1e-6; }};
+  return o;
+});
+
+/* 7. TLN VD — tam thức bậc hai theo sin x (cos x) */
+GT(11,0,2,'VD','Giá trị lớn nhất, nhỏ nhất của y = a sin²x + b sin x + c, y = cos 2x + b sin x + c, y = a cos²x + b cos x + c — đặt t = sin x (cos x) ∈ [−1; 1], xét đỉnh tam thức có thuộc đoạn không', R=>{
+  const v = R.pick(['sin', 'cos']), form = R.pick(['sq', 'sq', 'c2']);
+  let A = R.pick([1, 2, -1, -2]), B = R.int(-6, 6), Cc = R.int(-5, 5); if(B === 0) return null;
+  let yT, qA = A, qB = B, qC = Cc, pre = '';
+  if(form === 'c2'){ const k = R.pick([1, 2]); const sgn = v === 'sin' ? -1 : 1; // cos 2x = 1 - 2sin²x = 2cos²x - 1
+    qA = sgn*2*k; qB = B; qC = Cc + (v === 'sin' ? k : -k);
+    yT = `${k === 1 ? '' : k}\\cos 2x ${B < 0 ? '-' : '+'} ${Math.abs(B) === 1 ? '' : Math.abs(B)}\\${v} x${Cc ? (Cc > 0 ? ' + ' + Cc : ' - ' + (-Cc)) : ''}`;
+    pre = `Vì $\\cos 2x = ${v === 'sin' ? '1 - 2\\sin^2 x' : '2\\cos^2 x - 1'}$ nên $y = ${t3Sum([[qA, 't^2'], [qB, 't'], [qC, '']])}$ với $t = \\${v} x$.<br>`;
+  } else { yT = `${t3Sum([[A, `\\${v}^2 x`], [B, `\\${v} x`], [Cc, '']])}`; pre = `Đặt $t = \\${v} x$ thì $y = ${t3Sum([[A, 't^2'], [B, 't'], [Cc, '']])}$.<br>`; }
+  const q = t=> qA*t*t + qB*t + qC, t0 = -qB/(2*qA), inside = t0 > -1 && t0 < 1;
+  const cands = [-1, 1].concat(inside ? [t0] : []), vals = cands.map(q); const M = Math.max(...vals), m = Math.min(...vals);
+  const ask = R.pick(['M', 'm', 'M+m', 'M-m']); const val = {M, m, 'M+m':M + m, 'M-m':M - m}[ask]; const ans = t3Ok(Math.round(val*1e9)/1e9); if(ans === null) return null;
+  if(!inside && R.rnd() < 0.5) return null;
+  const askT = {M:'M', m:'m', 'M+m':'M + m', 'M-m':'M - m'}[ask];
+  const o = {stem:`Gọi $M$, $m$ lần lượt là giá trị lớn nhất, giá trị nhỏ nhất của hàm số $y = ${yT}$. Tính $${askT}$.`, ans,
+    lg: pre + `Khi $x$ thay đổi, $t$ nhận mọi giá trị thuộc $[-1; 1]$. Tam thức $g(t) = ${t3Sum([[qA, 't^2'], [qB, 't'], [qC, '']])}$ có hoành độ đỉnh $t_0 = ${nt(Math.round(t0*1e6)/1e6)}$ ${inside ? '$\\in (-1; 1)$' : '$\\notin (-1; 1)$'}.<br>`
+      + `$g(-1) = ${nt(q(-1))}$, $g(1) = ${nt(q(1))}$${inside ? `, $g(t_0) = ${nt(Math.round(q(t0)*1e6)/1e6)}$` : ''}.<br>Suy ra $M = ${nt(Math.round(M*1e6)/1e6)}$, $m = ${nt(Math.round(m*1e6)/1e6)}$, nên $${askT} = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ let H = -1e9, L = 1e9; for(let i = 0; i <= 20000; i++){ const x = i/20000*2*Math.PI, s = v === 'sin' ? Math.sin(x) : Math.cos(x); const y = form === 'c2' ? (qA/2*(v === 'sin' ? -1 : 1))*Math.cos(2*x) + B*s + Cc : A*s*s + B*s + Cc; H = Math.max(H, y); L = Math.min(L, y); }
+      return Math.abs({M:H, m:L, 'M+m':H + L, 'M-m':H - L}[ask] - o.ans) < 1e-4; }};
+  return o;
+});
+
+/* 8. TLN TH — hỏi ngược: biết GTLN (GTNN) của y = a sin x + b cos x + c, tìm tham số */
+GT(11,0,2,'TH','Hỏi ngược: biết giá trị lớn nhất (nhỏ nhất) của y = m sin x + b cos x + c (hoặc y = a sin x + m cos x + c), tìm tham số m dương — dùng tập giá trị [c − √(a² + b²); c + √(a² + b²)]', R=>{
+  const T = R.pick([[3, 4, 5], [4, 3, 5], [5, 12, 13], [12, 5, 13], [6, 8, 10], [8, 6, 10], [8, 15, 17], [15, 8, 17], [7, 24, 25], [24, 7, 25], [9, 12, 15], [12, 9, 15], [20, 21, 29], [21, 20, 29], [9, 40, 41], [40, 9, 41], [16, 12, 20], [10, 24, 26], [24, 10, 26]]);
+  const [m, b, r] = T; if(b === 0) return null; const c = R.int(-6, 6), mx = R.rnd() < 0.5, pos = R.pick(['sin', 'cos']);
+  const val = mx ? c + r : c - r;
+  const yT = pos === 'sin' ? `m\\sin x ${R.rnd() < 2 ? '+' : ''} ${b}\\cos x${c ? (c > 0 ? ' + ' + c : ' - ' + (-c)) : ''}` : `${b}\\sin x + m\\cos x${c ? (c > 0 ? ' + ' + c : ' - ' + (-c)) : ''}`;
+  const ans = m;
+  const o = {stem:`Biết hàm số $y = ${yT}$ (với $m > 0$) có giá trị ${mx ? 'lớn nhất' : 'nhỏ nhất'} bằng $${val}$. Tìm $m$.`, ans,
+    lg:`Với hàm số $y = a\\sin x + b\\cos x + c$, ta có $a\\sin x + b\\cos x = \\sqrt{a^2 + b^2}\\sin(x + \\varphi)$ nên $y$ nhận mọi giá trị trong $\\left[c - \\sqrt{a^2 + b^2}; c + \\sqrt{a^2 + b^2}\\right]$.<br>Ở đây giá trị ${mx ? 'lớn nhất' : 'nhỏ nhất'} là $${c} ${mx ? '+' : '-'} \\sqrt{m^2 + ${b*b}} = ${val}$ $\\Rightarrow \\sqrt{m^2 + ${b*b}} = ${r}$ $\\Rightarrow m^2 = ${r*r} - ${b*b} = ${m*m}$.<br>Vì $m > 0$ nên $m = ${m}$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ let H = -1e9, L = 1e9; for(let i = 0; i <= 20000; i++){ const x = i/20000*2*Math.PI; const y = (pos === 'sin' ? o.ans*Math.sin(x) + b*Math.cos(x) : b*Math.sin(x) + o.ans*Math.cos(x)) + c; H = Math.max(H, y); L = Math.min(L, y); } return Math.abs((mx ? H : L) - val) < 1e-4; }};
+  return o;
+});
+
+/* 9. TLN VD — thực tế: thời gian đại lượng vượt (dưới) ngưỡng trong một khoảng thời gian */
+GT(11,0,2,'VD','Thực tế: nhiệt độ, mực nước dao động theo hàm số dạng A + B sin(ωt + φ) — tổng thời gian trong một khoảng (gồm trọn chu kì) mà đại lượng không nhỏ hơn (không lớn hơn) một ngưỡng', R=>{
+  const ctx = R.pick(['nhiet', 'nuoc', 'nuoc']);
+  const S = [[0.5, 1/3, '\\dfrac{1}{2}', '\\dfrac{\\pi}{6}', '\\dfrac{5\\pi}{6}'], [-0.5, 2/3, '-\\dfrac{1}{2}', '-\\dfrac{\\pi}{6}', '\\dfrac{7\\pi}{6}'], [0, 0.5, '0', '0', '\\pi'], [Math.SQRT1_2, 0.25, '\\dfrac{\\sqrt{2}}{2}', '\\dfrac{\\pi}{4}', '\\dfrac{3\\pi}{4}'], [-Math.SQRT1_2, 0.75, '-\\dfrac{\\sqrt{2}}{2}', '-\\dfrac{\\pi}{4}', '\\dfrac{5\\pi}{4}'], [Math.sqrt(3)/2, 1/6, '\\dfrac{\\sqrt{3}}{2}', '\\dfrac{\\pi}{3}', '\\dfrac{2\\pi}{3}'], [-Math.sqrt(3)/2, 5/6, '-\\dfrac{\\sqrt{3}}{2}', '-\\dfrac{\\pi}{3}', '\\dfrac{4\\pi}{3}']];
+  const [s, fr, sT, th1, th2] = R.pick(S.slice(0, 3)), above = R.rnd() < 0.6;
+  let A, B, P, D, stem, unitT, thr, thrT, h;
+  if(ctx === 'nhiet'){ A = R.int(18, 30); B = R.pick([4, 6, 8, 10, 3, 5]); P = 12; D = 24; h = R.int(6, 10);
+    if(Math.abs(s*B*10 - Math.round(s*B*10)) > 1e-9){ thr = null; } else thr = A + s*B;
+    if(thr === null) return null; thrT = nt(thr);
+    stem = `Nhiệt độ ngoài trời ở một thành phố vào một ngày được mô hình hoá bởi $T(t) = ${A} + ${B}\\sin\\dfrac{\\pi(t - ${h})}{12}$ (độ C), với $t$ là thời gian tính bằng giờ kể từ 0 giờ, $0 \\le t \\le 24$. Trong ngày đó có tổng cộng bao nhiêu giờ nhiệt độ ${above ? 'không thấp hơn' : 'không cao hơn'} $${thrT}^\\circ$C?`; unitT = 'giờ'; }
+  else { A = R.int(2, 6); B = R.pick([1, 2, 1.5, 0.8, 1.2, 2.5]); P = R.pick([3, 4, 5, 6, 8, 9, 12]); const n = R.int(1, Math.floor(72/(2*P))); D = 2*P*n; h = 0;
+    thr = Math.round((A + s*B)*100)/100; if(Math.abs(s*B*10 - Math.round(s*B*10)) > 1e-9) return null; thrT = nt(thr);
+    stem = `Độ sâu của nước tại một cảng biển được mô hình hoá bởi $h(t) = ${A} + ${nt(B)}\\sin\\dfrac{\\pi t}{${P}}$ (mét), với $t$ là thời gian tính bằng giờ, $0 \\le t \\le ${D}$. Trong khoảng thời gian đó, tổng thời gian độ sâu của nước ${above ? 'không nhỏ hơn' : 'không lớn hơn'} $${thrT}$ m là bao nhiêu giờ?`; unitT = 'giờ'; }
+  const frac = above ? fr : 1 - fr, ans = t3Ok(Math.round(frac*D*1e9)/1e9); if(ans === null) return null;
+  const per = 2*P, nP = D/per;
+  const lenT = above ? `${th2} - ${t3P(th1)}` : `2\\pi - \\left[${th2} - ${t3P(th1)}\\right]`;
+  const o = {stem, ans,
+    lg:`Đặt $u = ${ctx === 'nhiet' ? '\\dfrac{\\pi(t - ' + h + ')}{12}' : '\\dfrac{\\pi t}{' + P + '}'}$. Chu kì của hàm số là $${per}$ giờ, khoảng thời gian $[0; ${D}]$ gồm đúng $${nP}$ chu kì.<br>`
+      + `Điều kiện ${above ? '$\\ge' : '$\\le'} ${thrT}$ tương đương $\\sin u ${above ? '\\ge' : '\\le'} ${sT}$. Trong một chu kì của $u$ (độ dài $2\\pi$), tập nghiệm có độ dài ${above ? `$${th2} - ${t3P(th1)}$` : `$2\\pi - \\left[${th2} - ${t3P(th1)}\\right]$`}, tức bằng $${frac === 0.5 ? '\\dfrac{1}{2}' : frT(Math.round(frac*12), 12)}$ chu kì.<br>`
+      + `Tổng thời gian: $${frac === 0.5 ? '\\dfrac{1}{2}' : frT(Math.round(frac*12), 12)}\\cdot ${D} = ${nt(ans)}$ (giờ).<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const N = 200000; let c = 0; for(let i = 0; i < N; i++){ const t = (i + 0.5)/N*D; const v = A + B*Math.sin(ctx === 'nhiet' ? Math.PI*(t - h)/12 : Math.PI*t/P); if(above ? v >= thr - 1e-12 : v <= thr + 1e-12) c++; } return Math.abs(c/N*D - o.ans) < 0.01; }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.88'; GEN[k].l1 = 'V2.88'; });
+})();
+
+// ---------- V2.88: dạng thay số bổ sung (11-01…11-04 (Chương I lớp 11) TLN: 61 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// 11-04 Phương trình lượng giác cơ bản — bổ sung 12 dạng TLN cho chuyên đề 11-04.1 (lên 16 TLN).
+// Chuỗi: sin u = sin v / cos u = cos v (đếm nghiệm, hợp hai họ) → sin u = cos v (đổi về cùng loại, nghiệm dương nhỏ nhất) → tan, cot;
+// đưa về cơ bản: hạ bậc (sin²x = a), nhân đôi (sin x cos x = a), chia cho cos x (a sin x + b cos x = 0), phương trình tích, phương trình lồng sin(π cos x);
+// đọc nghiệm: số điểm biểu diễn, nghiệm thuộc [0; N] khi biến số có π, máy tính cầm tay, hỏi ngược tham số.
+const t4Ok = x=>{ const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9) return null; return String(r).length <= 4 ? r : null; };
+const t4W = s=> /[+-] /.test(s) ? `\\left(${s}\\right)` : ` ${s}`;
+const t4IV =[[0, 1], [0, 2], [-1, 1], [0, 3], [-1, 2], [0, 4], [-2, 2], [0, 5], [-3, 3], [0, 6], [-2, 4], [-1, 5], [0.5, 4.5], [-0.5, 3.5], [0, 0.5], [-0.5, 1.5], [1, 7], [-4, 4]];
+const t4Fr = x=>{ for(let d = 1; d <= 144; d++){ const n = Math.round(x*d); if(Math.abs(x - n/d) < 1e-9) return [n, d]; } return null; };
+const t4Pi = x=>{ const f = t4Fr(x); if(!f) return null; let [p, q] = f; if(p === 0) return '0'; const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return q === 1 ? s + n : `${s}\\dfrac{${n}}{${q}}`; };
+const t4K = p=>{ const f = t4Fr(p); const [a, b] = f; const n = a === 1 ? '' : a; return b === 1 ? `k${n === '' ? '' : n}\\pi` : `\\dfrac{k${n}\\pi}{${b}}`; };
+const t4FamT = (c, p)=>{ const cT = t4Pi(c); return cT === '0' ? t4K(p) : `${cT} + ${t4K(p)}`; };
+const t4Pts = (fams, L, U)=>{ const s = new Set(); fams.forEach(([c, p])=>{ for(let k = Math.ceil((L - c)/p - 1e-9); c + k*p <= U + 1e-9; k++) s.add(Math.round((c + k*p)*1e9)/1e9); }); return [...s].sort((a, b)=> a - b); };
+const t4PtsT = pts=> pts.map(x=> `$${t4Pi(x)}$`).join(', ');
+const t4IvT = (L, U)=> `\\left[${t4Pi(L)}; ${t4Pi(U)}\\right]`;
+const t4P = v=> (typeof v === 'number' ? v < 0 : String(v).startsWith('-')) ? `\\left(${typeof v === 'number' ? nt(v) : v}\\right)` : (typeof v === 'number' ? nt(v) : v);
+// đếm nghiệm bằng cực tiểu địa phương của |h| (bắt được cả nghiệm kép) — dùng cho verify
+const t4Roots = (h, a, b, N)=> t4RootList(h, a, b, N).length;
+const t4Union = (...ls)=>{ const all = ls.flat().sort((p, q)=> p - q), m = []; all.forEach(x=>{ if(!m.length || x - m[m.length - 1] > 1e-3) m.push(x); }); return m.length; };
+const t4RootList = (h, a, b, N)=>{ N = N || 400000; const xs = [], dx = (b - a)/N; let p2 = Math.abs(h(a)), p1 = Math.abs(h(a + dx));
+  if(p2 < 1e-9) xs.push(a);
+  for(let i = 2; i <= N; i++){ const v = Math.abs(h(a + i*dx)); if(p1 < 2e-3 && p1 <= p2 && p1 <= v) xs.push(a + (i - 1)*dx); p2 = p1; p1 = v; }
+  if(p1 < 1e-9) xs.push(b);
+  const m = []; xs.forEach(x=>{ if(!m.length || x - m[m.length - 1] > 1e-3) m.push(x); }); return m; };
+const t4SV = {'0':[0, '0'], '1/2':[0.5, '\\dfrac{1}{2}'], '-1/2':[-0.5, '-\\dfrac{1}{2}'], 'r2':[Math.SQRT1_2, '\\dfrac{\\sqrt{2}}{2}'], '-r2':[-Math.SQRT1_2, '-\\dfrac{\\sqrt{2}}{2}'], 'r3':[Math.sqrt(3)/2, '\\dfrac{\\sqrt{3}}{2}'], '-r3':[-Math.sqrt(3)/2, '-\\dfrac{\\sqrt{3}}{2}'], '1':[1, '1'], '-1':[-1, '-1']};
+// nghiệm cơ bản (đơn vị π): sin x = v ⇒ x = a + 2k, x = 1 − a + 2k; cos x = v ⇒ x = ±a + 2k
+const t4Base = (f, v)=>{ const a = (f === 'sin' ? Math.asin(v) : Math.acos(v))/Math.PI; const r = Math.round(a*12)/12;
+  if(f === 'sin') return Math.abs(v) === 1 ? [[r, 2]] : [[r, 2], [1 - r, 2]];
+  return Math.abs(v) === 1 ? [[r, 2]] : [[r, 2], [-r, 2]]; };
+const t4VT = v=> Object.values(t4SV).find(x=> Math.abs(x[0] - v) < 1e-12)[1];
+
+/* 1. TLN VD — sin u = sin v, cos u = cos v: đếm nghiệm trên đoạn (hợp hai họ, nghiệm trùng) */
+GT(11,0,3,'VD','Phương trình sin(ax + α) = sin(bx + β), cos(ax + α) = cos(bx + β): đếm số nghiệm trên một đoạn — hợp hai họ nghiệm, nghiệm trùng chỉ tính một lần', R=>{
+  const f = R.pick(['sin', 'cos']), a = R.int(1, 4), b = R.int(1, 3); if(a === b) return null;
+  const al = R.pick([0, 1/6, 1/3, 1/2, -1/6, -1/3, 1/4, -1/4]), be = R.pick([0, 1/6, 1/3, -1/6, 1/2, 1/4]);
+  const [L, U] = R.pick(t4IV);
+  // u - v = 2kπ: (a - b)x = β - α + 2k ; u + v = π + 2kπ (sin) hoặc u + v = 2kπ (cos): (a + b)x = c2 - α - β + 2k
+  const d1 = a - b, d2 = a + b, c2 = f === 'sin' ? 1 : 0;
+  const fams = [[(be - al)/d1, 2/d1], [(c2 - al - be)/d2, 2/d2]].map(([c, p])=> p < 0 ? [c, -p] : [c, p]);
+  const pts = t4Pts(fams, L, U); if(pts.length < 2 || pts.length > 30) return null; if(pts.some(x=> !t4Pi(x))) return null;
+  const n1 = t4Pts([fams[0]], L, U).length, n2 = t4Pts([fams[1]], L, U).length, ans = pts.length;
+  const lin = (k, c)=>{ const kT = k === 1 ? '' : k === -1 ? '-' : k; const cT = c === 0 ? '' : (c > 0 ? ' + ' : ' - ') + t4Pi(Math.abs(c)); return (k === 0 ? (t4Pi(c)) : `${kT}x${cT}`); };
+  const u = lin(a, al), v = lin(b, be);
+  const o = {stem:`Phương trình $\\${f}${t4W(u)} = \\${f}${t4W(v)}$ có bao nhiêu nghiệm thuộc đoạn $${t4IvT(L, U)}$?`, ans,
+    lg:`$\\${f}${t4W(u)} = \\${f}${t4W(v)} \\Leftrightarrow ${u} = ${v} + k2\\pi$ hoặc $${u} = ${f === 'sin' ? `\\pi - ${t4W(v)}` : `-${t4W(v)}`} + k2\\pi$ $(k \\in \\mathbb{Z})$<br>`
+      + `$\\Leftrightarrow x = ${t4FamT(...fams[0])}$ hoặc $x = ${t4FamT(...fams[1])}$.<br>Họ thứ nhất có $${n1}$ nghiệm, họ thứ hai có $${n2}$ nghiệm thuộc đoạn; ${n1 + n2 > ans ? `có $${n1 + n2 - ans}$ nghiệm trùng nhau, ` : ''}các nghiệm phân biệt là ${t4PtsT(pts)}.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ /* tổng thành tích: hiệu hai vế = ±2·(…)((u+v)/2)·sin((u−v)/2) */ const U1 = x=> a*x + al*Math.PI, V1 = x=> b*x + be*Math.PI;
+      const h1 = x=> Math.sin((U1(x) - V1(x))/2), h2 = x=> f === 'sin' ? Math.cos((U1(x) + V1(x))/2) : Math.sin((U1(x) + V1(x))/2);
+      const xs = []; [h1, h2].forEach(h=>{ const N = 200000, A = L*Math.PI, B = U*Math.PI; for(let i = 0; i <= N; i++){ const x = A + (B - A)*i/N; const x2 = A + (B - A)*(i + 1)/N; if(Math.abs(h(x)) < 1e-12) xs.push(x); else if(i < N && h(x)*h(x2) < 0 && Math.abs(h(x2)) > 1e-12) xs.push((x + x2)/2); } });
+      xs.sort((p, q)=> p - q); const m = []; xs.forEach(x=>{ if(!m.length || x - m[m.length - 1] > 1e-4) m.push(x); }); return m.length === o.ans; }};
+  return o;
+});
+
+/* 2. TLN TH — tan(kx + α) = m, cot(kx + α) = m: đếm nghiệm trên đoạn */
+GT(11,0,3,'TH','Phương trình tan(kx + α) = m, cot(kx + α) = m (m = 0, ±1, ±√3, ±√3/3): đếm số nghiệm trên một đoạn — họ nghiệm x = (x₀ + nπ)/k', R=>{
+  const f = R.pick(['tan', 'cot']), k = R.int(1, 4), al = R.pick([0, 1/6, -1/6, 1/4, -1/4, 1/3, -1/3]);
+  const M = R.pick([[0, '0', 0], [1, '1', 1/4], [-1, '-1', -1/4], [Math.sqrt(3), '\\sqrt{3}', 1/3], [-Math.sqrt(3), '-\\sqrt{3}', -1/3], [1/Math.sqrt(3), '\\dfrac{\\sqrt{3}}{3}', 1/6], [-1/Math.sqrt(3), '-\\dfrac{\\sqrt{3}}{3}', -1/6]]);
+  const th = f === 'tan' ? M[2] : (M[0] === 0 ? 1/2 : 1/2 - M[2]); // cot θ = m ⇔ tan(π/2 − θ) = m
+  const [L, U] = R.pick(t4IV);
+  const fam = [(th - al)/k, 1/k], pts = t4Pts([fam], L, U); if(pts.length < 2) return null;
+  const ans = pts.length, aT = al === 0 ? '' : (al > 0 ? ' + ' : ' - ') + t4Pi(Math.abs(al)), u = `${k === 1 ? '' : k}x${aT}`;
+  const o = {stem:`Phương trình $\\${f}${t4W(u)} = ${M[1]}$ có bao nhiêu nghiệm thuộc đoạn $${t4IvT(L, U)}$?`, ans,
+    lg:`$\\${f}${t4W(u)} = ${M[1]}${th === 0 ? '' : ` = \\${f}\\left(${t4Pi(th)}\\right)`}$ $\\Leftrightarrow ${u} = ${t4Pi(th)} + k\\pi$ $\\Leftrightarrow x = ${t4FamT(...fam)}$ $(k \\in \\mathbb{Z})$.<br>Các nghiệm thuộc đoạn $${t4IvT(L, U)}$: ${t4PtsT(pts)}.<br>Có $${ans}$ nghiệm.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const g = x=> f === 'tan' ? Math.sin(k*x + al*Math.PI) - M[0]*Math.cos(k*x + al*Math.PI) : Math.cos(k*x + al*Math.PI) - M[0]*Math.sin(k*x + al*Math.PI); return t4Roots(g, L*Math.PI, U*Math.PI) === o.ans; }};
+  return o;
+});
+
+/* 3. TLN TH — sin u = cos v: đổi về cùng loại, nghiệm dương nhỏ nhất (âm lớn nhất), đơn vị độ */
+GT(11,0,3,'TH','Phương trình sin(ax + α) = cos(bx + β) (cos u = −cos v, sin u = −sin v): đổi về cùng một hàm (góc phụ, góc bù, góc đối) rồi tìm nghiệm dương nhỏ nhất hoặc âm lớn nhất (đơn vị độ)', R=>{
+  const form = R.pick(['sc', 'cc-', 'ss-']), a = R.int(1, 4), b = R.int(1, 3); if(a === b) return null;
+  const al = R.pick([0, 10, 20, 30, 40, 50, 60, -10, -20, -30, 15, 45]), be = R.pick([0, 10, 20, 30, -10, -20, 15, 25]);
+  // đưa về f(u) = f(w): sc: sin u = sin(90 − v); cc-: cos u = cos(180 − v); ss-: sin u = sin(−v)
+  let fams; // x theo độ: [c, p]
+  if(form === 'sc'){ fams = [[(90 - be - al)/(a + b), 360/(a + b)], [(90 + be - al)/(a - b), 360/(a - b)]]; }
+  else if(form === 'cc-'){ fams = [[(180 - be - al)/(a + b), 360/(a + b)], [(-180 + be - al)/(a - b), 360/(a - b)]]; } // u = 180 − v + k360 hoặc u = −(180 − v) + k360
+  else { fams = [[(-be - al)/(a + b), 360/(a + b)], [(180 + be - al)/(a - b), 360/(a - b)]]; } // u = −v + k360 hoặc u = 180 + v + k360
+  fams = fams.map(([c, p])=> p < 0 ? [c, -p] : [c, p]);
+  if(!fams.every(([c, p])=> Math.abs(p - Math.round(p)) < 1e-9 && Math.abs(c*10 - Math.round(c*10)) < 1e-9)) return null;
+  const want = R.pick(['pos', 'neg']); const cand = [];
+  fams.forEach(([c, p])=>{ const r = ((c % p) + p) % p; if(want === 'pos') cand.push(r < 1e-9 ? p : r); else cand.push(r < 1e-9 ? -p : r - p); });
+  const val = want === 'pos' ? Math.min(...cand) : Math.max(...cand); const ans = t4Ok(Math.round(val*1e9)/1e9); if(ans === null) return null;
+  const lin = (k, c)=> `${k === 1 ? '' : k}x${c === 0 ? '' : (c > 0 ? ' + ' : ' - ') + Math.abs(c) + '^\\circ'}`;
+  const u = lin(a, al), v = lin(b, be);
+  const PT = form === 'sc' ? `\\sin${t4W(u)} = \\cos${t4W(v)}` : form === 'cc-' ? `\\cos${t4W(u)} = -\\cos${t4W(v)}` : `\\sin${t4W(u)} = -\\sin${t4W(v)}`;
+  const conv = form === 'sc' ? `\\cos${t4W(v)} = \\sin\\left(90^\\circ - ${t4W(v)}\\right)` : form === 'cc-' ? `-\\cos${t4W(v)} = \\cos\\left(180^\\circ - ${t4W(v)}\\right)` : `-\\sin${t4W(v)} = \\sin\\left(-${t4W(v)}\\right)`;
+  const ff = form === 'cc-' ? '\\cos' : '\\sin';
+  const dg = x=> `${nt(Math.round(x*1e6)/1e6)}^\\circ`;
+  const famT = ([c, p])=> `x = ${Math.abs(c) < 1e-9 ? '' : dg(c) + ' + '}k${nt(Math.round(p*1e6)/1e6)}^\\circ`;
+  if(fams.some(([c, p])=> !Number.isInteger(Math.round(p*1e6)/1e6) && String(Math.round(p*1e6)/1e6).length > 6)) return null;
+  const o = {stem:`Tìm nghiệm ${want === 'pos' ? 'dương nhỏ nhất' : 'âm lớn nhất'} (đơn vị độ) của phương trình $${PT}$.`, ans,
+    lg:`Ta có $${conv}$, nên phương trình trở thành $${ff}${t4W(u)} = ${conv.split('= ')[1]}$.<br>Giải ra hai họ nghiệm: $${famT(fams[0])}$ hoặc $${famT(fams[1])}$ $(k \\in \\mathbb{Z})$.<br>Nghiệm ${want === 'pos' ? 'dương nhỏ nhất' : 'âm lớn nhất'} của từng họ lần lượt là $${dg(cand[0])}$ và $${dg(cand[1])}$.<br>Vậy nghiệm cần tìm là $${dg(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const r = Math.PI/180, h = x=> form === 'sc' ? Math.sin((a*x + al)*r) - Math.cos((b*x + be)*r) : form === 'cc-' ? Math.cos((a*x + al)*r) + Math.cos((b*x + be)*r) : Math.sin((a*x + al)*r) + Math.sin((b*x + be)*r);
+      if(Math.abs(h(o.ans)) > 1e-9) return false; /* mọi nghiệm đều là bội của 0,1° (c có ≤ 1 chữ số thập phân, chu kì nguyên): thử hết các bội nằm giữa 0 và đáp số */
+      const n = Math.round(Math.abs(o.ans)*10); for(let j = 1; j < n; j++){ const t = (o.ans > 0 ? 1 : -1)*j/10; if(Math.abs(h(t)) < 1e-9) return false; } return true; }};
+  return o;
+});
+
+/* 4. TLN TH — sin²x = a, cos²x = a, tan²x = a: hạ bậc đưa về phương trình cơ bản, đếm nghiệm */
+GT(11,0,3,'TH','Phương trình sin²x = a, cos²x = a (hạ bậc về cos 2x), tan²x = a (tan x = ±√a): đếm số nghiệm trên một đoạn', R=>{
+  const f = R.pick(['sin', 'cos', 'tan']);
+  let aT, a, c2, fams, lg;
+  const [L, U] = R.pick(t4IV);
+  if(f !== 'tan'){ const P = R.pick([['\\dfrac{1}{4}', 0.25], ['\\dfrac{3}{4}', 0.75], ['\\dfrac{1}{2}', 0.5], ['1', 1], ['0', 0]]); aT = P[0]; a = P[1];
+    c2 = f === 'sin' ? 1 - 2*a : 2*a - 1; const t0 = Math.round(Math.acos(c2)/Math.PI*12)/12; // 2x = ±t0 + 2kπ
+    fams = Math.abs(c2) === 1 ? [[t0/2, 1]] : [[t0/2, 1], [-t0/2, 1]];
+    lg = `Hạ bậc: $\\${f}^2 x = \\dfrac{1 ${f === 'sin' ? '-' : '+'} \\cos 2x}{2}$, nên phương trình tương đương $\\cos 2x = ${t4VT(c2)}$ $\\Leftrightarrow 2x = ${Math.abs(c2) === 1 ? '' : '\\pm '}${t4Pi(t0)} + k2\\pi$ $\\Leftrightarrow x = ${Math.abs(c2) === 1 ? '' : '\\pm '}${t4Pi(t0/2)} + k\\pi$ $(k \\in \\mathbb{Z})$.`.replace('x = 0 + k\\pi', 'x = k\\pi').replace('2x = 0 + k2\\pi', '2x = k2\\pi');
+  } else { const P = R.pick([['3', 3, 1/3], ['1', 1, 1/4], ['\\dfrac{1}{3}', 1/3, 1/6]]); aT = P[0]; a = P[1];
+    fams = [[P[2], 1], [-P[2], 1]];
+    lg = `$\\tan^2 x = ${aT} \\Leftrightarrow \\tan x = \\pm${a === 1 ? '1' : a === 3 ? '\\sqrt{3}' : '\\dfrac{\\sqrt{3}}{3}'}$ $\\Leftrightarrow x = \\pm${t4Pi(P[2])} + k\\pi$ $(k \\in \\mathbb{Z})$.`; }
+  const k = R.pick([1, 1, 2, 3]);
+  if(k > 1){ lg = `Đặt $u = ${k}x$. ` + lg.replace(/x/g, 'u'); fams = fams.map(([c, p])=> [c/k, p/k]); lg += ` Suy ra $${fams.map(([c, p])=> 'x = ' + t4FamT(c, p)).join('$ hoặc $')}$.`; }
+  const pts = t4Pts(fams, L, U); if(pts.length < 2 || pts.length > 30) return null; const ans = pts.length;
+  const o = {stem:`Phương trình $\\${f}^2 ${k === 1 ? '' : k}x = ${aT}$ có bao nhiêu nghiệm thuộc đoạn $${t4IvT(L, U)}$?`, ans,
+    lg: lg + `<br>Các nghiệm thuộc đoạn $${t4IvT(L, U)}$: ${t4PtsT(pts)}.<br>Có $${ans}$ nghiệm.<br>Đáp số: $${ans}$.`,
+    verify:()=> t4Roots(x=> f === 'tan' ? Math.sin(k*x)**2 - a*Math.cos(k*x)**2 : (f === 'sin' ? Math.sin(k*x) : Math.cos(k*x))**2 - a, L*Math.PI, U*Math.PI) === o.ans};
+  return o;
+});
+
+/* 5. TLN TH — phương trình tích: đếm nghiệm phân biệt trên đoạn */
+GT(11,0,3,'TH','Phương trình tích (2 sin x − 1)(cos x + 1) = 0, sin x(2 cos x − √3) = 0, …: hợp nghiệm của các phương trình cơ bản, đếm nghiệm phân biệt trên một đoạn (nghiệm trùng chỉ tính một lần)', R=>{
+  const keys = Object.keys(t4SV).filter(k=> k !== '0'), fac = [];
+  for(let i = 0; i < 2; i++){ const f = R.pick(['sin', 'cos']), v = R.pick(keys.concat(['0', '0'])); const val = v === '0' ? 0 : t4SV[v][0]; if(fac.some(q=> q.f === f && Math.abs(q.val - val) < 1e-12)) return null; fac.push({f, val}); }
+  const [L, U] = R.pick(t4IV);
+  const facT = q=>{ const v = q.val; if(v === 0) return `\\${q.f} x`; if(Math.abs(v) === 1) return `\\${q.f} x ${v > 0 ? '-' : '+'} 1`; if(Math.abs(v) === 0.5) return `2\\${q.f} x ${v > 0 ? '-' : '+'} 1`; if(Math.abs(Math.abs(v) - Math.SQRT1_2) < 1e-12) return `2\\${q.f} x ${v > 0 ? '-' : '+'} \\sqrt{2}`; return `2\\${q.f} x ${v > 0 ? '-' : '+'} \\sqrt{3}`; };
+  const PT = fac.map(q=> q.val === 0 && fac.length > 1 ? `\\${q.f} x` : `\\left(${facT(q)}\\right)`).join('');
+  const famsOf = q=> q.val === 0 ? (q.f === 'sin' ? [[0, 1]] : [[0.5, 1]]) : t4Base(q.f, q.val);
+  const sets = fac.map(q=> t4Pts(famsOf(q), L, U)), all = t4Pts(fac.flatMap(famsOf), L, U); const ans = all.length; if(ans < 2 || ans > 16) return null;
+  const common = sets[0].length + sets[1].length - ans;
+  const solT = q=>{ const fm = famsOf(q); return `$\\${q.f} x = ${t4VT(q.val)} \\Leftrightarrow ${fm.map(([c, p])=> `x = ${t4FamT(c, p)}`).join('$ hoặc $')}$`; };
+  const o = {stem:`Phương trình $${PT} = 0$ có bao nhiêu nghiệm thuộc đoạn $${t4IvT(L, U)}$?`, ans,
+    lg:`Phương trình tương đương $${facT(fac[0])} = 0$ hoặc $${facT(fac[1])} = 0$.<br>• ${solT(fac[0])}: trên đoạn có ${sets[0].length ? t4PtsT(sets[0]) : 'không có nghiệm'}.<br>• ${solT(fac[1])}: trên đoạn có ${sets[1].length ? t4PtsT(sets[1]) : 'không có nghiệm'}.<br>${common ? `Có $${common}$ nghiệm chung, ` : 'Không có nghiệm chung, '}nên số nghiệm phân biệt là $${sets[0].length} + ${sets[1].length}${common ? ' - ' + common : ''} = ${ans}$.<br>Đáp số: $${ans}$.`.replace('k\\pi$', 'k\\pi$'),
+    verify:()=> t4Union(...fac.map(q=> t4RootList(x=> (q.f === 'sin' ? Math.sin(x) : Math.cos(x)) - q.val, L*Math.PI, U*Math.PI))) === o.ans};
+  return o;
+});
+
+/* 6. TLN TH — hỏi ngược: biết một nghiệm, tìm tham số */
+GT(11,0,3,'TH','Hỏi ngược: biết phương trình (m + a) sin kx + b cos lx = m + c nhận x₀ (góc đặc biệt) làm nghiệm, tìm m', R=>{
+  const k = R.int(1, 3), l = R.int(1, 3), x0 = R.pick([1/6, 1/4, 1/3, 1/2, 2/3, 3/4, 5/6, 1, -1/6, -1/3, 7/6, 3/2]);
+  const S = Math.round(Math.sin(k*x0*Math.PI)*1e12)/1e12, C = Math.round(Math.cos(l*x0*Math.PI)*1e12)/1e12;
+  const rat = v=> [0, 0.5, -0.5, 1, -1].some(w=> Math.abs(w - v) < 1e-12); if(!rat(S) || !rat(C) || Math.abs(S - 1) < 1e-12) return null;
+  const a = R.int(-4, 4), b = R.nz(-5, 5), c = R.int(-6, 6);
+  const m = (c - a*S - b*C)/(S - 1); const ans = t4Ok(Math.round(m*1e9)/1e9); if(ans === null) return null;
+  const vT = v=> v === 0.5 ? '\\dfrac{1}{2}' : v === -0.5 ? '-\\dfrac{1}{2}' : nt(v);
+  const coef = `(m${a ? (a > 0 ? ' + ' + a : ' - ' + (-a)) : ''})`;
+  const PT = `${a ? coef : 'm'}\\sin ${k === 1 ? '' : k}x ${b < 0 ? '-' : '+'} ${Math.abs(b) === 1 ? '' : Math.abs(b)}\\cos ${l === 1 ? '' : l}x = m${c ? (c > 0 ? ' + ' + c : ' - ' + (-c)) : ''}`;
+  const o = {stem:`Biết phương trình $${PT}$ nhận $x = ${t4Pi(x0)}$ làm một nghiệm. Tìm $m$.`, ans,
+    lg:`Với $x = ${t4Pi(x0)}$: $\\sin ${k === 1 ? '' : k}x = \\sin\\left(${t4Pi(k*x0)}\\right) = ${vT(S)}$, $\\cos ${l === 1 ? '' : l}x = \\cos\\left(${t4Pi(l*x0)}\\right) = ${vT(C)}$.<br>Thay vào phương trình: $${a ? coef : 'm'}\\cdot ${t4P(vT(S))} ${b < 0 ? '-' : '+'} ${Math.abs(b)}\\cdot ${t4P(vT(C))} = m${c ? (c > 0 ? ' + ' + c : ' - ' + (-c)) : ''}$<br>$\\Leftrightarrow m\\left(${vT(S)} - 1\\right) = ${nt(c - a*S - b*C)}$ $\\Leftrightarrow m = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const x = x0*Math.PI; return Math.abs((o.ans + a)*Math.sin(k*x) + b*Math.cos(l*x) - (o.ans + c)) < 1e-9; }};
+  return o;
+});
+
+/* 7. TLN TH — số điểm biểu diễn tập nghiệm trên đường tròn lượng giác */
+GT(11,0,3,'TH','Số điểm biểu diễn tập nghiệm của phương trình sin kx = m, cos kx = m, tan kx = m (hoặc phương trình tích hai nhân tử) trên đường tròn lượng giác — nối tiếp dạng đếm điểm biểu diễn họ góc', R=>{
+  const one = ()=>{ const f = R.pick(['sin', 'cos', 'tan']), k = R.int(1, 6);
+    if(f === 'tan'){ const M = R.pick([[0, '0', 0], [1, '1', 1/4], [-1, '-1', -1/4], [Math.sqrt(3), '\\sqrt{3}', 1/3], [-Math.sqrt(3), '-\\sqrt{3}', -1/3]]); return {f, k, v:M[0], vT:M[1], fams:[[M[2]/k, 1/k]]}; }
+    const key = R.pick(Object.keys(t4SV)); const v = key === '0' ? 0 : t4SV[key][0]; const base = v === 0 ? (f === 'sin' ? [[0, 1]] : [[0.5, 1]]) : t4Base(f, v);
+    return {f, k, v, vT: key === '0' ? '0' : t4SV[key][1], fams: base.map(([c, p])=> [c/k, p/k])}; };
+  const two = R.rnd() < 0.4, A = one(), B = two ? one() : null;
+  const pts = t4Pts([...A.fams, ...(B ? B.fams : [])], 0, 2 - 1e-6); const ans = pts.length;
+  const eqT = q=> `\\${q.f} ${q.k === 1 ? '' : q.k}x = ${q.vT}`, facT = q=> q.v === 0 ? `\\${q.f} ${q.k === 1 ? '' : q.k}x` : `\\left(\\${q.f} ${q.k === 1 ? '' : q.k}x ${q.v < 0 ? '+ ' + String(q.vT).slice(1) : '- ' + q.vT}\\right)`;
+  if(B && A.f === B.f && A.k === B.k && A.v === B.v) return null;
+  const nA = t4Pts(A.fams, 0, 2 - 1e-6).length, nB = B ? t4Pts(B.fams, 0, 2 - 1e-6).length : 0;
+  const famsT = q=> q.fams.map(([c, p])=> `$x = ${t4FamT(c, p)}$`).join(' hoặc ');
+  const o = {stem: B ? `Trên đường tròn lượng giác, tập nghiệm của phương trình $${facT(A)}${facT(B)} = 0$ được biểu diễn bởi bao nhiêu điểm?${A.f === 'tan' || B.f === 'tan' ? '' : ''}` : `Trên đường tròn lượng giác, tập nghiệm của phương trình $${eqT(A)}$ được biểu diễn bởi bao nhiêu điểm?`, ans,
+    lg:`$${eqT(A)} \\Leftrightarrow$ ${famsT(A)} $(k \\in \\mathbb{Z})$. Mỗi họ $x = c + \\dfrac{k2\\pi}{n}$ cho đúng $n$ điểm, nên họ này cho $${nA}$ điểm.`
+      + (B ? `<br>$${eqT(B)} \\Leftrightarrow$ ${famsT(B)}, cho $${nB}$ điểm.<br>Hai tập có $${nA + nB - ans}$ điểm chung nên tổng cộng có $${nA} + ${nB}${nA + nB - ans ? ' - ' + (nA + nB - ans) : ''} = ${ans}$ điểm.` : '')
+      + `<br>Các điểm ứng với các góc ${t4PtsT(pts)} trong $[0; 2\\pi)$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const h = q=> x=> q.f === 'tan' ? Math.sin(q.k*x) - q.v*Math.cos(q.k*x) : (q.f === 'sin' ? Math.sin(q.k*x) : Math.cos(q.k*x)) - q.v;
+      const a0 = 0.01234, b0 = 2*Math.PI + 0.01234; return t4Union(...[A, B].filter(Boolean).map(q=> t4RootList(h(q), a0, b0, 600000))) === o.ans; }};
+  return o;
+});
+
+/* 8. TLN VD — phương trình sin(πx/a) = c, cos(πx/a) = c: đếm nghiệm thuộc [0; N] */
+GT(11,0,3,'VD','Phương trình sin(πx/a) = c, cos(πx/a) = c (biến x là số thực, không phải góc): giải ra x theo chu kì 2a rồi đếm số nghiệm thuộc đoạn [0; N]', R=>{
+  const f = R.pick(['sin', 'cos']), a = R.int(2, 12), N = R.pick([20, 24, 30, 36, 40, 50, 60, 100, 48, 72]);
+  const key = R.pick(['1/2', '-1/2', '1', '-1', '0', 'r3', '-r3', 'r2', '-r2']); const v = key === '0' ? 0 : t4SV[key][0], vT = key === '0' ? '0' : t4SV[key][1];
+  const base = v === 0 ? (f === 'sin' ? [[0, 1]] : [[0.5, 1]]) : t4Base(f, v); // πx/a = (c + pk)π ⇒ x = a(c + pk)
+  const fams = base.map(([c, p])=> [a*c, a*p]);
+  const pts = []; fams.forEach(([c, p])=>{ for(let k = Math.ceil(-c/p - 1e-9); c + k*p <= N + 1e-9; k++) pts.push(Math.round((c + k*p)*1e9)/1e9); }); const S = [...new Set(pts)]; const ans = S.length;
+  if(ans < 3 || String(ans).length > 4) return null; if(fams.some(([c, p])=> t4Ok(c) === null && Math.abs(c*6 - Math.round(c*6)) > 1e-9)) return null;
+  const cT = c=>{ const fr = t4Fr(c); return fr[1] === 1 ? String(fr[0]) : frT(fr[0], fr[1]); };
+  const cnt = ([c, p])=>{ const k0 = Math.ceil(-c/p - 1e-9), k1 = Math.floor((N - c)/p + 1e-9); return [k0, k1, k1 - k0 + 1]; };
+  const famLine = ([c, p])=>{ const [k0, k1, n] = cnt([c, p]); return `$x = ${c === 0 ? '' : cT(c) + ' + '}${p}k$: $0 \\le ${c === 0 ? '' : cT(c) + ' + '}${p}k \\le ${N} \\Leftrightarrow ${k0} \\le k \\le ${k1}$, có $${n}$ nghiệm`; };
+  const tot = fams.reduce((s, F)=> s + cnt(F)[2], 0); if(tot !== ans) return null;
+  const o = {stem:`Phương trình $\\${f}\\dfrac{\\pi x}{${a}} = ${vT}$ có bao nhiêu nghiệm thuộc đoạn $[0; ${N}]$?`, ans,
+    lg:`$\\${f}\\dfrac{\\pi x}{${a}} = ${vT} \\Leftrightarrow ${base.map(([c, p])=> `\\dfrac{\\pi x}{${a}} = ${t4FamT(c, p)}`).join('$ hoặc $')}$ $\\Leftrightarrow ${fams.map(([c, p])=> `x = ${c === 0 ? '' : cT(c) + ' + '}${p}k`).join('$ hoặc $')}$ $(k \\in \\mathbb{Z})$.<br>`
+      + fams.map(famLine).join(';<br>') + `.<br>Tổng cộng: $${ans}$ nghiệm.<br>Đáp số: $${ans}$.`,
+    verify:()=> t4Roots(x=> (f === 'sin' ? Math.sin(Math.PI*x/a) : Math.cos(Math.PI*x/a)) - v, 0, N, 800000) === o.ans};
+  return o;
+});
+
+/* 9. TLN VD — phương trình lồng sin(π cos x) = m, cos(π sin x) = m */
+GT(11,0,3,'VD','Tư duy: phương trình lồng sin(π cos x) = m, cos(π sin x) = m (m = 0, ±1) — giải phương trình ngoài theo u = π cos x (π sin x), dùng |cos x| ≤ 1 để loại, rồi đếm nghiệm trên đoạn', R=>{
+  const outer = R.pick(['sin', 'cos']), inner = R.pick(['sin', 'cos']), m = R.pick([0, 1, -1]);
+  // giá trị t = inner(x) thoả outer(π t) = m với |t| ≤ 1
+  const ts = []; for(let n = -4; n <= 4; n++){ const cand = outer === 'sin' ? (m === 0 ? [n] : [m/2 + 2*n]) : (m === 0 ? [0.5 + n] : m === 1 ? [2*n] : [1 + 2*n]); cand.forEach(t=>{ if(Math.abs(t) <= 1 + 1e-12) ts.push(t); }); }
+  const T = [...new Set(ts)].sort((p, q)=> p - q); if(!T.length) return null;
+  const [L, U] = R.pick(t4IV);
+  const fams = T.flatMap(t=> t === 0 ? (inner === 'sin' ? [[0, 1]] : [[0.5, 1]]) : t4Base(inner, t)); const pts = t4Pts(fams, L, U); const ans = pts.length; if(ans < 2) return null;
+  const outT = `\\${outer}(\\pi\\${inner} x) = ${m}`;
+  const step = outer === 'sin' ? (m === 0 ? `\\pi\\${inner} x = k\\pi \\Leftrightarrow \\${inner} x = k` : `\\pi\\${inner} x = ${m > 0 ? '' : '-'}\\dfrac{\\pi}{2} + k2\\pi \\Leftrightarrow \\${inner} x = ${m > 0 ? '' : '-'}\\dfrac{1}{2} + 2k`)
+    : (m === 0 ? `\\pi\\${inner} x = \\dfrac{\\pi}{2} + k\\pi \\Leftrightarrow \\${inner} x = \\dfrac{1}{2} + k` : m === 1 ? `\\pi\\${inner} x = k2\\pi \\Leftrightarrow \\${inner} x = 2k` : `\\pi\\${inner} x = \\pi + k2\\pi \\Leftrightarrow \\${inner} x = 1 + 2k`);
+  const tT = t=> t === 0.5 ? '\\dfrac{1}{2}' : t === -0.5 ? '-\\dfrac{1}{2}' : String(t);
+  const o = {stem:`Phương trình $${outT}$ có bao nhiêu nghiệm thuộc đoạn $${t4IvT(L, U)}$?`, ans,
+    lg:`$${outT} \\Leftrightarrow ${step}$ $(k \\in \\mathbb{Z})$.<br>Vì $-1 \\le \\${inner} x \\le 1$ nên chỉ nhận $\\${inner} x \\in \\left\\{${T.map(tT).join('; ')}\\right\\}$.<br>`
+      + `Giải: ${T.map(t=>{ const fm = t === 0 ? (inner === 'sin' ? [[0, 1]] : [[0.5, 1]]) : t4Base(inner, t); return `$\\${inner} x = ${tT(t)} \\Leftrightarrow ${fm.map(([c, p])=> `x = ${t4FamT(c, p)}`).join('$ hoặc $')}$`; }).join('; ')}.<br>Các nghiệm thuộc đoạn $${t4IvT(L, U)}$: ${t4PtsT(pts)}.<br>Có $${ans}$ nghiệm.<br>Đáp số: $${ans}$.`,
+    verify:()=> t4Roots(x=> (outer === 'sin' ? Math.sin : Math.cos)(Math.PI*(inner === 'sin' ? Math.sin(x) : Math.cos(x))) - m, L*Math.PI, U*Math.PI, 600000) === o.ans};
+  return o;
+});
+
+/* 10. TLN TH — dùng máy tính cầm tay: nghiệm thuộc một khoảng (độ, làm tròn) */
+GT(11,0,3,'TH','Giải phương trình sin x = m, cos x = m (m không phải giá trị đặc biệt) bằng máy tính cầm tay: tìm nghiệm thuộc một khoảng cho trước (đơn vị độ, làm tròn đến hàng đơn vị)', R=>{
+  const f = R.pick(['sin', 'cos', 'tan']), m = R.pick([1, -1])*R.pick([0.1, 0.2, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9, 0.35, 0.65, 0.15, 0.85, 1.5, 2, 2.5, 3, 4, 0.25]);
+  if(f !== 'tan' && Math.abs(m) >= 1) return null;
+  let iv, x, base, lg;
+  const d = v=> v*180/Math.PI;
+  if(f === 'sin'){ base = d(Math.asin(m)); iv = R.pick([[-90, 90], [90, 270], [270, 450]]); x = iv[0] === -90 ? base : iv[0] === 90 ? 180 - base : 360 + base;
+    lg = `Máy tính cho $\\sin^{-1}(${nt(m)}) \\approx ${nt(Math.round(base*100)/100)}^\\circ$. Các nghiệm: $x \\approx ${nt(Math.round(base*100)/100)}^\\circ + k360^\\circ$ hoặc $x \\approx 180^\\circ - (${nt(Math.round(base*100)/100)}^\\circ) + k360^\\circ$.`; }
+  else if(f === 'cos'){ base = d(Math.acos(m)); iv = R.pick([[0, 180], [180, 360], [-180, 0], [360, 540]]); x = iv[0] === 0 ? base : iv[0] === 180 ? 360 - base : iv[0] === -180 ? -base : 360 + base;
+    lg = `Máy tính cho $\\cos^{-1}(${nt(m)}) \\approx ${nt(Math.round(base*100)/100)}^\\circ$. Các nghiệm: $x \\approx \\pm ${nt(Math.round(base*100)/100)}^\\circ + k360^\\circ$.`; }
+  else { base = d(Math.atan(m)); iv = R.pick([[-90, 90], [90, 270], [270, 450], [-270, -90]]); x = base + (iv[0] + 90);
+    lg = `Máy tính cho $\\tan^{-1}(${nt(m)}) \\approx ${nt(Math.round(base*100)/100)}^\\circ$. Các nghiệm: $x \\approx ${nt(Math.round(base*100)/100)}^\\circ + k180^\\circ$.`; }
+  const ans = Math.round(x); if(Math.abs(x - ans) > 0.4 || String(ans).length > 4) return null;
+  const o = {stem:`Dùng máy tính cầm tay, tìm nghiệm thuộc khoảng $(${iv[0]}^\\circ; ${iv[1]}^\\circ)$ của phương trình $\\${f} x = ${nt(m)}$ (đơn vị độ, làm tròn đến hàng đơn vị).`, ans,
+    lg: lg + `<br>Trong khoảng $(${iv[0]}^\\circ; ${iv[1]}^\\circ)$ chỉ có một nghiệm: $x \\approx ${nt(Math.round(x*100)/100)}^\\circ$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ let c = 0, best = null; for(let t = iv[0] + 0.005; t < iv[1]; t += 0.01){ const r = t*Math.PI/180; const v = f === 'sin' ? Math.sin(r) : f === 'cos' ? Math.cos(r) : Math.tan(r); if(Math.abs(v - m) < (f === 'tan' ? 0.002*(1 + m*m) : 0.0002) && (best === null || Math.abs(v - m) < best[1])) best = [t, Math.abs(v - m)]; } return best !== null && Math.abs(Math.round(best[0]) - o.ans) === 0; }};
+  return o;
+});
+
+/* 11. TLN TH — a sin x + b cos x = 0 ⇔ tan x = −b/a: tổng các nghiệm (độ) */
+GT(11,0,3,'TH','Phương trình a sin x + b cos x = 0 (√3 sin x − cos x = 0, sin x + cos x = 0, …): nhận xét cos x ≠ 0 rồi chia, đưa về tan x = m; tính tổng các nghiệm thuộc đoạn [0°; n·180°] (đơn vị độ)', R=>{
+  const pairs = [['\\sqrt{3}', -1, 30], ['\\sqrt{3}', 1, -30], ['', -1, 45], ['', 1, -45], ['', '-\\sqrt{3}', 60], ['', '\\sqrt{3}', -60], ['3', '-\\sqrt{3}', 30], ['3', '\\sqrt{3}', -30], ['2', -2, 45], ['2', 2, -45]];
+  const [aT, b, th] = R.pick(pairs), n = R.int(1, 4), sw = R.rnd() < 0.5;
+  const t0 = ((th % 180) + 180) % 180; const sols = []; for(let k = 0; k < n; k++) sols.push(t0 + 180*k); if(t0 === 0) sols.push(180*n);
+  const S = sols.reduce((s, x)=> s + x, 0), ans = S; if(String(ans).length > 4) return null;
+  const bT = typeof b === 'number' ? (b === 1 ? '+ ' : b === -1 ? '- ' : (b > 0 ? '+ ' + b : '- ' + (-b))) : (b.startsWith('-') ? '- ' + b.slice(1) : '+ ' + b);
+  const PT = `${aT}\\sin x ${bT}\\cos x = 0`;
+  const aV = aT === '' ? 1 : aT === '\\sqrt{3}' ? Math.sqrt(3) : +aT, bV = typeof b === 'number' ? b : (b.startsWith('-') ? -Math.sqrt(3) : Math.sqrt(3));
+  const mV = -bV/aV, mT = Math.abs(mV - 1) < 1e-9 ? '1' : Math.abs(mV + 1) < 1e-9 ? '-1' : Math.abs(mV - Math.sqrt(3)) < 1e-9 ? '\\sqrt{3}' : Math.abs(mV + Math.sqrt(3)) < 1e-9 ? '-\\sqrt{3}' : mV > 0 ? '\\dfrac{\\sqrt{3}}{3}' : '-\\dfrac{\\sqrt{3}}{3}';
+  const o = {stem:`Tính tổng các nghiệm (đơn vị độ) thuộc đoạn $[0^\\circ; ${180*n}^\\circ]$ của phương trình $${PT}$.`, ans,
+    lg:`Nếu $\\cos x = 0$ thì $\\sin x = \\pm 1$, vế trái khác $0$; vậy $\\cos x \\ne 0$, chia hai vế cho $${aT === '' ? '' : aT}\\cos x$: $\\tan x = ${mT}$ $\\Leftrightarrow x = ${th}^\\circ + k180^\\circ$ $(k \\in \\mathbb{Z})$.<br>Các nghiệm thuộc $[0^\\circ; ${180*n}^\\circ]$: ${sols.map(x=> `$${x}^\\circ$`).join(', ')}.<br>Tổng: $${sols.join(' + ')} = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ let s = 0, c = 0; for(let x = 0; x <= 180*n; x += 1){ const r = x*Math.PI/180; if(Math.abs(aV*Math.sin(r) + bV*Math.cos(r)) < 1e-9){ s += x; c++; } } return c === sols.length && s === o.ans; }};
+  if(sw) void 0;
+  return o;
+});
+
+/* 12. TLN TH — sin x cos x = a, cos²x − sin²x = a, cos⁴x − sin⁴x = a: nhân đôi đưa về cơ bản, đếm nghiệm */
+GT(11,0,3,'TH','Phương trình sin x cos x = a, cos²x − sin²x = a, cos⁴x − sin⁴x = a: dùng công thức nhân đôi đưa về sin 2x = 2a, cos 2x = a rồi đếm số nghiệm trên đoạn', R=>{
+  const form = R.pick(['sc', 'c2', 'c4']);
+  const vals = form === 'sc' ? [['\\dfrac{1}{4}', 0.25], ['-\\dfrac{1}{4}', -0.25], ['\\dfrac{1}{2}', 0.5], ['-\\dfrac{1}{2}', -0.5], ['0', 0], ['\\dfrac{\\sqrt{3}}{4}', Math.sqrt(3)/4], ['\\dfrac{\\sqrt{2}}{4}', Math.SQRT2/4]]
+    : [['\\dfrac{1}{2}', 0.5], ['-\\dfrac{1}{2}', -0.5], ['0', 0], ['1', 1], ['-1', -1], ['\\dfrac{\\sqrt{3}}{2}', Math.sqrt(3)/2], ['-\\dfrac{\\sqrt{2}}{2}', -Math.SQRT1_2]];
+  const [aT, a] = R.pick(vals), g = form === 'sc' ? 'sin' : 'cos', w = form === 'sc' ? 2*a : a;
+  const base = Math.abs(w) < 1e-12 ? (g === 'sin' ? [[0, 1]] : [[0.5, 1]]) : t4Base(g, w); const fams = base.map(([c, p])=> [c/2, p/2]);
+  const [L, U] = R.pick(t4IV.concat([[0, 8], [-3, 5], [0, 7], [-5, 5], [-2, 6]]));
+  const pts = t4Pts(fams, L, U); const ans = pts.length; if(ans < 2) return null;
+  const lhs = {sc:'\\sin x\\cos x', c2:'\\cos^2 x - \\sin^2 x', c4:'\\cos^4 x - \\sin^4 x'}[form];
+  const red = {sc:`\\sin x\\cos x = \\dfrac{1}{2}\\sin 2x`, c2:`\\cos^2 x - \\sin^2 x = \\cos 2x`, c4:`\\cos^4 x - \\sin^4 x = (\\cos^2 x - \\sin^2 x)(\\cos^2 x + \\sin^2 x) = \\cos 2x`}[form];
+  const wT = t4VT(Math.abs(w) < 1e-12 ? 0 : w) || '0';
+  const o = {stem:`Phương trình $${lhs} = ${aT}$ có bao nhiêu nghiệm thuộc đoạn $${t4IvT(L, U)}$?`, ans,
+    lg:`Ta có $${red}$, nên phương trình tương đương $\\${g} 2x = ${Math.abs(w) < 1e-12 ? '0' : wT}$ $\\Leftrightarrow ${base.map(([c, p])=> `2x = ${t4FamT(c, p)}`).join('$ hoặc $')}$ $\\Leftrightarrow ${fams.map(([c, p])=> `x = ${t4FamT(c, p)}`).join('$ hoặc $')}$ $(k \\in \\mathbb{Z})$.<br>Các nghiệm thuộc đoạn $${t4IvT(L, U)}$: ${t4PtsT(pts)}.<br>Có $${ans}$ nghiệm.<br>Đáp số: $${ans}$.`,
+    verify:()=> t4Roots(x=> ({sc:Math.sin(x)*Math.cos(x), c2:Math.cos(x)**2 - Math.sin(x)**2, c4:Math.cos(x)**4 - Math.sin(x)**4})[form] - a, L*Math.PI, U*Math.PI, 600000) === o.ans};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.88'; GEN[k].l1 = 'V2.88'; });
+})();
+
+// ---------- V2.88: dạng thay số bổ sung (11-01…11-04 (Chương I lớp 11) TLN: 61 dạng) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const W = f=> (...a)=>{ const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// 11-04 Phương trình lượng giác — 16 dạng TLN cho chuyên đề 11-04.2 (Phương trình lượng giác trong thực tế), trước đó 0 TLN.
+// Mỗi dạng một tình huống và một kiểu câu hỏi riêng: lần thứ n, thời gian chờ, lần đầu khi có pha ban đầu, đếm số lần, góc ném,
+// hai vật cùng li độ (cos u = cos v), hàm tan/cot (đèn quét, bóng nắng), khoảng thời gian ngắn nhất, quãng đường lăn, tổng các thời điểm,
+// khoảng cách hai nghiệm liên tiếp, thời điểm đạt cực đại, tổng hai dao động (tổng thành tích).
+const t5Ok = x=>{ const r = Math.round(x*10)/10; if(Math.abs(r - x) > 1e-9) return null; return String(r).length <= 4 ? r : null; };
+const t5Fr = x=>{ for(let d = 1; d <= 144; d++){ const n = Math.round(x*d); if(Math.abs(x - n/d) < 1e-6) return [n, d]; } return null; };
+const t5Pi = x=>{ const f = t5Fr(x); if(!f) return null; let [p, q] = f; if(p === 0) return '0'; const s = p < 0 ? '-' : '', a = Math.abs(p), n = a === 1 ? '\\pi' : a + '\\pi'; return q === 1 ? s + n : `${s}\\dfrac{${n}}{${q}}`; };
+const t5N = x=>{ const r = Math.round(x*1e6)/1e6; if(Math.abs(r*100 - Math.round(r*100)) < 1e-6) return nt(r); const q = t5Fr(x); return q ? frT(q[0], q[1]) : nt(r); };
+// danh sách nghiệm của h trên [a; b] (cực tiểu địa phương của |h|, bắt được nghiệm kép)
+const t5List = (h, a, b, N)=>{ N = N || 400000; const xs = [], dx = (b - a)/N; let p2 = Math.abs(h(a)), p1 = Math.abs(h(a + dx)); if(p2 < 1e-9) xs.push(a);
+  for(let i = 2; i <= N; i++){ const v = Math.abs(h(a + i*dx)); if(p1 < 2e-3 && p1 <= p2 && p1 <= v) xs.push(a + (i - 1)*dx); p2 = p1; p1 = v; } if(p1 < 1e-9) xs.push(b);
+  const m = []; xs.forEach(x=>{ if(!m.length || x - m[m.length - 1] > 1e-3*(b - a)/10) m.push(x); }); return m; };
+const t5C = {'-1':[-1, 1], '-1/2':[-0.5, 2/3], '0':[0, 0.5], '1/2':[0.5, 1/3], '1':[1, 0]}; // cos x = c: [c, arccos(c)/π]
+const t5nth = (a, P, n)=>{ /* nghiệm dương thứ n của t = ±a + kP (0 ≤ a ≤ P/2) */ const L = []; for(let k = 0; k <= n + 1; k++){ [k*P + a, k*P - a].forEach(t=>{ if(t > 1e-9) L.push(Math.round(t*1e9)/1e9); }); } return [...new Set(L)].sort((x, y)=> x - y).slice(0, n); };
+
+/* 1. Đu quay: thời điểm lần thứ n cabin ở độ cao cho trước */
+GT(11,0,3,'VD','Thực tế: đu quay — cabin xuất phát từ điểm thấp nhất, h(t) = H − R cos(2πt/T); thời điểm lần thứ n cabin ở độ cao cho trước (liệt kê nghiệm dương theo thứ tự)', R=>{
+  const Rr = R.pick([20, 25, 30, 40, 50, 16]), H = Rr + R.pick([2, 3, 5]), T = R.pick([12, 15, 18, 20, 24, 30, 36]), ck = R.pick(['-1/2', '0', '1/2', '1', '-1']), n = R.int(1, 4);
+  const [c, th] = t5C[ck]; const cc = -c; // cos(2πt/T) = -c
+  const hs = H + Rr*c; if(ck === '-1' && n === 1 && R.rnd() < 0.5) return null;
+  const a = Math.round(T*Math.acos(cc)/(2*Math.PI)*1e9)/1e9; // t = ±a + kT
+  const times = t5nth(a, T, n); const ans = t5Ok(times[n - 1]); if(ans === null) return null;
+  const ccT = cc === 0.5 ? '\\dfrac{1}{2}' : cc === -0.5 ? '-\\dfrac{1}{2}' : String(cc), thT = t5Pi(Math.acos(cc)/Math.PI);
+  const o = {stem:`Một đu quay có bán kính $${Rr}$ m, tâm cách mặt đất $${H}$ m, quay đều mỗi vòng hết $${T}$ phút. Một cabin xuất phát từ vị trí thấp nhất; độ cao của cabin so với mặt đất sau $t$ phút là $h(t) = ${H} - ${Rr}\\cos\\dfrac{2\\pi t}{${T}}$ (m). Kể từ lúc xuất phát, cabin ở độ cao $${t5N(hs)}$ m lần thứ $${n}$ vào thời điểm sau bao nhiêu phút?`, ans,
+    lg:`$h(t) = ${t5N(hs)} \\Leftrightarrow \\cos\\dfrac{2\\pi t}{${T}} = ${ccT} \\Leftrightarrow \\dfrac{2\\pi t}{${T}} = ${cc === 1 ? '' : cc === -1 ? '\\pi + ' : '\\pm ' + thT + ' + '}k2\\pi \\Leftrightarrow t = ${cc === 1 ? '' : cc === -1 ? t5N(a) + ' + ' : '\\pm ' + t5N(a) + ' + '}${T}k$ $(k \\in \\mathbb{Z})$.<br>Các nghiệm dương theo thứ tự tăng: ${times.map(t=> `$${t5N(t)}$`).join(', ')}${times.length === n ? '' : ''}.<br>Lần thứ $${n}$ ứng với $t = ${t5N(ans)}$ phút.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const L = t5List(t=> Math.cos(2*Math.PI*t/T) - cc, 0.05, (n + 1)*T, 600000); return L.length >= n && Math.abs(L[n - 1] - o.ans) < 1e-2; }};
+  return o;
+});
+
+/* 2. Thuỷ triều: tàu phải chờ bao lâu */
+GT(11,0,3,'VD','Thực tế: mực nước cảng h(t) = A + B sin(πt/6); tàu đến lúc mực nước còn thấp, phải chờ đến khi mực nước dâng tới mức cần thiết — tìm nghiệm đầu tiên sau thời điểm t₀ ứng với lúc nước đang lên', R=>{
+  const A = R.int(3, 7), B = R.pick([1, 2, 3, 4, 1.5, 2.5]), s = R.pick([-0.5, 0, 0.5]);
+  const d = A + B*s; if(t5Ok(d) === null) return null;
+  const up = s === 0.5 ? 1 : s === 0 ? 0 : -1, down = 6 - up; // nước lên qua mức d tại t = up + 12k, xuống tại t = down + 12k
+  const t0 = R.pick([down + 0.5, down + 1, down + 1.5, down + 2, down + 3, down + 4, down + 2.5, up + 12 - 0.5, up + 12 - 1, up + 12 - 2]); if(t0 <= down || t0 >= up + 12) return null;
+  const tUp = up + 12, ans = t5Ok(tUp - t0); if(ans === null || t0 > 24) return null;
+  const hm = A + B*Math.sin(Math.PI*t0/6);
+  const hhmm = x=>{ const h = Math.floor(x), m = Math.round((x - h)*60); return `${h} giờ${m ? ' ' + m + ' phút' : ''}`; };
+  const sT = s === 0.5 ? '\\dfrac{1}{2}' : s === -0.5 ? '-\\dfrac{1}{2}' : '0', thT = s === 0.5 ? '\\dfrac{\\pi}{6}' : s === -0.5 ? '-\\dfrac{\\pi}{6}' : '0';
+  const o = {stem:`Độ sâu mực nước tại một cảng được mô hình hoá bởi $h(t) = ${A} + ${nt(B)}\\sin\\dfrac{\\pi t}{6}$ (m), với $t$ là thời gian tính bằng giờ kể từ 0 giờ. Một tàu cần độ sâu ít nhất $${nt(d)}$ m để vào cảng. Tàu đến cảng lúc ${hhmm(t0)}. Hỏi tàu phải chờ ít nhất bao nhiêu giờ mới vào được cảng?`, ans,
+    lg:`Lúc $t = ${nt(t0)}$: $h \\approx ${nt(Math.round(hm*100)/100)} < ${nt(d)}$ nên tàu phải chờ nước dâng.<br>$h(t) = ${nt(d)} \\Leftrightarrow \\sin\\dfrac{\\pi t}{6} = ${sT} \\Leftrightarrow \\dfrac{\\pi t}{6} = ${thT === '0' ? '' : thT + ' + '}k2\\pi$ hoặc $\\dfrac{\\pi t}{6} = \\pi ${s === 0.5 ? '- \\dfrac{\\pi}{6}' : s === -0.5 ? '+ \\dfrac{\\pi}{6}' : ''} + k2\\pi$<br>$\\Leftrightarrow t = ${up === 0 ? '' : up + ' + '}12k$ (nước đang lên) hoặc $t = ${down} + 12k$ (nước đang xuống).<br>Sau thời điểm $${nt(t0)}$, mực nước dâng lên đạt $${nt(d)}$ m lần đầu tại $t = ${tUp}$.<br>Thời gian chờ: $${tUp} - ${nt(t0)} = ${nt(ans)}$ (giờ).<br>Đáp số: $${nt(ans)}$.`.replace('\\pi  + ', '\\pi + '),
+    verify:()=>{ for(let t = t0; t < t0 + 13; t += 0.0005) if(A + B*Math.sin(Math.PI*t/6) >= d - 1e-9) return Math.abs(t - t0 - o.ans) < 2e-3; return false; }};
+  return o;
+});
+
+/* 3. Con lắc lò xo: lần đầu qua vị trí cho trước khi có pha ban đầu */
+GT(11,0,3,'TH','Thực tế: con lắc lò xo x = A cos(πt/m + φ) — thời điểm đầu tiên (t > 0) vật đi qua vị trí có li độ cho trước (pha ban đầu khác 0)', R=>{
+  const A = R.pick([2, 4, 6, 8, 10]), m = R.pick([1, 2, 3, 6, 0.5, 1.5]), ph = R.pick([1/3, -1/3, 1/6, -1/6, 1/2, -1/2, 2/3, -2/3, 1]), ck = R.pick(['-1/2', '0', '1/2', '1', '-1']);
+  const [c] = t5C[ck]; const th = Math.acos(c)/Math.PI; // πt/m + φ = ±th + 2k  (đơn vị π)
+  const cand = []; for(let k = -2; k <= 3; k++) [th, -th].forEach(r=>{ const t = m*(r - ph + 2*k); if(t > 1e-9) cand.push(t); });
+  const t1 = Math.min(...cand), ans = t5Ok(Math.round(t1*1e9)/1e9); if(ans === null) return null;
+  const x0 = A*c;
+  const o = {stem:`Một vật dao động điều hoà với li độ $x(t) = ${A}\\cos\\left(${m === 1 ? '' : m === 0.5 ? '2' : ''}${m === 0.5 ? '\\pi t' : m === 1 ? '\\pi t' : `\\dfrac{${m === 1.5 ? '2' : ''}\\pi t}{${m === 1.5 ? 3 : m}}`} ${ph < 0 ? '-' : '+'} ${t5Pi(Math.abs(ph))}\\right)$ (cm), $t$ tính bằng giây. Tính thời điểm đầu tiên (sau thời điểm $t = 0$) vật đi qua vị trí có li độ $x = ${t5N(x0)}$ cm (đơn vị giây).`, ans,
+    lg:`$x(t) = ${t5N(x0)} \\Leftrightarrow \\cos\\left(\\dfrac{\\pi t}{${t5N(m)}} ${ph < 0 ? '-' : '+'} ${t5Pi(Math.abs(ph))}\\right) = ${c === 0.5 ? '\\dfrac{1}{2}' : c === -0.5 ? '-\\dfrac{1}{2}' : c}$ $\\Leftrightarrow \\dfrac{\\pi t}{${t5N(m)}} ${ph < 0 ? '-' : '+'} ${t5Pi(Math.abs(ph))} = ${th === 0 ? '' : th === 1 ? '\\pi + ' : '\\pm ' + t5Pi(th) + ' + '}k2\\pi$ $(k \\in \\mathbb{Z})$.<br>Suy ra $t = ${t5N(m)}\\left(${th === 0 || th === 1 ? (th === 1 ? '1' : '0') : '\\pm ' + t5N(Math.round(th*1e6)/1e6).replace(/^0\{,\}333333$/, '\\dfrac{1}{3}')} ${ph < 0 ? '+' : '-'} ${t5N(Math.abs(ph))} + 2k\\right)$; chọn $k$ để $t > 0$ nhỏ nhất, được $t = ${t5N(ans)}$ (s).<br>Đáp số: $${nt(ans)}$.`.replace(/\{,\}333333|\{,\}666667|\{,\}166667/g, m=> ({'{,}333333':'/3', '{,}666667':'·2/3', '{,}166667':'/6'})[m]),
+    verify:()=>{ const L = t5List(t=> Math.cos(Math.PI*t/m + ph*Math.PI) - c, 0.02, 4*m, 400000); return L.length > 0 && Math.abs(L[0] - o.ans) < 1e-3; }};
+  // lời giải gọn: viết lại phần chọn k bằng bảng các nghiệm dương đầu tiên
+  const firsts = [...new Set(cand.map(t=> Math.round(t*1e6)/1e6))].sort((x, y)=> x - y).slice(0, 3);
+  const uT3 = m === 1 ? '\\pi t' : m === 0.5 ? '2\\pi t' : m === 1.5 ? '\\dfrac{2\\pi t}{3}' : `\\dfrac{\\pi t}{${m}}`;
+  o.lg = `$x(t) = ${t5N(x0)} \\Leftrightarrow \\cos\\left(${uT3} ${ph < 0 ? '-' : '+'} ${t5Pi(Math.abs(ph))}\\right) = ${c === 0.5 ? '\\dfrac{1}{2}' : c === -0.5 ? '-\\dfrac{1}{2}' : c}$ $\\Leftrightarrow ${uT3} ${ph < 0 ? '-' : '+'} ${t5Pi(Math.abs(ph))} = ${th === 0 ? '' : th === 1 ? '\\pi + ' : '\\pm ' + t5Pi(th) + ' + '}k2\\pi$ $(k \\in \\mathbb{Z})$.<br>Giải ra $t$ theo từng họ và chọn các giá trị dương, các nghiệm dương nhỏ nhất là ${firsts.map(t=> `$${t5N(t)}$`).join(', ')}.<br>Thời điểm đầu tiên: $t = ${t5N(ans)}$ (s).<br>Đáp số: $${nt(ans)}$.`;
+  return o;
+});
+
+/* 4. Dòng điện xoay chiều: đếm số lần |i| bằng giá trị cho trước */
+GT(11,0,3,'VD','Thực tế: dòng điện xoay chiều i = I₀cos(100πt + φ) — đếm số lần cường độ dòng điện có độ lớn bằng một giá trị cho trước trong một khoảng thời gian (mỗi chu kì có 4 lần hoặc 2 lần)', R=>{
+  const I0 = R.pick([2, 4, 6]), ck = R.pick(['1/2', '1', '0']), c = t5C[ck][0], ph = R.pick([1/6, 1/4, -1/4, 1/12, -1/12, 5/12]);
+  if(Math.abs(Math.abs(Math.cos(ph*Math.PI)) - c) < 1e-9) return null;
+  const D = R.pick([0.04, 0.06, 0.1, 0.2, 0.3, 0.5, 1, 0.08, 0.14]), nP = Math.round(D/0.02), per = c === 0.5 ? 4 : 2, ans = per*nP;
+  const I1 = I0*c;
+  const o = {stem:`Cường độ dòng điện xoay chiều trong một mạch là $i = ${I0}\\cos\\left(100\\pi t + ${t5Pi(Math.abs(ph))}\\right)$ (A), $t$ tính bằng giây.`.replace('+ ' + t5Pi(Math.abs(ph)), (ph < 0 ? '- ' : '+ ') + t5Pi(Math.abs(ph))) + ` Trong khoảng thời gian $${nt(D)}$ giây đầu tiên (kể từ $t = 0$), có bao nhiêu lần cường độ dòng điện có độ lớn ${c === 0 ? 'bằng $0$' : `bằng $${I1}$ A`}?`, ans,
+    lg:`Chu kì của dòng điện: $T = \\dfrac{2\\pi}{100\\pi} = 0{,}02$ (s), nên $${nt(D)}$ giây gồm đúng $${nP}$ chu kì.<br>`
+      + (c === 0 ? `$i = 0 \\Leftrightarrow \\cos(100\\pi t + \\varphi) = 0$: trong mỗi chu kì phương trình $\\cos u = 0$ có $2$ nghiệm.` : c === 1 ? `$|i| = ${I0} \\Leftrightarrow \\cos(100\\pi t + \\varphi) = \\pm 1$: trong mỗi chu kì có $2$ nghiệm ($\\cos u = 1$ một nghiệm, $\\cos u = -1$ một nghiệm).` : `$|i| = ${I1} \\Leftrightarrow \\cos(100\\pi t + \\varphi) = \\pm\\dfrac{1}{2}$: trong mỗi chu kì mỗi phương trình $\\cos u = \\dfrac{1}{2}$, $\\cos u = -\\dfrac{1}{2}$ có $2$ nghiệm, tổng cộng $4$ nghiệm.`)
+      + `<br>Tại $t = 0$ (và $t = ${nt(D)}$) độ lớn cường độ dòng điện bằng $${I0}\\left|\\cos ${t5Pi(Math.abs(ph))}\\right| \\ne ${c === 0 ? 0 : I1}$ nên không có nghiệm ở hai đầu.<br>Số lần: $${per}\\cdot ${nP} = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=> t5List(t=> Math.abs(Math.cos(100*Math.PI*t + ph*Math.PI)) - c, 0, D, Math.max(400000, nP*4000)).length === o.ans};
+  return o;
+});
+
+/* 5. Ném xiên: góc ném để vật rơi cách điểm ném d m */
+GT(11,0,3,'VD','Thực tế: ném xiên với vận tốc v₀ — tầm xa d = v₀² sin 2α / g; tìm góc ném α (nhỏ hơn hay lớn hơn 45°) để vật rơi cách điểm ném một khoảng cho trước (phương trình sin 2α = m, dùng máy tính)', R=>{
+  const v0 = R.pick([10, 12, 14, 15, 18, 20, 22, 25]), g = 9.8, Dm = v0*v0/g, d = R.int(Math.ceil(0.25*Dm), Math.floor(0.95*Dm)), r = d*g/(v0*v0);
+  const a1 = Math.asin(r)*90/Math.PI, big = R.rnd() < 0.5, x = big ? 90 - a1 : a1; const y = x*10; if(Math.abs(y - Math.round(y) - 0) > 0.4 && false) return null;
+  const ans = Math.round(x*10)/10; if(Math.abs(x*10 - Math.round(x*10)) > 0.4 || t5Ok(ans) === null) return null;
+  const o = {stem:`Một vật được ném xiên từ mặt đất với vận tốc ban đầu $${v0}$ m/s, góc ném $\\alpha$ ($0^\\circ < \\alpha < 90^\\circ$). Bỏ qua sức cản không khí, tầm xa của vật là $d = \\dfrac{v_0^2\\sin 2\\alpha}{g}$ với $g = 9{,}8$ m/s². Tìm góc ném $\\alpha$ ${big ? 'lớn hơn' : 'nhỏ hơn'} $45^\\circ$ để vật rơi cách điểm ném $${d}$ m (đơn vị độ, làm tròn đến hàng phần mười).`, ans,
+    lg:`$\\dfrac{${v0}^2\\sin 2\\alpha}{9{,}8} = ${d} \\Leftrightarrow \\sin 2\\alpha = \\dfrac{${d}\\cdot 9{,}8}{${v0*v0}} \\approx ${nt(Math.round(r*1e4)/1e4)}$.<br>Vì $0^\\circ < 2\\alpha < 180^\\circ$ nên $2\\alpha \\approx ${nt(Math.round(2*a1*100)/100)}^\\circ$ hoặc $2\\alpha \\approx 180^\\circ - ${nt(Math.round(2*a1*100)/100)}^\\circ = ${nt(Math.round((180 - 2*a1)*100)/100)}^\\circ$,<br>tức $\\alpha \\approx ${nt(Math.round(a1*100)/100)}^\\circ$ hoặc $\\alpha \\approx ${nt(Math.round((90 - a1)*100)/100)}^\\circ$.<br>Góc ${big ? 'lớn hơn' : 'nhỏ hơn'} $45^\\circ$: $\\alpha \\approx ${nt(ans)}^\\circ$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const al = o.ans*Math.PI/180; return Math.abs(v0*v0*Math.sin(2*al)/g - d) < v0*v0/g*Math.PI/180*0.2 && (big ? o.ans > 45 : o.ans < 45); }};
+  return o;
+});
+
+/* 6. Hai chất điểm cùng li độ: cos u = cos v */
+GT(11,0,3,'VD','Thực tế: hai chất điểm dao động x₁ = A cos(πt/a), x₂ = A cos(πt/b) — thời điểm lần thứ n hai chất điểm có cùng li độ (phương trình cos u = cos v, hợp hai họ nghiệm)', R=>{
+  const a = R.int(1, 6), b = R.int(1, 6), A = R.pick([3, 4, 5, 6, 8, 10]), n = R.int(1, 3); if(a >= b) return null;
+  // πt/a = ±πt/b + 2kπ ⇒ t = 2k·ab/(b − a) hoặc t = 2k·ab/(a + b)
+  const p1 = 2*a*b/(b - a), p2 = 2*a*b/(a + b); const L = []; for(let k = 1; k <= 8; k++){ L.push(Math.round(k*p1*1e9)/1e9, Math.round(k*p2*1e9)/1e9); }
+  const S = [...new Set(L)].sort((x, y)=> x - y); const ans = t5Ok(S[n - 1]); if(ans === null) return null;
+  const fT = (n1, n2)=> frT(n1, n2);
+  const o = {stem:`Hai chất điểm dao động điều hoà trên hai đường thẳng song song sát nhau, cùng vị trí cân bằng, với li độ $x_1 = ${A}\\cos${a === 1 ? '(\\pi t)' : `\\dfrac{\\pi t}{${a}}`}$ và $x_2 = ${A}\\cos${`\\dfrac{\\pi t}{${b}}`}$ (cm), $t$ tính bằng giây. Kể từ thời điểm $t = 0$ (không tính $t = 0$), hai chất điểm có cùng li độ lần thứ $${n}$ vào thời điểm nào (đơn vị giây)?`, ans,
+    lg:`$x_1 = x_2 \\Leftrightarrow \\cos${a === 1 ? '(\\pi t)' : `\\dfrac{\\pi t}{${a}}`} = \\cos\\dfrac{\\pi t}{${b}}$ $\\Leftrightarrow ${a === 1 ? '\\pi t' : `\\dfrac{\\pi t}{${a}}`} = \\dfrac{\\pi t}{${b}} + k2\\pi$ hoặc $${a === 1 ? '\\pi t' : `\\dfrac{\\pi t}{${a}}`} = -\\dfrac{\\pi t}{${b}} + k2\\pi$ $(k \\in \\mathbb{Z})$<br>$\\Leftrightarrow t = ${fT(2*a*b, b - a)}k$ hoặc $t = ${fT(2*a*b, a + b)}k$.<br>Các thời điểm dương theo thứ tự tăng: ${S.slice(0, n + 1).map(t=> `$${t5N(t)}$`).join(', ')}, …<br>Lần thứ $${n}$: $t = ${t5N(ans)}$ (s).<br>Đáp số: $${nt(ans)}$.`.replace(/\$1k\$/g, '$k$'),
+    verify:()=>{ const Ls = t5List(t=> Math.cos(Math.PI*t/a) - Math.cos(Math.PI*t/b), 0.05, S[n - 1] + 1, 400000); return Ls.length >= n && Math.abs(Ls[n - 1] - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 7. Đèn pha quay quét lên tường: phương trình tan */
+GT(11,0,3,'TH','Thực tế: đèn pha quay đều quét vệt sáng lên bức tường — khoảng cách vệt sáng tới chân đường vuông góc là x = d|tan(2πt/T)|; thời điểm vệt sáng cách chân đường vuông góc một khoảng cho trước (phương trình tan)', R=>{
+  const d = R.pick([3, 6, 9, 12, 15, 30]), T = R.pick([12, 16, 18, 20, 24, 30, 36, 40, 48, 60]), K = R.pick([['1', 1, 1/4], ['\\sqrt{3}', Math.sqrt(3), 1/3], ['\\dfrac{\\sqrt{3}}{3}', 1/Math.sqrt(3), 1/6]]), n = R.pick([1, 1, 2]);
+  const x0T = K[1] === 1 ? String(d) : K[1] > 1 ? `${d}\\sqrt{3}` : `${d/3 === 1 ? '' : d/3}\\sqrt{3}`;
+  const t1 = T*K[2]/2, t2 = T - t1, ans = t5Ok(n === 1 ? t1 : t2); if(ans === null) return null;
+  const o = {stem:`Một đèn pha đặt tại $O$ cách một bức tường phẳng $${d}$ m, quay đều quanh trục thẳng đứng, mỗi vòng hết $${T}$ giây. Lúc $t = 0$ tia sáng vuông góc với tường tại $H$. Khi tia sáng chiếu lên tường, vệt sáng cách $H$ một khoảng $x = ${d}\\left|\\tan\\dfrac{2\\pi t}{${T}}\\right|$ (m). Kể từ $t = 0$, vệt sáng cách $H$ một khoảng $${x0T}$ m lần thứ $${n}$ vào thời điểm nào (đơn vị giây)?`, ans,
+    lg:`$${d}\\left|\\tan\\dfrac{2\\pi t}{${T}}\\right| = ${x0T} \\Leftrightarrow \\tan\\dfrac{2\\pi t}{${T}} = \\pm ${K[0]} \\Leftrightarrow \\dfrac{2\\pi t}{${T}} = \\pm ${t5Pi(K[2])} + k\\pi \\Leftrightarrow t = \\pm ${t5N(t1)} + ${T/2}k$ $(k \\in \\mathbb{Z})$.<br>Ở nửa vòng đầu tia sáng quét từ $H$ ra một phía của tường, gặp vị trí cần tìm lần thứ nhất tại $t = ${t5N(t1)}$; tia sáng chiếu lại lên tường từ phía bên kia và gặp vị trí đối xứng lần thứ hai tại $t = ${T} - ${t5N(t1)} = ${t5N(t2)}$.<br>Lần thứ $${n}$: $t = ${t5N(ans)}$ (s).<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const L = t5List(t=>{ const u = 2*Math.PI*t/T; return Math.cos(u) > 0 ? Math.abs(Math.sin(u)) - K[1]*Math.cos(u) : 1; }, 1e-6, T, 400000); return L.length >= n && Math.abs(L[n - 1] - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 8. Huyết áp: đếm số lần đạt một giá trị */
+GT(11,0,3,'TH','Thực tế: huyết áp p(t) = 115 + 25 sin(160πt) (mmHg, t phút) — đếm số lần huyết áp đạt một giá trị cho trước trong một khoảng thời gian (nhịp tim, chu kì)', R=>{
+  const S = R.pick([[1, '140'], [-1, '90'], [0.5, '127{,}5'], [-0.5, '102{,}5']]), D = R.pick([3, 6, 9, 12, 15, 18, 30, 45, 60, 24, 36, 21]);
+  const per = Math.abs(S[0]) === 1 ? 1 : 2, nP = D/0.75, ans = per*nP; if(!Number.isInteger(nP)) return null;
+  const o = {stem:`Huyết áp của một người được mô hình hoá bởi $p(t) = 115 + 25\\sin(160\\pi t)$ (mmHg), với $t$ là thời gian tính bằng phút. Trong $${D}$ giây đầu tiên (kể từ $t = 0$), huyết áp của người đó bằng $${S[1]}$ mmHg bao nhiêu lần?`, ans,
+    lg:`Chu kì: $T = \\dfrac{2\\pi}{160\\pi} = \\dfrac{1}{80}$ phút $= 0{,}75$ giây, nên $${D}$ giây gồm đúng $${nP}$ chu kì (tim đập $80$ nhịp mỗi phút).<br>$p(t) = ${S[1]} \\Leftrightarrow \\sin(160\\pi t) = ${S[0] === 0.5 ? '\\dfrac{1}{2}' : S[0] === -0.5 ? '-\\dfrac{1}{2}' : S[0]}$: trong mỗi chu kì phương trình có ${per === 1 ? `$1$ nghiệm (giá trị ${S[0] > 0 ? 'lớn nhất' : 'nhỏ nhất'})` : '$2$ nghiệm'}; tại $t = 0$ và cuối khoảng thời gian $p = 115$ nên không có nghiệm ở hai đầu.<br>Số lần: $${per}\\cdot ${nP} = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=> t5List(t=> Math.sin(160*Math.PI*t/60) - S[0], 0, D, Math.max(400000, nP*4000)).length === o.ans};
+  return o;
+});
+
+/* 9. Guồng nước: khoảng thời gian ngắn nhất giữa hai độ cao */
+GT(11,0,3,'VD','Thực tế: guồng nước quay đều — gàu đang đi lên từ độ cao h₁ tới độ cao h₂: khoảng thời gian ngắn nhất (góc quét trên đường tròn lượng giác, sin của góc nâng)', R=>{
+  const Rr = R.pick([2, 3, 4, 5, 6]), H = R.pick([1, 1.5, 2, 2.5]), T = R.pick([12, 18, 24, 30, 36, 48, 60, 20, 40]);
+  const vals = [-1, -0.5, 0, 0.5, 1], i = R.int(0, 3), j = R.int(i + 1, 4), s1 = vals[i], s2 = vals[j];
+  const dth = Math.asin(s2) - Math.asin(s1), ans = t5Ok(Math.round(T*dth/(2*Math.PI)*1e9)/1e9); if(ans === null) return null;
+  const h1 = H + Rr*s1, h2 = H + Rr*s2; if(h1 < 0) return null;
+  const angT = s=> s === -1 ? '-\\dfrac{\\pi}{2}' : s === -0.5 ? '-\\dfrac{\\pi}{6}' : s === 0 ? '0' : s === 0.5 ? '\\dfrac{\\pi}{6}' : '\\dfrac{\\pi}{2}';
+  const sT = s=> s === -0.5 ? '-\\dfrac{1}{2}' : s === 0.5 ? '\\dfrac{1}{2}' : String(s);
+  const o = {stem:`Một guồng nước có bán kính $${Rr}$ m, trục quay cao hơn mặt nước $${nt(H)}$ m, quay đều mỗi vòng hết $${T}$ giây. Một gàu nước đang ở độ cao $${nt(h1)}$ m so với mặt nước và đang đi lên. Hỏi sau ít nhất bao nhiêu giây gàu đó ở độ cao $${nt(h2)}$ m?`, ans,
+    lg:`Gọi $O$ là trục quay, $M$ là vị trí gàu, tia $Ox$ nằm ngang hướng về phía các gàu đang đi lên, chiều dương là chiều quay của guồng; gọi $\\varphi$ là số đo góc lượng giác $(Ox, OM)$. Khi đó độ cao của gàu là $h = ${nt(H)} + ${Rr}\\sin\\varphi$.<br>$h = ${nt(h1)} \\Leftrightarrow \\sin\\varphi = ${sT(s1)}$, gàu đang đi lên nên $\\varphi = ${angT(s1)}$ (trên nửa đường tròn từ $-\\dfrac{\\pi}{2}$ đến $\\dfrac{\\pi}{2}$).<br>$h = ${nt(h2)} \\Leftrightarrow \\sin\\varphi = ${sT(s2)}$, lần đầu đạt tại $\\varphi = ${angT(s2)}$.<br>Góc quét: $${angT(s2)} - ${s1 < 0 ? '\\left(' + angT(s1) + '\\right)' : angT(s1)} = ${t5Pi(dth/Math.PI)}$, ứng với thời gian $${t5Pi(dth/Math.PI)} : 2\\pi\\cdot ${T} = ${nt(ans)}$ (giây).<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const f0 = Math.asin(s1); for(let t = 0; t <= T; t += 0.0005){ const hh = H + Rr*Math.sin(f0 + 2*Math.PI*t/T); if(hh >= h2 - 1e-9) return Math.abs(t - o.ans) < 2e-3; } return false; }};
+  return o;
+});
+
+/* 10. Bóng nắng: phương trình cot */
+GT(11,0,3,'TH','Thực tế: bóng nắng — góc nâng Mặt Trời tăng (giảm) đều 15° mỗi giờ, chiều dài bóng L = H cot α; tìm thời điểm bóng có độ dài cho trước (phương trình cot, ghi giờ dạng số thập phân)', R=>{
+  const H = R.pick([3, 6, 9, 12, 15]), am = R.rnd() < 0.5, t0 = am ? R.pick([5, 5.5, 6, 6.5]) : R.pick([17.5, 18, 18.5, 19]);
+  const K = R.pick([['\\sqrt{3}', 30], ['1', 45], ['\\dfrac{\\sqrt{3}}{3}', 60]]), L0T = K[1] === 45 ? String(H) : K[1] === 30 ? `${H}\\sqrt{3}` : `${H/3 === 1 ? '' : H/3}\\sqrt{3}`;
+  const ans = t5Ok(am ? t0 + K[1]/15 : t0 - K[1]/15); if(ans === null) return null;
+  const tT = x=>{ const h = Math.floor(x), m = Math.round((x - h)*60); return `${h} giờ${m ? ' ' + m + ' phút' : ''}`; };
+  const o = {stem:`Ở một nơi, giả sử ${am ? `buổi sáng Mặt Trời mọc lúc ${tT(t0)} và góc nâng $\\alpha$ của tia nắng (so với mặt đất) tăng đều $15^\\circ$ mỗi giờ, tức $\\alpha = 15(t - ${nt(t0)})$ (độ)` : `buổi chiều Mặt Trời lặn lúc ${tT(t0)} và góc nâng $\\alpha$ của tia nắng giảm đều $15^\\circ$ mỗi giờ, tức $\\alpha = 15(${nt(t0)} - t)$ (độ)`}, với $t$ là giờ trong ngày. Một cột cờ cao $${H}$ m dựng thẳng đứng trên mặt đất phẳng có bóng dài $L = ${H}\\cot\\alpha$ (m). Vào lúc mấy giờ ${am ? 'buổi sáng' : 'buổi chiều'} bóng cột cờ dài $${L0T}$ m? (Ghi giờ dưới dạng số thập phân, ví dụ 8 giờ 30 phút ghi là 8,5.)`, ans,
+    lg:`$${H}\\cot\\alpha = ${L0T} \\Leftrightarrow \\cot\\alpha = ${K[0]} \\Leftrightarrow \\alpha = ${K[1]}^\\circ$ (vì $0^\\circ < \\alpha < 90^\\circ$).<br>$${am ? `15(t - ${nt(t0)})` : `15(${nt(t0)} - t)`} = ${K[1]} \\Leftrightarrow t = ${nt(t0)} ${am ? '+' : '-'} ${nt(K[1]/15)} = ${nt(ans)}$.<br>Vậy lúc ${tT(ans)}.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const al = (am ? 15*(o.ans - t0) : 15*(t0 - o.ans))*Math.PI/180; return al > 0 && al < Math.PI/2 && Math.abs(H/Math.tan(al) - H/Math.tan(K[1]*Math.PI/180)) < 1e-9; }};
+  return o;
+});
+
+/* 11. Hai cabin đu quay cùng độ cao */
+GT(11,0,3,'VD','Thực tế: hai cabin của đu quay cách nhau một góc φ — thời điểm lần thứ n hai cabin ở cùng độ cao: cos u = cos(u − φ) chỉ có họ nghiệm u = φ/2 + kπ', R=>{
+  const N = R.pick([12, 16, 18, 20, 24, 30, 32, 36, 40]), j = R.int(1, 3), T = R.pick([10, 12, 15, 16, 18, 20, 24, 30]), n = R.int(1, 3), Rr = R.pick([20, 25, 30, 40]), H = Rr + R.pick([2, 3]);
+  const ans = t5Ok(Math.round(T*(j/(2*N) + (n - 1)/2)*1e9)/1e9); if(ans === null) return null;
+  const ph = 2*j/N; // φ theo đơn vị π
+  const o = {stem:`Một đu quay có $${N}$ cabin gắn đều trên vòng tròn bán kính $${Rr}$ m, tâm cách mặt đất $${H}$ m, quay đều mỗi vòng hết $${T}$ phút. Lúc $t = 0$ cabin $A$ ở vị trí thấp nhất, cabin $B$ là cabin thứ $${j}$ đi sau $A$. Độ cao của hai cabin sau $t$ phút là $h_A = ${H} - ${Rr}\\cos\\dfrac{2\\pi t}{${T}}$ và $h_B = ${H} - ${Rr}\\cos\\left(\\dfrac{2\\pi t}{${T}} - ${t5Pi(ph)}\\right)$ (m). Kể từ $t = 0$, hai cabin ở cùng độ cao lần thứ $${n}$ sau bao nhiêu phút?`, ans,
+    lg:`Đặt $u = \\dfrac{2\\pi t}{${T}}$. $h_A = h_B \\Leftrightarrow \\cos u = \\cos\\left(u - ${t5Pi(ph)}\\right)$ $\\Leftrightarrow u = u - ${t5Pi(ph)} + k2\\pi$ (vô lí vì $0 < ${t5Pi(ph)} < 2\\pi$) hoặc $u = -\\left(u - ${t5Pi(ph)}\\right) + k2\\pi$<br>$\\Leftrightarrow u = ${t5Pi(ph/2)} + k\\pi \\Leftrightarrow t = ${t5N(T*j/(2*N))} + ${nt(T/2)}k$ $(k \\in \\mathbb{Z})$.<br>Các thời điểm dương: $${t5N(T*j/(2*N))}$, $${t5N(T*j/(2*N) + T/2)}$, $${t5N(T*j/(2*N) + T)}$, …; lần thứ $${n}$ là $t = ${nt(ans)}$ phút.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const L = t5List(t=> Math.cos(2*Math.PI*t/T) - Math.cos(2*Math.PI*t/T - ph*Math.PI), 1e-6, 2*T, 400000); return L.length >= n && Math.abs(L[n - 1] - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 12. Van xe đạp: quãng đường lăn */
+GT(11,0,3,'VD','Thực tế: van xe đạp trên vành bánh xe lăn không trượt — độ cao của van h = r − r cos(s/r) theo quãng đường s; quãng đường ngắn nhất để van ở độ cao cho trước lần thứ n', R=>{
+  const r = R.pick([30, 32, 33, 35, 28, 25]), ck = R.pick(['1/2', '0', '-1/2', '-1']), n = R.int(1, 3);
+  const [c] = t5C[ck], h0 = r*(1 - c); if(t5Ok(h0) === null) return null;
+  const th = Math.acos(c); const L = []; for(let k = 0; k <= 3; k++){ [th + 2*k*Math.PI, -th + 2*k*Math.PI].forEach(x=>{ if(x > 1e-9) L.push(Math.round(x*1e9)/1e9); }); }
+  const S = [...new Set(L)].sort((x, y)=> x - y), ang = S[n - 1], s = r*ang, ans = Math.round(s); if(Math.abs(s - ans) > 0.4 || String(ans).length > 4) return null;
+  const angT = t5Pi(ang/Math.PI);
+  const o = {stem:`Bánh xe đạp có bán kính $${r}$ cm lăn không trượt trên mặt đường thẳng. Lúc đầu van xe (coi là một điểm trên vành bánh) ở vị trí thấp nhất, chạm mặt đường. Khi xe đi được quãng đường $s$ (cm) thì bánh xe quay được góc $\\dfrac{s}{${r}}$ (rad) và van ở độ cao $h = ${r} - ${r}\\cos\\dfrac{s}{${r}}$ (cm). Xe đi được quãng đường ngắn nhất bao nhiêu xentimét thì van ở độ cao $${t5N(h0)}$ cm lần thứ $${n}$ (làm tròn đến hàng đơn vị)?`, ans,
+    lg:`$${r} - ${r}\\cos\\dfrac{s}{${r}} = ${t5N(h0)} \\Leftrightarrow \\cos\\dfrac{s}{${r}} = ${c === 0.5 ? '\\dfrac{1}{2}' : c === -0.5 ? '-\\dfrac{1}{2}' : c}$ $\\Leftrightarrow \\dfrac{s}{${r}} = ${c === -1 ? '\\pi + ' : '\\pm ' + t5Pi(th/Math.PI) + ' + '}k2\\pi$ $(k \\in \\mathbb{Z})$.<br>Các góc quay dương theo thứ tự tăng: ${S.slice(0, n).map(x=> `$${t5Pi(x/Math.PI)}$`).join(', ')}; lần thứ $${n}$ ứng với góc $${angT}$.<br>Quãng đường: $s = ${r}\\cdot ${angT} \\approx ${nt(Math.round(s*100)/100)}$ (cm).<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const Ls = t5List(x=> (r - r*Math.cos(x/r) - h0)/r, 1e-4, r*(ang + 1), 600000); return Ls.length >= n && Math.abs(Ls[n - 1] - o.ans) < 0.5; }};
+  return o;
+});
+
+/* 13. Hồ thuỷ điện: tổng các thời điểm (tính đối xứng) */
+GT(11,0,3,'VD','Thực tế: mực nước hồ chứa theo tháng H(t) = A + B sin(π(t − t₁)/6) — tổng các thời điểm trong một khoảng mà mực nước bằng giá trị cho trước (các nghiệm đối xứng nhau qua thời điểm mực nước cao nhất, thấp nhất)', R=>{
+  const A = R.pick([60, 70, 80, 90, 100]), B = R.pick([10, 12, 14, 16, 20]), t1 = R.int(0, 5), s = R.pick([0.5, -0.5, 0]), Tm = R.pick([12, 24]);
+  const X = A + B*s; const th = s === 0.5 ? 1 : s === -0.5 ? -1 : 0; // (t - t1) = th + 12k hoặc 6 - th + 12k
+  const sols = []; for(let k = -3; k <= 3; k++) [t1 + th + 12*k, t1 + 6 - th + 12*k].forEach(t=>{ if(t >= -1e-9 && t <= Tm + 1e-9) sols.push(t); });
+  const S = [...new Set(sols)].sort((x, y)=> x - y), ans = S.reduce((p, q)=> p + q, 0); if(S.length < 2 || String(ans).length > 4) return null;
+  const o = {stem:`Mực nước của một hồ thuỷ điện được mô hình hoá bởi $H(t) = ${A} + ${B}\\sin\\dfrac{\\pi(t - ${t1})}{6}$ (m), với $t$ là thời gian tính bằng tháng, $0 \\le t \\le ${Tm}$.`.replace('(t - 0)', ' t') + ` Tính tổng tất cả các thời điểm $t \\in [0; ${Tm}]$ mà mực nước của hồ bằng $${X}$ m.`, ans,
+    lg:`$H(t) = ${X} \\Leftrightarrow \\sin\\dfrac{\\pi(t - ${t1})}{6} = ${s === 0.5 ? '\\dfrac{1}{2}' : s === -0.5 ? '-\\dfrac{1}{2}' : '0'}$ $\\Leftrightarrow \\dfrac{\\pi(t - ${t1})}{6} = ${th === 0 ? '' : (th > 0 ? '' : '-') + '\\dfrac{\\pi}{6} + '}k2\\pi$ hoặc $\\dfrac{\\pi(t - ${t1})}{6} = \\pi ${th === 0 ? '' : th > 0 ? '- \\dfrac{\\pi}{6}' : '+ \\dfrac{\\pi}{6}'} + k2\\pi$<br>$\\Leftrightarrow t = ${t1 + th} + 12k$ hoặc $t = ${t1 + 6 - th} + 12k$ $(k \\in \\mathbb{Z})$.<br>Các thời điểm thuộc $[0; ${Tm}]$: ${S.map(t=> `$${t}$`).join(', ')}.<br>Tổng: $${S.join(' + ')} = ${ans}$.<br>Đáp số: $${ans}$.`.replace(/\(t - 0\)/g, ' t').replace(/\\pi  \+/g, '\\pi +'),
+    verify:()=>{ const L = t5List(t=> Math.sin(Math.PI*(t - t1)/6) - s, 0, Tm, 400000); return Math.abs(L.reduce((p, q)=> p + q, 0) - o.ans) < 1e-2*L.length + 1e-6 && L.length === S.length; }};
+  return o;
+});
+
+/* 14. Nhịp thở: khoảng thời gian giữa hai lần liên tiếp cùng thể tích */
+GT(11,0,3,'TH','Thực tế: thể tích khí trong phổi V(t) = V₀ + a sin(2πt/T) — khoảng thời gian giữa lần thể tích đạt V₁ khi hít vào và lần ngay sau đó khi thở ra (khoảng cách hai nghiệm liên tiếp của sin u = s)', R=>{
+  const V0 = R.pick([2.5, 2.4, 2.6, 2.8, 3]), a = R.pick([0.4, 0.5, 0.6, 0.8]), T = R.pick([3, 3.6, 4.2, 4.5, 4.8, 5.4, 6, 7.2]), s = R.pick([0.5, -0.5, 0]);
+  const V1 = Math.round((V0 + a*s)*100)/100; if(String(V1).length > 4) return null;
+  const frac = s === 0.5 ? 1/3 : s === -0.5 ? 2/3 : 1/2, ans = t5Ok(Math.round(frac*T*1e9)/1e9); if(ans === null) return null;
+  const th = s === 0.5 ? '\\dfrac{\\pi}{6}' : s === -0.5 ? '-\\dfrac{\\pi}{6}' : '0', th2 = s === 0.5 ? '\\dfrac{5\\pi}{6}' : s === -0.5 ? '\\dfrac{7\\pi}{6}' : '\\pi';
+  const o = {stem:`Thể tích khí trong phổi của một người khi thở được mô hình hoá bởi $V(t) = ${nt(V0)} + ${nt(a)}\\sin\\dfrac{2\\pi t}{${nt(T)}}$ (lít), $t$ tính bằng giây. Tính khoảng thời gian (giây) từ một lần thể tích khí bằng $${nt(V1)}$ lít khi đang hít vào (thể tích tăng) đến lần ngay sau đó thể tích khí bằng $${nt(V1)}$ lít khi đang thở ra (thể tích giảm).`, ans,
+    lg:`Đặt $u = \\dfrac{2\\pi t}{${nt(T)}}$. $V = ${nt(V1)} \\Leftrightarrow \\sin u = ${s === 0.5 ? '\\dfrac{1}{2}' : s === -0.5 ? '-\\dfrac{1}{2}' : '0'}$.<br>Trong một chu kì, $\\sin u$ tăng qua giá trị đó tại $u = ${th} + k2\\pi$ (đang hít vào) và giảm qua giá trị đó lần ngay sau tại $u = ${th2} + k2\\pi$ (đang thở ra).<br>Hai giá trị của $u$ cách nhau $${th2} - ${s < 0 ? '\\left(' + th + '\\right)' : th} = ${s === 0.5 ? '\\dfrac{2\\pi}{3}' : s === -0.5 ? '\\dfrac{4\\pi}{3}' : '\\pi'}$, ứng với thời gian $${s === 0.5 ? '\\dfrac{1}{3}' : s === -0.5 ? '\\dfrac{2}{3}' : '\\dfrac{1}{2}'}\\cdot ${nt(T)} = ${nt(ans)}$ (giây).<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const L = t5List(t=> Math.sin(2*Math.PI*t/T) - s, 0.001, 2*T, 400000); const k = L.findIndex(t=> Math.cos(2*Math.PI*t/T) > 0); return k >= 0 && k + 1 < L.length && Math.abs(L[k + 1] - L[k] - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 15. Doanh số theo mùa: thời điểm đạt cao nhất (thấp nhất) lần thứ n */
+GT(11,0,3,'TH','Thực tế: doanh số bán hàng theo mùa S(t) = a + b sin(πt/6 + φ) (t tháng) — thời điểm doanh số cao nhất (thấp nhất) lần thứ n (phương trình sin u = ±1)', R=>{
+  const a = R.pick([200, 300, 400, 500]), b = R.pick([50, 80, 100, 120, 150]), j = R.int(-5, 5), mx = R.rnd() < 0.5, n = R.int(1, 3);
+  const base = ((mx ? 3 - j : -3 - j) % 12 + 12) % 12, t1 = base === 0 ? 12 : base, ans = t1 + 12*(n - 1);
+  const phT = j === 0 ? '' : (j > 0 ? ' + ' : ' - ') + t5Pi(Math.abs(j)/6);
+  const o = {stem:`Doanh số bán áo khoác của một cửa hàng được mô hình hoá bởi $S(t) = ${a} + ${b}\\sin\\left(\\dfrac{\\pi t}{6}${phT}\\right)$ (triệu đồng), với $t$ là thời gian tính bằng tháng kể từ đầu năm ($t > 0$). Doanh số đạt giá trị ${mx ? 'lớn nhất' : 'nhỏ nhất'} lần thứ $${n}$ tại thời điểm $t$ bằng bao nhiêu?`, ans,
+    lg:`$S$ đạt giá trị ${mx ? 'lớn nhất' : 'nhỏ nhất'} khi $\\sin\\left(\\dfrac{\\pi t}{6}${phT}\\right) = ${mx ? 1 : -1}$ $\\Leftrightarrow \\dfrac{\\pi t}{6}${phT} = ${mx ? '' : '-'}\\dfrac{\\pi}{2} + k2\\pi$ $\\Leftrightarrow t = ${(mx ? 3 : -3) - j} + 12k$ $(k \\in \\mathbb{Z})$.<br>Các giá trị $t > 0$ theo thứ tự: $${t1}$, $${t1 + 12}$, $${t1 + 24}$, …; lần thứ $${n}$ là $t = ${ans}$.<br>Đáp số: $${ans}$.`,
+    verify:()=>{ const L = t5List(t=> Math.sin(Math.PI*t/6 + j*Math.PI/6) - (mx ? 1 : -1), 0.05, 40, 400000); return L.length >= n && Math.abs(L[n - 1] - o.ans) < 1e-3; }};
+  return o;
+});
+
+/* 16. Tổng hai dao động: thời điểm li độ tổng hợp bằng 0 */
+GT(11,0,3,'VD','Thực tế: tổng hai dao động cùng biên độ x₁ = A sin(πt/m), x₂ = A sin(πt/m + φ) — biến tổng thành tích x = 2A cos(φ/2) sin(πt/m + φ/2), tìm thời điểm lần thứ n li độ tổng hợp bằng 0', R=>{
+  const A = R.pick([2, 3, 4, 5, 6]), m = R.pick([1, 2, 3, 4, 6, 12]), j = R.int(1, 11), n = R.int(1, 3); if(j === 6) return null;
+  const ph = j/6; // φ = jπ/6
+  const ans = t5Ok(Math.round(m*(n - ph/2)*1e9)/1e9); if(ans === null || ans <= 0) return null;
+  const hT = t5Pi(ph/2), phT = t5Pi(ph), uT = m === 1 ? '\\pi t' : `\\dfrac{\\pi t}{${m}}`;
+  const o = {stem:`Hai dao động điều hoà cùng phương có li độ $x_1 = ${A}\\sin${m === 1 ? '(\\pi t)' : uT}$ và $x_2 = ${A}\\sin\\left(${uT} + ${phT}\\right)$ (cm), $t$ tính bằng giây. Dao động tổng hợp có li độ $x = x_1 + x_2$. Kể từ $t = 0$ (không tính $t = 0$), li độ tổng hợp bằng $0$ lần thứ $${n}$ vào thời điểm nào (đơn vị giây)?`, ans,
+    lg:`Biến tổng thành tích: $x = ${2*A}\\cos ${hT}\\cdot\\sin\\left(${uT} + ${hT}\\right)$, với $\\cos ${hT} \\ne 0$.<br>$x = 0 \\Leftrightarrow \\sin\\left(${uT} + ${hT}\\right) = 0 \\Leftrightarrow ${uT} + ${hT} = k\\pi \\Leftrightarrow t = ${t5N(m)}\\left(k - ${frT(j, 12)}\\right)$ $(k \\in \\mathbb{Z})$.<br>Các thời điểm dương: $k = 1, 2, 3, \\dots$ cho $t = ${t5N(m*(1 - ph/2))}$, $${t5N(m*(2 - ph/2))}$, $${t5N(m*(3 - ph/2))}$, …; lần thứ $${n}$ là $t = ${nt(ans)}$.<br>Đáp số: $${nt(ans)}$.`,
+    verify:()=>{ const L = t5List(t=> (Math.sin(Math.PI*t/m) + Math.sin(Math.PI*t/m + ph*Math.PI))/2, 1e-6, m*(n + 1), 400000); return L.length >= n && Math.abs(L[n - 1] - o.ans) < 1e-3; }};
+  return o;
+});
+
+}
+
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.88'; GEN[k].l1 = 'V2.88'; });
 })();
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
