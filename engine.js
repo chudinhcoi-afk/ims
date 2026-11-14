@@ -1,4 +1,4 @@
-/* Bộ sinh dùng chung MathBank 2.84 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
+/* Bộ sinh dùng chung MathBank 2.85 — Game toán và IMs tải từ GitHub Pages. Không sửa tay: dựng lại bằng tools/mkengine.py */
 /* ============================================================
    1. DỮ LIỆU CHƯƠNG TRÌNH (PPCT) — dùng để chọn nội dung ra đề
    phase: 1=Giữa kỳ I, 2=thêm cho Cuối kỳ I, 3=Giữa kỳ II, 4=thêm cho Cuối kỳ II
@@ -81,8 +81,8 @@ const CHUYEN_DE = {
            ['Phép cộng, phép trừ; phép nhân, phép chia số tự nhiên (chia có dư); tính chất của các phép tính', '33-56'],
            ['Luỹ thừa với số mũ tự nhiên; nhân, chia hai luỹ thừa cùng cơ số', '1-8,57-72'],
            ['Thứ tự thực hiện các phép tính; tìm x trong biểu thức nhiều phép tính', '73-96']],
-  '6-07': [['Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9', ''],
-           ['Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố', ''],
+  '6-07': [['Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9', '7-30'],
+           ['Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố', '31-54'],
            ['Ước chung, ước chung lớn nhất; bội chung, bội chung nhỏ nhất', '1-4'],
            ['Bài toán thực tế về ƯCLN, BCNN; phân số tối giản, quy đồng mẫu nhờ ƯCLN, BCNN', '5,6']],
   '6-08': [['Phân số với tử và mẫu là số nguyên; phân số bằng nhau; rút gọn phân số', '1,2,17,19,20,23-30'],
@@ -632,7 +632,7 @@ function log(msg){
   box.textContent += `[${t}] ${msg}\n`;
   box.scrollTop = box.scrollHeight;
 }
-const APP_VERSION = '2.84';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.84: Lớp 6: 6-06.3 (luỹ thừa) và 6-06.4 (thứ tự thực hiện phép tính, tìm x) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 40 dạng (57–96); bài 6-06 xong cả 4 chuyên đề V2.83: Lớp 6: 6-06.1 (tập hợp, cách ghi số, thứ tự trong N) và 6-06.2 (cộng, trừ, nhân, chia số tự nhiên, chia có dư, tính chất) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (9–56); nháp lớp 6 ghép sau đoạn tách V1.61 (@SAU_V161) V2.82: Phiếu in sẵn tên (mỗi em một mã): đáp án gửi MBP Chấm kèm tên, SBD học sinh để app chấm tự nhận bài của em nào V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
+const APP_VERSION = '2.85';   // đổi số phiên bản tại đây — banner, tên file tải về dùng chung. V2.85: Lớp 6: 6-07.1 (quan hệ chia hết, dấu hiệu chia hết cho 2, 5, 3, 9) và 6-07.2 (số nguyên tố, hợp số, phân tích ra thừa số nguyên tố) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (7–54) V2.84: Lớp 6: 6-06.3 (luỹ thừa) và 6-06.4 (thứ tự thực hiện phép tính, tìm x) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 40 dạng (57–96); bài 6-06 xong cả 4 chuyên đề V2.83: Lớp 6: 6-06.1 (tập hợp, cách ghi số, thứ tự trong N) và 6-06.2 (cộng, trừ, nhân, chia số tự nhiên, chia có dư, tính chất) lên đủ 8 TN, 4 Đ–S, 8 TLN, 4 TL: thêm 48 dạng (9–56); nháp lớp 6 ghép sau đoạn tách V1.61 (@SAU_V161) V2.82: Phiếu in sẵn tên (mỗi em một mã): đáp án gửi MBP Chấm kèm tên, SBD học sinh để app chấm tự nhận bài của em nào V2.81: 10-17.1, 10-17.2 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 51 dạng (32–82) dấu tam thức bậc hai và bất phương trình bậc hai trong thực tế V2.80: 10-19.1 Phương trình đường thẳng lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 13 dạng (18–30), có bài thực tế V2.79: 10-18.1 lên đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL: thêm 22 dạng (49–70) phương trình quy về phương trình bậc hai, có bài thực tế V2.78: Lộ trình học thêm — phiếu “Mỗi em một mã” luôn tự gắn đúng lớp, đúng em (cả khi đã chọn tự lưu không hỏi lại, để “không gắn” hay chọn nhầm lớp); kéo điểm tự gắn các mã bài in trước đây còn sót. V2.77: HSG lớp 10: thêm 10-18.2 (PT, BPT vô tỉ), 10-18.3 (hệ phương trình), 10-21.2 (hình học toạ độ Oxy), mỗi chuyên đề 16 TLN + 4 TL chứng minh (60 dạng) V2.76: Chương VI lớp 10: chia chuyên đề 10-15 thành 2 chuyên đề, 10-16 thành 5 chuyên đề (HSG cũ 10-16.3 thành 10-16.5); 10-15.1, 10-15.2 đủ 8 TN, 4 Đ–S, 16 TLN, 2 TL (thêm 50 dạng, số 11–60); 10-16.1 → 10-16.4 đủ 8 TN, 4 Đ–S, 16 TLN (thêm 99 dạng, số 44–142); Lộ trình học thêm tự đổi mã chuyên đề. V2.75: Chuyên đề HSG lớp 10: 10-11.8 [HSG] Tích vô hướng — vuông góc, đẳng thức, cực trị (số 141–160), 10-16.3 [HSG] Hàm bậc hai chứa tham số, đồ thị có dấu giá trị tuyệt đối (số 24–43), 10-17.3 [HSG] AM–GM, Cauchy–Schwarz (số 12–31); mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh V2.74: Chuyên đề HSG lớp 10: 10-02.3 [HSG] Nguyên lí bao hàm – loại trừ (số 26–45) và 10-06.7 [HSG] Nhận dạng tam giác, đẳng thức – bất đẳng thức trong tam giác (số 68–87), mỗi chuyên đề 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh; 10-09.6 [HSG] Tâm tỉ cự của hệ điểm, đường thẳng qua điểm cố định: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 101–120) V2.73: 11-17.2 [HSG] Tính liên tục, chứng minh phương trình có nghiệm, phương trình chứa tham số: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 9–28); 11-21.3 [HSG] Phương trình, bất phương trình mũ – lôgarit nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 13–32); 11-26.10 [HSG] Khoảng cách và góc nâng cao, cực trị trong không gian: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 33–52); 11-30.3 [HSG] Xác suất nâng cao (Bernoulli, trò chơi nhiều lượt, đếm): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 6–25) V2.72: Bài đã in lưu thêm đáp án, lời giải theo mã bài: nút 📄 Lời giải ở Chấm bài dựng lại được kể cả khi lúc in bỏ tick Kèm đáp án, lời giải V2.71: Sửa đầu phiếu bài kiểm tra in sẵn tên học sinh: nhãn Họ và tên không bẻ dòng, tên dài thì Lớp/SBD xuống dòng, ô Điểm không tràn ra ngoài tờ V2.70: 11-04.3 [HSG] Phương trình lượng giác nâng cao: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đưa về tích, đặt ẩn phụ, đánh giá hai vế, tham số m); 11-05.2 [HSG] Dãy số truy hồi: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (dãy phụ, phương trình đặc trưng, tuần hoàn, đánh giá phần nguyên, bị chặn); 11-07.4 [HSG] Tính tổng bằng khử liên tiếp, cấp số cộng – cấp số nhân với điều kiện ẩn: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 30–49); 11-11.10 [HSG] Thiết diện: diện tích, tỉ số thể tích, cực trị: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 96–115); 11-15.2 [HSG] Giới hạn dãy số truy hồi, định lí kẹp: thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 21–40); 11-16.2 [HSG] Giới hạn hàm số nâng cao (căn khác bậc, lượng giác): thêm 16 dạng trả lời ngắn và 4 dạng tự luận chứng minh (số 18–37). V2.69: 11-02.2 [HSG] Công thức lượng giác: thêm 16 dạng trả lời ngắn và 4 dạng tự luận (đẳng thức khử liên tiếp, nhận dạng tam giác, GTLN–GTNN) V2.68: 8-07 Định lí Thalès: thêm 60 dạng trả lời ngắn cho 8-07.1 (đoạn thẳng tỉ lệ, định lí Thalès, +13), 8-07.2 (định lí Thalès đảo, hệ quả, +7), 8-07.3 (đường trung bình của tam giác, ứng dụng thực tế, +15), 8-07.4 (đường phân giác, kẻ thêm đường song song, +9), 8-07.5 (đường trung bình của hình thang, chứng minh hệ thức tỉ lệ, song song, +16), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.67: Lớp 6: chia nhỏ chuyên đề theo SGK Kết nối tri thức (19 → 57 chuyên đề, 14 chuyên đề chưa có dạng), thêm chương Số thập phân, Dữ liệu và xác suất thực nghiệm (6-20 → 6-23); tự đổi mã chuyên đề lớp 6 trong Lộ trình học thêm V2.66: Lớp 10–12: thêm 43 chuyên đề chưa có dạng — 19 ôn thi tốt nghiệp THPT, 24 ôn học sinh giỏi cấp tỉnh lớp 10, 11 (màu xanh, nhãn HSG); mã cũ và Lộ trình không đổi V2.65: Lớp 8: thêm 21 chuyên đề chưa có dạng (nâng cao dần, hướng tới thi vào 10), nối cuối mỗi bài nên mã cũ và Lộ trình không đổi V2.64: Lớp 8: chia nhỏ chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức (16 → 40 chuyên đề); tự đổi mã chuyên đề lớp 8 đã lưu trong Lộ trình học thêm V2.63: 12-15: chia lại 8 chuyên đề; thêm 116 dạng trả lời ngắn cho 12-15.1 (phương trình tham số, chính tắc), 12-15.2 (viết phương trình đường thẳng), 12-15.3 (vị trí tương đối của hai đường thẳng), 12-15.4 (đường thẳng và mặt phẳng), 12-15.5 (hình chiếu, đối xứng qua mặt phẳng), 12-15.6 (hình chiếu, đối xứng qua đường thẳng; khoảng cách), 12-15.7 (khoảng cách hai đường thẳng chéo nhau, đường thẳng song song mặt phẳng), 12-15.8 (bài toán thực tế), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.62: kiểm thử ngầm nhớ kết quả theo từng dạng (dấu vân tay của bộ sinh): mở lại app hay lên bản mới chỉ kiểm thử dạng mới hoặc dạng vừa sửa, chạy từng lô ≤ 10 ms lúc máy rảnh; sửa hàm tìm nghiệm chạy rất chậm với đồ thị hàm hằng, đường thẳng, parabol (0,2–0,7 giây mỗi đồ thị) nên hết giật khi chọn chuyên đề. V2.61: 11-08: thêm 42 dạng trả lời ngắn cho ba chuyên đề 11-08.9 (định lí Menelaus trong không gian, +13), 11-08.10 (thiết diện của tứ diện, +16), 11-08.11 (thiết diện của hình chóp, +13), mỗi chuyên đề đủ 16 dạng trả lời ngắn V2.60: phiếu ghi mã chuyên đề; lộ trình lưu dạng còn sai của từng em (lần làm gần nhất), kiểm tra bổ sung mỗi em một mã gồm các dạng em còn sai. V2.59: Bài kiểm tra của lớp gộp các mã bài cùng một buổi (mỗi em một mã) thành một dòng, kèm danh sách em chưa có bài. V2.58: sơ đồ lộ trình trực quan (đường đi các buổi, màu theo kết quả, cung học lại, buổi tới; bấm nút tới buổi) và phiếu lộ trình cá nhân từng em (tình hình, tiến bộ so với lớp, mục tiêu gần, mục tiêu xa, nhận xét; in cho phụ huynh). V2.57: bài kiểm tra mỗi em lớp học thêm một mã (mã đề = 100 + mã HS, in sẵn họ tên, SBD, điểm tự nhận đúng em); Lộ trình học thêm nhiều buổi — lập lộ trình ban đầu theo chương trình (lớp 6–9 bài dài cắt nhiều buổi), buổi kém tự chèn buổi học lại với dạng sai nhiều và dạng gần giống, buổi chưa vững ghép dạng yếu vào đầu buổi sau, mỗi buổi mở Ôn luyện đúng các dạng của buổi. V2.56: mục Lộ trình học thêm (5 lớp học thêm, danh sách học sinh chỉ lưu trên máy): gắn bài kiểm tra với lớp khi lưu đáp án, kéo điểm từng câu từ sao lưu MBP Chấm, tính mức đạt theo chuyên đề cho cả lớp và từng em, đề xuất buổi tiếp theo (ôn lại + học mới) và mở thẳng Ôn luyện. V2.55: 11-08: thêm 32 dạng trả lời ngắn cho hai chuyên đề 11-08.7 (giao điểm: chọn mặt phẳng phụ) và 11-08.8 (giao điểm: tính tỉ số với trung điểm, trọng tâm), mỗi chuyên đề 16 dạng V2.54: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.4 (giao tuyến: tìm hai điểm chung), 11-08.5 (giao tuyến: kéo dài hai đường thẳng đồng phẳng), 11-08.6 (ba điểm thẳng hàng, ba đường thẳng đồng quy), mỗi chuyên đề 16 dạng V2.53: 11-08: thêm 48 dạng trả lời ngắn cho ba chuyên đề 11-08.1 (cách xác định mặt phẳng), 11-08.2 (đỉnh, cạnh, mặt), 11-08.3 (đếm mặt phẳng, giao tuyến), mỗi chuyên đề 16 dạng V2.52: thêm chuyên đề 6-19.1 Ôn giữa kỳ 1 (2) lớp 6, 26 dạng tự luận tách riêng khỏi 6-18 V2.51: mục Chấm bài dựng lại đề + đáp án tự luận theo đúng mã đề để thầy cô đem sang AI chấm. V2.50: thêm chuyên đề 6-18.1 Ôn tập giữa kỳ 1 lớp 6, 41 dạng tự luận. V2.49: chia 12-11, 12-12, 12-13 thành 18 chuyên đề, thêm 759 dạng cho 12-11, 12-12, 12-13, đồ thị tô được miền, vẽ đường cong thứ hai, vẽ tới đúng đầu mút của căn. V2.48: Phát triển 12-09, 12-10 lên 50 dạng mỗi bài (thêm 75 dạng thay số, đủ TN, Đ–S, TLN, TL). V2.47: Sửa lời giải dạng 12-08 số 154, số liệu thực tế và cách nói một số dạng chương Vectơ lớp 12. V2.46: Chia lại chương Vectơ lớp 12 thành 28 chuyên đề, thêm 408 dạng trả lời ngắn cho 12-06, 12-07, 12-08 (đủ 20 dạng mỗi chuyên đề). V2.45: Vectơ lớp 10: chia 10-08 đến 10-11 thành 23 chuyên đề, thêm 339 dạng trả lời ngắn để mỗi chuyên đề đủ 20 dạng. V2.44: Chuyên đề 11-11.2 Hai mặt phẳng song song cắt mặt phẳng thứ ba: giao tuyến, đoạn chắn thêm 16 dạng trả lời ngắn, lên 19 dạng. V2.43: Xuất phiếu tiết kiệm giấy: thêm nút chọn Cân hai cột hoặc Lấp cột trái trước V2.42: Xuất phiếu không còn cắt mất dòng của đề ở câu một ý (mệnh đề liệt kê, số liệu nhiều dòng) V2.41: Chuyên đề 11-11.1 Hai mặt phẳng song song: điều kiện, chứng minh thêm 14 dạng trả lời ngắn, đủ 20 dạng V2.40: Cuộn danh sách chuyên đề mượt: tự kiểm thử ngầm nhường cho giáo viên, không khoá máy khi mở phần mềm V2.39: Hình không gian lớp 11 chia nhỏ thành 80 chuyên đề, mỗi chuyên đề 2–3 đơn vị kiến thức; 6 chuyên đề chưa có dạng hiện mờ V2.38: Thêm hình cho 18 bài toán thực tế lớp 10, 11, 12; sửa đề 12-08 dạng 35 và 2 lỗi chữ V2.37: Bài toán thực tế Chương IV lớp 11 có thêm hình; sửa nét khuất các hình hai mặt phẳng song song V2.36: Tách thiết diện thành chuyên đề riêng 11-08.3, 11-10.3, 11-11.3 (15 dạng), các chuyên đề cũ đủ 25 dạng; thêm 45 dạng V2.35: Ôn luyện: tích chuyên đề không còn làm danh sách nhảy lên đầu. V2.34: Tám chuyên đề Chương IV lớp 11 (11-08 đến 11-11) đều lên 25 dạng, thêm 102 dạng. V2.33: Bài 11-08 chỉ hỏi tứ diện, hình chóp; chuyển 2 dạng lăng trụ, hình hộp sang 11-11 V2.32: Mục Chấm bài tách 2 tab: Chấm bằng điện thoại (cài đặt, liên kết máy, gửi đáp án, nhận kết quả) và Chấm bằng máy tính (ảnh, scan, gõ tay, dán Excel); nhớ tab đã chọn. V2.31: Bài 11-15 Giới hạn của dãy số thêm 6 dạng, đủ 20: giới hạn vô cực, phép toán trên giới hạn, định nghĩa, tìm tham số, hình lồng nhau, lượng tích luỹ. V2.30: Thêm hướng dẫn cài app chấm cho Android, iPhone (in được); thêm luật máy chủ cho bản giáo viên. V2.29: Tên file PDF tự đặt theo chuyên đề, bài hoặc kì thi, loại phiếu, mã và thời điểm tạo; không trùng các lần trước. V2.28: Xuất đề: đổi tiết kiệm giấy, kẻ dòng, cỡ chữ, ô tròn, thêm phiếu không làm mất câu đã bỏ và không đổi số liệu. V2.27: Xuất đề: nhớ kẻ dòng chấm và số dòng mỗi ý riêng từng lớp; thông báo quá 40 ý đặt ngay trên bài kiểm tra, cùng bề rộng trang đề. V2.26: Xuất đề: đề kiểm tra quá 40 ý vẫn dựng để bấm ✕ bỏ câu, báo số ý cần bỏ, bỏ đủ thì tự chia lại 10 điểm. V2.25: Chuyên đề 12-08.3 (Ứng dụng trong hình học): thêm 10 dạng lấp khoảng trống kiến thức, đủ 25 dạng. V2.24: Quy tắc máy chủ thêm mục mbb để MBP Chấm bài tự sao lưu điểm (mã hoá). V2.23: Nút 📥 vnEdu ở Đề định kỳ — tải điểm điện thoại đã xác nhận, dựng file Excel nhập vnEdu. V2.22: Chia chuyên đề (1 buổi dạy) cho lớp 11 (8 bài) và lớp 10 (9 bài). V2.21: Chia bài thành chuyên đề = 1 buổi dạy, mã lớp-bài.k (vd 12-08.2): lớp 12 chia 14 bài; Ôn luyện tích chọn từng chuyên đề (tên bài màu tím), chọn nhanh cả buổi theo mã. V2.20: 12-11 Nguyên hàm thêm 40 dạng (nay 50): định nghĩa, tính chất, luỹ thừa/lượng giác/mũ/1/x, điều kiện cho trước, đồ thị, bài toán thực tế V2.19: Bài 11-11 Hai mặt phẳng song song thêm 15 dạng (nay 25 dạng): lí thuyết, tứ diện và hình chóp cắt bởi mặt phẳng song song (k, k²), hình hộp, lăng trụ, lập phương, Thalès; thực tế cáp xuyên sàn nhà, khối gỗ, khung tháp thép, kim tự tháp kính. V2.18: Bài 11-10 Đường thẳng và mặt phẳng song song thêm 16 dạng (nay 25 dạng): tứ diện, hình chóp (đáy hình thang, nhận dạng thiết diện), hình hộp (mặt phẳng duy nhất chứa a song song với b), lăng trụ, bài thực tế khối gỗ, mái chòi, miếng bánh. V2.17: lời nhắn phụ huynh không còn bỏ trống tên câu khi không xác định được câu sai. V2.16: Bài 11-09 Hai đường thẳng song song thêm 17 dạng (nay 25 dạng): hình hộp, tứ diện, chóp đáy hình thang, lăng trụ, bài thực tế lều trại; hình chóp kéo dài cạnh đáy tới giao điểm I vẽ nét khuất theo khối mở rộng (SD, DC, DI nét đứt). V2.15: Ôn luyện, trình chiếu không còn tự bật toàn màn hình (trình duyệt hiện dòng thông báo thoát gây vướng): màn trình chiếu phủ kín cửa sổ, cần toàn màn hình thật thì bấm nút ⛶; Esc vẫn đóng trình chiếu. V2.14: 15 dạng mới cho 12-07 Hệ trục tọa độ trong không gian — đủ 20 dạng giao, bài nay 40 dạng (hình hộp biết hai đỉnh đối diện, lăng trụ đứng đáy thoi, hợp các phép đối xứng, drone giao hàng, chóp có SA ⊥ đáy vuông tại B, tứ diện vuông, chóp có mặt bên vuông góc đáy, đỉnh thứ tư hình bình hành, đếm điểm nguyên, hình chiếu, lập phương tâm ở gốc, radar, tham số, kho hàng); hình khối có hệ trục: trục không đè cạnh, phần khuất nét đứt, tự xoay để các đường không gần trùng nhau. V2.13: phiếu kiểm tra in thêm mốc ■ đầu dòng họ tên — MBP Chấm bài chỉ chụp khi thấy mốc, cắt ảnh gửi phụ huynh luôn đủ họ tên, mã bài. V2.12: 5 dạng mới cho bài 12-07 Hệ trục tọa độ trong không gian (gắn hệ trục tại đỉnh bất kì của hình hộp, hình chóp đều, căn phòng thực tế, ghép hình chiếu – đối xứng, lăng trụ đều); hình khối vẽ được hệ trục Oxyz (truc3). V2.11: MÃ BÀI (vd 12-08 = lớp 12, bài thứ 8 theo PPCT) hiện ở Ma trận đề, danh sách chuyên đề và khung chọn dạng của Ôn luyện — gọi tên bài ngắn gọn khi cần bổ sung dạng; Ôn luyện bỏ các chuyên đề trùng tên cũ không có dạng nào. V2.10: nhận xét từng bài có lời khuyên cụ thể gửi phụ huynh (theo câu, dạng con sai), bỏ các câu động viên sáo rỗng. V2.09: Xuất đề báo SỐ TRANG THỰC TẾ — phần mềm dàn trang giống lúc in (câu không bị cắt, tiêu đề phần không đứng cuối trang), vẽ vạch đỏ “hết trang” trên bản xem trước; Tự căn vừa số trang dùng số này (đối chiếu 30 phiếu in PDF: khớp 30/30); nút chỉnh dòng không còn chồng nhau ở câu ngắn; sửa dòng “Phụ huynh kí” bị tô nền tối. V2.08: 5 dạng mới có hình vẽ (lớp 10, Vectơ) — hình bình hành đọc toạ độ trên hệ trục (Đ–S), khối tâm hệ ba vật, tích vô hướng trên lưới ô vuông, hình chữ nhật AM ⊥ BD (Đ–S), góc giữa hai trung tuyến; xong chỉ tiêu 20 dạng chương Vectơ. V2.07: 5 dạng mới có hình vẽ (lớp 10, Vectơ): đọc số k và phân tích c = xa + yb trên lưới ô vuông, tỉ số diện tích từ aMA + bMB + cMC = 0, hai tam giác cùng trọng tâm, đọc toạ độ trên hệ trục Oxy; hệ trục vẽ thoáng hơn. V2.06: 5 dạng mới có hình vẽ cho bài Tổng và hiệu của hai vectơ (lớp 10): hai vectơ trên lưới ô vuông, lục giác đều có tâm (Đ–S), trọng tâm tam giác đều, thuyền qua sông, chứng minh đẳng thức bằng chèn điểm; kí hiệu vectơ trên hình vẽ hiện mũi tên đúng. V2.05: 5 dạng mới có hình vẽ cho bài Khái niệm mở đầu về vectơ (lớp 10); phần mềm tự vẽ mũi tên vectơ, hình phẳng theo toạ độ, lưới điểm và hệ trục Oxy (xuất TikZ); Ôn luyện thêm cách xếp “Dạng gần nhau” — gom các dạng cùng chủ đề, chuỗi dạng đi liền nhau. V2.04: nhận xét bài dưới 3 điểm nói thẳng, khích tướng (không xúc phạm), 0 điểm có lời riêng; bỏ câu “kiến thức nền đã vững” khi điểm thấp. V2.03: chấm bằng ảnh — nhận khung trả lời ưu tiên 4 ô góc to đều nhau và mã ≥ 1024, không còn lấy nhầm ô mã bài làm góc (đọc 1143 thành 16). V2.02: bảng bài kiểm tra đã lưu gộp mã liên tiếp thành khoảng (1294–1325); nút 🧩 Dựng đáp án — bảng đáp án gộp cả lượt in (mỗi dòng một mã, mỗi cột một câu), in khổ ngang. V2.01: đáp án bài kiểm tra trên máy chủ kèm danh sách mã bài cùng nhóm — MBP Chấm bài chấm bài đầu tiên là tải sẵn đáp án cả nhóm (bản lưu cũ tự gửi lại một lần). V2.00: 5 dạng mới cho bài Phương sai và độ lệch chuẩn (lớp 12, Chương III): công thức s², lỗi sai thường gặp (Đ–S), bài toán ngược tìm tần số khi biết x̄, thêm số liệu bằng x̄, so sánh độ đồng đều hai mẫu; số liệu các dạng Chương III sát thực tế hơn. V1.99: 5 dạng mới cho bài Khoảng biến thiên và khoảng tứ phân vị (lớp 12, Chương III): nhóm chứa Qk, đọc bảng (Đ–S), bài toán ngược tìm tần số, nhận biết và kết luận giá trị bất thường. V1.98: rà soát 66 dạng mới từ V1.80, sửa 5 dạng sai kiến thức/trình bày (điểm trên trục có hai nghiệm, tam giác không vuông, tiếp tuyến thiếu kết luận, làm tròn sát ...5 ở hai bài parabol) và căn chưa rút gọn. V1.97: 10 dạng thay số mới cho bài Nhị thức Newton (Chương VIII lớp 10), soát qua bộ kiểm tra chất lượng mới. V1.96: 40 dạng thay số mới cho Chương VII lớp 10 (phương trình đường thẳng; vị trí tương đối, góc, khoảng cách; đường tròn; ba đường conic — mỗi bài 10 dạng TN/Đ–S/TLN/TL, có bài thực tế). V1.95: Ôn luyện nhiều mã đề nhanh hơn ~3–9 lần (tự căn trang chỉ dựng mã đầu; xếp cột phương án khi cuộn tới, in thì xếp nốt; đo số trang một phiếu mỗi loại; bấm/gõ ô Số câu, Số mã đề chờ xong mới dựng). V1.94: file đề định kỳ lưu cả mã bài (mở file cũ thì lấy mã bài từ danh sách); xoá đề chỉ xoá file khi file đúng là của đề đó (tránh xoá nhầm file cùng tên của đề tạo lại). V1.93: danh sách Đề định kỳ đã lưu có nút 📝 Tự luận (đề và lời giải theo mã, đọc từ file) và 🖨 PDF (dựng lại bản in); nạp lớp khác khi đang mở đề đã lưu thì bắt đầu đề mới, không sửa đề cũ. V1.92: cập nhật danh sách lớp 10A1, 10A2, 10A7, 10A8 theo sổ điểm chi tiết (10A2: sửa một tên, bớt một em; 10A8: thứ tự theo sổ). V1.91: xoá đề trong danh sách Đề định kỳ đã lưu thì xoá luôn đáp án của đề trên máy chủ. V1.90: Đề xuất số câu ở ma trận không lặp lại — nhớ mọi ma trận đã đề xuất cho cùng thiết lập (bài, số câu, mục tiêu, ô khoá), mỗi lần bấm ra phương án mới cho tới khi hết tổ hợp phù hợp thì báo và quay lại từ đầu. V1.89: đề kiểm tra ở Ôn luyện cho tới 60 mã đề (trước đây tối đa 8); lô mã bài lấy sẵn 40 mã. V1.88: sửa dạng "viết thành tích hai số nguyên" liệt kê trùng một cách với số âm dạng −k² (vd −16 = 4·(−4)). V1.87: lớp 6 — Phép nhân số nguyên: 7 dạng chuẩn bị cho tìm x (điền ô trống, nhân với tổng/hiệu, thu gọn biểu thức chứa x, kiểm tra nghiệm, số có bình phương/lập phương cho trước, viết thành tích hai số nguyên); các dạng của bài xếp theo nhóm liên quan (nhân · dấu · luỹ thừa · phân phối · giá trị biểu thức · chuẩn bị tìm x · tìm x · tư duy). V1.86: lớp 6 — Phép nhân số nguyên: 9 dạng tự luận tìm x (a·x + b = c; b − a·x = c; thu gọn a·x ± b·x; đặt thừa số chung; x ở hai vế; bình phương; lập phương; tích ba thừa số bằng 0; cặp số nguyên (x + a)(y + b) = p). V1.85: Thiết lập chung có ô tự đặt số câu trắc nghiệm / đúng – sai / trả lời ngắn (để trống = theo mẫu theo số câu tự luận), báo điểm tự luận còn lại; mục tiêu NB/TH/VD tự co giãn theo tổng số câu mới. V1.84: Đề xuất số câu ở ma trận tính ô khoá trước rồi mới chia phần còn lại → tổng NB/TH/VD và từng hình thức khớp đúng mục tiêu; ô khoá vượt mục tiêu thì báo rõ; nhắc bấm Đề xuất khi vừa sửa mục tiêu. V1.83: đề định kỳ chỉ vào danh sách "đã lưu" khi thầy bấm lưu (lưu file, gửi đáp án/QR, Lưu đáp án sau khi in); đang soạn chỉ hiện dòng "chưa lưu"; trộn mới thì đặt lại tên đề (không giữ lớp cũ). V1.82: sửa lỗi tự ngắt trang với câu có hình nổi (hình bị đẩy sang trang riêng, đề nhảy trang): tính cả chiều cao hình, không ngắt giữa vùng chữ chạy quanh hình. V1.81: đề đi kèm phiếu riêng được phần mềm tự ngắt trang (mỗi trang ≤ 262 mm, ngắt bắt buộc) nên biết chắc số trang in → đề lẻ trang chèn trang trống, mặt trước phiếu luôn ở trang lẻ khi in 2 mặt; thêm break-before:right làm lớp bảo vệ. V1.80: dòng kẻ tự luận ở mặt trước phiếu kín trang theo cỡ phiếu (thu nhỏ phiếu thì thêm dòng). V1.79: phiếu riêng 2 mặt đi liền đề của chính học sinh đó (phiếu → đề → trang trống nếu đề lẻ trang, để in 2 mặt phiếu em sau luôn ở mặt trước tờ mới). V1.78: tuỳ chọn "Phiếu có phần làm tự luận"; kiểu Liền trong đề mà có tự luận → mỗi em 1 tờ phiếu riêng 2 mặt (in sẵn họ tên, SBD, mã đề; mặt sau làm tiếp, không ghi lại tên), chỉ nộp phiếu; phiếu cả lớp xếp trước, đề xếp sau. V1.77: chọn lớp làm bài (danh sách, SBD) chuyển vào Thiết lập chung; bỏ mục Danh sách lớp riêng. V1.76: quy trình đề định kỳ: Tạo đề gốc → Danh sách lớp (chọn lớp, SBD; bỏ qua được) → Trộn mã đề & Xuất bản (mặc định đúng sĩ số, trộn xong tự gán mỗi em một mã và cấp SBD còn thiếu, xuất ngay trên cùng trang). V1.75: nhận xét động viên kiểu bong bóng chat có icon (mở đầu theo mức điểm, điểm mạnh, câu cần xem lại theo dạng, lời khuyên, mục tiêu lần sau, lời chúc) cho cả bài ôn luyện và bài định kỳ; đáp án đề thi gửi kèm dạng, mức độ câu đề gốc; sửa lệch chỉ số đề gốc khi thống kê. V1.74: đề giữa kỳ, cuối kỳ có mã bài toàn cục (mỗi lần trộn một mã, in trên đề và phiếu, dải ô mã ở mép đáy phiếu); đáp án kỳ thi lên máy chủ, điện thoại đã liên kết đọc mã bài trên phiếu là tự tải, không cần quét QR. V1.73: trộn mã đề chống chép giữa mọi cặp mã (TN chia đều A/B/C/D theo vị trí câu và tối ưu cặp trùng nhiều nhất, Đ–S chọn thứ tự ý lệch nhau, TLN đáp số khác nhau); mục Chấm bài có Đáp án trắc nghiệm (mọi mã) và Đáp án tự luận (từng mã). V1.72: sửa diễn đạt câu hai điểm M1, M2 trên trục Oz nhìn AB dưới góc vuông. V1.71: các mã bài cùng lượt in gom thành một dòng ở mục Chấm bài (đáp án xem chung, thang điểm áp dụng cả nhóm, QR lần lượt, xoá cả nhóm); tên ảnh tải về có mã bài + ngày giờ chấm, không trùng. V1.70: đáp án trên máy chủ kèm dạng, mức độ từng câu để app điện thoại viết nhận xét tự động. V1.69: xem đáp án bài đã lưu ở mục Chấm bài (từng câu, kèm điểm, in được); bảng sửa thang điểm hiện đáp án cạnh từng câu. V1.68: sửa thang điểm bài đã in ở mục Chấm bài (từng câu TN, từng ý Đ–S, câu trả lời ngắn; đặt nhanh cả phần; điểm lẻ 0,1), cập nhật lên máy chủ, điện thoại tự nhận và tính lại bài đã chấm. V1.67: đáp án mã hoá lưu lên máy chủ, điện thoại liên kết một lần rồi tự tải đáp án theo mã bài (không quét QR từng đề); phiếu đang xem mang mã tạm tự đổi sang mã chung, bấm In thì chờ lấy mã chung. V1.66: mã bài không bao giờ trùng giữa các máy (bộ đếm chung trên Firebase, mã ≥ 1024 mã hoá thêm hàng ô ở đỉnh khung, phiếu cũ vẫn chấm được), ô Mã bài in to ở đầu phiếu, ô tìm theo mã bài ở mục Chấm. V1.65: chấm bài bằng ảnh có nhận xét tự động (khen, chỉ câu sai theo dạng, gợi ý cải thiện) đặt bên trái ô điểm trên ảnh đã chấm và trong thẻ kết quả. V1.64: thêm 7 dạng trả lời ngắn lớp 8 định lí Thalès (đoạn bù, Thalès đảo tìm x, qua trọng tâm, chu vi AMN, phân giác chia diện tích, bóng nắng, hình thang cạnh bên cắt nhau). V1.63: Ôn luyện → Xuất đề: đề kiểm tra in được nhiều mã (101, 102, …) cùng dạng, cùng điểm, khác số; đáp án và khung trả lời riêng từng mã. V1.62: phiếu bài tập — câu tự luận một ý (dẫn + một dòng) kẻ dòng hết bề ngang, không xếp 2 cột như câu nhiều ý. V1.61: câu tự luận lớp 6–9 chỉ hỏi 1 ý — 50 dạng nhiều ý tách thành 150 dạng một ý đánh số (1), (2), (3); ô Chuyên đề ở Ôn luyện thẳng hàng với các ô khác. V1.60: Ôn luyện — ô Chuyên đề tích chọn được nhiều chuyên đề; danh sách dạng, trình chiếu, xuất đề lấy dạng đã tích ở các chuyên đề đó. V1.59: thêm 10 dạng lớp 6 tìm x (cộng, trừ số nguyên) và quy tắc dấu ngoặc, xếp bậc thang từ rất dễ đến vừa. V1.58: phần mềm tự duyệt — gỡ tài khoản người duyệt và đăng nhập; dạng thay số/cố định dùng được ngay, tự kiểm thử ngầm (40 lần/dạng) và tự loại dạng lỗi; câu đề gốc đầy đủ, không lỗi được tự duyệt. V1.57: gỡ tính năng Kho câu hỏi (mục Kho, đồng bộ kho lên Firebase, câu Loại 2/3) — đề, ôn luyện, trình chiếu sinh trực tiếp từ Câu hỏi thay số và Câu hỏi cố định; Firebase chỉ còn phục vụ Game toán. V1.56: thêm 20 dạng tư duy lớp 10 chương Vectơ, xếp thành chuỗi liên kết (điểm thoả đẳng thức → cực trị, tập hợp điểm; phân tích vectơ → thẳng hàng, giao điểm; độ dài tổng hiệu → góc; tích vô hướng qua hình chiếu, trung điểm; đối xứng, đường thẳng Euler). V1.55: thêm 20 dạng thay số lớp 10 chương Vectơ (hình thoi 60°, lục giác đều, đẳng thức bốn điểm, tam giác vuông, ca nô, lực căng dây, ba lực 120°, trọng tâm tìm k, |ma+nb|, hình thang, aMA+bMB+cMC=0, toạ độ điểm M, cùng hướng, giao với trục, tàu – hải đăng, chân phân giác, tích vô hướng hình chữ nhật, góc giữa hai vectơ, hình vuông – trung điểm, MA·MB nhỏ nhất). V1.54: gỡ toàn bộ AI Gemini (API key, model, bộ đếm token, gợi ý đặc tả, sinh câu còn thiếu, nạp câu từ ảnh, đổi câu trùng, đọc phiếu bằng Gemini, nhận xét lớp, Luyện với AI) — phần mềm chạy hoàn toàn offline với câu thay số + kho câu đã duyệt; giao diện chỉnh lại tương ứng. V1.53: mục Chọn dạng toán dạy buổi này có nút Xếp theo Nội dung / Mức độ / Loại câu (nhớ lựa chọn); sửa danh sách bị tràn ngang, cắt chữ. V1.52: lớp 6 Số nguyên — thêm 20 dạng cộng, trừ số nguyên âm xoáy vào lỗi sai do không hiểu bản chất (chọn phép tính đúng, đúng–sai, bạn sai ở bước nào, gọi tên lỗi, −a không luôn âm, trục số, nhiệt độ qua 0 °C, hiệu số bàn thắng, bỏ ngoặc có dấu −, tìm x, nhiều dấu liền nhau…). V1.51: lớp 12 chương Vectơ — thêm 10 dạng tư duy (GTNN |αMA+βMB+γMC| trên mặt phẳng toạ độ, đếm M trên trục để tam giác MAB cân, GTNN MA·MB, MN nối trung điểm cạnh đối tứ diện, GTNN MA+MB trên trục, bóng nắng hai cột, đỉnh hình thang, góc 60° loại nghiệm ngoại lai, chóp đáy chữ nhật SA²+SC²=SB²+SD², ba vectơ tổng bằng 0). V1.50: lớp 12 chương Vectơ — thêm 10 dạng trắc nghiệm nhận biết (điểm chia đoạn thẳng, tích vô hướng bằng 0 trong hình lập phương, góc trong tứ diện đều, điểm thuộc trục/mặt phẳng toạ độ, trọng tâm tứ diện, hai vectơ bằng nhau, vectơ cùng phương, vectơ vuông góc, điểm khi biết vectơ, điểm đối xứng qua điểm). V1.49: lớp 12 chương Vectơ — thêm 10 dạng Đúng–Sai (5 TH: hai vectơ biết độ dài và góc, tứ diện chia cạnh theo tỉ số, tam giác vuông/diện tích, vectơ chứa tham số, ba lực tác dụng; 5 VD: chóp ba cạnh bên vuông góc, hình bình hành, hình chiếu đỉnh trên cạnh đối, flycam bay thẳng đều, cực trị điểm trên (Oxy)). V1.48: lớp 12 chương Vectơ và hệ trục toạ độ — thêm 10 dạng thay số thông hiểu, vận dụng (giao điểm đường thẳng AB với mặt phẳng toạ độ, chân đường phân giác trong, điểm trên trục để tam giác vuông, đỉnh tứ diện biết trọng tâm, tìm m theo độ dài đoạn thẳng, GTNN αMA² + βMB², điểm trên mặt phẳng toạ độ cách đều ba điểm, lăng trụ đứng gắn hệ trục (đúng – sai), côsin góc giữa hai đường thẳng trong hình chóp, camera treo bằng bốn sợi cáp). V1.47: nút 📲 Xuất gói cho app IMs (danh sách dạng đã duyệt cho app ôn luyện của học sinh). V1.46: xuất phiếu — tiết kiệm giấy riêng cho đề rèn luyện, đề kiểm tra, BTVN, đáp án; nhớ cỡ chữ lần trước (xuất phiếu và xuất đề PDF). V1.45: xuất phiếu (tiết kiệm giấy) — nút ✕ / chỉnh dòng của cột trái, cột phải nằm gọn trong lề trang, không bị khuất. V1.44: xuất phiếu ở Ôn luyện — số câu riêng cho đề rèn luyện, đề kiểm tra, bài tập về nhà; nút ✕ bỏ từng câu (đề kiểm tra chia lại điểm); nhớ số câu, số trang, tự căn của lần trước. V1.43: nút ✕ Loại cho bộ sinh thay số và câu cố định không đạt (ghi lí do; loại khỏi đề, ôn luyện, xuất phiếu; ↺ Khôi phục được). V1.42: 4 dạng Thalès lớp 8 không còn báo lỗi kiểm thử (tự thử lại số liệu); mục Câu hỏi cố định chia theo lớp → chương → bài, lọc theo lớp và hình thức. V1.41: lớp 8 chương Định lí Thalès — thêm 15 dạng thay số từ tài liệu phân dạng (hình thang và giao điểm hai đường chéo, tổng / hiệu đoạn thẳng, phân giác trong – ngoài, chu vi tam giác AMN, hình thoi nội tiếp tam giác, điểm chia trong – chia ngoài, tỉ số AN : NC, AK : KC…), có hình vẽ. V1.40: dạng khoảng cách hai tàu — hình vẽ ghi vận tốc của mỗi tàu, không ghi sẵn quãng đường (học sinh tự tính). V1.39: rà soát đề ĐH Sư phạm Hà Nội 2025 — thêm 2 dạng thay số (biểu đồ cột ba hạng mục — xác suất; chi tiết máy tròn xoay — đúng sai) và 2 câu cố định (SO ⊥ đáy khi SA = SC, SB = SD; GTNN của g = 2f − (x + 2)² từ đồ thị f′); biểu đồ cột vẽ được nhóm ba cột. V1.38: chọn cỡ hình vẽ 60–140% khi xuất đề PDF và xuất phiếu ở Ôn luyện. V1.37: xuất PDF — chọn cỡ phiếu tô chung 70–100% (cả kiểu Liền trong đề). V1.36: Đề định kỳ đã lưu — nút ✏ Sửa tên đề và lớp (giữ cả khi lưu lại đề đang mở). V1.35: bước Ma trận — độ phủ câu thay số tính theo dạng đã xác nhận (không còn báo 'kho chưa đủ câu', bỏ nút sinh vào kho); thêm ô tích 'Lấy câu hỏi cố định vào đề' và tích / bỏ từng câu cố định. V1.34: xuất PDF đề thi luôn hiện mã QR đáp án (cả khi đã chọn “tự lưu, không hỏi lại”, cả khi trình duyệt không báo in xong); nút 📱 QR đáp án ở bản xem trước PDF. V1.33: chấm phiếu bằng ảnh — vẫn tìm được 4 ô góc khi ô bị tô lại bằng bút màu (đỏ, xanh) hoặc mực in lốm đốm. V1.32: khung trả lời chia PHẦN I – II – III có khung kẻ như phiếu giữa kỳ, cuối kỳ (đúng – sai mỗi câu một ô a–d); tuỳ chọn trả lời ngắn xếp đứng (cột) hoặc ngang (hàng). V1.31: khung trả lời đề rèn luyện / kiểm tra / BTVN — trả lời ngắn xếp CỘT như phiếu giữa kỳ (mỗi cột một kí tự, ô tô dọc −/, và 0–9), đặt cạnh phần trắc nghiệm khi còn chỗ; phiếu in trước vẫn chấm theo bố cục cũ. V1.30: in đề có phiếu tô liền trong đề (tiêu đề → phiếu → câu hỏi). V1.29: đề không có tự luận thì phiếu trả lời không kẻ dòng chấm. V1.28: ít tự luận thì tăng số câu TN, Đ–S, TLN cho đủ 10 điểm (điểm mỗi câu giữ nguyên); phiếu tô theo số câu mới. V1.27: số câu tự luận đề định kỳ 0 – 3. V1.26: bỏ mục sinh câu thay số vào kho (cân đối, sinh cho chương, sinh vào kho); thêm mục Câu hỏi cố định. V1.25: câu thay số sinh thẳng khi tạo đề (không cần sinh vào kho trước); nút kiểm thử bộ mới báo kết quả và hỏi duyệt luôn. V1.24: 16 dạng thay số + 1 câu cố định theo đề ĐGNL SPT số 1; loại 'câu cố định' (không thay số) lưu trong code. V1.23: dạng đo khoảng cách hai điểm bờ bên kia sông — A, B nằm đúng trên bờ bên kia, C, D trên bờ bên này. V1.22: dạng ngoài CT 2018 (tham số m, a sin x + b cos x, hàm bậc bốn) không lấy vào đề giữa kỳ, cuối kỳ. V1.21: xuất đề thêm cỡ chữ 8–10 (đề trộn 9–10), giãn dòng 0,95–1,1, thu nhỏ khung trả lời 60–90%. V1.20: Game toán — cờ cảnh báo lượt đánh Hộ vệ bất thường tự gỡ khi em tích cực làm lại (luyện thêm ≥ 10 câu đúng ≥ 60% rồi thắng lại bình thường). V1.19: bỏ phiếu tô riêng từng em, chỉ còn phiếu tô chung có phần làm tự luận. V1.18: bố trí lại bước Trộn mã đề / Danh sách lớp & Xuất bản thành thẻ đánh số; bản in PDF thêm phiếu tô CHUNG cho mọi mã đề (có phần làm tự luận, mặt sau kẻ dòng; kèm đầu bản in hoặc chỉ in phiếu; đúng mẫu bộ chấm phiếu). V1.17: sửa lỗi công thức có dấu < hiện mã LaTeX sống ở bản in. V1.16: xem trước / xuất PDF nhiều mã đề không giật — dựng từng phần, nhớ công thức KaTeX, không vẽ trang ngoài màn hình. V1.15: trộn mã đề — thay số câu thay số ở từng mã đề, xếp mã đề xen kẽ các mã đề gốc. V1.14: xuất PDF đề trộn — in sẵn họ tên, lớp, SBD từng học sinh theo mã đề đã gán; thanh cài đặt dọc bên trái. V1.13: tự luận các mã đề gốc cùng dạng với mã đề gốc 1, chỉ thay số (tuỳ chọn ở bước Tạo đề gốc). V1.12: ma trận — khoá ô 🔒, Đề xuất lại ra phương án khác (ưu tiên ô, dạng ít dùng); lấy câu ưu tiên dạng ít dùng ở đề trước. V1.11: sửa câu tự luận một ý còn nhắc "ở ý b" (theo dõi nhiệt độ, tài khoản) — đề đứng riêng, lời giải tính đủ. V1.10: tháp số, ô vuông kì diệu — ô có số và ô trống cùng một cỡ, số căn giữa ô. V1.9: bản in — tháp số, ô vuông không tràn cột (tự thu nhỏ), ô điền số to hơn, ô ghi điểm to hơn. V1.8: Ôn luyện — danh sách lớp, chuyên đề hiện thêm số dạng chờ duyệt. V1.7: lớp 6 Phép cộng, phép trừ số nguyên — bổ sung TN/Đ-S/TLN/TL hỏi xuôi, hỏi ngược, tư duy (NB→VDC), tự luận mỗi câu một ý. V1.6: bản in — nới khoảng cách các dòng có phân số (không còn dính hàng trên, hàng dưới). V1.5: lớp 6 Phân số — bổ sung dạng rút gọn, so sánh, cộng trừ đủ TN/Đ-S/TLN/TL (NB→VDC), viết lại dạng cũ, tự luận mỗi câu một ý. V1.4: bỏ khối xuất tài liệu ở Câu hỏi thay số; màn Xuất đề (Ôn luyện) chuyển sang cột cài đặt chia nhóm, thêm tài liệu ôn tập / LaTeX vào đây. V1.3: bỏ khối hướng dẫn ở Câu hỏi thay số, thu nhỏ thẻ lớp/ĐGNL. V1.2: mục Câu hỏi thay số — thẻ chọn lớp/ĐGNL có biểu tượng nổi và số dạng TN/Đ-S/TLN/TL, thanh công cụ chia nhóm. MathBank V1.1 (đánh số lại từ MathBankPro V21.9): sửa lỗi tải kho từ cloud (Firebase xoá mảng rỗng → 'reading join'), đổi tên MathBank, banner mới bỏ tên trường, tích chọn theo hình thức TN/Đ-S/TLN/TL ở Ôn luyện. Trước đó: V21.9: lớp 10 — thêm 23 dạng từ đề ôn tập giữa kỳ I 2026–2027 (mệnh đề đảo, liệt kê tập hợp, phần bù, khoảng ↔ bất đẳng thức, đếm X với A ⊂ X ⊂ B, giao – hợp – hiệu tập liệt kê, tham số với B \ A = ∅ / B \ A = B có xét A rỗng, Ven hai tập (đúng – sai) và ba tập, vận chuyển hai kho, tổng côsin góc bù – tích tang góc phụ, biểu thức không thuần nhất theo tan, định lí côsin biết tổng hai cạnh, diện tích biết một cạnh hai góc, đường cao, đo đạc từ đài quan sát (trả lời ngắn và đúng – sai), dải ánh sáng, góc nghiêng sườn đồi, trạm bơm ven sông, ném xiên, hình chữ nhật nội tiếp nửa đường tròn, chiều cao cây nhìn từ trên cao). V21.8: lớp 11 chương I, II, III — thêm 22 dạng hỏi ngược và tư duy (cung tròn, góc quay kim đồng hồ, hai kim trùng/vuông góc, tan(a ± b), xét dấu chọn căn, nhận dạng tam giác, tìm a, b, k từ GTLN – GTNN – chu kì, điều kiện xác định trên ℝ, số giá trị nguyên của a sin x + b cos x + c, chọn phương trình theo họ nghiệm, đếm m theo số nghiệm trên đoạn, nghiệm dương nhỏ nhất (độ), truy hồi ngược, dãy tuần hoàn, S_n → u_n, góc lập cấp số cộng, nghiệm bậc ba lập cấp số cộng, cấp số nhân biết tổng và tích, số năm ít nhất, tần số chưa biết từ trung vị / mốt, biến đổi mẫu số liệu ghép nhóm). V21.7: chấm trả lời ngắn theo giá trị số — đáp án 4 mà học sinh ghi/tô 4,0 (đề yêu cầu làm tròn đến hàng phần mười) vẫn được chấm đúng; áp dụng cho chấm gõ tay, chấm đề thi và phiếu có khung trả lời (cả trên máy tính và ứng dụng MBP Chấm bài). V21.6: tải kho / đẩy kho có hộp tiến độ (số MB đã tải, đã gửi, từng bước gộp – kiểm tra – lưu); kiểm tra trùng và kiểm tra đủ trường chạy dần không treo trang; không so gần trùng từ ngữ giữa hai câu thay số; nhớ kết quả kiểm tra câu nên lần đẩy sau rất nhanh. V21.5: lớp 11 thêm 13 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: nhận biết công thức lượng giác đúng/sai, rút gọn bằng công thức cộng – nhân đôi, tổng sin² góc phụ nhau, tích thành tổng (đúng–sai), biết tan α (đúng–sai), giá trị lượng giác từ toạ độ điểm biểu diễn, bóng của thanh quay, GTLN–GTNN a sin²x + b cos²x + c, thực tế hàm lượng giác (ngày nhiều/ít ánh sáng nhất, lần đầu đạt độ cao), phương trình sin u = sin v · cos u = cos v · sin u = cos v (đúng–sai, tự luận độ/rađian), hỏi ngược cấp số cộng (ống heo, xếp hộp), hỏi ngược cấp số nhân (tìm tỉ lệ %). V21.4: “Sinh cân đối” chạy từng phần, có hộp tiến độ (dạng đang sinh, số câu đã thêm, %), nút Dừng giữ các câu đã sinh; kiểm tra trùng bằng tập mã băm dựng một lần nên nhanh hơn nhiều, không còn trang không phản hồi. V21.3: chương I lớp 12 thêm 22 dạng gặp trong đề ôn tập giữa kỳ I 2026–2027: bảng xét dấu đạo hàm (hình mới: chỉ hai dòng x, f′(x)) — đơn điệu, số cực trị, GTLN trên khoảng; f′ dạng tích; đồ thị f′ (đúng–sai, g = f(x) − kx); GTLN–GTNN đọc từ đồ thị, hàm chứa căn; hàm số nào đồng biến trên ℝ; tiệm cận từ giới hạn, hàm số có đúng 1/2/3 tiệm cận, BBT có điểm gián đoạn, 1/(g(x) − k); nhận dạng hàm số từ BBT, đồ thị phân thức có tiệm cận xiên; đúng–sai phân thức, bậc ba; thực tế: nồng độ pha trộn, logistic, đường dây điện ra đảo; đặt t = cos x. V21.2: lớp 6 — quy đồng mẫu phân số thêm 16 dạng: hỏi xuôi (mẫu chung nhỏ nhất, thừa số phụ, chọn kết quả quy đồng, tử số mới, đúng–sai, phân số lớn/nhỏ nhất, thực tế), hỏi ngược (biết kết quả quy đồng tìm phân số ban đầu, tìm mẫu a theo mẫu chung, điền số còn thiếu) và tư duy (x/M nằm giữa hai phân số, biết tổng/hiệu tử–mẫu, thêm cùng một số vào tử và mẫu, so sánh bằng quy đồng tử/phần bù/phân số trung gian, tự luận tổng hợp). V21.1: thêm 19 dạng chương I lớp 12 — hỏi ngược (biết cực trị/khoảng đơn điệu/GTNN/tiệm cận/đồ thị/giá trị tối ưu → tìm hệ số, tham số, hàm số) và tư duy (đồ thị f′, cực trị hàm hợp f(x²+px), f(|x|), số nghiệm f(|x|)=m, |f(x)|=m, min–max có trị tuyệt đối, điều kiện đoạn [0; b]). V21.0: in/xuất đề xong chỉ khi bấm “Lưu” đáp án mới được lưu để chấm; “Để sau (không lưu)” bỏ qua lượt này; ô “Từ nay tự lưu, không hỏi lại”. V20.9: in xong hỏi lưu đáp án cho mọi phiếu có khung trả lời (đề kiểm tra, bài tập về nhà, rèn luyện) — mã QR hiện lần lượt từng mã bài (nút Tiếp), tên trên điện thoại ghi rõ BTVN; nhắc khi bài tập về nhà in không có khung trả lời. V20.8: tiết kiệm giấy — khi in, các câu chảy hai cột liên tục để trình duyệt tự ngắt trang trên bố cục in thật (hết lỗi một câu tràn sang trang trống, bớt khoảng trống), in xong bản xem trước xếp trang lại như cũ; tuỳ chọn "Ngày tạo" ghi ngày tạo đề ở chân trang (đề trộn dùng thêm được {ngay} trong mẫu chân trang). V20.7: sửa chế độ tiết kiệm giấy — bảng biến thiên, đồ thị không còn tràn đè sang cột bên (tự co vừa cột), nút chỉnh dòng của cột trái chuyển ra lề trái, kiểm tra lại chiều cao từng cột sau khi xếp và chừa hao để bản in không bị tràn sang trang trống. V20.6: đề rèn luyện/kiểm tra/BTVN có chân trang (tên phiếu · lớp · mã bài — Trang n, đếm lại từ 1 mỗi phiếu); đề rèn luyện lấy đủ mọi dạng đã tích (ít nhất 1 câu mỗi dạng); chế độ 🌿 Tiết kiệm giấy (lề hẹp, hai cột, đầu phiếu gọn, đáp án ba cột). V20.5: mỗi loại phiếu (rèn luyện, kiểm tra, bài tập về nhà) tự chọn loại câu hỏi (trắc nghiệm, đúng sai, trả lời ngắn, tự luận) và bật/tắt khung trả lời riêng (BTVN, rèn luyện cũng chấm được bằng ảnh, mã bài riêng). V20.4: xuất đề từ các dạng toán đang chọn có 3 ô tích độc lập: Đề rèn luyện, Đề kiểm tra, Bài tập về nhà (mỗi phiếu số liệu khác nhau; đáp án theo phiếu đã chọn; lựa chọn được nhớ). V20.3: ô Chuyên đề ở Ôn luyện ghi kèm số dạng (và số câu đã duyệt) của từng chuyên đề; nút kiểm thử bộ sinh chỉ chạy các bộ mới (chưa xác nhận / chưa đạt), thêm nút Kiểm thử lại tất cả. V20.2: hình bài tô màu (lưới ô vuông) và biểu đồ do app đảm nhiệm cả khi thầy tự soạn/sửa câu (trình sửa có hình mẫu + sửa thông số) và khi AI đọc ảnh đề/soạn câu (AI trả thông số, app vẽ lại, không đính kèm ảnh). V20.1: hình vẽ LƯỚI Ô VUÔNG tự vẽ (hinhVe loai 'luoi': lưới ô, ô tô xám, điểm, đường đi; hình vuông chia 5 phần, chia bởi hai đường chéo; lưới điểm) + 16 dạng TÔ MÀU HÌNH VUÔNG, LƯỚI Ô VUÔNG (tô ô kề khác màu, tô cạnh mỗi ô đúng r cạnh đỏ, tô ba màu, tô đỉnh, bàn cờ 2×2 có đúng 2 ô đen, xác suất tô ngẫu nhiên, chọn ô bàn cờ, đếm hình chữ nhật/hình vuông, đường đi trên lưới, hình vuông nghiêng, đặt ô đen không cùng hàng cột, DS tổng hợp). V20.0: bổ sung 18 dạng TIẾP TUYẾN hỏi xuôi – hỏi ngược (phân thức, tung độ cho trước, giao với trục, song song/vuông góc có loại trùng, hệ số góc nhỏ nhất, tam giác với hai tiệm cận, số tiếp tuyến qua một điểm; tìm m theo hệ số góc, song song loại trùng, tiếp tuyến qua điểm, điều kiện tiếp xúc, tìm tiếp điểm, hỏi ngược từ phương trình tiếp tuyến, đọc đồ thị có tiếp tuyến, tiếp xúc trục hoành, DS, TL, thực tiễn góc nghiêng); đồ thị hàm số vẽ thêm được đường thẳng (trường duong). V19.8: bổ sung 14 dạng TRUNG GIAN cho góc và khoảng cách lớp 11–12 (bước xác định góc, hình chiếu, góc phẳng nhị diện, chân đường vuông góc, đoạn vuông góc chung, tỉ số đổi điểm, quy đổi khoảng cách; liên hệ góc – khoảng cách, S′ = S cos φ, góc qua hai đường vuông góc, phương pháp thể tích; gắn hệ trục, vectơ pháp tuyến). V19.7: biểu đồ thống kê khi xuất đề (TikZ) in đen trắng — mỗi dãy/phần một mức xám, viền đen; dãy thứ hai của biểu đồ đoạn thẳng nét đứt, điểm vuông; màn hình vẫn giữ màu. V19.6: BIỂU ĐỒ THỐNG KÊ tự vẽ (hinhVe loai 'bieudo': cột, cột kép, đoạn thẳng, hình quạt, tần số ghép nhóm + đa giác tần số, biểu đồ hộp) — SVG màu trên màn hình, TikZ đen trắng (các mức xám, dãy thứ hai nét đứt) khi xuất đề; AI đọc ảnh cũng trả về được dạng này; 12 dạng đọc biểu đồ lớp 10–11–12. V19.5: bổ sung 20 dạng mạch THỐNG KÊ lớp 10–11–12 (sai số tương đối, sai số diện tích, chọn số đặc trưng đại diện, gộp nhóm, so sánh độ ổn định, phương sai từ tổng, ảnh hưởng biến đổi số liệu, hiệu chỉnh nhóm, ghép nhóm từ số liệu thô, tìm tần số, ý nghĩa tứ phân vị, mốt, so sánh hai nhóm, độ lệch chuẩn, rủi ro đầu tư, ngưỡng bất thường, tăng lương, tự luận). V19.4: bổ sung 12 dạng GIAO TUYẾN – GIAO ĐIỂM – THIẾT DIỆN lớp 11 (tứ diện, hình chóp, lăng trụ, hình hộp) và dạng tư duy (thẳng hàng, Menelaus trong không gian, hệ thức SA/SM + SC/SP = SB/SN + SD/SQ, đường chéo hình hộp chia ba, số cạnh và diện tích thiết diện). V19.3: bổ sung 13 dạng TƯ DUY về góc và khoảng cách (điểm di động – cực trị, bài toán ngược, đếm, so sánh, trải phẳng, Oxyz cực trị; gắn nhãn TSA). V19.2: bổ sung 22 dạng KHOẢNG CÁCH — điểm đến đường thẳng, điểm đến mặt phẳng (đổi điểm, tỉ số), hai đường thẳng chéo nhau, đường/mặt song song (lớp 11 tổng hợp; lớp 12 toạ độ hoá và Oxyz; có bài thực tiễn). V19.1: bổ sung 21 dạng về GÓC trong không gian — góc giữa hai đường thẳng chéo nhau, đường thẳng và mặt phẳng, hai mặt phẳng, góc nhị diện (lớp 11), toạ độ hoá tính góc (lớp 12), 5 bài toán thực tiễn (mái nhà, dốc xe lăn, pin mặt trời, kim tự tháp, lều trại). V19.0: thêm 20 dạng thay số theo đề thi SPT (ĐH Sư phạm Hà Nội) 2025 — nhãn SPT, xem ở mục ĐGNL › SPT (14 TN, 1 đúng–sai, 5 trả lời ngắn). V18.9: bảng 🔭 Phòng thực hành có cột ĐIỂM THỰC HÀNH (thang 10) = điểm cao nhất các bài tính điểm (mỗi ngày 1 bài, số liệu riêng từng em, mỗi nhiệm vụ nộp 1 lần, chỉ tính nhiệm vụ làm đúng có căn cứ từ sổ đo), đánh dấu ⚠ lượt nghi đoán mò. V18.8: Game toán — bảng 🔭 Phòng thực hành đo đạc ảo: chia nhóm thực nghiệm TN1 (có Trợ lý AI chẩn đoán lỗi) / TN2, xem và xuất nhật ký từng lượt nộp, tổng hợp lỗi từng em. V18.7: bảng điểm game cảnh báo ⚑ lượt đánh Hộ vệ bất thường (nghi làm hộ): đúng hơn hẳn lúc luyện, nhanh bất thường, đêm khuya. V18.6: chương III lớp 10 thêm 6 dạng đo đạc thực tế (đo khoảng cách gián tiếp) có hình vẽ tự động (sông, hồ, tháp, tàu, núi); các dạng thực tế cũ được gắn hình. V18.5: Game toán — tích ô điểm TX từng em trong bảng điểm (hoặc “cả lớp”) để lấy điểm vào sổ, khoá lại (game báo học sinh: điểm thường xuyên chương này đã vào sổ điểm chính). V18.4: ẩn đề không còn dải nhắc màu vàng (chỉ nút 👁 Hiện đề trên thanh). V18.3: nút “Ẩn đề / Hiện đề” (phím H) ở Ôn luyện và trình chiếu — dạy lý thuyết trên bảng không cần đề. V18.2: xuất đề ở Ôn luyện có nút “Thêm dạng cũ (ôn tập)” — tích chọn dạng của các buổi trước (ghi theo ngày) hoặc theo chương trình mọi lớp, kể cả lớp dưới. V18.1: trình chiếu / bảng nháp có thêm COMPA (vẽ cung tròn, bắt giao điểm các cung) và THƯỚC ĐO ĐỘ (đặt vào đỉnh góc, xoay theo cạnh, đọc số đo, chấm vạch). V18.0: chương IV hình lớp 6 chia theo Bài 18, 19, 20, Luyện tập chung (thêm 26 dạng thay số, hình vẽ tứ giác / lục giác đều); phần đối xứng tách thành chương riêng; chấm ảnh khung trả lời gần vuông (nhiều câu trả lời ngắn) và dò lại từng hàng ô khi giấy cong, giống app chấm bài điện thoại. V17.9: thêm 2 chương hình học lớp 6 (12 dạng thay số). V17.8: bổ sung 8 dạng đúng–sai cho chương I lớp 12. V17.7: thêm 2 dạng từ câu 10, 11 (Phần I) của đề khối 12. V17.6: thêm 6 dạng thay số rút từ đề kiểm tra khối 12 (11/10/2026). V17.5: bổ sung 11 dạng thay số cho chương III–VI lớp 12 (TLN + đúng–sai). V17.4: thêm 6 dạng toán tư duy chương Vectơ và hệ trục toạ độ (lớp 12)
 function updateHeaderContext(){
   const v = document.getElementById('hdrContextV');
   if(v) v.textContent = `Lớp ${state.grade||10}, ${KYTHI_LABEL[state.kytha] || 'chưa chọn kỳ'}`;
@@ -74334,6 +74334,820 @@ GE(6, 1, 0, 'VD', 'Bài toán thực tế: viết một biểu thức nhiều ph
 }
 REL_.forEach(k=> delete GEN[k]);
 Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.84'; GEN[k].l1 = 'V2.84'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.1 Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9 (lớp 6, khoá 6|2|0), đợt 1: 2 TN, 1 Đ–S, 1 TLN, 1 TL.
+// Chuỗi tư duy: dấu hiệu theo chữ số tận cùng (2, 5, cả 2 và 5) → dấu hiệu theo tổng các chữ số (3, 9; chia hết cho 3 chưa chắc chia hết cho 9)
+// → tổng hợp bốn dấu hiệu trên một số → đếm các số chia hết trong một khoảng → lập số chia hết cho 5 từ chữ số cho trước.
+const uaT = n=> String(n).length >= 5 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') : String(n);
+const uaS = n=> String(n).split('').reduce((t, c)=> t + +c, 0);
+const uaPerm = a=> a.length <= 1 ? [a] : a.flatMap((x, i)=> uaPerm(a.slice(0, i).concat(a.slice(i + 1))).map(p=> [x].concat(p)));
+
+// ---------- 7. TN NB: dấu hiệu chia hết cho 2, cho 5, cho cả 2 và 5 ----------
+G(6, 2, 0, 'NB', 'Dấu hiệu chia hết cho 2, cho 5, cho cả 2 và 5 (chữ số tận cùng)', R=>{
+  const hoi = R.pick(['2', '5', '25', '2k5', '5k2']);
+  const mk = d=> R.int(10, 999)*10 + d;
+  const f = n=> hoi === '2' ? n % 2 === 0 : hoi === '5' ? n % 5 === 0 : hoi === '25' ? n % 10 === 0 : hoi === '2k5' ? n % 2 === 0 && n % 5 : n % 5 === 0 && n % 2;
+  const dd = {'2':[R.pick([2, 4, 6, 8, 0])], '5':[R.pick([5, 0])], '25':[0], '2k5':[R.pick([2, 4, 6, 8])], '5k2':[5]}[hoi][0];
+  const ans = mk(dd), W = []; let t = 0;
+  while(W.length < 3 && t++ < 60){ const n = mk(R.int(0, 9)); if(!f(n) && !W.includes(n) && n % 10 !== dd) W.push(n); }
+  if(W.length < 3 || new Set(W.map(n=> n % 10)).size < 2) return null;
+  const ten = {'2':'chia hết cho $2$', '5':'chia hết cho $5$', '25':'chia hết cho cả $2$ và $5$', '2k5':'chia hết cho $2$ nhưng không chia hết cho $5$', '5k2':'chia hết cho $5$ nhưng không chia hết cho $2$'}[hoi];
+  const ly = {'2':'chữ số tận cùng là chữ số chẵn ($0, 2, 4, 6, 8$)', '5':'chữ số tận cùng là $0$ hoặc $5$', '25':'chữ số tận cùng là $0$', '2k5':'chữ số tận cùng là $2, 4, 6$ hoặc $8$', '5k2':'chữ số tận cùng là $5$'}[hoi];
+  const o = {stem:`Số nào sau đây ${ten}?`, ans:{t:`$${uaT(ans)}$`, v:ans}, wrong:W.map(n=> ({t:`$${uaT(n)}$`, v:n})),
+    lg:`Số ${ten} khi và chỉ khi ${ly}.<br>Trong các số đã cho chỉ có $${uaT(ans)}$ (tận cùng là $${dd}$) thoả mãn; ${W.map(n=> `$${uaT(n)}$ tận cùng là $${n % 10}$`).join(', ')}.`,
+    verify:()=> f(o.ans.v) && o.wrong.every(w=> !f(w.v))};
+  return o;
+});
+
+// ---------- 8. TN TH: dấu hiệu chia hết cho 9 (bẫy: chia hết cho 3 nhưng không chia hết cho 9) ----------
+G(6, 2, 0, 'TH', 'Dấu hiệu chia hết cho 3, cho 9 (tổng các chữ số) — số chia hết cho 3 chưa chắc chia hết cho 9', R=>{
+  const hoi9 = R.rnd() < 0.6, len = R.int(4, 5);
+  const gen = cond=>{ for(let t = 0; t < 200; t++){ const n = R.int(10**(len - 1), 10**len - 1); if(cond(uaS(n))) return n; } return null; };
+  const ans = hoi9 ? gen(s=> s % 9 === 0) : gen(s=> s % 3 === 0 && s % 9 !== 0);
+  const w1 = hoi9 ? gen(s=> s % 3 === 0 && s % 9 !== 0) : gen(s=> s % 3 !== 0), w2 = gen(s=> s % 3 !== 0), w3 = hoi9 ? gen(s=> s % 3 === 0 && s % 9 !== 0) : gen(s=> s % 3 !== 0);
+  const W = [w1, w2, w3]; if(W.some(x=> !x) || new Set(W.concat(ans)).size < 4 || !ans) return null;
+  const o = {stem: hoi9 ? `Số nào sau đây chia hết cho $9$?` : `Số nào sau đây chia hết cho $3$ nhưng không chia hết cho $9$?`, ans:{t:`$${uaT(ans)}$`, v:ans}, wrong:W.map(n=> ({t:`$${uaT(n)}$`, v:n})),
+    lg:`Tính tổng các chữ số của từng số: ${[ans].concat(W).map(n=> `$${uaT(n)}$ có tổng $${uaS(n)}$`).join('; ')}.<br>`
+      + `Số chia hết cho $9$ khi tổng các chữ số chia hết cho $9$; số chia hết cho $3$ khi tổng các chữ số chia hết cho $3$.<br>Vậy chọn $${uaT(ans)}$ (tổng $${uaS(ans)}$ ${hoi9 ? 'chia hết cho $9$' : 'chia hết cho $3$ nhưng không chia hết cho $9$'}).`,
+    verify:()=> hoi9 ? o.ans.v % 9 === 0 && o.wrong.every(w=> w.v % 9) : o.ans.v % 3 === 0 && o.ans.v % 9 && o.wrong.every(w=> w.v % 3 || w.v % 9 === 0)};
+  return o;
+});
+
+// ---------- 9. Đ–S TH: bốn dấu hiệu trên cùng một số ----------
+GD(6, 2, 0, 'TH', 'Áp dụng dấu hiệu chia hết cho 2, 5, 3, 9 cho một số cụ thể', R=>{
+  const N = R.int(1000, 99999), s = uaS(N);
+  const k = (m, ok)=> ok ? `$${uaT(N)}$ chia hết cho $${m}$` : `$${uaT(N)}$ không chia hết cho $${m}$`;
+  const cl = m=>{ const ok = N % m === 0; return claim(R, k(m, ok), k(m, !ok), ()=> ok ? N % m === 0 : N % m !== 0, ()=> ok ? N % m !== 0 : N % m === 0); };
+  if(N % 3 !== 0 && R.rnd() < 0.6) return null;   // ưu tiên số chia hết cho 3 để có ý "3 mà không 9"
+  return {stem:`Cho số $${uaT(N)}$.`, items:R.shuffle([cl(2), cl(5), cl(3), cl(9)]),
+    lg:`• Chữ số tận cùng là $${N % 10}$ nên $${uaT(N)}$ ${N % 2 ? 'không ' : ''}chia hết cho $2$, ${N % 5 ? 'không ' : ''}chia hết cho $5$.<br>`
+      + `• Tổng các chữ số: $${String(N).split('').join(' + ')} = ${s}$; $${s}$ ${s % 3 ? 'không ' : ''}chia hết cho $3$, ${s % 9 ? 'không ' : ''}chia hết cho $9$ nên $${uaT(N)}$ ${N % 3 ? 'không ' : ''}chia hết cho $3$, ${N % 9 ? 'không ' : ''}chia hết cho $9$.`};
+});
+
+// ---------- 10. TLN TH: đếm số chia hết cho m trong một khoảng ----------
+GT(6, 2, 0, 'TH', 'Đếm các số tự nhiên trong một khoảng chia hết cho 2, 3, 5 hoặc 9 (dãy cách đều, số đầu và số cuối)', R=>{
+  const m = R.pick([2, 3, 5, 9]), a = R.int(10, 500), b = a + R.int(30, 900); if(b > 999) return null;
+  const dau = Math.ceil(a/m)*m, cuoi = Math.floor(b/m)*m, n = (cuoi - dau)/m + 1;
+  const o = {stem:`Có bao nhiêu số tự nhiên chia hết cho $${m}$ nằm trong khoảng từ $${a}$ đến $${b}$ (tính cả hai số $${a}$ và $${b}$)?`, ans:n,
+    lg:`Số nhỏ nhất chia hết cho $${m}$ không nhỏ hơn $${a}$ là $${dau}$; số lớn nhất chia hết cho $${m}$ không vượt quá $${b}$ là $${cuoi}$.<br>Các số cần đếm: $${dau}; ${dau + m}; \\ldots; ${cuoi}$, hai số liền nhau hơn kém $${m}$.<br>Số các số: $(${cuoi} - ${dau}) : ${m} + 1 = ${n}$.`,
+    verify:()=>{ let c = 0; for(let x = a; x <= b; x++) if(x % m === 0) c++; return c === o.ans; }};
+  return o;
+});
+
+// ---------- 11. TL TH: lập các số chia hết cho 5 (hoặc 2) từ chữ số cho trước ----------
+GE(6, 2, 0, 'TH', 'Từ bốn chữ số cho trước, viết tất cả các số có ba chữ số khác nhau chia hết cho 5 (hoặc cho 2)', R=>{
+  const m = R.pick([5, 5, 2]), co0 = R.rnd() < 0.7, d = co0 ? [0].concat(R.distinct(3, 1, 9)) : R.distinct(4, 1, 9);
+  const L = [...new Set(uaPerm(d).map(p=> p.slice(0, 3)).filter(p=> p[0] !== 0).map(p=> +p.join('')))].filter(n=> n % m === 0).sort((x, y)=> x - y);
+  if(L.length < 2 || L.length > 12) return null;
+  const tc = m === 5 ? 'chữ số hàng đơn vị phải là $0$ hoặc $5$' : 'chữ số hàng đơn vị phải là chữ số chẵn';
+  return {stem:`Dùng bốn chữ số ${R.shuffle(d).map(x=> `$${x}$`).join('; ')}, hãy viết tất cả các số tự nhiên có ba chữ số khác nhau và chia hết cho $${m}$.`,
+    lg:`Để chia hết cho $${m}$, ${tc}; chữ số hàng trăm phải khác $0$.<br>`
+      + [...new Set(L.map(n=> n % 10))].map(u=> `• Tận cùng là $${u}$: ${L.filter(n=> n % 10 === u).map(n=> `$${n}$`).join(', ')}.`).join('<br>')
+      + `<br>Vậy có $${L.length}$ số: ${L.map(n=> `$${n}$`).join('; ')}.`,
+    verify:()=>{ const M = []; for(let x = 100; x <= 999; x++){ const t = String(x).split('').map(Number); if(new Set(t).size === 3 && t.every(c=> d.includes(c)) && x % m === 0) M.push(x); } return M.join() === L.join(); }};
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.1 Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9 (lớp 6, khoá 6|2|0), đợt 2: 2 TN, 1 Đ–S, 2 TLN.
+// Chuỗi tư duy: tính chất chia hết của một tổng (mọi số hạng chia hết; đúng một số hạng không chia hết) → ước của một số (tìm theo cặp)
+// → khẳng định đúng/sai về tổng, hiệu chia hết → đếm số ước → điền chữ số để được số chia hết cho 9 (cho 3).
+const ubT = n=> String(n).length >= 5 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') : String(n);
+const ubU = n=>{ const r = []; for(let d = 1; d <= n; d++) if(n % d === 0) r.push(d); return r; };
+
+// ---------- 12. TN TH: tính chất chia hết của một tổng ----------
+G(6, 2, 0, 'TH', 'Tính chất chia hết của tổng: tổng nào chia hết cho m mà không cần tính (mọi số hạng chia hết; đúng một số hạng không chia hết)', R=>{
+  const m = R.pick([4, 6, 7, 8, 9, 11, 12, 15]), bo = ()=> m*R.int(3, 60), le = ()=>{ let x; do x = R.int(13, 600); while(x % m === 0); return x; };
+  const T = [bo(), bo(), bo()], S1 = [bo(), le(), bo()], S2 = [le(), bo(), bo()];
+  let S3; for(let t = 0; t < 50; t++){ const p = le(), q = le(); if((p + q) % m){ S3 = [p, q, bo()]; break; } } if(!S3) return null;
+  const sum = s=> s.reduce((x, y)=> x + y); if(new Set([T, S1, S2, S3].map(sum)).size < 4) return null;   // bốn phương án khác giá trị
+  const O = s=> ({t:`$${s.join(' + ')}$`, v:s.join('+')});
+  const o = {stem:`Không tính giá trị, hãy cho biết tổng nào sau đây chia hết cho $${m}$?`, ans:O(T), wrong:[S1, S2, S3].map(O),
+    lg:`• $${T.join(' + ')}$: mọi số hạng đều chia hết cho $${m}$ (${T.map(x=> `$${x} = ${m} \\cdot ${x/m}$`).join(', ')}) nên tổng chia hết cho $${m}$.<br>`
+      + `• Hai tổng $${S1.join(' + ')}$ và $${S2.join(' + ')}$ có đúng một số hạng không chia hết cho $${m}$, các số hạng còn lại chia hết cho $${m}$, nên tổng không chia hết cho $${m}$.<br>`
+      + `• Tổng $${S3.join(' + ')}$ có hai số hạng không chia hết cho $${m}$; trường hợp này phải tính: tổng bằng $${S3.reduce((a, b)=> a + b)}$, không chia hết cho $${m}$.`,
+    verify:()=> [o.ans].concat(o.wrong).filter(x=> x.v.split('+').map(Number).reduce((a, b)=> a + b) % m === 0).length === 1 && o.ans.v.split('+').map(Number).reduce((a, b)=> a + b) % m === 0};
+  return o;
+});
+
+// ---------- 13. TN TH: tập hợp các ước của một số ----------
+G(6, 2, 0, 'TH', 'Viết tập hợp các ước của một số (tìm ước theo cặp, không quên 1 và chính số đó)', R=>{
+  const n = R.pick([12, 16, 18, 20, 24, 28, 30, 32, 36, 40, 42, 44, 45, 48, 50, 54, 56, 60, 63, 64, 66, 70, 72, 75, 80, 84, 90, 96, 98, 100]), U = ubU(n);
+  const miss1 = U.filter(d=> d !== 1 && d !== n), missMid = U.filter(d=> d !== R.pick(U.slice(1, -1))), add = U.concat([R.pick([2, 3, 4, 5, 6, 7, 8, 9].filter(d=> n % d))]).sort((a, b)=> a - b);
+  const O = a=> ({t:`$\\{${a.join('; ')}\\}$`, v:a.join(',')});
+  if(new Set([U, miss1, missMid, add].map(a=> a.join())).size < 4) return null;
+  const pairs = U.filter(d=> d*d <= n).map(d=> `$${n} = ${d} \\cdot ${n/d}$`).join('; ');
+  const o = {stem:`Tập hợp các ước của $${n}$ là`, ans:O(U), wrong:[miss1, missMid, add].map(O),
+    lg:`Tìm các ước theo cặp: ${pairs}.<br>Vậy $\\text{Ư}(${n}) = \\{${U.join('; ')}\\}$ (có $${U.length}$ ước, kể cả $1$ và $${n}$).`,
+    verify:()=> o.ans.v.split(',').map(Number).every(d=> n % d === 0) && o.ans.v.split(',').length === ubU(n).length};
+  return o;
+});
+
+// ---------- 14. Đ–S TH: tính chất chia hết của tổng, hiệu ----------
+GD(6, 2, 0, 'TH', 'Tính chất chia hết của tổng và hiệu: khẳng định nào đúng, nào sai (kể cả trường hợp hai số hạng không chia hết)', R=>{
+  const m = R.pick([3, 4, 5, 6, 7, 8, 9]), a = m*R.int(5, 40), b = m*R.int(2, 30), c = (()=>{ let x; do x = R.int(11, 300); while(x % m === 0); return x; })();
+  let p, q; for(let t = 0; t < 50; t++){ p = R.int(11, 300); q = R.int(11, 300); if(p % m && q % m && (p + q) % m === 0) break; p = 0; } if(!p) return null;
+  const ex = (s, v)=> ({t:`$${s}$ chia hết cho $${m}$`, f:`$${s}$ không chia hết cho $${m}$`, ok:v % m === 0});
+  const L = [ex(`${a} + ${b}`, a + b), ex(`${a} - ${b}`, a - b), ex(`${a} + ${c}`, a + c), ex(`${p} + ${q}`, p + q), ex(`${a} + ${b} + ${c}`, a + b + c)];
+  if(a <= b) return null;
+  const it = R.shuffle(L).slice(0, 4).map(x=> claim(R, x.ok ? x.t : x.f, x.ok ? x.f : x.t, null, null));   // chk gán lại ngay dưới: tính lại tổng/hiệu từ chính mệnh đề hiển thị
+  const vals = {[`${a} + ${b}`]:a + b, [`${a} - ${b}`]:a - b, [`${a} + ${c}`]:a + c, [`${p} + ${q}`]:p + q, [`${a} + ${b} + ${c}`]:a + b + c};
+  it.forEach(x=>{ const s = x.t.match(/^\$([^$]*)\$/)[1], v = vals[s], saysYes = !/không chia hết/.test(x.t); x.chk = ()=> (v % m === 0) === saysYes; });
+  return {stem:`Biết $${a}$ và $${b}$ chia hết cho $${m}$; $${c}$, $${p}$, $${q}$ không chia hết cho $${m}$. Xét các khẳng định sau.`, items:it,
+    lg:`• Tổng, hiệu của hai số chia hết cho $${m}$ thì chia hết cho $${m}$: $${a} + ${b}$, $${a} - ${b}$ chia hết cho $${m}$.<br>• Tổng có đúng một số hạng không chia hết cho $${m}$ (còn lại chia hết) thì không chia hết cho $${m}$: $${a} + ${c}$, $${a} + ${b} + ${c}$ không chia hết cho $${m}$.<br>`
+      + `• Hai số hạng đều không chia hết cho $${m}$ thì tổng có thể chia hết: $${p} + ${q} = ${p + q} = ${m} \\cdot ${(p + q)/m}$ chia hết cho $${m}$.`};
+});
+
+// ---------- 15. TLN TH: số ước của một số ----------
+GT(6, 2, 0, 'TH', 'Tìm đủ các ước của một số (liệt kê theo cặp) rồi tính tổng các ước hoặc tổng các ước lớn hơn k', R=>{
+  const n = R.int(12, 200), U = ubU(n); if(U.length < 4) return null;
+  const k = R.rnd() < 0.5 ? 0 : U[R.int(1, U.length - 2)], L = U.filter(d=> d > k), S = L.reduce((a, b)=> a + b, 0); if(L.length < 2) return null;
+  const o = {stem: k ? `Tính tổng các ước của $${n}$ lớn hơn $${k}$.` : `Tính tổng tất cả các ước của $${n}$.`, ans:S,
+    lg:`Tìm các ước theo cặp (tích bằng $${n}$): ${U.filter(d=> d*d <= n).map(d=> d*d === n ? `$${d} \\cdot ${d}$` : `$${d} \\cdot ${n/d}$`).join('; ')}.<br>$\\text{Ư}(${n}) = \\{${U.join('; ')}\\}$.<br>`
+      + `${k ? `Các ước lớn hơn $${k}$: ${L.map(d=> `$${d}$`).join(', ')}. ` : ''}Tổng: $${L.join(' + ')} = ${S}$.`,
+    verify:()=>{ let c = 0; for(let d = k + 1; d <= n; d++) if(n % d === 0) c += d; return c === o.ans; }};
+  return o;
+});
+
+// ---------- 16. TLN TH: điền chữ số để được số chia hết cho 9 (cho 3, cho cả 5 và 9) ----------
+GT(6, 2, 0, 'TH', 'Điền chữ số vào dấu * để số chia hết cho 9 (hoặc chia hết cho cả 2 và 9, cả 5 và 9) — chỉ có một đáp số', R=>{
+  const kieu = R.pick(['9', '29', '59']); let N, pos, len = 4, ans, so;
+  for(let t = 0; t < 200; t++){ const d = [R.int(1, 9)]; for(let i = 1; i < len; i++) d.push(R.int(0, 9)); pos = kieu === '9' ? R.int(1, len - 1) : R.int(1, len - 2);
+    if(kieu === '29' && d[len - 1] % 2) continue; if(kieu === '59' && d[len - 1] % 5) continue;
+    const ok = []; for(let c = 0; c <= 9; c++){ const e = d.slice(); e[pos] = c; const v = +e.join(''); if(v % 9 === 0 && (kieu !== '29' || v % 2 === 0) && (kieu !== '59' || v % 5 === 0)) ok.push(c); }
+    if(ok.length === 1){ N = d; ans = ok[0]; const e = d.slice(); e[pos] = ans; so = +e.join(""); break; } }
+  if(!N) return null;
+  const sh = N.map((c, i)=> i === pos ? '*' : c).join(''), tc = {'9':'chia hết cho $9$', '29':'chia hết cho cả $2$ và $9$', '59':'chia hết cho cả $5$ và $9$'}[kieu];
+  const s0 = N.reduce((t, c, i)=> i === pos ? t : t + c, 0);
+  const o = {stem:`Thay dấu $*$ bằng một chữ số thích hợp để số $\\overline{${sh}}$ ${tc}. Số nhận được là bao nhiêu?`, ans:so,
+    lg:`${kieu !== '9' ? `Chữ số tận cùng là $${N[len - 1]}$ nên số đã ${kieu === '29' ? 'chia hết cho $2$' : 'chia hết cho $5$'}. ` : ''}Tổng các chữ số đã biết là $${s0}$, nên $${s0} + *$ phải chia hết cho $9$.<br>`
+      + `Vì $*$ là chữ số từ $0$ đến $9$ nên $${s0} + * = ${s0 + ans}$, tức là $* = ${ans}$ (với $* = ${ans}$ tổng các chữ số là $${s0 + ans}$, chia hết cho $9$).<br>Số nhận được là $${so}$.`,
+    verify:()=>{ const v = o.ans; if(String(v).length !== N.length || String(v).split("").some((c, i)=> i !== pos && +c !== N[i])) return false; return v % 9 === 0 && (kieu !== '29' || v % 2 === 0) && (kieu !== '59' || v % 5 === 0); }};
+  return o;
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.1 Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9 (lớp 6, khoá 6|2|0), đợt 3: 2 TN, 1 Đ–S, 1 TLN, 1 TL.
+// Chuỗi tư duy: bội của một số (nhân với 0, 1, 2, …) trong một khoảng → số nhỏ nhất, lớn nhất có k chữ số chia hết cho nhiều số (phối hợp dấu hiệu)
+// → khẳng định về ước và bội → số lớn nhất có ba chữ số chia hết cho … → tìm hai chữ số chưa biết (dấu hiệu tận cùng trước, tổng các chữ số sau).
+const ucT = n=> String(n).length >= 5 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') : String(n);
+const ucM = {'2 và 3':6, '2 và 5':10, '2 và 9':18, '3 và 5':15, '5 và 9':45, '2, 3 và 5':30, '2, 5 và 9':90, '2, 3, 5 và 9':90};
+
+// ---------- 17. TN TH: các bội của m trong một khoảng ----------
+G(6, 2, 0, 'TH', 'Tập hợp các bội của một số nhỏ hơn (không vượt quá) một số cho trước — nhớ bội 0, không lấy số vượt quá', R=>{
+  const m = R.int(3, 13), N = m*R.int(4, 7) + R.int(0, m - 1), le = R.rnd() < 0.5, B = []; for(let x = 0; le ? x <= N : x < N; x += m) B.push(x);
+  if(B.length < 4) return null;
+  const no0 = B.slice(1), them = B.concat([B[B.length - 1] + m]), sai = B.slice(0, -1).concat([B[B.length - 1] + 1]);
+  const O = a=> ({t:`$\\{${a.join('; ')}\\}$`, v:a.join(',')}); if(new Set([B, no0, them, sai].map(a=> a.join())).size < 4) return null;
+  const o = {stem:`Tập hợp các bội của $${m}$ ${le ? 'không vượt quá' : 'nhỏ hơn'} $${N}$ là`, ans:O(B), wrong:[no0, them, sai].map(O),
+    lg:`Các bội của $${m}$ là $${m} \\cdot 0, ${m} \\cdot 1, ${m} \\cdot 2, \\ldots$, tức là $0; ${m}; ${2*m}; \\ldots$<br>Lấy các bội ${le ? 'không vượt quá' : 'nhỏ hơn'} $${N}$: $\\{${B.join('; ')}\\}$ (bội tiếp theo là $${B[B.length - 1] + m} ${B[B.length - 1] + m > N ? ">" : "\\ge"} ${N}$ nên không lấy). Chú ý $0$ là bội của mọi số khác $0$.`,
+    verify:()=> o.ans.v.split(',').map(Number).every(x=> x % m === 0 && (le ? x <= N : x < N)) && o.ans.v.split(',').length === Math.floor((le ? N : N - 1)/m) + 1};
+  return o;
+});
+
+// ---------- 18. TN VD: số nhỏ nhất / lớn nhất có k chữ số chia hết cho nhiều số ----------
+G(6, 2, 0, 'VD', 'Số nhỏ nhất có k chữ số chia hết cho cả 2, 3, 5, 9 (phối hợp các dấu hiệu chia hết)', R=>{
+  const key = R.pick(Object.keys(ucM)), m = ucM[key], k = R.int(3, 5), nho = true, ten = ['', '', '', 'ba', 'bốn', 'năm'][k];
+  const ans = Math.ceil(10**(k - 1)/m)*m;
+  const W = [10**(k - 1), ans + m, ans + 2*m, 10**(k - 1) + 8].filter((x, i, A)=> x !== ans && A.indexOf(x) === i && String(x).length === k).slice(0, 3); if(W.length < 3) return null;
+  const o = {stem:`Số tự nhiên nhỏ nhất có ${ten} chữ số chia hết cho cả ${key.replace(/(\d)/g, '$$$1$$')} là`, ans:{t:`$${ucT(ans)}$`, v:ans}, wrong:W.map(x=> ({t:`$${ucT(x)}$`, v:x})),
+    lg:`${/2/.test(key) && /5/.test(key) ? 'Chia hết cho cả $2$ và $5$ thì chữ số tận cùng là $0$. ' : /5/.test(key) ? 'Chia hết cho $5$ thì chữ số tận cùng là $0$ hoặc $5$. ' : /2/.test(key) ? 'Chia hết cho $2$ thì chữ số tận cùng là chữ số chẵn. ' : ''}${/9/.test(key) ? 'Chia hết cho $9$ thì tổng các chữ số chia hết cho $9$ (khi đó cũng chia hết cho $3$). ' : /3/.test(key) ? 'Chia hết cho $3$ thì tổng các chữ số chia hết cho $3$. ' : ''}<br>`
+      + `Xét lần lượt từ ${nho ? `số nhỏ nhất có ${ten} chữ số $${ucT(10**(k - 1))}$ tăng dần` : `số lớn nhất có ${ten} chữ số $${10**k - 1}$ giảm dần`}, số đầu tiên thoả mãn là $${ucT(ans)}$ (tổng các chữ số $${String(ans).split('').reduce((t, c)=> t + +c, 0)}$, tận cùng $${ans % 10}$).`,
+    verify:()=>{ const ok = x=> key.split(/, | và /).every(d=> x % +d === 0); let b = null; if(nho){ for(let x = 10**(k - 1); x < 10**k; x++) if(ok(x)){ b = x; break; } } else { for(let x = 10**k - 1; x >= 10**(k - 1); x--) if(ok(x)){ b = x; break; } } return b === o.ans.v && o.wrong.every(w=> w.v !== b); }};
+  return o;
+});
+
+// ---------- 19. Đ–S TH: ước và bội ----------
+GD(6, 2, 0, 'TH', 'Ước và bội: a là bội của b khi a chia hết cho b; nhận định về ước, bội của các số cụ thể', R=>{
+  const b = R.int(3, 15), q = R.int(3, 20), a = b*q, c = (()=>{ let x; do x = R.int(10, 200); while(x % b === 0); return x; })(), n = R.pick([12, 18, 20, 24, 28, 30, 36, 40, 42, 45, 48]);
+  const U = []; for(let d = 1; d <= n; d++) if(n % d === 0) U.push(d); const dNot = R.pick([7, 8, 9, 11, 14, 16].filter(d=> n % d)), dYes = R.pick(U.slice(1, -1));
+  const it = R.shuffle([
+    claim(R, `$${a}$ là bội của $${b}$`, `$${c}$ là bội của $${b}$`, ()=> a % b === 0, ()=> c % b === 0),
+    claim(R, `$${b}$ là ước của $${a}$`, `$${a}$ là ước của $${b}$`, ()=> a % b === 0, ()=> b % a === 0),
+    claim(R, `$${dYes}$ là ước của $${n}$`, `$${dNot}$ là ước của $${n}$`, ()=> n % dYes === 0, ()=> n % dNot === 0),
+    claimN(R, v=> `$${n}$ có đúng $${v}$ ước`, U.length, String(U.length), U.length - 2, String(U.length - 2), ()=> U.length),
+    claim(R, `Số $0$ là bội của $${b}$`, `Số $0$ là ước của $${b}$`, ()=> 0 % b === 0, ()=> b % 1 === 0 && false)]);
+  return {stem:`Xét các khẳng định sau về ước và bội.`, items:it.slice(0, 4),
+    lg:`• $${a} = ${b} \\cdot ${q}$ nên $${a}$ chia hết cho $${b}$: $${a}$ là bội của $${b}$, $${b}$ là ước của $${a}$ (không nói ngược lại). $${c}$ không chia hết cho $${b}$ nên không là bội của $${b}$.<br>`
+      + `• $\\text{Ư}(${n}) = \\{${U.join('; ')}\\}$, có $${U.length}$ ước (kể cả $1$ và $${n}$); $${dNot}$ không là ước của $${n}$.<br>• $0 = ${b} \\cdot 0$ nên $0$ là bội của $${b}$; $0$ không là ước của số nào (không chia được cho $0$).`};
+});
+
+// ---------- 20. TLN VD: số lớn nhất (nhỏ nhất) có ba chữ số khác nhau chia hết cho … ----------
+GT(6, 2, 0, 'VD', 'Số lớn nhất (nhỏ nhất) có ba chữ số khác nhau chia hết cho cả 2 và 9, cả 5 và 9, cả 3 và 5…', R=>{
+  const key = R.pick(['2 và 3', '2 và 9', '3 và 5', '5 và 9', '2 và 5', '2, 3 và 5', '2, 5 và 9']), m = ucM[key], nho = R.rnd() < 0.5, kn = R.rnd() < 0.6;
+  const ok = x=> x % m === 0 && (!kn || new Set(String(x)).size === 3); let ans = null;
+  if(nho){ for(let x = 100; x <= 999; x++) if(ok(x)){ ans = x; break; } } else { for(let x = 999; x >= 100; x--) if(ok(x)){ ans = x; break; } }
+  if(ans == null) return null;
+  const o = {stem:`Tìm số tự nhiên ${nho ? 'nhỏ' : 'lớn'} nhất có ba chữ số${kn ? ' khác nhau' : ''} chia hết cho cả ${key.replace(/(\d)/g, '$$$1$$')}.`, ans,
+    lg:`Số chia hết cho cả ${key.replace(/(\d)/g, '$$$1$$')} ${m === 10 || m === 30 || m === 90 ? 'có chữ số tận cùng là $0$' : /5/.test(key) ? 'có chữ số tận cùng là $0$ hoặc $5$' : 'có chữ số tận cùng chẵn'}${/9/.test(key) ? ' và tổng các chữ số chia hết cho $9$' : /3/.test(key) ? ' và tổng các chữ số chia hết cho $3$' : ''}.<br>`
+      + `Thử lần lượt từ $${nho ? 100 : 999}$ ${nho ? 'tăng' : 'giảm'} dần${kn ? ', bỏ các số có chữ số lặp lại' : ''}, số đầu tiên thoả mãn là $${ans}$.`,
+    verify:()=>{ const L = []; for(let x = 100; x <= 999; x++) if(key.split(/, | và /).every(d=> x % +d === 0) && (!kn || new Set(String(x)).size === 3)) L.push(x); return o.ans === (nho ? L[0] : L[L.length - 1]); }};
+  return o;
+});
+
+// ---------- 21. TL VD: tìm hai chữ số để số chia hết cho 2 (5) và 9 ----------
+GE(6, 2, 0, 'VD', 'Tìm các chữ số a, b để số có dạng a…b chia hết cho cả 5 và 9 (hoặc cả 2 và 9): xét chữ số tận cùng trước', R=>{
+  const hai = R.rnd() < 0.5, mid = String(R.int(10, 999));
+  const L = []; for(let a = 1; a <= 9; a++) for(let b = 0; b <= 9; b++){ const v = +(a + mid + b); if(v % 9 === 0 && (hai ? v % 2 === 0 : v % 5 === 0)) L.push([a, b, v]); }
+  if(L.length < 2 || L.length > 6) return null;
+  const s0 = mid.split('').reduce((t, c)=> t + +c, 0), bs = [...new Set(L.map(x=> x[1]))];
+  return {stem:`Tìm các chữ số $a$, $b$ để số $\\overline{a${mid}b}$ chia hết cho cả ${hai ? '$2$' : '$5$'} và $9$.`,
+    lg:`Chia hết cho ${hai ? '$2$ nên $b \\in \\{0; 2; 4; 6; 8\\}$' : '$5$ nên $b \\in \\{0; 5\\}$'}. Chia hết cho $9$ nên $a + ${mid.split('').join(' + ')} + b = a + b + ${s0}$ chia hết cho $9$ ($a$ từ $1$ đến $9$).<br>`
+      + (hai ? [0, 2, 4, 6, 8] : [0, 5]).map(b=>{ const as = L.filter(x=> x[1] === b).map(x=> x[0]); return `• $b = ${b}$: $a + ${s0 + b}$ chia hết cho $9$ ${as.length ? `khi $a = ${as.join('$ hoặc $a = ')}$` : 'không có $a$ nào từ $1$ đến $9$'}.`; }).join('<br>')
+      + `<br>Vậy có $${L.length}$ số: ${L.map(x=> `$${x[2]}$ ($a = ${x[0]}, b = ${x[1]}$)`).join('; ')}.`,
+    verify:()=>{ let c = 0; for(let a = 1; a <= 9; a++) for(let b = 0; b <= 9; b++){ const v = +(a + mid + b); if(v % 9 === 0 && v % (hai ? 2 : 5) === 0) c++; } return c === L.length; }};
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.1 Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9 (lớp 6, khoá 6|2|0), đợt 4: 2 TN, 1 Đ–S, 2 TLN.
+// Chuỗi tư duy: chọn số hạng để tổng chia hết (tính chất chia hết của tổng) → chia đều trong thực tế là tìm ước → khẳng định về dấu hiệu chia hết trên số cụ thể
+// → số gần nhất lớn hơn (nhỏ hơn) một số cho trước và chia hết cho 9, cho cả 2 và 9, cả 3 và 5…
+const udT = n=> String(n).length >= 5 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') : String(n);
+const udS = n=> String(n).split('').reduce((t, c)=> t + +c, 0);
+
+// ---------- 22. TN TH: chọn x để tổng chia hết cho m ----------
+G(6, 2, 0, 'TH', 'Chọn số x để tổng a + b + x chia hết cho m khi a, b đã chia hết cho m (x phải chia hết cho m)', R=>{
+  const m = R.pick([3, 4, 6, 7, 8, 9, 12, 15]), a = m*R.int(5, 40), b = m*R.int(5, 40), x = m*R.int(2, 30);
+  const W = []; for(let t = 0; t < 60 && W.length < 3; t++){ const y = x + R.pick([1, 2, 3, -1, -2, m - 1, m + 1, Math.floor(m/2)]); if(y > 0 && y % m && !W.includes(y)) W.push(y); } if(W.length < 3) return null;
+  const o = {stem:`Cho tổng $A = ${a} + ${b} + x$ với $x$ là số tự nhiên. Giá trị nào sau đây của $x$ làm cho $A$ chia hết cho $${m}$?`, ans:{t:`$x = ${x}$`, v:x}, wrong:W.map(y=> ({t:`$x = ${y}$`, v:y})),
+    lg:`$${a} = ${m} \\cdot ${a/m}$ và $${b} = ${m} \\cdot ${b/m}$ đều chia hết cho $${m}$. Do đó $A$ chia hết cho $${m}$ khi và chỉ khi $x$ chia hết cho $${m}$ (nếu $x$ không chia hết cho $${m}$ thì tổng có đúng một số hạng không chia hết cho $${m}$).<br>`
+      + `Trong các giá trị đã cho chỉ có $${x} = ${m} \\cdot ${x/m}$ chia hết cho $${m}$. Vậy $x = ${x}$.`,
+    verify:()=> (a + b + o.ans.v) % m === 0 && o.wrong.every(w=> (a + b + w.v) % m !== 0)};
+  return o;
+});
+
+// ---------- 23. TN TH: chia đều trong thực tế là tìm ước ----------
+G(6, 2, 0, 'TH', 'Chia đều số đồ vật cho một nhóm bạn (không thừa): số bạn phải là ước của số đồ vật', R=>{
+  const n = R.pick([36, 42, 48, 54, 56, 60, 63, 64, 72, 75, 80, 84, 90, 96, 98, 105, 108, 112, 120, 126, 132, 135, 140, 144]);
+  const U = []; for(let d = 2; d <= 20; d++) if(n % d === 0) U.push(d); const NU = []; for(let d = 3; d <= 20; d++) if(n % d) NU.push(d);
+  if(!U.length || NU.length < 3) return null; const k = R.pick(U.filter(d=> d >= 3) .concat(U)), W = R.shuffle(NU).slice(0, 3);
+  const vat = R.pick(['quyển vở', 'chiếc bút', 'cái kẹo', 'quả cam']);
+  const o = {stem:`Cô giáo có $${n}$ ${vat} muốn chia đều cho một nhóm học sinh, mỗi bạn được số ${vat} như nhau và không thừa ${vat} nào. Số bạn trong nhóm có thể là`, ans:{t:`$${k}$ bạn`, v:k}, wrong:W.map(d=> ({t:`$${d}$ bạn`, v:d})),
+    lg:`Chia đều không thừa nên $${n}$ phải chia hết cho số bạn, tức là số bạn là một ước của $${n}$.<br>$${n} = ${k} \\cdot ${n/k}$ nên chia được cho $${k}$ bạn (mỗi bạn $${n/k}$ ${vat}); ${W.map(d=> `$${n} = ${d} \\cdot ${Math.floor(n/d)} + ${n % d}$`).join(', ')} nên không chia đều được cho ${W.map(d=> `$${d}$`).join(', ')} bạn.`,
+    verify:()=> n % o.ans.v === 0 && o.wrong.every(w=> n % w.v !== 0)};
+  return o;
+});
+
+// ---------- 24. Đ–S TH: khẳng định về dấu hiệu chia hết (suy luận) ----------
+GD(6, 2, 0, 'TH', 'Suy luận từ dấu hiệu chia hết: chia hết cho 9 thì chia hết cho 3 (không ngược lại); tận cùng 0 thì chia hết cho 2 và 5', R=>{
+  const N3 = (()=>{ for(let t = 0; t < 300; t++){ const n = R.int(1000, 9999); if(n % 3 === 0 && n % 9) return n; } })(), N9 = (()=>{ for(let t = 0; t < 300; t++){ const n = R.int(1000, 9999); if(n % 9 === 0) return n; } })();
+  const N0 = R.int(100, 999)*10, N5 = R.int(100, 999)*10 + 5; if(!N3 || !N9) return null;
+  const it = R.shuffle([
+    claim(R, `$${udT(N9)}$ chia hết cho $9$ nên cũng chia hết cho $3$`, `$${udT(N3)}$ chia hết cho $3$ nên cũng chia hết cho $9$`, ()=> N9 % 9 === 0 && N9 % 3 === 0, ()=> N3 % 9 === 0),
+    claim(R, `$${udT(N0)}$ có chữ số tận cùng là $0$ nên chia hết cho cả $2$ và $5$`, `$${udT(N5)}$ có chữ số tận cùng là $5$ nên chia hết cho cả $2$ và $5$`, ()=> N0 % 10 === 0, ()=> N5 % 10 === 0),
+    claim(R, `$${udT(N3)}$ chia hết cho $3$ nhưng không chia hết cho $9$`, `$${udT(N3)}$ chia hết cho $9$`, ()=> N3 % 3 === 0 && N3 % 9 !== 0, ()=> N3 % 9 === 0),
+    claim(R, `$${udT(N5)}$ chia hết cho $5$ nhưng không chia hết cho $2$`, `$${udT(N5)}$ chia hết cho $2$`, ()=> N5 % 5 === 0 && N5 % 2 === 1, ()=> N5 % 2 === 0)]);
+  return {stem:`Xét các khẳng định sau.`, items:it,
+    lg:`• $${udT(N9)}$ có tổng các chữ số $${udS(N9)}$ chia hết cho $9$ nên chia hết cho $9$; số chia hết cho $9$ thì chia hết cho $3$.<br>• $${udT(N3)}$ có tổng các chữ số $${udS(N3)}$ chia hết cho $3$ nhưng không chia hết cho $9$: chia hết cho $3$ chưa chắc chia hết cho $9$.<br>`
+      + `• $${udT(N0)}$ tận cùng là $0$ nên chia hết cho cả $2$ và $5$; $${udT(N5)}$ tận cùng là $5$ nên chia hết cho $5$ nhưng không chia hết cho $2$ (tận cùng lẻ).`};
+});
+
+// ---------- 25. TLN TH: số nhỏ nhất lớn hơn N chia hết cho 9 (hoặc 3) ----------
+GT(6, 2, 0, 'TH', 'Tìm số tự nhiên nhỏ nhất lớn hơn một số cho trước và chia hết cho 9 (hoặc cho 3) — dùng tổng các chữ số', R=>{
+  const m = R.pick([9, 9, 3]), N = R.int(100, 9900); let x = N + 1; while(x % m) x++; if(x > 9999) return null;
+  const o = {stem:`Tìm số tự nhiên nhỏ nhất lớn hơn $${N}$ và chia hết cho $${m}$.`, ans:x,
+    lg:`$${N}$ có tổng các chữ số là $${udS(N)}$. Xét các số lớn hơn $${N}$: ${Array.from({length: x - N}, (_, i)=> `$${N + i + 1}$ (tổng $${udS(N + i + 1)}$)`).join(', ')}.<br>Số đầu tiên có tổng các chữ số chia hết cho $${m}$ là $${x}$. Vậy số cần tìm là $${x}$.`,
+    verify:()=>{ const v = o.ans; if(v % m || v <= N) return false; for(let t = N + 1; t < v; t++) if(t % m === 0) return false; return true; }};
+  return o;
+});
+
+// ---------- 26. TLN VD: số lớn nhất nhỏ hơn N chia hết cho cả hai số ----------
+GT(6, 2, 0, 'VD', 'Tìm số tự nhiên lớn nhất nhỏ hơn một số cho trước và chia hết cho cả 2 và 9, cả 3 và 5, cả 5 và 9 (phối hợp dấu hiệu)', R=>{
+  const K = [['2 và 9', 18], ['3 và 5', 15], ['5 và 9', 45], ['2 và 3', 6], ['2, 3 và 5', 30]], [ten, m] = R.pick(K), N = R.int(200, 9999);
+  let x = N - 1; while(x % m) x--; if(x < 100) return null;
+  const o = {stem:`Tìm số tự nhiên lớn nhất nhỏ hơn $${N}$ và chia hết cho cả ${ten.replace(/(\d)/g, '$$$1$$')}.`, ans:x,
+    lg:`Số cần tìm ${/2/.test(ten) && /5/.test(ten) ? 'có chữ số tận cùng là $0$' : /5/.test(ten) ? 'có chữ số tận cùng là $0$ hoặc $5$' : 'có chữ số tận cùng chẵn'}${/9/.test(ten) ? ' và tổng các chữ số chia hết cho $9$' : /3/.test(ten) ? ' và tổng các chữ số chia hết cho $3$' : ''}.<br>`
+      + `Xét các số nhỏ hơn $${N}$ giảm dần thoả mãn điều kiện về chữ số tận cùng, số đầu tiên có tổng các chữ số đạt yêu cầu là $${x}$ (tổng các chữ số $${udS(x)}$).<br>Vậy số cần tìm là $${x}$.`,
+    verify:()=>{ const v = o.ans, ok = t=> ten.split(/, | và /).every(d=> t % +d === 0); if(!ok(v) || v >= N) return false; for(let t = v + 1; t < N; t++) if(ok(t)) return false; return true; }};
+  return o;
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.1 Quan hệ chia hết và tính chất; dấu hiệu chia hết cho 2, 5, 3, 9 (lớp 6, khoá 6|2|0), đợt 5: 2 TLN, 2 TL.
+// Chuỗi tư duy: các bội của m trong một khoảng là dãy cách đều → tính tổng các bội → đếm số chia hết cho 5 mà không chia hết cho 2 (tận cùng 5)
+// → giải thích một tổng chia hết mà không tính (tính chất chia hết của tổng) → chia nhóm đều nhau: liệt kê các ước trong một khoảng.
+const ueT = n=> String(n).length >= 5 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') : String(n);
+
+// ---------- 27. TLN VD: tổng các bội của m trong một khoảng ----------
+GT(6, 2, 0, 'VD', 'Tính tổng các bội của một số nằm trong một khoảng (các bội lập thành dãy cách đều)', R=>{
+  const m = R.int(3, 13), a = R.int(10, 150), b = a + R.int(30, 160), dau = Math.ceil(a/m)*m, cuoi = Math.floor(b/m)*m;
+  const n = (cuoi - dau)/m + 1, S = (dau + cuoi)*n/2; if(n < 4 || S > 9999) return null;
+  const o = {stem:`Tính tổng các bội của $${m}$ lớn hơn $${a - 1}$ và nhỏ hơn $${b + 1}$.`, ans:S,
+    lg:`Các bội của $${m}$ trong khoảng đó là $${dau}; ${dau + m}; \\ldots; ${cuoi}$ (bội nhỏ nhất $${dau}$, lớn nhất $${cuoi}$), có $(${cuoi} - ${dau}) : ${m} + 1 = ${n}$ số.<br>`
+      + `Tổng: $(${dau} + ${cuoi}) \\cdot ${n} : 2 = ${S}$.`,
+    verify:()=>{ let s = 0; for(let x = a; x <= b; x++) if(x % m === 0) s += x; return s === o.ans; }};
+  return o;
+});
+
+// ---------- 28. TLN TH: đếm số chia hết cho 5 mà không chia hết cho 2 (hoặc ngược lại) ----------
+GT(6, 2, 0, 'TH', 'Đếm các số trong một khoảng chia hết cho 5 mà không chia hết cho 2 (tận cùng 5), hoặc chia hết cho 2 mà không chia hết cho 5', R=>{
+  const kieu = R.int(0, 1), a = R.int(10, 400), b = a + R.int(40, 500); if(b > 999) return null;
+  const f = x=> kieu === 0 ? x % 5 === 0 && x % 2 : x % 2 === 0 && x % 5; let c = 0; for(let x = a; x <= b; x++) if(f(x)) c++;
+  let lg;
+  if(kieu === 0){ const d = Math.ceil((a - 5)/10)*10 + 5, e = Math.floor((b - 5)/10)*10 + 5; lg = `Chia hết cho $5$ mà không chia hết cho $2$ thì chữ số tận cùng là $5$.<br>Các số đó là $${d}; ${d + 10}; \\ldots; ${e}$ (cách nhau $10$), có $(${e} - ${d}) : 10 + 1 = ${c}$ số.`; }
+  else { const c2 = Math.floor(b/2) - Math.floor((a - 1)/2), c10 = Math.floor(b/10) - Math.floor((a - 1)/10); lg = `Chia hết cho $2$ mà không chia hết cho $5$ thì chữ số tận cùng là $2, 4, 6$ hoặc $8$.<br>Số các số chẵn từ $${a}$ đến $${b}$: $${c2}$; trong đó số tận cùng là $0$ (chia hết cho cả $2$ và $5$): $${c10}$.<br>Vậy có $${c2} - ${c10} = ${c}$ số.`; }
+  const o = {stem:`Có bao nhiêu số tự nhiên từ $${a}$ đến $${b}$ (tính cả $${a}$ và $${b}$) ${kieu === 0 ? 'chia hết cho $5$ nhưng không chia hết cho $2$' : 'chia hết cho $2$ nhưng không chia hết cho $5$'}?`, ans:c, lg,
+    verify:()=>{ let t = 0; for(let x = a; x <= b; x++) if(kieu === 0 ? x % 10 === 5 : [2, 4, 6, 8].includes(x % 10)) t++; return t === o.ans; }};
+  return o;
+});
+
+// ---------- 29. TL TH: giải thích vì sao một tổng chia hết (không tính) ----------
+GE(6, 2, 0, 'TH', 'Không thực hiện phép tính, giải thích vì sao một tổng (hiệu) chia hết hoặc không chia hết cho m', R=>{
+  const m = R.pick([3, 4, 6, 7, 9, 12]), p = R.int(12, 99), a = m*p, b = R.int(3, 40), c = m*R.int(5, 60), cokhong = R.rnd() < 0.5;
+  const d = cokhong ? m*R.int(2, 40) : (()=>{ let x; do x = R.int(11, 400); while(x % m === 0); return x; })();
+  const ex = `${a} \\cdot ${b} + ${c} - ${d}`; if(a*b + c - d < 0) return null;
+  const ok = (a*b + c - d) % m === 0;
+  return {stem:`Không thực hiện phép tính, hãy giải thích vì sao biểu thức $${ex}$ ${ok ? '' : 'không '}chia hết cho $${m}$.`,
+    lg:`• $${a} = ${m} \\cdot ${p}$ chia hết cho $${m}$ nên tích $${a} \\cdot ${b}$ chia hết cho $${m}$.<br>• $${c} = ${m} \\cdot ${c/m}$ chia hết cho $${m}$.<br>`
+      + (ok ? `• $${d} = ${m} \\cdot ${d/m}$ chia hết cho $${m}$.<br>Mọi số hạng của tổng, hiệu đều chia hết cho $${m}$ nên $${ex}$ chia hết cho $${m}$.`
+        : `• $${d} = ${m} \\cdot ${Math.floor(d/m)} + ${d % m}$ không chia hết cho $${m}$.<br>Trong biểu thức chỉ có đúng một số hạng không chia hết cho $${m}$, các số hạng còn lại đều chia hết cho $${m}$, nên $${ex}$ không chia hết cho $${m}$.`),
+    verify:()=> ((a*b + c - d) % m === 0) === ok && (a*b) % m === 0 && c % m === 0};
+});
+
+// ---------- 30. TL VD: chia nhóm đều nhau (ước trong một khoảng) ----------
+GE(6, 2, 0, 'VD', 'Chia đều học sinh thành các nhóm (mỗi nhóm từ p đến q bạn): liệt kê mọi cách chia — các ước trong một khoảng', R=>{
+  const n = R.pick([24, 30, 32, 36, 40, 42, 45, 48]), p = R.int(3, 5), q = R.int(8, 12), L = []; for(let d = p; d <= q; d++) if(n % d === 0) L.push(d);
+  if(L.length < 2) return null;
+  const U = []; for(let d = 1; d <= n; d++) if(n % d === 0) U.push(d);
+  return {stem:`Lớp 6B có $${n}$ học sinh. Cô giáo muốn chia lớp thành các nhóm có số bạn bằng nhau, mỗi nhóm có từ $${p}$ đến $${q}$ bạn và không bạn nào ở ngoài nhóm. Có những cách chia nào (mỗi nhóm bao nhiêu bạn, có bao nhiêu nhóm)?`,
+    lg:`Số bạn mỗi nhóm phải là ước của $${n}$: $\\text{Ư}(${n}) = \\{${U.join('; ')}\\}$.<br>Các ước từ $${p}$ đến $${q}$ là ${L.map(d=> `$${d}$`).join(', ')}.<br>`
+      + L.map(d=> `• Mỗi nhóm $${d}$ bạn: có $${n} : ${d} = ${n/d}$ nhóm.`).join('<br>') + `<br>Vậy có $${L.length}$ cách chia như trên.`,
+    verify:()=> L.every(d=> n % d === 0 && d >= p && d <= q) && U.filter(d=> d >= p && d <= q).length === L.length};
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.2 Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố (lớp 6, khoá 6|2|0), đợt 1: 2 TN, 1 Đ–S, 1 TLN, 1 TL.
+// Chuỗi tư duy: nhận biết số nguyên tố (bẫy số lẻ là hợp số: 51, 57, 91…) → nhận biết hợp số (1 không là số nguyên tố cũng không là hợp số)
+// → khẳng định về số nguyên tố, hợp số → đếm số nguyên tố trong một khoảng → phân tích ra thừa số nguyên tố theo cột.
+const ufP = n=>{ if(n < 2) return false; for(let d = 2; d*d <= n; d++) if(n % d === 0) return false; return true; };
+const ufF = n=>{ const r = []; let d = 2; while(n > 1){ while(n % d === 0){ r.push(d); n /= d; } d++; } return r; };
+const ufTex = n=>{ const f = ufF(n), c = {}; f.forEach(p=> c[p] = (c[p] || 0) + 1); return Object.keys(c).map(p=> c[p] > 1 ? `${p}^{${c[p]}}` : p).join(' \\cdot '); };
+const ufHop = [51, 57, 87, 91, 93, 111, 117, 119, 123, 129, 133, 141, 143, 147, 153, 159, 161, 169, 171, 177, 183, 187, 189, 201, 203, 207, 209, 213, 217, 219, 221];
+
+// ---------- 31. TN NB: số nào là số nguyên tố ----------
+G(6, 2, 0, 'NB', 'Nhận biết số nguyên tố trong các số cho trước (bẫy: số lẻ nhưng là hợp số như 51, 91, 119)', R=>{
+  const P = []; for(let n = 11; n < 230; n++) if(ufP(n)) P.push(n);
+  const ans = R.pick(P), W = R.shuffle(ufHop.filter(x=> Math.abs(x - ans) < 120)).slice(0, R.rnd() < 0.3 ? 2 : 3); if(W.length < 2) return null; if(W.length === 2) W.push(1);
+  const o = {stem:`Số nào sau đây là số nguyên tố?`, ans:{t:`$${ans}$`, v:ans}, wrong:W.map(x=> ({t:`$${x}$`, v:x})),
+    lg:`Số nguyên tố là số tự nhiên lớn hơn $1$, chỉ có hai ước là $1$ và chính nó.<br>${W.map(x=> x === 1 ? `$1$ không là số nguyên tố (chỉ có một ước)` : `$${x} = ${ufF(x).join(' \\cdot ')}$ là hợp số`).join('; ')}.<br>`
+      + `Chia thử $${ans}$ cho các số nguyên tố ${P.concat([2, 3, 5, 7]).filter((p, i, A)=> A.indexOf(p) === i && p*p <= ans).sort((a, b)=> a - b).map(p=> `$${p}$`).join(", ")} đều không chia hết (số nguyên tố tiếp theo có bình phương lớn hơn $${ans}$) nên $${ans}$ là số nguyên tố.`,
+    verify:()=> ufP(o.ans.v) && o.wrong.every(w=> !ufP(w.v))};
+  return o;
+});
+
+// ---------- 32. TN TH: nhận biết hợp số ----------
+G(6, 2, 0, 'TH', 'Nhận biết hợp số (có nhiều hơn hai ước); số 0 và 1 không là số nguyên tố, cũng không là hợp số', R=>{
+  const ans = R.pick(ufHop.concat([49, 77, 121, 169, 187, 209, 221, 247, 253, 289, 299, 323])); const P = []; for(let n = 2; n < 300; n++) if(ufP(n)) P.push(n);
+  const W = R.shuffle(P.filter(p=> p > 10 && Math.abs(p - ans) < 80)).slice(0, R.rnd() < 0.4 ? 2 : 3); if(W.length < 2) return null; if(W.length === 2) W.push(1);
+  const o = {stem:`Số nào sau đây là hợp số?`, ans:{t:`$${ans}$`, v:ans}, wrong:W.map(x=> ({t:`$${x}$`, v:x})),
+    lg:`Hợp số là số tự nhiên lớn hơn $1$ có nhiều hơn hai ước.<br>$${ans} = ${ufF(ans).join(' \\cdot ')}$ nên $${ans}$ có ước $${ufF(ans)[0]}$ khác $1$ và khác $${ans}$: $${ans}$ là hợp số.<br>`
+      + `${W.map(x=> x === 1 ? `$1$ không là số nguyên tố, cũng không là hợp số` : `$${x}$ là số nguyên tố`).join('; ')}.`,
+    verify:()=>{ let d = 2; while(d*d <= o.ans.v && o.ans.v % d) d++; return o.ans.v === ans && d*d <= o.ans.v && o.wrong.every(w=> w.v === 1 || ufP(w.v)); }};
+  return o;
+});
+
+// ---------- 33. Đ–S NB: khẳng định về số nguyên tố, hợp số ----------
+GD(6, 2, 0, 'TH', 'Khẳng định về số nguyên tố, hợp số: số 1, số 2, số lẻ, tích hai số nguyên tố, số cụ thể', R=>{
+  const h = R.pick(ufHop), P = []; for(let n = 30; n < 200; n++) if(ufP(n)) P.push(n); const p = R.pick(P), q = R.pick([3, 5, 7, 11, 13]), r = R.pick([17, 19, 23, 29, 31]);
+  const it = R.shuffle([
+    claim(R, `Số $2$ là số nguyên tố chẵn duy nhất`, `Mọi số nguyên tố đều là số lẻ`, ()=> ufP(2) && [4, 6, 8, 10, 12].every(x=> !ufP(x)), ()=> !ufP(2)),
+    claim(R, `Số $1$ không là số nguyên tố`, `Số $1$ là số nguyên tố`, ()=> !ufP(1), ()=> ufP(1)),
+    claim(R, `$${h}$ là hợp số`, `$${h}$ là số nguyên tố`, ()=> !ufP(h), ()=> ufP(h)),
+    claim(R, `$${p}$ là số nguyên tố`, `$${p}$ là hợp số`, ()=> ufP(p), ()=> !ufP(p)),
+    claim(R, `Tích $${q} \\cdot ${r}$ là hợp số`, `Tích $${q} \\cdot ${r}$ là số nguyên tố`, ()=> !ufP(q*r), ()=> ufP(q*r))]);
+  return {stem:`Xét các khẳng định sau về số nguyên tố và hợp số.`, items:it.slice(0, 4),
+    lg:`• Số nguyên tố là số lớn hơn $1$ chỉ có hai ước $1$ và chính nó; $1$ chỉ có một ước nên không là số nguyên tố.<br>• $2$ là số nguyên tố chẵn duy nhất (số chẵn lớn hơn $2$ có ước $2$).<br>`
+      + `• $${h} = ${ufF(h).join(' \\cdot ')}$ là hợp số; $${p}$ không chia hết cho số nguyên tố nào nhỏ hơn hoặc bằng $${Math.floor(Math.sqrt(p))}$ nên là số nguyên tố.<br>• $${q} \\cdot ${r} = ${q*r}$ có ước $${q}$ nên là hợp số.`};
+});
+
+// ---------- 34. TLN TH: đếm số nguyên tố trong một khoảng ----------
+GT(6, 2, 0, 'TH', 'Đếm các số nguyên tố trong một khoảng (dùng bảng số nguyên tố hoặc chia thử)', R=>{
+  const a = R.int(2, 80), b = a + R.int(15, 60); if(b > 150) return null;
+  const L = []; for(let x = a; x <= b; x++) if(ufP(x)) L.push(x);
+  const o = {stem:`Có bao nhiêu số nguyên tố $p$ thoả mãn $${a} \\le p \\le ${b}$?`, ans:L.length,
+    lg:`Các số nguyên tố từ $${a}$ đến $${b}$ là: ${L.map(x=> `$${x}$`).join(', ')}.<br>Vậy có $${L.length}$ số.`,
+    verify:()=>{ let c = 0; for(let x = a; x <= b; x++){ let ok = x > 1; for(let d = 2; d < x; d++) if(x % d === 0){ ok = false; break; } if(ok) c++; } return c === o.ans; }};
+  return o;
+});
+
+// ---------- 35. TL TH: phân tích một số ra thừa số nguyên tố theo cột dọc ----------
+GE(6, 2, 0, 'TH', 'Phân tích một số ra thừa số nguyên tố (theo cột dọc), viết gọn bằng luỹ thừa', R=>{
+  const n = R.pick([2, 2, 3, 3, 5, 7]) ** R.int(1, 3) * R.pick([2, 3, 5, 7, 11]) ** R.int(1, 2) * R.pick([1, 3, 5, 7]); if(n < 60 || n > 3000 || ufF(n).length < 4) return null;
+  const f = ufF(n); let cur = n; const rows = f.map(p=>{ const r = `$${cur}$ chia cho $${p}$ được $${cur/p}$`; cur /= p; return r; });
+  return {stem:`Phân tích số $${n}$ ra thừa số nguyên tố.`,
+    lg:`Chia liên tiếp cho các số nguyên tố từ nhỏ đến lớn:<br>${rows.join('; ')}.<br>Vậy $${n} = ${f.join(' \\cdot ')} = ${ufTex(n)}$.`,
+    verify:()=> f.every(ufP) && f.reduce((a, b)=> a*b, 1) === n};
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.2 Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố (lớp 6, khoá 6|2|0), đợt 2: 2 TN, 1 Đ–S, 2 TLN.
+// Chuỗi tư duy: cách viết nào là phân tích ra thừa số nguyên tố (mọi thừa số phải nguyên tố, tích đúng) → dùng phân tích để nhận ra ước
+// → khẳng định về phân tích của một số → ước nguyên tố lớn nhất → số nguyên tố lớn nhất nhỏ hơn một số cho trước.
+const ugP = n=>{ if(n < 2) return false; for(let d = 2; d*d <= n; d++) if(n % d === 0) return false; return true; };
+const ugF = n=>{ const r = []; let d = 2; while(n > 1){ while(n % d === 0){ r.push(d); n /= d; } d++; } return r; };
+const ugC = n=>{ const c = {}; ugF(n).forEach(p=> c[p] = (c[p] || 0) + 1); return c; };
+const ugTex = c=> Object.keys(c).filter(p=> c[p] > 0).sort((a, b)=> a - b).map(p=> c[p] > 1 ? `${p}^{${c[p]}}` : p).join(' \\cdot ');
+const ugMk = R=>{ for(let t = 0; t < 100; t++){ const n = 2**R.int(0, 4) * 3**R.int(0, 3) * 5**R.int(0, 2) * R.pick([1, 1, 7, 11]); if(n >= 60 && n <= 3000 && Object.keys(ugC(n)).length >= 2 && ugF(n).length >= 4) return n; } return null; };
+
+// ---------- 36. TN TH: cách viết nào là phân tích ra thừa số nguyên tố ----------
+G(6, 2, 0, 'TH', 'Chọn cách phân tích đúng một số ra thừa số nguyên tố (bẫy: thừa số không nguyên tố, sai số mũ)', R=>{
+  const n = ugMk(R); if(!n) return null; const c = ugC(n), ps = Object.keys(c).map(Number);
+  const p0 = ps[0], c1 = Object.assign({}, c); c1[p0] = c[p0] + 1;                      // sai số mũ
+  const c2 = Object.assign({}, c); const pm = ps.find(p=> c[p] >= 2); if(!pm) return null; c2[pm] = c[pm] - 1;   // thiếu một thừa số
+  const w3 = (()=>{ const q = ps.find(p=> c[p] >= 2); const c3 = Object.assign({}, c); c3[q] -= 2; const s = ugTex(c3); return `${q*q} \\cdot ${s || 1}`; })();   // có thừa số là hợp số
+  const val = cc=> Object.keys(cc).reduce((t, p)=> t * (+p)**cc[p], 1);
+  const O = [{t:`$${ugTex(c1)}$`, v:'a' + val(c1)}, {t:`$${ugTex(c2)}$`, v:'b' + val(c2)}, {t:`$${w3}$`, v:'c' + n}];
+  const o = {stem:`Kết quả phân tích số $${n}$ ra thừa số nguyên tố là`, ans:{t:`$${ugTex(c)}$`, v:'d' + n}, wrong:O,
+    lg:`$${n} = ${ugF(n).join(' \\cdot ')} = ${ugTex(c)}$.<br>Phương án $${w3}$ có tích bằng $${n}$ nhưng $${w3.split(' ')[0]}$ không là số nguyên tố nên không phải là phân tích ra thừa số nguyên tố; hai phương án còn lại có tích là $${val(c1)}$ và $${val(c2)}$, khác $${n}$.`,
+    verify:()=> o.ans.t === `$${ugTex(ugC(n))}$` && ugF(n).every(ugP)};
+  return o;
+});
+
+// ---------- 37. TN VD: dùng phân tích ra thừa số nguyên tố để nhận ra ước ----------
+G(6, 2, 0, 'VD', 'Biết phân tích ra thừa số nguyên tố của n, chọn số là ước của n (ước chỉ chứa các thừa số nguyên tố đó với số mũ không lớn hơn)', R=>{
+  const a = R.int(2, 4), b = R.int(1, 3), q = R.pick([5, 7]), e = R.int(1, 2), n = 2**a * 3**b * q**e; if(n > 99999) return null;
+  const d = 2**R.int(0, a) * 3**R.int(0, b) * q**R.int(0, e); if(d < 6 || d === n) return null;
+  const W = [2**(a + 1) * 3**R.int(0, b), 3**(b + 1) * 2**R.int(0, a), q**(e + 1), 11 * 2**R.int(0, a), 2**R.int(0, a) * 3**R.int(0, b) * 13].filter((x, i, A)=> n % x && A.indexOf(x) === i && x !== d);
+  const WW = R.shuffle(W).slice(0, 3); if(WW.length < 3) return null;
+  const tex = x=> ugTex(ugC(x));
+  const o = {stem:`Cho $n = ${ugTex(ugC(n))}$. Số nào sau đây là ước của $n$?`, ans:{t:`$${d}$`, v:d}, wrong:WW.map(x=> ({t:`$${x}$`, v:x})),
+    lg:`Một số là ước của $n$ khi phân tích ra thừa số nguyên tố chỉ có các thừa số $2, 3, ${q}$ với số mũ không lớn hơn số mũ trong $n$.<br>`
+      + `$${d} = ${tex(d)}$ thoả mãn nên là ước của $n$. ${WW.map(x=> `$${x} = ${tex(x)}$`).join('; ')} không thoả mãn (có thừa số nguyên tố khác hoặc số mũ lớn hơn).`,
+    verify:()=> n % o.ans.v === 0 && o.wrong.every(w=> n % w.v !== 0)};
+  return o;
+});
+
+// ---------- 38. Đ–S TH: khẳng định về phân tích của một số ----------
+GD(6, 2, 0, 'TH', 'Phân tích một số ra thừa số nguyên tố rồi xét: số mũ, các ước nguyên tố, chia hết cho số nào', R=>{
+  const n = ugMk(R); if(!n) return null; const c = ugC(n), ps = Object.keys(c).map(Number);
+  const p0 = ps[R.int(0, ps.length - 1)], notP = R.pick([2, 3, 5, 7, 11, 13].filter(p=> !c[p])), big = ps.reduce((a, b)=> Math.max(a, b));
+  const c1 = Object.assign({}, c); c1[p0] += 1; const d = p0 * ps[0] === p0*p0 && ps.length > 1 ? p0 * ps[1] : p0 * ps[0];
+  const it = R.shuffle([
+    claim(R, `$${n} = ${ugTex(c)}$`, `$${n} = ${ugTex(c1)}$`, ()=> Object.keys(c).reduce((t, p)=> t * (+p)**c[p], 1) === n, ()=> Object.keys(c1).reduce((t, p)=> t * (+p)**c1[p], 1) === n),
+    claim(R, `Các ước nguyên tố của $${n}$ là ${ps.map(p=> `$${p}$`).join(', ')}`, `Các ước nguyên tố của $${n}$ là ${ps.concat([notP]).sort((a, b)=> a - b).map(p=> `$${p}$`).join(', ')}`, ()=> ps.every(p=> n % p === 0), ()=> n % notP === 0),
+    claim(R, `$${n}$ chia hết cho $${d}$`, `$${n}$ chia hết cho $${notP * ps[0]}$`, ()=> n % d === 0, ()=> n % (notP * ps[0]) === 0),
+    claimN(R, v=> `Ước nguyên tố lớn nhất của $${n}$ là $${v}$`, big, String(big), notP > big ? notP : ps[0], String(notP > big ? notP : ps[0]), ()=> ugF(n).slice(-1)[0])]);
+  return {stem:`Cho số $${n}$.`, items:it,
+    lg:`$${n} = ${ugF(n).join(' \\cdot ')} = ${ugTex(c)}$.<br>• Các ước nguyên tố của $${n}$ là ${ps.map(p=> `$${p}$`).join(', ')}; ước nguyên tố lớn nhất là $${big}$; $${n}$ không chia hết cho $${notP}$ (nên cũng không chia hết cho $${notP * ps[0]}$).<br>• $${d}$ là tích các thừa số có trong phân tích nên $${n}$ chia hết cho $${d}$.`};
+});
+
+// ---------- 39. TLN TH: ước nguyên tố lớn nhất ----------
+GT(6, 2, 0, 'TH', 'Tìm ước nguyên tố lớn nhất (hoặc tổng các ước nguyên tố) của một số bằng cách phân tích ra thừa số nguyên tố', R=>{
+  const big = R.pick([7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]), n = big * R.pick([2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24]); if(n > 999) return null;
+  const tong = R.rnd() < 0.4, ps = [...new Set(ugF(n))], ans = tong ? ps.reduce((a, b)=> a + b) : big;
+  const o = {stem: tong ? `Tính tổng các ước nguyên tố của $${n}$.` : `Tìm ước nguyên tố lớn nhất của $${n}$.`, ans,
+    lg:`$${n} = ${ugF(n).join(" \\cdot ")}${ugF(n).length > [...new Set(ugF(n))].length ? " = " + ugTex(ugC(n)) : ""}$.<br>Các ước nguyên tố của $${n}$ là ${ps.map(p=> `$${p}$`).join(', ')}.<br>${tong ? `Tổng: $${ps.join(' + ')} = ${ans}$.` : `Ước nguyên tố lớn nhất là $${big}$.`}`,
+    verify:()=>{ const L = []; for(let d = 2; d <= n; d++) if(n % d === 0 && ugP(d)) L.push(d); return o.ans === (tong ? L.reduce((a, b)=> a + b) : L[L.length - 1]); }};
+  return o;
+});
+
+// ---------- 40. TLN VD: số nguyên tố lớn nhất nhỏ hơn N ----------
+GT(6, 2, 0, 'VD', 'Tìm số nguyên tố lớn nhất nhỏ hơn (nhỏ nhất lớn hơn) một số cho trước — loại dần bằng dấu hiệu chia hết, chia thử', R=>{
+  const N = R.int(30, 400), lon = R.rnd() < 0.5; let p = lon ? N + 1 : N - 1; while(!ugP(p)) p += lon ? 1 : -1;
+  const xet = []; for(let x = lon ? N + 1 : N - 1; x !== p; x += lon ? 1 : -1) xet.push(x);
+  const ly = x=>{ for(const d of [2, 3, 5, 7, 11, 13, 17, 19]) if(x % d === 0) return `$${x}$ chia hết cho $${d}$`; return ''; };
+  const o = {stem:`Tìm số nguyên tố ${lon ? 'nhỏ nhất lớn hơn' : 'lớn nhất nhỏ hơn'} $${N}$.`, ans:p,
+    lg:`Xét lần lượt các số ${lon ? 'lớn hơn' : 'nhỏ hơn'} $${N}$: ${xet.length ? xet.map(ly).join('; ') + ' (đều là hợp số); ' : ''}$${p}$ không chia hết cho số nguyên tố nào có bình phương không vượt quá $${p}$ nên $${p}$ là số nguyên tố.<br>Vậy số cần tìm là $${p}$.`,
+    verify:()=>{ if(!ugP(o.ans)) return false; for(let x = Math.min(N, o.ans) + 1; x < Math.max(N, o.ans); x++) if(ugP(x)) return false; return lon ? o.ans > N : o.ans < N; }};
+  return o;
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.2 Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố (lớp 6, khoá 6|2|0), đợt 3: 2 TN, 1 Đ–S, 2 TLN.
+// Chuỗi tư duy: tổng hai số nguyên tố là số lẻ thì một số phải là 2 (số nguyên tố chẵn duy nhất) → tìm thừa số còn thiếu trong phân tích
+// → kiểm tra số nguyên tố bằng chia thử (chỉ cần thử các số nguyên tố p có p² không vượt quá số đó) → tính một số từ phân tích → thực tế: diện tích là số nguyên tố.
+const uhP = n=>{ if(n < 2) return false; for(let d = 2; d*d <= n; d++) if(n % d === 0) return false; return true; };
+const uhF = n=>{ const r = []; let d = 2; while(n > 1){ while(n % d === 0){ r.push(d); n /= d; } d++; } return r; };
+const uhTex = n=>{ const c = {}; uhF(n).forEach(p=> c[p] = (c[p] || 0) + 1); return Object.keys(c).map(p=> c[p] > 1 ? `${p}^{${c[p]}}` : p).join(' \\cdot '); };
+
+// ---------- 41. TN VD: tổng hai số nguyên tố là số lẻ ----------
+G(6, 2, 0, 'VD', 'Tổng của hai số nguyên tố là một số lẻ thì một trong hai số là 2 — tìm tích (hoặc số còn lại)', R=>{
+  const P = []; for(let n = 3; n < 200; n++) if(uhP(n)) P.push(n); const q = R.pick(P), N = q + 2, hoi = R.pick(['tich', 'hieu']);
+  const ans = hoi === 'tich' ? 2*q : q - 2; if(ans <= 0) return null;
+  const W = (hoi === 'tich' ? [q*q, 2*N, (N - 1)/2 * (N + 1)/2] : [q, N - 4, q + 2]).filter((x, i, A)=> Number.isInteger(x) && x > 0 && x !== ans && A.indexOf(x) === i).slice(0, 3); if(W.length < 3) return null;
+  const o = {stem:`Tổng của hai số nguyên tố bằng $${N}$. ${hoi === 'tich' ? 'Tích của hai số nguyên tố đó là' : 'Hiệu của số lớn và số nhỏ trong hai số nguyên tố đó là'}`, ans:{t:`$${ans}$`, v:ans}, wrong:W.map(x=> ({t:`$${x}$`, v:x})),
+    lg:`$${N}$ là số lẻ. Nếu cả hai số nguyên tố đều lẻ thì tổng là số chẵn; vậy một trong hai số là số nguyên tố chẵn, tức là $2$.<br>Số còn lại là $${N} - 2 = ${q}$ (là số nguyên tố).<br>${hoi === 'tich' ? `Tích: $2 \\cdot ${q} = ${ans}$.` : `Hiệu: $${q} - 2 = ${ans}$.`}`,
+    verify:()=>{ const s = []; for(let a = 2; a <= N/2; a++) if(uhP(a) && uhP(N - a)) s.push([a, N - a]); return s.length === 1 && o.ans.v === (hoi === 'tich' ? s[0][0]*s[0][1] : s[0][1] - s[0][0]); }};
+  return o;
+});
+
+// ---------- 42. TN TH: tìm thừa số còn thiếu trong phân tích ----------
+G(6, 2, 0, 'TH', 'Tìm thừa số nguyên tố (luỹ thừa) còn thiếu trong phân tích ra thừa số nguyên tố của một số', R=>{
+  const a = R.int(1, 6), b = R.int(1, 4), p = R.pick([5, 7, 11, 13, 17, 19]), e = R.int(1, 2), n = 2**a * 3**b * p**e; if(n > 99999) return null;
+  const an = R.pick(["2", "3", "p", "p"]), thieu = an === '2' ? [2, a] : an === '3' ? [3, b] : [p, e];
+  const parts = [[2, a], [3, b], [p, e]].map(([q, k])=> q === thieu[0] ? '\\square' : (k > 1 ? `${q}^{${k}}` : `${q}`));
+  const tx = ([q, k])=> k > 1 ? `${q}^{${k}}` : `${q}`;
+  const W = [[thieu[0], thieu[1] + 1], [thieu[0], thieu[1] === 1 ? 2 : thieu[1] - 1], [thieu[0] === 2 ? 3 : 2, thieu[1]]].map(x=> ({t:`$${tx(x)}$`, v:x[0]**x[1]})).filter((w, i, A)=> w.v !== thieu[0]**thieu[1] && A.findIndex(z=> z.v === w.v) === i);
+  if(W.length < 3) return null;
+  const o = {stem:`Biết $${n < 10000 ? n : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,')} = ${parts.join(' \\cdot ')}$. Số thích hợp điền vào ô trống là`, ans:{t:`$${tx(thieu)}$`, v:thieu[0]**thieu[1]}, wrong:W,
+    lg:`Phân tích: $${n} = ${uhF(n).join(' \\cdot ')} = ${uhTex(n)}$.<br>So sánh với $${parts.join(' \\cdot ')}$ ta được ô trống là $${tx(thieu)}$.`,
+    verify:()=> n / (2**a * 3**b * p**e / (thieu[0]**thieu[1])) === o.ans.v};
+  return o;
+});
+
+// ---------- 43. Đ–S TH: kiểm tra số nguyên tố bằng chia thử ----------
+GD(6, 2, 0, 'TH', 'Kiểm tra một số có là số nguyên tố bằng cách chia thử cho các số nguyên tố p có p² không vượt quá số đó', R=>{
+  const pr = R.rnd() < 0.5, P = [], H = []; for(let n = 101; n < 400; n++){ if(uhP(n)) P.push(n); else if(n % 2 && n % 3 && n % 5) H.push(n); }
+  const N = pr ? R.pick(P) : R.pick(H), lim = Math.floor(Math.sqrt(N)), ps = [2, 3, 5, 7, 11, 13, 17, 19].filter(p=> p <= lim), last = ps[ps.length - 1], nxt = [2, 3, 5, 7, 11, 13, 17, 19, 23].find(p=> p > lim);
+  const dv = uhF(N)[0];
+  const it = R.shuffle([
+    claim(R, `Để kiểm tra $${N}$, chỉ cần chia thử cho các số nguyên tố ${ps.map(p=> `$${p}$`).join(', ')}`, `Để kiểm tra $${N}$, chỉ cần chia thử cho các số nguyên tố ${ps.slice(0, -1).map(p=> `$${p}$`).join(', ')}`, ()=> last*last <= N && nxt*nxt > N, ()=> last*last > N),
+    claim(R, `$${N}$ không chia hết cho $2$, $3$ và $5$`, `$${N}$ chia hết cho $3$`, ()=> N % 2 !== 0 && N % 3 !== 0 && N % 5 !== 0, ()=> N % 3 === 0),
+    claim(R, pr ? `$${N}$ là số nguyên tố` : `$${N}$ là hợp số`, pr ? `$${N}$ là hợp số` : `$${N}$ là số nguyên tố`, ()=> pr === uhP(N), ()=> pr !== uhP(N)),
+    claimN(R, v=> `$${nxt}^{2} = ${v}$ lớn hơn $${N}$`, nxt*nxt, String(nxt*nxt), nxt*2, String(nxt*2), ()=> nxt*nxt)]);
+  return {stem:`Bạn Hà muốn biết số $${N}$ có là số nguyên tố hay không.`, items:it,
+    lg:`Vì $${last}^{2} = ${last*last} \\le ${N} < ${nxt}^{2} = ${nxt*nxt}$ nên chỉ cần chia thử $${N}$ cho các số nguyên tố ${ps.map(p=> `$${p}$`).join(', ')} (nếu $${N}$ là hợp số thì nó có ước nguyên tố $p$ với $p^{2} \\le ${N}$).<br>`
+      + `$${N}$ tận cùng là $${N % 10}$, tổng các chữ số không chia hết cho $3$ nên không chia hết cho $2$, $3$, $5$. ${pr ? `Chia thử các số còn lại đều không chia hết nên $${N}$ là số nguyên tố.` : `$${N} = ${dv} \\cdot ${N/dv}$ nên $${N}$ là hợp số.`}`};
+});
+
+// ---------- 44. TLN TH: tính một số từ phân tích ra thừa số nguyên tố ----------
+GT(6, 2, 0, 'TH', 'Tính một số khi biết phân tích ra thừa số nguyên tố của nó: aᵐ · bⁿ · c', R=>{
+  const a = R.int(1, 5), b = R.int(0, 3), c = R.int(0, 2), p = R.pick([7, 11, 13, 1]), n = 2**a * 3**b * 5**c * p; if(n > 9999 || n < 50 || (b === 0 && c === 0 && p === 1)) return null;
+  const tex = [[2, a], [3, b], [5, c], [p, p > 1 ? 1 : 0]].filter(x=> x[1] > 0).map(([q, k])=> k > 1 ? `${q}^{${k}}` : `${q}`).join(' \\cdot ');
+  const o = {stem:`Một số tự nhiên khi phân tích ra thừa số nguyên tố được $${tex}$. Số đó là bao nhiêu?`, ans:n,
+    lg:`Tính các luỹ thừa rồi nhân: $${tex} = ${[[2, a], [3, b], [5, c], [p, p > 1 ? 1 : 0]].filter(x=> x[1] > 0).map(([q, k])=> q**k).join(' \\cdot ')} = ${n}$.`,
+    verify:()=> uhF(o.ans).join() === uhF(n).join() && uhF(o.ans).filter(x=> x === 2).length === a};
+  return o;
+});
+
+// ---------- 45. TLN VD: hình chữ nhật có diện tích là số nguyên tố ----------
+GT(6, 2, 0, 'VD', 'Thực tế: hình chữ nhật có các cạnh là số tự nhiên, diện tích là số nguyên tố — chỉ có một cách, tính chu vi', R=>{
+  const P = []; for(let n = 11; n < 800; n++) if(uhP(n)) P.push(n); const p = R.pick(P), vat = R.pick(['mảnh vườn', 'tấm bìa', 'khu đất', 'tấm thảm']), dv = vat === 'tấm bìa' ? 'cm' : 'm';
+  const C = 2*(p + 1);
+  const o = {stem:`Một ${vat} hình chữ nhật có chiều dài và chiều rộng (đo bằng ${dv}) đều là số tự nhiên, diện tích là $${p}$ ${dv}$^{2}$. Tính chu vi của ${vat} đó (theo ${dv}).`, ans:C,
+    lg:`Chiều dài · chiều rộng $= ${p}$. Vì $${p}$ là số nguyên tố nên chỉ có hai ước là $1$ và $${p}$. Do đó chiều rộng là $1$ ${dv}, chiều dài là $${p}$ ${dv}.<br>Chu vi: $2 \\cdot (${p} + 1) = ${C}$ (${dv}).`,
+    verify:()=>{ const L = []; for(let d = 1; d*d <= p; d++) if(p % d === 0) L.push([d, p/d]); return L.length === 1 && 2*(L[0][0] + L[0][1]) === o.ans; }};
+  return o;
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.2 Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố (lớp 6, khoá 6|2|0), đợt 4: 2 TN, 1 Đ–S, 2 TLN, 1 TL.
+// Chuỗi tư duy: nhìn phân tích để biết số chính phương (mọi số mũ chẵn) → số có đúng hai ước nguyên tố → tổng, tích các số nguyên tố
+// → đếm hợp số trong khoảng → cặp số nguyên tố hơn kém nhau 2 → chứng tỏ một số là hợp số (dấu hiệu chia hết, đặt thừa số chung).
+const uiP = n=>{ if(n < 2) return false; for(let d = 2; d*d <= n; d++) if(n % d === 0) return false; return true; };
+const uiF = n=>{ const r = []; let d = 2; while(n > 1){ while(n % d === 0){ r.push(d); n /= d; } d++; } return r; };
+const uiC = n=>{ const c = {}; uiF(n).forEach(p=> c[p] = (c[p] || 0) + 1); return c; };
+const uiTex = n=>{ const c = uiC(n); return Object.keys(c).map(p=> c[p] > 1 ? `${p}^{${c[p]}}` : p).join(' \\cdot '); };
+const uiT = n=> String(n).length >= 5 ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\\,') : String(n);
+
+// ---------- 46. TN VD: nhận ra số chính phương nhờ phân tích ra thừa số nguyên tố ----------
+G(6, 2, 0, 'VD', 'Nhận ra số chính phương (bình phương của một số tự nhiên) nhờ phân tích ra thừa số nguyên tố: mọi số mũ đều chẵn', R=>{
+  const mk = chan=>{ for(let t = 0; t < 100; t++){ const e = [R.int(0, 3), R.int(0, 2), R.int(0, 2), R.int(0, 1)]; if(chan) e.forEach((x, i)=> e[i] = 2*Math.floor(x/1)); const n = 2**e[0] * 3**e[1] * 5**e[2] * 7**e[3];
+    const ok = Object.values(uiC(n)).every(k=> k % 2 === 0); if(n > 40 && n < 50000 && ok === chan && Object.keys(uiC(n)).length >= 2) return n; } return null; };
+  const ans = mk(true), W = [mk(false), mk(false), mk(false)]; if(!ans || W.some(x=> !x) || new Set(W.concat(ans)).size < 4) return null;
+  const r = Math.round(Math.sqrt(ans));
+  const o = {stem:`Số nào sau đây là bình phương của một số tự nhiên?`, ans:{t:`$${uiTex(ans)}$`, v:ans}, wrong:W.map(x=> ({t:`$${uiTex(x)}$`, v:x})),
+    lg:`Một số là bình phương của một số tự nhiên khi trong phân tích ra thừa số nguyên tố, mọi số mũ đều là số chẵn (chia đôi mỗi số mũ).<br>$${uiTex(ans)}$ có mọi số mũ chẵn: $${uiTex(ans)} = (${uiTex(r)})^{2} = ${r}^{2}$.<br>Các số còn lại đều có số mũ lẻ.`,
+    verify:()=> Number.isInteger(Math.sqrt(o.ans.v)) && Math.round(Math.sqrt(o.ans.v))**2 === o.ans.v && o.wrong.every(w=> Math.round(Math.sqrt(w.v))**2 !== w.v)};
+  return o;
+});
+
+// ---------- 47. TN TH: số có đúng hai ước nguyên tố ----------
+G(6, 2, 0, 'TH', 'Số nào có đúng hai ước nguyên tố (phân tích ra thừa số nguyên tố, đếm các thừa số khác nhau)', R=>{
+  const k = n=> Object.keys(uiC(n)).length, pool = []; for(let n = 30; n < 400; n++) pool.push(n);
+  const ans = R.pick(pool.filter(n=> k(n) === 2 && uiF(n).length >= 3)), W = R.shuffle(pool.filter(n=> k(n) !== 2 && n > 30 && Math.abs(n - ans) < 150)).slice(0, 3);
+  if(W.length < 3) return null;
+  const o = {stem:`Số nào sau đây có đúng hai ước nguyên tố?`, ans:{t:`$${ans}$`, v:ans}, wrong:W.map(x=> ({t:`$${x}$`, v:x})),
+    lg:`Phân tích ra thừa số nguyên tố: ${[ans].concat(W).map(n=> `$${n} = ${uiTex(n)}$ (${k(n)} ước nguyên tố)`).join('; ')}.<br>Vậy $${ans}$ có đúng hai ước nguyên tố là ${Object.keys(uiC(ans)).map(p=> `$${p}$`).join(' và ')}.`,
+    verify:()=>{ const kk = n=>{ let c = 0; for(let d = 2; d <= n; d++){ if(n % d) continue; let p = true; for(let e = 2; e*e <= d; e++) if(d % e === 0) p = false; if(p) c++; } return c; }; return o.ans.v === ans && kk(ans) === 2 && o.wrong.every(w=> kk(w.v) !== 2); }};
+  return o;
+});
+
+// ---------- 48. Đ–S TH: tổng, tích các số nguyên tố ----------
+GD(6, 2, 0, 'TH', 'Tổng, tích, bình phương của các số nguyên tố: số nguyên tố hay hợp số, chẵn hay lẻ, có bao nhiêu ước', R=>{
+  const P = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]; const p = R.pick(P), q = R.pick(P.filter(x=> x !== p));
+  const U = n=>{ let c = 0; for(let d = 1; d <= n; d++) if(n % d === 0) c++; return c; };
+  const it = R.shuffle([
+    claim(R, `$${p} \\cdot ${q}$ là hợp số`, `$${p} \\cdot ${q}$ là số nguyên tố`, ()=> !uiP(p*q), ()=> uiP(p*q)),
+    claim(R, `$${p} + ${q}$ là hợp số`, `$${p} + ${q}$ là số nguyên tố`, ()=> !uiP(p + q), ()=> uiP(p + q)),
+    claimN(R, v=> `$${p}^{2}$ có đúng $${v}$ ước`, 3, '3', 2, '2', ()=> U(p*p)),
+    claim(R, `$2 + ${p}$ là số lẻ`, `$2 + ${p}$ là số chẵn`, ()=> (2 + p) % 2 === 1, ()=> (2 + p) % 2 === 0)]);
+  return {stem:`Cho hai số nguyên tố $${p}$ và $${q}$.`, items:it,
+    lg:`• $${p} \\cdot ${q} = ${p*q}$ có các ước $1, ${Math.min(p, q)}, ${Math.max(p, q)}, ${p*q}$ nên là hợp số.<br>• $${p}$ và $${q}$ đều lẻ nên $${p} + ${q} = ${p + q}$ là số chẵn lớn hơn $2$, là hợp số.<br>`
+      + `• $${p}^{2} = ${p*p}$ chỉ có ba ước $1, ${p}, ${p*p}$.<br>• $2 + ${p} = ${2 + p}$ là số lẻ (chẵn cộng lẻ).`};
+});
+
+// ---------- 49. TLN TH: đếm hợp số trong một khoảng ----------
+GT(6, 2, 0, 'TH', 'Đếm các hợp số trong một khoảng (lấy số các số trừ đi số các số nguyên tố)', R=>{
+  const a = R.int(10, 80), b = a + R.int(12, 50); if(b > 130) return null;
+  const P = []; for(let x = a; x <= b; x++) if(uiP(x)) P.push(x); const n = b - a + 1 - P.length;
+  const o = {stem:`Có bao nhiêu hợp số $n$ thoả mãn $${a} \\le n \\le ${b}$?`, ans:n,
+    lg:`Từ $${a}$ đến $${b}$ có $${b} - ${a} + 1 = ${b - a + 1}$ số. Các số nguyên tố trong khoảng này là ${P.map(x=> `$${x}$`).join(', ')} ($${P.length}$ số).<br>Các số còn lại đều lớn hơn $1$ và không là số nguyên tố nên là hợp số: có $${b - a + 1} - ${P.length} = ${n}$ hợp số.`,
+    verify:()=>{ let c = 0; for(let x = a; x <= b; x++){ for(let d = 2; d < x; d++) if(x % d === 0){ c++; break; } } return c === o.ans; }};
+  return o;
+});
+
+// ---------- 50. TLN VD: các cặp số nguyên tố hơn kém nhau 2 ----------
+GT(6, 2, 0, 'VD', 'Cặp số nguyên tố hơn kém nhau 2 đơn vị (p và p + 2) không vượt quá N: đếm số cặp hoặc tính tổng các số p', R=>{
+  const N = R.int(20, 200), L = []; for(let p = 2; p + 2 <= N; p++) if(uiP(p) && uiP(p + 2)) L.push(p); const tong = R.rnd() < 0.5; if(L.length < 2) return null;
+  const ans = tong ? L.reduce((a, b)=> a + b) : L.length;
+  const o = {stem:`Có ${tong ? 'các' : 'bao nhiêu'} số nguyên tố $p$ sao cho $p + 2$ cũng là số nguyên tố và $p + 2 \\le ${N}$${tong ? '. Tính tổng các số $p$ đó.' : '?'}`.replace(/^Có các/, 'Xét các'), ans,
+    lg:`Lần lượt xét các số nguyên tố $p$ (với $p + 2 \\le ${N}$), giữ lại các số mà $p + 2$ cũng là số nguyên tố: ${L.map(p=> `$${p}$ và $${p + 2}$`).join('; ')}.<br>${tong ? `Tổng các số $p$: $${L.join(' + ')} = ${ans}$.` : `Có $${L.length}$ số $p$ như vậy.`}`,
+    verify:()=>{ let c = 0, s = 0; for(let p = 2; p + 2 <= N; p++){ let a = p > 1, b = true; for(let d = 2; d < p; d++) if(p % d === 0) a = false; for(let d = 2; d < p + 2; d++) if((p + 2) % d === 0) b = false; if(a && b){ c++; s += p; } } return o.ans === (tong ? s : c); }};
+  return o;
+});
+
+// ---------- 51. TL TH: chứng tỏ một số là hợp số ----------
+GE(6, 2, 0, 'TH', 'Chứng tỏ một số (tổng, tích) là hợp số: chỉ ra một ước khác 1 và khác chính nó', R=>{
+  const kieu = R.int(0, 2); let ex, lg, chk;
+  if(kieu === 0){ const a = R.int(11, 99), b = R.int(3, 9), c = R.int(11, 99), d = R.pick([3, 5, 7]); const v = a*b*d + c*d; ex = `${a} \\cdot ${b} \\cdot ${d} + ${c} \\cdot ${d}`;
+    lg = `Hai số hạng $${a} \\cdot ${b} \\cdot ${d}$ và $${c} \\cdot ${d}$ đều chia hết cho $${d}$ nên tổng chia hết cho $${d}$.<br>Tổng lớn hơn $${d}$ và có ước $${d}$ (khác $1$ và khác chính nó) nên là hợp số.`; chk = ()=> v % d === 0 && v > d; }
+  else if(kieu === 1){ const N = R.int(1000, 99999)*10 + 5; ex = uiT(N); lg = `$${uiT(N)}$ có chữ số tận cùng là $5$ nên chia hết cho $5$. Số này lớn hơn $5$ nên có ít nhất ba ước $1$, $5$ và chính nó; vậy $${uiT(N)}$ là hợp số.`; chk = ()=> N % 5 === 0 && N > 5; }
+  else { let N; for(let t = 0; t < 100; t++){ const x = R.int(1001, 99999); if(x % 3 === 0 && x % 2 && x % 5){ N = x; break; } } if(!N) return null; const s = String(N).split('').reduce((t, c)=> t + +c, 0);
+    ex = uiT(N); lg = `Tổng các chữ số của $${uiT(N)}$ là $${String(N).split('').join(' + ')} = ${s}$, chia hết cho $3$, nên $${uiT(N)}$ chia hết cho $3$.<br>Số này lớn hơn $3$ nên có ước $3$ khác $1$ và khác chính nó; vậy $${uiT(N)}$ là hợp số.`; chk = ()=> N % 3 === 0; }
+  return {stem:`Chứng tỏ rằng ${kieu === 0 ? `tổng $${ex}$` : `số $${ex}$`} là hợp số.`, lg, verify:chk};
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
+})();
+
+// ---------- V2.85: dạng thay số bổ sung (6-07.1, 6-07.2 lớp 6: 48 dạng (16 TN, 8 Đ–S, 16 TLN, 8 TL)) ----------
+(()=>{
+const V0 = new Set(Object.keys(GEN));
+
+const HOLD_ = new Set(), REL_ = [];
+const hold = (gr, ci, bi)=>{ const base = `${gr}|${ci}|${bi}`; if(HOLD_.has(base)) return; HOLD_.add(base); let mx = 1; Object.keys(GEN).forEach(k=>{ if(k.startsWith(base + '-')) mx = Math.max(mx, +k.slice(base.length + 1) || 0); });
+  for(let n = 1; n <= mx; n++){ const k = n === 1 ? base : `${base}-${n}`; if(!GEN[k]){ GEN[k] = {_hold:1}; REL_.push(k); } } };
+const W = f=> (...a)=>{ hold(a[0], a[1], a[2]); const g = f(...a); const mk = g.make; g.make = R=>{ for(let i = 0; i < 80; i++){ let o = null; try{ o = mk(R); }catch(e){ o = null; } if(o) return o; } return null; }; return g; };
+const G_ = G, GD_ = GD, GT_ = GT, GE_ = GE, claimN_ = claimN;
+{
+const G = W(G_), GD = W(GD_), GT = W(GT_), GE = W(GE_);
+// @SAU_V161 — 6-07.2 Số nguyên tố, hợp số; phân tích một số ra thừa số nguyên tố (lớp 6, khoá 6|2|0), đợt 5: 1 TLN, 2 TL.
+// Chuỗi tư duy: tích các ước nguyên tố (khác nhau) của một số → thực tế: xếp thành hình chữ nhật nhiều hàng được khi và chỉ khi số đó là hợp số
+// → viết tập hợp các số nguyên tố trong một khoảng (loại dần bằng dấu hiệu chia hết, chia thử).
+const ujP = n=>{ if(n < 2) return false; for(let d = 2; d*d <= n; d++) if(n % d === 0) return false; return true; };
+const ujF = n=>{ const r = []; let d = 2; while(n > 1){ while(n % d === 0){ r.push(d); n /= d; } d++; } return r; };
+const ujTex = n=>{ const c = {}; ujF(n).forEach(p=> c[p] = (c[p] || 0) + 1); return Object.keys(c).map(p=> c[p] > 1 ? `${p}^{${c[p]}}` : p).join(' \\cdot '); };
+
+// ---------- 52. TLN TH: tích các ước nguyên tố khác nhau ----------
+GT(6, 2, 0, 'TH', 'Tính tích các ước nguyên tố (khác nhau) của một số: phân tích ra thừa số nguyên tố, mỗi thừa số lấy một lần', R=>{
+  const n = R.int(40, 999), ps = [...new Set(ujF(n))]; if(ps.length < 2 || ujF(n).length === ps.length && R.rnd() < 0.6) return null;
+  const T = ps.reduce((a, b)=> a*b, 1);
+  const o = {stem:`Tính tích các ước nguyên tố của $${n}$.`, ans:T,
+    lg:`$${n} = ${ujF(n).join(' \\cdot ')}${ujF(n).length > ps.length ? ` = ${ujTex(n)}` : ''}$.<br>Các ước nguyên tố của $${n}$ là ${ps.map(p=> `$${p}$`).join(', ')} (mỗi số lấy một lần).<br>Tích: $${ps.join(' \\cdot ')} = ${T}$.`,
+    verify:()=>{ let t = 1; for(let d = 2; d <= n; d++) if(n % d === 0 && ujP(d)) t *= d; return t === o.ans; }};
+  return o;
+});
+
+// ---------- 53. TL VD: xếp thành hình chữ nhật nhiều hàng ----------
+GE(6, 2, 0, 'VD', 'Thực tế: có xếp được n đồ vật thành hình chữ nhật nhiều hàng, mỗi hàng nhiều hơn một chiếc, số chiếc mỗi hàng như nhau không? (số nguyên tố hay hợp số)', R=>{
+  const pr = R.rnd() < 0.5, vat = R.pick(['viên gạch', 'chiếc ghế', 'chậu hoa', 'bạn học sinh']);
+  let n; for(let t = 0; t < 100; t++){ const x = R.int(23, 199); if(ujP(x) === pr){ n = x; break; } } if(!n) return null;
+  const d = ujF(n)[0];
+  return {stem:`Có $${n}$ ${vat}. Có thể xếp tất cả số ${vat} này thành một hình chữ nhật gồm nhiều hàng (ít nhất $2$ hàng), mỗi hàng có số ${vat} như nhau và nhiều hơn $1$ không? Vì sao?`,
+    lg:`Xếp được thành $h$ hàng, mỗi hàng $k$ ${vat} ($h \\ge 2$, $k \\ge 2$) khi và chỉ khi $${n} = h \\cdot k$, tức là $${n}$ có một ước khác $1$ và khác chính nó.<br>`
+      + (pr ? `$${n}$ là số nguyên tố (không chia hết cho số nguyên tố nào có bình phương không vượt quá $${n}$), chỉ có hai ước là $1$ và $${n}$. Vậy không thể xếp được (chỉ xếp được $1$ hàng $${n}$ ${vat}).`
+        : `$${n} = ${d} \\cdot ${n/d}$ là hợp số. Vậy xếp được, chẳng hạn $${d}$ hàng, mỗi hàng $${n/d}$ ${vat}.`),
+    verify:()=> pr ? ujP(n) : (n % d === 0 && d >= 2 && n/d >= 2)};
+});
+
+// ---------- 54. TL TH: viết tập hợp các số nguyên tố trong một khoảng ----------
+GE(6, 2, 0, 'TH', 'Viết tập hợp các số nguyên tố p thoả mãn a < p < b (loại các số chẵn, chia hết cho 3, 5, 7…)', R=>{
+  const a = R.int(20, 160), b = a + R.int(15, 30), L = []; for(let x = a + 1; x < b; x++) if(ujP(x)) L.push(x); if(L.length < 3) return null;
+  const odd = []; for(let x = a + 1; x < b; x++) if(x % 2 && x % 5) odd.push(x);
+  const ly = x=>{ for(const d of [3, 7, 11, 13]) if(x % d === 0 && x !== d) return `$${x} = ${d} \\cdot ${x/d}$`; return ''; };
+  const bo = odd.filter(x=> !ujP(x));
+  return {stem:`Viết tập hợp $A$ các số nguyên tố $p$ thoả mãn $${a} < p < ${b}$.`,
+    lg:`Loại các số chẵn và các số tận cùng là $5$; còn lại: ${odd.map(x=> `$${x}$`).join(', ')}.<br>${bo.length ? `Loại tiếp các hợp số: ${bo.map(ly).join('; ')}.<br>` : ''}Các số còn lại đều là số nguyên tố.<br>Vậy $A = \\{${L.join('; ')}\\}$.`,
+    verify:()=>{ const M = []; for(let x = a + 1; x < b; x++){ let p = x > 1; for(let d = 2; d < x; d++) if(x % d === 0) p = false; if(p) M.push(x); } return M.join() === L.join(); }};
+});
+
+}
+REL_.forEach(k=> delete GEN[k]);
+Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V2.85'; GEN[k].l1 = 'V2.85'; });
 })();
 
 return {GEN, GEN_VERSION, genBuild, genSelfTest, genNoidung, genTidyMath, GEN_REMOVED};
