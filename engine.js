@@ -88890,10 +88890,10 @@ GD(12,1,2,'VD','Thực tế (đúng – sai): tia laser từ L trên tường (O
 
 /* 6. Đ–S — giàn mái */
 GD(12,1,2,'VD','Thực tế (đúng – sai): giàn mái trên căn nhà hình hộp — toạ độ đỉnh nóc, độ dài thanh kèo, góc giữa hai thanh kèo (tích vô hướng), thanh giằng chéo', R=>{
-  for(let g = 0; g < 60; g++){ const [ha, h] = R.pick([[3, 4], [4, 3], [2, 1.5], [1.5, 2], [2.4, 1.8], [1.8, 2.4], [3, 2.25], [2, 2], [3, 3], [4, 4]]), a = 2*ha, b = R.int(6, 12), c = R.pick([3, 3.5, 4]);
+  for(let g = 0; g < 60; g++){ const [ha, h] = R.pick([[3, 4], [4, 3], [2, 1.5], [1.5, 2], [2.4, 1.8], [1.8, 2.4], [2, 2], [3, 3], [4, 4]]), a = 2*ha, b = R.int(6, 12), c = R.pick([3, 3.5, 4]);
     if(Math.abs(h - 0.177*a) < 0.8) continue;   // trên hình (xoay 270°) đường nóc không đi sát O'
     const Ep = [ha, 0, c + h], Fp = [ha, b, c + h], O1 = [0, 0, c], A1 = [a, 0, c], k1 = ozSub(O1, Ep), k2 = ozSub(A1, Ep), dt = ozDot(k1, k2), kl = Math.hypot(ha, h), perp = Math.abs(dt) < 1e-9;
-    const dg = ozSub(Fp, O1), dgl2 = Math.round(ozL2(dg)*100)/100, klT = ozOk(kl) ? ozN(kl) : sqT(Math.round(kl*kl));
+    const dg = ozSub(Fp, O1), dgl2 = Math.round(ozL2(dg)*1e6)/1e6, klT = ozOk(kl) ? ozN(kl) : sqT(Math.round(kl*kl));
     const items = [
       claim(R, `Đỉnh nóc $E$ có toạ độ $${ozV(Ep)}$`, `Đỉnh nóc $E$ có toạ độ $${ozV([ha, 0, h])}$`, ()=> true, ()=> false),
       claimN(R, x=> `Thanh kèo $EO'$ dài $${x}$ m`, kl, klT, Math.round((ha + h)*10)/10, ozN(Math.round((ha + h)*10)/10), ()=> ozLen(k1)),
