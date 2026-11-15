@@ -647,6 +647,98 @@ body[data-step="8"] header.app h1{font-size:20px}
 @media print{ .ws-side, .ws-tip{display:none !important} .ws-wrap{display:block} .ws-main{padding:0} }
 
 
+/* V3.02: rà soát UX mức 1 — chỉ đổi màu, cỡ, khoảng bấm; không dời nút, không đổi bố cục */
+button.btn.gold{background:#8f6e1e; border-color:#8f6e1e}                 /* chữ trắng trên nền vàng: tương phản 3,5 → 4,75 */
+button.btn.gold:hover:not(:disabled){background:#7a5d17; border-color:#7a5d17}
+.nav-g, .tb-lbl{color:#6b7180}                                          /* nhãn nhóm menu: 3,2 → 4,9 */
+.pr-topics-panel label > span:last-child{white-space:nowrap; flex:none}  /* "(7 dạng)" không bẻ thành hai dòng */
+.pr-genlist label a, .pr-gengrp a{display:inline-block; padding:3px 4px; margin:-3px -2px}   /* "chỉ dạng này", "chọn buổi này": vùng bấm lớn hơn, chữ không dời */
+@media (max-width:900px){
+  /* Xuất đề trên điện thoại: trang phía sau rộng hơn màn hình làm cả màn Xuất đề bị thu nhỏ, cột cài đặt tràn ngang */
+  body.pdf-open > *:not(#pdfOverlay){display:none !important}
+  .ws-main{overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .ws-side, .ws-info{font-family:sans-serif}
+  .ws-side label{padding:7px 6px; min-height:36px}
+  .ws-side input[type=number], .ws-side select{min-height:34px; font-size:14px}
+  .ws-x{width:38px; height:38px; font-size:16px}
+  .ws-sfoot .btn{min-height:40px}
+}
+/* V3.04: Ma trận — chuyên đề dưới mỗi bài đã tích */
+.mx-cds{margin:0 0 6px 26px; display:flex; flex-direction:column; gap:1px}
+.tree-bai .mx-cds label{font-size:12.5px; margin:0; color:var(--ink)} .mx-cdn{color:var(--ink-soft); white-space:nowrap}
+.mx-cdsum{font-size:11.5px; color:#7a5d17; font-weight:400}
+/* DX2: Ôn luyện — ô Mã buổi đứng đầu, to rõ */
+.pr-cdbox label b{color:var(--ink)}
+.pr-cdbox #pr_cd{width:118px; padding:5px 8px; font:700 15px sans-serif; border:2px solid #8f6e1e; border-radius:6px}
+/* V3.03: Xây dựng lộ trình (kéo thả), thẻ Giao bài IMs */
+.nav-ext{font-size:11px; opacity:.7}
+.ltr-top{display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px 14px}
+.ltr-top label.small-text{display:flex; align-items:center; gap:6px; margin:0} .ltr-top select{width:auto; max-width:280px}
+.ltr-sp{flex:1 1 auto} .ltr-file{display:inline-flex; align-items:center; margin:0; cursor:pointer; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:6px; padding:5px 9px; font:600 12px sans-serif} .ltr-file:hover{border-color:var(--ink)}
+.ltr-wrap{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:14px; align-items:start}
+.ltr-wrap > .card{padding:10px 12px; margin:0}
+.ltr-h{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:8px; font-family:sans-serif}
+.ltr-h select{width:auto} .ltr-h input[type=search]{flex:1 1 180px; padding:6px 8px}
+.ltr-list{max-height:calc(100vh - 260px); min-height:240px; overflow-y:auto; font-family:sans-serif; font-size:13px}
+.ltr-bai{margin-bottom:8px} .ltr-bh{display:flex; align-items:center; gap:4px; font-weight:600; margin:4px 0 3px}
+.ltr-x{margin-left:auto; border:1px solid #d9c48a; background:#fff8e6; border-radius:6px; padding:3px 8px; font:600 12px sans-serif; cursor:pointer; color:#7a5d17}
+.ltr-c, .ltr-b{display:flex; align-items:center; gap:6px; border:1px solid var(--line); border-radius:8px; padding:6px 8px; margin:0 0 4px; background:#fff; min-height:38px}
+.ltr-c{margin-left:14px; cursor:grab} .ltr-c.had{opacity:.55; cursor:default} .ltr-c.empty{opacity:.45; cursor:default; border-style:dashed}
+.ltr-t{flex:1 1 auto; min-width:0} .ltr-n{white-space:nowrap; color:var(--ink-soft); font-size:12px} .ltr-ok{color:var(--ok); font-weight:700}
+.ltr-add{flex:none; width:32px; height:30px; border:1px solid #8f6e1e; background:#8f6e1e; color:#fff; border-radius:6px; font:700 16px/1 sans-serif; cursor:pointer}
+.ltr-b{cursor:grab; flex-wrap:wrap; background:#fffdf6; border-color:#e2cf98}
+.ltr-b.miss{background:#fdf3f2; border-color:#e3a19c}
+.ltr-k{color:#9aa0ae; font-size:16px} .ltr-bn{font-weight:700; white-space:nowrap; color:var(--ink)}
+.ltr-act{display:flex; gap:4px; margin-left:auto}
+.ltr-act button{border:1px solid var(--line); background:#fff; border-radius:6px; padding:4px 8px; font:600 12px sans-serif; cursor:pointer; color:var(--ink); min-height:30px}
+.ltr-act button:disabled{opacity:.35; cursor:default} .ltr-act .ltr-del{color:#b3261e}
+.ltr-drop{border:2px dashed #d9c48a; border-radius:8px; padding:16px 10px; text-align:center; color:var(--ink-soft); margin-top:4px}
+.ltr-over{outline:3px solid #8f6e1e; outline-offset:1px} .ltr-b.ltr-over{box-shadow:0 -4px 0 #8f6e1e}
+body.ltr-dragging .ltr-drop{background:#fff8e6}
+body.ltr-dragb .ltr-kho{outline:2px dashed #b3261e; outline-offset:2px} body.ltr-dragb .ltr-kho .ltr-h::after{content:'← thả vào kho để bỏ buổi này'; color:#b3261e; font-weight:600; font-size:12px}
+.ltr-flash{animation:ltrF .9s} @keyframes ltrF{0%{background:#f1e6c8}100%{background:#fffdf6}}
+.ltr-hs{border:1px solid #d9c48a; border-radius:8px; background:#fffaf0; padding:6px 10px; margin:0 0 8px; font-family:sans-serif; font-size:13px}
+.ltr-hs > summary{margin:0; color:var(--ink); padding:2px 0}
+.ltr-hs-add{display:flex; flex-direction:column; gap:6px; margin-top:6px} .ltr-hs-add textarea{font:13px sans-serif; resize:vertical}
+.ltr-hs-btn{display:flex; flex-wrap:wrap; gap:6px}
+.ltr-hs-list{margin:8px 0 2px; padding-left:24px; max-height:220px; overflow-y:auto}
+.ltr-hs-list li{break-inside:avoid; padding:1px 0} .ltr-sbd{font:700 12px ui-monospace,Menlo,Consolas,monospace; color:#7a5a12; background:#f6ecd2; border:1px solid #d9c48a; border-radius:4px; padding:0 4px; margin-right:6px} .ltr-hs-list li > span{display:inline}
+.ltr-hs-list button{border:0; background:none; cursor:pointer; padding:2px 6px; color:var(--ink-soft); font-size:13px; min-width:28px; min-height:26px} .ltr-hs-list .ltr-del{color:#b3261e}
+.ltr-tbl{overflow-x:auto; max-width:100%} .ltr-tbl table{border-collapse:collapse; font-size:12.5px; min-width:100%}
+.ltr-tbl th, .ltr-tbl td{border:1px solid var(--line); padding:3px 6px; text-align:center; white-space:nowrap} .ltr-tbl td.ltr-nm{text-align:left; white-space:normal; min-width:110px}
+.ltr-tbl th{background:var(--paper); position:sticky; top:0} .ltr-tbl td.ltr-sbd{border:1px solid var(--line); border-radius:0; background:#fffaf0}
+.lv-ok{background:#dff3e4} .lv-mid{background:#fff1cc} .lv-low{background:#fbdede} .ltr-tb .up{color:var(--ok)} .ltr-tb .dn{color:#b3261e}
+.ltr-cls{border-radius:10px; padding:0 7px; font:700 12px sans-serif; white-space:nowrap}
+.ims-ov{position:fixed; inset:0; z-index:10300; background:rgba(15,20,40,.55); display:flex; align-items:center; justify-content:center; padding:16px}
+.ims-box{position:relative; background:#fff; border-radius:14px; max-width:520px; width:100%; padding:20px 22px 18px; font:14px/1.55 sans-serif; color:var(--ink); box-shadow:0 12px 40px rgba(0,0,0,.35)}
+.ims-box h3{margin:0 0 10px; font-size:19px} .ims-box ul{margin:0 0 10px; padding-left:20px}
+.ims-dev{background:#fdf1e4; border:1px solid #e2b27a; border-radius:8px; padding:8px 10px; color:#7a4a12}
+.ims-x{position:absolute; right:10px; top:10px; width:34px; height:34px; border:1px solid var(--line); background:#fff; border-radius:8px; cursor:pointer; font-size:15px}
+@media (max-width:760px){ .ltr-wrap{grid-template-columns:1fr} .ltr-lt{order:-1} .ltr-list{max-height:none; min-height:0} .ltr-act{margin-left:0; width:100%; justify-content:flex-end} }
+/* DX4: Xuất đề — "Kèm đáp án" ở phần Loại phiếu; tuỳ chọn ít dùng gom vào "⚙ Tuỳ chọn khác" */
+.ws-keyk{display:contents}
+.ws-kinds .ws-keyk label{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14)}
+.ws-side details.ws-more > summary{cursor:pointer; color:#e7c878; font:600 13px sans-serif; padding:6px; margin:2px 0; list-style-position:inside}
+.ws-side details.ws-more > summary small{font-weight:400; color:#c9d1e6}
+.ws-side details.ws-more[open] > summary{margin-bottom:2px}
+/* DX1: điện thoại — menu trái (210 px) thành một hàng nút cuộn ngang ở trên, cùng thứ tự; nội dung dùng đủ bề ngang */
+@media (max-width:760px){
+  header.app{padding:8px 12px !important; gap:8px 12px !important} header.app .tagline{display:none} header.app .mark{width:34px; height:34px}
+  .layout{flex-direction:column; min-height:0}
+  nav.steps{width:auto; display:flex; flex-wrap:nowrap; overflow-x:auto; padding:6px 8px; gap:4px; border-right:0; border-bottom:1px solid var(--line); position:sticky; top:0; z-index:60; scrollbar-width:none}
+  nav.steps::-webkit-scrollbar{display:none}
+  nav.steps .nav-g{display:none}
+  nav.steps button{width:auto; flex:0 0 auto; white-space:nowrap; padding:9px 12px; border:1px solid var(--line); border-radius:999px; font-size:14px}
+  nav.steps button.active{background:var(--ink); color:#fff; border-color:var(--ink)} nav.steps button.active .n{color:#e7c878}
+  main, body[data-step="8"] main{padding:14px 12px; max-width:100%}
+  .grid2{grid-template-columns:1fr} .card{padding:14px 12px}
+  .pr-filter select{max-width:100%} .pr-filter > div{max-width:100%} .pr-topics{max-width:100%}
+  .xb-grid, .xb-out{grid-template-columns:1fr}
+  .tb-top, .tb-nav{flex-wrap:wrap} .tb-nav{margin-left:0; flex:1 1 100%; min-width:0}
+  #practiceQuestionArea{overflow-x:auto}
+}
+
+
 /* V1.18: bước Trộn mã đề & Xuất bản — thẻ đánh số, gọn; phiếu tô trong bản in */
 .xb-card{padding:16px 20px}
 .xb-h{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px; font-family:sans-serif; font-size:15px; color:var(--ink)}
