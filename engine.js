@@ -8004,7 +8004,7 @@ const GENLIB = (function(){
    đáp án bằng cách ĐỘC LẬP (liệt kê, tính số, dựng tọa độ...) để kiểm thử tự động.
    ====================================================================== */
 const GEN = {};
-const GEN_VERSION = 2;   // V3.00: thêm vectơ trên hình khối (hinhBuild)
+const GEN_VERSION = 3;   // V3.16: sửa hình lệch đề, bỏ điểm/số liệu thừa (lớp bọc chung), zTN chỉ ghi toạ độ cần. V3.00: thêm vectơ trên hình khối (hinhBuild)
 function G(grade, ci, bi, mucdo, dang, make, kind){
   // Dạng đầu tiên của mỗi bài giữ mã "lớp|chương|bài"; các dạng thêm sau có hậu tố -2, -3...
   const base = `${grade}|${ci}|${bi}`;
@@ -40402,7 +40402,7 @@ GT(12,1,1,'VD','Hình chóp gắn tại A: điểm chia cạnh bên SC theo tỉ
 /* 84. TLN TH */
 GT(12,1,1,'TH','Hình chóp tứ giác đều, các tia trục theo OA, OB, OS: toạ độ các đỉnh và trung điểm', R=>{
   const r = 2*R.int(1, 7), h = 2*R.int(1, 7), Q = vnDe(r, h), k = R.int(0, 1), n = R.pick(['C','D']), [X, Y] = R.pick([['S','C'],['S','D'],['A','B'],['B','C'],['C','D']]), M = vnTB3(Q[X], Q[Y]);
-  return k ? vnKq(R, vnDs(r, h), `đỉnh $${n}$`, Q[n], `$O$ là trung điểm của $AC$, $BD$, nên $C$ đối xứng với $A$, $D$ đối xứng với $B$ qua $O$; ta có $OA = OB = ${r}$.`) : vnKq(R, `${vnDs(r, h)} Gọi $M$ là trung điểm của $${X}${Y}$.`, 'điểm $M$', M, `Ta có $OA = OB = ${r}$, $SO = ${h}$. $${X}${vnC(Q[X])}$, $${Y}${vnC(Q[Y])}$.`);
+  return k ? vnKq(R, vnDs(r, h), `đỉnh $${n}$`, Q[n], `$O$ là trung điểm của $AC$, $BD$, nên $C$ đối xứng với $A$, $D$ đối xứng với $B$ qua $O$; ta có $OA = OB = ${r}$.`) : vnKq(R, `${vnDs(r, h)} Gọi $M$ là trung điểm của $${X}${Y}$.`, 'điểm $M$', M, `Ta có $OA = OB = ${r}$${X === 'S' ? `, $SO = ${h}$` : ''}. $${X}${vnC(Q[X])}$, $${Y}${vnC(Q[Y])}$.`);
 });
 
 /* 85. TLN VD */
@@ -40423,7 +40423,7 @@ GT(12,1,1,'VD','Hình chóp tam giác đều, gốc tại trung điểm cạnh �
   const T = ['hoành độ của đỉnh $A$', 'hoành độ của tâm đáy $G$', 'tổng hoành độ của $A$ và cao độ của $S$'][k];
   const o = {stem:`Cho hình chóp tam giác đều $S.ABC$ có cạnh đáy bằng $${a}$, chiều cao $${h}$. Gắn hệ trục $Oxyz$ với $O$ là trung điểm của $BC$, tia $Ox$ theo tia $OA$, tia $Oy$ theo tia $OC$, tia $Oz$ cùng hướng với vectơ từ tâm đáy tới $S$. Tính ${T} (làm tròn đến hàng phần mười).`,
     ans:L.ans,
-    lg:`$OA$ là đường cao của tam giác đều: $OA = \\dfrac{${a}\\sqrt{3}}{2}$, nên $A\\left(\\dfrac{${a}\\sqrt{3}}{2}; 0; 0\\right)$.<br>Tâm đáy $G$ thuộc $OA$ với $OG = \\dfrac{1}{3}OA$, và $S$ có cao độ $${h}$.<br>Kết quả $\\approx ${nt(L.ans)}$.`,
+    lg:`$OA$ là đường cao của tam giác đều: $OA = \\dfrac{${a}\\sqrt{3}}{2}$, nên $A\\left(\\dfrac{${a}\\sqrt{3}}{2}; 0; 0\\right)$.<br>Tâm đáy $G$ thuộc $OA$ với $OG = \\dfrac{1}{3}OA$${k === 2 ? `, và $S$ có cao độ $${h}$` : ''}.<br>Kết quả $\\approx ${nt(L.ans)}$.`,
     verify:()=>{ const A = [x, 0], B = [0, -a/2], C = [0, a/2], G = [(A[0] + B[0] + C[0])/3, 0]; return near(Math.hypot(A[0] - B[0], A[1] - B[1]), a, 1e-9) && vnGan([A[0], G[0], A[0] + h][k], o.ans); }};
   return o;
 });
@@ -40543,7 +40543,7 @@ GT(12,1,1,'VD','Lăng trụ đứng tam giác đều, gốc tại trung điểm 
   const a = 2*R.int(1, 12), h = R.int(2, 15), x = a*Math.sqrt(3)/2, k = R.int(0, 2), v = [x, x + h, x/3][k], T = ['hoành độ của $A$', "tổng hoành độ của $A'$ và cao độ của $A'$", "hoành độ của tâm đáy $ABC$"][k], L = vnL(v); if(!vnOk(L.ans)) return null;
   const o = {stem:`Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác đều cạnh $${a}$, cạnh bên bằng $${h}$. Gắn hệ trục $Oxyz$ với $O$ là trung điểm của $BC$, tia $Ox$ theo tia $OA$, tia $Oy$ theo tia $OC$, tia $Oz$ cùng hướng $${vnV("AA'")}$. Tính ${T} (làm tròn đến hàng phần mười).`,
     ans:L.ans,
-    lg:`$OA$ là đường cao của tam giác đều nên $OA = \\dfrac{${a}\\sqrt{3}}{2}$; $A'$ có cùng hoành độ với $A$ và cao độ $${h}$; tâm đáy cách $O$ một đoạn $\\dfrac{1}{3}OA$.<br>Kết quả $\\approx ${nt(L.ans)}$.`,
+    lg:`$OA$ là đường cao của tam giác đều nên $OA = \\dfrac{${a}\\sqrt{3}}{2}$${k === 1 ? `; $A'$ có cùng hoành độ với $A$ và cao độ $${h}$` : ''}${k === 2 ? '; tâm đáy cách $O$ một đoạn $\\dfrac{1}{3}OA$' : ''}.<br>Kết quả $\\approx ${nt(L.ans)}$.`,
     verify:()=> vnGan([x, x + h, x/3][k], o.ans) && near(x*x + a*a/4, a*a, 1e-9)};
   return o;
 });
@@ -40551,13 +40551,13 @@ GT(12,1,1,'VD','Lăng trụ đứng tam giác đều, gốc tại trung điểm 
 /* 101. TLN VD */
 GT(12,1,1,'VD','Lăng trụ đứng đáy tam giác cân tại A, gốc tại trung điểm BC: toạ độ đỉnh và điểm', R=>{
   const b = 2*R.int(1, 7), d = R.int(2, 12), h = R.int(2, 12), Q = {A:[0,d,0], B:[-b/2,0,0], C:[b/2,0,0], "A'":[0,d,h], "B'":[-b/2,0,h], "C'":[b/2,0,h]}, k = R.pick(["A'","B'","C'",'M']); Q.M = vnTB3(Q["B'"], Q.A);
-  return vnKq(R, `Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác cân tại $A$, $BC = ${b}$, đường cao $AH = ${d}$, cạnh bên bằng $${h}$. Gắn hệ trục $Oxyz$ với $O \\equiv H$, tia $Ox$ theo tia $HC$, tia $Oy$ theo tia $HA$, tia $Oz$ cùng hướng $${vnV("AA'")}$.${k === 'M' ? " Gọi $M$ là trung điểm của $AB'$." : ''}`, k === 'M' ? 'điểm $M$' : `đỉnh $${k}$`, Q[k], `$H$ là trung điểm của $BC$, vì tam giác cân tại $A$. Đáy dưới: $A(0; ${d}; 0)$, $B(${-b/2}; 0; 0)$, $C(${b/2}; 0; 0)$, các đỉnh trên thêm cao độ $${h}$.`);
+  return vnKq(R, `Cho lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác cân tại $A$, $BC = ${b}$, đường cao $AH = ${d}$, cạnh bên bằng $${h}$. Gắn hệ trục $Oxyz$ với $O \\equiv H$, tia $Ox$ theo tia $HC$, tia $Oy$ theo tia $HA$, tia $Oz$ cùng hướng $${vnV("AA'")}$.${k === 'M' ? " Gọi $M$ là trung điểm của $AB'$." : ''}`, k === 'M' ? 'điểm $M$' : `đỉnh $${k}$`, Q[k], `$H$ là trung điểm của $BC$, vì tam giác cân tại $A$. Đáy dưới: ${(k === 'M' ? ['A', 'B'] : [k[0]]).map(z=> ({A:`$A(0; ${d}; 0)$`, B:`$B(${-b/2}; 0; 0)$`, C:`$C(${b/2}; 0; 0)$`})[z]).join(', ')}, các đỉnh trên thêm cao độ $${h}$.`);   // V3.16: chỉ ghi toạ độ cần dùng
 });
 
 /* 102. TLN VD */
 GT(12,1,1,'VD','Lăng trụ đứng đáy hình thang vuông: toạ độ đỉnh, trung điểm', R=>{
   const a = 2*R.int(1, 6), b = 2*R.int(1, 4), d = b + 2*R.int(1, 4), h = 2*R.int(1, 6), Q = {A:[0,0,0], B:[a,0,0], C:[a,b,0], D:[0,d,0]}; ['A','B','C','D'].forEach(k=>{ Q[k + "'"] = [Q[k][0], Q[k][1], h]; }); const X = R.pick(["C'","D'"]), Y = R.pick(['A','B']), g = R.int(0, 1);
-  return vnKq(R, `Cho lăng trụ đứng $ABCD.A'B'C'D'$ có đáy là hình thang vuông tại $A$, $B$ với $AD \\parallel BC$, $AB = ${a}$, $BC = ${b}$, $AD = ${d}$, $AA' = ${h}$. Gắn hệ trục $Oxyz$ với $O \\equiv A$, các tia $Ox$, $Oy$, $Oz$ lần lượt theo các tia $AB$, $AD$, $AA'$.${g ? '' : ` Gọi $M$ là trung điểm của $${Y}${X}$.`}`, g ? `đỉnh $${X}$` : 'điểm $M$', g ? Q[X] : vnTB3(Q[X], Q[Y]), `$C(${a}; ${b}; 0)$, $D(0; ${d}; 0)$, các đỉnh trên thêm cao độ $${h}$.`);
+  return vnKq(R, `Cho lăng trụ đứng $ABCD.A'B'C'D'$ có đáy là hình thang vuông tại $A$, $B$ với $AD \\parallel BC$, $AB = ${a}$, $BC = ${b}$, $AD = ${d}$, $AA' = ${h}$. Gắn hệ trục $Oxyz$ với $O \\equiv A$, các tia $Ox$, $Oy$, $Oz$ lần lượt theo các tia $AB$, $AD$, $AA'$.${g ? '' : ` Gọi $M$ là trung điểm của $${Y}${X}$.`}`, g ? `đỉnh $${X}$` : 'điểm $M$', g ? Q[X] : vnTB3(Q[X], Q[Y]), `${[X[0]].concat(g ? [] : [Y]).map(z=> ({A:'$A(0; 0; 0)$', B:`$B(${a}; 0; 0)$`, C:`$C(${a}; ${b}; 0)$`, D:`$D(0; ${d}; 0)$`})[z]).join(', ')}, các đỉnh trên thêm cao độ $${h}$.`);   // V3.16: chỉ ghi toạ độ cần dùng
 });
 
 /* 103. TLN VD */
@@ -93316,6 +93316,8 @@ const zCen = (P, ...k)=> vkMul(k.reduce((s, z)=> ozAdd(s, P[z]), [0, 0, 0]), 1/k
 /* điểm cần hỏi: đỉnh / trung điểm / trọng tâm */
 const zAsk = (R, P, verts, segs, tris)=>{ const t = R.pick(['v', 'm', 'm', 'g']); if(t === 'v'){ const k = R.pick(verts); return {t:`đỉnh $${k}$`, u:P[k]}; } if(t === 'm'){ const [x, y] = R.pick(segs); return {t:`trung điểm của $${x}${y}$`, u:zMid(P, x, y)}; } const tr = R.pick(tris); return {t:`trọng tâm của tam giác $${tr.join('')}$`, u:zCen(P, ...tr)}; };
 const zTN = (R, P, stemHead, setupT, Q, lgPts)=>{ const w = zW(Q.u, [...zPerm(Q.u), zNeg(Q.u), Q.u.map(x=> 2*x), Q.u.map((x, i)=> i === 2 ? 0 : x)]); if(!w) return null;
+  // V3.16: lời giải dạng "Ta có $A(…)$, $B(…)$, …" chỉ ghi toạ độ các điểm câu hỏi dùng tới (không kể toạ độ các đỉnh không cần — tránh đề thừa giả thiết)
+  if(/^Ta có \$/.test(setupT)){ const need = new Set(Q.t.match(/[A-Z]'?/g) || []), L = setupT.match(/\$[A-Z]'?\([^$]*\)\$/g) || [], K = L.filter(x=> need.has(x.match(/^\$([A-Z]'?)/)[1])); if(K.length && K.length < L.length) setupT = `Ta có ${K.join(', ')}.`; }
   const o = {stem:`${stemHead} Toạ độ của ${Q.t} là`, ans:zO(Q.u), wrong:w, lg:`${setupT}<br>${lgPts ? lgPts + ' ' : ''}Toạ độ cần tìm: $${zP(Q.u)}$ (trung điểm, trọng tâm lấy trung bình cộng các toạ độ).`, verify:()=> zEq(o.ans.v, Q.u)}; return o; };
 const zPtsT = (P, ks)=> ks.map(k=> `$${k}${zP(P[k])}$`).join(', ');
 
@@ -98078,6 +98080,54 @@ Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V3.
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
 GEN_REMOVED.forEach(k=>{ const g = GEN[k]; if(g && g.kind==='TL' && g.src==='TLproV' && !TLP_SOL[String(g.fam||'').slice(4)]) delete GEN[k]; });
+/* V3.16: đề thừa giả thiết (số liệu) — với các dạng đã rà, mỗi lần sinh đề thì "thử rút lại": phát lại dãy số ngẫu nhiên, đổi đúng một lần rút;
+   nếu đề mới chỉ khác đúng một số liệu mà đáp án giữ nguyên (ít nhất 2 lần đổi, không lần nào làm đổi đáp án) thì số liệu đó thừa với câu hỏi đang ra → bỏ cụm chứa nó
+   (", $AA' = 9$", "cạnh $8$"…). Không bỏ khi lời giải có dùng số đó hoặc không nhận ra chắc chắn cụm cần bỏ. */
+(()=>{
+  const mkR = rnd=> ({ rnd, int:(a, b)=> a + Math.floor(rnd()*(b - a + 1)), nz:(a, b)=>{ let x, g = 0; do{ x = a + Math.floor(rnd()*(b - a + 1)); }while(x === 0 && g++ < 200); return x; },
+    pick:arr=> arr[Math.floor(rnd()*arr.length)], sign:()=> rnd() < 0.5 ? -1 : 1,
+    shuffle:arr=>{ const b = arr.slice(); for(let i = b.length - 1; i > 0; i--){ const j = Math.floor(rnd()*(i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; },
+    distinct:(n, a, b)=>{ const s = new Set(); let g = 0; while(s.size < n && g++ < 1000) s.add(a + Math.floor(rnd()*(b - a + 1))); return [...s]; } });
+  const NUM = /\d+(?:\{,\}\d+)?/g, UNIT = '(?:\\s*(?:cm|dm|mm|km|m|kg|g|N)(?![\\p{L}]))?';
+  const soTrong = (t, v)=> new RegExp('(?<![\\d,}])' + v.replace(/[{}]/g, '\\$&') + '(?![\\d{])').test(String(t || ''));
+  // bỏ cụm chứa số thứ s trong đề; trả về đề mới hoặc null nếu không nhận ra chắc chắn
+  const boCum = (st, s)=>{ let i = -1, m, at = -1, val = ''; NUM.lastIndex = 0; while((m = NUM.exec(st))){ if(++i === s){ at = m.index; val = m[0]; break; } } if(at < 0) return null;
+    const a = st.lastIndexOf('$', at), b = st.indexOf('$', at + val.length); if(a < 0 || b < 0) return null; const chunk = st.slice(a, b + 1);
+    if((st.slice(0, a).match(/\$/g) || []).length % 2) return null;   // số không nằm trong một cặp $…$ trọn vẹn
+    let L = a, Rr = b + 1; const um = st.slice(Rr).match(new RegExp('^' + UNIT, 'u')); if(um) Rr += um[0].length;
+    if(/^\$\s*[A-Z][A-Z']*\s*=\s*[^=$]+\$$/.test(chunk) || /^\$\s*\\widehat\{[^}]+\}\s*=\s*[^=$]+\$$/.test(chunk)){   /* "$AB = 5$": bỏ cả từ mô tả đứng ngay trước ("chiều cao", "khoảng biến thiên"…) */
+      const p0 = st.slice(0, L); let ix = -1, ln = 0; [',', ';', '$', ' có ', ' với ', ' và ', ' là '].forEach(s=>{ const q = p0.lastIndexOf(s); if(q > ix || (q === ix && s.length > ln)){ ix = q; ln = s.length; } });
+      const tail = ix < 0 ? '' : p0.slice(ix + ln); if(tail.trim() && /^[\p{Ll}\p{M}\s]+$/u.test(tail)) L -= tail.length; }
+    else if(/^\$[^$]*\$$/.test(chunk) && new RegExp('^\\$\\s*' + val.replace(/[{}]/g, '\\$&') + '\\s*(?:a|cm|m)?\\s*\\$$').test(chunk)){ const pm = st.slice(0, L).match(/(?:tất cả các cạnh đều bằng|cạnh(?: đáy| bên)?(?: bằng)?|dài|rộng|chiều cao|cao|bán kính)\s+$/); if(!pm) return null; L -= pm[0].length; }
+    else return null;
+    let pre = st.slice(0, L), post = st.slice(Rr);
+    if(/,\s*$/.test(pre)) pre = pre.replace(/,\s*$/, ''); else if(/^,\s*/.test(post)){ if(/(?:^|\s)(?:có|với|là|và)\s*$/.test(pre) || /\$\s*$/.test(pre) === false && /[,;(]\s*$/.test(pre)) post = post.replace(/^,\s*/, ''); else { pre = pre.replace(/\s+$/, ''); } } else if(/\s+và\s*$/.test(pre)) pre = pre.replace(/\s+và\s*$/, ''); else if(/^\s*và\s+/.test(post)) post = post.replace(/^\s*và\s+/, ' ');
+    let t = pre + post; t = t.replace(/\s+(với|có)\s*(?=[;.,])/g, '').replace(/\s{2,}/g, ' ').replace(/\s+([.;,])/g, '$1').replace(/;\s*\./g, '.').replace(/,\s*\./g, '.');
+    return t; };
+  const KEYS = '10|3|4-4,12|1|0-7,11|8|0-2,11|8|0-3,11|8|0-6,9|3|0-11,11|7|0-6,11|8|0-7,11|2|1-7,11|7|3-15,11|7|3-19,11|7|3-22,11|8|0-22,11|7|3-25,11|8|0-32,12|1|1-18,12|4|0-57,12|0|0-40,10|2|1-57,10|3|4-27,10|3|4-31,12|1|1-23,12|1|1-26,12|1|1-37,11|2|1-23,11|2|2-31,11|2|2-35,11|2|1-32,11|2|1-46,11|3|0-87,10|3|1-42,10|3|1-59,10|3|1-60,10|3|1-61,10|3|1-68,10|3|1-72,10|3|1-98,10|3|2-51,10|3|2-63,10|3|2-65,10|3|2-66,10|3|2-73,10|3|2-86,10|3|4-40,10|3|4-43,10|3|4-45,10|3|4-51,10|3|4-55,10|3|4-57,10|3|4-62,10|3|4-65,10|3|4-67,10|3|4-116,12|1|0-48,12|1|0-53,12|1|0-57,12|1|0-65,12|1|0-92,12|1|0-93,12|1|0-97,12|1|0-104,12|1|0-106,12|1|0-107,12|1|0-111,12|1|0-112,12|1|0-113,12|1|0-124,12|1|0-155,12|1|0-166,12|1|0-168,12|1|0-176,12|1|1-69,12|1|1-70,12|1|1-71,12|1|1-79,12|1|1-80,12|1|1-81,12|1|1-83,12|1|1-84,12|1|1-85,12|1|1-86,12|1|1-87,12|1|1-88,12|1|1-89,12|1|1-90,12|1|1-91,12|1|1-92,12|1|1-94,12|1|1-96,12|1|1-98,12|1|1-99,12|1|1-100,12|1|1-101,12|1|1-102,12|1|1-103,12|1|1-107,12|1|1-108,12|1|1-111,12|1|1-136,12|1|2-214,12|2|0-41,11|2|0-161,11|2|0-169,11|2|0-215,12|5|0-187,12|5|0-188,8|4|0-58,8|4|0-60,8|4|0-61,8|4|0-79,8|4|0-84,8|4|0-91,11|3|0-106,11|5|0-30,11|8|0-38,11|8|0-42,11|9|2-10,10|2|1-68,10|2|1-78,10|3|2-115,10|5|1-142,12|6|0-35,12|6|0-43,12|6|0-44,12|6|0-47,11|2|1-87,12|4|0-120,12|5|1-64,12|5|1-68,12|1|0-185,12|0|2-47,12|0|1-75,12|1|2-270,12|0|4-109,12|1|0-217,12|1|1-160,12|1|1-167,12|1|1-168,12|1|1-169,12|1|1-170,12|1|1-171,12|1|1-172,12|1|1-173,12|1|1-176,12|1|1-177,12|1|1-179,12|1|1-181,12|1|2-346,12|1|2-373,11|2|1-114,11|2|1-116,11|2|1-121,11|2|1-122,11|2|1-124,11|2|1-127,11|2|1-132,11|2|1-140,11|2|1-148,11|2|1-151,11|2|1-161,11|2|1-168'.split(',');
+  KEYS.forEach(k=>{ const g = GEN[k]; if(!g) return; const mk = g.make;
+    g.make = R=>{ const us = []; const o = mk(mkR(()=>{ const u = R.rnd(); us.push(u); return u; })); if(!o || typeof o.stem !== 'string') return o;
+      const sk = o.stem.replace(NUM, '#'), nums = o.stem.match(NUM) || [], ans0 = JSON.stringify(o.ans), tk = {};
+      for(let j = 0; j < Math.min(us.length, 24); j++) for(const alt of [0.071, 0.377, 0.613, 0.919]){ if(Math.abs(alt - us[j]) < 0.02) continue;
+        let i = 0, x = (j + 1)*7919 >>> 0; const rr = ()=>{ const u = i < us.length ? (i === j ? alt : us[i]) : ((x = (x*1103515245 + 12345) >>> 0)/4294967296); i++; return u; };
+        let o2; try{ o2 = mk(mkR(rr)); }catch(e){ continue; } if(!o2 || typeof o2.stem !== 'string' || o2.stem.replace(NUM, '#') !== sk) continue;
+        const n2 = o2.stem.match(NUM) || []; const d = []; nums.forEach((v, p)=>{ if(v !== n2[p]) d.push(p); }); if(!d.length || d.length > 3 || d.some(q=> nums[q] !== nums[d[0]] || n2[q] !== n2[d[0]])) continue;   // xét chung chỉ khi các số đổi cùng nhau là cùng một đại lượng (vd AB = AD = a), không xét số tỉ lệ với nhau   // các số sinh từ cùng một lần rút (vd AB = AD) đổi cùng nhau: xét chung
+        const same = JSON.stringify(o2.ans) === ans0; d.forEach(q=>{ const t = tk[q] = tk[q] || {same:0, diff:0}; if(same) t.same++; else t.diff++; }); }
+      const bo = Object.keys(tk).map(Number).filter(p=> tk[p].same >= 3 && !tk[p].diff).sort((x, y)=> y - x);
+      // lời giải liệt kê toạ độ các đỉnh ("$D(0; 16; 0)$, …"): toạ độ của điểm mà câu hỏi không nhắc tới, lại chứa số thừa, thì bỏ khỏi lời giải
+      if(bo.length && typeof o.lg === 'string'){ const cau = o.stem.split(/\.\s|<br>/).pop(), need = new Set(cau.match(/[A-Z]'?/g) || []), thuaV = bo.map(p=> nums[p]);
+        const lg2 = o.lg.replace(/(,\s*)?\$([A-Z]'?)\(([^$()]*)\)\$/g, (m, sep, K, c)=> !need.has(K) && thuaV.some(v=> soTrong(c, v)) ? '' : m).replace(/(^|[:;>]\s*|có\s+|ra\s+)\s*,\s*/g, '$1').replace(/,\s*([.;])/g, '$1');
+        if(lg2 !== o.lg && /\$[A-Z]'?\(/.test(lg2)) o.lg = lg2; }
+      const lgAll = JSON.stringify([o.lg, o.items]).replace(/\\\\/g, '\\');
+      let st = o.stem; const bỏ = [];
+      // lời giải có số này thì giữ — trừ khi số đó còn ở một số liệu khác của đề (trùng giá trị, vd $AD = 9$ và $SA = 9$)
+      const giu = nums.filter((v, p)=> !bo.includes(p));
+      const fm = x=> Math.abs(x - Math.round(x)) < 1e-9 ? String(Math.round(x)) : Math.abs(x*10 - Math.round(x*10)) < 1e-9 ? String(Math.round(x*10)/10).replace('.', '{,}') : null;
+      const dan = v=>{ const x = +String(v).replace('{,}', '.'); return [x/2, x*2, x/3, x*x].map(fm).filter(z=> z && z !== '0' && z !== '1'); };   // số suy ra từ số thừa (nửa, gấp đôi, một phần ba, bình phương)
+      for(const p of bo){ const v = nums[p]; if((soTrong(lgAll, v) || dan(v).some(z=> soTrong(lgAll, z))) && !giu.includes(v)) continue; const t = boCum(st, p); if(t == null) continue; st = t; bỏ.push(v); }
+      if(bỏ.length){ o.stem = st; if(o.hv && Array.isArray(o.hv.canh)) o.hv = Object.assign({}, o.hv, {canh:o.hv.canh.filter(c=> !bỏ.some(v=> soTrong(c[2], v)))}); }
+      return o; }; });
+})();
 /* V3.16: đề thừa giả thiết — với các dạng đã rà, điểm được đặt tên trong đề ("tâm $O$", "Gọi $M$, $N$ lần lượt là trung điểm …", "; $M$ là trung điểm …")
    mà đề, phương án, mệnh đề, lời giải không dùng tới thì bỏ khỏi đề và khỏi hình (câu hỏi chọn ngẫu nhiên nên có đề dùng, có đề không). */
 (()=>{
@@ -98086,7 +98136,7 @@ GEN_REMOVED.forEach(k=>{ const g = GEN[k]; if(g && g.kind==='TL' && g.src==='TLp
     const g = GEN[k]; if(!g) return; const mk = g.make;
     g.make = R=>{ const o = mk(R); if(!o || typeof o.stem !== 'string') return o;
       const rest = JSON.stringify(Object.assign({}, o, {stem:'', hv:null, verify:null})).replace(/\\\\/g, '\\'), thua = p=> dem(o.stem, p) === 1 && dem(rest, p) === 0, bo = [];
-      if(thua('O')){ const s = o.stem.replace(/có tâm \$O\$,\s*/, 'có ').replace(/,?\s*tâm \$O\$/, ''); if(s !== o.stem){ o.stem = s; bo.push('O'); } }
+      if(thua('O')){ const s = o.stem.replace(/có tâm \$O\$(?:,| và)\s*/, 'có ').replace(/,?\s*tâm \$O\$/, ''); if(s !== o.stem){ o.stem = s; bo.push('O'); } }
       o.stem = o.stem.replace(/(\s*)Gọi ((?:\$[A-Z]'*\$, )*\$[A-Z]'*\$) lần lượt là (trung điểm của|tâm của hai mặt|tâm của các mặt) ((?:\$[^$]+\$, )*\$[^$]+\$)(?: và \$([A-Z])\$ là trọng tâm tam giác \$([A-Z]+)\$)?\./, (m, sp, ns, kd, ss, gN, gT)=>{
         const N = ns.match(/[A-Z]'*/g), S = ss.match(/\$[^$]+\$/g); if(!N || !S || N.length !== S.length) return m;
         const keep = N.map((n, i)=> [n, S[i]]).filter(([n])=> !thua(n)); N.forEach(n=>{ if(!keep.some(x=> x[0] === n)) bo.push(n); });
