@@ -18922,12 +18922,18 @@ G(11,2,1,'TH','Giao tuyến của mặt phẳng qua một điểm trên cạnh b
   const ed = [Y, E1].sort().join(''), other = {AB:'AD', AD:'AB', BC:'AB', CD:'AD'}[ed] || 'AB';
   const L = {par:{t:`Đường thẳng đi qua $M$ và song song với $${ed}$`, l:[P.M, hk_sub(P[E1], P[Y])]}, oth:{t:`Đường thẳng đi qua $M$ và song song với $${other}$`, l:[P.M, hk_sub(P[other[1]], P[other[0]])]},
     ac:{t:'Đường thẳng đi qua $M$ và song song với $AC$', l:[P.M, hk_sub(P.C, P.A)]}, mE:{t:`Đường thẳng $M${E1}$`, l:[P.M, hk_sub(P[E1], P.M)]}, mF:{t:`Đường thẳng $M${F1}$`, l:[P.M, hk_sub(P[F1], P.M)]}, sO:{t:'Đường thẳng $SO$', l:[P.S, hk_sub(P.O, P.S)]}};
-  const both = k=> hk_lineIn(L[k].l[0], L[k].l[1], A1) && hk_lineIn(L[k].l[0], L[k].l[1], B1), wr = R.shuffle(['oth','ac','mE','mF','sO']).slice(0, 3);
+  // V3.16: thêm cách hỏi "đường thẳng MN, với N là …" (N trên cạnh bên cùng tỉ số với M) để đáp án đúng đa dạng hơn
+  const rv = {mid:1/2, '1/3':1/3, '3/4':3/4}, nDesc = (V, r)=> r === 'mid' ? `trung điểm của cạnh $S${V}$` : r === '1/3' ? `điểm thuộc cạnh $S${V}$ sao cho $SN = \\dfrac{1}{3}S${V}$` : `điểm thuộc cạnh $S${V}$ sao cho $SN = 3N${V}$`;
+  const nOn = (V, r)=> hk_add(P.S, hk_mul(hk_sub(P[V], P.S), rv[r])), r2 = R.pick(['mid', '1/3', '3/4'].filter(x=> x !== fr[0]));
+  L.mn = {t:`Đường thẳng $MN$, với $N$ là ${nDesc(E1, fr[0])}`, l:[P.M, hk_sub(nOn(E1, fr[0]), P.M)]}; L.mnF = {t:`Đường thẳng $MN$, với $N$ là ${nDesc(F1, fr[0])}`, l:[P.M, hk_sub(nOn(F1, fr[0]), P.M)]};
+  L.mnR = {t:`Đường thẳng $MN$, với $N$ là ${nDesc(E1, r2)}`, l:[P.M, hk_sub(nOn(E1, r2), P.M)]};
+  const kA = R.pick(['par', 'mn']), both = k=> hk_lineIn(L[k].l[0], L[k].l[1], A1) && hk_lineIn(L[k].l[0], L[k].l[1], B1), wr = kA === 'par' ? R.shuffle(['oth','ac','mE','mF','sO']).slice(0, 3) : ['mnF', 'mnR', R.pick(['oth','ac','mE','mF','sO'])];
   const N = hk_lineMeetPl(P.S, hk_sub(P[E1], P.S), A1);
   return {stem:`Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình bình hành tâm $O$. Gọi $M$ là ${fr[1]}. Giao tuyến của hai mặt phẳng $${pA}$ và $${pB}$ là`,
-    ans:{t:L.par.t, v:'par'}, wrong:wr.map(k=> ({t:L[k].t, v:k})),
-    lg:`$M$ là điểm chung của $${pA}$ và $${pB}$. Hai mặt phẳng này lần lượt chứa hai đường thẳng song song $${[F1,F2].sort().join('')}$ và $${ed}$ (cạnh đối của hình bình hành) nên giao tuyến của chúng là đường thẳng đi qua $M$ và song song với $${ed}$; đường thẳng này cắt $S${E1}$ tại $N$ và $MN \\parallel ${ed}$.`,
-    verify:()=> both('par') && wr.every(k=> !both(k)) && !!N,
+    ans:{t:L[kA].t, v:kA}, wrong:wr.map(k=> ({t:L[k].t, v:k})),
+    lg:`$M$ là điểm chung của $${pA}$ và $${pB}$. Hai mặt phẳng này lần lượt chứa hai đường thẳng song song $${[F1,F2].sort().join('')}$ và $${ed}$ (cạnh đối của hình bình hành) nên giao tuyến của chúng là đường thẳng đi qua $M$ và song song với $${ed}$; đường thẳng này cắt $S${E1}$ tại $N$ và $MN \\parallel ${ed}$.`
+      + (kA === 'mn' ? `<br>Trong tam giác $S${ed}$, $MN \\parallel ${ed}$ nên theo định lí Thalès $\\dfrac{SN}{S${E1}} = \\dfrac{SM}{S${Y}}$, tức $N$ là ${nDesc(E1, fr[0])}. Vậy giao tuyến là đường thẳng $MN$.` : ''),
+    verify:()=> both(kA) && wr.every(k=> !both(k)) && !!N && hk_len(hk_sub(N, nOn(E1, fr[0]))) < 1e-9,
     hv:{loai:'hinh', dang:'chop', ten:'S.ABCD', day:'binh_hanh', dinh:'tam', diem:{M:fr[0]==='mid' ? `mid S ${Y}` : `frac S ${Y} ${fr[0]}`, O:'center'}, them:[`M${F2}`, `M${F1}`, 'AC', 'BD']}};
 });
 
