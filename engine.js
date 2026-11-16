@@ -14234,8 +14234,8 @@ GE(6,0,0,'TH','Liệt kê các phần tử của tập hợp số nguyên', R=>{
 });
 GE(6,0,0,'TH','Điểm biểu diễn số nguyên trên trục số', R=>{
   const a = R.int(-8,6), k = R.int(2,7);
-  return {stem:`Trên trục số, điểm $A$ biểu diễn số nguyên $${a}$.<br>a) Tìm các số nguyên được biểu diễn bởi các điểm cách điểm $A$ một khoảng bằng $${k}$ đơn vị.<br>b) Có bao nhiêu số nguyên được biểu diễn bởi các điểm nằm giữa hai điểm vừa tìm được?`,
-    lg:`a) Đi từ $A$ sang trái $${k}$ đơn vị được điểm biểu diễn số $${a-k}$; sang phải $${k}$ đơn vị được điểm biểu diễn số $${a+k}$.<br>b) Các số nguyên nằm giữa $${a-k}$ và $${a+k}$ là $${a-k+1};\\ ${a-k+2};\\ \\ldots;\\ ${a+k-1}$: có $${2*k-1}$ số.`,
+  return {stem:`Trên trục số, điểm $A$ biểu diễn số nguyên $${a}$.<br>a) Tìm các số nguyên được biểu diễn bởi các điểm cách điểm $A$ một khoảng bằng $${k}$ đơn vị.<br>b) Có bao nhiêu số nguyên được biểu diễn bởi các điểm nằm giữa hai điểm cách điểm $A$ một khoảng bằng $${k}$ đơn vị?`,
+    lg:`a) Đi từ $A$ sang trái $${k}$ đơn vị được điểm biểu diễn số $${a-k}$; sang phải $${k}$ đơn vị được điểm biểu diễn số $${a+k}$.<br>b) Hai điểm cách $A$ một khoảng bằng $${k}$ đơn vị biểu diễn các số $${a-k}$ và $${a+k}$. Các số nguyên nằm giữa $${a-k}$ và $${a+k}$ là $${a-k+1};\\ ${a-k+2};\\ \\ldots;\\ ${a+k-1}$: có $${2*k-1}$ số.`,
     verify:()=>{ let n = 0; for(let x = a-k+1; x < a+k; x++) n++; return n===2*k-1 && Math.abs((a-k)-a)===k && Math.abs((a+k)-a)===k; }};
 });
 GE(6,0,0,'VD','Tìm số nguyên thoả mãn điều kiện về số chữ số, số đối, số liền kề', R=>{
@@ -18157,7 +18157,7 @@ GE(6,4,0,'TH','Uốn một sợi dây thành tam giác đều, hình vuông, l�
   return s6Parts(`Một sợi dây thép dài $${L}$ ${u}. Người ta uốn sợi dây (vừa hết, không thừa) thành một hình. Tính độ dài cạnh của hình nhận được trong mỗi trường hợp sau:`, [
     {q:'Uốn thành một tam giác đều.', a:`Chu vi tam giác đều bằng $${L}$ ${u} nên cạnh là $${L} : 3 = ${L/3}$ (${u}).`, chk:()=> h6eq(h6per(h6reg(3, L/3)), L)},
     {q:'Uốn thành một hình vuông.', a:`Cạnh hình vuông: $${L} : 4 = ${L/4}$ (${u}).`, chk:()=> h6eq(h6per(h6reg(4, L/4)), L)},
-    {q:'Uốn thành một hình lục giác đều. So sánh cạnh lục giác đều với cạnh tam giác đều ở câu a.', a:`Cạnh lục giác đều: $${L} : 6 = ${L/6}$ (${u}); cạnh tam giác đều gấp $2$ lần cạnh lục giác đều vì $${L/3} = 2 \\cdot ${L/6}$.`, chk:()=> h6eq(h6per(h6reg(6, L/6)), L) && L/3 === 2*(L/6)}]);
+    {q:'Uốn thành một hình lục giác đều. So sánh cạnh lục giác đều với cạnh của tam giác đều uốn từ cùng sợi dây đó.', a:`Cạnh lục giác đều: $${L} : 6 = ${L/6}$ (${u}); nếu uốn thành tam giác đều thì cạnh là $${L} : 3 = ${L/3}$ (${u}). Cạnh tam giác đều gấp $2$ lần cạnh lục giác đều vì $${L/3} = 2 \\cdot ${L/6}$.`, chk:()=> h6eq(h6per(h6reg(6, L/6)), L) && L/3 === 2*(L/6)}]);
 });
 
 /* ===== Bài 19. Hình chữ nhật. Hình thoi. Hình bình hành. Hình thang cân ===== */
@@ -20028,33 +20028,39 @@ const SOL = [
     hv:{loai:'hinh', dang:'chop', ten:'D.ABC', day:'tam_giac_deu', dinh:'tam', diem:{M:'mid B C'}}}; }];
 const crd = v=>{ const f = x=>{ if(Math.abs(x) < 1e-12) return '0'; const r = gRat(x*x); if(!r) return nt(Math.round(x*1000)/1000); return (x < 0 ? '-' : '') + gq(r[0], r[1]); }; return `(${v.map(f).join('; ')})`; };
 const ptsOf = (S, names)=> [...new Set(names.join('').match(/[A-Z]'?/g))].map(k=> `$${k}${crd(S.P[k])}$`).join(', ');
+// V3.16: câu hỏi không dùng tới M (cả trong cách chọn hệ trục) thì bỏ câu "Gọi $M$ là trung điểm …" và bỏ M trên hình — tránh đề thừa giả thiết
+const solUse = (S, used)=>{ if(/M/.test(used.join(' ') + S.ax)) return S; const T = Object.assign({}, S, {txt:S.txt.replace(/\s*Gọi \$M\$ là trung điểm của \$[^$]+\$\./, '')});
+  if(S.hv && S.hv.diem && S.hv.diem.M){ const d = Object.assign({}, S.hv.diem); delete d.M; T.hv = Object.assign({}, S.hv, {diem:d}); } return T; };
 const lineV = (S, l)=> hk_sub(S.P[l.match(/[A-Z]'?/g)[1]], S.P[l.match(/[A-Z]'?/g)[0]]), planeN = (S, f)=>{ const k = f.match(/[A-Z]'?/g); return hk_pl(S.P[k[0]], S.P[k[1]], S.P[k[2]]).n; };
 // 18. Trắc nghiệm: góc giữa hai đường thẳng (toạ độ hoá) — đáp án là góc đặc biệt
 G(12,5,1,'VD','Toạ độ hoá hình không gian: số đo góc giữa hai đường thẳng (góc đặc biệt)', R=>{
   for(let g = 0; g < 40; g++){ const S = R.pick(SOL)(R), [l1, l2] = R.shuffle(S.L).slice(0, 2), u = lineV(S, l1), v = lineV(S, l2), ang = hk_angLL(u, v), ans = SPEC.find(d=> Math.abs(ang - d) < 1e-7); if(!ans) continue;
     if(l1.match(/[A-Z]'?/g).some(p=> l2.includes(p)) && R.rnd() < 0.7) continue;   // ưu tiên hai đường thẳng chéo nhau
     const c2 = gRat(Math.cos(ang*D2R)**2);
-    return {stem:`${S.txt} Góc giữa hai đường thẳng $${l1}$ và $${l2}$ bằng`, ans:degOpt(ans), wrong:SPEC.filter(x=> x !== ans).map(degOpt),
+    const S2 = solUse(S, [l1, l2]);
+    return {stem:`${S2.txt} Góc giữa hai đường thẳng $${l1}$ và $${l2}$ bằng`, ans:degOpt(ans), wrong:SPEC.filter(x=> x !== ans).map(degOpt),
       lg:`Chọn hệ trục toạ độ $Oxyz$: ${S.ax}. Khi đó ${ptsOf(S, [l1, l2])}.<br>$\\overrightarrow{${l1}}$, $\\overrightarrow{${l2}}$ là vectơ chỉ phương: $\\cos(${l1}, ${l2}) = \\dfrac{|\\overrightarrow{${l1}}\\cdot\\overrightarrow{${l2}}|}{|\\overrightarrow{${l1}}|\\cdot|\\overrightarrow{${l2}}|} = ${c2 ? gq(...c2) : nt(Math.cos(ang*D2R))}$, suy ra góc bằng $${ans}^\\circ$.`,
-      hv:Object.assign({}, S.hv, {them:[l1, l2]}), verify:()=> Math.abs(hk_angLL(u, v) - ans) < 1e-6}; }
+      hv:Object.assign({}, S2.hv, {them:[l1, l2]}), verify:()=> Math.abs(hk_angLL(u, v) - ans) < 1e-6}; }
   return null;
 });
 // 19. Trả lời ngắn: góc giữa đường thẳng và mặt phẳng (toạ độ hoá, làm tròn đến hàng phần mười)
 GT(12,5,1,'VD','Toạ độ hoá hình không gian: số đo góc giữa đường thẳng và mặt phẳng (làm tròn đến hàng phần mười)', R=>{
   for(let g = 0; g < 40; g++){ const S = R.pick(SOL)(R), l = R.pick(S.L), f = R.pick(S.F), u = lineV(S, l), n = planeN(S, f), ang = deg(Math.asin(Math.min(1, Math.abs(hk_dot(u, n))/(hk_len(u)*hk_len(n))))), ans = htRd(ang, 1);
     if(ans == null || ang < 1 || ang > 89 || Math.abs(ang - Math.round(ang)) < 1e-6 || !t10Fit(ans)) continue; const s2 = gRat(Math.sin(ang*D2R)**2);
-    return {stem:`${S.txt} Số đo góc giữa đường thẳng $${l}$ và mặt phẳng $(${f})$ bằng bao nhiêu độ (làm tròn kết quả đến hàng phần mười)?`, ans,
+    const S2 = solUse(S, [l, f]);
+    return {stem:`${S2.txt} Số đo góc giữa đường thẳng $${l}$ và mặt phẳng $(${f})$ bằng bao nhiêu độ (làm tròn kết quả đến hàng phần mười)?`, ans,
       lg:`Chọn hệ trục toạ độ $Oxyz$: ${S.ax}. Khi đó ${ptsOf(S, [l, f])}.<br>Mặt phẳng $(${f})$ có vectơ pháp tuyến $\\vec n = [\\overrightarrow{${f.match(/[A-Z]'?/g).slice(0, 2).join('')}}, \\overrightarrow{${f.match(/[A-Z]'?/g)[0] + f.match(/[A-Z]'?/g)[2]}}]$; $\\sin\\varphi = \\dfrac{|\\overrightarrow{${l}}\\cdot\\vec n|}{|\\overrightarrow{${l}}|\\cdot|\\vec n|} = ${s2 ? gq(...s2) : nt(Math.round(Math.sin(ang*D2R)*1e4)/1e4)}$, suy ra $\\varphi \\approx ${nt(ans)}^\\circ$.`,
-      hv:Object.assign({}, S.hv, {them:[l]}), verify:()=> Math.abs(hk_angLP(u, {n, p:[0, 0, 0]}) - ans) <= 0.05 + 1e-9}; }
+      hv:Object.assign({}, S2.hv, {them:[l]}), verify:()=> Math.abs(hk_angLP(u, {n, p:[0, 0, 0]}) - ans) <= 0.05 + 1e-9}; }
   return null;
 });
 // 20. Trả lời ngắn: góc giữa hai mặt phẳng (toạ độ hoá, làm tròn đến hàng phần mười)
 GT(12,5,1,'VD','Toạ độ hoá hình không gian: số đo góc giữa hai mặt phẳng (làm tròn đến hàng phần mười)', R=>{
   for(let g = 0; g < 40; g++){ const S = R.pick(SOL)(R), [f1, f2] = R.shuffle(S.F).slice(0, 2), n1 = planeN(S, f1), n2 = planeN(S, f2), ang = deg(Math.acos(Math.min(1, Math.abs(hk_dot(n1, n2))/(hk_len(n1)*hk_len(n2))))), ans = htRd(ang, 1);
     if(ans == null || ang < 1 || ang > 89 || Math.abs(ang - Math.round(ang)) < 1e-6 || !t10Fit(ans)) continue; const c2 = gRat(Math.cos(ang*D2R)**2);
-    return {stem:`${S.txt} Số đo góc giữa hai mặt phẳng $(${f1})$ và $(${f2})$ bằng bao nhiêu độ (làm tròn kết quả đến hàng phần mười)?`, ans,
+    const S2 = solUse(S, [f1, f2]);
+    return {stem:`${S2.txt} Số đo góc giữa hai mặt phẳng $(${f1})$ và $(${f2})$ bằng bao nhiêu độ (làm tròn kết quả đến hàng phần mười)?`, ans,
       lg:`Chọn hệ trục toạ độ $Oxyz$: ${S.ax}. Khi đó ${ptsOf(S, [f1, f2])}.<br>Tìm vectơ pháp tuyến $\\vec n_1$ của $(${f1})$, $\\vec n_2$ của $(${f2})$ (tích có hướng của hai vectơ nằm trong mỗi mặt phẳng); $\\cos\\varphi = \\dfrac{|\\vec n_1\\cdot\\vec n_2|}{|\\vec n_1|\\cdot|\\vec n_2|} = ${c2 ? gq(...c2) : nt(Math.round(Math.cos(ang*D2R)*1e4)/1e4)}$, suy ra $\\varphi \\approx ${nt(ans)}^\\circ$.`,
-      hv:S.hv, verify:()=> Math.abs(hk_planeAng({n:n1}, {n:n2}) - ans) <= 0.05 + 1e-9}; }
+      hv:S2.hv, verify:()=> Math.abs(hk_planeAng({n:n1}, {n:n2}) - ans) <= 0.05 + 1e-9}; }
   return null;
 });
 // 21. Đúng – sai: góc giữa đường thẳng, mặt phẳng cho bằng phương trình trong Oxyz
@@ -98072,6 +98078,27 @@ Object.keys(GEN).filter(k=> !V0.has(k)).forEach(k=>{ GEN[k].src = 'Bổ sung V3.
 
 const GEN_REMOVED = new Set('10|5|1-9 11|10|0-7 12|0|0-11 12|0|0-12 12|0|2-7 12|0|1-6 12|5|2-3 12|4|0-16 12|5|0-3 12|5|0-5 12|5|0-9 12|5|0-14 12|5|2-11 12|5|2-14 12|5|2-17 12|5|2-20 12|5|0-23 12|0|0-13 12|0|0-14 12|0|0-15 12|0|0-16 12|0|0-18 12|0|0-20 12|0|0-22 12|0|0-26 12|0|1-8 12|0|4-6 12|0|4-7 12|0|4-9 12|0|2-9 12|1|2-25 12|1|2-27 12|3|0-5 12|4|0-7 12|4|0-50 12|5|0-53 12|5|0-61 12|5|0-67 12|5|0-71 12|5|2-24 12|5|2-31 12|5|2-39 12|5|2-42 12|5|2-44 12|5|2-48 12|5|2-51 12|5|2-55 12|5|2-61 12|5|2-64 12|5|0-78 12|0|4-14 8|0|0-4 8|1|1-6 8|3|0-4 8|3|0-6 8|3|0-12 8|3|0-16 8|4|0-8 8|7|0-12 8|7|1-2 8|7|1-4 8|7|1-6 8|7|1-8 8|7|1-10 8|7|1-16 8|7|1-20 8|9|0-2 8|9|0-4'.split(' '));
 GEN_REMOVED.forEach(k=>{ const g = GEN[k]; if(g && g.kind==='TL' && g.src==='TLproV' && !TLP_SOL[String(g.fam||'').slice(4)]) delete GEN[k]; });
+/* V3.16: đề thừa giả thiết — với các dạng đã rà, điểm được đặt tên trong đề ("tâm $O$", "Gọi $M$, $N$ lần lượt là trung điểm …", "; $M$ là trung điểm …")
+   mà đề, phương án, mệnh đề, lời giải không dùng tới thì bỏ khỏi đề và khỏi hình (câu hỏi chọn ngẫu nhiên nên có đề dùng, có đề không). */
+(()=>{
+  const dem = (t, p)=>{ let n = 0; String(t || '').replace(/\$([^$]*)\$/g, (m, x)=>{ x.replace(/\\[a-zA-Z]+/g, ' ').replace(/([A-Z])('*)(?:_\{?(\d+)\}?)?/g, (z, L, q, d)=>{ if(L + q + (d || '') === p) n++; return ''; }); return ''; }); return n; };
+  ['11|8|0-10', '11|7|2-12', '11|2|0-19', '11|8|0-30', '10|3|4-27', '10|3|4-42', '11|2|0-235', '12|1|0-262', '12|1|0-256', '12|1|0-220', '12|1|2-201', '12|1|2-202', '12|1|2-203', '11|2|1-6', '11|2|1-66'].concat(Object.keys(GEN).filter(k=> /^Toạ độ hoá hình không gian/.test(GEN[k].dang || ''))).forEach(k=>{
+    const g = GEN[k]; if(!g) return; const mk = g.make;
+    g.make = R=>{ const o = mk(R); if(!o || typeof o.stem !== 'string') return o;
+      const rest = JSON.stringify(Object.assign({}, o, {stem:'', hv:null, verify:null})).replace(/\\\\/g, '\\'), thua = p=> dem(o.stem, p) === 1 && dem(rest, p) === 0, bo = [];
+      if(thua('O')){ const s = o.stem.replace(/có tâm \$O\$,\s*/, 'có ').replace(/,?\s*tâm \$O\$/, ''); if(s !== o.stem){ o.stem = s; bo.push('O'); } }
+      o.stem = o.stem.replace(/(\s*)Gọi ((?:\$[A-Z]'*\$, )*\$[A-Z]'*\$) lần lượt là (trung điểm của|tâm của hai mặt|tâm của các mặt) ((?:\$[^$]+\$, )*\$[^$]+\$)(?: và \$([A-Z])\$ là trọng tâm tam giác \$([A-Z]+)\$)?\./, (m, sp, ns, kd, ss, gN, gT)=>{
+        const N = ns.match(/[A-Z]'*/g), S = ss.match(/\$[^$]+\$/g); if(!N || !S || N.length !== S.length) return m;
+        const keep = N.map((n, i)=> [n, S[i]]).filter(([n])=> !thua(n)); N.forEach(n=>{ if(!keep.some(x=> x[0] === n)) bo.push(n); });
+        const gKeep = gN && !thua(gN); if(gN && !gKeep) bo.push(gN);
+        const k1 = kd === 'trung điểm của' ? kd : 'tâm của mặt', cl = []; if(keep.length === 1) cl.push(`$${keep[0][0]}$ là ${k1} ${keep[0][1]}`); else if(keep.length > 1) cl.push(`${keep.map(x=> `$${x[0]}$`).join(', ')} lần lượt là ${kd} ${keep.map(x=> x[1]).join(', ')}`);
+        if(gKeep) cl.push(`$${gN}$ là trọng tâm tam giác $${gT}$`);
+        return cl.length ? `${sp}Gọi ${cl.join(' và ')}.` : ''; });
+      o.stem = o.stem.replace(/\s*Gọi \$([A-Z])\$ là trung điểm của \$[^$]+\$\./, (m, n)=> thua(n) ? (bo.push(n), '') : m);
+      o.stem = o.stem.replace(/[;,] \$([A-Z])\$ là (?:trung điểm (?:của )?\$[^$]+\$|trọng tâm tam giác \$[A-Z]+\$)/g, (m, n)=> thua(n) ? (bo.push(n), '') : m);
+      if(bo.length && o.hv && o.hv.diem){ const d = Object.assign({}, o.hv.diem); bo.forEach(n=> delete d[n]); o.hv = Object.assign({}, o.hv, {diem:d}); }
+      return o; }; });
+})();
 /* Nhãn ĐGNL chung (V12.3): mọi dạng có tham số m và các dạng đọc đồ thị, bảng biến thiên có hàm bậc bốn (lớp 10–12) */
 ['11|5|2','10|0|1-4','12|0|0-3','12|0|0-5','12|0|3-3','10|3|3-6','10|3|4-3','12|1|2-6','12|1|2-7','12|1|2-12','11|0|3-6','10|5|0-6','10|5|2-5','11|5|2-3','11|5|2-5','10|1|0-8','10|1|0-13','10|0|1-13','10|3|2-9','10|3|4-11','12|1|1-13','12|1|2-20','12|4|0-21','12|4|0-22','12|0|0-15','12|0|0-16','12|0|0-17','12|0|0-18','12|0|0-19','12|0|0-20','12|0|0-21','12|0|0-22','12|0|0-23','12|0|0-24','12|4|0-41','12|4|0-42','12|4|0-49','12|4|0-50','12|5|0-62','12|5|0-63','12|5|0-64','12|5|0-65','12|5|2-37','12|5|2-38','12|5|2-39','12|5|2-40','12|5|2-41','12|5|2-42','10|5|2-9','10|5|2-10','10|5|2-11','10|3|4-23','10|3|4-24','10|3|4-25','10|3|4-26','11|5|2-6','11|5|2-7','11|0|3-8','11|0|3-9','11|0|3-10','12|0|0-30','12|0|0-31','12|0|1-10','12|0|1-11','12|0|2-10','10|0|1-16','10|1|0-20','12|0|0-7','12|0|0-8','12|0|3-6','12|0|3-7','12|0|0-10','12|0|3-8'].forEach(k=>{ const g = GEN[k]; if(g && !(g.tags||[]).includes('ĐGNL')) g.tags = ['ĐGNL'].concat(g.tags||[]); });
 /* V13.7: nhãn THPT — dạng có nhãn ĐGNL vì có tham số m vẫn dùng cho đề định kỳ (THPT + ĐGNL);
