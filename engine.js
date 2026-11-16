@@ -18928,7 +18928,7 @@ G(11,2,1,'TH','Giao tuyến của mặt phẳng qua một điểm trên cạnh b
     ans:{t:L.par.t, v:'par'}, wrong:wr.map(k=> ({t:L[k].t, v:k})),
     lg:`$M$ là điểm chung của $${pA}$ và $${pB}$. Hai mặt phẳng này lần lượt chứa hai đường thẳng song song $${[F1,F2].sort().join('')}$ và $${ed}$ (cạnh đối của hình bình hành) nên giao tuyến của chúng là đường thẳng đi qua $M$ và song song với $${ed}$; đường thẳng này cắt $S${E1}$ tại $N$ và $MN \\parallel ${ed}$.`,
     verify:()=> both('par') && wr.every(k=> !both(k)) && !!N,
-    hv:{loai:'hinh', dang:'chop', ten:'S.ABCD', day:'binh_hanh', dinh:'tam', diem:{M:fr[0]==='mid' ? `mid S ${Y}` : `frac S ${Y} ${fr[0]}`, N:fr[0]==='mid' ? `mid S ${E1}` : `frac S ${E1} ${fr[0]}`}, them:['MN',`M${F2}`,`N${F1}`]}};
+    hv:{loai:'hinh', dang:'chop', ten:'S.ABCD', day:'binh_hanh', dinh:'tam', diem:{M:fr[0]==='mid' ? `mid S ${Y}` : `frac S ${Y} ${fr[0]}`, O:'center'}, them:[`M${F2}`, `M${F1}`, 'AC', 'BD']}};
 });
 
 // ---------- 8. Độ dài đoạn giao tuyến song song với đáy (ci=2, bi=1) ----------
@@ -89205,7 +89205,7 @@ GD(12,1,2,'VD','Thực tế (đúng – sai): cá bơi thẳng đều trong bể
     items[0].chk = items[0].ok ? ()=> ozEq(ozAdd(F, ozMul(v, t)), P) : ()=> ozEq(ozAdd(F, ozMul(v, t)), ozAdd(F, v));
     const hitW = ()=>{ let best = Infinity, k = -1; for(let i = 0; i < 2; i++){ const T = v[i] > 0 ? ([a, b][i] - F[i])/v[i] : v[i] < 0 ? -F[i]/v[i] : Infinity; if(T < best){ best = T; k = i; } } return k; };
     items[3].chk = items[3].ok ? ()=> hitW() === wall : ()=> hitW() !== wall;
-    const hv = vtRoom(a, b, c, {diem:{F:vtXyz(F), P:vtXyz(P)}, vec:[['F', 'P']], an:['B']});
+    const hv = vtRoom(a, b, c, {diem:{F:vtXyz(F), V:vtXyz(ozAdd(F, ozMul(v, Math.max(1, 0.3*Math.min(a, b)/ozLen(v)))))}, vec:[['F', 'V', '\\vec{v}']], an:['B', 'V']});
     return {stem:`Một bể cá dạng hình hộp chữ nhật $OABC.O'A'B'C'$ được gắn hệ trục $Oxyz$ như hình vẽ (đơn vị: dm), với $OA = ${a}$, $OC = ${b}$, chiều cao $OO' = ${c}$, nước đầy bể. Một con cá đang ở $${ozP('F', F)}$ và bơi thẳng đều với vectơ vận tốc $\\vec{v} = ${ozV(v)}$ (dm/s). Xét tính đúng sai của các khẳng định sau.`, hv, items,
       lg:`a) Sau $${t}$ giây: $F + ${t}\\vec{v} = ${ozV(P)}$.<br>b) $|\\vec{v}| = ${ozN(len/2)}$, quãng đường $${t} \\cdot ${ozN(len/2)} = ${ozN(dist)}$.<br>c) Độ sâu $${c} - ${ozN(P[2])} = ${ozN(depth)}$.<br>d) Thời gian tới các mặt: ${[0, 1].map(i=> v[i] === 0 ? '' : `mặt $${i === 0 ? (v[0] > 0 ? `x = ${a}` : 'x = 0') : (v[1] > 0 ? `y = ${b}` : 'y = 0')}$ sau $${ozFr(tw[i])}$ giây`).filter(Boolean).join(', ')}${v[2] < 0 ? `, đáy sau $${ozFr(tw[2])}$ giây` : v[2] > 0 ? `, mặt nước sau $${ozFr(tw[2])}$ giây` : ''}; nhỏ nhất là mặt $${wT}$.`};
   }
@@ -89306,7 +89306,7 @@ GT(12,1,2,'VD','Thực tế: cá bơi thẳng đều trong bể hình hộp theo
   for(let g = 0; g < 80; g++){ const a = R.pick([6, 8, 9, 10, 12]), b = R.int(12, 20), c = R.int(5, 9), v = [R.int(-4, 4), R.int(-5, 5), R.int(-3, 3)].map(x=> x/2), F = [R.int(1, a - 1), R.int(1, b - 1), R.int(1, c - 1)]; if(v.filter(x=> x !== 0).length < 2) continue;
     const tw = [0, 1, 2].map(i=> v[i] > 0 ? ([a, b, c][i] - F[i])/v[i] : v[i] < 0 ? -F[i]/v[i] : Infinity), t = Math.min(...tw); if(!ozOk(t) || t < 1 || tw.filter(x=> Math.abs(x - t) < 1e-9).length > 1) continue;
     const P = ozAdd(F, ozMul(v, t)); if(!P.every(x=> ozOk(x)) || !vtFar(F, P, 1)) continue; const k = tw.indexOf(t), nm = ['', '', ''].map((_, i)=> i === 2 ? (v[2] > 0 ? 'mặt nước' : 'đáy bể') : `mặt kính $${i === 0 ? 'x' : 'y'} = ${v[i] > 0 ? [a, b][i] : 0}$`);
-    const hv = vtRoom(a, b, c, {diem:{F:vtXyz(F), P:vtXyz(P)}, vec:[['F', 'P']], an:['B', 'P']});
+    const hv = vtRoom(a, b, c, {diem:{F:vtXyz(F), V:vtXyz(ozAdd(F, ozMul(v, Math.max(1, 0.3*Math.min(a, b)/ozLen(v)))))}, vec:[['F', 'V', '\\vec{v}']], an:['B', 'V']});
     const o = {stem:`Một bể cá dạng hình hộp chữ nhật $OABC.O'A'B'C'$ được gắn hệ trục $Oxyz$ như hình vẽ (đơn vị: dm), với $OA = ${a}$, $OC = ${b}$, $OO' = ${c}$, nước đầy bể. Một con cá ở $${ozP('F', F)}$ bơi thẳng đều với vectơ vận tốc $\\vec{v} = ${ozV(v)}$ (dm/s). Sau bao nhiêu giây thì cá chạm thành bể (một mặt kính, đáy bể hoặc mặt nước)?`, hv, ans:t,
       lg:`Vị trí sau $t$ giây: $F + t\\vec{v}$. Thời điểm tới từng mặt: ${[0, 1, 2].filter(i=> v[i] !== 0).map(i=> `${nm[i]} sau $${ozFr(tw[i])}$ giây`).join('; ')}.<br>Cá chạm ${nm[k]} trước, sau $${ozN(t)}$ giây (tại điểm $${ozV(P)}$).`,
       verify:()=>{ let lo = 0, hi = 200; const ins = T=>{ const Q = ozAdd(F, ozMul(v, T)); return Q[0] > -1e-9 && Q[0] < a + 1e-9 && Q[1] > -1e-9 && Q[1] < b + 1e-9 && Q[2] > -1e-9 && Q[2] < c + 1e-9; }; for(let i = 0; i < 100; i++){ const m = (lo + hi)/2; if(ins(m)) lo = m; else hi = m; } return near(lo, o.ans, 1e-6); }};
