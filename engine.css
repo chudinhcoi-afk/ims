@@ -156,9 +156,100 @@ details summary{cursor:pointer; font-family:sans-serif; font-size:13px; font-wei
 .tb.tb-s[disabled]{opacity:.4;cursor:default}
 .tb.tb-w{padding:0 9px}
 .tb-grp{display:inline-flex;gap:0}
+/* V3.24: chế độ Double — 2 câu cùng dạng, khác bộ số, cho 2 học sinh cùng lên bảng */
+.tb.tb-s.tb-dbl{border-color:#e08a00;color:#a35d00}
+.tb.tb-s.tb-dbl:hover{background:#fff3df}
+.tb.tb-s.tb-dbl.on{background:#e08a00;border-color:#e08a00;color:#fff}
+.pr-dbl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+.pr-dcol{min-width:0;display:flex;flex-direction:column}
+.pr-dhead{align-self:flex-start;margin:0 0 5px;padding:2px 12px;border-radius:999px;background:#1e88e5;color:#fff;font-weight:700;font-size:13px;line-height:1.5}
+.pr-dcol + .pr-dcol .pr-dhead{background:#d84315}
+.pr-dbl.lg .pr-dhead{font-size:17px;padding:2px 14px}
+.pr-dhead small{font-weight:500;opacity:.85}
+.pr-dq{flex:1 1 auto;min-width:0;overflow-x:auto}
+.pr-dq > div{height:100%;box-sizing:border-box;margin:0}
+@media (max-width:760px){ .pr-dbl{grid-template-columns:minmax(0,1fr)} }
 .tb-grp .tb-s:first-child{border-radius:8px 0 0 8px;border-right:0}
 .tb-grp .tb-s:last-child{border-radius:0 8px 8px 0}
 /* Máy tính khoa học (kiểu máy cầm tay, thiết kế riêng của phần mềm) */
+/* V3.23: Gọi học sinh ngẫu nhiên (quay số / chiếc nón kỳ diệu) — phủ kín màn hình, chữ to cho máy chiếu; tối mặc định, ☀️ đổi sang sáng */
+#goiPanel{position:fixed;inset:0;z-index:10060;display:flex;flex-direction:column;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-user-select:none;user-select:none;
+  --bg:#0f1729;--bg2:#1f2d4d;--card:#1f2c4a;--ink:#eef2fa;--soft:#a9b6d3;--ln:rgba(255,255,255,.17);--gold:#e6bd5c;--bad:#ff8f8f;--ok:#6ee0a4;
+  background:radial-gradient(ellipse at 42% 38%,var(--bg2),var(--bg) 78%);color:var(--ink)}
+#goiPanel.light{--bg:#ebe2c9;--bg2:#fffdf7;--card:#fff;--ink:#16213e;--soft:#56627e;--ln:rgba(22,33,62,.18);--gold:#a8761a;--bad:#c62f2f;--ok:#178a50}
+#goiPanel *{box-sizing:border-box}
+#goiPanel .gh-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--ln);flex:0 0 auto}
+#goiPanel .gh-ttl{font-weight:800;font-size:19px;color:var(--gold);margin-right:2px;white-space:nowrap}
+#goiPanel select{height:38px;font-size:17px;font-weight:700;border-radius:9px;border:1px solid var(--ln);background:var(--card);color:var(--ink);padding:0 8px;max-width:260px;min-width:0;width:auto}
+#goiPanel .gh-b{height:38px;padding:0 13px;border-radius:9px;border:1px solid var(--ln);background:var(--card);color:var(--ink);font-size:15.5px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit}
+#goiPanel .gh-b:hover{border-color:var(--gold)}
+#goiPanel .gh-b.gold,#goiPanel .gh-go{background:linear-gradient(180deg,#f3d27e,#d6a73e);color:#2a1d00;border:1px solid #a87b22}
+#goiPanel .gh-sp{flex:1 1 0}
+#goiPanel .gh-seg{display:inline-flex;align-items:center;border:1px solid var(--ln);border-radius:10px;overflow:hidden;background:var(--card)}
+#goiPanel .gh-seg button{height:36px;padding:0 13px;border:0;background:transparent;color:var(--ink);font-size:15.5px;font-weight:600;cursor:pointer;font-family:inherit}
+#goiPanel .gh-seg button.on{background:var(--gold);color:#221700}
+#goiPanel.light .gh-seg button.on{color:#fff}
+#goiPanel .gh-seg span{padding:0 4px 0 11px;color:var(--soft);font-size:14.5px;white-space:nowrap}
+#goiPanel .gh-seg.gh-n button{padding:0 11px}
+@media (max-width:1360px){#goiPanel .gh-ttl b{display:none}}
+#goiPanel .gh-main{flex:1 1 auto;display:flex;min-height:0}
+#goiPanel .gh-stage{flex:1 1 auto;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;min-height:0;padding:14px;overflow:hidden}
+#goiPanel .gh-side{flex:0 0 300px;border-left:1px solid var(--ln);padding:12px;display:flex;flex-direction:column;gap:8px;min-height:0}
+#goiPanel .gh-cnt{font-size:16px;line-height:1.3}
+#goiPanel .gh-cnt b{font-size:34px;color:var(--gold);margin-right:4px}
+#goiPanel .gh-sub{color:var(--soft);font-size:14.5px}
+#goiPanel .gh-chk{display:flex;gap:7px;align-items:flex-start;font-size:14.5px;cursor:pointer;line-height:1.3;color:var(--ink);font-weight:500;margin:0}
+#goiPanel .gh-chk input{width:18px;height:18px;margin:1px 0 0;flex:0 0 auto;accent-color:#d6a73e}
+#goiPanel .gh-hint{font-size:13px;color:var(--soft);line-height:1.35}
+#goiPanel .gh-list{flex:1 1 auto;overflow:auto;display:flex;flex-wrap:wrap;gap:5px;align-content:flex-start;min-height:60px}
+#goiPanel .gh-chip{border:1px solid var(--ln);background:var(--card);color:var(--ink);border-radius:8px;padding:4px 8px;font-size:14.5px;cursor:pointer;text-align:left;max-width:100%;font-family:inherit;line-height:1.25}
+#goiPanel .gh-chip i{font-style:normal;color:var(--soft);font-size:12px;margin-right:4px}
+#goiPanel .gh-chip em{font-style:normal;font-weight:800;margin-left:5px;font-size:12.5px}
+#goiPanel .gh-chip.c{opacity:.6}
+#goiPanel .gh-chip.c em{color:var(--ok)}
+#goiPanel .gh-chip.v{border-color:var(--bad);color:var(--bad);opacity:1}
+#goiPanel .gh-chip.v span{text-decoration:line-through}
+#goiPanel.busy .gh-top select,#goiPanel.busy .gh-seg,#goiPanel.busy .gh-top .gh-ed,#goiPanel.busy .gh-side .gh-b,#goiPanel.busy .gh-chk,#goiPanel.busy .gh-chip{pointer-events:none;opacity:.55}
+#goiPanel .gh-wb{position:relative;flex:0 0 auto}
+#goiPanel .gh-wb canvas{display:block;border-radius:50%;box-shadow:0 14px 44px rgba(0,0,0,.45);will-change:transform}
+#goiPanel .gh-ptr{position:absolute;left:50%;top:-18px;width:46px;height:58px;margin-left:-23px;z-index:3;transform-origin:50% 12px;filter:drop-shadow(0 3px 3px rgba(0,0,0,.5))}
+#goiPanel .gh-ptr.k{animation:ghK .16s ease-out}
+#goiPanel .gh-hub{position:absolute;left:50%;top:50%;width:20%;height:20%;transform:translate(-50%,-50%);border-radius:50%;border:4px solid #7d5f1c;background:radial-gradient(circle at 35% 30%,#fff6d2,#e6bd5c 55%,#a87b22);color:#2a1d00;font-weight:900;font-size:clamp(15px,2.8vmin,32px);cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.45);z-index:2;font-family:inherit;letter-spacing:.5px}
+#goiPanel .gh-tip{margin-top:12px;color:var(--soft);font-size:14px;text-align:center}
+#goiPanel .gh-res{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(5,10,22,.55);z-index:5;animation:ghFade .25s;padding:16px}
+#goiPanel .gh-rc{position:relative;z-index:1;background:var(--card);border:4px solid var(--gold);border-radius:26px;padding:22px 38px 18px;text-align:center;max-width:100%;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:ghPop .5s cubic-bezier(.2,1.5,.4,1)}
+#goiPanel .gh-rs{font-size:clamp(22px,3.6vmin,44px);color:var(--soft);font-weight:700}
+#goiPanel .gh-rn{font-size:clamp(44px,10vmin,130px);font-weight:900;line-height:1.1;color:var(--gold);margin:6px 0 16px}
+#goiPanel .gh-rb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#goiPanel .gh-slots{display:grid;gap:16px;width:100%;max-width:1400px;flex:1 1 auto;min-height:0;grid-auto-rows:minmax(0,1fr)}
+#goiPanel .gh-slots.n2{grid-template-columns:1fr 1fr}
+#goiPanel .gh-slots.n3,#goiPanel .gh-slots.n5{grid-template-columns:repeat(3,1fr)}
+#goiPanel .gh-slots.n4{grid-template-columns:1fr 1fr}
+#goiPanel .gh-slot{background:var(--card);border:3px solid var(--ln);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;min-height:0;min-width:0;position:relative;z-index:1;overflow:hidden}
+#goiPanel .gh-slot .st{color:var(--soft);font-weight:700;font-size:28px}
+#goiPanel .gh-slot .nm{font-weight:900;line-height:1.08;text-align:center;width:100%;overflow-wrap:normal}
+#goiPanel .gh-slot.win{border-color:var(--gold);box-shadow:0 0 0 4px rgba(230,189,92,.3),0 0 44px rgba(230,189,92,.45);animation:ghPop .5s cubic-bezier(.2,1.5,.4,1)}
+#goiPanel .gh-slot.win .nm{color:var(--gold)}
+#goiPanel .gh-slot.vang{border-color:var(--bad)}
+#goiPanel .gh-slot.vang .nm{text-decoration:line-through;color:var(--bad)}
+#goiPanel .gh-vb{position:absolute;right:10px;bottom:10px;visibility:hidden;height:32px;font-size:14px}
+#goiPanel .gh-slot.win .gh-vb{visibility:visible}
+#goiPanel .gh-go{margin-top:14px;height:66px;padding:0 54px;border-radius:33px;font-size:28px;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.35);flex:0 0 auto;font-family:inherit}
+#goiPanel .gh-empty{text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center;font-size:20px}
+#goiPanel .gh-big{font-size:clamp(26px,5vmin,52px);font-weight:800;color:var(--gold)}
+#goiPanel .gh-modal{position:absolute;inset:0;z-index:20;background:rgba(5,10,22,.6);display:flex;align-items:center;justify-content:center;padding:16px}
+#goiPanel .gh-mc{background:var(--card);color:var(--ink);border:1px solid var(--ln);border-radius:16px;padding:16px 18px;width:min(580px,100%);max-height:100%;overflow:auto;-webkit-user-select:text;user-select:text}
+#goiPanel .gh-mc h3{margin:0 0 6px;color:var(--gold)}
+#goiPanel .gh-mc label{display:block;font-size:14.5px;font-weight:600;margin:10px 0 0;color:var(--ink);opacity:1;text-transform:none;letter-spacing:0}
+#goiPanel .gh-mc input,#goiPanel .gh-mc textarea{display:block;width:100%;margin-top:5px;font-size:15px;padding:7px 9px;border-radius:8px;border:1px solid var(--ln);background:var(--bg2);color:var(--ink);font-family:inherit}
+#goiPanel .gh-mb{display:flex;gap:8px;margin-top:14px;align-items:center}
+#goiPanel .gh-del{color:var(--bad)}
+#goiPanel .gh-cf{position:absolute;top:-16px;width:10px;height:15px;border-radius:2px;z-index:0;pointer-events:none;animation:ghFall linear forwards}
+@keyframes ghK{0%{transform:rotate(-18deg)}100%{transform:rotate(0)}}
+@keyframes ghPop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes ghFade{from{opacity:0}}
+@keyframes ghFall{to{transform:translateY(105vh) rotate(760deg)}}
+@media (max-width:760px){#goiPanel .gh-main{flex-direction:column}#goiPanel .gh-side{flex:0 0 auto;max-height:36vh;border-left:0;border-top:1px solid var(--ln)}#goiPanel .gh-ttl{display:none}#goiPanel .gh-go{height:54px;font-size:22px;padding:0 34px}}
 #timerPanel{position:fixed;left:14px;top:60px;z-index:10049;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#e8ecf4;-webkit-user-select:none;user-select:none;--d:168px;width:var(--d)}
 #timerPanel.big{--d:300px}
 #timerPanel .tm-clock{position:relative;width:var(--d);height:calc(var(--d)*1.09);cursor:grab;touch-action:none}
