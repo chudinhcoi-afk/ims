@@ -178,6 +178,35 @@ details summary{cursor:pointer; font-family:sans-serif; font-size:13px; font-wei
   background:radial-gradient(ellipse at 42% 38%,var(--bg2),var(--bg) 78%);color:var(--ink)}
 #goiPanel.light{--bg:#ebe2c9;--bg2:#fffdf7;--card:#fff;--ink:#16213e;--soft:#56627e;--ln:rgba(22,33,62,.18);--gold:#a8761a;--bad:#c62f2f;--ok:#178a50}
 #goiPanel *{box-sizing:border-box}
+/* V3.30: công cụ xem hình không gian (🧊 Hình KG) */
+#khoiPanel{position:fixed;inset:0;z-index:10058;display:flex;align-items:center;justify-content:center;background:rgba(15,23,41,.35);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#16213e}
+#khoiPanel *{box-sizing:border-box}
+#khoiPanel .kh-box{position:relative;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.3);width:min(1120px,96vw);height:min(740px,94vh);display:flex;flex-direction:column;overflow:hidden}
+#khoiPanel .kh-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 56px 8px 12px;border-bottom:1px solid #d8dce6}
+#khoiPanel .kh-top select{max-width:320px;font:inherit;font-size:14px;padding:4px 6px;border:1px solid #c5ccdb;border-radius:6px}
+#khoiPanel button{font:inherit;font-size:13px;border:1px solid #c5ccdb;background:#f5f6f8;color:#16213e;border-radius:6px;padding:4px 9px;cursor:pointer}
+#khoiPanel button.on{background:#16213e;color:#fff;border-color:#16213e}
+#khoiPanel .kh-grp{display:inline-flex;gap:3px}
+#khoiPanel .kh-x{position:absolute;right:10px;top:8px;font-size:16px}
+#khoiPanel .kh-main{flex:1;display:flex;min-height:0}
+#khoiPanel .kh-side{width:280px;flex:0 0 auto;overflow:auto;padding:10px 12px;border-right:1px solid #d8dce6;font-size:13.5px;display:flex;flex-direction:column;gap:8px}
+#khoiPanel .kh-f{display:flex;flex-direction:column;gap:3px;font-weight:600}
+#khoiPanel .kh-f input{font:inherit;font-weight:400;padding:5px 7px;border:1px solid #c5ccdb;border-radius:6px}
+#khoiPanel .kh-c{display:flex;gap:6px;align-items:center;cursor:pointer}
+#khoiPanel .kh-hint{font-size:12px;color:#56627e;line-height:1.4}
+#khoiPanel .kh-truc{display:flex;flex-direction:column;gap:5px;padding-left:22px}
+#khoiPanel .kh-truc select{font:inherit;font-size:13px;margin-left:4px}
+#khoiPanel .kh-svg{flex:1;min-width:0;height:100%;touch-action:none;cursor:grab;background:#fff;-webkit-user-select:none;user-select:none}
+#khoiPanel .kh-svg:active{cursor:grabbing}
+#khoiPanel .kh-ln{stroke:#16213e;stroke-width:2;stroke-linecap:round}
+#khoiPanel .kh-ax{stroke:#b3261e;stroke-width:1.7}
+#khoiPanel .kh-arrh{fill:#b3261e}
+#khoiPanel .kh-hid{stroke-dasharray:7 5;stroke-linecap:butt}
+#khoiPanel .kh-face{fill:rgba(46,127,214,.09);stroke:none}
+#khoiPanel .kh-dot{fill:#16213e}
+#khoiPanel .kh-lb{font:italic 20px "Times New Roman",serif;fill:#16213e;text-anchor:middle}
+#khoiPanel .kh-axl{font:italic 19px "Times New Roman",serif;fill:#b3261e;text-anchor:middle}
+@media (max-width:720px){#khoiPanel .kh-main{flex-direction:column}#khoiPanel .kh-side{width:auto;max-height:40%;border-right:0;border-bottom:1px solid #d8dce6}#khoiPanel .kh-svg{min-height:260px}}
 #goiPanel .gh-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--ln);flex:0 0 auto}
 #goiPanel .gh-ttl{font-weight:800;font-size:19px;color:var(--gold);margin-right:2px;white-space:nowrap}
 #goiPanel select{height:38px;font-size:17px;font-weight:700;border-radius:9px;border:1px solid var(--ln);background:var(--card);color:var(--ink);padding:0 8px;max-width:260px;min-width:0;width:auto}
