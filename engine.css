@@ -178,16 +178,33 @@ details summary{cursor:pointer; font-family:sans-serif; font-size:13px; font-wei
   background:radial-gradient(ellipse at 42% 38%,var(--bg2),var(--bg) 78%);color:var(--ink)}
 #goiPanel.light{--bg:#ebe2c9;--bg2:#fffdf7;--card:#fff;--ink:#16213e;--soft:#56627e;--ln:rgba(22,33,62,.18);--gold:#a8761a;--bad:#c62f2f;--ok:#178a50}
 #goiPanel *{box-sizing:border-box}
+#goiPanel.noi{inset:auto;border-radius:18px;box-shadow:0 18px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.12);resize:both;overflow:hidden;min-width:340px;min-height:380px;container-type:size}
+#goiPanel.noi .gh-side,#goiPanel.noi .gh-ttl b,#goiPanel.noi .gh-ed,#goiPanel.noi .gh-th{display:none}
+#goiPanel.noi .gh-top{cursor:move;padding:6px 8px;gap:6px;touch-action:none}
+#goiPanel.noi select{height:32px;font-size:15px;max-width:170px}
+#goiPanel.noi .gh-b{height:32px;padding:0 9px;font-size:14px}
+#goiPanel.noi .gh-seg button{height:30px;padding:0 9px;font-size:14px}
+#goiPanel.noi .gh-seg span{font-size:13px}
+#goiPanel.noi .gh-stage{padding:8px}
+#goiPanel.noi .gh-go{height:50px;padding:0 34px;font-size:21px;margin-top:8px}
+#goiPanel.noi .gh-tip{font-size:12px;margin-top:6px}
+#goiPanel.noi .gh-rc{padding:14px 20px 12px;border-radius:18px}
+#goiPanel.noi .gh-rs{font-size:clamp(14px,5cqmin,34px)}
+#goiPanel.noi .gh-rn{font-size:clamp(26px,13cqmin,110px);margin:4px 0 10px}
+#goiPanel.noi .gh-slots{gap:8px}
+#goiPanel.noi .gh-slot{border-radius:16px;padding:8px}
+#goiPanel.noi .gh-slot .st{font-size:18px}
+#goiPanel.noi .gh-empty{font-size:16px}
 /* V3.30: công cụ xem hình không gian (🧊 Hình KG) */
 #khoiPanel{position:fixed;inset:0;z-index:10058;display:flex;align-items:center;justify-content:center;background:rgba(15,23,41,.35);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#16213e}
 #khoiPanel *{box-sizing:border-box}
-#khoiPanel .kh-box{position:relative;background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.3);width:min(1120px,96vw);height:min(740px,94vh);display:flex;flex-direction:column;overflow:hidden}
-#khoiPanel .kh-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 56px 8px 12px;border-bottom:1px solid #d8dce6}
+#khoiPanel .kh-box{background:#fff;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.3);width:min(1120px,96vw);height:min(740px,94vh);display:flex;flex-direction:column;overflow:hidden}
+#khoiPanel .kh-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #d8dce6}
 #khoiPanel .kh-top select{max-width:320px;font:inherit;font-size:14px;padding:4px 6px;border:1px solid #c5ccdb;border-radius:6px}
 #khoiPanel button{font:inherit;font-size:13px;border:1px solid #c5ccdb;background:#f5f6f8;color:#16213e;border-radius:6px;padding:4px 9px;cursor:pointer}
 #khoiPanel button.on{background:#16213e;color:#fff;border-color:#16213e}
 #khoiPanel .kh-grp{display:inline-flex;gap:3px}
-#khoiPanel .kh-x{position:absolute;right:10px;top:8px;font-size:16px}
+#khoiPanel .kh-x{margin-left:auto;font-size:16px}
 #khoiPanel .kh-main{flex:1;display:flex;min-height:0}
 #khoiPanel .kh-side{width:280px;flex:0 0 auto;overflow:auto;padding:10px 12px;border-right:1px solid #d8dce6;font-size:13.5px;display:flex;flex-direction:column;gap:8px}
 #khoiPanel .kh-f{display:flex;flex-direction:column;gap:3px;font-weight:600}
@@ -196,7 +213,8 @@ details summary{cursor:pointer; font-family:sans-serif; font-size:13px; font-wei
 #khoiPanel .kh-hint{font-size:12px;color:#56627e;line-height:1.4}
 #khoiPanel .kh-truc{display:flex;flex-direction:column;gap:5px;padding-left:22px}
 #khoiPanel .kh-truc select{font:inherit;font-size:13px;margin-left:4px}
-#khoiPanel .kh-svg{flex:1;min-width:0;height:100%;touch-action:none;cursor:grab;background:#fff;-webkit-user-select:none;user-select:none}
+#khoiPanel .kh-stage{flex:1;min-width:0;display:flex;flex-direction:column}
+#khoiPanel .kh-svg{flex:1;min-width:0;min-height:0;width:100%;touch-action:none;cursor:grab;background:#fff;-webkit-user-select:none;user-select:none}
 #khoiPanel .kh-svg:active{cursor:grabbing}
 #khoiPanel .kh-ln{stroke:#16213e;stroke-width:2;stroke-linecap:round}
 #khoiPanel .kh-ax{stroke:#b3261e;stroke-width:1.7}
@@ -207,6 +225,29 @@ details summary{cursor:pointer; font-family:sans-serif; font-size:13px; font-wei
 #khoiPanel .kh-lb{font:italic 20px "Times New Roman",serif;fill:#16213e;text-anchor:middle}
 #khoiPanel .kh-axl{font:italic 19px "Times New Roman",serif;fill:#b3261e;text-anchor:middle}
 @media (max-width:720px){#khoiPanel .kh-main{flex-direction:column}#khoiPanel .kh-side{width:auto;max-height:40%;border-right:0;border-bottom:1px solid #d8dce6}#khoiPanel .kh-svg{min-height:260px}}
+#khoiPanel .kh-sec{stroke:#c25a10;stroke-width:2.3}
+#khoiPanel .kh-secf{fill:rgba(230,120,30,.22);stroke:none}
+#khoiPanel .kh-netf{fill:rgba(46,127,214,.07)}
+#khoiPanel .kh-res{background:#fff4e8;border:1px solid #f0c9a0;border-radius:6px;padding:6px 8px;font-size:13px;line-height:1.5}
+#khoiPanel .kh-warn{color:#b3541e;font-size:12.5px}
+#khoiPanel .kh-net{display:flex;align-items:center;gap:4px;font-weight:400}
+#khoiPanel .kh-net input{flex:1;min-width:60px}
+#khoiPanel .kh-tools{display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:6px 8px;border-bottom:1px solid #e3e6ee;background:#fafbfd}
+#khoiPanel .kh-tools button{font-size:13.5px;padding:5px 10px}
+#khoiPanel .kh-msg{font-size:12.5px;color:#56627e;margin-left:6px;flex:1 1 220px;line-height:1.35}
+#khoiPanel .kh-svg[data-tool="diem"],#khoiPanel .kh-svg[data-tool="doan"],#khoiPanel .kh-svg[data-tool="giao"],#khoiPanel .kh-svg[data-tool="xoa"]{cursor:crosshair}
+#khoiPanel .kh-pick{fill:none;stroke:#e0a100;stroke-width:3}
+#khoiPanel .kh-pickl{stroke:#e0a100;stroke-width:7;stroke-opacity:.45;stroke-linecap:round}
+#khoiPanel .kh-sec2{border:1px solid #e3e6ee;border-radius:8px;padding:6px 8px;background:#fafbfd}
+#khoiPanel .kh-sec2 summary{font-weight:700;cursor:pointer}
+#khoiPanel .kh-n{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:6px;font-size:13px}
+#khoiPanel .kh-n input{width:84px;font:inherit;padding:3px 6px;border:1px solid #c5ccdb;border-radius:6px}
+#khoiPanel .kh-n select{max-width:170px;font:inherit;font-size:12.5px}
+#khoiPanel .kh-nw{flex-wrap:wrap}#khoiPanel .kh-nw select{max-width:100%;width:100%}
+#khoiPanel .kh-gonb{font-size:15px;padding:3px 8px}
+#khoiPanel .kh-box.gon .kh-side{display:none}
+#khoiPanel.kh-pres .kh-box{width:100vw;height:100vh;border-radius:0}
+#khoiPanel.kh-pres .kh-lb{font-size:24px}
 #goiPanel .gh-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--ln);flex:0 0 auto}
 #goiPanel .gh-ttl{font-weight:800;font-size:19px;color:var(--gold);margin-right:2px;white-space:nowrap}
 #goiPanel select{height:38px;font-size:17px;font-weight:700;border-radius:9px;border:1px solid var(--ln);background:var(--card);color:var(--ink);padding:0 8px;max-width:260px;min-width:0;width:auto}
@@ -453,6 +494,19 @@ body.pdf-lm .pdf-sheet svg{-webkit-text-stroke:0}
 .pdf-kt{border-collapse:collapse;margin-bottom:4px;font-size:.95em}
 .pdf-kt td{border:1px solid #000;padding:1px 7px;text-align:center;min-width:42px}
 .pdf-kt td span{display:block;font-size:.78em;color:#444}
+/* V3.36: ma trận (trang ngang), đặc tả */
+.pdf-sheet.pdf-land{width:297mm;min-height:210mm;padding:12mm}
+.pdf-mxt{border-collapse:collapse;width:100%;font-size:.8em;line-height:1.2;table-layout:fixed}
+.pdf-mxt th,.pdf-mxt td{border:1px solid #000;padding:2px 3px;text-align:center;vertical-align:middle}
+.pdf-mxt th{font-weight:700}
+.pdf-mxt td.l{text-align:left}
+.pdf-mxt span{display:block;font-size:.8em;font-weight:400}
+.pdf-mxt tr.b td{font-weight:700}
+.pdf-mxt thead{display:table-header-group}
+.pdf-mxt tr{break-inside:avoid}
+.pdf-dt{font-size:.9em;margin-bottom:8px}
+.pdf-mxg{font-weight:700;margin:8px 0 3px}
+.pdf-mxn{font-size:.82em;font-style:italic;margin:6px 0 0}
 @media print{
   body.pdf-open > *:not(#pdfOverlay){display:none !important}
   body.pdf-open{background:#fff !important}
@@ -460,9 +514,11 @@ body.pdf-lm .pdf-sheet svg{-webkit-text-stroke:0}
   .pdf-bar,.pdf-tip{display:none !important}
   .pdf-sheet{width:auto;min-height:0;margin:0;padding:0;box-shadow:none;break-after:page}
   .pdf-sheet.multi{page:pdfmulti}
+  .pdf-sheet.pdf-land{width:auto;min-height:0;padding:0}
   .pdf-sheet:last-child{break-after:auto}
   .pq-lg{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
+@page pdfmxland{size:A4 landscape;margin:12mm; @top-left{content:""} @top-center{content:""} @top-right{content:""} @bottom-left{content:""} @bottom-right{content:""} @bottom-center{content:""}}
 @page pdfmulti{size:A4;margin:14mm 15mm 15mm; @top-left{content:""} @top-center{content:""} @top-right{content:""} @bottom-left{content:""} @bottom-right{content:""} @bottom-center{content:""}}
 @page{size:A4;margin:14mm 15mm 15mm; @top-left{content:""} @top-center{content:""} @top-right{content:""} @bottom-left{content:""} @bottom-right{content:""} @bottom-center{content:"Trang " counter(page); font-family:"Times New Roman",serif; font-size:10pt; color:#333}}
 /* ---- Tối ưu giao diện (V7.0) ---- */
@@ -760,7 +816,8 @@ body[data-step="8"] header.app h1{font-size:20px}
 .ws-btns{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px}
 .ws-note{margin:0 6px 4px; font-size:11.5px; color:#b9c1d9}
 .ws-sfoot{position:sticky; bottom:0; margin-top:auto; display:flex; gap:8px; align-items:center; padding:10px 14px; background:#121a33; border-top:1px solid rgba(255,255,255,.15)}
-.ws-sfoot .btn.gold{flex:1; font-size:14px; padding:9px 12px}
+.ws-sfoot{flex-wrap:wrap}
+.ws-sfoot .btn.gold{flex:1 1 100%; font-size:14px; padding:9px 12px}   /* V3.36: nút In / Lưu PDF một hàng riêng, các nút xuất khác ở hàng dưới */
 .ws-main{flex:1 1 auto; min-width:0; padding-bottom:20px}
 .ws-tip{max-width:210mm; margin:10px auto 0; text-align:left; background:rgba(0,0,0,.18); border-radius:8px; padding:6px 12px}
 .ws-tip, .ws-tip summary{color:#e8ecf4 !important}
@@ -901,9 +958,12 @@ body.ltr-dragb .ltr-kho{outline:2px dashed #b3261e; outline-offset:2px} body.ltr
 .xb-right label.small-text{display:flex; gap:6px; align-items:center; white-space:nowrap}
 .xb-right label.small-text select{margin:0}
 .xb-btns{margin-top:auto}
-.xb-out{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px}
+.xb-out{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}   /* V3.36: 4 ô xếp 2 × 2 */
 .xb-tile{display:flex; gap:12px; border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fff; font-family:sans-serif}
 .xb-tile.main{border:2px solid var(--gold); background:linear-gradient(180deg,#fffaf0,#fff)}
+.xb-with{display:flex; flex-wrap:wrap; align-items:center; gap:6px 16px; margin:0 0 12px; padding:8px 12px; border:1px dashed #d9c48a; border-radius:10px; background:var(--gold-soft,#f6ecd2); font-family:sans-serif}
+.xb-with .xb-ck{margin:0}
+.xb-with .small-text{margin-left:auto}
 .xb-ti{flex:0 0 38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:19px; background:linear-gradient(145deg,#3a5596,#1a2a55); box-shadow:0 3px 7px -2px rgba(0,0,0,.4)}
 .xb-tb{display:flex; flex-direction:column; gap:6px; min-width:0}
 .xb-tb > b{font-size:14px; color:var(--ink)} .xb-tb p{margin:0; font-size:12px; color:var(--ink-soft); line-height:1.45}
