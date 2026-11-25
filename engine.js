@@ -111944,7 +111944,7 @@ GE(9,8,1,'VDC','Ôn chuyên (tự luận, thang điểm 1,0): giải phương tr
     const stem = `${co(al)}(${uT})^2 ${be > 0 ? '+' : '-'} ${Math.abs(be) === 1 ? '' : Math.abs(be)}(${vT})^2 = ${co(ga)}(${cT})`;
     const lg = `Đặt $u = ${uT}$, $v = ${vT}$ thì $uv = ${cT}$, phương trình trở thành $${termsT([[al, 'u^2'], [-ga, 'uv'], [be, 'v^2']])} = 0$. ${ocD('0,25')}<br>`
       + `Nếu $v = 0$ thì $x = ${-sg*k}$, khi đó $u = ${3*k*k} \\ne 0$, không thoả mãn. Chia hai vế cho $v^2$ và đặt $t = \\dfrac{u}{v}$: $${termsT([[al, 't^2'], [-ga, 't'], [be, '']])} = 0 \\iff t = ${ocFr(...rs[0])}$ hoặc $t = ${ocFr(...rs[1])}$. ${ocD('0,25')}<br>`
-      + rs.map(r=> `• Với $t = ${ocFr(...r)}$: $${r[1] === 1 ? uT : `${r[1]}(${uT})`} =${r[0] === 1 ? '' : r[0] === -1 ? '-' : r[0]}(${vT}) \\iff$ ${ocQsol(...qd(r))}. ${ocD('0,25')}`).join('<br>')
+      + rs.map(r=> `• Với $t = ${ocFr(...r)}$: $${r[1] === 1 ? uT : `${r[1]}(${uT})`} = ${r[0] === 1 ? '' : r[0] === -1 ? '-' : r[0]}(${vT}) \\iff$ ${ocQsol(...qd(r))}. ${ocD('0,25')}`).join('<br>')
       + `<br>Vậy tập nghiệm của phương trình là $${ocSet(sol)}$.`;
     return {stem:`Giải phương trình $${stem}$.`, lg,
       verify:()=>{ const f = x=>{ const u = x*x - sg*k*x + k*k, v = x + sg*k; return al*u*u + be*v*v - ga*(x**3 + sg*k**3); };
@@ -112098,7 +112098,7 @@ GE(9,8,1,'VDC','Ôn chuyên (tự luận, thang điểm 1,0): giải phương tr
     const X = x0 === 0 ? 'x' : `(${ocLin(-x0)})`, uw = termsT([[u, 'x'], [w, '']]), xmT = ocFr(...xm);
     const uxT = u === 1 ? xmT : `${u}\\cdot${/^-|frac/.test(xmT) ?`\\left(${xmT}\\right)` : xmT}`, vT = w === 0 ? uxT : `${uxT} ${w > 0 ? '+' : '-'} ${Math.abs(w)}`;
     const lg = `Điều kiện: $x \\ge ${ocFr(...xm)}$. Phương trình tương đương $\\left(\\sqrt{${xa}} - ${m}\\right) + \\left(\\sqrt{${pq}} - ${n}\\right) = ${X}(${uw})$. ${ocD('0,25')}<br>`
-      + `Nhân liên hợp: $\\dfrac{${ocLin(-x0)}}{\\sqrt{${xa}} + ${m}} + \\dfrac{${p === 1 ? '' : p}${X}}{\\sqrt{${pq}} + ${n}} = ${X}(${uw})$ $\\iff ${X}\\left(\\dfrac{1}{\\sqrt{${xa}} + ${m}} + \\dfrac{${p}}{\\sqrt{${pq}} + ${n}} - (${uw})\\right) = 0$. ${ocD('0,25')}<br>`
+      + `Nhân liên hợp: $\\dfrac{${ocLin(-x0)}}{\\sqrt{${xa}} + ${m}} + \\dfrac{${p === 1 ? ocLin(-x0) : p + X}}{\\sqrt{${pq}} + ${n}} = ${X}(${uw})$ $\\iff ${X}\\left(\\dfrac{1}{\\sqrt{${xa}} + ${m}} + \\dfrac{${p}}{\\sqrt{${pq}} + ${n}} - (${uw})\\right) = 0$. ${ocD('0,25')}<br>`
       + `Với $x \\ge ${ocFr(...xm)}$: $\\dfrac{1}{\\sqrt{${xa}} + ${m}} + \\dfrac{${p}}{\\sqrt{${pq}} + ${n}} \\le \\dfrac{1}{${m}} + \\dfrac{${p}}{${n}} = ${ocFr(n + p*m, m*n)}$, còn $${uw} \\ge ${vT} = ${ocFr(...V)} > ${ocFr(n + p*m, m*n)}$, nên biểu thức trong ngoặc luôn âm. ${ocD('0,25')}<br>`
       + `Do đó $${ocLin(-x0)} = 0 \\iff x = ${x0}$ (thoả mãn điều kiện). Vậy tập nghiệm của phương trình là $S = \\left\\{${x0}\\right\\}$. ${ocD('0,25')}`;
     return {stem:`Giải phương trình $\\sqrt{${xa}} + \\sqrt{${pq}} = ${rhs}$.`, lg,
