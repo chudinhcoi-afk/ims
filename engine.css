@@ -603,7 +603,15 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 .ws-parts.two{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
 .ws-q{break-inside:auto}
 .ws-q > div:first-child{break-after:avoid}
-.ws-dots{margin:1px 0 4px;break-inside:avoid}
+.ws-dots{margin:1px 0 4px;break-inside:avoid;position:relative}
+.ws-dots0{height:0;margin:0}
+.ws-lh{position:absolute;left:0;right:0;bottom:-13px;height:13px;cursor:ns-resize;display:none;z-index:7;touch-action:none}   /* V3.48: nằm DƯỚI dòng chấm cuối (trước đây đè lên, nhìn như thiếu một dòng) */
+.ws .pq:hover .ws-lh, .ws-lh.drag{display:block}
+.ws-lh::before{content:'';position:absolute;left:0;right:0;top:6px;border-top:2px dashed #d4a72c}
+.ws-lh span{position:absolute;right:0;top:-3px;background:#b8892a;color:#fff;font:700 11px/1 Arial,sans-serif;padding:4px 10px;border-radius:11px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.ws-lh:hover span, .ws-lh.drag span{background:#8a6d1f}
+body.ws-dragging, body.ws-dragging *{cursor:ns-resize!important;user-select:none!important}
+@media print{.ws-lh{display:none!important} .ws-dots0{display:none}}
 .ws .pq{position:relative}
 .ws-ladj{position:absolute;right:-13mm;top:0;display:flex;flex-direction:column;align-items:center;gap:1px;font:600 11px/1 Arial,sans-serif;color:#555;opacity:.35;transition:opacity .15s}
 .ws .pq:hover .ws-ladj{opacity:1}
@@ -616,8 +624,14 @@ body[data-step="8"] p.step-desc{margin-bottom:8px}
 .ws-pbrk span{position:absolute;left:0;top:-9px;background:#fff;color:#c0392b;font:600 10.5px/16px Arial,sans-serif;padding:0 6px;border:1px solid #e3a59d;border-radius:8px}
 @media print{.ws-pbrk{display:none!important}}
 .ws-ladj small{font-size:9px;font-weight:700;color:#8a6d1f}
-.ws-ladj button{width:20px;height:18px;padding:0;border:1px solid #bbb;border-radius:4px;background:#fff;color:#333;cursor:pointer;font:700 13px/1 Arial,sans-serif}
+.ws-ladj button{width:24px;height:22px;padding:0;border:1px solid #bbb;border-radius:4px;background:#fff;color:#333;cursor:pointer;font:700 13px/1 Arial,sans-serif}
 .ws-ladj button:hover{background:#f3e3b5}
+.ws-step{display:inline-flex;align-items:center;gap:5px}
+.ws-step button{width:26px;height:24px;padding:0;border:1px solid #d9c48a;border-radius:6px;background:#fff;color:#333;cursor:pointer;font:700 15px/1 Arial,sans-serif}
+.ws-step button:hover:not(:disabled){background:#f3e3b5}
+.ws-step button:disabled{opacity:.4;cursor:default}
+.ws-step b{min-width:14px;text-align:center;font-size:14px}
+.ws-step small{opacity:.85}
 @media print{.ws-ladj{display:none!important}}
 .ws-dots i{display:block;height:7.2mm;border-bottom:1px dotted #555}
 .ws-bub{display:inline-flex;align-items:center;justify-content:center;width:1.45em;height:1.45em;border:1.2px solid #000;border-radius:50%;font-size:.78em;font-weight:700;line-height:1;vertical-align:.08em;margin-right:.15em;-webkit-print-color-adjust:exact;print-color-adjust:exact}
