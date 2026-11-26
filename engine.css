@@ -833,6 +833,7 @@ body[data-step="8"] header.app h1{font-size:20px}
 .ws-cc td{padding:1px 2px; font-size:12px}
 .ws-cc td:first-child{white-space:nowrap}
 .ws-cc input{width:54px; text-align:center}
+.ws-cc input[data-cc^="pt"]{width:64px; padding-left:3px; padding-right:3px}   /* V3.52: đủ chỗ cho 0,125 */
 .ws-cc-note{margin-top:3px; font-size:11px; line-height:1.35; color:#e9dfc4; opacity:.9}
 .ws-sopt-g .ws-cc{display:inline-block}
 .ws-btns{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px}
